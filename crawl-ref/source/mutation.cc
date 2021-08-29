@@ -308,13 +308,6 @@ mutation_activity_type mutation_activity_level(mutation_type mut)
             if (mut == MUT_STINGER && drag == MONS_SWAMP_DRAGON)
                 return mutation_activity_type::FULL;
         }
-        // Vampire bats keep their fangs.
-        if (you.form == TRAN_BAT
-            && you.species == SP_VAMPIRE
-            && mut == MUT_FANGS)
-        {
-            return mutation_activity_type::FULL;
-        }
         // Dex and HP changes are kept in all forms.
 #if TAG_MAJOR_VERSION == 34
         if (mut == MUT_ROUGH_BLACK_SCALES)
@@ -1196,15 +1189,6 @@ bool physiology_mutation_conflict(mutation_type mutat)
     // Only Draconians (and gargoyles) can get wings.
     if (!species_is_draconian(you.species) && you.species != SP_GARGOYLE
         && mutat == MUT_BIG_WINGS)
-    {
-        return true;
-    }
-
-    // Vampires' healing and thirst rates depend on their blood level.
-    if (you.species == SP_VAMPIRE
-        && (mutat == MUT_CARNIVOROUS || mutat == MUT_HERBIVOROUS
-            || mutat == MUT_REGENERATION || mutat == MUT_INHIBITED_REGENERATION
-            || mutat == MUT_FAST_METABOLISM || mutat == MUT_SLOW_METABOLISM))
     {
         return true;
     }

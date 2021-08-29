@@ -577,26 +577,6 @@ static const map<species_type, species_def> species_data =
     { SK_UNARMED_COMBAT, SK_MACES_FLAILS },
 } },
 
-{ SP_VAMPIRE, {
-    "Ji",
-    "Jiangshi", "Vampiric", nullptr,
-    SPF_NONE,
-    -1, 0, 0, 4,
-    MONS_VAMPIRE,
-    HT_LAND, US_SEMI_UNDEAD, SIZE_MEDIUM,
-    7, 10, 9, // 26
-    { STAT_INT, STAT_DEX }, 5,
-    { { MUT_FANGS, 3, 1 }, { MUT_ACUTE_VISION, 1, 1 },
-      { MUT_UNBREATHING, 1, 1 }, { MUT_NEGATIVE_ENERGY_RESISTANCE, 2, 1 }, 
-      { MUT_COLD_RESISTANCE, 1, 1 }, { MUT_POISON_RESISTANCE, 1, 1 },
-      { MUT_HOP, 1, 1}, {MUT_HOP, 1, 13},},
-    { "You sometimes restore health when killing living enemies."},
-    { "hp from kills"},
-    { JOB_GLADIATOR, JOB_ENCHANTER, JOB_EARTH_ELEMENTALIST,
-      JOB_NECROMANCER, JOB_ICE_ELEMENTALIST },
-    { SK_SHORT_BLADES, SK_AXES, SK_BOWS },
-} },
-
 { SP_VINE_STALKER, {
     "VS",
     "Vine Stalker", "Vine", "Vine",

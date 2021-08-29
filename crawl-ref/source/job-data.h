@@ -68,7 +68,7 @@ static const map<job_type, job_def> job_data =
 { JOB_ENCHANTER, {
     "En", "Enchanter",
     0, 7, 5,
-    { SP_DEEP_ELF, SP_KOBOLD, SP_SPRIGGAN, SP_NAGA, SP_VAMPIRE, },
+    { SP_DEEP_ELF, SP_KOBOLD, SP_SPRIGGAN, SP_NAGA, },
     { "dagger plus:1", "robe plus:1", "book of Maledictions" },
     WCHOICE_NONE,
     { { SK_WEAPON, 1 }, { SK_HEXES, 4 },
@@ -139,7 +139,7 @@ static const map<job_type, job_def> job_data =
 { JOB_SKALD, {
     "Sk", "Skald",
     4, 4, 4,
-    { SP_MERFOLK, SP_BASE_DRACONIAN, SP_VAMPIRE, SP_GNOLL},
+    { SP_MERFOLK, SP_BASE_DRACONIAN, SP_GNOLL},
     { "leather armour", "book of Battle" },
     WCHOICE_PLAIN,
     { { SK_FIGHTING, 2 }, { SK_ARMOUR, 1 }, { SK_DODGING, 1 },
@@ -149,8 +149,7 @@ static const map<job_type, job_def> job_data =
 { JOB_SUMMONER, {
     "Su", "Summoner",
     0, 7, 5,
-    { SP_DEEP_ELF, SP_MOUNTAIN_DWARF, SP_VINE_STALKER, SP_MERFOLK, SP_TENGU,
-      SP_VAMPIRE, },
+    { SP_DEEP_ELF, SP_MOUNTAIN_DWARF, SP_VINE_STALKER, SP_MERFOLK, SP_TENGU, },
     { "robe", "book of Callings" },
     WCHOICE_NONE,
     { { SK_SUMMONINGS, 5 }, { SK_DODGING, 2 },

@@ -493,9 +493,6 @@ static void _VAMPIRES_TOOTH_equip(item_def *item, bool *show_msgs, bool unmeld)
         _equip_mpr(show_msgs,
                    "You feel a strange hunger, and smell blood in the air...");
     }
-    else if (you.species != SP_VAMPIRE)
-        _equip_mpr(show_msgs, "You feel strangely empty.");
-    // else let player-equip.cc handle message
 }
 
 ///////////////////////////////////////////////////
@@ -1337,7 +1334,5 @@ static void _LEECH_equip(item_def *item, bool *show_msgs, bool unmeld)
 {
     if (you.undead_state() == US_ALIVE)
         _equip_mpr(show_msgs, "You feel a powerful hunger.");
-    else if (you.species != SP_VAMPIRE)
-        _equip_mpr(show_msgs, "You feel very empty.");
     // else let player-equip.cc handle message
 }

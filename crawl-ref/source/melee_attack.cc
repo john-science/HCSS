@@ -360,24 +360,24 @@ bool melee_attack::handle_phase_hit()
 
         return false;
     }
-	
+
 	if (attacker->is_player() && you.attribute[ATTR_SPECTRAL_WEAPON]
         && !(you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN] > 0) && !mons_is_firewood(*defender->as_monster()))
     {
-        summon_spectral_weapon(&you, calc_spell_power(SPELL_SPECTRAL_WEAPON,true),you.religion);         
+        summon_spectral_weapon(&you, calc_spell_power(SPELL_SPECTRAL_WEAPON,true),you.religion);
 	}
-	
+
     if (attacker->is_player() && you.duration[DUR_MIASMATA])
     {
 		//scale the chance to do anything with necro skill
         if(x_chance_in_y(10 + you.skill_rdiv(SK_NECROMANCY, 2, 3), 50))
         {
-            mprf("You engulf %s in miasma!", 
+            mprf("You engulf %s in miasma!",
                 you.can_see(*defender)? defender->name(DESC_THE).c_str() : "something");
             place_cloud(CLOUD_MIASMA, defender->pos(), 5 + random2(6), &you);
 		}
     }
-	
+
     if (attacker->is_player() && you.attribute[ATTR_INFESTATION])
     {
         if(!defender->is_summoned() && !(defender->as_monster()->flags & MF_HARD_RESET))
@@ -785,7 +785,7 @@ bool melee_attack::attack()
             ev_margin = AUTOMATIC_HIT;
             shield_blocked = false;
         }
-		
+
         // Serpent's Lash does not miss
         if (wu_jian_has_momentum(wu_jian_attack))
             ev_margin = AUTOMATIC_HIT;
@@ -1169,12 +1169,6 @@ void melee_attack::player_aux_setup(unarmed_attack_type atk)
 
 	if (wu_jian_attack != WU_JIAN_ATTACK_NONE)
         wu_jian_attack = WU_JIAN_ATTACK_TRIGGERED_AUX;
-	
-    if (atk == UNAT_BITE
-        && _vamp_wants_blood_from_monster(defender->as_monster()))
-    {
-        damage_brand = SPWPN_VAMPIRISM;
-    }
 }
 
 /**
@@ -1334,13 +1328,6 @@ bool melee_attack::player_aux_apply(unarmed_attack_type atk)
 
         if (damage_brand == SPWPN_DRAINING)
                 bite_drain_defender();
-		
-        // Normal vampiric biting attack, not if already got stabbing special.
-        if (damage_brand == SPWPN_VAMPIRISM && you.species == SP_VAMPIRE
-            && (!stab_attempt || stab_bonus <= 0))
-        {
-            _player_vampire_draws_blood(defender->as_monster(), damage_done);
-        }
 
         if (damage_brand == SPWPN_ANTIMAGIC && you.has_mutation(MUT_ANTIMAGIC_BITE)
             && damage_done > 0)
@@ -1404,7 +1391,7 @@ void melee_attack::player_announce_aux_hit()
 
 string melee_attack::player_why_missed()
 {
-    //roses are red, violets are blue, 
+    //roses are red, violets are blue,
     //the code that was here before was misleading, and it was useless too
     return "You" + evasion_margin_adverb() + " miss ";
 }
@@ -1755,15 +1742,6 @@ bool melee_attack::player_monattk_hit_effects()
     if (defender->type == MONS_NO_MONSTER)
         return false;
 
-    // Thirsty vampires will try to use a stabbing situation to draw blood.
-    if (you.species == SP_VAMPIRE
-        && damage_done > 0
-        && stab_attempt
-        && stab_bonus > 0)
-    {
-        _player_vampire_draws_blood(defender->as_monster(), damage_done, true);
-    }
-
     if (!defender->alive())
         return false;
 
@@ -1817,7 +1795,7 @@ void melee_attack::handle_noise(const coord_def & pos)
         return;
 
     int loudness = damage_done / 4;
-	
+
     if(attacker->is_player() && you.attribute[ATTR_SONG_OF_SLAYING])
     {
 		loudness += random2(5) + 1;
@@ -2016,7 +1994,7 @@ void melee_attack::apply_staff_damage()
 	}
 
 	std::string d = std::to_string(0);
-	
+
     switch (weapon->sub_type)
     {
     case STAFF_AIR:
@@ -2363,7 +2341,7 @@ bool melee_attack::mons_attack_effects()
     if (attacker != defender && defender->alive())
     {
         mons_apply_attack_flavour();
-		
+
         if(mons_class_flag(attacker->type, M_INVIS)
                          &&!defender->can_see(*attacker))
             attacker->as_monster()->del_ench(ENCH_INVIS, true);
@@ -2656,7 +2634,7 @@ void melee_attack::mons_apply_attack_flavour()
             drain_defender();
         break;
 
-	case AF_CONTAM:	
+	case AF_CONTAM:
 		if(defender->is_player())
 		{
 			contaminate_player(1000 + random2(1000), false);
@@ -2668,7 +2646,7 @@ void melee_attack::mons_apply_attack_flavour()
                 "mutagenic touch");
         }
 		break;
-		
+
     case AF_PARALYSE:
     {
         // Only wasps at the moment, so Zin vitalisation
@@ -3147,7 +3125,7 @@ void melee_attack::do_minotaur_retaliation()
 		if(!defender->airborne())
             return;
 	}
-	
+
 	if (!defender->is_player())
     {
         // monsters have no STR or DEX
@@ -3366,7 +3344,7 @@ bool melee_attack::_extra_aux_attack(unarmed_attack_type atk)
     {
         return false;
     }
-	
+
     if (wu_jian_attack != WU_JIAN_ATTACK_NONE
     && !x_chance_in_y(1, wu_jian_number_of_targets))
     {
@@ -3437,7 +3415,7 @@ int melee_attack::calc_your_to_hit_unarmed(int uattack)
     if (you.get_mutation_level(MUT_EYEBALLS))
         your_to_hit += 7 * you.get_mutation_level(MUT_EYEBALLS);
 
-    if (you.species != SP_VAMPIRE && you.hunger_state <= HS_STARVING)
+    if (you.hunger_state <= HS_STARVING)
         your_to_hit -= 3;
 
     your_to_hit += slaying_bonus();
@@ -3511,62 +3489,3 @@ int melee_attack::calc_damage()
     return attack::calc_damage();
 }
 
-/* TODO: This code is only used from melee_attack methods, but perhaps it
- * should be ambigufied and moved to the actor class
- * Should life protection protect from this?
- *
- * Should eventually remove in favor of player/monster symmetry
- *
- * Called when stabbing and for bite attacks.
- *
- * Returns true if blood was drawn.
- */
-bool melee_attack::_player_vampire_draws_blood(const monster* mon, const int damage,
-                                               bool needs_bite_msg)
-{
-    ASSERT(you.species == SP_VAMPIRE);
-
-    if (!_vamp_wants_blood_from_monster(mon) ||
-        (!adjacent(defender->pos(), attack_position) && needs_bite_msg))
-    {
-        return false;
-    }
-
-    // Now print message, need biting unless already done (never for bat form!)
-    if (needs_bite_msg && you.form != TRAN_BAT)
-    {
-        mprf("You bite %s, and draw %s blood!",
-             mon->name(DESC_THE, true).c_str(),
-             mon->pronoun(PRONOUN_POSSESSIVE).c_str());
-    }
-    else
-    {
-        mprf("You draw %s blood!",
-             apostrophise(mon->name(DESC_THE, true)).c_str());
-    }
-
-    // Regain hp.
-    if (you.hp < you.hp_max)
-    {
-        int heal = 2 + random2(damage) + random2(damage);
-        if (heal > you.experience_level)
-            heal = you.experience_level;
-
-        if (heal > 0 && !you.duration[DUR_DEATHS_DOOR])
-        {
-            inc_hp(heal);
-            canned_msg(MSG_GAIN_HEALTH);
-        }
-    }
-
-    return true;
-}
-
-bool melee_attack::_vamp_wants_blood_from_monster(const monster* mon)
-{
-    return you.species == SP_VAMPIRE
-           && you.hunger_state < HS_SATIATED
-           && !mon->is_summoned()
-           && mons_has_blood(mon->type)
-           && !testbits(mon->flags, MF_SPECTRALISED);
-}

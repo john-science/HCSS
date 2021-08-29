@@ -3169,9 +3169,6 @@ int check_stealth()
     if (you.duration[DUR_SILENCE])
         stealth -= STEALTH_PIP;
 	
-    if (you.species == SP_VAMPIRE)
-		stealth += STEALTH_PIP; // innate vampire stealth boost
-
     if (!you.airborne())
     {
         if (you.in_water())

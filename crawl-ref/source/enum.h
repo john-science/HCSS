@@ -4440,7 +4440,6 @@ enum species_type
 #endif
     SP_TENGU,
     SP_MERFOLK,
-    SP_VAMPIRE,
 #if TAG_MAJOR_VERSION == 34
     SP_DEEP_DWARF,
     SP_FELID,

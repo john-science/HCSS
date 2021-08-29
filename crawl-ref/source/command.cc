@@ -1038,8 +1038,7 @@ static void _add_formatted_keyhelp(column_composer &cols)
     _add_command(cols, 1, CMD_QUIVER_ITEM, "select item slot to be quivered", 2);
 
     {
-        string interact = (you.species == SP_VAMPIRE ? "Drain corpses"
-                                                     : "Eat food");
+        string interact = "Eat food";
         interact += " (tries floor first)\n";
         _add_command(cols, 1, CMD_EAT, interact, 2);
     }
@@ -1076,14 +1075,10 @@ static void _add_formatted_keyhelp(column_composer &cols)
                          CMD_DROP, 0);
     _add_command(cols, 1, CMD_DROP_LAST, "Drop the last item(s) you picked up", 2);
     {
-        const bool vampire = you.species == SP_VAMPIRE;
-        string butcher = vampire ? "Bottle blood from"
-                                 : "Chop up";
+        string butcher = "Chop up";
         _add_command(cols, 1, CMD_BUTCHER, butcher + " a corpse", 2);
 
-        string eat = vampire ? "Drain corpses on"
-                             : "Eat food from";
-        eat += " floor\n";
+        string eat = "Eat food from floor\n";
         _add_command(cols, 1, CMD_EAT, eat, 2);
     }
 

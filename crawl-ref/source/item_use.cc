@@ -2029,15 +2029,6 @@ static bool _check_blood_corpses_on_ground()
     return false;
 }
 
-static void _vampire_corpse_help()
-{
-    if (you.species != SP_VAMPIRE)
-        return;
-
-    if (_check_blood_corpses_on_ground())
-        mpr("Use <w>e</w> to drain blood from corpses.");
-}
-
 /**
  * If the player is unable to (r)ead the item in the given slot, return the
  * reason why. Otherwise (if they are able to read it), returns "", the empty
@@ -2091,7 +2082,6 @@ void drink(item_def* potion)
 
         if (!potion)
         {
-            _vampire_corpse_help();
             return;
         }
     }
@@ -3175,11 +3165,8 @@ void tile_item_drop(int idx, bool partdrop)
 
 void tile_item_eat_floor(int idx)
 {
-    // XXX: refactor this
-    if (mitm[idx].base_type == OBJ_CORPSES
-            && you.species == SP_VAMPIRE
-        || mitm[idx].base_type == OBJ_FOOD
-            && you.undead_state() != US_UNDEAD && you.species != SP_VAMPIRE)
+    if (mitm[idx].base_type == OBJ_FOOD
+            && you.undead_state() != US_UNDEAD)
     {
         if (can_eat(mitm[idx], false))
             eat_item(mitm[idx]);
@@ -3280,13 +3267,6 @@ void tile_item_use(int idx)
                 wear_armour(idx);
             return;
 
-        case OBJ_CORPSES:
-            if (you.species != SP_VAMPIRE
-                || item.sub_type == CORPSE_SKELETON)
-            {
-                break;
-            }
-            // intentional fall-through for Vampires
         case OBJ_FOOD:
             if (check_warning_inscriptions(item, OPER_EAT))
                 eat_food(idx);

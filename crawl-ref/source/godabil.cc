@@ -5069,14 +5069,6 @@ static mutation_type _random_valid_sacrifice(const vector<mutation_type> &muts)
 
         // Special case a few weird interactions:
 
-        // Vampires can't get inhibited regeneration for some reason related
-        // to their existing regen silliness.
-        if (mut == MUT_INHIBITED_REGENERATION
-            && you.species == SP_VAMPIRE)
-        {
-            continue;
-        }
-
         // demonspawn can't get frail if they have a robust facet
         if (you.species == SP_DEMONSPAWN && mut == MUT_FRAIL
             && any_of(begin(you.demonic_traits), end(you.demonic_traits),

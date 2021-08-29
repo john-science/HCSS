@@ -752,7 +752,7 @@ public:
      */
     monster_type get_equivalent_mons() const override
     {
-        return you.species == SP_VAMPIRE ? MONS_VAMPIRE_BAT : MONS_BAT;
+        return MONS_BAT;
     }
 
     /**
@@ -760,14 +760,13 @@ public:
      */
     int get_base_unarmed_damage() const override
     {
-        return you.species == SP_VAMPIRE ? 2 : 1;
+        return 1;
     }
 
     string get_description(bool past_tense) const override
     {
-        return make_stringf("You %s in %sbat-form.",
-                            past_tense ? "were" : "are",
-                            you.species == SP_VAMPIRE ?  "vampire-" : "");
+        return make_stringf("You %s in bat-form.",
+                            past_tense ? "were" : "are");
     }
 
     /**
@@ -776,8 +775,7 @@ public:
      */
     string get_transform_description() const override
     {
-        return make_stringf("a %sbat.",
-                            you.species == SP_VAMPIRE ? "vampire " : "");
+        return make_stringf("a bat.");
     }
 };
 
@@ -1566,17 +1564,7 @@ undead_form_reason lifeless_prevents_form(transformation_type which_trans)
     if (which_trans == TRAN_SHADOW)
         return UFR_GOOD; // even the undead can use dith's shadow form
 
-    if (you.species != SP_VAMPIRE)
-        return UFR_TOO_DEAD; // ghouls & mummies can't become anything else
-
-    if (which_trans == TRAN_LICH)
-        return UFR_TOO_DEAD; // vampires can never lichform
-
-    if (which_trans == TRAN_BAT) // can batform on satiated or below
-        return you.hunger_state <= HS_SATIATED ? UFR_GOOD : UFR_TOO_ALIVE;
-
-    // other forms can only be entered when satiated or above.
-    return you.hunger_state >= HS_SATIATED ? UFR_GOOD : UFR_TOO_DEAD;
+    return UFR_TOO_DEAD; // ghouls & mummies can't become anything else
 }
 
 /**

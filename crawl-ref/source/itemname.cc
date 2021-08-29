@@ -3266,8 +3266,7 @@ bool is_bad_item(const item_def &item, bool temp)
         case POT_STRONG_POISON:
         case POT_POISON:
             // Poison is not that bad if you're poison resistant.
-            return player_res_poison(false) <= 0
-                   || !temp && you.species == SP_VAMPIRE;
+            return player_res_poison(false) <= 0;
 #endif
         default:
             return false;
@@ -3331,8 +3330,7 @@ bool is_dangerous_item(const item_def &item, bool temp)
         case SCR_VULNERABILITY:
             return true;
         case SCR_TORMENT:
-            return !you.get_mutation_level(MUT_TORMENT_RESISTANCE)
-                   || !temp && you.species == SP_VAMPIRE;
+            return !you.get_mutation_level(MUT_TORMENT_RESISTANCE);
         case SCR_HOLY_WORD:
             return you.undead_or_demonic();
         default:
@@ -3532,8 +3530,6 @@ bool is_useless_item(const item_def &item, bool temp)
         {
         case POT_BERSERK_RAGE:
             return you.undead_state(temp)
-                   && (you.species != SP_VAMPIRE
-                       || temp && you.hunger_state < HS_SATIATED)
                    || you.species == SP_FORMICID;
         case POT_HASTE:
             return you.species == SP_FORMICID;
@@ -3549,9 +3545,7 @@ bool is_useless_item(const item_def &item, bool temp)
             return !you.can_safely_mutate(temp);
 
         case POT_LIGNIFY:
-            return you.undead_state(temp)
-                   && (you.species != SP_VAMPIRE
-                       || temp && you.hunger_state < HS_SATIATED);
+            return you.undead_state(temp);
 
         case POT_FLIGHT:
             return you.permanent_flight()
@@ -3559,13 +3553,12 @@ bool is_useless_item(const item_def &item, bool temp)
 
 #if TAG_MAJOR_VERSION == 34
         case POT_PORRIDGE:
-            return you.species == SP_VAMPIRE
-                    || you.get_mutation_level(MUT_CARNIVOROUS) == 3;
+            return you.get_mutation_level(MUT_CARNIVOROUS) == 3;
         case POT_BLOOD_COAGULATED:
 #endif
 #if TAG_MAJOR_VERSION == 34
         case POT_BLOOD:
-            return you.species != SP_VAMPIRE;
+            return true;
         case POT_DECAY:
             return you.res_rotting(temp) > 0;
         case POT_STRONG_POISON:
@@ -3599,8 +3592,6 @@ bool is_useless_item(const item_def &item, bool temp)
         {
         case AMU_RAGE:
             return you.undead_state(temp)
-                   && (you.species != SP_VAMPIRE
-                       || temp && you.hunger_state < HS_SATIATED)
                    || you.species == SP_FORMICID
                    || you.get_mutation_level(MUT_NO_ARTIFICE);
 
@@ -3628,9 +3619,7 @@ bool is_useless_item(const item_def &item, bool temp)
             return you.get_mutation_level(MUT_NO_REGENERATION) > 0
                    || (temp
                        && you.get_mutation_level(MUT_INHIBITED_REGENERATION) > 0
-                       && regeneration_is_inhibited())
-                   || (temp && you.species == SP_VAMPIRE
-                      && you.hunger_state <= HS_STARVING);
+                       && regeneration_is_inhibited());
 
         case AMU_MANA_REGENERATION:
             return you_worship(GOD_PAKELLAS);
@@ -3641,8 +3630,7 @@ bool is_useless_item(const item_def &item, bool temp)
 #endif
 
         case RING_POISON_RESISTANCE:
-            return player_res_poison(false, temp, false) > 0
-                   && (temp || you.species != SP_VAMPIRE);
+            return player_res_poison(false, temp, false) > 0;
 
         case RING_WIZARDRY:
             return you_worship(GOD_TROG);

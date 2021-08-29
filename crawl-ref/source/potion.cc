@@ -232,13 +232,8 @@ public:
 
     bool effect(bool=true, int pow = 40, bool=true) const override
     {
-        if (you.species == SP_VAMPIRE)
-        {
-            mpr("Yummy - fresh blood!");
-        }
-        else
-            mpr(_blood_flavour_message());
-            // no actual effect, just 'flavour' ha ha ha
+        mpr(_blood_flavour_message());
+        // no actual effect, just 'flavour' ha ha ha
         return true;
     }
 
@@ -871,13 +866,8 @@ public:
 
     bool effect(bool=true, int pow = 40, bool=true) const override
     {
-        if (you.species == SP_VAMPIRE)
-        {
-            mpr("This tastes delicious.");
-        }
-        else
-            mpr(_blood_flavour_message());
-            // no actual effect, just 'flavour' ha ha ha
+        mpr(_blood_flavour_message());
+        // no actual effect, just 'flavour' ha ha ha
         return true;
     }
 
@@ -998,8 +988,7 @@ public:
 
     bool effect(bool=true, int=40, bool=true) const override
     {
-        if (you.species == SP_VAMPIRE
-            || you.get_mutation_level(MUT_CARNIVOROUS) == 3)
+        if (you.get_mutation_level(MUT_CARNIVOROUS) == 3)
         {
             mpr("Blech - that potion was really gluggy!");
         }

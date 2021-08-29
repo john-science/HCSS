@@ -241,7 +241,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_HILL_ORC,        SK_INVOCATIONS,     3),
     APT(SP_HILL_ORC,        SK_EVOCATIONS,      0),
 #endif
-	
+
     // SP_MOUNTAIN_DWARF
     APT(SP_MOUNTAIN_DWARF,        SK_FIGHTING,        2),
     APT(SP_MOUNTAIN_DWARF,        SK_SHORT_BLADES,    0),
@@ -970,7 +970,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
 #endif
     APT(SP_DEMIGOD,         SK_INVOCATIONS,   UNUSABLE_SKILL),
     APT(SP_DEMIGOD,         SK_EVOCATIONS,     -1),
-	
+
     // SP_TITAN
     APT(SP_TITAN,         SK_FIGHTING,        3),
     APT(SP_TITAN,         SK_SHORT_BLADES,   -1),
@@ -1011,7 +1011,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
 #endif
     APT(SP_TITAN,         SK_INVOCATIONS,   UNUSABLE_SKILL),
     APT(SP_TITAN,         SK_EVOCATIONS,     -1),
-	
+
     // SP_SPRIGGAN
     APT(SP_SPRIGGAN,        SK_FIGHTING,       -2),
     APT(SP_SPRIGGAN,        SK_SHORT_BLADES,    1),
@@ -1295,47 +1295,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_MERFOLK,         SK_INVOCATIONS,     1),
     APT(SP_MERFOLK,         SK_EVOCATIONS,      0),
 
-    // SP_VAMPIRE
-    APT(SP_VAMPIRE,         SK_FIGHTING,       -1),
-    APT(SP_VAMPIRE,         SK_SHORT_BLADES,    1),
-    APT(SP_VAMPIRE,         SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_VAMPIRE,         SK_AXES,           -1),
-    APT(SP_VAMPIRE,         SK_MACES_FLAILS,   -2),
-    APT(SP_VAMPIRE,         SK_POLEARMS,       -1),
-    APT(SP_VAMPIRE,         SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_VAMPIRE,         SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_VAMPIRE,         SK_BOWS,           -2),
-    APT(SP_VAMPIRE,         SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_VAMPIRE,         SK_THROWING,       -2),
-    APT(SP_VAMPIRE,         SK_ARMOUR,         -2),
-    APT(SP_VAMPIRE,         SK_DODGING,         1),
-    APT(SP_VAMPIRE,         SK_STEALTH,         5),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_VAMPIRE,         SK_STABBING,      UNUSABLE_SKILL),
-#endif
-    APT(SP_VAMPIRE,         SK_SHIELDS,        -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_VAMPIRE,         SK_TRAPS,         UNUSABLE_SKILL),
-#endif
-    APT(SP_VAMPIRE,         SK_UNARMED_COMBAT,  1),
-    APT(SP_VAMPIRE,         SK_SPELLCASTING,  UNUSABLE_SKILL),
-    APT(SP_VAMPIRE,         SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_VAMPIRE,         SK_HEXES,           4),
-    APT(SP_VAMPIRE,         SK_CHARMS,          1),
-    APT(SP_VAMPIRE,         SK_SUMMONINGS,      0),
-    APT(SP_VAMPIRE,         SK_NECROMANCY,      1),
-    APT(SP_VAMPIRE,         SK_TRANSLOCATIONS, -2),
-    APT(SP_VAMPIRE,         SK_TRANSMUTATIONS,  1),
-    APT(SP_VAMPIRE,         SK_FIRE_MAGIC,     -2),
-    APT(SP_VAMPIRE,         SK_ICE_MAGIC,       0),
-    APT(SP_VAMPIRE,         SK_AIR_MAGIC,       0),
-    APT(SP_VAMPIRE,         SK_EARTH_MAGIC,     0),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_VAMPIRE,         SK_POISON_MAGIC,  UNUSABLE_SKILL),
-#endif
-    APT(SP_VAMPIRE,         SK_INVOCATIONS,    -1),
-    APT(SP_VAMPIRE,         SK_EVOCATIONS,     -1),
-
 #if TAG_MAJOR_VERSION == 34
     // SP_DEEP_DWARF
     APT(SP_DEEP_DWARF,      SK_FIGHTING,       -1),
@@ -1407,7 +1366,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_FELID,           SK_INVOCATIONS,     0),
     APT(SP_FELID,           SK_EVOCATIONS,      1),
 #endif
-	
+
     // SP_OCTOPODE
     APT(SP_OCTOPODE,        SK_FIGHTING,        0),
     APT(SP_OCTOPODE,        SK_SHORT_BLADES,    0),
@@ -1602,7 +1561,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
 #endif
     APT(SP_VINE_STALKER,    SK_INVOCATIONS,     0),
     APT(SP_VINE_STALKER,    SK_EVOCATIONS,     -1),
-	
+
 #if TAG_MAJOR_VERSION == 34
     // SP_FROGTAUR
     APT(SP_FROGTAUR,           SK_FIGHTING,        1),
@@ -1677,7 +1636,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_GNOLL,           SK_POISON_MAGIC,  UNUSABLE_SKILL),
     APT(SP_GNOLL,           SK_INVOCATIONS,     4),
     APT(SP_GNOLL,           SK_EVOCATIONS,      4),
-	
+
     // SP_SKELETON
     APT(SP_SKELETON,        SK_FIGHTING,       -1),
     APT(SP_SKELETON,        SK_SHORT_BLADES,    0),

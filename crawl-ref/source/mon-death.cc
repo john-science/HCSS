@@ -428,7 +428,7 @@ static void _create_monster_hide(const item_def &corpse, bool silent)
                                              : "is"); // hide is
                                                       // XXX: refactor
     }
-	
+
 	// after messaging, for better results
     set_ident_flags(item, ISFLAG_IDENT_MASK);
 }
@@ -1645,7 +1645,7 @@ static bool _reap_dead(monster *mons)
 {
 	if(! you.attribute[ATTR_ANIMATE_DEAD])
         return false;
-	
+
     int rd = calc_spell_power(SPELL_ANIMATE_DEAD, true);
     if(!x_chance_in_y(200 + rd, 400))
         return false;
@@ -1833,7 +1833,7 @@ item_def* monster_die(monster* mons, killer_type killer,
         && _monster_avoided_death(mons, killer, killer_index))
     {
         mons->flags &= ~MF_EXPLODE_KILL;
-        return nullptr;	
+        return nullptr;
     }
 
     // If the monster was calling the tide, let go now.
@@ -2151,10 +2151,10 @@ item_def* monster_die(monster* mons, killer_type killer,
     {
         const int sos_bonus = you.attribute[ATTR_SONG_OF_SLAYING];
         // spellpower dependent cap. Not guaranteed the last point, but it will roll for it every kill.
-        if (sos_bonus < 6 + div_rand_round(calc_spell_power(SPELL_SONG_OF_SLAYING, true),20)) 
+        if (sos_bonus < 6 + div_rand_round(calc_spell_power(SPELL_SONG_OF_SLAYING, true),20))
             you.attribute[ATTR_SONG_OF_SLAYING] = sos_bonus + 1;
     }
-	
+
     // Ditto, but for new cigotuvi's embrace
     if (you.attribute[ATTR_BONE_ARMOUR]
         && killer == KILL_YOU
@@ -2169,7 +2169,7 @@ item_def* monster_die(monster* mons, killer_type killer,
             you.redraw_armour_class = true;
         }
     }
-	
+
     // Skeleton bone armour works a little differently
     if (you.species == SP_SKELETON
         && killer == KILL_YOU
@@ -2317,17 +2317,6 @@ item_def* monster_die(monster* mons, killer_type killer,
                 }
             }
 
-			//vampires get pseudo-vamp when killing a corpse-having, xp-giving monster
-			if (leaves_corpse && gives_player_xp && you.species == SP_VAMPIRE && coinflip())
-			{
-				int hp_heal = random2(1 + mons->get_experience_level());
-				if (hp_heal && you.hp < you.hp_max)
-                {
-                    canned_msg(MSG_GAIN_HEALTH);
-                    inc_hp(hp_heal);
-                }
-			}
-			
             if (gives_player_xp && you_worship(GOD_RU) && you.piety < 200
                 && one_chance_in(2))
             {
@@ -2344,7 +2333,7 @@ item_def* monster_die(monster* mons, killer_type killer,
             {
                 bless_follower();
             }
-			
+
             break;
         }
 
@@ -2675,7 +2664,7 @@ item_def* monster_die(monster* mons, killer_type killer,
     const unsigned int monster_xp = _calc_monster_experience(mons, killer,
                                                              killer_index);
 
-				
+
     // If we are in the abyss, need to "give exp" to the abyssal exit timeout
 	// for abyssal durable summons.
     if (!gives_player_xp
@@ -2689,7 +2678,7 @@ item_def* monster_die(monster* mons, killer_type killer,
             || killer == KILL_YOU_CONF
             || pet_kill))
     {
-        int fake_experience = exper_value(*mons);	
+        int fake_experience = exper_value(*mons);
 		const int xp_factor =
         max(min((int)exp_needed(you.experience_level+1, 0) / 7,
                 you.experience_level * 425),
@@ -2701,9 +2690,9 @@ item_def* monster_die(monster* mons, killer_type killer,
         const int new_req = reqd_xp - div_rand_round(fake_experience, xp_factor);
         dprf("reducing xp timer from %d to %d (factor = %d)",
              reqd_xp, new_req, xp_factor);
-        you.props[ABYSS_STAIR_XP_KEY].get_int() = new_req;		
-    }														 
-															 
+        you.props[ABYSS_STAIR_XP_KEY].get_int() = new_req;
+    }
+
     // Player Powered by Death
     if (gives_player_xp && you.get_mutation_level(MUT_POWERED_BY_DEATH)
         && (killer == KILL_YOU
@@ -2831,7 +2820,7 @@ item_def* monster_die(monster* mons, killer_type killer,
     {
         if (corpse && _reaping(mons))
             corpse = nullptr;
-	
+
         if(corpse && _reap_dead(mons))
             corpse = nullptr;
     }
@@ -2856,7 +2845,7 @@ item_def* monster_die(monster* mons, killer_type killer,
     {
         item_was_destroyed(*corpse);
         destroy_item(corpse->index());
-        corpse = nullptr;		
+        corpse = nullptr;
     }
     return corpse;
 }

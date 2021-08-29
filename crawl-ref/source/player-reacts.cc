@@ -681,33 +681,27 @@ static void _decrement_durations()
         you.duration[DUR_TRANSFORMATION] = 1;
     }
 
-    // Vampire bat transformations are permanent (until ended), unless they
-    // are uncancellable (polymorph wand on a full vampire).
-    if (you.species != SP_VAMPIRE || you.form != TRAN_BAT
-        || you.duration[DUR_TRANSFORMATION] <= 5 * BASELINE_DELAY
-        || you.transform_uncancellable)
+    // Vampire bat transformations are permanent (until ended).
+    if (form_can_fly()
+        || form_likes_water() && feat_is_water(grd(you.pos())))
     {
-        if (form_can_fly()
-            || form_likes_water() && feat_is_water(grd(you.pos())))
-        {
-            // Disable emergency flight if it was active
-            you.props.erase(EMERGENCY_FLIGHT_KEY);
-        }
+        // Disable emergency flight if it was active
+        you.props.erase(EMERGENCY_FLIGHT_KEY);
+    }
 
-        if(you.transform_uncancellable || you.form == TRAN_SHADOW)
+    if(you.transform_uncancellable || you.form == TRAN_SHADOW)
+    {
+        if (_decrement_a_duration(DUR_TRANSFORMATION, delay, nullptr, random2(3),
+                            "Your transformation is almost over."))
         {
-            if (_decrement_a_duration(DUR_TRANSFORMATION, delay, nullptr, random2(3),
-                                "Your transformation is almost over."))
-            {
-                untransform();
-            }
+            untransform();
         }
-        if(you.form == TRAN_HYDRA)
-        {
-            const int heads = you.heads();
-            set_hydra_form_heads(1 + calc_spell_power(SPELL_HYDRA_FORM, true) / 10);
-            print_head_change_message(heads, you.heads());
-        }
+    }
+    if(you.form == TRAN_HYDRA)
+    {
+        const int heads = you.heads();
+        set_hydra_form_heads(1 + calc_spell_power(SPELL_HYDRA_FORM, true) / 10);
+        print_head_change_message(heads, you.heads());
     }
 
     if (you.attribute[ATTR_SWIFTNESS] >= 0)

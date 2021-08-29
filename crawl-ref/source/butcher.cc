@@ -102,7 +102,7 @@ void butchery(item_def* specific_corpse)
         return;
     }
 
-    const bool bottle_blood = you.species == SP_VAMPIRE;
+    const bool bottle_blood = false;
     typedef pair<item_def *, int> corpse_quality;
     vector<corpse_quality> corpses;
 
@@ -294,7 +294,7 @@ void turn_corpse_into_chunks(item_def &item, bool bloodspatter)
     {
         item.flags |= ISFLAG_DROPPED;
     }
-    else if (you.species != SP_VAMPIRE)
+    else
         clear_item_pickup_flags(item);
 
     // Initialise timer depending on corpse age

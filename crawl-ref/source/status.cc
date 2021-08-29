@@ -280,7 +280,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_REGENERATION:
-        // ATTR_REGENERATION + some vampire and non-healing stuff
+        // ATTR_REGENERATION + some non-healing stuff
         _describe_regen(inf);
         break;
 
@@ -440,7 +440,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_text = "Sil";
         }
         break;
-		
+
 	case STATUS_SERPENTS_LASH:
         if (you.attribute[ATTR_SERPENTS_LASH] > 0)
         {
@@ -465,7 +465,7 @@ bool fill_status_info(int status, status_info* inf)
                              "accuracy.";
         }
         break;
-		
+
     case STATUS_DEATH_CHANNEL:
         if(you.attribute[ATTR_DEATH_CHANNEL])
         {
@@ -473,7 +473,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_text = "DChan";
         }
         break;
-		
+
     case STATUS_ANIMATE_DEAD:
         if(you.attribute[ATTR_ANIMATE_DEAD])
         {
@@ -491,7 +491,7 @@ bool fill_status_info(int status, status_info* inf)
                            you.attribute[ATTR_SONG_OF_SLAYING]);
         }
         break;
-		
+
     case STATUS_DARKNESS:
         if(you.attribute[ATTR_DARKNESS])
         {
@@ -507,7 +507,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_text = "Abj";
 		}
         break;
-		
+
     case STATUS_OZO_ARMOUR:
         if(you.attribute[ATTR_OZO_ARMOUR])
         {
@@ -752,7 +752,7 @@ bool fill_status_info(int status, status_info* inf)
         }
         break;
     }
-	
+
     case STATUS_INFESTATION:
     {
         if(you.attribute[ATTR_INFESTATION])
@@ -762,7 +762,7 @@ bool fill_status_info(int status, status_info* inf)
         }
         break;
     }
-	
+
     case STATUS_BATTLESPHERE:
     {
         if(you.attribute[ATTR_BATTLESPHERE])
@@ -776,7 +776,7 @@ bool fill_status_info(int status, status_info* inf)
         }
         break;
     }
-	
+
     case STATUS_SHROUD:
     {
         if(you.get_mutation_level(MUT_SLIME_SHROUD)
@@ -786,7 +786,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_colour = GREEN;
         }
     }
-	
+
     case STATUS_PIERCING_SHOT:
     {
         if(you.attribute[ATTR_PIERCING_SHOT])
@@ -799,7 +799,7 @@ bool fill_status_info(int status, status_info* inf)
         }
         break;
     }
-	
+
 	case STATUS_SERVITOR:
     {
         if(you.attribute[ATTR_SERVITOR])
@@ -813,7 +813,7 @@ bool fill_status_info(int status, status_info* inf)
         }
         break;
     }
-	
+
     case STATUS_SPECTRAL_WEAPON:
     {
         if(you.attribute[ATTR_SPECTRAL_WEAPON])
@@ -852,7 +852,7 @@ bool fill_status_info(int status, status_info* inf)
 
         break;
     }
-	
+
     case STATUS_DOOM:
     {
 	    if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
@@ -868,7 +868,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_colour = LIGHTRED;
             inf->light_text = make_stringf("DOOM(%d)", env.turns_on_level < 3000 ? 3000 - env.turns_on_level : 0);
             inf->short_text   = "Turns until doom";
-            inf->long_text    = "Turns until hostile summons spawn";		
+            inf->long_text    = "Turns until hostile summons spawn";
         }
     }
 
@@ -897,13 +897,11 @@ bool fill_status_info(int status, status_info* inf)
 
 static void _describe_hunger(status_info* inf)
 {
-    const bool vamp = (you.species == SP_VAMPIRE);
-
     switch (you.hunger_state)
     {
     case HS_ENGORGED:
-        inf->light_colour = (vamp ? GREEN : LIGHTGREEN);
-        inf->light_text   = (vamp ? "Alive" : "Engorged");
+        inf->light_colour = LIGHTGREEN;
+        inf->light_text   = "Engorged";
         break;
     case HS_VERY_FULL:
         inf->light_colour = GREEN;
@@ -915,25 +913,25 @@ static void _describe_hunger(status_info* inf)
         break;
     case HS_HUNGRY:
         inf->light_colour = YELLOW;
-        inf->light_text   = (vamp ? "Thirsty" : "Hungry");
+        inf->light_text   = "Hungry";
         break;
     case HS_VERY_HUNGRY:
         inf->light_colour = YELLOW;
-        inf->light_text   = (vamp ? "Very Thirsty" : "Very Hungry");
+        inf->light_text   = "Very Hungry";
         break;
     case HS_NEAR_STARVING:
         inf->light_colour = YELLOW;
-        inf->light_text   = (vamp ? "Near Bloodless" : "Near Starving");
+        inf->light_text   = "Near Starving";
         break;
     case HS_STARVING:
         inf->light_colour = LIGHTRED;
-        inf->light_text   = (vamp ? "Bloodless" : "Starving");
-        inf->short_text   = (vamp ? "bloodless" : "starving");
+        inf->light_text   = "Starving";
+        inf->short_text   = "starving";
         break;
     case HS_FAINTING:
         inf->light_colour = RED;
-        inf->light_text   = (vamp ? "Bloodless" : "Fainting");
-        inf->short_text   = (vamp ? "bloodless" : "fainting");
+        inf->light_text   = "Fainting";
+        inf->short_text   = "fainting";
         break;
     case HS_SATIATED: // no status light
     default:
@@ -985,9 +983,6 @@ static void _describe_regen(status_info* inf)
                         || you.duration[DUR_TROGS_HAND] > 0
                         || you.attribute[ATTR_SPELL_REGEN]);
     const bool no_heal = !player_regenerates_hp();
-    // Does vampire hunger level affect regeneration rate significantly?
-    const bool vampmod = !no_heal && !regen && you.species == SP_VAMPIRE
-                         && you.hunger_state != HS_SATIATED;
 
     if (regen)
     {
@@ -1019,18 +1014,6 @@ static void _describe_regen(status_info* inf)
             inf->long_text  = "You are regenerating.";
         }
         _mark_expiring(inf, dur_expiring(DUR_REGENERATION));
-    }
-    else if (vampmod)
-    {
-        if (you.disease)
-            inf->short_text = "recuperating";
-        else
-            inf->short_text = "regenerating";
-
-        if (you.hunger_state < HS_SATIATED)
-            inf->short_text += " slowly";
-        else
-            inf->short_text += " quickly";
     }
 }
 
@@ -1137,8 +1120,7 @@ static void _describe_transform(status_info* inf)
     inf->short_text = form->get_long_name();
     inf->long_text = form->get_description();
 
-    const bool vampbat = (you.species == SP_VAMPIRE && you.form == TRAN_BAT);
-    const bool expire  = dur_expiring(DUR_TRANSFORMATION) && !vampbat;
+    const bool expire  = dur_expiring(DUR_TRANSFORMATION);
 
     inf->light_colour = _dur_colour(GREEN, expire);
     _mark_expiring(inf, expire);

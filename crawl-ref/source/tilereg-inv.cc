@@ -229,14 +229,6 @@ static bool _can_use_item(const item_def &item, bool equipped)
         return false;
 #endif
 
-    // Vampires can drain corpses.
-    if (item.base_type == OBJ_CORPSES)
-    {
-        return you.species == SP_VAMPIRE
-               && item.sub_type != CORPSE_SKELETON
-               && mons_has_blood(item.mon_type);
-    }
-
     if (equipped && item.cursed())
     {
         // Evocable items (e.g. dispater staff) are still evocable when cursed.
@@ -351,16 +343,9 @@ bool InventoryRegion::update_tip_text(string& tip)
             tip += "Chop up";
             tip += " (%)";
             cmd.push_back(CMD_BUTCHER);
-
-            if (you.species == SP_VAMPIRE)
-            {
-                tip += "\n\n[Shift + R-Click] Drink blood (e)";
-                cmd.push_back(CMD_EAT);
-            }
         }
         else if (item.base_type == OBJ_FOOD
-                 && you.undead_state() != US_UNDEAD
-                 && you.species != SP_VAMPIRE)
+                 && you.undead_state() != US_UNDEAD)
         {
             tip += "\n[Shift + R-Click] Eat (e)";
             cmd.push_back(CMD_EAT);
@@ -506,16 +491,8 @@ bool InventoryRegion::update_tip_text(string& tip)
                     _handle_wield_tip(tmp, cmd, "\n[Ctrl + L-Click] ", true);
                 break;
             case OBJ_CORPSES:
-                if (you.species == SP_VAMPIRE)
-                {
-                    tmp += "Drink blood (%)";
-                    cmd.push_back(CMD_EAT);
-                }
-
                 if (wielded)
                 {
-                    if (you.species == SP_VAMPIRE)
-                        tmp += "\n";
                     _handle_wield_tip(tmp, cmd, "\n[Ctrl + L-Click] ", true);
                 }
                 break;
