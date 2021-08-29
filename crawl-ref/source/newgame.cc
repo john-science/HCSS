@@ -194,11 +194,6 @@ static const species_type species_order[] =
     SP_GARGOYLE,       SP_FORMICID,
     // mostly human shape but made of a strange substance
     SP_VINE_STALKER,
-    // celestial species
-    SP_TITAN,        SP_DEMONSPAWN,
-    // undead species
-    SP_MUMMY,
-    SP_VAMPIRE,        SP_SKELETON,
     // not humanoid at all
     SP_OCTOPODE,
     SP_GNOLL,
@@ -981,11 +976,9 @@ static species_group species_groups[] =
         {
             SP_HUMAN,
             SP_KOBOLD,
-            SP_DEMONSPAWN,
             SP_VINE_STALKER,
             SP_FORMICID,
-	        SP_GNOLL,
-            SP_TITAN,
+            SP_GNOLL,
         }
     },
     {
@@ -993,13 +986,10 @@ static species_group species_groups[] =
         coord_def(50, 0),
         20,
         {
-            SP_VAMPIRE,
             SP_NAGA,
             SP_TENGU,
             SP_OCTOPODE,
             SP_DEEP_ELF,
-            SP_MUMMY,
-            SP_SKELETON,
         }
     },
 };
