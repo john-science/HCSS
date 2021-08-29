@@ -188,7 +188,7 @@ static const species_type species_order[] =
     // large species
     SP_TROLL,
     // significantly different body type from human ("monstrous")
-    SP_NAGA,           
+    SP_NAGA,
     SP_MERFOLK,        SP_MINOTAUR,
     SP_TENGU,          SP_BASE_DRACONIAN,
     SP_GARGOYLE,       SP_FORMICID,
@@ -594,7 +594,7 @@ bool choose_game(newgame_def& ng, newgame_def& choice,
     // Set these again, since _mark_fully_random may reset ng.
     ng.name = choice.name;
     ng.type = choice.type;
-	
+
     switch(choice.difficulty)
     {
         case DIFFICULTY_CASUAL:
@@ -656,7 +656,7 @@ static void _set_default_choice(newgame_def& ng, newgame_def& ng_choice,
     const string name = ng_choice.name;
     const game_type type   = ng_choice.type;
     const game_difficulty_level difficulty = ng_choice.difficulty;
-	
+
     ng_choice = defaults;
     ng_choice.name = name;
     ng_choice.type = type;
@@ -1090,20 +1090,15 @@ static job_group jobs_order[] =
         { JOB_ARTIFICER, JOB_WANDERER }
     },
     {
-        "Zealot",
-        coord_def(15, 0), 20,
-        { JOB_BERSERKER, JOB_TORPOR_KNIGHT, JOB_CHAOS_KNIGHT }
-    },
-    {
         "Warrior-mage",
-        coord_def(35, 0), 21,
+        coord_def(15, 0), 21,
         { JOB_SKALD, JOB_TRANSMUTER, JOB_ARCANE_MARKSMAN,
           JOB_ENCHANTER }
     },
     {
         "Mage",
-        coord_def(56, 0), 22,
-        { JOB_WIZARD, JOB_SUMMONER, JOB_NECROMANCER,
+        coord_def(36, 0), 22,
+        { JOB_WIZARD, JOB_SUMMONER,
           JOB_FIRE_ELEMENTALIST, JOB_ICE_ELEMENTALIST,
           JOB_AIR_ELEMENTALIST, JOB_EARTH_ELEMENTALIST}
     }
@@ -1828,7 +1823,7 @@ static bool _choose_weapon(newgame_def& ng, newgame_def& ng_choice,
 static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
                            const newgame_def& defaults)
 {
-	if (ng_choice.difficulty != DIFFICULTY_ASK) 
+	if (ng_choice.difficulty != DIFFICULTY_ASK)
         return true;
 
     PrecisionMenu menu;
@@ -1838,7 +1833,7 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
 				   get_number_of_lines()), "freeform");
 	menu.attach_object(freeform);
 	menu.set_active_object(freeform);
-	
+
     static const int ITEMS_START_Y = 5;
     TextItem* tmp = nullptr;
 	string text;
@@ -1892,7 +1887,7 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
 		freeform->attach_item(tmp);
 		tmp->set_visible(true);
 	}
-	
+
 	BoxMenuHighlighter* highlighter = new BoxMenuHighlighter(&menu);
 	highlighter->init(coord_def(0,0), coord_def(0,0), "highlighter");
 	menu.attach_object(highlighter);
@@ -1908,7 +1903,7 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
 	cprintf("\nSelect the desired difficulty.  ");
 
 	ng_choice.difficulty = DIFFICULTY_ASK;
-	while (ng_choice.difficulty == DIFFICULTY_ASK)	
+	while (ng_choice.difficulty == DIFFICULTY_ASK)
     {
         menu.draw_menu();
 
@@ -1921,7 +1916,7 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
             return true;
             continue;
         }
-		
+
         if (keyn == CK_ESCAPE)
             return false;
 
@@ -1937,9 +1932,9 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
 
 		// Get the stored id from the selection
 		int selection_ID = selection.at(0)->get_id();
-		ng_choice.difficulty = static_cast<game_difficulty_level> (selection_ID);	
+		ng_choice.difficulty = static_cast<game_difficulty_level> (selection_ID);
 	}
-	
+
     return true;
 }
 

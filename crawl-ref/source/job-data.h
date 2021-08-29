@@ -54,27 +54,6 @@ static const map<job_type, job_def> job_data =
       { SK_WEAPON, 1 }, { SK_STEALTH, 1 }, },
 } },
 
-{ JOB_BERSERKER, {
-    "Be", "Berserker",
-    9, -1, 4,
-    { SP_MOUNTAIN_DWARF, SP_MERFOLK, SP_MINOTAUR, SP_GARGOYLE,
-      SP_DEMONSPAWN, },
-    { "animal skin" },
-    WCHOICE_PLAIN,
-    { { SK_FIGHTING, 3 }, { SK_DODGING, 2 }, { SK_WEAPON, 3 }, },
-} },
-
-{ JOB_CHAOS_KNIGHT, {
-    "CK", "Chaos Knight",
-    4, 4, 4,
-    { SP_MOUNTAIN_DWARF, SP_TROLL, SP_MERFOLK, SP_MINOTAUR,
-      SP_BASE_DRACONIAN, SP_DEMONSPAWN, },
-    { "leather armour plus:2" },
-    WCHOICE_PLAIN,
-    { { SK_FIGHTING, 3 }, { SK_ARMOUR, 1 }, { SK_DODGING, 1 },
-      { SK_WEAPON, 3 } },
-} },
-
 { JOB_EARTH_ELEMENTALIST, {
     "EE", "Earth Elementalist",
     0, 7, 5,
@@ -157,17 +136,6 @@ static const map<job_type, job_def> job_data =
       { SK_STEALTH, 2 }, {SK_INVOCATIONS, 3} },
 } },
 
-{ JOB_NECROMANCER, {
-    "Ne", "Necromancer",
-    0, 7, 5,
-    { SP_DEEP_ELF, SP_MOUNTAIN_DWARF, SP_DEMONSPAWN, SP_MUMMY,
-      SP_VAMPIRE, },
-    { "robe", "book of Necromancy" },
-    WCHOICE_NONE,
-    { { SK_NECROMANCY, 5 }, { SK_DODGING, 2 },
-      { SK_STEALTH, 2 }, },
-} },
-
 { JOB_SKALD, {
     "Sk", "Skald",
     4, 4, 4,
@@ -187,16 +155,6 @@ static const map<job_type, job_def> job_data =
     WCHOICE_NONE,
     { { SK_SUMMONINGS, 5 }, { SK_DODGING, 2 },
       { SK_STEALTH, 2 }, },
-} },
-
-{ JOB_TORPOR_KNIGHT, {
-    "TK", "Torpor Knight",
-    4, 4, 4,
-    { SP_MINOTAUR, SP_FORMICID, SP_MOUNTAIN_DWARF, SP_DEMONSPAWN, },
-    { "plate armour ego:ponderousness" },
-    WCHOICE_PLAIN,
-    { { SK_FIGHTING, 2 }, { SK_ARMOUR, 1 }, { SK_DODGING, 1 },
-      { SK_WEAPON, 3 }, { SK_INVOCATIONS, 2 }, },
 } },
 
 { JOB_TRANSMUTER, {
@@ -236,15 +194,6 @@ static const map<job_type, job_def> job_data =
 #if TAG_MAJOR_VERSION == 34
 { JOB_CONJURER, {
     "Cj", "Conjurer",
-    0, 0, 0,
-    { },
-    { },
-    WCHOICE_NONE,
-    { },
-} },
-
-{ JOB_DEATH_KNIGHT, {
-    "DK", "Death Knight",
     0, 0, 0,
     { },
     { },
@@ -315,13 +264,5 @@ static const map<job_type, job_def> job_data =
     { },
 } },
 
-{ JOB_ABYSSAL_KNIGHT, {
-    "AK", "Abyssal Knight",
-    0, 0, 0,
-    { },
-    { },
-    WCHOICE_NONE,
-    { },
-} },
 #endif
 };
