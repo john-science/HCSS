@@ -178,7 +178,6 @@ static void _slime_connectivity_fixup();
 static void _dgn_postprocess_level();
 static void _calc_density();
 static void _mark_solid_squares();
-static void _fixup_holypan();
 
 //////////////////////////////////////////////////////////////////////////
 // Static data
@@ -422,12 +421,6 @@ static bool _build_level_vetoable(bool enable_random_maps,
 
     check_map_validity();
     _count_gold();
-	
-	//fix up holypan stairs after checking validity, to trickeroni the coderoni
-	if (you.uniq_map_tags.count("uniq_holypan") && player_in_branch(BRANCH_PANDEMONIUM))
-	{
-        _fixup_holypan();
-	}
 
     if (!_you_vault_list.empty())
     {
@@ -456,22 +449,6 @@ static void _builder_assertions()
                     dungeon_feature_name(grd(*ri)));
             }
 #endif
-}
-
-void upstairs_removal()
-{
-    for (rectangle_iterator ri(0); ri; ++ri)
-	{
-		if (grd(*ri) == DNGN_STONE_STAIRS_UP_I || grd(*ri) == DNGN_STONE_STAIRS_UP_II
-        || grd(*ri) == DNGN_STONE_STAIRS_UP_III || grd(*ri) == DNGN_ESCAPE_HATCH_UP 
-        || grd(*ri) == DNGN_EXIT_DEPTHS || grd(*ri) == DNGN_EXIT_VAULTS 
-        || grd(*ri) == DNGN_EXIT_SLIME || grd(*ri) == DNGN_EXIT_SHOALS
-        || grd(*ri) == DNGN_EXIT_SWAMP || grd(*ri) == DNGN_EXIT_SNAKE
-        || grd(*ri) == DNGN_EXIT_SPIDER || grd(*ri) == DNGN_EXIT_ORC
-		|| grd(*ri) == DNGN_EXIT_ZOT || grd(*ri) == DNGN_EXIT_HELL
-		|| (you.depth == 1 && grd(*ri) == DNGN_ENTER_HELL))
-            grd(*ri) = DNGN_FLOOR;
-	}      
 }
 
 void bazaar_postlevel_shops()
@@ -507,7 +484,7 @@ void bazaar_postlevel_shops()
             cell.clear_monster();
 #ifdef USE_TILE
             tile_reset_fg(c);
-#endif            
+#endif
         }
     }
 }
@@ -518,8 +495,8 @@ void map_stairs_down()
     for (rectangle_iterator ri(0); ri; ++ri)
     {
         if (grd(*ri) == DNGN_STONE_STAIRS_DOWN_I || grd(*ri) == DNGN_STONE_STAIRS_DOWN_II
-        || grd(*ri) == DNGN_STONE_STAIRS_DOWN_III || grd(*ri) == DNGN_ESCAPE_HATCH_DOWN 
-        || grd(*ri) == DNGN_ENTER_DEPTHS || grd(*ri) == DNGN_ENTER_VAULTS 
+        || grd(*ri) == DNGN_STONE_STAIRS_DOWN_III || grd(*ri) == DNGN_ESCAPE_HATCH_DOWN
+        || grd(*ri) == DNGN_ENTER_DEPTHS || grd(*ri) == DNGN_ENTER_VAULTS
         || grd(*ri) == DNGN_ENTER_SLIME || grd(*ri) == DNGN_ENTER_SHOALS
         || grd(*ri) == DNGN_ENTER_SWAMP || grd(*ri) == DNGN_ENTER_SNAKE
         || grd(*ri) == DNGN_ENTER_SPIDER || grd(*ri) == DNGN_ENTER_ORC
@@ -532,10 +509,10 @@ void map_stairs_down()
             set_terrain_mapped(*ri);
             mapped++;
         }
-    }   
-    if (mapped > 0)	
+    }
+    if (mapped > 0)
         mprf("You sense %s down.", mapped >1 ? "stairs" : "a way");
-} 
+}
 
 void zap_close_monsters()
 {
@@ -552,7 +529,7 @@ void zap_close_monsters()
 
             // Do a hard reset so the monster's items will be discarded.
             mon->flags |= MF_HARD_RESET;
-			
+
             //make sure the twins remove each other regardless of distance
             if (mon->type == MONS_DUVESSA || mon->type == MONS_DOWAN)
                 for (radius_iterator rj(you.pos(), LOS_NONE); rj; ++rj)
@@ -565,7 +542,7 @@ void zap_close_monsters()
                         monster_die(monj, KILL_DISMISSED, NON_MONSTER, true, true);
                     }
 				}
-			
+
             // Do a silent, wizard-mode monster_die() just to be extra sure the
             // player sees nothing.
             monster_die(mon, KILL_DISMISSED, NON_MONSTER, true, true);
@@ -1017,6 +994,18 @@ int dgn_count_disconnected_zones(bool choose_stairless,
                                        fill);
 }
 
+static void _fixup_hell_stairs()
+{
+    for (rectangle_iterator ri(1); ri; ++ri)
+    {
+        if (feat_is_stone_stair_up(grd(*ri))
+            || grd(*ri) == DNGN_ESCAPE_HATCH_UP)
+        {
+            _set_grd(*ri, DNGN_ENTER_HELL);
+        }
+    }
+}
+
 static void _fixup_pandemonium_stairs()
 {
     for (rectangle_iterator ri(1); ri; ++ri)
@@ -1025,18 +1014,6 @@ static void _fixup_pandemonium_stairs()
             || grd(*ri) == DNGN_ESCAPE_HATCH_UP)
         {
             _set_grd(*ri, DNGN_TRANSIT_PANDEMONIUM);
-        }
-    }
-}
-
-static void _fixup_holypan()
-{
-    for (rectangle_iterator ri(1); ri; ++ri)
-    {
-        if (feat_is_stone_stair_up(grd(*ri))
-            || grd(*ri) == DNGN_TRANSIT_PANDEMONIUM)
-        {
-            _set_grd(*ri, DNGN_EXIT_PANDEMONIUM);
         }
     }
 }
@@ -1198,8 +1175,46 @@ static bool _has_connected_stone_stairs_from(const coord_def &c)
     return where.x || !ff.did_leave_vault();
 }
 
+static coord_def _find_level_feature(int feat)
+{
+    for (rectangle_iterator ri(1); ri; ++ri)
+    {
+        if (grd(*ri) == feat)
+            return *ri;
+    }
+
+    return coord_def(0, 0);
+}
+
+static bool _has_connected_downstairs_from(const coord_def &c)
+{
+    flood_find<feature_grid, coord_predicate> ff(env.grid, in_bounds);
+    ff.add_feat(DNGN_STONE_STAIRS_DOWN_I);
+    ff.add_feat(DNGN_STONE_STAIRS_DOWN_II);
+    ff.add_feat(DNGN_STONE_STAIRS_DOWN_III);
+    ff.add_feat(DNGN_ESCAPE_HATCH_DOWN);
+
+    coord_def where = ff.find_first_from(c, env.level_map_mask);
+    return where.x || !ff.did_leave_vault();
+}
+
+static bool _is_level_stair_connected(dungeon_feature_type feat)
+{
+    coord_def up = _find_level_feature(feat);
+    if (up.x && up.y)
+        return _has_connected_downstairs_from(up);
+
+    return false;
+}
+
 static bool _valid_dungeon_level()
 {
+    // D:1 only.
+    // Also, what's the point of this check?  Regular connectivity should
+    // do that already.
+    if (player_in_branch(BRANCH_DUNGEON) && you.depth == 1)
+        return _is_level_stair_connected(branches[BRANCH_DUNGEON].exit_stairs);
+
     return true;
 }
 
@@ -1341,7 +1356,7 @@ static int _num_mons_wanted()
         return 0;
 
     int mon_wanted = roll_dice(5, 7);
-	
+
     if (player_in_branch(BRANCH_VESTIBULE))
     {
 		mon_wanted = roll_dice(3, 7);
@@ -1460,7 +1475,7 @@ static void _fixup_branch_stairs()
     const bool bottom = at_branch_bottom();
 
     const dungeon_feature_type exit =
-        root ? DNGN_STONE_ARCH
+        root ? DNGN_EXIT_DUNGEON
              : branch.exit_stairs;
     const dungeon_feature_type escape =
         branch.escape_feature == NUM_FEATURES ? DNGN_ESCAPE_HATCH_UP :
@@ -1905,12 +1920,12 @@ static bool _add_connecting_escape_hatches()
 {
     // For any regions without a down stone stair case, add an
     // escape hatch. This will always allow (downward) progress.
-
     if (branches[you.where_are_you].branch_flags & BFLAG_ISLANDED)
         return true;
 
-    // Veto non-abyss levels if they are disconnected.
-    if (!player_in_branch(BRANCH_ABYSS))
+    // Veto D:1 or Pan if there are disconnected areas.
+    if (player_in_branch(BRANCH_PANDEMONIUM)
+        || (player_in_branch(BRANCH_DUNGEON) && you.depth == 1))
     {
         // Allow == 0 in case the entire level is one opaque vault.
         return dgn_count_disconnected_zones(false) <= 1;
@@ -2405,6 +2420,9 @@ static void _build_dungeon_level(dungeon_feature_type dest_stairs_type)
     {
         _prepare_water();
     }
+
+    if (player_in_hell())
+        _fixup_hell_stairs();
 }
 
 static void _dgn_set_floor_colours()
@@ -2552,6 +2570,7 @@ static bool _pan_level()
     const char *pandemon_level_names[] =
         { "mnoleg", "lom_lobon", "cerebov", "gloorx_vloq", };
     int which_demon = -1;
+    PlaceInfo &place_info = you.get_place_info();
     bool all_demons_generated = true;
 
     if (you.props.exists("force_map"))
@@ -2573,8 +2592,11 @@ static bool _pan_level()
         }
     }
 
-    // Unique pan lords come to mess you up immediately. Get wrecked idiot.
-    if (!all_demons_generated)
+    // Unique pan lords become more common as you travel through pandemonium.
+    // On average it takes 27 levels to see all four, and you're likely to see
+    // your first one after about 10 levels.
+    if (x_chance_in_y(1 + place_info.levels_seen, 5 + place_info.levels_seen)
+        && !all_demons_generated)
     {
         do
         {
@@ -2593,9 +2615,8 @@ static bool _pan_level()
     }
     else
     {
-        vault = random_map_for_tag("holy_pan", false,
-                                   false, MB_FALSE);
-	}
+        vault = random_map_in_depth(level_id::current(), false, MB_FALSE);
+    }
 
     // Every Pan level should have a primary vault.
     ASSERT(vault);
@@ -2641,7 +2662,7 @@ static bool _builder_by_type()
     {
         return _bazaar_level();
     }
-    else 
+    else
         return _builder_normal();
 }
 
@@ -2666,7 +2687,7 @@ static const map_def *_dgn_random_map_for_place(bool minivault)
             // Fall through and use a different Temple map instead.
         }
     }
-	
+
     if(player_in_branch(BRANCH_BAZAAR))
     {
         const map_def *vault = random_map_for_tag("bazaar", false, false, MB_FALSE);
@@ -5679,11 +5700,11 @@ object_class_type item_in_shop(shop_type shop_type)
 
     case SHOP_BOOK:
         return OBJ_BOOKS;
-		
+
 #if TAG_MAJOR_VERSION == 34
 	//food shops shouldn't generate, but make extra sure to not generate food just in case
 	case SHOP_FOOD:
-        return OBJ_RANDOM; 
+        return OBJ_RANDOM;
 #endif
 
     case SHOP_DISTILLERY:

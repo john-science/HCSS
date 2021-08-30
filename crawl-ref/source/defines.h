@@ -178,11 +178,11 @@ const int AGILITY_BONUS = 5;
 #define TORNADO_RADIUS 5
 
 #define VAULTS_ENTRY_RUNES 0
-#define ZOT_ENTRY_RUNES 0
+#define ZOT_ENTRY_RUNES 3
 #define ZIG_ENTRY_RUNES 0
 
 // Size of unique_items in player class
-#define MAX_UNRANDARTS 150
+#define MAX_UNRANDARTS 250
 
 // Haste/slow boost.
 #define haste_mul(x) div_rand_round((x) * 3, 2)

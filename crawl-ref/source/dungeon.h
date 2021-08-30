@@ -289,7 +289,6 @@ int count_feature_in_box(int x0, int y0, int x1, int y1,
 bool door_vetoed(const coord_def pos);
 
 void fixup_misplaced_items();
-void upstairs_removal();
 void bazaar_postlevel_shops();
 void map_stairs_down();
 void zap_close_monsters();

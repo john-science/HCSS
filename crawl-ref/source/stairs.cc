@@ -433,23 +433,6 @@ static level_id _travel_destination(const dungeon_feature_type how,
     // it might prevent the transition itself.
     if (going_up && _fall_down_stairs(how, true))
         return dest;
-	
-    //backup check to make sure people don't get into pan a second time and hit an assert
-    if (how == DNGN_ENTER_PANDEMONIUM)
-    {
-        if (you.uniq_map_tags.count("uniq_holypan"))
-        {
-            mpr("The lords of Pandemonium reject your second attempt to enter their realm!");
-            return dest;
-        }
-    }
-	
-    //can't enter Hell without the orb
-	if (how == DNGN_ENTER_HELL && !player_has_orb())
-    {
-        mpr("The gates of Hell are locked tight! You need the Orb of Zot to enter.");
-        return dest;
-    }
 
     if (shaft)
     {
@@ -732,7 +715,7 @@ void floor_transition(dungeon_feature_type how,
         mpr("Beware, you cannot shaft yourself on this level.");
 
     load_level(how, LOAD_ENTER_LEVEL, old_level);
-	
+
     // This should maybe go in load_level?
     if (you.where_are_you == BRANCH_ABYSS)
         generate_random_blood_spatter_on_level();
@@ -795,7 +778,7 @@ void take_stairs(dungeon_feature_type force_stair, bool going_up,
 
     if (!whither.is_valid() && !(old_feat == DNGN_EXIT_DUNGEON && going_up))
         return;
-	
+
     if(old_feat == DNGN_ESCAPE_HATCH_DOWN)
         mutate(RANDOM_MUTATION, "mutagenic hatch");
 
@@ -926,7 +909,7 @@ level_id stair_destination(dungeon_feature_type feat, const string &dst,
         if (for_real && !player_in_hell())
             brentry[BRANCH_VESTIBULE] = level_id::current();
         return level_id(BRANCH_VESTIBULE);
-		
+
     case DNGN_ENTER_BAZAAR:
         if(for_real)
             brentry[BRANCH_BAZAAR] = level_id::current();
@@ -977,11 +960,10 @@ void down_stairs(dungeon_feature_type force_stair, bool force_known_shaft,
                  bool wizard)
 {
     take_stairs(force_stair, false, force_known_shaft, wizard);
-	upstairs_removal();
     if (player_in_branch(BRANCH_DUNGEON))
         zap_close_monsters();
     if (player_in_branch(BRANCH_BAZAAR))
-        bazaar_postlevel_shops();      
+        bazaar_postlevel_shops();
 }
 
 static bool _any_glowing_mold()

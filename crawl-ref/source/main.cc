@@ -432,7 +432,7 @@ NORETURN static void _launch_game()
                     << species_name(you.species)
                     << " " << get_job_name(you.char_class) << ".</yellow>"
                     << endl;
-					
+
 	    msg::stream << "<yellow>You are playing on ";
         switch(crawl_state.difficulty)
         {
@@ -1477,7 +1477,7 @@ static void _input()
 
         crawl_state.waiting_for_command = true;
         c_input_reset(true);
-		
+
         // Reset "last action was a destructive spell" flag.
         if (you.props.exists(LAST_ACTION_DESTRUCTIVE_KEY))
             you.props.erase(LAST_ACTION_DESTRUCTIVE_KEY);
@@ -1625,16 +1625,6 @@ static bool _can_take_stairs(dungeon_feature_type ftype, bool down,
             return false;
         }
     }
-	
-	//don't allow re-entry to pandemonium after pan has been completed
-    if (ftype == DNGN_ENTER_PANDEMONIUM)
-    {
-        if (you.uniq_map_tags.count("uniq_holypan"))
-        {
-            mpr("The lords of Pandemonium reject your second attempt to enter their realm!");
-            return false;
-        }
-    }
 
     // Rune locks
     int min_runes = 0;
@@ -1675,7 +1665,6 @@ static bool _prompt_dangerous_portal(dungeon_feature_type ftype)
     switch (ftype)
     {
     case DNGN_ENTER_PANDEMONIUM:
-        mpr("You will only be able to enter Pandemonium once."); //fall through to the prompt.
     case DNGN_ENTER_ABYSS:
         return yesno("If you enter this portal you might not be able to return "
                      "immediately. Continue?", false, 'n');
@@ -1696,7 +1685,7 @@ static bool _prompt_skippable_branch(dungeon_feature_type ftype)
     {
     case DNGN_ENTER_VAULTS:
         if (player_in_branch(BRANCH_DUNGEON))
-            return yesno("This shortcut to the Vaults bypasses a rune. " 
+            return yesno("This shortcut to the Vaults bypasses a rune. "
                          "Enter anyway?", false, 'n');
         else return true;
     case DNGN_ENTER_SLIME:
@@ -1774,7 +1763,7 @@ static bool _prompt_stairs(dungeon_feature_type ygrd, bool down, bool shaft)
             return false;
         }
     }
-	
+
     // Prompt if the player is skipping branches.
     if (!_prompt_skippable_branch(ygrd))
     {
@@ -1805,7 +1794,7 @@ static bool _prompt_stairs(dungeon_feature_type ygrd, bool down, bool shaft)
             return false;
         }
     }
-	
+
     if (feat_is_escape_hatch(ygrd))
             return yesno("Really go through this mutagenic shaft?", true, 'n');
 
@@ -2577,7 +2566,7 @@ void world_reacts()
         player_reacts_to_monsters();
 
     wu_jian_end_of_turn_effects();
-	
+
 	viewwindow();
 
     if (you.cannot_act() && any_messages()
@@ -3209,7 +3198,7 @@ static void _move_player(coord_def move)
         you.turn_is_over = true;
         return;
     }
-	
+
     const coord_def initial_position = you.pos();
 
     // When confused, sometimes make a random move.
@@ -3402,7 +3391,7 @@ static void _move_player(coord_def move)
                 mpr("You cannot attack while swimming in deep water!");
                 return;
             }
-			
+
 			//You can't attack while in lava either
 			if (grd(you.pos()) == DNGN_LAVA
                 && !player_likes_lava() && !you.airborne())
@@ -3410,7 +3399,7 @@ static void _move_player(coord_def move)
                 mpr("You cannot attack while walking through lava!");
                 return;
             }
-			
+
 			// Don't allow the player to freely locate invisible monsters
             // with confirmation prompts.
             if (!you.can_see(*targ_monst)
@@ -3444,7 +3433,7 @@ static void _move_player(coord_def move)
             return;
         }
     }
-	
+
     const bool running = you_are_delayed() && current_delay()->is_run();
 
     if (!attacking && (targ_pass || can_wall_jump)
@@ -3552,7 +3541,7 @@ static void _move_player(coord_def move)
 
 	    // Serpent's Lash = 1 means half of the wall jump time is refunded, so the modifier is 2 * 1/2 = 1;
         int wall_jump_modifier = (did_wall_jump && you.attribute[ATTR_SERPENTS_LASH] != 1) ? 2 : 1;
-	
+
         you.time_taken *= wall_jump_modifier * player_movement_speed();
         you.time_taken = div_rand_round(you.time_taken, 10);
         you.time_taken += additional_time_taken;
@@ -3570,7 +3559,7 @@ static void _move_player(coord_def move)
         you.turn_is_over = true;
         request_autopickup();
     }
-	
+
     if (!attacking && !targ_pass && !can_wall_jump && !running
         && moving && !beholder && !fmonger
         && Options.wall_jump_move
@@ -3647,7 +3636,7 @@ static void _move_player(coord_def move)
     {
         did_god_conduct(DID_HASTY, 1, true);
     }
-	
+
     if (you_worship(GOD_WU_JIAN) && !attacking)
         wu_jian_post_move_effects(did_wall_jump, initial_position);
 }

@@ -217,7 +217,7 @@ int attack::calc_to_hit(bool random)
 
         // hit roll
         mhit = maybe_random2(mhit, random);
-		
+
 		//inaccuracy from sac eye
 		mhit -= 5 * attacker->inaccuracy();
     }
@@ -463,7 +463,7 @@ bool attack::distortion_affects_defender()
 	{
         return false;
 	}
-	
+
     switch (choice)
     {
     case SMALL_DMG:
@@ -1372,7 +1372,7 @@ int attack::calc_damage()
 
         damage = max(0, damage);
         set_attack_verb(damage);
-		
+
         return damage;
     }
 
@@ -1586,7 +1586,7 @@ bool attack::apply_damage_brand(const char *what)
     if (!damage_done
         && (brand == SPWPN_FLAMING || brand == SPWPN_FREEZING
             || brand == SPWPN_HOLY_WRATH || brand == SPWPN_ANTIMAGIC
-            || brand == SPWPN_VORPAL || brand == SPWPN_VAMPIRISM 
+            || brand == SPWPN_VORPAL || brand == SPWPN_VAMPIRISM
             || brand == SPWPN_DEVASTATION))
     {
         // These brands require some regular damage to function.
@@ -1604,7 +1604,7 @@ bool attack::apply_damage_brand(const char *what)
         calc_elemental_brand_damage(BEAM_COLD, "freeze", what);
         defender->expose_to_element(BEAM_COLD, 2);
         break;
-		
+
     case SPWPN_DEVASTATION:
     {
         special_damage = 1 + div_rand_round(random2(damage_done * 15), 10);
@@ -1638,8 +1638,8 @@ bool attack::apply_damage_brand(const char *what)
             break;
         else if (one_chance_in(3))
         {
-			special_damage = 5 + random2(13);
-			std::string d = std::to_string(special_damage);
+            special_damage = 5 + random2(13);
+            std::string d = std::to_string(special_damage);
             special_damage_message =
                 defender->is_player()?
                    "You are electrocuted (" + d + ")!"

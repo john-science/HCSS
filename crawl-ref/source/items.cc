@@ -1585,7 +1585,7 @@ void merge_item_stacks(const item_def &source, item_def &dest, int quant)
         quant = source.quantity;
 
     ASSERT_RANGE(quant, 0 + 1, source.quantity + 1);
-	
+
 	if (source.base_type == OBJ_WANDS && dest.base_type == OBJ_WANDS)
     {
 		if(source.charges >0)
@@ -1823,7 +1823,7 @@ static void _get_book(const item_def& it, bool quiet)
     bool newspells = false;
     bool useless = false;
     if (!quiet)
-        mprf("You pick up %s and begin reading...", 
+        mprf("You pick up %s and begin reading...",
              it.name(DESC_A).c_str());
     for (spell_type& st : spells_in_book(it))
     {
@@ -1930,7 +1930,7 @@ static void _get_orb(const item_def &it, bool quiet)
         you.increase_duration(DUR_TELEPORT, 5 + random2(5));
     }
 
-    start_orb_run(CHAPTER_ESCAPING, "The gates of Hell open wide to receive you!");
+    start_orb_run(CHAPTER_ESCAPING, "Now all you have to do is get back out of the dungeon!");
 }
 
 /**
@@ -1959,15 +1959,15 @@ static bool _merge_stackable_item_into_inv(const item_def &it, int quant_got,
         {
             you.inv[inv_slot].inscription = it.inscription;
         }
-		
+
 		int quant = quant_got;
 		if (it.base_type == OBJ_WANDS)
 		{
 			quant = it.charges;
 		}
-		
+
         merge_item_stacks(it, you.inv[inv_slot], quant_got);
-		
+
 		if (it.base_type != OBJ_WANDS && !is_deck(it))
 		{
 			inc_inv_item_quantity(inv_slot, quant_got);
@@ -1976,7 +1976,7 @@ static bool _merge_stackable_item_into_inv(const item_def &it, int quant_got,
 		{
 			you.inv[inv_slot].used_count = -cards_in_deck(you.inv[inv_slot]);
 		}
-		
+
 		you.last_pickup[inv_slot] = quant_got;
 
         if (!quiet)
@@ -2160,7 +2160,7 @@ static bool _merge_items_into_inv(item_def &it, int quant_got,
         _get_rune(it, quiet);
         return true;
     }
-	
+
 	// Books are also massless.
     if (it.base_type == OBJ_BOOKS)
     {
@@ -2281,10 +2281,10 @@ bool move_item_to_grid(int *const obj, const coord_def& p, bool silent)
                 // Add quantity to item already here, and dispose
                 // of obj, while returning the found item. -- bwr
                 merge_item_stacks(item, *si);
-				
+
 				if (item.base_type != OBJ_WANDS && !is_deck(item))
 					inc_mitm_item_quantity(si->index(), item.quantity);
-				
+
                 destroy_item(ob);
                 ob = si->index();
                 _gozag_move_gold_to_top(p);
@@ -2596,7 +2596,7 @@ bool drop_item(int item_dropped, int quant_drop)
 	bool deck = false;
 	if(is_deck(item))
 		deck = true;
-	
+
     if (!copy_item_to_grid(item, you.pos(), quant_drop, true, true))
     {
         mpr("Too many items on this level, not dropping the item.");
@@ -2619,12 +2619,12 @@ bool drop_item(int item_dropped, int quant_drop)
     }
 
     dec_inv_item_quantity(item_dropped, quant_drop);
-	
+
 	if (deck)
 	{
 		mprf("Nemelex Xobeh reclaims the deck.");
 	}
-	
+
     you.turn_is_over = true;
 
     you.last_pickup.erase(item_dropped);
@@ -2794,7 +2794,7 @@ static void _autoinscribe_item(item_def& item)
     item.inscription.clear();
 
     string iname = _autopickup_item_name(item);
-	
+
     for (const auto &ai_entry : Options.autoinscriptions)
     {
         if (ai_entry.first.matches(iname))
@@ -2820,7 +2820,7 @@ static void _autoinscribe_item(item_def& item)
         else
             item.inscription = old_inscription + ", " + item.inscription;
     }
-	
+
 	if (is_deck(item))
 	{
 		item.inscription += "!d";
@@ -4894,7 +4894,7 @@ item_info get_item_info(const item_def& item)
             }
             ii.props[CARD_KEY] = info_cards;
             ii.props[CARD_FLAG_KEY] = info_card_flags;
-			
+
 			ii.used_count = -cards_in_deck(item);
         }
         break;

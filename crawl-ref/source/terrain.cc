@@ -247,7 +247,7 @@ bool feat_is_stair(dungeon_feature_type gridc)
  */
 bool feat_is_travelable_stair(dungeon_feature_type feat)
 {
-    return feat_is_stone_stair_down(feat)
+    return feat_is_stone_stair(feat)
            || feat_is_escape_hatch(feat)
            || feat_is_branch_entrance(feat)
            || feat_is_branch_exit(feat)
@@ -260,7 +260,8 @@ bool feat_is_travelable_stair(dungeon_feature_type feat)
  */
 bool feat_is_escape_hatch(dungeon_feature_type feat)
 {
-    return feat == DNGN_ESCAPE_HATCH_DOWN;
+    return feat == DNGN_ESCAPE_HATCH_DOWN
+           || feat == DNGN_ESCAPE_HATCH_UP;
 }
 
 /** Is this feature a gate?
@@ -312,7 +313,8 @@ command_type feat_stair_direction(dungeon_feature_type feat)
     {
         return CMD_GO_DOWNSTAIRS;
     }
-    if (feat_is_portal_exit(feat) || feat == DNGN_EXIT_DUNGEON)
+    if (feat_is_portal_exit(feat)
+        || feat_is_branch_exit(feat))
     {
         return CMD_GO_UPSTAIRS;
     }
@@ -322,6 +324,10 @@ command_type feat_stair_direction(dungeon_feature_type feat)
     case DNGN_ENTER_HELL:
         return player_in_hell() ? CMD_GO_UPSTAIRS : CMD_GO_DOWNSTAIRS;
 
+    case DNGN_STONE_STAIRS_UP_I:
+    case DNGN_STONE_STAIRS_UP_II:
+    case DNGN_STONE_STAIRS_UP_III:
+    case DNGN_ESCAPE_HATCH_UP:
     case DNGN_ENTER_SHOP:
     case DNGN_EXIT_HELL:
     case DNGN_EXIT_BAZAAR:
@@ -637,7 +643,7 @@ bool feat_is_mimicable(dungeon_feature_type feat, bool strict)
     {
         return true;
     }
-	
+
     if (feat_is_portal_entrance(feat))
         return true;
 
@@ -1916,10 +1922,6 @@ void set_terrain_changed(const coord_def p)
 bool is_boring_terrain(dungeon_feature_type feat)
 {
     if (!is_notable_terrain(feat))
-        return true;
-	
-    if(feat == DNGN_STONE_STAIRS_UP_I || feat == DNGN_STONE_STAIRS_UP_II
-       || feat == DNGN_STONE_STAIRS_UP_III || feat == DNGN_ESCAPE_HATCH_UP)
         return true;
 
     // Altars in the temple are boring.

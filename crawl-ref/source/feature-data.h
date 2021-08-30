@@ -289,10 +289,10 @@ STONE_STAIRS_DOWN(III, iii),
 
 #define STONE_STAIRS_UP(num, num2)\
 {\
-    DNGN_STONE_STAIRS_UP_##num, "floor", "stone_stairs_up_"#num2,\
-    DCHAR_FLOOR, DCHAR_FLOOR_MAGIC,\
-    COLOUR_IS(ETC_FLOOR),\
-    FFT_NONE, MF_FLOOR,\
+    DNGN_STONE_STAIRS_UP_##num, "stone staircase leading up", "stone_stairs_up_"#num2,\
+    DCHAR_STAIRS_UP, NUM_DCHAR_TYPES,\
+    GREEN, GREEN, GREEN, WHITE, WHITE,\
+    FFT_NONE, MF_STAIR_UP,\
 }
 
 STONE_STAIRS_UP(I, i),
@@ -307,10 +307,10 @@ STONE_STAIRS_UP(III, iii),
 },
 
 {
-    DNGN_ESCAPE_HATCH_UP, "floor", "escape_hatch_up",
-    DCHAR_FLOOR, DCHAR_FLOOR_MAGIC,
-    COLOUR_IS(ETC_FLOOR),
-    FFT_NONE, MF_FLOOR,
+    DNGN_ESCAPE_HATCH_UP, "escape hatch in the ceiling", "escape_hatch_up",
+    DCHAR_STAIRS_UP, NUM_DCHAR_TYPES,
+    COLOUR_AND_MAP(BROWN),
+    FFT_NONE, MF_STAIR_UP,
 },
 
 {
