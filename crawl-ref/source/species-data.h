@@ -405,7 +405,7 @@ static const map<species_type, species_def> species_data =
     { { MUT_TOUGH_SKIN, 1, 1 }, },
     {},
     {},
-    { JOB_BERSERKER, JOB_ARCANE_MARKSMAN, JOB_WIZARD,
+    { JOB_HUNTER, JOB_ARCANE_MARKSMAN, JOB_WIZARD,
       JOB_FIRE_ELEMENTALIST },
     { SK_MACES_FLAILS },
 } },

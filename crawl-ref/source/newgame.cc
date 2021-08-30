@@ -186,7 +186,7 @@ static const species_type species_order[] =
     // small species
     SP_KOBOLD,		   SP_SPRIGGAN,
     // large species
-    SP_TROLL,
+    SP_OGRE, SP_TROLL,
     // significantly different body type from human ("monstrous")
     SP_NAGA,
     SP_MERFOLK,        SP_MINOTAUR,
@@ -976,6 +976,7 @@ static species_group species_groups[] =
         {
             SP_HUMAN,
             SP_KOBOLD,
+            SP_OGRE,
             SP_VINE_STALKER,
             SP_FORMICID,
             SP_GNOLL,
