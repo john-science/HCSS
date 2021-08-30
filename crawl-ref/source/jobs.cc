@@ -76,7 +76,7 @@ void job_stat_init(job_type job)
 
     if (job == JOB_WANDERER)
     {
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 14; i++)
         {
             const stat_type stat = static_cast<stat_type>(random2(NUM_STATS));
             // Stats that are already high will be chosen half as often.

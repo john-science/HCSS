@@ -641,8 +641,6 @@ void create_wanderer()
 
     int util_size = ARRAYSZ(util_skills);
 
-    // Maybe too many skill levels, given the level 1 floor on skill
-    // levels for wanderers?
     int primary_skill_levels   = 5;
     int secondary_skill_levels = 3;
 
