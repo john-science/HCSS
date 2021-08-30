@@ -118,7 +118,6 @@ void init_hints()
     Hints.hints_spell_counter   = 0;
     Hints.hints_throw_counter   = 0;
     Hints.hints_melee_counter   = 0;
-    Hints.hints_berserk_counter = 0;
 
     // Store whether explore, stash search or travelling was used.
     // XXX: Also not stored across save games.
@@ -140,9 +139,6 @@ static void _print_hints_menu(hints_types type)
 
     switch (type)
     {
-    case HINT_BERSERK_CHAR:
-        strcpy(desc, "(Melee oriented character with divine support)");
-        break;
     case HINT_MAGIC_CHAR:
         strcpy(desc, "(Magic oriented character)");
         break;
@@ -240,8 +236,6 @@ static species_type _get_hints_species(unsigned int type)
 {
     switch (type)
     {
-    case HINT_BERSERK_CHAR:
-        return SP_MINOTAUR;
     case HINT_MAGIC_CHAR:
         return SP_DEEP_ELF;
     case HINT_RANGER_CHAR:
@@ -256,8 +250,6 @@ static job_type _get_hints_job(unsigned int type)
 {
     switch (type)
     {
-    case HINT_BERSERK_CHAR:
-        return JOB_BERSERKER;
     case HINT_MAGIC_CHAR:
         return JOB_CONJURER;
     case HINT_RANGER_CHAR:
@@ -461,11 +453,6 @@ void hints_death_screen()
     {
         print_hint("death conjurer melee");
     }
-    else if (you_worship(GOD_TROG) && Hints.hints_berserk_counter <= 3
-             && !you.berserk() && !you.duration[DUR_EXHAUSTED])
-    {
-        print_hint("death berserker unberserked");
-    }
     else if (Hints.hints_type == HINT_RANGER_CHAR
              && 2*Hints.hints_throw_counter < Hints.hints_melee_counter)
     {
@@ -621,13 +608,6 @@ static void _hints_healing_reminder()
                     "<tiles>, or <w>click on the stat area</w> with your mouse</tiles>"
                     ".";
 
-            if (you.hp < you.hp_max && you_worship(GOD_TROG)
-                && you.can_go_berserk())
-            {
-                text += "\nAlso, berserking might help you not to lose so much "
-                        "health in the first place. To use your abilities type "
-                        "<w>a</w>.";
-            }
             mprf(MSGCH_TUTORIAL, "%s", text.c_str());
 
             if (is_resting())
@@ -830,11 +810,6 @@ void hints_monster_seen(const monster& mon)
         if (mon.friendly())
             learned_something_new(HINT_MONSTER_FRIENDLY, mon.pos());
 
-        if (you_worship(GOD_TROG) && you.can_go_berserk()
-            && one_chance_in(4))
-        {
-            learned_something_new(HINT_CAN_BERSERK);
-        }
         return;
     }
 
@@ -1170,15 +1145,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         cmd.push_back(CMD_MEMORISE_SPELL);
         cmd.push_back(CMD_CAST_SPELL);
 
-        if (you_worship(GOD_TROG))
-        {
-            text << "\nAs a worshipper of "
-                 << god_name(GOD_TROG)
-                 << ", though, you might instead wish to burn those tomes "
-                    "of hated magic by using the corresponding "
-                    "<w>%</w>bility.";
-            cmd.push_back(CMD_USE_ABILITY);
-        }
         text << "\nIn hint mode you can reread this information at "
                 "any time by "
                 "<console>having a look in your <w>%</w>nventory at the item in "
@@ -1203,12 +1169,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         cmd.push_back(CMD_WIELD_WEAPON);
         cmd.push_back(CMD_DISPLAY_INVENTORY);
 
-        if (Hints.hints_type == HINT_BERSERK_CHAR)
-        {
-            text << "\nAs you're already trained in Axes you should stick "
-                    "with these. Checking other axes' enchantments and "
-                    "attributes can be worthwhile.";
-        }
         break;
 
     case HINT_SEEN_MISSILES:
@@ -1704,11 +1664,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         // A more detailed description of skills is given when you go past an
         // integer point.
 
-        if (you_worship(GOD_TROG))
-        {
-            text << " Also, most kills will grant you favour in the eyes of "
-                    "Trog.";
-        }
         break;
 
     case HINT_NEW_LEVEL:
@@ -1842,8 +1797,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "Luckily, all adventurers carry a pocket knife with them "
                 "which is perfect for butchering. Try to dine on chunks in "
                 "order to save permanent food.";
-        if (Hints.hints_type == HINT_BERSERK_CHAR)
-            text << "\nNote that you cannot Berserk while very hungry or worse.";
         cmd.push_back(CMD_BUTCHER);
         break;
 
@@ -2045,25 +1998,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         Hints.hints_last_healed = you.num_turns;
         break;
 
-    case HINT_CAN_BERSERK:
-        // Don't print this information if the player already knows it.
-        if (Hints.hints_berserk_counter)
-            return;
-
-        text << "Against particularly difficult foes, you should use your "
-                "Berserk <w>%</w>bility. Berserk will last longer if you "
-                "kill a lot of monsters.";
-        cmd.push_back(CMD_USE_ABILITY);
-        break;
-
-    case HINT_POSTBERSERK:
-        text << "Berserking is extremely exhausting! It burns a lot of "
-                "nutrition, and afterwards you are slowed down and "
-                "occasionally even pass out. Press <w>%</w> to see your "
-                "current exhaustion status.";
-        cmd.push_back(CMD_DISPLAY_CHARACTER_STATUS);
-        break;
-
     case HINT_RUN_AWAY:
         text << "Whenever your health is very low and you're in danger of "
                 "dying, check your options carefully. Often, retreat or use "
@@ -2076,16 +2010,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "you come back, so you might want to use a different set of "
                 "stairs when you return.";
 
-        if (you_worship(GOD_TROG) && you.can_go_berserk())
-        {
-            text << "\nAlso, with "
-                 << apostrophise(god_name(you.religion))
-                 << " support you can use your Berserk ability (<w>%</w>) to "
-                    "temporarily gain more health and greater strength. Bear "
-                    "in mind that berserking at the last minute is often "
-                    "risky, and prevents you from using items to escape!";
-            cmd.push_back(CMD_USE_ABILITY);
-        }
         break;
 
     case HINT_RETREAT_CASTER:
@@ -2359,9 +2283,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
         break;
     }
     case HINT_FLEEING_MONSTER:
-        if (Hints.hints_type != HINT_BERSERK_CHAR)
-            return;
-
         text << "Now that monster is scared of you! Note that you do not "
                 "absolutely have to follow it. Rather, you can let it run "
                 "away. Sometimes, though, it can be useful to attack a "
@@ -2642,9 +2563,6 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "monsters in combat. Instead, any movement you take is counted "
                 "as an attempt to struggle free from the net. With a wielded "
                 "bladed weapon you will be able to cut the net faster";
-
-        if (Hints.hints_type == HINT_BERSERK_CHAR)
-            text << ", especially if you're berserking while doing so";
 
         text << ". Small species may also wriggle out of a net, only damaging "
                 "it a bit, so as to then <w>%</w>ire it at a monster.";
@@ -3323,30 +3241,7 @@ string hints_describe_item(const item_def &item)
             }
             else // It's a spellbook!
             {
-                if (you_worship(GOD_TROG))
-                {
-                    if (!item_ident(item, ISFLAG_KNOW_TYPE))
-                    {
-                        ostr << "It's a book, you can <w>%</w>ead it.";
-                        cmd.push_back(CMD_READ);
-                    }
-                    else
-                    {
-                        ostr << "A spellbook! You could <w>%</w>emorise some "
-                                "spells and then cast them with <w>%</w>.";
-                        cmd.push_back(CMD_MEMORISE_SPELL);
-                        cmd.push_back(CMD_CAST_SPELL);
-                    }
-                    ostr << "\nAs a worshipper of "
-                         << god_name(GOD_TROG)
-                         << ", though, you might instead wish to burn this "
-                            "tome of hated magic by using the corresponding "
-                            "<w>%</w>bility. "
-                            "Note that this only works on books that are lying "
-                            "on the floor and not on your current square. ";
-                    cmd.push_back(CMD_USE_ABILITY);
-                }
-                else if (!item_ident(item, ISFLAG_KNOW_TYPE))
+                if (!item_ident(item, ISFLAG_KNOW_TYPE))
                 {
                     ostr << "It's a book, you can <w>%</w>ead it"
 #ifdef USE_TILE
@@ -3447,15 +3342,6 @@ string hints_describe_item(const item_def &item)
                         ".";
 
                 cmd.push_back(CMD_RESISTS_SCREEN);
-            }
-            else if (you_worship(GOD_TROG))
-            {
-                ostr << "\n\nSeeing how "
-                     << god_name(GOD_TROG, false)
-                     << " frowns upon the use of magic, this staff will be "
-                        "of little use to you and you might just as well "
-                        "<w>%</w>rop it now.";
-                cmd.push_back(CMD_DROP);
             }
             Hints.hints_events[HINT_SEEN_STAFF] = false;
             break;
@@ -3951,11 +3837,7 @@ string hints_describe_monster(const monster_info& mi, bool has_stat_desc)
         }
         else
         {
-            ostr << "This might be a good time to run away";
-
-            if (you_worship(GOD_TROG) && you.can_go_berserk())
-                ostr << " or apply your Berserk <w>a</w>bility";
-            ostr << ".";
+            ostr << "This might be a good time to run away.";
         }
     }
     else if (Options.stab_brand != CHATTR_NORMAL

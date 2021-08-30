@@ -783,7 +783,6 @@ void tilep_job_default(int job, dolls_data *doll)
     switch (job)
     {
         case JOB_FIGHTER:
-        case JOB_TORPOR_KNIGHT:
             parts[TILEP_PART_LEG]   = TILEP_LEG_METAL_SILVER;
             break;
 
@@ -794,23 +793,6 @@ void tilep_job_default(int job, dolls_data *doll)
             parts[TILEP_PART_ARM]   = TILEP_ARM_GLOVE_GRAY;
             parts[TILEP_PART_BOOTS] = TILEP_BOOTS_MIDDLE_GRAY;
             parts[TILEP_PART_CLOAK] = TILEP_CLOAK_BLUE;
-            break;
-
-        case JOB_CHAOS_KNIGHT:
-            parts[TILEP_PART_BODY]  = TILEP_BODY_MESH_BLACK;
-            parts[TILEP_PART_LEG]   = TILEP_LEG_PANTS_SHORT_DARKBROWN;
-            parts[TILEP_PART_HELM]  = TILEP_HELM_CLOWN; // Xom
-            break;
-
-        case JOB_ABYSSAL_KNIGHT:
-            parts[TILEP_PART_BODY]  = TILEP_BODY_SHOULDER_PAD;
-            parts[TILEP_PART_LEG]   = TILEP_LEG_METAL_GRAY;
-            parts[TILEP_PART_HELM]  = TILEP_HELM_FHELM_PLUME;
-            break;
-
-        case JOB_BERSERKER:
-            parts[TILEP_PART_BODY]  = TILEP_BODY_ANIMAL_SKIN;
-            parts[TILEP_PART_LEG]   = TILEP_LEG_BELT_REDBROWN;
             break;
 
 #if TAG_MAJOR_VERSION == 34

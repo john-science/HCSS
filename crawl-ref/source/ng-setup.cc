@@ -233,43 +233,6 @@ static void _give_items_skills(const newgame_def& ng)
 {
     switch (you.char_class)
     {
-    case JOB_BERSERKER:
-        you.religion = GOD_TROG;
-        you.piety = 35;
-
-        if (you_can_wear(EQ_BODY_ARMOUR))
-            you.skills[SK_ARMOUR] += 2;
-        else
-        {
-            you.skills[SK_DODGING]++;
-            if (!is_useless_skill(SK_ARMOUR))
-                you.skills[SK_ARMOUR]++; // converted later
-        }
-        break;
-
-    case JOB_TORPOR_KNIGHT:
-        you.religion = GOD_CHEIBRIADOS;
-        you.piety = 35;
-
-        if (species_apt(SK_ARMOUR) < species_apt(SK_DODGING))
-            you.skills[SK_DODGING]++;
-        else
-            you.skills[SK_ARMOUR]++;
-        break;
-
-    case JOB_CHAOS_KNIGHT:
-        you.religion = GOD_XOM;
-        you.piety = 100;
-        you.gift_timeout = max(5, random2(40) + random2(40));
-        you.attribute[ATTR_XOM_GIFT_XP] = 20;
-        you.attribute[ATTR_XOM_MUT_XP] = 20;
-
-        if (species_apt(SK_ARMOUR) < species_apt(SK_DODGING))
-            you.skills[SK_DODGING]++;
-        else
-            you.skills[SK_ARMOUR]++;
-        break;
-
     case JOB_WANDERER:
         create_wanderer();
         break;
@@ -278,9 +241,7 @@ static void _give_items_skills(const newgame_def& ng)
         break;
     }
 
-    if (you.char_class == JOB_CHAOS_KNIGHT)
-        newgame_make_item(OBJ_WEAPONS, ng.weapon, 1, 0, SPWPN_CHAOS);
-    else if (job_gets_ranged_weapons(you.char_class))
+    if (job_gets_ranged_weapons(you.char_class))
         _give_ranged_weapon(ng.weapon, you.char_class == JOB_ARCANE_MARKSMAN ? 1 : 0);
     else if (job_has_weapon_choice(you.char_class))
         newgame_make_item(OBJ_WEAPONS, ng.weapon);

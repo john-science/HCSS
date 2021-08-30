@@ -2420,7 +2420,6 @@ enum job_type
     JOB_GLADIATOR,
     JOB_NECROMANCER,
     JOB_ASSASSIN,
-    JOB_BERSERKER,
     JOB_HUNTER,
     JOB_CONJURER,
     JOB_ENCHANTER,
@@ -2433,7 +2432,6 @@ enum job_type
 #if TAG_MAJOR_VERSION == 34
     JOB_VENOM_MAGE,
 #endif
-    JOB_CHAOS_KNIGHT,
     JOB_TRANSMUTER,
 #if TAG_MAJOR_VERSION == 34
     JOB_HEALER,
@@ -2445,11 +2443,7 @@ enum job_type
     JOB_ARTIFICER,                     //   Greenberg/Bane
 #if TAG_MAJOR_VERSION == 34
     JOB_ARCANE_MARKSMAN,
-    JOB_DEATH_KNIGHT,
-    JOB_ABYSSAL_KNIGHT,
-    JOB_JESTER,
 #endif
-    JOB_TORPOR_KNIGHT,
     NUM_JOBS,                          // always after the last job
 
     JOB_UNKNOWN = 100,
