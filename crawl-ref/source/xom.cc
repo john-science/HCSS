@@ -223,7 +223,7 @@ void xom_tick()
                 continue;
             sever += mons_threat_level(*mons) * 2 + 1;
     }
-	
+
     if (!x_chance_in_y(sever, 150 + sever))
         return;
 
@@ -1137,7 +1137,7 @@ static void _xom_shuffle_mutations(bool penance)
         return;
 
     god_speaks(GOD_XOM, _get_xom_speech("random mutations").c_str());
-	
+
     delete_all_mutations("Xom's power");
 
     const int num_tries = 2 + random2avg(you.experience_level * 3 / 2 + 1, 2);
@@ -1948,7 +1948,7 @@ static xom_event_type _xom_choose_random_action(int sever)
             destruction_chance+= 5;
         }
     }
-	
+
     int lightning_chance = 0;
     if (player_in_a_dangerous_place())
     {
@@ -1961,7 +1961,7 @@ static xom_event_type _xom_choose_random_action(int sever)
                 lightning_chance++;
         }
     }
-	
+
     xom_event_type action = random_choose_weighted(
         200, XOM_GOOD_POTION,
         _choose_random_spell(sever) != SPELL_NO_SPELL ? 100 : 0, XOM_GOOD_SPELL,
@@ -1972,7 +1972,7 @@ static xom_event_type _xom_choose_random_action(int sever)
         mon_nearby(_choose_enchantable_monster) ? 50 + sever / 4 : 0, XOM_GOOD_ENCHANT_MONSTER,
         mon_nearby([](monster& mon){ return !mon.wont_attack(); }) ? 30 : 0, XOM_GOOD_CONFUSION,
         !you.get_mutation_level(MUT_NO_LOVE) ? 30 : 0, XOM_GOOD_ALLIES,
-        _xom_mons_poly_target() != nullptr ? 30 : 0, XOM_GOOD_POLYMORPH,  
+        _xom_mons_poly_target() != nullptr ? 30 : 0, XOM_GOOD_POLYMORPH,
         destruction_chance, XOM_GOOD_DESTRUCTION,
         !cloud_at(you.pos()) ? 20 + sever / 4 : 0, XOM_GOOD_FOG,
         lightning_chance * sever / 5, XOM_GOOD_LIGHTNING,
@@ -2265,7 +2265,7 @@ void xom_new_level_effect()
                 break;
 		}
         you.attribute[ATTR_XOM_GIFT_XP] +=
-        2 * (exp_needed(you.experience_level + 1) 
+        2 * (exp_needed(you.experience_level + 1)
                 - exp_needed(you.experience_level)) / (1 + random2(4));
 	}
     else if(one_chance_in(10))
@@ -2276,14 +2276,14 @@ void xom_new_level_effect()
 
 void give_xom_gift(int acq_chance)
 {
-	if(!you_worship(GOD_XOM)) 
+	if(!you_worship(GOD_XOM))
         return;
     if(x_chance_in_y(acq_chance, 100))
         _xom_acquirement(5 + random2(you.experience_level* 7));
     else
         _xom_random_item(5 + random2(you.experience_level* 7));
     you.attribute[ATTR_XOM_GIFT_XP] +=
-        2 * (exp_needed(you.experience_level + 1) 
+        2 * (exp_needed(you.experience_level + 1)
                 - exp_needed(you.experience_level)) / (1 + random2(min(you.experience_level, 4)));
 }
 
@@ -2304,7 +2304,7 @@ void xom_mutate_player(bool penance)
     if(penance)
         return;
     you.attribute[ATTR_XOM_MUT_XP] +=
-        ((10 + random2(10)) * (exp_needed(you.experience_level + 1) 
+        ((10 + random2(10)) * (exp_needed(you.experience_level + 1)
                 - exp_needed(you.experience_level))) / 4;
 }
 

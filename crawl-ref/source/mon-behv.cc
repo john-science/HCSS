@@ -539,7 +539,7 @@ void handle_behaviour(monster* mon)
                         mon->target = mon->get_foe()->pos();
                     }
                 }
-   
+
                 // Spectral weapons simply seek back to their owner if
                 // they can't see their seek target.
                 if (mons_is_avatar(mon->type))
@@ -1406,7 +1406,7 @@ static void _mons_indicate_level_exit(const monster* mon)
                 dir == CMD_GO_UPSTAIRS     ? "goes up" :
                 dir == CMD_GO_DOWNSTAIRS   ? "goes down"
                                            : "takes",
-                feat_is_escape_hatch(feat) ? "mutagenic shaft"
+                feat_is_escape_hatch(feat) ? "escape hatch"
                                            : "stairs").c_str());
     }
     else if (is_shaft)

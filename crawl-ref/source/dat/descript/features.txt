@@ -157,13 +157,13 @@ Some deep water
 
 A pool of deep water. Very large creatures can wade through this, and
 those well-adapted to water can easily swim through it. Less-adapted
-species can swim through it with difficulty, but will be unable to 
+species can swim through it with difficulty, but will be unable to
 attack or cast while doing so. Most other dungeon monsters will just drown.
 %%%%
 Some lava
 
 An intensely hot pool of molten rock, emitting clouds of sulphurous smoke.
-Nothing but the mythical salamander can step through this without extreme 
+Nothing but the mythical salamander can step through this without extreme
 pain and difficulty, but it is possible to safely fly across.
 %%%%
 Some shallow water
@@ -275,10 +275,10 @@ An iron grate
 A rusted iron grate, brittle enough to be disrupted with a spell or a wand
 quite easily. It is too strong to be breakable by hand, however.
 %%%%
-A mutagenic shaft in the floor
+An escape hatch in the floor
 
-A disgusting yet strangely compelling radioactive shaft. It will surely
-mutate you if you descend, but otherwise functions much like a normal staircase.
+A spring-loaded one-way escape hatch set in the dungeon floor. It functions
+much like a staircase.
 %%%%
 An escape hatch in the ceiling
 
@@ -365,7 +365,7 @@ A gate leading to yet another region of Pandemonium. There'll always be more.
 %%%%
 A one-way gate leading to the halls of Pandemonium
 
-A gate leading to the halls of Pandemonium. Mighty Pandemonium Lords 
+A gate leading to the halls of Pandemonium. Mighty Pandemonium Lords
 reside here. You may be able to sneak into Pandemonium once, but the Lords
 would surely discover and prevent any repeat attempts to gain entry.
 %%%%
@@ -402,7 +402,7 @@ A gateway leading to Gehenna.
 %%%%
 A gateway to Hell
 
-A gateway leading to the Vestibule of Hell. Few are permitted to enter 
+A gateway leading to the Vestibule of Hell. Few are permitted to enter
 voluntarily. The Orb of Zot will force the gateway to give you passage.
 %%%%
 A gateway to the Iron City of Dis
@@ -956,7 +956,7 @@ defaced; not a single distinguishing feature remains.
 A portal to the Elven Halls
 
 A staircase-shaped portal to the elven halls. Elves occasionally tempt
-visitors to enter their realm in order to use them for their strange, 
+visitors to enter their realm in order to use them for their strange,
 nefarious purposes. A crafty intruder might be able to make away with
 some of their fabled treasures.
 %%%%

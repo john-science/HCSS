@@ -1795,11 +1795,10 @@ static bool _prompt_stairs(dungeon_feature_type ygrd, bool down, bool shaft)
         }
     }
 
-    if (feat_is_escape_hatch(ygrd))
-            return yesno("Really go through this mutagenic shaft?", true, 'n');
-
     if (Options.warn_hatches)
     {
+        if (feat_is_escape_hatch(ygrd))
+            return yesno("Really go through this one-way escape hatch?", true, 'n');
         if (down && shaft) // voluntary shaft usage
             return yesno("Really dive through this shaft in the floor?", true, 'n');
     }

@@ -3306,8 +3306,8 @@ void game_options::read_option_line(const string &str, bool runscript)
     }
     else if (key == "difficulty")
     {
-		if (field == "casual")
-			game.difficulty = DIFFICULTY_CASUAL;
+        if (field == "casual")
+            game.difficulty = DIFFICULTY_CASUAL;
         else if (field == "normal")
             game.difficulty = DIFFICULTY_NORMAL;
         else if (field == "speedrun")
