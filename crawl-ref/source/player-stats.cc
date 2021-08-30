@@ -101,10 +101,8 @@ static void _handle_stat_change(stat_type stat);
  */
 bool attribute_increase()
 {
-    const string stat_gain_message = make_stringf("Your experience leads to a%s "
-                                                  "increase in your attributes!",
-                                                  (you.species == SP_DEMIGOD || you.species == SP_TITAN) ?
-                                                  " dramatic" : "n");
+    const string stat_gain_message = make_stringf("Your experience leads to an "
+                                                  "increase in your attributes!");
     crawl_state.stat_gain_prompt = true;
 #ifdef TOUCH_UI
     learned_something_new(HINT_CHOOSE_STAT);
@@ -137,7 +135,7 @@ bool attribute_increase()
 #endif
     mouse_control mc(MOUSE_MODE_PROMPT);
 
-    const int statgain = (you.species == SP_DEMIGOD || you.species == SP_TITAN) ? 2 : 1;
+    const int statgain = 1;
 
     bool tried_lua = false;
     int keyin;

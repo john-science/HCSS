@@ -1046,7 +1046,7 @@ void scorefile_entry::init_with_fields()
 
     scrolls_used = fields->int_field("scrollsused");
     potions_used = fields->int_field("potionsused");
-	
+
     difficulty = (game_difficulty_level) fields->int_field("difficulty");
 
     fixup_char_name();
@@ -1552,8 +1552,8 @@ void scorefile_entry::init(time_t dt)
 	 *
      *  Hellcrawl scoring:
      *
-     *    Nobody gives a shit about experience for won games, 
-     *    calc based on absdepth, xp, and runes for lost games 
+     *    Nobody gives a shit about experience for won games,
+     *    calc based on absdepth, xp, and runes for lost games
      *    and rune count for won ones, dividing by turns
      *    this is kind of bad for lost games but who the fuck cares
      *
@@ -1585,18 +1585,18 @@ void scorefile_entry::init(time_t dt)
             pt += ((1+num_runes) * (1 + num_runes) * 1000);
             pt *= 1000;
             pt *= 1000;
-            pt *= 69; 
+            pt *= 69;
             pt = pt / (1+you.num_turns);
         }
         else
         {
             pt += (env.absdepth0 + num_runes) * 10000 / (1+you.num_turns);
             pt += num_runes * 10000;
-            pt += _award_modified_experience();     
+            pt += _award_modified_experience();
         }
 		if (crawl_state.difficulty == DIFFICULTY_CASUAL)
             pt = pt / 100;
-		
+
         points = pt;
     }
     else
@@ -1929,9 +1929,9 @@ scorefile_entry::character_description(death_desc_verbosity verbosity) const
         desc += " HPs";
     }
 
-    desc += wiz_mode ? ") *WIZ*" : 
-         explore_mode ? ") *EXPLORE*" : 
-         difficulty == DIFFICULTY_CASUAL ? ") *CASUAL*" : 
+    desc += wiz_mode ? ") *WIZ*" :
+         explore_mode ? ") *EXPLORE*" :
+         difficulty == DIFFICULTY_CASUAL ? ") *CASUAL*" :
          difficulty == DIFFICULTY_SPEEDRUN ? ") *SPEED*" : ")";
     desc += _hiscore_newline_string();
 
@@ -1950,7 +1950,7 @@ scorefile_entry::character_description(death_desc_verbosity verbosity) const
         desc = _append_sentence_delimiter(desc, ".");
         desc += _hiscore_newline_string();
 
-        if (race != SP_DEMIGOD && race !=SP_TITAN && god != GOD_NO_GOD)
+        if (god != GOD_NO_GOD)
         {
             if (god == GOD_XOM)
             {
@@ -2195,10 +2195,7 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity) const
             desc += "lava";
         else
         {
-            if (race == SP_MUMMY)
-                desc += "Turned to ash by lava";
-            else
-                desc += "Took a swim in molten lava";
+            desc += "Took a swim in molten lava";
         }
         break;
 
@@ -2207,8 +2204,6 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity) const
         {
             if (terse)
                 desc = "fell apart";
-            else if (race == SP_MUMMY)
-                desc = "Soaked and fell apart";
             else
                 desc = "Sank and fell apart";
         }

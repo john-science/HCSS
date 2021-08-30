@@ -1185,7 +1185,7 @@ enum command_type
     CMD_LUA_CONSOLE,
 
     CMD_MAX_NORMAL = CMD_LUA_CONSOLE,
-	
+
     // inventory only
     CMD_SET_SKILL_TARGET,
 
@@ -2744,7 +2744,7 @@ enum monster_type                      // menv[].type
     MONS_PEARL_DRAGON,
 #if TAG_MAJOR_VERSION > 34
 	MONS_THE_GIAGGOSTUONO
-#endif	
+#endif
     MONS_OOZE,
     MONS_JELLY,
 #if TAG_MAJOR_VERSION == 34
@@ -4409,13 +4409,12 @@ enum species_type
 #endif
     SP_HILL_ORC,
     SP_KOBOLD,
-    SP_MUMMY,
     SP_NAGA,
     SP_OGRE,
     SP_TROLL,
 
     SP_RED_DRACONIAN,
-      SP_FIRST_NONBASE_DRACONIAN = SP_RED_DRACONIAN,
+    SP_FIRST_NONBASE_DRACONIAN = SP_RED_DRACONIAN,
     SP_WHITE_DRACONIAN,
     SP_GREEN_DRACONIAN,
     SP_YELLOW_DRACONIAN,
@@ -4426,15 +4425,13 @@ enum species_type
     SP_MOTTLED_DRACONIAN,
 #endif
     SP_PALE_DRACONIAN,
-      SP_LAST_NONBASE_DRACONIAN = SP_PALE_DRACONIAN,
+    SP_LAST_NONBASE_DRACONIAN = SP_PALE_DRACONIAN,
     SP_BASE_DRACONIAN,
 #if TAG_MAJOR_VERSION == 34
     SP_CENTAUR,
-    SP_DEMIGOD,
 #endif
     SP_SPRIGGAN,
     SP_MINOTAUR,
-    SP_DEMONSPAWN,
 #if TAG_MAJOR_VERSION == 34
     SP_GHOUL,
 #endif
@@ -4442,11 +4439,9 @@ enum species_type
     SP_MERFOLK,
 #if TAG_MAJOR_VERSION == 34
     SP_DEEP_DWARF,
-    SP_FELID,
 #endif
     SP_OCTOPODE,
 #if TAG_MAJOR_VERSION == 34
-    SP_DJINNI,
     SP_LAVA_ORC,
 #endif
     SP_GARGOYLE,
@@ -4456,8 +4451,6 @@ enum species_type
     SP_FROGTAUR,
 #endif
     SP_GNOLL,
-    SP_SKELETON,
-    SP_TITAN,
     SP_MOUNTAIN_DWARF,
     NUM_SPECIES,
 

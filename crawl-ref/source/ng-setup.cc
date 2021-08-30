@@ -147,7 +147,7 @@ item_def* newgame_make_item(object_class_type base,
     // Make sure we didn't get a stack of shields or such nonsense.
     ASSERT(item.quantity == 1 || is_stackable_item(item));
 
-    // if that didn't help, nothing will. 
+    // if that didn't help, nothing will.
     // Don't check useless books because it causes an assert failure.
     if (item.base_type != OBJ_BOOKS)
     {
@@ -246,7 +246,7 @@ static void _give_items_skills(const newgame_def& ng)
                 you.skills[SK_ARMOUR]++; // converted later
         }
         break;
-		
+
     case JOB_TORPOR_KNIGHT:
         you.religion = GOD_CHEIBRIADOS;
         you.piety = 35;
@@ -290,12 +290,6 @@ static void _give_items_skills(const newgame_def& ng)
 
     if (job_gets_ranged_weapons(you.char_class))
         _give_ammo(ng.weapon, 0);
-
-    if (you.species == SP_FELID)
-    {
-        you.skills[SK_THROWING] = 0;
-        you.skills[SK_SHIELDS] = 0;
-    }
 
     if (!you_worship(GOD_NO_GOD))
     {
@@ -456,11 +450,8 @@ static void _setup_generic(const newgame_def& ng)
 
     // This function depends on stats and mutations being finalised.
     _give_items_skills(ng);
-	
-    add_held_books_to_library();
 
-    if (you.species == SP_DEMONSPAWN)
-        roll_demonspawn_mutations();
+    add_held_books_to_library();
 
     _give_starting_food();
 

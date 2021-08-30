@@ -1315,15 +1315,6 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         return "you cannot use spells of this school.";
 
 #if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
-    {
-        if (spell == SPELL_ICE_FORM  || spell == SPELL_OZOCUBUS_ARMOUR)
-            return "you're too hot.";
-
-        if (spell == SPELL_LEDAS_LIQUEFACTION)
-            return "you can't cast this while perpetually flying.";
-    }
-
     if (you.species == SP_LAVA_ORC)
     {
         if (spell == SPELL_OZOCUBUS_ARMOUR)
@@ -1541,8 +1532,6 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         break;
 
     case SPELL_CIGOTUVIS_EMBRACE:
-        if (you.species == SP_SKELETON)
-            return "you already steal bones from the dead.";
         if (temp && you.form == TRAN_STATUE)
             return "the corpses won't embrace your stony flesh.";
         if (temp && you.attribute[ATTR_OZO_ARMOUR])
@@ -1555,7 +1544,6 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         // XXX: write player_can_bleed(bool temp) & use that
         if (you.species == SP_GARGOYLE
             || you.species == SP_GHOUL
-            || you.species == SP_MUMMY
             || (temp && !form_can_bleed(you.form)))
         {
             return "you have no blood to sublime.";

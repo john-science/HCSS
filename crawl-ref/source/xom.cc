@@ -1341,16 +1341,14 @@ static void _get_hand_type(string &hand, bool &can_plural)
         hand_vec.emplace_back("mandible");
         plural_vec.push_back(true);
     }
-    else if (you.species != SP_MUMMY && you.species != SP_OCTOPODE
-             && !you.get_mutation_level(MUT_BEAK)
+    else if (you.species != SP_OCTOPODE && !you.get_mutation_level(MUT_BEAK)
           || form_changed_physiology())
     {
         hand_vec.emplace_back("nose");
         plural_vec.push_back(false);
     }
 
-    if (you.form == TRAN_BAT
-        || you.species != SP_MUMMY && you.species != SP_OCTOPODE
+    if (you.form == TRAN_BAT || you.species != SP_OCTOPODE
            && !form_changed_physiology())
     {
         hand_vec.emplace_back("ear");

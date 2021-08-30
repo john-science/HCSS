@@ -1407,14 +1407,7 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
             break;
 
         case SK_INVOCATIONS:
-            if (species == SP_DEMONSPAWN
-                && skill_rank == 5
-                && is_evil_god(god))
-            {
-                result = "Blood Saint";
-                break;
-            }
-            else if (god != GOD_NO_GOD)
+            if (god != GOD_NO_GOD)
                 result = god_title(god, species, piety);
             break;
 
@@ -1450,8 +1443,7 @@ string skill_title_by_rank(skill_type best_skill, uint8_t skill_rank,
         { "Adj", species_name(species, SPNAME_ADJ) },
         { "Genus", species_name(species, SPNAME_GENUS) },
         { "genus", lowercase_string(species_name(species, SPNAME_GENUS)) },
-        { "Genus_Short", species == SP_DEMIGOD ? "God" :
-                           species_name(species, SPNAME_GENUS) },
+        { "Genus_Short", species_name(species, SPNAME_GENUS) },
         { "Walker", species_walking_verb(species) + "er" },
         { "Weight", _stk_weight(species) },
     };

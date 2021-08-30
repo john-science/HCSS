@@ -63,24 +63,6 @@ static const map<species_type, species_def> species_data =
     { SK_SHORT_BLADES, SK_BOWS },
 } },
 
-{ SP_DEMIGOD, {
-    "Dg",
-    "Demigod", "Divine", nullptr,
-    SPF_NONE,
-    -2, 1, 2, 4,
-    MONS_DEMIGOD,
-    HT_LAND, US_ALIVE, SIZE_MEDIUM,
-    11, 12, 11, // 34
-    set<stat_type>(), 28, // No natural stat gain (double chosen instead)
-    { {MUT_HIGH_MAGIC, 1, 1} },
-    {},
-    {},
-    { JOB_TRANSMUTER, JOB_FIRE_ELEMENTALIST, JOB_ICE_ELEMENTALIST,
-      JOB_AIR_ELEMENTALIST, JOB_EARTH_ELEMENTALIST },
-    { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
-      SK_BOWS },
-} },
-
 { SP_BASE_DRACONIAN, {
     "Dr",
     "Draconian", nullptr, nullptr,
@@ -249,24 +231,6 @@ static const map<species_type, species_def> species_data =
     {}, // not a starting race
 } },
 
-{ SP_DEMONSPAWN, {
-    "Ds",
-    "Demonspawn", "Demonic", nullptr,
-    SPF_NONE,
-    -1, 0, 0, 3,
-    MONS_DEMONSPAWN,
-    HT_LAND, US_ALIVE, SIZE_MEDIUM,
-    8, 9, 8, // 25
-    { STAT_STR, STAT_INT, STAT_DEX }, 4,
-    {},
-    {},
-    {},
-    { JOB_GLADIATOR, JOB_BERSERKER, JOB_WIZARD,
-      JOB_NECROMANCER, JOB_FIRE_ELEMENTALIST, JOB_ICE_ELEMENTALIST },
-    { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
-      SK_BOWS },
-} },
-
 { SP_FORMICID, {
     "Fo",
     "Formicid", nullptr, "Ant",
@@ -364,7 +328,7 @@ static const map<species_type, species_def> species_data =
     1, -2, 0, 3,
     MONS_KOBOLD,
     HT_LAND, US_ALIVE, SIZE_SMALL,
-    6, 11, 11, // 28 
+    6, 11, 11, // 28
     { STAT_DEX, STAT_INT }, 5,
     {{ MUT_EVOLUTION, 1, 2 }, },
     {},
@@ -406,28 +370,6 @@ static const map<species_type, species_def> species_data =
     { "You reflexively headbutt those who attack you in melee." },
     { "retaliatory headbutt" },
     { JOB_FIGHTER, JOB_GLADIATOR, JOB_MONK, JOB_BERSERKER },
-    { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
-      SK_BOWS },
-} },
-
-{ SP_MUMMY, {
-    "Mu",
-    "Mummy", nullptr, nullptr,
-    SPF_NONE,
-    -1, 0, 0, 5,
-    MONS_MUMMY,
-    HT_LAND, US_UNDEAD, SIZE_MEDIUM,
-    11, 7,  7, // 25
-    { STAT_STR, STAT_INT, STAT_DEX }, 5,
-    { { MUT_NEGATIVE_ENERGY_RESISTANCE, 3, 1 }, { MUT_COLD_RESISTANCE, 1, 1 },
-      { MUT_TORMENT_RESISTANCE, 1, 1 },
-      { MUT_UNBREATHING, 1, 1 },
-      { MUT_NECRO_ENHANCER, 1, 13 }, { MUT_NECRO_ENHANCER, 1, 26 }, },
-    { "You do not eat or drink.",
-      "Your flesh is vulnerable to fire." },
-    { "no food or potions", "fire vulnerability" },
-    { JOB_WIZARD, JOB_NECROMANCER, JOB_ICE_ELEMENTALIST,
-      JOB_FIRE_ELEMENTALIST, JOB_SUMMONER },
     { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
       SK_BOWS },
 } },
@@ -487,25 +429,6 @@ static const map<species_type, species_def> species_data =
       SK_BOWS },
 } },
 
-{ SP_SKELETON, {
-    "Sk",
-    "Skeleton", nullptr, nullptr,
-    SPF_NONE,
-    0, -1, 0, 4,
-    MONS_SKELETAL_WARRIOR,
-    HT_LAND, US_HUNGRY_DEAD, SIZE_MEDIUM,
-    9, 6, 7, // 22
-    { STAT_STR, STAT_DEX }, 5,
-    { { MUT_NEGATIVE_ENERGY_RESISTANCE, 3, 1 }, { MUT_COLD_RESISTANCE, 1, 1 },
-      { MUT_TORMENT_RESISTANCE, 1, 1 }, { MUT_UNBREATHING, 1, 1 },},
-    {"You are spooky and scary.",
-     "You do not feel fear.",
-     "You gain temporary bone armour from killing."},
-    {"spooky", "fear immunity", "bone armour"},
-    { JOB_ENCHANTER, JOB_FIGHTER, JOB_SKALD, JOB_NECROMANCER, JOB_SUMMONER },
-    { SK_SHORT_BLADES, SK_MACES_FLAILS },
-} },
-
 { SP_SPRIGGAN, {
     "Sp",
     "Spriggan", nullptr, nullptr,
@@ -539,24 +462,6 @@ static const map<species_type, species_def> species_data =
       JOB_FIRE_ELEMENTALIST, JOB_AIR_ELEMENTALIST },
     { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
       SK_BOWS },
-} },
-
-{ SP_TITAN, {
-    "Ti",
-    "Titan", "Titanic", nullptr,
-    SPF_NONE,
-    -1, 3, 2, 4,
-    MONS_TITAN,
-    HT_LAND, US_ALIVE, SIZE_LARGE,
-    13, 12, 9, // 34
-    set<stat_type>(), 28, // No natural stat gain (double chosen instead)
-    { {MUT_HIGH_MAGIC, 1, 1}, { MUT_SHOCK_RESISTANCE, 1, 1 }, },
-    {},
-    {},
-    { JOB_TRANSMUTER, JOB_FIGHTER, JOB_ICE_ELEMENTALIST,
-      JOB_AIR_ELEMENTALIST, JOB_EARTH_ELEMENTALIST },
-    { SK_MACES_FLAILS, SK_POLEARMS,
-      SK_THROWING},
 } },
 
 { SP_TROLL, {
@@ -630,25 +535,6 @@ static const map<species_type, species_def> species_data =
     {}, // not a starting race
 } },
 
-{ SP_DJINNI, {
-    "Dj",
-    "Djinni", "Djinn", nullptr,
-    SPF_NONE,
-    -1, -1, 0, 3,
-    MONS_DJINNI,
-    HT_LAND, US_ALIVE, SIZE_MEDIUM,
-    8, 8, 8, // 24
-    { STAT_STR, STAT_INT, STAT_DEX }, 4,
-    { { MUT_NEGATIVE_ENERGY_RESISTANCE, 3, 1 }, },
-    { "You are immune to all types of fire, even holy and hellish.",
-      "You are vulnerable to cold.",
-      "You need no food.",
-      "You have no legs." },
-    { "fire immunity", "cold vulnerability" },
-    {}, // not a starting race
-    {}, // not a starting race
-} },
-
 { SP_HIGH_ELF, {
     "HE",
     "High Elf", "Elven", "Elf",
@@ -702,26 +588,6 @@ static const map<species_type, species_def> species_data =
     { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS },
 } },
 
-{ SP_FELID, {
-    "Fe",
-    "Felid", "Feline", "Cat",
-    SPF_NONE,
-    -1, -4, 1, 6,
-    MONS_FELID,
-    HT_LAND, US_ALIVE, SIZE_LITTLE,
-    4, 9, 11, // 24
-    { STAT_INT, STAT_DEX }, 5,
-    { { MUT_CARNIVOROUS, 3, 1 }, { MUT_FAST, 1, 1 }, { MUT_FANGS, 3, 1 },
-      { MUT_SHAGGY_FUR, 1, 1 }, { MUT_ACUTE_VISION, 1, 1 }, { MUT_PAWS, 1, 1 },
-      { MUT_SLOW_METABOLISM, 1, 1 }, { MUT_CLAWS, 1, 1 },},
-    { "You cannot wear armour.",
-      "You are incapable of wielding weapons or throwing items." },
-    { "no armour", "no weapons or thrown items" },
-    { JOB_BERSERKER, JOB_ENCHANTER, JOB_TRANSMUTER, JOB_ICE_ELEMENTALIST,
-      JOB_SUMMONER, JOB_AIR_ELEMENTALIST },
-    { SK_UNARMED_COMBAT },
-} },
-
 { SP_CENTAUR, {
     "Ce",
     "Centaur", nullptr, nullptr,
@@ -736,7 +602,7 @@ static const map<species_type, species_def> species_data =
     {},
     {},
     { JOB_FIGHTER, JOB_GLADIATOR, JOB_ARCANE_MARKSMAN },
-    { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS, 
+    { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
       SK_BOWS },
 } },
 

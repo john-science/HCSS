@@ -305,7 +305,7 @@ static const ability_def Ability_List[] =
     { ABIL_END_OZOS, "End Ozocubu's Armour",
       0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_END_CIGOTUVIS, "End Cigotuvi's Embrace",
-      0, 0, 0, 0, {}, abflag::NONE },  
+      0, 0, 0, 0, {}, abflag::NONE },
 	{ ABIL_END_DCHAN, "End Death Channel",
       0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_END_ABJURATION, "End Aura of Abjuration",
@@ -644,8 +644,8 @@ static const ability_def Ability_List[] =
     { ABIL_WU_JIAN_SERPENTS_LASH, "Serpent's Lash",
         0, 0, 0, 2, {FAIL_INVO}, abflag::EXHAUSTION | abflag::INSTANT },
     { ABIL_WU_JIAN_HEAVENLY_STORM, "Heavenly Storm",
-        0, 0, 0, 20, {FAIL_INVO, piety_breakpoint(5), 0, 1}, abflag::NONE },		
-		
+        0, 0, 0, 20, {FAIL_INVO, piety_breakpoint(5), 0, 1}, abflag::NONE },
+
     { ABIL_STOP_RECALL, "Stop Recall", 0, 0, 0, 0, {FAIL_INVO}, abflag::NONE },
     { ABIL_WU_JIAN_LUNGE, "Lunge", 0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_WU_JIAN_WHIRLWIND, "Whirlwind", 0, 0, 0, 0, {}, abflag::NONE },
@@ -2133,7 +2133,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         mpr("You stop readying your spectral weapon.");
         break;
     }
-	
+
     case ABIL_END_BATTLESPHERE:
     {
         fail_check();
@@ -2144,7 +2144,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         mpr("You stop readying your battlesphere.");
         break;
     }
-	
+
     case ABIL_END_SERVITOR:
     {
         fail_check();
@@ -2155,7 +2155,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         mpr("You stop readying your servitor.");
         break;
     }
-	
+
     case ABIL_END_INFESTATION:
         fail_check();
         you.attribute[ATTR_INFESTATION] = 0;
@@ -2173,7 +2173,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         fail_check();
         untransform();
         break;
-		
+
     case ABIL_END_BUFFS:
         fail_check();
         dispel_permanent_buffs();
@@ -2301,7 +2301,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         mprf(MSGCH_DURATION, you.duration[DUR_MIASMATA]
              ? "You feel the putrescence grow stronger."
              : "Your attacks are imbued with putrescent vapours.");
-        you.increase_duration(DUR_MIASMATA, 
+        you.increase_duration(DUR_MIASMATA,
             10 + random2avg(you.skill(SK_NECROMANCY, 5), 3), 50);
         break;
 
@@ -2419,7 +2419,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         fail_check();
         return zapping(ZAP_ENSLAVE_SOUL, power, beam, false, nullptr, fail);
     }
-	
+
     case ABIL_YRED_TRANSFERENCE:
         return yred_transference(fail);
 
@@ -2582,10 +2582,6 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
             pow = 3 + you.skill_rdiv(SK_INVOCATIONS, 1, 6);
         else
             pow = 10 + you.skill_rdiv(SK_INVOCATIONS, 1, 3);
-#if TAG_MAJOR_VERSION == 34
-        if (you.species == SP_DJINNI)
-            pow /= 2;
-#endif
         pow = min(50, pow);
         const int healed = pow + roll_dice(2, pow) - 2;
         mpr("You are healed.");
@@ -3449,16 +3445,16 @@ vector<talent> your_talents(bool check_confused, bool include_unusable)
 
     if (you.attribute[ATTR_PERM_FLIGHT] && you.racial_permanent_flight())
         _add_talent(talents, ABIL_STOP_FLYING, check_confused);
-	
+
     if (you.attribute[ATTR_SPELL_REGEN])
        _add_talent(talents, ABIL_END_REGENERATION, check_confused);
 
     if (you.attribute[ATTR_OZO_ARMOUR])
        _add_talent(talents, ABIL_END_OZOS, check_confused);
-   
+
     if (you.attribute[ATTR_SONG_OF_SLAYING])
        _add_talent(talents, ABIL_STOP_SINGING, check_confused);
-   
+
     if (you.attribute[ATTR_DEATH_CHANNEL])
        _add_talent(talents, ABIL_END_DCHAN, check_confused);
 
@@ -3470,43 +3466,43 @@ vector<talent> your_talents(bool check_confused, bool include_unusable)
 
     if (you.attribute[ATTR_PERMAHASTE])
        _add_talent(talents, ABIL_END_PERMAHASTE, check_confused);
-   
+
     if (you.attribute[ATTR_PERMAINVIS])
        _add_talent(talents, ABIL_END_PERMAINVIS, check_confused);
 
     if (you.attribute[ATTR_FIRE_SHIELD])
-       _add_talent(talents, ABIL_END_RING_OF_FLAMES, check_confused);   
-   
+       _add_talent(talents, ABIL_END_RING_OF_FLAMES, check_confused);
+
     if (you.attribute[ATTR_INFUSION])
        _add_talent(talents, ABIL_END_INFUSION, check_confused);
-   
+
     if (you.attribute[ATTR_PORTAL_PROJECTILE])
        _add_talent(talents, ABIL_END_PPROJ, check_confused);
-   
+
     if (you.attribute[ATTR_INFESTATION])
        _add_talent(talents, ABIL_END_INFESTATION, check_confused);
-   
+
     if (you.attribute[ATTR_SPECTRAL_WEAPON])
        _add_talent(talents, ABIL_END_SPECTRAL_WEAPON, check_confused);
-   
+
     if (you.attribute[ATTR_BATTLESPHERE])
        _add_talent(talents, ABIL_END_BATTLESPHERE, check_confused);
-   
+
     if (you.attribute[ATTR_SERVITOR])
        _add_talent(talents, ABIL_END_SERVITOR, check_confused);
-  
+
     if (you.attribute[ATTR_ANIMATE_DEAD])
        _add_talent(talents, ABIL_END_ANIMATE_DEAD, check_confused);
-  
+
     if (you.attribute[ATTR_BONE_ARMOUR])
        _add_talent(talents, ABIL_END_CIGOTUVIS, check_confused);
-   
+
     if (you.attribute[ATTR_PIERCING_SHOT])
         _add_talent(talents, ABIL_END_PIERCE, check_confused);
-   
+
     if (you.attribute[ATTR_REPEL_MISSILES] || you.attribute[ATTR_DEFLECT_MISSILES])
        _add_talent(talents, ABIL_END_MISSILE_DEFLECTION, check_confused);
-   
+
     // Mutations
     if (you.get_mutation_level(MUT_HURL_DAMNATION))
         _add_talent(talents, ABIL_DAMNATION, check_confused);

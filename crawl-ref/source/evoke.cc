@@ -276,20 +276,11 @@ static bool _evoke_horn_of_geryon(item_def &item)
 
 static bool _check_crystal_ball(item_def item)
 {
-#if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
+    if(!evoker_is_charged(item))
     {
-        mpr("These balls have not yet been approved for use by djinn. "
-            "(OOC: they're supposed to work, but need a redesign.)");
+        mpr("That is presently inert.");
         return false;
     }
-#endif
-
-	if(!evoker_is_charged(item))
-	{
-		mpr("That is presently inert.");
-		return false;
-	}
 
     if (you.confused())
     {

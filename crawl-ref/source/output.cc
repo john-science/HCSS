@@ -711,7 +711,7 @@ static void _print_stats_noise(int x, int y)
         CPRINTF("Silenced  ");
         Noise_Bar.reset(); // so it doesn't display a change bar after silence ends
     }
-    else 
+    else
     {
         if (level == 1000)
         {
@@ -748,11 +748,6 @@ static void _print_stats_gold(int x, int y, colour_t colour)
 
 static void _print_stats_mp(int x, int y)
 {
-#if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
-        return;
-
-#endif
     // Calculate colour
     short mp_colour = HUD_VALUE_COLOUR;
 
@@ -798,61 +793,9 @@ static void _print_stats_mp(int x, int y)
     MP_Bar.draw(19, y, you.magic_points, you.max_magic_points);
 }
 
-#if TAG_MAJOR_VERSION == 34
-static void _print_stats_contam(int x, int y)
-{
-    if (you.species != SP_DJINNI)
-        return;
-
-    const int max_contam = 8000;
-    int contam = min(you.magic_contamination, max_contam);
-
-    // Calculate colour
-    if (you.magic_contamination > 15000)
-    {
-        Contam_Bar.m_default = RED;
-        Contam_Bar.m_change_pos = Contam_Bar.m_change_neg = RED;
-    }
-    else if (you.magic_contamination > 5000) // harmful
-    {
-        Contam_Bar.m_default = LIGHTRED;
-        Contam_Bar.m_change_pos = Contam_Bar.m_change_neg = RED;
-    }
-    else if (you.magic_contamination > 3333)
-    {
-        Contam_Bar.m_default = YELLOW;
-        Contam_Bar.m_change_pos = Contam_Bar.m_change_neg = BROWN;
-    }
-    else if (you.magic_contamination > 1666)
-    {
-        Contam_Bar.m_default = LIGHTGREY;
-        Contam_Bar.m_change_pos = Contam_Bar.m_change_neg = DARKGREY;
-    }
-    else
-    {
-#ifdef USE_TILE_LOCAL
-        Contam_Bar.m_default = LIGHTGREY;
-#else
-        Contam_Bar.m_default = DARKGREY;
-#endif
-        Contam_Bar.m_change_pos = Contam_Bar.m_change_neg = DARKGREY;
-    }
-
-#ifdef TOUCH_UI
-    if (tiles.is_using_small_layout())
-        Contam_Bar.vdraw(6, 10, contam, max_contam);
-    else
-#endif
-    Contam_Bar.draw(19, y, contam, max_contam);
-}
-#endif
 static void _print_stats_hp(int x, int y)
 {
     int max_max_hp = get_real_hp(true, true);
-#if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
-        max_max_hp += get_real_mp(true);
-#endif
 
     // Calculate colour
     short hp_colour = HUD_VALUE_COLOUR;
@@ -875,11 +818,6 @@ static void _print_stats_hp(int x, int y)
     // Health: xxx/yyy (zzz)
     CGOTOXY(x, y, GOTO_STAT);
     textcolour(HUD_CAPTION_COLOUR);
-#if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
-        CPRINTF(player_rotted() ? "EP: " : "Essence: ");
-    else
-#endif
     CPRINTF(player_rotted() ? "HP: " : "Health: ");
     textcolour(hp_colour);
     CPRINTF("%d", you.hp);
@@ -898,23 +836,11 @@ static void _print_stats_hp(int x, int y)
 #ifdef USE_TILE_LOCAL
     if (tiles.is_using_small_layout())
     {
-#if TAG_MAJOR_VERSION == 34
-        if (you.species == SP_DJINNI)
-            EP_Bar.vdraw(2, 10, you.hp, you.hp_max);
-        else
-#endif
         HP_Bar.vdraw(2, 10, you.hp, you.hp_max);
     }
     else
 #endif
-#if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
-        EP_Bar.draw(19, y, you.hp, you.hp_max);
-    else
-        HP_Bar.draw(19, y, you.hp, you.hp_max, false, you.hp - max(0, poison_survival()));
-#else
-        HP_Bar.draw(19, y, you.hp, you.hp_max, you.hp - max(0, poison_survival()));
-#endif
+    HP_Bar.draw(19, y, you.hp, you.hp_max, you.hp - max(0, poison_survival()));
 }
 
 static short _get_stat_colour(stat_type stat)
@@ -1372,8 +1298,7 @@ static void _redraw_title()
                               _god_status_colour(god_colour(you.religion)));
         }
     }
-    else if (you.char_class == JOB_MONK && you.species != SP_DEMIGOD && you.species != SP_TITAN
-             && !had_gods())
+    else if (you.char_class == JOB_MONK && !had_gods())
     {
         string godpiety = "2*";
         textcolour(DARKGREY);
@@ -1444,7 +1369,6 @@ void print_stats()
         _print_stats_mp(1, 4);
     }
 #if TAG_MAJOR_VERSION == 34
-    _print_stats_contam(1, 4);
     if (you.redraw_temperature)
     {
         you.redraw_temperature = false;
@@ -1614,11 +1538,6 @@ void draw_border()
 
     //CGOTOXY(1, 3, GOTO_STAT); CPRINTF("Hp:");
     CGOTOXY(1, mp_pos, GOTO_STAT);
-#if TAG_MAJOR_VERSION == 34
-    if (you.species == SP_DJINNI)
-        CPRINTF("Contam:");
-    else
-#endif
     CGOTOXY(1, ac_pos, GOTO_STAT); CPRINTF("AC:");
     CGOTOXY(1, ev_pos, GOTO_STAT); CPRINTF("EV:");
     CGOTOXY(1, sh_pos, GOTO_STAT); CPRINTF("SH:");
@@ -2687,7 +2606,7 @@ string mutation_overview()
     }
 
     // a bit more stuff
-    if (you.species == SP_TITAN || you.species == SP_TROLL
+    if (you.species == SP_TROLL
         || species_is_draconian(you.species) || you.species == SP_SPRIGGAN)
     {
         mutations.emplace_back("unfitting armour");

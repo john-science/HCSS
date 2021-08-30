@@ -374,21 +374,6 @@ bool can_wield(const item_def *weapon, bool say_reason,
             return false;
     }
 
-#if TAG_MAJOR_VERSION == 34
-    else if (you.species == SP_DJINNI
-             && get_weapon_brand(*weapon) == SPWPN_ANTIMAGIC
-             && (item_type_known(*weapon) || !only_known))
-    {
-        if (say_reason)
-        {
-            mpr("As you grasp it, you feel your magic disrupted. Quickly, you stop.");
-            id_brand = true;
-        }
-        else
-            return false;
-    }
-#endif
-
     if (id_brand)
     {
         auto wwpn = const_cast<item_def*>(weapon);
@@ -872,11 +857,7 @@ bool can_wear_armour(const item_def &item, bool verbose, bool ignore_temporary)
             return false;
         }
 
-        if (you.species == SP_NAGA
-#if TAG_MAJOR_VERSION == 34
-            || you.species == SP_DJINNI
-#endif
-           )
+        if (you.species == SP_NAGA)
         {
             if (verbose)
                 mpr("You have no legs!");
@@ -947,7 +928,7 @@ bool can_wear_armour(const item_def &item, bool verbose, bool ignore_temporary)
             }
         }
     }
-	
+
     if (slot == EQ_CLOAK)
     {
         if (you.get_mutation_level(MUT_PREHENSILE_TENTACLE) == 3)
@@ -999,12 +980,6 @@ bool wear_armour(int item)
     // conditions that would make it impossible to wear any type of armour.
     // TODO: perhaps also worth checking here whether all available armour slots
     // are cursed. Same with jewellery.
-    if (you.species == SP_FELID)
-    {
-        mpr("You can't wear anything.");
-        return false;
-    }
-
     if (!form_can_wear())
     {
         mpr("You can't wear anything in your present form.");
@@ -2132,7 +2107,7 @@ void drink(item_def* potion)
     {
         you.increase_duration(DUR_AGILITY, 15 + random2(15), 30);
     }
-	
+
     if (in_inventory(*potion))
     {
         dec_inv_item_quantity(potion->link, 1);
@@ -2501,10 +2476,8 @@ void random_uselessness()
         break;
 
     case 3:
-        if (you.species == SP_MUMMY)
-            mpr("Your bandages flutter.");
-        else // if (you.can_smell())
-            mprf("You smell %s.", _weird_smell().c_str());
+        // if (you.can_smell())
+        mprf("You smell %s.", _weird_smell().c_str());
         break;
 
     case 4:
@@ -2514,7 +2487,7 @@ void random_uselessness()
     case 5:
         if (you.get_mutation_level(MUT_BEAK) || one_chance_in(3))
             mpr("Your brain hurts!");
-        else if (you.species == SP_MUMMY || coinflip())
+        else if (coinflip())
             mpr("Your ears itch!");
         else
             mpr("Your nose twitches suddenly!");
@@ -2877,7 +2850,7 @@ void read_scroll(item_def& scroll)
     case SCR_TELEPORTATION:
         you_teleport();
         break;
-		
+
 #if TAG_MAJOR_VERSION == 34
     case SCR_REMOVE_CURSE:
         if (!alreadyknown)

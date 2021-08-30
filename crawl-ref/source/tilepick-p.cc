@@ -576,15 +576,9 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
 #endif
     case SP_KOBOLD:
         return TILEP_BASE_KOBOLD;
-    case SP_MUMMY:
-        return TILEP_BASE_MUMMY;
-    case SP_SKELETON:
-        return TILEP_BASE_SKELETON;
     case SP_NAGA:
         return TILEP_BASE_NAGA;
     case SP_OGRE:
-    case SP_TITAN:
-        return TILEP_BASE_OGRE;
     case SP_TROLL:
         return TILEP_BASE_TROLL;
     case SP_BASE_DRACONIAN:
@@ -604,14 +598,10 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
     case SP_CENTAUR:
         return TILEP_BASE_CENTAUR;
 #endif
-    case SP_DEMIGOD:
-        return TILEP_BASE_DEMIGOD;
     case SP_SPRIGGAN:
         return TILEP_BASE_SPRIGGAN;
     case SP_MINOTAUR:
         return TILEP_BASE_MINOTAUR;
-    case SP_DEMONSPAWN:
-        return TILEP_BASE_DEMONSPAWN;
     case SP_GHOUL:
         return TILEP_BASE_GHOUL;
     case SP_TENGU:
@@ -625,16 +615,8 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
         return TILEP_BASE_DEEP_DWARF;
     case SP_GARGOYLE:
         return TILEP_BASE_GARGOYLE;
-#if TAG_MAJOR_VERSION == 34
-    case SP_FELID:
-        return TILEP_BASE_FELID;
-#endif
     case SP_OCTOPODE:
         return TILEP_BASE_OCTOPODE;
-#if TAG_MAJOR_VERSION == 34
-    case SP_DJINNI:
-        return TILEP_BASE_DJINNI;
-#endif
     case SP_FORMICID:
         return TILEP_BASE_FORMICID;
     case SP_VINE_STALKER:
@@ -718,12 +700,6 @@ void tilep_race_default(int sp, int level, dolls_data *doll)
         case SP_KOBOLD:
             hair = 0;
             break;
-        case SP_MUMMY:
-            hair = 0;
-            break;
-        case SP_SKELETON:
-            hair = 0;
-            break;
         case SP_TROLL:
             hair = TILEP_HAIR_TROLL;
             break;
@@ -742,9 +718,6 @@ void tilep_race_default(int sp, int level, dolls_data *doll)
             break;
         }
         case SP_MINOTAUR:
-            hair = 0;
-            break;
-        case SP_DEMONSPAWN:
             hair = 0;
             break;
         case SP_GHOUL:
@@ -772,11 +745,6 @@ void tilep_race_default(int sp, int level, dolls_data *doll)
         case SP_FORMICID:
             hair = 0;
             break;
-#if TAG_MAJOR_VERSION == 34
-        case SP_DJINNI:
-            hair = TILEP_HAIR_DJINN2;
-            break;
-#endif
         default:
             // nothing to do
             break;
@@ -925,7 +893,7 @@ void tilep_job_default(int job, dolls_data *doll)
             parts[TILEP_PART_HAND2] = TILEP_HAND2_BOOK_YELLOW_DIM;
             parts[TILEP_PART_BOOTS] = TILEP_BOOTS_SHORT_BROWN;
             break;
-			
+
 #if TAG_MAJOR_VERSION == 34
         case JOB_VENOM_MAGE:
             parts[TILEP_PART_BODY]  = TILEP_BODY_ROBE_GREEN;
@@ -967,7 +935,7 @@ void tilep_job_default(int job, dolls_data *doll)
             parts[TILEP_PART_HAND2] = TILEP_HAND2_BOOK_YELLOW_DIM;
             parts[TILEP_PART_BOOTS] = TILEP_BOOTS_SHORT_BROWN;
             break;
-			
+
 #if TAG_MAJOR_VERSION == 34
         case JOB_WARPER:
             parts[TILEP_PART_BODY]  = TILEP_BODY_ROBE_BROWN;

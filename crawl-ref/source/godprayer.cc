@@ -119,12 +119,6 @@ static bool _try_god_conversion(god_type god, bool beogh_priest)
 {
     ASSERT(god != GOD_NO_GOD);
 
-    if (you.species == SP_DEMIGOD || you.species == SP_TITAN)
-    {
-        mpr("A being of your status worships no god.");
-        return false;
-    }
-
     if (god == GOD_ECUMENICAL)
         return _pray_ecumenical_altar();
 

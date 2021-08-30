@@ -1373,9 +1373,6 @@ int attack::calc_damage()
         damage = max(0, damage);
         set_attack_verb(damage);
 		
-        if(you.species == SP_SKELETON && stab_attempt)
-            spooky(defender);
-
         return damage;
     }
 

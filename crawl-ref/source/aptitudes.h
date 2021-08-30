@@ -324,47 +324,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_KOBOLD,          SK_INVOCATIONS,     4),
     APT(SP_KOBOLD,          SK_EVOCATIONS,      4),
 
-    // SP_MUMMY
-    APT(SP_MUMMY,           SK_FIGHTING,        0),
-    APT(SP_MUMMY,           SK_SHORT_BLADES,   -2),
-    APT(SP_MUMMY,           SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_MUMMY,           SK_AXES,           -2),
-    APT(SP_MUMMY,           SK_MACES_FLAILS,   -2),
-    APT(SP_MUMMY,           SK_POLEARMS,       -2),
-    APT(SP_MUMMY,           SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_MUMMY,           SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_MUMMY,           SK_BOWS,           -2),
-    APT(SP_MUMMY,           SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_MUMMY,           SK_THROWING,       -2),
-    APT(SP_MUMMY,           SK_ARMOUR,         -2),
-    APT(SP_MUMMY,           SK_DODGING,        -2),
-    APT(SP_MUMMY,           SK_STEALTH,        -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_MUMMY,           SK_STABBING,      UNUSABLE_SKILL),
-#endif
-    APT(SP_MUMMY,           SK_SHIELDS,        -2),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_MUMMY,           SK_TRAPS,         UNUSABLE_SKILL),
-#endif
-    APT(SP_MUMMY,           SK_UNARMED_COMBAT, -2),
-    APT(SP_MUMMY,           SK_SPELLCASTING,  UNUSABLE_SKILL),
-    APT(SP_MUMMY,           SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_MUMMY,           SK_HEXES,          -1),
-    APT(SP_MUMMY,           SK_CHARMS,         -2),
-    APT(SP_MUMMY,           SK_SUMMONINGS,     -2),
-    APT(SP_MUMMY,           SK_NECROMANCY,      0),
-    APT(SP_MUMMY,           SK_TRANSLOCATIONS, -2),
-    APT(SP_MUMMY,           SK_TRANSMUTATIONS, -2),
-    APT(SP_MUMMY,           SK_FIRE_MAGIC,     -2),
-    APT(SP_MUMMY,           SK_ICE_MAGIC,      -2),
-    APT(SP_MUMMY,           SK_AIR_MAGIC,      -2),
-    APT(SP_MUMMY,           SK_EARTH_MAGIC,    -2),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_MUMMY,           SK_POISON_MAGIC,  UNUSABLE_SKILL),
-#endif
-    APT(SP_MUMMY,           SK_INVOCATIONS,    -1),
-    APT(SP_MUMMY,           SK_EVOCATIONS,     -2),
-
     // SP_NAGA
     APT(SP_NAGA,            SK_FIGHTING,        0),
     APT(SP_NAGA,            SK_SHORT_BLADES,    0),
@@ -930,88 +889,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_CENTAUR,         SK_EVOCATIONS,     -1),
 #endif
 
-    // SP_DEMIGOD
-    APT(SP_DEMIGOD,         SK_FIGHTING,       -1),
-    APT(SP_DEMIGOD,         SK_SHORT_BLADES,   -1),
-    APT(SP_DEMIGOD,         SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_AXES,           -1),
-    APT(SP_DEMIGOD,         SK_MACES_FLAILS,   -1),
-    APT(SP_DEMIGOD,         SK_POLEARMS,       -1),
-    APT(SP_DEMIGOD,         SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_BOWS,           -1),
-    APT(SP_DEMIGOD,         SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_THROWING,       -1),
-    APT(SP_DEMIGOD,         SK_ARMOUR,         -1),
-    APT(SP_DEMIGOD,         SK_DODGING,        -1),
-    APT(SP_DEMIGOD,         SK_STEALTH,         0),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_DEMIGOD,         SK_STABBING,      UNUSABLE_SKILL),
-#endif
-    APT(SP_DEMIGOD,         SK_SHIELDS,        -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_DEMIGOD,         SK_TRAPS,         UNUSABLE_SKILL),
-#endif
-    APT(SP_DEMIGOD,         SK_UNARMED_COMBAT, -1),
-    APT(SP_DEMIGOD,         SK_SPELLCASTING,  UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_HEXES,          -1),
-    APT(SP_DEMIGOD,         SK_CHARMS,         -1),
-    APT(SP_DEMIGOD,         SK_SUMMONINGS,     -1),
-    APT(SP_DEMIGOD,         SK_NECROMANCY,     -1),
-    APT(SP_DEMIGOD,         SK_TRANSLOCATIONS, -1),
-    APT(SP_DEMIGOD,         SK_TRANSMUTATIONS, -1),
-    APT(SP_DEMIGOD,         SK_FIRE_MAGIC,     -1),
-    APT(SP_DEMIGOD,         SK_ICE_MAGIC,      -1),
-    APT(SP_DEMIGOD,         SK_AIR_MAGIC,      -1),
-    APT(SP_DEMIGOD,         SK_EARTH_MAGIC,    -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_DEMIGOD,         SK_POISON_MAGIC,  UNUSABLE_SKILL),
-#endif
-    APT(SP_DEMIGOD,         SK_INVOCATIONS,   UNUSABLE_SKILL),
-    APT(SP_DEMIGOD,         SK_EVOCATIONS,     -1),
-
-    // SP_TITAN
-    APT(SP_TITAN,         SK_FIGHTING,        3),
-    APT(SP_TITAN,         SK_SHORT_BLADES,   -1),
-    APT(SP_TITAN,         SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_TITAN,         SK_AXES,           -1),
-    APT(SP_TITAN,         SK_MACES_FLAILS,    3),
-    APT(SP_TITAN,         SK_POLEARMS,        0),
-    APT(SP_TITAN,         SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_TITAN,         SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_TITAN,         SK_BOWS,           -2),
-    APT(SP_TITAN,         SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_TITAN,         SK_THROWING,       -1),
-    APT(SP_TITAN,         SK_ARMOUR,         -2),
-    APT(SP_TITAN,         SK_DODGING,        -1),
-    APT(SP_TITAN,         SK_STEALTH,        -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_TITAN,         SK_STABBING,      UNUSABLE_SKILL),
-#endif
-    APT(SP_TITAN,         SK_SHIELDS,        -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_TITAN,         SK_TRAPS,         UNUSABLE_SKILL),
-#endif
-    APT(SP_TITAN,         SK_UNARMED_COMBAT,  0),
-    APT(SP_TITAN,         SK_SPELLCASTING,    1),
-    APT(SP_TITAN,         SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_TITAN,         SK_HEXES,          -1),
-    APT(SP_TITAN,         SK_CHARMS,         -1),
-    APT(SP_TITAN,         SK_SUMMONINGS,     -1),
-    APT(SP_TITAN,         SK_NECROMANCY,     -1),
-    APT(SP_TITAN,         SK_TRANSLOCATIONS, -1),
-    APT(SP_TITAN,         SK_TRANSMUTATIONS, -1),
-    APT(SP_TITAN,         SK_FIRE_MAGIC,     -1),
-    APT(SP_TITAN,         SK_ICE_MAGIC,      -1),
-    APT(SP_TITAN,         SK_AIR_MAGIC,       0),
-    APT(SP_TITAN,         SK_EARTH_MAGIC,    -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_TITAN,         SK_POISON_MAGIC,  UNUSABLE_SKILL),
-#endif
-    APT(SP_TITAN,         SK_INVOCATIONS,   UNUSABLE_SKILL),
-    APT(SP_TITAN,         SK_EVOCATIONS,     -1),
-
     // SP_SPRIGGAN
     APT(SP_SPRIGGAN,        SK_FIGHTING,       -2),
     APT(SP_SPRIGGAN,        SK_SHORT_BLADES,    1),
@@ -1134,47 +1011,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
 #endif
     APT(SP_GARGOYLE,         SK_INVOCATIONS,     1),
     APT(SP_GARGOYLE,         SK_EVOCATIONS,     -1),
-
-    // SP_DEMONSPAWN
-    APT(SP_DEMONSPAWN,      SK_FIGHTING,        0),
-    APT(SP_DEMONSPAWN,      SK_SHORT_BLADES,   -1),
-    APT(SP_DEMONSPAWN,      SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_DEMONSPAWN,      SK_AXES,           -1),
-    APT(SP_DEMONSPAWN,      SK_MACES_FLAILS,   -1),
-    APT(SP_DEMONSPAWN,      SK_POLEARMS,       -1),
-    APT(SP_DEMONSPAWN,      SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_DEMONSPAWN,      SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_DEMONSPAWN,      SK_BOWS,           -1),
-    APT(SP_DEMONSPAWN,      SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_DEMONSPAWN,      SK_THROWING,       -1),
-    APT(SP_DEMONSPAWN,      SK_ARMOUR,         -1),
-    APT(SP_DEMONSPAWN,      SK_DODGING,        -1),
-    APT(SP_DEMONSPAWN,      SK_STEALTH,         0),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_DEMONSPAWN,      SK_STABBING,      UNUSABLE_SKILL),
-#endif
-    APT(SP_DEMONSPAWN,      SK_SHIELDS,        -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_DEMONSPAWN,      SK_TRAPS,         UNUSABLE_SKILL),
-#endif
-    APT(SP_DEMONSPAWN,      SK_UNARMED_COMBAT, -1),
-    APT(SP_DEMONSPAWN,      SK_SPELLCASTING,  UNUSABLE_SKILL),
-    APT(SP_DEMONSPAWN,      SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_DEMONSPAWN,      SK_HEXES,           0),
-    APT(SP_DEMONSPAWN,      SK_CHARMS,         -1),
-    APT(SP_DEMONSPAWN,      SK_SUMMONINGS,      0),
-    APT(SP_DEMONSPAWN,      SK_NECROMANCY,      1),
-    APT(SP_DEMONSPAWN,      SK_TRANSLOCATIONS, -1),
-    APT(SP_DEMONSPAWN,      SK_TRANSMUTATIONS, -1),
-    APT(SP_DEMONSPAWN,      SK_FIRE_MAGIC,     -1),
-    APT(SP_DEMONSPAWN,      SK_ICE_MAGIC,      -1),
-    APT(SP_DEMONSPAWN,      SK_AIR_MAGIC,      -1),
-    APT(SP_DEMONSPAWN,      SK_EARTH_MAGIC,    -1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_DEMONSPAWN,      SK_POISON_MAGIC,  UNUSABLE_SKILL),
-#endif
-    APT(SP_DEMONSPAWN,      SK_INVOCATIONS,     3),
-    APT(SP_DEMONSPAWN,      SK_EVOCATIONS,      0),
 
 	#if TAG_MAJOR_VERSION == 34
     // SP_GHOUL
@@ -1330,41 +1166,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_DEEP_DWARF,      SK_POISON_MAGIC,  UNUSABLE_SKILL),
     APT(SP_DEEP_DWARF,      SK_INVOCATIONS,     3),
     APT(SP_DEEP_DWARF,      SK_EVOCATIONS,      3),
-
-    // SP_FELID
-    APT(SP_FELID,           SK_FIGHTING,        0),
-    APT(SP_FELID,           SK_SHORT_BLADES,  UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_AXES,          UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_MACES_FLAILS,  UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_POLEARMS,      UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_BOWS,          UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_THROWING,      UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_ARMOUR,        UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_DODGING,         3),
-    APT(SP_FELID,           SK_STEALTH,         4),
-    APT(SP_FELID,           SK_STABBING,      UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_SHIELDS,       UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_TRAPS,         UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_UNARMED_COMBAT,  0),
-    APT(SP_FELID,           SK_SPELLCASTING,  UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_HEXES,           4),
-    APT(SP_FELID,           SK_CHARMS,          2),
-    APT(SP_FELID,           SK_SUMMONINGS,      0),
-    APT(SP_FELID,           SK_NECROMANCY,      0),
-    APT(SP_FELID,           SK_TRANSLOCATIONS,  4),
-    APT(SP_FELID,           SK_TRANSMUTATIONS,  1),
-    APT(SP_FELID,           SK_FIRE_MAGIC,     -1),
-    APT(SP_FELID,           SK_ICE_MAGIC,      -1),
-    APT(SP_FELID,           SK_AIR_MAGIC,      -1),
-    APT(SP_FELID,           SK_EARTH_MAGIC,    -1),
-    APT(SP_FELID,           SK_POISON_MAGIC,  UNUSABLE_SKILL),
-    APT(SP_FELID,           SK_INVOCATIONS,     0),
-    APT(SP_FELID,           SK_EVOCATIONS,      1),
 #endif
 
     // SP_OCTOPODE
@@ -1409,41 +1210,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_OCTOPODE,        SK_EVOCATIONS,      1),
 
 #if TAG_MAJOR_VERSION == 34
-    // SP_DJINNI
-    APT(SP_DJINNI,          SK_FIGHTING,       -1),
-    APT(SP_DJINNI,          SK_SHORT_BLADES,   -2),
-    APT(SP_DJINNI,          SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_AXES,           -1),
-    APT(SP_DJINNI,          SK_MACES_FLAILS,    0),
-    APT(SP_DJINNI,          SK_POLEARMS,        0),
-    APT(SP_DJINNI,          SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_BOWS,           -1),
-    APT(SP_DJINNI,          SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_THROWING,       -1),
-    APT(SP_DJINNI,          SK_ARMOUR,          1),
-    APT(SP_DJINNI,          SK_DODGING,        -1),
-    APT(SP_DJINNI,          SK_STEALTH,        -1),
-	APT(SP_DJINNI,        	SK_STABBING,      UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_SHIELDS,         0),
-    APT(SP_DJINNI,          SK_TRAPS,         UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_UNARMED_COMBAT, -1),
-    APT(SP_DJINNI,          SK_SPELLCASTING,  UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_HEXES,           2),
-    APT(SP_DJINNI,          SK_CHARMS,          0),
-    APT(SP_DJINNI,          SK_SUMMONINGS,      0),
-    APT(SP_DJINNI,          SK_NECROMANCY,     -2),
-    APT(SP_DJINNI,          SK_TRANSLOCATIONS,  0),
-    APT(SP_DJINNI,          SK_TRANSMUTATIONS,  0),
-    APT(SP_DJINNI,          SK_FIRE_MAGIC,      3),
-    APT(SP_DJINNI,          SK_ICE_MAGIC,      -3),
-    APT(SP_DJINNI,          SK_AIR_MAGIC,       2),
-    APT(SP_DJINNI,          SK_EARTH_MAGIC,    -3),
-    APT(SP_DJINNI,          SK_POISON_MAGIC,  UNUSABLE_SKILL),
-    APT(SP_DJINNI,          SK_INVOCATIONS,    -1),
-    APT(SP_DJINNI,          SK_EVOCATIONS,      1),
-
     // SP_LAVA_ORC
     APT(SP_LAVA_ORC,        SK_FIGHTING,        2),
     APT(SP_LAVA_ORC,        SK_SHORT_BLADES,    0),
@@ -1636,45 +1402,6 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_GNOLL,           SK_POISON_MAGIC,  UNUSABLE_SKILL),
     APT(SP_GNOLL,           SK_INVOCATIONS,     4),
     APT(SP_GNOLL,           SK_EVOCATIONS,      4),
-
-    // SP_SKELETON
-    APT(SP_SKELETON,        SK_FIGHTING,       -1),
-    APT(SP_SKELETON,        SK_SHORT_BLADES,    0),
-    APT(SP_SKELETON,        SK_LONG_BLADES,   UNUSABLE_SKILL),
-    APT(SP_SKELETON,        SK_AXES,            0),
-    APT(SP_SKELETON,        SK_MACES_FLAILS,    0),
-    APT(SP_SKELETON,        SK_POLEARMS,        0),
-    APT(SP_SKELETON,        SK_STAVES,        UNUSABLE_SKILL),
-    APT(SP_SKELETON,        SK_SLINGS,        UNUSABLE_SKILL),
-    APT(SP_SKELETON,        SK_BOWS,            0),
-    APT(SP_SKELETON,        SK_CROSSBOWS,     UNUSABLE_SKILL),
-    APT(SP_SKELETON,        SK_THROWING,        0),
-    APT(SP_SKELETON,        SK_ARMOUR,         -1),
-    APT(SP_SKELETON,        SK_DODGING,        -1),
-    APT(SP_SKELETON,        SK_STEALTH,         2),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_SKELETON,        SK_STABBING,      UNUSABLE_SKILL),
-#endif
-    APT(SP_SKELETON,        SK_SHIELDS,         1),
-#if TAG_MAJOR_VERSION == 34
-    APT(SP_SKELETON,        SK_TRAPS,         UNUSABLE_SKILL),
-#endif
-    APT(SP_SKELETON,        SK_UNARMED_COMBAT,  0),
-    APT(SP_SKELETON,        SK_SPELLCASTING,   -1),
-    APT(SP_SKELETON,        SK_CONJURATIONS,  UNUSABLE_SKILL),
-    APT(SP_SKELETON,        SK_HEXES,          -1),
-    APT(SP_SKELETON,        SK_CHARMS,         -1),
-    APT(SP_SKELETON,        SK_SUMMONINGS,     -1),
-    APT(SP_SKELETON,        SK_NECROMANCY,     -1),
-    APT(SP_SKELETON,        SK_TRANSLOCATIONS, -1),
-    APT(SP_SKELETON,        SK_TRANSMUTATIONS, -1),
-    APT(SP_SKELETON,        SK_FIRE_MAGIC,     -1),
-    APT(SP_SKELETON,        SK_ICE_MAGIC,      -1),
-    APT(SP_SKELETON,        SK_AIR_MAGIC,      -1),
-    APT(SP_SKELETON,        SK_EARTH_MAGIC,    -1),
-    APT(SP_SKELETON,        SK_POISON_MAGIC,  UNUSABLE_SKILL),
-    APT(SP_SKELETON,        SK_INVOCATIONS,    -2),
-    APT(SP_SKELETON,        SK_EVOCATIONS,     -2),
 };
 
 #endif

@@ -179,8 +179,8 @@ string item_def::name(description_level_type descrip, bool terse, bool ident,
     // no "a dragon scales"
     const bool always_plural = armour_is_hide(*this)
                                && sub_type != ARM_TROLL_LEATHER_ARMOUR;
-	
-	
+
+
     if ((base_type == OBJ_CORPSES && is_named_corpse(*this)
          && !(((corpse_flags.flags = props[CORPSE_NAME_TYPE_KEY].get_int64())
                & MF_NAME_SPECIES)
@@ -2632,7 +2632,7 @@ void check_item_knowledge(bool unknown_items)
                                               : known_item_mangle, 'a', false);
 
     ml = menu.load_items(items_missile, known_item_mangle, ml, false);
-	
+
     if (!items_other.empty())
     {
         menu.add_entry(new MenuEntry("Other Items", MEL_SUBTITLE));
@@ -3153,9 +3153,6 @@ bool is_emergency_item(const item_def &item)
             return false;
         }
     case OBJ_POTIONS:
-        if (you.species == SP_MUMMY)
-            return false;
-
         switch (item.sub_type)
         {
         case POT_HASTE:
@@ -3195,8 +3192,6 @@ bool is_good_item(const item_def &item)
     case OBJ_SCROLLS:
         return item.sub_type == SCR_ACQUIREMENT;
     case OBJ_POTIONS:
-        if (you.species == SP_MUMMY)
-            return false;
         switch (item.sub_type)
         {
 #if TAG_MAJOR_VERSION == 34
@@ -3241,8 +3236,6 @@ bool is_bad_item(const item_def &item, bool temp)
 #if TAG_MAJOR_VERSION == 34
         case SCR_CURSE_ARMOUR:
         case SCR_CURSE_WEAPON:
-            if (you.species == SP_FELID)
-                return false;
         case SCR_CURSE_JEWELLERY:
             return !have_passive(passive_t::want_curses);
 #endif
@@ -3250,10 +3243,6 @@ bool is_bad_item(const item_def &item, bool temp)
             return false;
         }
     case OBJ_POTIONS:
-        // Can't be bad if you can't use them.
-        if (you.species == SP_MUMMY)
-            return false;
-
         switch (item.sub_type)
         {
 #if TAG_MAJOR_VERSION == 34
@@ -3397,8 +3386,7 @@ bool is_useless_item(const item_def &item, bool temp)
 
         if (you.undead_or_demonic() && is_holy_item(item))
         {
-            if (!temp && you.form == TRAN_LICH
-                && you.species != SP_DEMONSPAWN)
+            if (!temp && you.form == TRAN_LICH)
             {
                 return false;
             }
@@ -3605,8 +3593,7 @@ bool is_useless_item(const item_def &item, bool temp)
                    || you.undead_state(temp);
 #endif
         case AMU_FAITH:
-            return ((you.species == SP_DEMIGOD || you.species == SP_TITAN) && !you.religion)
-                    || you_worship(GOD_GOZAG)
+            return you_worship(GOD_GOZAG)
                     || (you_worship(GOD_RU) && you.piety == piety_breakpoint(5));
 
         case AMU_GUARDIAN_SPIRIT:
@@ -3623,7 +3610,7 @@ bool is_useless_item(const item_def &item, bool temp)
 
         case AMU_MANA_REGENERATION:
             return you_worship(GOD_PAKELLAS);
-			
+
 #if TAG_MAJOR_VERSION == 34
         case RING_SEE_INVISIBLE:
             return you.innate_sinv();
@@ -3634,7 +3621,7 @@ bool is_useless_item(const item_def &item, bool temp)
 
         case RING_WIZARDRY:
             return you_worship(GOD_TROG);
-			
+
 #if TAG_MAJOR_VERSION == 34
         case RING_TELEPORTATION:
             return !is_bad_item(item, temp);

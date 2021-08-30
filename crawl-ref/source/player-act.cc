@@ -172,11 +172,7 @@ bool player::is_habitable_feat(dungeon_feature_type actual_grid) const
     if (!can_pass_through_feat(actual_grid))
         return false;
 
-    if (airborne()
-#if TAG_MAJOR_VERSION == 34
-            || species == SP_DJINNI
-#endif
-            )
+    if (airborne())
     {
         return true;
     }
@@ -324,9 +320,9 @@ random_var player::attack_delay(const item_def *projectile, bool rescale) const
             attk_delay = haste_mul(attk_delay);
         attk_delay = div_rand_round(attk_delay, 2);
     }
-	
+
     if (weap && player_equip_unrand(UNRAND_VARIABILITY))
-    { 
+    {
         int num = random2(11) + 10;
         int denom = random2(11) + 10;
         attk_delay = div_rand_round(attk_delay * num, denom);
@@ -606,8 +602,6 @@ string player::arm_name(bool plural, bool *can_plural) const
         adj = "scaled";
     else if (species == SP_TENGU)
         adj = "feathered";
-    else if (species == SP_MUMMY)
-        adj = "bandage-wrapped";
     else if (species == SP_OCTOPODE)
         str = "tentacle";
 
@@ -811,10 +805,6 @@ bool player::can_go_berserk(bool intentional, bool potion, bool quiet,
         msg = "You are too mesmerised to rage.";
     else if (afraid())
         msg = "You are too terrified to rage.";
-#if TAG_MAJOR_VERSION == 34
-    else if (you.species == SP_DJINNI)
-        msg = "Only creatures of flesh and blood can berserk.";
-#endif
     else if (is_lifeless_undead())
         msg = "You cannot raise a blood rage in your lifeless body.";
     // Stasis for identified amulets; unided amulets will trigger when the

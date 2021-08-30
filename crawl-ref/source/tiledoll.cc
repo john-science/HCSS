@@ -286,7 +286,6 @@ void fill_doll_equipment(dolls_data &result)
         switch (you.species)
         {
         case SP_NAGA:    ch = TILEP_TRAN_STATUE_NAGA;     break;
-        case SP_FELID:   ch = TILEP_TRAN_STATUE_FELID;    break;
         case SP_OCTOPODE:ch = TILEP_TRAN_STATUE_OCTOPODE; break;
         default:         ch = TILEP_TRAN_STATUE_HUMANOID; break;
         }
@@ -299,7 +298,6 @@ void fill_doll_equipment(dolls_data &result)
         switch (you.species)
         {
         case SP_NAGA:    ch = TILEP_TRAN_LICH_NAGA;     break;
-        case SP_FELID:   ch = TILEP_TRAN_LICH_FELID;    break;
         case SP_OCTOPODE:ch = TILEP_TRAN_LICH_OCTOPODE; break;
         default:         ch = TILEP_TRAN_LICH_HUMANOID; break;
         }
@@ -398,34 +396,18 @@ void fill_doll_equipment(dolls_data &result)
             result.parts[TILEP_PART_HELM] = tilep_equ_helm(you.inv[item]);
         else if (you.get_mutation_level(MUT_HORNS) > 0)
         {
-            if (you.species == SP_FELID)
+            switch (you.get_mutation_level(MUT_HORNS))
             {
-                if (is_player_tile(result.parts[TILEP_PART_BASE],
-                                  TILEP_BASE_FELID))
-                {
-                    // Felid horns are offset by the tile variant.
-                    result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS_CAT
-                        + result.parts[TILEP_PART_BASE] - TILEP_BASE_FELID;
-                }
-                else if (is_player_tile(result.parts[TILEP_PART_BASE],
-                                  TILEP_TRAN_STATUE_FELID))
-                {
-                    result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS_CAT;
-                }
+                case 1:
+                    result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS1;
+                    break;
+                case 2:
+                    result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS2;
+                    break;
+                case 3:
+                    result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS3;
+                    break;
             }
-            else
-                switch (you.get_mutation_level(MUT_HORNS))
-                {
-                    case 1:
-                        result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS1;
-                        break;
-                    case 2:
-                        result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS2;
-                        break;
-                    case 3:
-                        result.parts[TILEP_PART_HELM] = TILEP_HELM_HORNS3;
-                        break;
-                }
         }
         else
             result.parts[TILEP_PART_HELM] = 0;

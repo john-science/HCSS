@@ -522,31 +522,6 @@ void validate_mutations(bool debug_msg)
 
         const mutation_def& mdef = _get_mutation_def(mut);
         ASSERT(you.mutation[mut] <= mdef.levels);
-
-        // reconstruct what the innate mutations should be based on Ds mutation schedule
-        // TODO generalize to all innate muts
-        if (you.species == SP_DEMONSPAWN)
-        {
-            bool is_trait = false;
-            int trait_level = 0;
-            for (player::demon_trait trait : you.demonic_traits)
-            {
-                if (trait.mutation == mut)
-                {
-                    is_trait = true;
-                    if (you.get_experience_level() >= trait.level_gained)
-                        trait_level += 1;
-                }
-            }
-
-            if (debug_msg && is_trait)
-            {
-                dprf("scheduled innate for %s: %d, actual %d", mutation_name(mut),
-                     trait_level, you.innate_mutation[mut]);
-            }
-            if (is_trait)
-                ASSERT(you.innate_mutation[mut] == trait_level);
-        }
     }
     ASSERT(total_temp == you.attribute[ATTR_TEMP_MUTATIONS]);
     ASSERT(you.attribute[ATTR_TEMP_MUT_XP] >=0);
@@ -644,7 +619,7 @@ string describe_mutations(bool center_title)
     default:
         break;
     }
-    
+
 
     // Could move this into species-data, but then the hack that assumes
     // _dragon_abil should get called on all draconian fake muts would break.
@@ -903,7 +878,7 @@ static mutation_type _get_kobold_enhancer_mutation()
                                     1, MUT_AIR_ENHANCER,
                                     1, MUT_EARTH_ENHANCER);
 
-    return mutat;									
+    return mutat;
 }
 
 static mutation_type _get_random_slime_mutation()
@@ -1142,17 +1117,6 @@ static int _body_covered()
 
 bool physiology_mutation_conflict(mutation_type mutat)
 {
-    // If demonspawn, and mutat is a scale, see if they were going
-    // to get it sometime in the future anyway; otherwise, conflict.
-    if (you.species == SP_DEMONSPAWN && _is_covering(mutat)
-        && find(_all_scales, _all_scales+ARRAYSZ(_all_scales), mutat) !=
-                _all_scales+ARRAYSZ(_all_scales))
-    {
-        return none_of(begin(you.demonic_traits), end(you.demonic_traits),
-                       [=](const player::demon_trait &t) {
-                           return t.mutation == mutat;});
-    }
-
     // Strict 3-scale limit.
     if (_is_covering(mutat) && _body_covered() >= 3)
         return true;
@@ -1220,18 +1184,6 @@ bool physiology_mutation_conflict(mutation_type mutat)
             return true;
         }
     }
-#if TAG_MAJOR_VERSION == 34
-
-    // Heat doesn't hurt fire, djinn don't care about hunger.
-    if (you.species == SP_DJINNI && (mutat == MUT_HEAT_RESISTANCE
-        || mutat == MUT_HEAT_VULNERABILITY
-        || mutat == MUT_BERSERK
-        || mutat == MUT_FAST_METABOLISM || mutat == MUT_SLOW_METABOLISM
-        || mutat == MUT_CARNIVOROUS || mutat == MUT_HERBIVOROUS))
-    {
-        return true;
-    }
-#endif
 
     // Already immune.
     if (you.species == SP_GARGOYLE && mutat == MUT_POISON_RESISTANCE)
@@ -1905,7 +1857,7 @@ bool delete_mutation(mutation_type which_mutation, const string &reason,
     else if (which_mutation == RANDOM_KOBOLD_MUTATION)
     {
 		mutat = _delete_random_kobold_mutation();
-		
+
         if(mutat == NUM_MUTATIONS)
             return false;
     }
@@ -2173,7 +2125,6 @@ string mutation_desc(mutation_type mut, int level, bool colour,
 
         if (permanent)
         {
-            const bool demonspawn = (you.species == SP_DEMONSPAWN);
             const bool extra = you.get_base_mutation_level(mut, false, true, true) > 0;
 
             if (fully_inactive || (mut == MUT_COLD_BLOODED && player_res_cold(false) > 0))
@@ -2181,11 +2132,11 @@ string mutation_desc(mutation_type mut, int level, bool colour,
             else if (is_sacrifice)
                 colourname = "lightred";
             else if (partially_active)
-                colourname = demonspawn ? "yellow"    : "blue";
+                colourname = "blue";
             else if (extra)
-                colourname = demonspawn ? "lightcyan" : "cyan";
+                colourname = "cyan";
             else
-                colourname = demonspawn ? "cyan"      : "lightblue";
+                colourname = "lightblue";
         }
         else if (fully_inactive)
             colourname = "darkgrey";
@@ -2560,11 +2511,6 @@ int player::how_mutated(bool innate, bool levels, bool temp) const
                 result += mut_level;
             else if (mut_level > 0)
                 result++;
-        }
-        if (you.species == SP_DEMONSPAWN
-            && you.props.exists("num_sacrifice_muts"))
-        {
-            result -= you.props["num_sacrifice_muts"].get_int();
         }
     }
 

@@ -17,14 +17,9 @@
 
 static bool _banned_combination(job_type job, species_type species)
 {
-    return (species == SP_DEMIGOD || species == SP_TITAN)
-               && (job == JOB_BERSERKER
-                   || job == JOB_TORPOR_KNIGHT
-                   || job == JOB_CHAOS_KNIGHT
-                   || job == JOB_MONK)
-           || job == JOB_TRANSMUTER
-              && (species_undead_type(species) == US_UNDEAD
-                  || species_undead_type(species) == US_HUNGRY_DEAD);
+    return job == JOB_TRANSMUTER
+           && (species_undead_type(species) == US_UNDEAD
+               || species_undead_type(species) == US_HUNGRY_DEAD);
 }
 
 char_choice_restriction species_allowed(job_type job, species_type speci)
@@ -97,7 +92,7 @@ char_choice_restriction weapon_restriction(weapon_type wpn,
     {
         return CC_BANNED;
     }
-	
+
     if (wpn == WPN_SHORTBOW && ng.job != JOB_GLADIATOR
         && ng.job != JOB_ARCANE_MARKSMAN)
     {

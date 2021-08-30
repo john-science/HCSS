@@ -2907,11 +2907,6 @@ static void tag_read_you(reader &th)
             you.mutation[MUT_POISON_RESISTANCE] =
             you.innate_mutation[MUT_POISON_RESISTANCE] = 0;
         }
-        if (you.species == SP_DJINNI)
-        {
-            you.mutation[MUT_NEGATIVE_ENERGY_RESISTANCE] =
-            you.innate_mutation[MUT_NEGATIVE_ENERGY_RESISTANCE] = 3;
-        }
         if (you.species == SP_FORMICID)
         {
             you.mutation[MUT_ANTENNAE] = you.innate_mutation[MUT_ANTENNAE] = 3;
@@ -2968,37 +2963,8 @@ static void tag_read_you(reader &th)
         }
     }
 
-    if (th.getMinorVersion() < TAG_MINOR_FOUL_STENCH
-        && you.species == SP_DEMONSPAWN
-        && you.innate_mutation[MUT_SAPROVOROUS])
-    {
-        you.mutation[MUT_ROT_IMMUNITY] =
-        you.innate_mutation[MUT_ROT_IMMUNITY] = 1;
-    }
-
     you.mutation[MUT_SAPROVOROUS] =
     you.innate_mutation[MUT_SAPROVOROUS] = 0;
-
-    if (th.getMinorVersion() < TAG_MINOR_DS_CLOUD_MUTATIONS
-        && you.species == SP_DEMONSPAWN)
-    {
-        if (you.innate_mutation[MUT_CONSERVE_POTIONS])
-        {
-            you.mutation[MUT_CONSERVE_POTIONS] =
-            you.innate_mutation[MUT_CONSERVE_POTIONS] = 0;
-
-            you.mutation[MUT_FREEZING_CLOUD_IMMUNITY] =
-            you.innate_mutation[MUT_FREEZING_CLOUD_IMMUNITY] = 1;
-        }
-        if (you.innate_mutation[MUT_CONSERVE_SCROLLS])
-        {
-            you.mutation[MUT_CONSERVE_SCROLLS] =
-            you.innate_mutation[MUT_CONSERVE_SCROLLS] = 0;
-
-            you.mutation[MUT_FLAME_CLOUD_IMMUNITY] =
-            you.innate_mutation[MUT_FLAME_CLOUD_IMMUNITY] = 1;
-        }
-    }
 
     if (th.getMinorVersion() < TAG_MINOR_METABOLISM)
     {
@@ -3027,8 +2993,7 @@ static void tag_read_you(reader &th)
     // Give nagas constrict, tengu flight, and mummies restoration/enhancers.
     if (th.getMinorVersion() < TAG_MINOR_REAL_MUTS
         && (you.species == SP_NAGA
-            || you.species == SP_TENGU
-            || you.species == SP_MUMMY))
+            || you.species == SP_TENGU))
     {
         for (int xl = 2; xl <= you.experience_level; ++xl)
             give_level_mutations(you.species, xl);

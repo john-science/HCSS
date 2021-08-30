@@ -143,7 +143,7 @@ const vector<god_power> god_powers[NUM_GODS] =
     },
 
     // Okawaru
-    { { 2, "Okawaru improves your combat prowess.", 
+    { { 2, "Okawaru improves your combat prowess.",
 		   "Okawaru no longer improves your combat prowess."},
       { 5, ABIL_OKAWARU_FINESSE, "speed up your combat" },
     },
@@ -162,7 +162,7 @@ const vector<god_power> god_powers[NUM_GODS] =
            "request divine energy" },
       { 2, "Sif Muna is protecting you from the effects of miscast magic.",
            "Sif Muna no longer protects you from the effects of miscast magic." },
-	  { 3, "Sif Muna improves your magical skills.", 
+	  { 3, "Sif Muna improves your magical skills.",
 		   "Sif Muna no longer improves your magic."},
       { 3, ABIL_SIF_MUNA_CHANNEL_ENERGY, "call upon Sif Muna for magical energy"},
       { 4, ABIL_SIF_MUNA_FORGET_SPELL, "freely open your mind to new spells",
@@ -315,7 +315,7 @@ const vector<god_power> god_powers[NUM_GODS] =
       { 4, ABIL_HEPLIAKLQANA_IDEALISE, "heal and protect your ancestor" },
       { 5, "drain nearby creatures when transferring your ancestor"},
     },
-	
+
     // Wu Jian
     { { 0, "perform damaging attacks by moving towards foes",
            "perform lunging strikes" },
@@ -951,7 +951,7 @@ static bool _give_nemelex_gift(bool forced = false)
 			else
 				mprf("...but your inventory is too cluttered to receive it.");
         }
-		
+
 		destroy_item(thing_created);
         return true;
     }
@@ -1709,11 +1709,11 @@ bool do_god_gift(bool forced)
         case GOD_PAKELLAS:
             success = _give_pakellas_gift();
             break;
-			
+
         case GOD_ZIN:
 		    if (forced || you.piety >= piety_breakpoint(3))
                 success = _give_zin_gift();
-            break;  
+            break;
 
         case GOD_OKAWARU:
         case GOD_TROG:
@@ -1916,7 +1916,7 @@ bool do_god_gift(bool forced)
 
                     simple_god_message(prompt.c_str());
                     // included in default force_more_message
-					
+
                     for (const spell_type& st : offers)
                     {
                         if (!you.spell_library[st])
@@ -2404,7 +2404,7 @@ void lose_piety(int pgn)
 
 	// Redraw piety display
     you.redraw_title = true;
-	
+
     // Don't bother printing out these messages if you're under
     // penance, you wouldn't notice since all these abilities
     // are withheld.
@@ -2468,7 +2468,7 @@ void lose_piety(int pgn)
         // Piety change affects halo / umbra radius.
         invalidate_agrid(true);
     }
-	
+
     //redraw AC if worshipping WJC (might have lost passive)
     if(you_worship(GOD_WU_JIAN))
         you.redraw_armour_class = true;
@@ -2556,7 +2556,7 @@ void excommunication(bool voluntary, god_type new_god)
 
     if (old_god == GOD_ASHENZARI)
         ash_init_bondage(&you);
-	
+
     if (old_god == GOD_XOM)
         xom_mutate_player(true);
 
@@ -2845,7 +2845,7 @@ void excommunication(bool voluntary, god_type new_god)
         you.exp_docked_total[old_god] = you.exp_docked[old_god];
         _set_penance(old_god, 50);
         break;
-		
+
     case GOD_WU_JIAN:
         you.attribute[ATTR_SERPENTS_LASH] = 0;
         you.attribute[ATTR_HEAVENLY_STORM] = 0;
@@ -2966,9 +2966,9 @@ int gozag_service_fee()
 
 bool player_can_join_god(god_type which_god)
 {
-    if (you.species == SP_DEMIGOD || you.species == SP_TITAN)
+    if (is_evil_god(which_god) && you.undead_or_demonic())
         return false;
-	
+
     if (which_god == GOD_TROG && you.mp_frozen > 0)
         return false;
 
@@ -2984,9 +2984,7 @@ bool player_can_join_god(god_type which_god)
 
 #if TAG_MAJOR_VERSION == 34
     // Dithmenos hates fiery species.
-    if (which_god == GOD_DITHMENOS
-        && (you.species == SP_DJINNI
-            || you.species == SP_LAVA_ORC))
+    if (which_god == GOD_DITHMENOS && (you.species == SP_LAVA_ORC))
     {
         return false;
     }
@@ -3467,7 +3465,6 @@ void join_religion(god_type which_god)
 {
     ASSERT(which_god != GOD_NO_GOD);
     ASSERT(which_god != GOD_ECUMENICAL);
-    ASSERT(you.species != SP_DEMIGOD && you.species != SP_TITAN);
 
     redraw_screen();
 
@@ -3513,7 +3510,7 @@ void join_religion(god_type which_god)
         }
         dispel_permanent_buffs(true);
     }
-	
+
 
     // Move gold to top of piles with Gozag.
     if (have_passive(passive_t::detect_gold))
@@ -3875,7 +3872,7 @@ bool god_protects_from_harm()
     {
         return true;
     }
-	
+
     if (you_worship(GOD_ELYVILON))
     {
         if(elyvilon_lifesaving() > 0 && x_chance_in_y(you.piety, 150))
@@ -3922,7 +3919,7 @@ void handle_god_time(int /*time_delta*/)
 			if (one_chance_in(9))
 				lose_piety(1);
 			break;
-			
+
         case GOD_MAKHLEB:
         case GOD_BEOGH:
         case GOD_LUGONU:
@@ -4477,7 +4474,7 @@ static bool _is_temple_god(god_type god)
     {
     case GOD_NO_GOD:
     case GOD_BEOGH:
-    case GOD_ASHENZARI: 
+    case GOD_ASHENZARI:
     case GOD_HEPLIAKLQANA:
         return false;
 

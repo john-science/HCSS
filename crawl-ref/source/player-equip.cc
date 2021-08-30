@@ -1116,9 +1116,7 @@ static void _equip_jewellery_effect(item_def &item, bool unmeld,
         break;
 
     case AMU_FAITH:
-        if (you.species == SP_DEMIGOD || you.species == SP_TITAN)
-            mpr("You feel a surge of self-confidence.");
-        else if (you_worship(GOD_RU) && you.piety >= piety_breakpoint(5))
+        if (you_worship(GOD_RU) && you.piety >= piety_breakpoint(5))
         {
             simple_god_message(" says: An ascetic of your devotion"
                                " has no use for such trinkets.");

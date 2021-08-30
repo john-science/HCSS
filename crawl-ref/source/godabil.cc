@@ -4387,8 +4387,6 @@ bool gozag_call_merchant()
         shop_type type = static_cast<shop_type>(i);
         if (type == SHOP_FOOD)
 			continue;
-        if (type == SHOP_DISTILLERY && you.species == SP_MUMMY)
-            continue;
         if (type == SHOP_EVOKABLES && you.get_mutation_level(MUT_NO_ARTIFICE))
             continue;
         valid_shops.push_back(type);
@@ -5068,15 +5066,6 @@ static mutation_type _random_valid_sacrifice(const vector<mutation_type> &muts)
             continue;
 
         // Special case a few weird interactions:
-
-        // demonspawn can't get frail if they have a robust facet
-        if (you.species == SP_DEMONSPAWN && mut == MUT_FRAIL
-            && any_of(begin(you.demonic_traits), end(you.demonic_traits),
-                      [] (player::demon_trait t)
-                      { return t.mutation == MUT_ROBUST; }))
-        {
-            continue;
-        }
 
         // The Grunt Algorithm
         // (choose a random element from a set of unknown size without building

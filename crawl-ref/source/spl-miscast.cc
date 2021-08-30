@@ -776,11 +776,7 @@ void MiscastEffect::_charms(int severity)
         if (target->is_player())
         {
             debuff_player();
-            if (you.magic_points > 0
-#if TAG_MAJOR_VERSION == 34
-                || you.species == SP_DJINNI
-#endif
-                )
+            if (you.magic_points > 0)
                 {
                     drain_mp(4 + random2(3));
                 }

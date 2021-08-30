@@ -446,7 +446,7 @@ int calc_spell_power(spell_type spell, bool apply_intel, bool fail_rate_check,
 
     if (apply_intel)
         power = (power * you.intel()) / 10;
- 
+
     if (fail_rate_check)
     {
         // Scale appropriately.
@@ -472,14 +472,14 @@ int calc_spell_power(spell_type spell, bool apply_intel, bool fail_rate_check,
         // Augmentation boosts spell power at high HP.
         power *= 10 + 4 * augmentation_amount();
         power /= 10;
-    
+
         // Each level of horror reduces spellpower by 10%
         if (you.duration[DUR_HORROR])
         {
             power *= 10;
             power /= 10 + (you.props[HORROR_PENALTY_KEY].get_int() * 3) / 2;
         }
-     
+
         // at this point, `power` is assumed to be basically in centis.
         // apply a stepdown, and scale.
         power = stepdown_spellpower(power, scale);
@@ -642,15 +642,15 @@ static bool _can_cast()
         // included in default force_more_message
         return false;
     }
-	
-     
+
+
     if (grd(you.pos()) == DNGN_DEEP_WATER
         && !you.can_swim() && !you.airborne())
     {
         mpr("You cannot cast spells while swimming in deep water!");
         return false;
     }
-	
+
     if (grd(you.pos()) == DNGN_LAVA
         && !player_likes_lava() && !you.airborne())
     {
@@ -894,9 +894,7 @@ bool cast_a_spell(bool check_range, spell_type spell)
 
 #if TAG_MAJOR_VERSION == 34
     // Nasty special cases.
-    if (you.species == SP_DJINNI && cast_result == SPRET_SUCCESS
-        && (spell == SPELL_BORGNJORS_REVIVIFICATION
-         || spell == SPELL_SUBLIMATION_OF_BLOOD && you.hp == you.hp_max))
+    if (spell == SPELL_SUBLIMATION_OF_BLOOD && you.hp == you.hp_max)
     {
         // These spells have replenished essence to full.
         inc_mp(cost, true);
@@ -1517,7 +1515,7 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
 
     if (evoked_item && evoked_item->charges == 0)
         return SPRET_FAIL;
-	
+
     else if (allow_fail)
     {
         int spfl = random2(_outcomes());
@@ -1577,7 +1575,7 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
         aim_battlesphere(&you, spell, powc, beam);
 
     const bool old_target = actor_at(beam.target);
-	
+
     const bool can_summon_avatar = !spell_no_hostile_in_range(spell);
 
     spret_type cast_result = _do_cast(spell, powc, spd, beam, god,
@@ -1601,7 +1599,7 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
         if(you.duration[DUR_DESTRUCTION])
             you.duration[DUR_DESTRUCTION] = 0;
     }
-									  
+
     switch (cast_result)
     {
     case SPRET_SUCCESS:
@@ -1739,13 +1737,13 @@ static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, go
         case SPELL_OZOCUBUS_ARMOUR:
             return ice_armour(powc, false);
         case SPELL_SONG_OF_SLAYING:
-            return cast_song_of_slaying(powc, false);  
+            return cast_song_of_slaying(powc, false);
         case SPELL_DEATH_CHANNEL:
             return cast_death_channel(powc, god, false);
         case SPELL_DARKNESS:
             return cast_darkness(powc, false);
         case SPELL_AURA_OF_ABJURATION:
-            return cast_aura_of_abjuration(powc, false);      
+            return cast_aura_of_abjuration(powc, false);
         case SPELL_REPEL_MISSILES:
             return missile_prot(powc, false);
         case SPELL_DEFLECT_MISSILES:
@@ -1755,11 +1753,11 @@ static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, go
         case SPELL_INVISIBILITY:
             return cast_invisibility(powc, false);
         case SPELL_CIGOTUVIS_EMBRACE:
-            return corpse_armour(powc, false);  
+            return corpse_armour(powc, false);
 		case SPELL_RING_OF_FLAMES:
-            return cast_ring_of_flames(powc, false);     
+            return cast_ring_of_flames(powc, false);
         case SPELL_INFUSION:
-            return cast_infusion(powc, false);   
+            return cast_infusion(powc, false);
         case SPELL_EXCRUCIATING_WOUNDS:
             return cast_excruciating_wounds(powc, false);
         case SPELL_INFESTATION:
@@ -1771,7 +1769,7 @@ static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, go
         case SPELL_BATTLESPHERE:
             return player_battlesphere(&you, powc, god, false);
         case SPELL_SPELLFORGED_SERVITOR:
-            return player_spellforged_servitor(powc, god, false);    
+            return player_spellforged_servitor(powc, god, false);
         case SPELL_PORTAL_PROJECTILE:
             return cast_portal_projectile(powc, false);
         case SPELL_PIERCING_SHOT:
@@ -1827,10 +1825,10 @@ static spret_type _do_cast(spell_type spell, int powc,
         if (!adjacent(you.pos(), target))
             return SPRET_ABORT;
     }
-	
+
     if (is_buff_spell(spell))
         return _handle_buff_spells(spell, powc, beam, god, fail);
-    
+
     if(spell_is_form(spell))
         return _handle_form_spells(spell, powc, beam, god, fail);
 
@@ -2137,11 +2135,11 @@ int spell_mp_freeze (spell_type spell)
     //no need to freeze mp if it's not a buff spell
     if (!is_buff_spell(spell) && !spell_is_form(spell))
 	    return 0;
-    else 
+    else
     {
         // divide by the square of the success rate to prevent dumb shit like casting 99% fail charms
 		double success = 1 - _get_true_fail_rate(raw_spell_fail(spell));
-        // and max out an absurdly high value to avoid weird behaviors 
+        // and max out an absurdly high value to avoid weird behaviors
         if (success < 0.05)
             return 400;
 		double mp_to_freeze = spell_difficulty(spell) / (success * success);
@@ -2322,12 +2320,12 @@ string spell_reserved_mp_string(spell_type spell)
 {
 	if (!is_buff_spell(spell) && !spell_is_form(spell))
         return "N/A";
-    else 
+    else
     {
         int mp_to_freeze = spell_mp_freeze(spell);
         if (mp_to_freeze == 400)
             return make_stringf(">400");
-        return make_stringf("%d", mp_to_freeze);    
+        return make_stringf("%d", mp_to_freeze);
     }
 }
 

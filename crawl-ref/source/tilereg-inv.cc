@@ -240,10 +240,6 @@ static bool _can_use_item(const item_def &item, bool equipped)
         return !_is_true_equipped_item(item);
     }
 
-    // Mummies can't do anything with food or potions.
-    if (you.species == SP_MUMMY)
-        return item.base_type != OBJ_POTIONS && item.base_type != OBJ_FOOD;
-
     // In all other cases you can use the item in some way.
     return true;
 }

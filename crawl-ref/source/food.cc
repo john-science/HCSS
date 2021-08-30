@@ -56,11 +56,7 @@ void set_hunger(int new_hunger_level, bool suppress_msg)
 
 bool you_foodless(bool can_eat)
 {
-    return you.undead_state() == US_UNDEAD
-#if TAG_MAJOR_VERSION == 34
-        || you.species == SP_DJINNI && !can_eat
-#endif
-        ;
+    return you.undead_state() == US_UNDEAD;
 }
 
 // [ds] Returns true if something was eaten.

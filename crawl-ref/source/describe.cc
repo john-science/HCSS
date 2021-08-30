@@ -923,7 +923,7 @@ static bool _could_set_training_target(const item_def &item, bool ignore_current
 
     if (you.species == SP_GNOLL || you.species == SP_KOBOLD)
         return false;
-	
+
     const skill_type skill = _item_training_skill(item);
     if (skill == SK_NONE)
         return false;
@@ -981,7 +981,7 @@ static string _skill_target_desc(skill_type skill, int scaled_target,
 
     if (you.species == SP_GNOLL || you.species == SP_KOBOLD)
         return description;
-	
+
     scaled_target = min(scaled_target, 270);
 
     const bool max_training = (training == 100);
@@ -1507,7 +1507,7 @@ static string _describe_ammo(const item_def &item)
         if (could_set_target)
             _append_skill_target_desc(description, SK_THROWING, target_skill);
     }
-    
+
     if (!ammo_never_destroyed(item))
         description += "\n\nIt will always be destroyed on impact.";
 
@@ -1846,7 +1846,7 @@ static string _describe_deck(const item_def &item)
     description += make_stringf("\nMost decks begin with %d to %d cards and can contain no more than 127 cards.",
                                 MIN_STARTING_CARDS,
                                 MAX_STARTING_CARDS);
-								
+
 	description += "\nNemelex Xobeh will take the deck from you if you drop it.";
 
     const int num_cards = cards_in_deck(item);
@@ -2625,12 +2625,7 @@ string get_skill_description(skill_type skill, bool need_title)
     switch (skill)
     {
         case SK_INVOCATIONS:
-            if (you.species == SP_DEMIGOD || you.species == SP_TITAN)
-            {
-                result += "\n";
-                result += "How on earth did you manage to pick this up?";
-            }
-            else if (you_worship(GOD_TROG))
+            if (you_worship(GOD_TROG))
             {
                 result += "\n";
                 result += "Note that Trog doesn't use Invocations, due to its "
@@ -3276,8 +3271,8 @@ static void _describe_monster_ac(const monster_info& mi, ostringstream &result)
     // print an actual number for monster ac
 	if (mons_class_is_zombified(mi.type) || mons_genus(mi.type) == MONS_DRACONIAN)
 	{
-		std::string s = std::to_string(mi.ac); 
-		result << "Base AC: " + s + "\n";	
+		std::string s = std::to_string(mi.ac);
+		result << "Base AC: " + s + "\n";
 	}
 	else
 	{

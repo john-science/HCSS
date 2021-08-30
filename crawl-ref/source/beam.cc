@@ -2133,9 +2133,8 @@ int silver_damages_victim(actor* victim, int damage, string &dmg_msg)
     }
     else if (victim->is_player())
     {
-        // For mutation damage, we want to count innate mutations for
-        // demonspawn but not other species.
-        int multiplier = 5 * you.how_mutated(you.species == SP_DEMONSPAWN, true);
+        // For mutation damage, we don't want to count innate mutations
+        int multiplier = 5 * you.how_mutated(false, true);
         if (multiplier == 0)
             return 0;
 
@@ -3095,7 +3094,7 @@ bool bolt::harmless_to_player() const
 #if TAG_MAJOR_VERSION == 34
     case BEAM_FIRE:
     case BEAM_STICKY_FLAME:
-        return you.species == SP_DJINNI;
+        return false;
 #endif
 
     case BEAM_VIRULENCE:
