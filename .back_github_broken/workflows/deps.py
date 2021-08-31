@@ -138,4 +138,3 @@ if __name__ == "__main__":
         install_llvm()
     if args.crosscompile:
         setup_msys_ccache_symlinks()
-

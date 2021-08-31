@@ -81,4 +81,3 @@ end
 you.delete_all_mutations("Species mutation test")
 assert(you.change_species("human")) -- should clean up any innate mutatinos
 assert(you.set_xl(1, false))
-

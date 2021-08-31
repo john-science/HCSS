@@ -3488,4 +3488,3 @@ int melee_attack::calc_damage()
 
     return attack::calc_damage();
 }
-

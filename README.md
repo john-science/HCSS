@@ -22,4 +22,3 @@ One of my personal design goals for HCSS is to have a simpler version of DCSS, w
 
 I am sure I will make a ton of decisions in HCSS that the creators of Hellcrawl and indeed DCSS will not like. That's fine. The online gaming world is notoriously persnickety, and I woni't defend my
 choices. This fork is just for my own lawls, and I expect most people will continue playing the venerated games I forked from.
-
