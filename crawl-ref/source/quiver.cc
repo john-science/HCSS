@@ -373,7 +373,7 @@ void player_quiver::_get_fire_order(vector<int>& order,
     {
         return;
     }
-	
+
     if (launcher && launcher->base_type == OBJ_WEAPONS
     && (launcher->sub_type == WPN_SHORTBOW
             || launcher->sub_type == WPN_LONGBOW
@@ -512,7 +512,7 @@ static bool _item_matches(const item_def &item, fire_type types,
         return true;
     if ((types & FIRE_DART) && item.sub_type == MI_DART_FRENZY)
         return true;
-	
+
     if (types & FIRE_LAUNCHER)
     {
         if (launcher && item.launched_by(*launcher))

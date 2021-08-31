@@ -1708,7 +1708,7 @@ static tileidx_t _tileidx_monster_no_props(const monster_info& mon)
                     const weapon_type wt = (weapon_type)item.sub_type;
                     if (wt == WPN_WHIP || wt == WPN_FLAIL
                             || wt == WPN_DEMON_WHIP || wt == WPN_SACRED_SCOURGE)
-                        return TILEP_MONS_SPECTRAL_WHIP; 
+                        return TILEP_MONS_SPECTRAL_WHIP;
 					else if (wt == WPN_MACE || wt == WPN_MORNINGSTAR
                             || wt == WPN_GREAT_MACE || wt == WPN_GIANT_CLUB
                             || wt == WPN_GIANT_SPIKED_CLUB)

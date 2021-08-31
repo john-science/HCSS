@@ -209,7 +209,7 @@ static void _equip_artefact_effect(item_def &item, bool *show_msgs, bool unmeld,
         if (entry->world_reacts_func)
             you.unrand_reacts.set(slot);
     }
-	
+
     const bool msg          = !show_msgs || *show_msgs;
 
     artefact_properties_t  proprt;
@@ -479,7 +479,7 @@ static void _equip_weapon_effect(item_def& item, bool showMsgs, bool unmeld)
                 case SPWPN_SPEED:
                     mpr(you.hands_act("tingle", "!"));
                     break;
-				
+
                 case SPWPN_DEVASTATION:
                     mpr("You feel an incredible weight.");
                     break;
@@ -804,7 +804,7 @@ static void _equip_armour_effect(item_def& arm, bool unmeld,
         case SPARM_PROTECTION:
             mpr("You feel protected.");
             break;
-			
+
         case SPARM_MAGICAL_POWER:
             canned_msg(MSG_MANA_INCREASE);
             calc_mp();
@@ -956,7 +956,7 @@ static void _unequip_armour_effect(item_def& item, bool meld,
     case SPARM_PROTECTION:
         mpr("You feel less protected.");
         break;
-		
+
     case SPARM_MAGICAL_POWER:
         canned_msg(MSG_MANA_DECREASE);
         calc_mp();
@@ -1042,8 +1042,8 @@ static void _equip_amulet_of_regeneration()
     else
     {
         mprf("You sense that the amulet cannot attune itself to your %s"
-            " body.", you.hp == you.hp_max ? "exhausted" : 
-                  you.magic_points == you.max_magic_points ? "injured" : 
+            " body.", you.hp == you.hp_max ? "exhausted" :
+                  you.magic_points == you.max_magic_points ? "injured" :
                   "injured and exhausted");
         you.props[REGEN_AMULET_ACTIVE] = 0;
     }
@@ -1144,7 +1144,7 @@ static void _equip_jewellery_effect(item_def &item, bool unmeld,
     case AMU_GUARDIAN_SPIRIT:
         _spirit_shield_message(unmeld);
         break;
-		
+
     case AMU_DESTRUCTION:
         if (!unmeld)
             _equip_amulet_of_destruction();
@@ -1237,7 +1237,7 @@ static void _unequip_jewellery_effect(item_def &item, bool mesg, bool meld,
         if (!meld)
             _remove_amulet_of_faith(item);
         break;
-		
+
     case AMU_DESTRUCTION:
         if(you.duration[DUR_DESTRUCTION])
             you.duration[DUR_DESTRUCTION] = 0;

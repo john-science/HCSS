@@ -6,7 +6,7 @@ If you get this description, it is a bug.
 Release buffs ability
 
 Releases the bound energies of any spells that you are sustaining, canceling
-their effects. This will restore your maximum mp to its true value but will 
+their effects. This will restore your maximum mp to its true value but will
 not replenish your currently available mp.
 %%%%
 Spit Poison ability
@@ -279,14 +279,14 @@ blessing may only be used once, and it cannot be used on artefact weapons.
 Miasmata ability
 
 Imbues your attacks with putrescent vapours. Enemies you strike
-may be engulfed in miasma for a brief time. High levels of 
+may be engulfed in miasma for a brief time. High levels of
 necromancy skill will increase the chance of a cloud forming as well as the
 duration of the ability.
 %%%%
 Torment ability
 
-Invokes unholy torment, causing great pain to all hostile living creatures in 
-the user's line of sight, but also affecting the user. The damage is never 
+Invokes unholy torment, causing great pain to all hostile living creatures in
+the user's line of sight, but also affecting the user. The damage is never
 directly lethal. Kikubaaqudgha may shield you from the effect, depending on your piety.
 %%%%
 Brand Weapon With Pain ability
@@ -326,7 +326,7 @@ skeletons cannot leave the level they were created on.
 Drain Life ability
 
 Drains the life force of any nearby creatures, healing the user and their enslaved
-soul (if present) for a portion of the damage dealt. The amount of life force drained 
+soul (if present) for a portion of the damage dealt. The amount of life force drained
 is increased by Invocations skill.
 %%%%
 Enslave Soul ability
@@ -515,12 +515,12 @@ to keep, discarding the other two.
 Deal Four ability
 
 Deals four cards from any unmarked deck in the time it normally takes to draw a
-single card. If the deck does not contain enough cards, Nemelex will give you 
+single card. If the deck does not contain enough cards, Nemelex will give you
 one extra card, but you might not like it.
 %%%%
 Stack Five ability
 
-Shows you five cards from any unmarked deck in your inventory and allows you to sort 
+Shows you five cards from any unmarked deck in your inventory and allows you to sort
 them into any order. Subsequently, you can draw these cards in the order you chose.
 %%%%
 # Beogh
@@ -714,8 +714,8 @@ or rubble. Invocations skill increases both damage and area affected.
 %%%%
 Cloud Surge ability
 
-Calls forth flame, freezing, and storm clouds in a ring around you. Invocations skill 
-increases the area affected. Clouds already present in the affected area have their 
+Calls forth flame, freezing, and storm clouds in a ring around you. Invocations skill
+increases the area affected. Clouds already present in the affected area have their
 durations greatly extended.
 %%%%
 Disaster Area ability

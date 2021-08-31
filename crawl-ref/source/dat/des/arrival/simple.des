@@ -2004,9 +2004,9 @@ E.....WWwwwWW.....E
 x....WwwwwwwwW....x
 xxxxxxxxxxxxxxxxxxx
 ENDMAP
- 
+
 ###############################################################################
- 
+
 NAME:   giann_horns
 TAGS:   arrival no_monster_gen
 ORIENT: float
@@ -2020,7 +2020,7 @@ x............{............x
 xx.......................xx
  xxxxxxxxxxxx+xxxxxxxxxxxx
 ENDMAP
- 
+
 NAME:   giann_bridges
 TAGS:   arrival no_monster_gen
 MONS:   plant
@@ -2038,7 +2038,7 @@ MAP
 .1wwwwwwww1...1wwwwwwww1.
 .........................
 ENDMAP
- 
+
 NAME:   giann_wishing_wells
 TAGS:   arrival no_monster_gen no_item_gen no_rotate
 KITEM:  $ = gold q:1
@@ -2054,7 +2054,7 @@ xx..S.............S..xx
       xx.......xx
        xxxxxxxxx
 ENDMAP
- 
+
 NAME:   giann_forest_graveyard
 TAGS:   arrival no_monster_gen
 MONS:   plant

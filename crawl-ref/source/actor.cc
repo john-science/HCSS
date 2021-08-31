@@ -655,7 +655,7 @@ void actor::handle_constriction()
         DIAG_ONLY(const int infdam = damage);
 
         string exclamations;
-		std::string d = std::to_string(damage);	
+		std::string d = std::to_string(damage);
         if (damage <= 0 && is_player()
             && you.can_see(*defender))
         {

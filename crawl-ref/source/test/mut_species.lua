@@ -65,7 +65,7 @@ local function test_random_mutations_species(species, tries, iterations, chance_
     end
 end
 
-species = {"hill orc", "minotaur", "merfolk", "gargoyle", "draconian", "troll", "ghoul", 
+species = {"hill orc", "minotaur", "merfolk", "gargoyle", "draconian", "troll", "ghoul",
             "human", "kobold", "spriggan", "tengu", "deep elf", "ogre",
             "vine stalker", "jiangshi", "demigod", "formicid", "naga", "octopode",
             "mummy"}

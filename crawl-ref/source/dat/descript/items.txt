@@ -8,9 +8,9 @@ corrosive slime flow off it like water.
 %%%%
 amulet of destruction
 
-An amulet inscribed with mysterious runes. Casting a destructive spell briefly 
+An amulet inscribed with mysterious runes. Casting a destructive spell briefly
 attunes the amulet to that spell, reducing the MP cost of successive casts for
-a short time. The attunement is refreshed when the spell is cast again but is 
+a short time. The attunement is refreshed when the spell is cast again but is
 lost if another spell is cast.
 %%%%
 amulet of faith
@@ -151,7 +151,7 @@ grotesque art depicting scenes of disgusting decay.
 %%%%
 book of arcane marksmanship
 
-A spellbook containing Hexes that obstruct and impede, and Translocations 
+A spellbook containing Hexes that obstruct and impede, and Translocations
 that enable a skilled archer to get the better of their foes.
 %%%%
 book of dreams
@@ -1131,7 +1131,7 @@ of its limbs.
 %%%%
 wand of slimification
 
-A magical device which causes a creature to be transmogrified into a slime 
+A magical device which causes a creature to be transmogrified into a slime
 creature. It behaves unpredictably against shape-changing creatures.
 %%%%
 wand of scattershot

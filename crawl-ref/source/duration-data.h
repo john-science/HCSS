@@ -3,7 +3,7 @@
  */
 
 #include "godpassive.h"
- 
+
 static void _end_weapon_brand()
 {
     you.attribute[ATTR_EXCRUCIATING_WOUNDS] = 0;

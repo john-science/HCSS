@@ -28,8 +28,8 @@ icebreaker at wizard parties.
 %%%%
 Animate Dead spell
 
-Reanimates corpses of monsters slain by the caster as mindless zombies. 
-This magic is unstable, so eventually those reanimated will crumble to dust. 
+Reanimates corpses of monsters slain by the caster as mindless zombies.
+This magic is unstable, so eventually those reanimated will crumble to dust.
 Zombies cannot leave the level they were created on. High spellpower will
 increase the chance of reanimating a slain monster.
 %%%%
@@ -124,7 +124,7 @@ Causes long, scythe-shaped blades to grow from the caster's hands, increasing
 melee damage significantly.
 
 While transformed, any equipped weapons are melded. The caster also becomes
-unable to evoke wands, and casting spells -aside from other form-changing 
+unable to evoke wands, and casting spells -aside from other form-changing
 spells- becomes somewhat more difficult.
 %%%%
 Blink Allies Away spell
@@ -266,7 +266,7 @@ Cigotuvi's Embrace spell
 
 Brings forth a chunk of bone to serve as armour and shield for the caster.
 The bone relentlessly calls carrion from the freshly slain to further enhance
-the caster's defenses, though the additional armour will decay with time. 
+the caster's defenses, though the additional armour will decay with time.
 It has no effect on casters in Statue Form, or with Ozocubu's Armour active.
 %%%%
 Cleansing Flame spell
@@ -375,19 +375,19 @@ monsters as well.
 %%%%
 Darkness spell
 
-Dims the light of the dungeon, reducing the range of vision. 
+Dims the light of the dungeon, reducing the range of vision.
 %%%%
 Dazzling Spray spell
 
-Fires a spread of scintillating fiery bolts from the caster's fingertips. The 
+Fires a spread of scintillating fiery bolts from the caster's fingertips. The
 bolts may blind living creatures, even those that fully resist fire.
 %%%%
 Death Channel spell
 
 Raises living creatures slain by the caster and their allies, reducing them to
-a state of spectral slavery. The chance of successfully raising a spectral being 
+a state of spectral slavery. The chance of successfully raising a spectral being
 increases with spellpower. The spell may be sustained indefinitely as long
-as the caster can reserve a sufficient portion of their magic. 
+as the caster can reserve a sufficient portion of their magic.
 %%%%
 Death Rattle spell
 
@@ -545,7 +545,7 @@ Excruciating Wounds spell
 
 Infuses the weapon held by the caster with the essence of pain
 itself. It will not affect artefact weapons. A weapon thus infused
-will sometimes shriek uncontrollably when swung, but high spellpower 
+will sometimes shriek uncontrollably when swung, but high spellpower
 will help keep it quiet. The weapon will remain branded as long as it is
 the caster can reserve sufficient magic to sustain the spell and keeps
 the weapon wielded.
@@ -590,7 +590,7 @@ target's movement. It has no effect on targets that are already frozen.
 %%%%
 Force Lance spell
 
-Fires a shaft of metal imbued with translocational force. If the impact 
+Fires a shaft of metal imbued with translocational force. If the impact
 deals damage, it may knock the target back.
 %%%%
 Forceful Invitation spell
@@ -657,7 +657,7 @@ Haste spell
 Speeds the actions of the caster. The perfected version of this spell never expires,
 so long as the caster can reserve enough magical power to sustain it, but requires
 such immense skill to maintain that few are capable of casting it at all. Many of
-the dungeon's denizens know an inferior, temporary version of the spell. 
+the dungeon's denizens know an inferior, temporary version of the spell.
 %%%%
 Haunt spell
 
@@ -728,8 +728,8 @@ spell.
 %%%%
 Infestation spell
 
-Calls forth a plague of scarabs to coat the caster's hands or melee weapon. As long 
-as the spell is sustained, any monster hit by the caster will become infested 
+Calls forth a plague of scarabs to coat the caster's hands or melee weapon. As long
+as the spell is sustained, any monster hit by the caster will become infested
 for a duration depending on power. When an infested monster dies, a death scarab
 will burst forth from their remains, though this process prevents reanimating the corpse
 in other ways.
@@ -959,9 +959,9 @@ impact. Its damage partially bypasses armour.
 %%%%
 Ozocubu's Armour spell
 
-Envelops the caster's body in a protective layer of thick ice. This provides 
-no special protection against cold. The spell will not function for casters 
-already wearing heavy armour (any body armour with an encumbrance rating of 5 
+Envelops the caster's body in a protective layer of thick ice. This provides
+no special protection against cold. The spell will not function for casters
+already wearing heavy armour (any body armour with an encumbrance rating of 5
 or more).
 %%%%
 Ozocubu's Refrigeration spell
@@ -1048,7 +1048,7 @@ wands or cast spells. The caster's demise will cause the transformation to end.
 Piercing Shot spell
 
 Imbues the caster's thrown or fired missiles with translocational energy, causing
-them to pierce through any targets hit until reaching their maximum distance and 
+them to pierce through any targets hit until reaching their maximum distance and
 bypassing shields. Each missile thrown or fired in this way consumes additional magic.
 %%%%
 Portal Projectile spell
@@ -1082,7 +1082,7 @@ caster, over a short duration.
 %%%%
 Regeneration spell
 
-Reanimates parts of the caster's wounds. This unnatural act dramatically 
+Reanimates parts of the caster's wounds. This unnatural act dramatically
 increases the caster's health regeneration, but requires a portion of their
 magic to be held in reserve to sustain the effect.
 %%%%
@@ -1132,7 +1132,7 @@ Fires a continuous ray of fiery energy from the caster's hands. Though
 initially mild, so long as the caster maintains focus upon the spell and
 supplies it with magical power (by waiting in place and not taking any other
 actions), the ray will grow in strength until it becomes a surging bolt able to
-tear clean through the ranks of the caster's foes. The ray is concentrated enough 
+tear clean through the ranks of the caster's foes. The ray is concentrated enough
 to partially ignore the fire resistance of those it strikes.
 %%%%
 Searing Breath spell
@@ -1225,11 +1225,11 @@ Smiting spell
 %%%%
 Song of Slaying spell
 
-Recites ancient verses of battle, boosting the caster's slaying abilities. 
-Each non-summoned enemy the caster slays in combat during this recitation 
+Recites ancient verses of battle, boosting the caster's slaying abilities.
+Each non-summoned enemy the caster slays in combat during this recitation
 further enhances their melee and ranged skills for a short time. The song
-continues as long as the caster can reserve a portion of their 
-magical power to sustain it. 
+continues as long as the caster can reserve a portion of their
+magical power to sustain it.
 %%%%
 Spawn Tentacles spell
 
@@ -1244,7 +1244,7 @@ coalesce from the mist over time.
 Spectral Weapon spell
 
 Draws out the spirit within a wielded weapon to fight for the caster, with its
-strength increasing with power. The weapon will be summoned when the caster 
+strength increasing with power. The weapon will be summoned when the caster
 successfully hits a target. It only attacks when the caster does, and its
 kills count as the caster's own. Only one spectral weapon can be maintained
 at a time, and only while the original weapon remains wielded.

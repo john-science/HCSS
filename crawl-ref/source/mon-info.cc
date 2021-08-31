@@ -1354,7 +1354,7 @@ void monster_info::to_string(int count, string& desc, int& desc_colour,
         }
         break;
     }
-	
+
     if (colour_type < _NUM_MLC)
         desc_colour = _monster_list_colours[colour_type];
 

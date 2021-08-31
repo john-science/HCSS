@@ -782,14 +782,14 @@ static void _cast_smiting(monster &caster, mon_spell_slot slot, bolt&)
     const god_type god = _find_god(caster, slot.flags);
     actor* foe = caster.get_foe();
     ASSERT(foe);
-	
+
 	int damage = 7 + random2avg(11, 2);
-	
+
     if (foe->is_player())
         mprf("%s smites you (%d)!", _god_name(god).c_str(), damage);
     else
         mprf("%s is smitten (%d).", caster.get_foe()->name(DESC_THE).c_str(), damage);
-	
+
     foe->hurt(&caster, damage, BEAM_MISSILE, KILLED_BY_BEAM,
               "", "by divine providence");
 }
@@ -1483,7 +1483,7 @@ bolt mons_spell_beam(const monster* mons, spell_type spell_cast, int power,
         beam.flavour      = BEAM_CHAOS;
         beam.pierce       = true;
         break;
-		
+
 	case SPELL_RADIATION_BREATH:
         beam.name         = "blast of radiation";
         beam.aux_source   = "blast of radiation breath";
@@ -3789,7 +3789,7 @@ static bool _short_target_range(const monster *mons)
  * Are we a long distance from our target?
  *
  * @param  mons The monster checking distance from its target.
- * @return true if we have a target and are outside LOS_DEFAULT_RANGE / 2 of 
+ * @return true if we have a target and are outside LOS_DEFAULT_RANGE / 2 of
  *          that target, or false otherwise.
  */
 static bool _long_target_range(const monster *mons)
@@ -4556,7 +4556,7 @@ static void _mons_vampiric_drain(monster &mons, mon_spell_slot slot, bolt&)
         {
             mprf("%s draws life force from %s (%d)!",
 				mons.name(DESC_THE).c_str(), targname.c_str(), hp_cost);
-                                                
+
         }
         else if (mons.heal(hp_cost * 2 / 3))
         {
@@ -5831,15 +5831,15 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         int damage_taken = waterstrike_damage(*mons).roll();
         damage_taken = foe->beam_resists(pbolt, damage_taken, false);
         damage_taken = foe->apply_ac(damage_taken);
-		
+
         if (you.can_see(*foe))
         {
             if (foe->airborne())
-                mprf("The water rises up and strikes %s (%d)!", 
+                mprf("The water rises up and strikes %s (%d)!",
 					foe->name(DESC_THE).c_str(),
 					damage_taken);
             else
-                mprf("The water swirls and strikes %s (%d)!", 
+                mprf("The water swirls and strikes %s (%d)!",
 					foe->name(DESC_THE).c_str(),
 					damage_taken);
         }
@@ -5856,11 +5856,11 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
 		// Damage averages 14 for 5HD, 18 for 10HD, 28 for 20HD, +50% if flying.
         int damage_taken = 10 + 2 * mons->get_hit_dice();
         damage_taken = foe->beam_resists(pbolt, damage_taken, false);
-		
+
 		// Previous method of damage calculation (in line with player
         // airstrike) had absurd variance.
 		damage_taken = foe->apply_ac(random2avg(damage_taken, 3));
-		
+
         if (foe->is_player())
         {
             mprf("The air twists around and strikes you (%d)!", damage_taken);
@@ -6628,7 +6628,7 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
     case SPELL_BLINK_ALLIES_ENCIRCLE:
         _blink_allies_encircle(mons);
         return;
-		
+
      case SPELL_CURSE:
 	 {
         actor *target = mons->get_foe();

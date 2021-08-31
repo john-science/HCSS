@@ -346,7 +346,7 @@ void spawn_random_monsters()
         if (have_passive(passive_t::slow_abyss))
             rate *= 2;
     }
-	
+
     if (rate == 0)
     {
         dprf(DIAG_MONPLACE, "random monster gen scaled off, %d turns on level",
@@ -2571,8 +2571,8 @@ static const map<band_type, vector<member_possibilites>> band_membership = {
                                   {MONS_GHOST_ROBIN, 1},
                                   {MONS_CAUSTIC_SHRIKE, 1},
                                   {MONS_SHARD_SHRIKE, 1}}}},
-	{ BAND_ZOTLINGS,            {{{MONS_SUBTRACTOR_SNAKE, 1}, 
-                                  {MONS_PLUTONIUM_CRAB, 1}, 
+	{ BAND_ZOTLINGS,            {{{MONS_SUBTRACTOR_SNAKE, 1},
+                                  {MONS_PLUTONIUM_CRAB, 1},
 								  {MONS_ZOTBOT, 1},
 								  {MONS_DEV_FAVORITE, 1}},
 

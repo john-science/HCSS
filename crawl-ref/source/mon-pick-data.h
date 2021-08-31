@@ -970,13 +970,13 @@ static const pop_entry pop_depths[] =
   {  1,  2,  250, FALL, MONS_CENTAUR_WARRIOR },
   {  1,  4,  300, FALL, MONS_NO_MONSTER }, // was ogre mage
   {  1,  4,   40, FLAT, MONS_IRON_TROLL},
-  {  1,  6,  375, FALL, MONS_EIDOLON }, 
+  {  1,  6,  375, FALL, MONS_EIDOLON },
   {  1,  6,  375, RISE, MONS_YAKTAUR_CAPTAIN },
   {  1,  6,  300, FALL, MONS_NO_MONSTER }, //was shapeshifter
   {  1,  6,  180, FLAT, MONS_DEEP_TROLL_SHAMAN },
   {  1,  6,  180, FLAT, MONS_DEEP_TROLL_EARTH_MAGE },
   {  1,  6,  295, FALL, MONS_REVENANT },
-  {  1,  6,  295, FALL, MONS_VAMPIRE_MAGE }, 
+  {  1,  6,  295, FALL, MONS_VAMPIRE_MAGE },
   {  1,  6,   40, FALL, MONS_MUMMY_PRIEST },
   {  1,  6,  250, FLAT, MONS_VERY_UGLY_THING },
   {  1,  6,  225, FLAT, MONS_GREAT_ORB_OF_EYES },

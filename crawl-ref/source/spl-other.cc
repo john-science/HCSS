@@ -298,7 +298,7 @@ spret_type cast_passwall(const coord_def& delta, int pow, bool fail)
 		{
             mpr("You sense an intense heat on the other side of the rock.");
         }
-			
+
         if (check_moveto(dest, "passwall", msg))
         {
             // Passwall delay is reduced, and the delay cannot be interrupted.

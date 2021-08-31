@@ -296,7 +296,7 @@ You are petrified, and completely unable to act. You are very easy to hit.
 %%%%
 Petr status
 
-You are turning to stone. Your actions are slowed and you will soon be 
+You are turning to stone. Your actions are slowed and you will soon be
 completely petrified (gaining the Stone status).
 %%%%
 Resist status
@@ -706,7 +706,7 @@ attacks against multiple enemies prevents the storm from settling.
 %%%%
 Reflex status
 
-A recent wall jump has heightened your reflexes, temporarily increasing 
+A recent wall jump has heightened your reflexes, temporarily increasing
 your evasion.
 %%%%
 Pierce status

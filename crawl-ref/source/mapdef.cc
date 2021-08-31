@@ -4844,9 +4844,9 @@ static int _str_to_ego(item_spec &spec, string ego_str)
         "frost",
         "poisoned",
         "curare",
-#if TAG_MAJOR_VERSION == 34	
+#if TAG_MAJOR_VERSION == 34
         "returning",
-#endif		
+#endif
         "chaos",
         "penetration",
         "dispersal",

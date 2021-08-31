@@ -404,7 +404,7 @@ spret_type cast_piercing_shot(int pow, bool fail)
     return SPRET_SUCCESS;
 }
 
-//return the total amount of mp the player has frozen using a really ugly 
+//return the total amount of mp the player has frozen using a really ugly
 //chain of ifs, probably should, like, use a real data structure
 int calculate_frozen_mp()
 {

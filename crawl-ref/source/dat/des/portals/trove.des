@@ -107,7 +107,7 @@ function trove.get_trove_item(e, value, base_item)
        {base="weapon", type="demon trident", quant=2+d(3)+d(3)},
        {base="weapon", type="demon blade", quant=2+d(3)+d(3)} }
 
-	   
+
     for _, toll in ipairs(wpn) do
       table.insert(prices, toll)
     end

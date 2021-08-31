@@ -761,7 +761,7 @@ void MiscastEffect::_charms(int severity)
     case 1:         // slightly annoying
         target->slow_down(act_source, 6);
         break;
-        
+
     case 2:         // much more annoying
         target->slow_down(act_source, 12);
         break;
@@ -1062,7 +1062,7 @@ void MiscastEffect::_fire(int severity)
 void MiscastEffect::_ice(int severity)
 {
     const dungeon_feature_type feat = grd(target->pos());
-	
+
     const string feat_name = (feat == DNGN_FLOOR ? "the " : "") +
         feature_description_at(target->pos(), false, DESC_THE);
 
@@ -1280,9 +1280,9 @@ void MiscastEffect::_zot()
         break;
     case 2:
         target->confuse(act_source, 2 + random2(4));
-        break;  
+        break;
     case 3:
-        _sleep(2 + random2(4));	
+        _sleep(2 + random2(4));
         break;
     case 4:
         target->slow_down(act_source, 10);

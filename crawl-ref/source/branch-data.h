@@ -134,7 +134,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'W', { RUNE_TOMB }, 0 },
 #endif
-	  
+
     { BRANCH_VESTIBULE, NUM_BRANCHES, 27, 27, 1, 27,
       BFLAG_NO_ITEMS,
       DNGN_ENTER_HELL, DNGN_EXIT_HELL, NUM_FEATURES,
@@ -209,7 +209,7 @@ const Branch branches[NUM_BRANCHES] =
       BLACK, BLACK, // set specially
       'R', { RUNE_DEMONIC, RUNE_MNOLEG, RUNE_LOM_LOBON, RUNE_CEREBOV,
              RUNE_GLOORX_VLOQ }, 0 },
-			 
+
 #if TAG_MAJOR_VERSION == 34
     { BRANCH_ZIGGURAT, BRANCH_DEPTHS, -1, -1, 27, 27,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
@@ -218,7 +218,7 @@ const Branch branches[NUM_BRANCHES] =
       "You land on top of a ziggurat so tall you cannot make out the ground.",
       BLACK, BLACK,
       'Q', {}, 0 },
-#endif	  
+#endif
 
     { BRANCH_LABYRINTH, NUM_BRANCHES, -1, -1, 1, 15,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS | BFLAG_NO_MAP,
@@ -311,5 +311,5 @@ const Branch branches[NUM_BRANCHES] =
       "You enter a great desolation of salt!",
       LIGHTGREY, BROWN, // TODO
       '9', {}, 0 },
-	
+
 };

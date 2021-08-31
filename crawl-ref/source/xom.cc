@@ -1355,8 +1355,7 @@ static void _get_hand_type(string &hand, bool &can_plural)
         plural_vec.push_back(true);
     }
 
-    if (!form_changed_physiology()
-		&& you.species != SP_OCTOPODE)
+    if (!form_changed_physiology() && you.species != SP_OCTOPODE)
     {
         hand_vec.emplace_back("elbow");
         plural_vec.push_back(true);
@@ -1968,7 +1967,7 @@ static xom_event_type _xom_choose_random_action(int sever)
         !you.get_mutation_level(MUT_NO_LOVE) ? 100 : 0, XOM_GOOD_SINGLE_ALLY,
         _find_monster_with_animateable_weapon()
         && !you.get_mutation_level(MUT_NO_LOVE) ? 50 : 0, XOM_GOOD_ANIMATE_MON_WPN,
-		!you.duration[DUR_CLOUD_TRAIL] ? 50 : 0, XOM_GOOD_CLOUD_TRAIL,
+        !you.duration[DUR_CLOUD_TRAIL] ? 50 : 0, XOM_GOOD_CLOUD_TRAIL,
         mon_nearby(_choose_enchantable_monster) ? 50 + sever / 4 : 0, XOM_GOOD_ENCHANT_MONSTER,
         mon_nearby([](monster& mon){ return !mon.wont_attack(); }) ? 30 : 0, XOM_GOOD_CONFUSION,
         !you.get_mutation_level(MUT_NO_LOVE) ? 30 : 0, XOM_GOOD_ALLIES,
@@ -2263,11 +2262,11 @@ void xom_new_level_effect()
                 break;
             default:
                 break;
-		}
+        }
         you.attribute[ATTR_XOM_GIFT_XP] +=
         2 * (exp_needed(you.experience_level + 1)
                 - exp_needed(you.experience_level)) / (1 + random2(4));
-	}
+    }
     else if(one_chance_in(10))
     {
         give_xom_gift(50);
@@ -2276,7 +2275,7 @@ void xom_new_level_effect()
 
 void give_xom_gift(int acq_chance)
 {
-	if(!you_worship(GOD_XOM))
+    if(!you_worship(GOD_XOM))
         return;
     if(x_chance_in_y(acq_chance, 100))
         _xom_acquirement(5 + random2(you.experience_level* 7));

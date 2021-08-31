@@ -93,7 +93,7 @@ static const mon_spellbook mspell_list[] =
         { SPELL_THROW_ICICLE, 24, MON_SPELL_NATURAL | MON_SPELL_BREATH },
       }
     },
-	
+
 	{  MST_GHOST_ROBIN,
       {
         { SPELL_VAMPIRIC_DRAINING, 24, MON_SPELL_NATURAL },
@@ -244,7 +244,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_AGONY, 11, MON_SPELL_WIZARD },
       }
     },
-	
+
 	{  MST_ANTIMATTER_ELF,
       {
        { SPELL_DIMENSION_ANCHOR, 24, MON_SPELL_WIZARD },
@@ -625,7 +625,7 @@ static const mon_spellbook mspell_list[] =
       {
        { SPELL_ORB_OF_ELECTRICITY, 50, MON_SPELL_MAGICAL },
 	   { SPELL_BLINK, 19, MON_SPELL_MAGICAL },
-	   { SPELL_LIGHTNING_BOLT, 19, MON_SPELL_MAGICAL },	   
+	   { SPELL_LIGHTNING_BOLT, 19, MON_SPELL_MAGICAL },
       }
     },
 
@@ -653,7 +653,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_CHAOS_BREATH, 62, MON_SPELL_NATURAL },
       }
     },
-	
+
 	{  MST_PLUTONIUM_CRAB,
       {
        { SPELL_RADIATION_BREATH, 62, MON_SPELL_NATURAL },
@@ -673,7 +673,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_FORCEFUL_INVITATION, 58, MON_SPELL_MAGICAL },
       }
     },
-	
+
 	{  MST_DEV_FAVORITE,
       {
        { SPELL_BLINK_OTHER_CLOSE, 19, MON_SPELL_WIZARD },
@@ -797,7 +797,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_THROW_ALLY, 80, MON_SPELL_NATURAL },
       }
     },
-	
+
 	{  MST_GIANT_GIANT,
       {
        { SPELL_IRON_SHOT, 17, MON_SPELL_WIZARD },
@@ -880,12 +880,12 @@ static const mon_spellbook mspell_list[] =
                                  | MON_SPELL_NOISY },
       }
     },
-	
+
 	{  MST_THE_GIAGGOSTUONO,
       {
        { SPELL_FLAMING_CLOUD, 31, MON_SPELL_NATURAL | MON_SPELL_BREATH
                                  | MON_SPELL_NOISY },
-	   { SPELL_ISKENDERUNS_MYSTIC_BLAST, 31, MON_SPELL_NATURAL },  
+	   { SPELL_ISKENDERUNS_MYSTIC_BLAST, 31, MON_SPELL_NATURAL },
       }
     },
 
@@ -1280,7 +1280,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_ELECTRICAL_BOLT, 33, MON_SPELL_NATURAL },
       }
     },
-	
+
 	{  MST_SUBTRACTOR_SNAKE,
       {
        { SPELL_POISON_ARROW, 39, MON_SPELL_WIZARD },
@@ -1338,10 +1338,10 @@ static const mon_spellbook mspell_list[] =
        { SPELL_PHASE_SHIFT, 11, MON_SPELL_NATURAL },
       }
     },
-	
+
 	{  MST_SILENT_SPECTRE,
       {
-       { SPELL_SILENCE, 80, MON_SPELL_WIZARD },	   
+       { SPELL_SILENCE, 80, MON_SPELL_WIZARD },
       }
     },
 
@@ -1596,7 +1596,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_CRYSTAL_BOLT, 66, MON_SPELL_MAGICAL },
       }
     },
-	
+
 	{  MST_ZOTBOT,
       {
        { SPELL_CALL_DOWN_DAMNATION, 17, MON_SPELL_MAGICAL },
@@ -1881,7 +1881,7 @@ static const mon_spellbook mspell_list[] =
        { SPELL_SUMMON_EYEBALLS, 62, MON_SPELL_PRIEST },
       }
     },
-	
+
 	{  MST_MUTATATOTOT,
       {
        { SPELL_CORRUPTING_PULSE, 40, MON_SPELL_MAGICAL },

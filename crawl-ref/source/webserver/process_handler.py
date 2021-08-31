@@ -78,7 +78,7 @@ def watch_socket_dirs():
         socket_dir = os.path.abspath(game_info["socket_path"])
         if socket_dir in added_dirs: continue
         watcher.watch(socket_dir, handle_new_socket)
-		
+
 def diff_string(level):
     result = "Unknown"
     if level == "0":
@@ -316,12 +316,12 @@ class CrawlProcessHandlerBase(object):
             "game_id": self.game_params["id"],
 #           "diff": diff_string(self.where["diff"]),
             }
-			
+
         if "difficulty" in self.where.keys():
             entry["diff"] = diff_string(self.where["difficulty"])
         else:
             entry["diff"] = "Unknown"
-			
+
         for key in CrawlProcessHandlerBase.interesting_info:
             if key in self.where:
                 entry[key] = self.where[key]

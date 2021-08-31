@@ -1080,8 +1080,8 @@ static bool _ball_of_energy()
         inc_mp(
         player_adjust_evoc_power(
             1 + random2avg(div_rand_round(you.skill(SK_EVOCATIONS)*8,3), 2), surge));
-    ret = true;							   
-									   
+    ret = true;
+
     if (random2(div_rand_round(you.skill(SK_EVOCATIONS)*2,2)) < 2)
         lose_stat(STAT_INT, 1 + random2avg(3, 2));
 

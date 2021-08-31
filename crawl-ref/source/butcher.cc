@@ -308,7 +308,7 @@ void butcher_corpse(item_def &item, maybe_bool skeleton, bool chunks)
         skeleton = MB_FALSE;
     if (skeleton == MB_TRUE || skeleton == MB_MAYBE && one_chance_in(3))
     {
-        turn_corpse_into_skeleton(item);        
+        turn_corpse_into_skeleton(item);
     }
     else
     {

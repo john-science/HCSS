@@ -1469,14 +1469,14 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
     {
 
         ash_detect_portals(is_map_persistent());
-		
+
         if (just_created_level)
-        {  
+        {
             if(you.depth > 2 || !player_in_branch(BRANCH_DUNGEON))
                 xom_new_level_effect();
 	    }
     }
-	
+
 
     // Initialize halos, etc.
     invalidate_agrid(true);
@@ -1485,7 +1485,7 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
     // Don't do so if we are just moving around inside Pan, though.
     if (just_created_level && stair_taken != DNGN_TRANSIT_PANDEMONIUM)
         take_note(Note(NOTE_DUNGEON_LEVEL_CHANGE));
-	
+
     if (just_created_level && crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
         map_stairs_down();
 

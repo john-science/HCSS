@@ -966,7 +966,7 @@ void monster::remove_enchantment_effect(const mon_enchant &me, bool quiet)
     case ENCH_STILL_WINDS:
         end_still_winds();
         break;
-		
+
     case ENCH_PHASE_SHIFT:
         if (!quiet)
             simple_monster_message(*this, " is no longer phasing.");

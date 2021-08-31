@@ -33,7 +33,7 @@ Gnoll
 
 A vaguely doglike species, gnolls begin with a little knowledge of everything.
 Like kobolds, they improve all skills equally when reaching a new experience
-level. 
+level.
 %%%%
 Hill Orc
 
@@ -62,7 +62,7 @@ strong combatants, and adept at using magic to assist in battle.
 %%%%
 Mountain Dwarf
 
-An ancient species long thought extinct, Mountain Dwarves are short, sturdy-framed 
+An ancient species long thought extinct, Mountain Dwarves are short, sturdy-framed
 humanoids. Their magic becomes powerful but harder to control as they grow.
 
 %%%%

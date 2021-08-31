@@ -30,7 +30,7 @@ god's constantly changing moods.
 %%%%
 Earth Elementalist
 
-Earth Elementalists know the Sandblast spell. 
+Earth Elementalists know the Sandblast spell.
 More earthen spells are in their book of Geomancy.
 %%%%
 Enchanter

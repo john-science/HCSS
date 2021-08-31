@@ -216,7 +216,7 @@ protected:
      * by the form.
      */
     const int resists;
-	
+
     /// See Form::get_base_unarmed_damage().
     const int base_unarmed_damage;
 

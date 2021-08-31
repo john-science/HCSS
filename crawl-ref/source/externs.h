@@ -609,7 +609,7 @@ public:
     {
         *this = item_def();
     }
-	
+
     bool in_player_inventory()
     {
         return pos.x == -1 && pos.y == -1;

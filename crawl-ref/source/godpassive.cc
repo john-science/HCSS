@@ -453,7 +453,7 @@ void ash_check_bondage(bool msg)
     }
 
     you.bondage_level = 0;
-    
+
     for (int i = ET_WEAPON; i < NUM_ET; ++i)
          if (new_bondage[i] > 0)
             ++you.bondage_level;
@@ -1564,7 +1564,7 @@ void wu_jian_wall_jump_effects(const coord_def& old_pos)
         if (!cell_is_solid(*ai))
             check_place_cloud(CLOUD_DUST_TRAIL, *ai, 1 + random2(3) , &you, 0, -1);
     }
-	
+
     int evasion_boost = -4;
 
     for (auto target : targets)
@@ -1576,7 +1576,7 @@ void wu_jian_wall_jump_effects(const coord_def& old_pos)
             you.attribute[ATTR_HEAVENLY_STORM] += 2;
 
         evasion_boost += 4;
-		
+
         you.apply_berserk_penalty = false;
 
         // Twice the attacks as Wall Jump spends twice the time
@@ -1607,7 +1607,7 @@ void wu_jian_wall_jump_effects(const coord_def& old_pos)
             aerial.attack();
         }
     }
-    
+
     // Walljumping multiple targets gives an ev boost.
     // The boost value may be increased by a later walljump,
     // however the duration will not be extended

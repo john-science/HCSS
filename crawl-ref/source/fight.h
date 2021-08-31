@@ -41,7 +41,7 @@ bool wielded_weapon_check(item_def *weapon);
 stab_type find_stab_type(const actor *attacker,
                          const actor &defender,
 						 bool actual = true);
-						 
+
 int stab_bonus_denom(stab_type stab);
 
 void get_cleave_targets(const actor &attacker, const coord_def& def,
@@ -73,6 +73,6 @@ bool stop_attack_prompt(const monster* mon, bool beam_attack,
 bool stop_attack_prompt(targetter &hitfunc, const char* verb,
                         bool (*affects)(const actor *victim) = 0,
                         bool *prompted = nullptr);
-						
+
 void spooky(actor *defender);
 #endif

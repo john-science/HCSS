@@ -502,7 +502,7 @@ static void _give_weapon(monster* mon, int level, bool melee_only = false,
                 { WPN_DAGGER,           1 },
         } } },
         { MONS_DEEP_ELF_MASTER_ARCHER, { { { WPN_LONGBOW, 1 } } } },
-		{ MONS_ANTIMATTER_ELF, 
+		{ MONS_ANTIMATTER_ELF,
 			{ { { WPN_DEMON_WHIP,       1 },
                 { WPN_DOUBLE_SWORD,     1 },
 		  } } },
@@ -1173,7 +1173,7 @@ static void _give_ammo(monster* mon, int level, bool mons_summoned)
     {
         const object_class_type xitc = OBJ_MISSILES;
         int xitt = fires_ammo_type(*launcher);
-		
+
         if(xitt == MI_ARROW)
             return;
 

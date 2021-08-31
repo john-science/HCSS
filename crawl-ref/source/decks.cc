@@ -588,7 +588,7 @@ static bool _check_buggy_deck(item_def& deck)
             strm << "Deck was created with *negative* cards?!" << endl;
             problems  = true;
         }
-        deck.initial_cards = num_cards;      
+        deck.initial_cards = num_cards;
     }
 
     if (num_cards > num_flags)
@@ -743,7 +743,7 @@ bool deck_deal()
     }
 
     if (deck.quantity > 0)
-		deck.used_count = -cards_in_deck(deck);	
+		deck.used_count = -cards_in_deck(deck);
 
     return true;
 }
@@ -1177,7 +1177,7 @@ void evoke_deck(item_def& deck)
 static int _get_power_level(int power, deck_rarity_type rarity)
 {
     int power_level = 0;
-	
+
     // formerly from rare deck rarity
     if (x_chance_in_y(power, 700))
         ++power_level;
@@ -1471,7 +1471,7 @@ static void _damaging_card(card_type card, int power, deck_rarity_type rarity,
     case CARD_ORB:
         ztype = orbzaps[power_level];
         break;
-		
+
     case CARD_STORM:
     {
         int successes = 0;
@@ -1479,7 +1479,7 @@ static void _damaging_card(card_type card, int power, deck_rarity_type rarity,
         int how_many = random2(2 * power_level + 1);
         //guarantee one elemental at power 1 and two at power 2
         how_many = max(how_many, power_level);
-		
+
         for (int i = 0; i < how_many; i++)
         {
             if (monster *elemental = _friendly(MONS_AIR_ELEMENTAL, 3))
@@ -2082,7 +2082,7 @@ static void _famine_card(int power, deck_rarity_type rarity)
 
         if (!mons || mons->wont_attack() || !mons_is_threatening(*mons))
             continue;
-		 
+
         if (x_chance_in_y(power_level, 8))
         {
 			mons->paralyse(&you, random2(5) + 2);
@@ -2389,27 +2389,27 @@ void merge_decks(const item_def& source, item_def& dest)
 {
 	const CrawlHashTable &source_props = source.props;
 	CrawlHashTable &dest_props = dest.props;
-	
+
 	ASSERT(is_deck(source));
 	ASSERT(is_deck(dest));
 	ASSERT_RANGE(cards_in_deck(source), 1, 128);
 	ASSERT_RANGE(cards_in_deck(dest), 1, 128);
-	
+
 	CrawlVector    &dest_cards = dest_props[CARD_KEY].get_vector();
     CrawlVector    &dest_flags = dest_props[CARD_FLAG_KEY].get_vector();
-	
+
 	const CrawlVector    &source_cards = source_props[CARD_KEY].get_vector();
     //CrawlVector    &source_flags = source_props[CARD_FLAG_KEY].get_vector();
-	
+
 	for (int i = 0; i < cards_in_deck(source); ++i)
 	{
 	    uint8_t   _flags;
 
         int num_cards = source_cards.size();
         int idx       = num_cards - i - 1;
-		
+
 		ASSERT(num_cards > 0);
-		
+
         card_type card = get_card_and_flags(source, idx, _flags);
 		if(cards_in_deck(dest) < 127)
 		{

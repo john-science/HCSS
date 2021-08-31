@@ -85,7 +85,7 @@ private:
 
     /* Long blade riposte */
     void riposte();
-	
+
     /* Wu Jian martial attacks*/
     int martial_damage_mod(int dam);
 

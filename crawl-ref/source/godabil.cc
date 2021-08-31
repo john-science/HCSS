@@ -1449,7 +1449,7 @@ bool vehumet_supports_spell(spell_type spell)
         || spell == SPELL_VIOLENT_UNRAVELLING
         || spell == SPELL_IGNITION
         || spell == SPELL_FIREBALL
-        || spell == SPELL_CONJURE_FLAME      
+        || spell == SPELL_CONJURE_FLAME
         || spell == SPELL_BOLT_OF_FIRE
         || spell == SPELL_FREEZING_CLOUD
         || spell == SPELL_MEPHITIC_CLOUD
@@ -1788,7 +1788,7 @@ void yred_make_enslaved_soul(monster* mon, bool force_hostile, bool silent)
 
     add_daction(DACT_OLD_ENSLAVED_SOULS_POOF);
     remove_enslaved_soul_companion();
-	
+
     you.props[YRED_ENSLAVED_SOUL_KEY] = mon->type;
 
     const string whose = you.can_see(*mon) ? apostrophise(mon->name(DESC_THE))
@@ -3456,7 +3456,7 @@ static bool _lugonu_warp_monster(monster& mon, int pow)
     mon.hurt(&you, damage);
     if (!mon.alive())
         return true;
-    
+
 
     if (!mon.no_tele(true, false))
         mon.blink();
@@ -4216,12 +4216,12 @@ static void _setup_gozag_shop(int index, vector<shop_type> &valid_shops)
     ASSERT(!you.props.exists(make_stringf(GOZAG_SHOPKEEPER_NAME_KEY, index)));
 
     shop_type type = NUM_SHOPS;
-    
+
     int choice = random2(valid_shops.size());
     type = valid_shops[choice];
     // Don't choose this shop type again for this merchant call.
     valid_shops.erase(valid_shops.begin() + choice);
-    
+
     you.props[make_stringf(GOZAG_SHOP_TYPE_KEY, index)].get_int() = type;
 
     you.props[make_stringf(GOZAG_SHOPKEEPER_NAME_KEY, index)].get_string()
@@ -4805,7 +4805,7 @@ spret_type qazlal_elemental_force(bool fail)
 		{ CLOUD_PURPLE_SMOKE,   MONS_AIR_ELEMENTAL },
 		{ CLOUD_STORM,          MONS_AIR_ELEMENTAL },
   };
-  
+
     vector<coord_def> targets;
     for (radius_iterator ri(you.pos(), LOS_RADIUS, C_SQUARE, true); ri; ++ri)
     {
@@ -4855,7 +4855,7 @@ spret_type qazlal_elemental_force(bool fail)
 spret_type qazlal_cloud_surge(bool fail)
 {
 	fail_check();
-	
+
     const int pow = you.skill(SK_INVOCATIONS, 10);
     int radius = 2 + min(5,random2avg(div_rand_round(pow, 33),2));
     bool placed = false;
@@ -4877,9 +4877,9 @@ spret_type qazlal_cloud_surge(bool fail)
         {
             cloud_type ctype;
             ctype = random_choose(CLOUD_FIRE, CLOUD_COLD, CLOUD_STORM);
-            place_cloud(ctype, *ri, 10 + random2(div_rand_round(pow,5)), &you);	
-            placed = true;			
-        }     
+            place_cloud(ctype, *ri, 10 + random2(div_rand_round(pow,5)), &you);
+            placed = true;
+        }
     }
 
     if (placed)
@@ -6420,11 +6420,11 @@ static bool _get_stomped(monster& mons)
     int damage = div_rand_round(mons.hit_points, 6);
     int die_size = 2 + div_rand_round(you.skill(SK_INVOCATIONS), 2);
     damage += roll_dice(2, die_size);
-	
+
 	const monster m = mons;
-	
+
     damage = mons.hurt(&you, damage, BEAM_ENERGY, KILLED_BY_BEAM, "", "", true);
-	
+
     if (mons.alive() && you.can_see(mons))
 	{
 		mprf("%s gets stomped (%d)!", m.name(DESC_THE).c_str(), damage);

@@ -2466,7 +2466,7 @@ cloud_type bolt::get_cloud_type() const
 
     if (origin_spell == SPELL_CHAOS_BREATH)
         return CLOUD_CHAOS;
-	
+
     if (origin_spell == SPELL_RADIATION_BREATH)
         return CLOUD_MUTAGENIC;
 
@@ -3535,7 +3535,7 @@ void bolt::affect_player_enchantment(bool resistible)
             canned_msg(MSG_YOU_UNAFFECTED);
             break;
         }
-		
+
 		const int damg = damage.roll();
 		std::string dm = std::to_string(damg);
         mprf("You convulse (%s)!", dm.c_str());
@@ -3547,7 +3547,7 @@ void bolt::affect_player_enchantment(bool resistible)
         obvious_effect = true;
         break;
 	}
-	
+
     case BEAM_DISINTEGRATION:
 	{
         mpr("You are blasted!");
@@ -3566,7 +3566,7 @@ void bolt::affect_player_enchantment(bool resistible)
         obvious_effect = true;
 		break;
 	}
-	
+
     case BEAM_PORKALATOR:
         if (!transform(ench_power, TRAN_PIG, true))
         {
@@ -3849,7 +3849,7 @@ void bolt::affect_player()
 	{
 		mprf("That hurt (%s)!", d.c_str());
 	}
-	
+
     if (flavour == BEAM_MIASMA && hurted > 0)
         was_affected = miasma_player(agent(), name);
 
@@ -3902,7 +3902,7 @@ void bolt::affect_player()
             was_affected = true;
         }
     }
-	
+
     // need to trigger qaz resists after reducing damage from ac/resists.
     //    for some reason, strength 2 is the standard. This leads to qaz's resists triggering 2 in 5 times at max piety.
     //    perhaps this should scale with damage?
@@ -4845,7 +4845,7 @@ void bolt::affect_monster(monster* mon)
             hit_verb = engulfs ? "engulfs" : "hits";
 
 		std::string d = std::to_string(final);
-		
+
         mprf("The %s %s %s (%s).",
              name.c_str(),
              hit_verb.c_str(),

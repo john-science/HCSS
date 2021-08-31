@@ -841,9 +841,9 @@ static void _evolve(int time_delta)
         {
             you.attribute[ATTR_EVOL_XP] = 0;
             mpr("You feel a genetic drift.");
-			
+
             bool evol = false;
-			
+
             if(you.species == SP_KOBOLD && one_chance_in(7))
             {
                evol = one_chance_in(4) ?

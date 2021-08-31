@@ -568,7 +568,7 @@ void slimify_monster(monster* mon, bool hostile)
     remove_unique_annotation(mon);
 
     monster_polymorph(mon, target);
-	
+
     mon->attitude = ATT_HOSTILE;
 
     // Don't want shape-shifters to shift into non-slimes.

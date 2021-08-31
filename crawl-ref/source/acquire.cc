@@ -554,7 +554,7 @@ static int _acquirement_staff_subtype(bool /*divine*/, int & /*quantity*/)
  */
 static int _acquirement_misc_subtype(bool /*divine*/, int & /*quantity*/)
 {
-    // Give a crystal ball based on both evocations and either best spell 
+    // Give a crystal ball based on both evocations and either best spell
     // school or invocations if we haven't seen one.
     const skill_type best_spell_skill = best_magic_skill();
     int skills = _skill_rdiv(SK_EVOCATIONS)
@@ -908,7 +908,7 @@ static bool _do_book_acquirement(item_def &book, int agent)
         break;
     }
     } // switch book choice
-	
+
     // If we couldn't make a useful book, try to make a manual instead.
     // We have to temporarily identify the book for this.
     int oldflags = book.flags;

@@ -1668,7 +1668,7 @@ static void tag_construct_you_items(writer &th)
 	marshallShort(th, you.manuals_in_inventory.size());
     for (const auto &manual : you.manuals_in_inventory)
          marshallItem(th, manual);
-	
+
     // Item descrip for each type & subtype.
     // how many types?
     marshallUByte(th, NUM_IDESC);
@@ -2208,7 +2208,7 @@ void tag_read_char(reader &th, uint8_t format, uint8_t major, uint8_t minor)
         crawl_state.map = unmarshallString2(th);
     else
         crawl_state.map = "";
-	
+
     crawl_state.difficulty = (game_difficulty_level) unmarshallUByte(th);
 
     if (major > 32 || major == 32 && minor > 26)
@@ -2515,7 +2515,7 @@ static void tag_read_you(reader &th)
             else if (a > ABIL_DIG && a < ABIL_MIN_EVOKE)
                 a -= 1;
         }
-		
+
 		if (th.getMinorVersion() < TAG_MINOR_MOTTLED_REMOVAL)
         {
             if (a == ABIL_BREATHE_STICKY_FLAME)
@@ -2765,67 +2765,67 @@ static void tag_read_you(reader &th)
         }
         if(you.mutation[MUT_CLUMSY] > 1)
         {
-            you.mutation[MUT_CLUMSY] = 1;			
-        }	
+            you.mutation[MUT_CLUMSY] = 1;
+        }
         if(you.mutation[MUT_CLEVER] > 1)
         {
-            you.mutation[MUT_CLEVER] = 1;			
+            you.mutation[MUT_CLEVER] = 1;
         }
         if(you.mutation[MUT_DOPEY] > 1)
         {
-            you.mutation[MUT_DOPEY] = 1;			
+            you.mutation[MUT_DOPEY] = 1;
         }
         if(you.mutation[MUT_STRONG] > 1)
         {
-            you.mutation[MUT_STRONG] = 1;			
+            you.mutation[MUT_STRONG] = 1;
         }
         if(you.mutation[MUT_WEAK] > 1)
         {
-            you.mutation[MUT_WEAK] = 1;	
+            you.mutation[MUT_WEAK] = 1;
         }
         if(you.mutation[MUT_TENTACLE_SPIKE] > 1)
         {
-            you.mutation[MUT_TENTACLE_SPIKE] = 1;	
+            you.mutation[MUT_TENTACLE_SPIKE] = 1;
         }
         if(you.mutation[MUT_STURDY_FRAME] > 1)
         {
-            you.mutation[MUT_STURDY_FRAME] = 1;	
+            you.mutation[MUT_STURDY_FRAME] = 1;
         }
         if(you.mutation[MUT_CAMOUFLAGE] > 1)
         {
-            you.mutation[MUT_CAMOUFLAGE] = 1;	
+            you.mutation[MUT_CAMOUFLAGE] = 1;
         }
         if(you.mutation[MUT_EVOLUTION] > 1)
         {
-            you.mutation[MUT_EVOLUTION] = 1;	
+            you.mutation[MUT_EVOLUTION] = 1;
         }
         if(you.mutation[MUT_SHAGGY_FUR] > 1)
         {
-            you.mutation[MUT_SHAGGY_FUR] = 1;	
+            you.mutation[MUT_SHAGGY_FUR] = 1;
         }
         if(you.mutation[MUT_STINGER] > 1)
         {
-            you.mutation[MUT_STINGER] = 1;	
+            you.mutation[MUT_STINGER] = 1;
         }
         if(you.mutation[MUT_PASSIVE_MAPPING] > 1)
         {
-            you.mutation[MUT_PASSIVE_MAPPING] = 1;	
+            you.mutation[MUT_PASSIVE_MAPPING] = 1;
         }
         if(you.mutation[MUT_TENGU_FLIGHT] > 1)
         {
-            you.mutation[MUT_TENGU_FLIGHT] = 1;	
-        }	
+            you.mutation[MUT_TENGU_FLIGHT] = 1;
+        }
         if(you.mutation[MUT_TOUGH_SKIN] > 1)
         {
-            you.mutation[MUT_TOUGH_SKIN] = 1;	
+            you.mutation[MUT_TOUGH_SKIN] = 1;
         }
         if(you.mutation[MUT_TRANSLUCENT_SKIN] > 1)
         {
-            you.mutation[MUT_TRANSLUCENT_SKIN] = 1;	
+            you.mutation[MUT_TRANSLUCENT_SKIN] = 1;
         }
         if(you.mutation[MUT_PSEUDOPODS] > 1)
         {
-            you.mutation[MUT_PSEUDOPODS] = 1;	
+            you.mutation[MUT_PSEUDOPODS] = 1;
         }
     }
 #endif
@@ -3803,7 +3803,7 @@ static void tag_read_you_items(reader &th)
                                                            | (seed3 << 16);
         }
     }
-	
+
     // Move any books from inventory into the player's library.
     if (th.getMinorVersion() < TAG_MINOR_GOLDIFY_BOOKS)
     {
@@ -4143,7 +4143,7 @@ void marshallItem(writer &th, const item_def &item, bool iinfo)
 
 #if TAG_MAJOR_VERSION == 34
     if (!item.is_valid(iinfo))
-    {	
+    {
         string name;
         item_def dummy = item;
         if (!item.quantity)
@@ -4694,7 +4694,7 @@ void unmarshallItem(reader &th, item_def &item)
     // ASSUMPTION: there was no such thing as an artefact hide
     if (item.base_type == OBJ_ARMOUR && hide_to_armour.count(item.sub_type))
         item.sub_type = *map_find(hide_to_armour, item.sub_type);
-	
+
     if (th.getMinorVersion() < TAG_MINOR_HIDE_TO_SCALE && armour_is_hide(item))
     {
         _fixup_dragon_artefact_name(item, ARTEFACT_NAME_KEY);

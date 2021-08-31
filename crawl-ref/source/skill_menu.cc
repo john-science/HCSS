@@ -1302,7 +1302,7 @@ void SkillMenu::init_button_row()
 void SkillMenu::init_switches()
 {
     SkillMenuSwitch* sw;
-	
+
     if(you.species == SP_KOBOLD || you.species == SP_GNOLL)
     {
         sw = new SkillMenuSwitch("Ko", '*');
@@ -1341,7 +1341,7 @@ void SkillMenu::init_switches()
         sw->update();
         sw->set_id(SKM_DO);
         add_item(sw, sw->size(), m_pos);
-    
+
         sw = new SkillMenuSwitch("", '!');
         m_switches[SKM_VIEW] = sw;
         const bool transferring = !is_invalid_skill(you.transfer_to_skill);
@@ -1360,7 +1360,7 @@ void SkillMenu::init_switches()
             if (!you.auto_training)
                 sw->set_state(SKM_VIEW_COST);
         }
-		
+
         sw->add(SKM_VIEW_TARGETS);
 
         if (you.wizard)
@@ -1387,7 +1387,7 @@ void SkillMenu::init_switches()
     sw->update();
     sw->set_id(SKM_SHOW);
     add_item(sw, sw->size(), m_pos);
-	
+
     if (is_set(SKMF_CHANGED))
     {
         sw = new SkillMenuSwitch("level", '_');

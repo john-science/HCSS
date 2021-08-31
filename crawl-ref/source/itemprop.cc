@@ -1412,7 +1412,7 @@ static map<armour_type, monster_type> hide_to_mons = _make_hide_monster_map();
  *
  * @param arm   The type of armour in question.
  * @return      The corresponding monster type; e.g. MONS_FIRE_DRAGON for
- *              ARM_FIRE_DRAGON_ARMOUR, 
+ *              ARM_FIRE_DRAGON_ARMOUR,
  *				MONS_TROLL for ARM_TROLL_LEATHER_ARMOUR...
  */
 monster_type monster_for_hide(armour_type arm)
@@ -1451,7 +1451,7 @@ int armour_acq_weight(const armour_type armour)
 equipment_type get_armour_slot(const item_def &item)
 {
     ASSERT(item.base_type == OBJ_ARMOUR || item.base_type == OBJ_STAVES);
-	
+
     if(item.base_type == OBJ_STAVES)
         return EQ_SHIELD;
 
@@ -1584,11 +1584,11 @@ int wand_charge_value(int type)
         return 4;
 
     default:
-        return 5; 
+        return 5;
 
     case WAND_FLAME:
     case WAND_CONFUSION:
-        return 6; 
+        return 6;
     }
 }
 
@@ -2832,7 +2832,7 @@ equipment_type get_item_slot(object_class_type type, int sub_type)
 
     case OBJ_ARMOUR:
         return get_armour_slot(static_cast<armour_type>(sub_type));
-		
+
     case OBJ_STAVES:
         return EQ_SHIELD;
 

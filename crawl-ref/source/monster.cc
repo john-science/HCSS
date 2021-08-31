@@ -774,7 +774,7 @@ bool monster::can_use_missile(const item_def &item) const
 bool monster::likes_wand(const item_def &item) const
 {
     ASSERT(item.base_type == OBJ_WANDS);
- 
+
     // kind of a hack
     // assumptions:
     // bad wands are value 16, so won't be used past hd 4
@@ -782,7 +782,7 @@ bool monster::likes_wand(const item_def &item) const
     // other good wands are value 5, won't be used past hd 10
     // better implementations welcome
     return wand_charge_value(item.sub_type) + get_hit_dice() * 2 <= 24;
-    
+
 }
 
 void monster::equip_weapon(item_def &item, bool msg)
@@ -1656,7 +1656,7 @@ bool monster::pickup_armour(item_def &item, bool msg, bool force)
 
     if (!force && !wants_armour(item))
         return false;
-	
+
     if(item.base_type == OBJ_STAVES)
         return false;
 
@@ -1895,7 +1895,7 @@ bool monster::pickup_missile(item_def &item, bool msg, bool force)
             && (item.quantity < 5 || miss && miss->quantity >= 7))
         {
             return false;
-        }      
+        }
     }
 
     if (miss && items_stack(*miss, item))
@@ -3402,7 +3402,7 @@ int monster::evasion(ev_ignore_type evit, const actor* /*act*/) const
         ev /= (body_size(PSIZE_BODY) + 2);
     else if (confused() || has_ench(ENCH_GRASPING_ROOTS))
         ev /= 2;
-	
+
     if(has_ench(ENCH_PHASE_SHIFT))
         ev += 8;
 
@@ -4289,7 +4289,7 @@ void monster::splash_with_acid(const actor* evildoer, int /*acid_strength*/,
 {
     const int dam = roll_dice(2, 4);
     const int post_res_dam = resist_adjust_damage(this, BEAM_ACID, dam);
-	std::string d = std::to_string(post_res_dam);	
+	std::string d = std::to_string(post_res_dam);
 
     if (this->observable())
          mprf("%s is splashed with acid (%s).", this->name(DESC_THE).c_str(),
@@ -5790,7 +5790,7 @@ bool monster::drink_potion_effect(potion_type pot_eff, bool card)
         if (heal(10 + random2avg(28, 3)))
             simple_monster_message(*this, " is healed!");
         break;
-		
+
 #if TAG_MAJOR_VERSION == 34
     case POT_BLOOD:
     case POT_BLOOD_COAGULATED:

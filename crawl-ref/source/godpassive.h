@@ -242,30 +242,30 @@ enum class passive_t
 
     /// Hep reduces your max HP
     frail,
-	
+
 	/// TSO prevents you from stabbing
     no_stabbing,
-	
+
 	///sif muna improves your magical skills
 	magic_skill_boost,
-	
+
     ///heroism
     heroism,
-	
+
     ///damage shaving
     damage_shaving,
-	
+
     /// Martial attacks
     wu_jian_lunge,
     wu_jian_whirlwind,
     wu_jian_wall_jump,
-	
+
     ///trade AC for big, big damage
     wu_jian_glass_cannon,
-	
+
     ///passive ely purification
     purification,
-	
+
     ///passive ely divine vigour
     divine_vigour,
 };

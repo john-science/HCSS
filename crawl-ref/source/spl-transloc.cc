@@ -776,7 +776,7 @@ spret_type cast_portal_projectile(int pow, bool fail)
         mpr("You are already teleporting projectiles to their destination.");
         return SPRET_ABORT;
     }
-	
+
     if (you.attribute[ATTR_PIERCING_SHOT])
     {
         you.attribute[ATTR_PIERCING_SHOT] = 0;

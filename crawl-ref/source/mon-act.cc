@@ -914,14 +914,14 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
     const int mon_item = mons_usable_missile(mons, &launcher);
 	item_def *missile = nullptr;
     bool created = false;
-	
+
     launcher = mons->mslot_item(MSLOT_WEAPON);
     if (!launcher || !is_range_weapon(*launcher))
         launcher = mons->mslot_item(MSLOT_ALT_WEAPON);
 
     if (player_or_mon_in_sanct(*mons))
         return false;
-	
+
     if (mon_item == NON_ITEM || !mitm[mon_item].defined())
     {
         if (launcher && is_range_weapon(*launcher))
@@ -930,7 +930,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
             missile = &mitm[p];
             created = true;
         }
-        else 
+        else
             return false;
 	}
     else
@@ -1029,7 +1029,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
         beem.name.clear();
         return mons_throw(mons, beem, *missile, teleport);
     }
-	
+
     if(created)
         destroy_item(missile->index());
 
@@ -2231,7 +2231,7 @@ static void _mons_open_door(monster& mons, const coord_def &pos)
     set<coord_def> all_door;
     find_connected_identical(pos, all_door);
     get_door_description(all_door.size(), &adj, &noun);
-	
+
     dungeon_feature_type feat = one_chance_in(10) ? DNGN_FLOOR : DNGN_OPEN_DOOR;
 
     for (const auto &dc : all_door)

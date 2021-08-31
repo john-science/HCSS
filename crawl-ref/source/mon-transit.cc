@@ -419,10 +419,10 @@ static bool _tag_follower_at(const coord_def &pos, bool &real_follower)
 
     dprf("%s is marked for following.",
          fol->name(DESC_THE, true).c_str());
-		 
+
 	return true;
 	}
-	
+
     return false;
 }
 

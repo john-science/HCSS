@@ -20,8 +20,8 @@ battle.
 %%%%
 mace of Variability
 
-A peculiar weapon of chaos which takes a variable amount of time to swing. 
-No one knows exactly who would have made such a weapon, or why, but Xom is 
+A peculiar weapon of chaos which takes a variable amount of time to swing.
+No one knows exactly who would have made such a weapon, or why, but Xom is
 probably to blame somehow.
 %%%%
 glaive of Prune
@@ -444,7 +444,7 @@ It grants the wearer great slaying power.
 %%%%
 ring of Dodge City
 
-An unadorned jade ring, carved and enchanted by a famous markself. 
+An unadorned jade ring, carved and enchanted by a famous markself.
 It immensely increases its wearer's ability to predict (and dodge)
 incoming attacks.
 %%%%
@@ -500,8 +500,8 @@ A jewelled amulet famed for its powers of resilience and recuperation.
 %%%%
 autumn katana
 
-A blade composed of 1000 times folded Hanzo steel. It is almost indestructible 
-and has been further enchanted to provide both mental and physical strength 
+A blade composed of 1000 times folded Hanzo steel. It is almost indestructible
+and has been further enchanted to provide both mental and physical strength
 to the wielder.
 %%%%
 shillelagh "Devastator"
@@ -621,7 +621,7 @@ Kryia's mail coat
 A coat of armour said to have been forged for Queen Kryia in her old age. She
 continued to insist on leading her armies from the front even into her dotage,
 and as her aging body failed her, this coat helped to enhance the healing
-draughts that kept her alive. The wearer of this garment will have significantly 
+draughts that kept her alive. The wearer of this garment will have significantly
 increased healing from devices.
 %%%%
 frozen axe "Frostbite"

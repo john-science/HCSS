@@ -48,7 +48,7 @@ function fixup_bazaar()
   dgn.change_floor_tile(tile.floor)
   dgn.change_rock_tile(tile.rock)
 end
-  
+
 dgn.set_branch_epilogue("Bazaar", "fixup_bazaar")
 
 }}

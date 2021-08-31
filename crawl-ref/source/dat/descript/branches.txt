@@ -121,7 +121,7 @@ Zot
 
 The Realm of Zot is a region of the dungeon that is so terrifying, so full of
 madness, frenzy and lunacy, that it has been locked securely against random
-trespassers. Only the most demented adventurers would dare penetrate deeper 
+trespassers. Only the most demented adventurers would dare penetrate deeper
 — all in the vain hope for a fabled artefact no one has ever laid eyes on before.
 %%%%
 Abyss
@@ -133,7 +133,7 @@ in sending would-be champions like you to these proving grounds of madness.
 Reportedly, there is some structure to the chaos, as Lugonu seems to concoct
 schemes around this place and its denizens.
 
-The Abyss consists of five infinite levels. Portals back to the dungeon are 
+The Abyss consists of five infinite levels. Portals back to the dungeon are
 scattered throughout the Abyss, and are found more commonly at greater depths.
 Killing monsters will warp the substance of the Abyss, eventually generating a gateway
 out.

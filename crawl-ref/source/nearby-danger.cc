@@ -60,7 +60,7 @@ static bool _mons_has_path_to_player(const monster* mon, bool want_move = false)
     // (even though the player cannot know this) treat it as unsafe.
     if (mon->travel_target == MTRAV_FOE)
         return true;
-	
+
     // Try to find a path from monster to player, using the map as it's
     // known to the player and assuming unknown terrain to be traversable.
     monster_pathfind mp;
@@ -74,7 +74,7 @@ static bool _mons_has_path_to_player(const monster* mon, bool want_move = false)
 
     if (mp.init_pathfind(mon, you.pos(), true, false, true))
         return true;
-	
+
     if (mon->travel_target == MTRAV_KNOWN_UNREACHABLE)
         return false;
 
@@ -246,7 +246,7 @@ bool i_feel_safe(bool announce, bool want_move, bool just_monsters,
         {
             if (announce)
                 mprf(MSGCH_WARN, "You are swimming in lava!");
-			
+
             return false;
 		}
     }

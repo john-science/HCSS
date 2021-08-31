@@ -1228,9 +1228,9 @@ static int _actor_cloud_damage(const actor *act,
                                                        _cloud2beam(cloud.type),
                                                        cloud_base_damage,
                                                        maximum_damage);
-													   
+
 		std::string d = std::to_string(lightning_dam);
-		
+
         if (maximum_damage)
         {
             // Average maximum damage over time.
@@ -1239,7 +1239,7 @@ static int _actor_cloud_damage(const actor *act,
                 return avg_dam;
             return rain_damage; // vs relec+++ or w/e
         }
-		
+
         if (act->is_player())
             mprf("You are struck by lightning (%s)!",
 			d.c_str());
@@ -1641,9 +1641,9 @@ void cloud_struct::announce_actor_engulfed(const actor *act,
 	{
         return;
 	}
-	
+
 	std::string d = std::to_string(dam);
-	
+
     // Normal clouds. (Unmodified rain clouds have a different message.)
     if (type != CLOUD_RAIN && type != CLOUD_STORM)
     {

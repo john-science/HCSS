@@ -683,10 +683,10 @@ static void _WYRMBANE_melee_effects(item_def* weapon, actor* attacker,
     string name = defender->name(DESC_THE);
 
     if (!mondied)
-    {	
+    {
 		int bonus_damage = 1 + random2(3*dam/2);
 		std::string d = std::to_string(bonus_damage);
-		
+
         mprf("%s %s (%s)!",
             defender->name(DESC_THE).c_str(),
             defender->conj_verb("convulse").c_str(),
@@ -956,11 +956,11 @@ static void _ELEMENTAL_STAFF_melee_effects(item_def*, actor* attacker,
     }
 
     const int bonus_dam = _calc_elemental_staff_damage(flavour, defender);
-	std::string d = std::to_string(bonus_dam);	
-	
+	std::string d = std::to_string(bonus_dam);
+
     if (bonus_dam <= 0)
         return;
-	
+
     mprf("%s %s %s (%s).",
          attacker->name(DESC_THE).c_str(),
          attacker->conj_verb(verb).c_str(),
@@ -1234,7 +1234,7 @@ static void _CAPTAIN_melee_effects(item_def* weapon, actor* attacker,
         {
 			int bonus_damage = 18 + random2(18);
 			std::string d = std::to_string(bonus_damage);
-			
+
             mprf("The captain's cutlass flashes! You lacerate %s (%s)!!",
                 defender->name(DESC_THE).c_str(),
 				d.c_str());

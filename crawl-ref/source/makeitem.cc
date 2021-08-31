@@ -899,10 +899,10 @@ bool is_armour_brand_ok(int type, int brand, bool strict)
 
 	case SPARM_STEALTH:
 		return slot == EQ_BOOTS || slot == EQ_CLOAK;
-		
+
     case SPARM_MAGICAL_POWER:
         return slot == EQ_CLOAK || type == ARM_HAT;
-		
+
     case SPARM_ARCHMAGI:
         return !strict || type == ARM_ROBE;
 
@@ -927,7 +927,7 @@ bool is_armour_brand_ok(int type, int brand, bool strict)
         // deliberate fall-through
     case SPARM_ARCHERY:
         return slot == EQ_GLOVES;
-		
+
 	case SPARM_DEXTERITY:
 		if (!strict)
             return true;
@@ -1295,7 +1295,7 @@ static void _generate_potion_item(item_def& item, int force_type,
                                             70, POT_LIGNIFY,
                                             70, POT_FLIGHT,
                                             60, POT_MIGHT,
-                                            60, POT_HASTE,  
+                                            60, POT_HASTE,
 											50, POT_CANCELLATION,
                                             50, POT_AMBROSIA,
                                             35, POT_INVISIBILITY,
@@ -1414,7 +1414,7 @@ static void _generate_book_item(item_def& item, bool allow_uniques,
             do
             {
                 item.skill = static_cast<skill_type>(random2(SK_UNARMED_COMBAT + 1));
-			}			
+			}
 			while(item.skill == SK_STABBING || item.skill == SK_TRAPS
                 || item.skill == SK_STAVES || item.skill == SK_LONG_BLADES
                 || item.skill == SK_SLINGS || item.skill == SK_CROSSBOWS);
@@ -1507,8 +1507,8 @@ static bool _try_make_jewellery_unrandart(item_def& item, int force_type,
  * Generate a random 'good' plus for a ring type that cares about plusses.
  *
  * @param subtype       The type of ring in question.
- * @return              Either 3 or 6. 
- *                      Marginal increases of +1 are boring.                   
+ * @return              Either 3 or 6.
+ *                      Marginal increases of +1 are boring.
  */
 static int _good_jewellery_plus(int subtype)
 {

@@ -47,12 +47,12 @@
 #include "viewchar.h"
 #include "view.h"
 
-static bool _is_always_penetrating_attack(const actor& attacker, 
+static bool _is_always_penetrating_attack(const actor& attacker,
                           const item_def* weapon, const item_def& projectile);
 static int  _fire_prompt_for_item();
 static bool _fire_validate_item(int selected, string& err);
 
-static bool _is_always_penetrating_attack(const actor& attacker, 
+static bool _is_always_penetrating_attack(const actor& attacker,
                           const item_def* weapon, const item_def& projectile)
 {
     // Fumbles are never penetrating.
@@ -486,7 +486,7 @@ bool is_pierce_active()
 void fire_thing(int item)
 {
     if ((grd(you.pos()) == DNGN_DEEP_WATER
-                && !you.can_swim() && !you.airborne()) 
+                && !you.can_swim() && !you.airborne())
         || (grd(you.pos()) == DNGN_LAVA && !you.airborne()))
             {
                 mprf("You can't throw or fire anything while swimming in %s!",
@@ -495,10 +495,10 @@ void fire_thing(int item)
             }
     dist target;
     item = get_ammo_to_shoot(item, target, is_pproj_active());
-	
+
 	if (!target.isValid)
          return;
-	 
+
     item_def *ammo = nullptr;
     bool created = false;
     if (item == -1)
@@ -522,21 +522,21 @@ void fire_thing(int item)
                             break;
                     }
         }
-        else 
+        else
             return;
-		
+
 		if (!ammo)
         {
                 int p = items(false, OBJ_MISSILES, missileType, 0, ego);
-                ammo = &mitm[p];	
-                created = true;				
+                ammo = &mitm[p];
+                created = true;
         }
         else
             return;
     }
     else
         ammo = &you.inv[item];
-	
+
     if (item && item != -1 && you.inv[item].sub_type == MI_DART_FRENZY && you_worship(GOD_CHEIBRIADOS))
         if (!yesno("Really throw a frenzy dart? This would place you under penance!",
             false, 'n'))
@@ -783,11 +783,11 @@ bool throw_it(bolt &pbolt, item_def& thrown, dist *target, bool created)
     // Making a copy of the item: changed only for venom launchers.
     item_def item = thrown;
     item.quantity = 1;
-    if (item.link > ENDOFPACK) 
+    if (item.link > ENDOFPACK)
     {
         item.slot     = 0;
-    } 
-    else 
+    }
+    else
     {
         item.slot     = index_to_letter(item.link);
     }
@@ -981,7 +981,7 @@ bool throw_it(bolt &pbolt, item_def& thrown, dist *target, bool created)
         if (did_return && thrown_object_destroyed(&item, pbolt.target))
             did_return = false;
     }
-	
+
     if (pierce)
         dec_mp(2);
 
@@ -993,7 +993,7 @@ bool throw_it(bolt &pbolt, item_def& thrown, dist *target, bool created)
 
     if (item.base_type == OBJ_MISSILES && item.sub_type == MI_DART_FRENZY)
         did_god_conduct(DID_HASTY, 6 + random2(3), true);
-	
+
     bool shadow_allowed = thrown.base_type == OBJ_MISSILES && thrown.sub_type != MI_NEEDLE;
 
     if (did_return)
@@ -1069,7 +1069,7 @@ bool mons_throw(monster* mons, bolt &beam, item_def& thrown, bool teleport)
     ASSERT(thrown.base_type == OBJ_MISSILES);
 
     const int weapon    = mons->inv[MSLOT_WEAPON];
-	
+
 	mon_inv_type slot = get_mon_equip_slot(mons, thrown);
 
     // Energy is already deducted for the spell cast, if using portal projectile

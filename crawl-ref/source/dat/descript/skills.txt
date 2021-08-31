@@ -29,7 +29,7 @@ Being skilled with Maces & Staves will allow you to attack more quickly with
 all weapons of this type, as well as increasing your accuracy and damage with
 them.
 
-Being skilled with Maces & Staves increases your effectiveness with Axes, 
+Being skilled with Maces & Staves increases your effectiveness with Axes,
 and vice versa.
 %%%%
 Polearms

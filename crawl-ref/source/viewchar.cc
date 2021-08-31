@@ -25,10 +25,10 @@ static const char32_t dchar_table[NUM_CSET][NUM_DCHAR_TYPES] =
     //       φ
         '0', 0x03C6, ')', '[', '/', '%', '?', '=', '!', '(',
     //                       †       ÷               §     ♣       ©
-        ':', '|', 
+        ':', '|',
 #if TAG_MAJOR_VERSION == 34
          '\\',
-#endif		
+#endif
 		'}', 0x2020, 0xF7, '$', '"', 0xA7, 0x2663, 0xA9,
     //                 ÷
         ' ', '#', '*', 0xF7, 'X', '`', '#',  // space .. explosion

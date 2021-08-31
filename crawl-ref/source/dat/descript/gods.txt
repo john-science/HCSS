@@ -145,7 +145,7 @@ Sif Muna
 
 Sif Muna the Loreminder is a contemplative but powerful deity, served by those
 who seek magical knowledge. The Loreminder appreciates followers who explore
-the dungeon. The faithful can expect to recieve a supply of spellbooks taken 
+the dungeon. The faithful can expect to recieve a supply of spellbooks taken
 directly from Sif Muna's legendary library.
 %%%%
 the Shining One
@@ -160,9 +160,9 @@ to Elyvilon or Zin while keeping some piety.
 Trog
 
 Trog is an ancient god of anger and violence. Followers are expected to kill in
-Trog's name, and especially to slay wizards. In return, worshippers of Trog 
-gain the ability to go berserk at will in combat, and will be granted assistance 
-in the form of powerful weapons and mighty allies. Followers are absolutely 
+Trog's name, and especially to slay wizards. In return, worshippers of Trog
+gain the ability to go berserk at will in combat, and will be granted assistance
+in the form of powerful weapons and mighty allies. Followers are absolutely
 forbidden the use of spell magic.
 %%%%
 Uskayaw
@@ -192,27 +192,27 @@ capricious. There is nothing a follower can do to influence Xom's mood.
 Wu Jian
 
 The Wu Jian Council is a congregation of martial monks, ascended to divinity
-after battling their way out of the afterlife. The Council significantly enhances 
-its followers' melee damage, but drastically reduces their AC. Disciples of the Council 
+after battling their way out of the afterlife. The Council significantly enhances
+its followers' melee damage, but drastically reduces their AC. Disciples of the Council
 are able to execute acrobatic martial maneuvers, such as wall jumps, spinning
 attacks and punishing lunges. They will eventually become able to request
 help in the form of a storm of heavenly clouds.
 %%%%
 Yredelemnul
 
-Yredelemnul the Dark is a god worshipped by those who seek powers over death. 
+Yredelemnul the Dark is a god worshipped by those who seek powers over death.
 Followers can permanently enslave the soul of a monster and gain additional
-powers to afflict the souls of the living. Yredelemnul especially favours those who would 
+powers to afflict the souls of the living. Yredelemnul especially favours those who would
 destroy holy creatures, which oppose the realm of undeath, and the nonliving, which exist
 outside of it.
 %%%%
 Zin
 
 Zin is a god of discipline. Followers must remain pure of body and soul,
-refraining from dark magic and chaotic acts. They must also tithe a fraction 
-of all gold gained, preferably followed by donations of more. In exchange, 
-worshippers may invoke Zin's wrath upon sinners, and eventually gain various 
-divine protections. Zin's followers can convert to Elyvilon or the Shining One 
+refraining from dark magic and chaotic acts. They must also tithe a fraction
+of all gold gained, preferably followed by donations of more. In exchange,
+worshippers may invoke Zin's wrath upon sinners, and eventually gain various
+divine protections. Zin's followers can convert to Elyvilon or the Shining One
 while keeping some piety.
 %%%%
 Ashenzari powers
@@ -302,8 +302,8 @@ Jiyva powers
 
 Jiyva regularly mutates followers. The mutations gifted by Jiyva are usually
 beneficial and include some truly divine mutations that can only be obtained
-through worship. Followers will become able to turn monsters to slime, and eventually 
-to reshape themselves to remove harmful mutations. 
+through worship. Followers will become able to turn monsters to slime, and eventually
+to reshape themselves to remove harmful mutations.
 %%%%
 Kikubaaqudgha powers
 
@@ -366,8 +366,8 @@ elemental clouds to appear near them, blocking attacks, and (for the
 particularly devout) deflecting incoming projectiles. Qazlal allows followers
 to incite nature against their foes, causing a localised natural disturbance
 or, for particularly devout followers, a more widespread disaster.
-Followers of Qazlal can call forth a ring of longer-lived elemental clouds. 
-Followers sometimes gain temporary resistances against the elements on 
+Followers of Qazlal can call forth a ring of longer-lived elemental clouds.
+Followers sometimes gain temporary resistances against the elements on
 taking damage from that element.
 %%%%
 Ru powers
@@ -453,18 +453,18 @@ precision and damage for as long as they keep using martial attacks.
 Xom powers
 
 To worship Xom is to live riskily. Xom will shower worshippers with gifts,
-often of questionable utility, and frequently shuffles their mutations, 
+often of questionable utility, and frequently shuffles their mutations,
 though not always for the better. Xom also may intervene in combat, especially
-when large numbers of opponents are involved, with wild and unpredictable 
+when large numbers of opponents are involved, with wild and unpredictable
 results.
 %%%%
 Yredelemnul powers
 
-Yredelemnul allows followers to mirror their injuries onto attackers. 
+Yredelemnul allows followers to mirror their injuries onto attackers.
 With sufficient piety, followers gain the power to bind a monster's soul
-and make it fight for them eternally. The enslaved soul may be recalled 
-from any location and will return to its master's service after a short time 
-if it is destroyed, but will be released from service if another soul is 
+and make it fight for them eternally. The enslaved soul may be recalled
+from any location and will return to its master's service after a short time
+if it is destroyed, but will be released from service if another soul is
 enslaved. Eventually, followers may swap their enslaved soul's position with
 another creature. Very devout followers gain the ability to drain ambient life
 force from surrounding monsters.
@@ -660,6 +660,6 @@ also afflict those stricken by Yredremnul's wrath.
 Zin wrath
 
 Those under Zin's wrath will find their beneficial mutations stripped away,
-their enemies alerted, and their senses confounded by the axioms of Law; 
+their enemies alerted, and their senses confounded by the axioms of Law;
 confusion, fainting and complete paralysis will be their lot.
 %%%%

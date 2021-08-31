@@ -317,7 +317,7 @@ unsigned int item_value(item_def item, bool ident)
                 break;
 
             case SPMSL_EXPLODING:
-            case SPMSL_POISONED:          
+            case SPMSL_POISONED:
 #if TAG_MAJOR_VERSION == 34
 			case SPMSL_RETURNING:
             case SPMSL_SLOW:
@@ -507,14 +507,14 @@ unsigned int item_value(item_def item, bool ident)
                 valued += 50;
                 break;
 
-            
+
 #if TAG_MAJOR_VERSION == 34
             case POT_AGILITY:
             case POT_BRILLIANCE:
                 valued += 40;
                 break;
 #endif
-#if TAG_MAJOR_VERSION == 34			
+#if TAG_MAJOR_VERSION == 34
             case POT_CURING:
 #endif
             case POT_LIGNIFY:
@@ -1467,7 +1467,7 @@ string shop_type_name(shop_type type)
             return "Gadget";
         case SHOP_BOOK:
             return "Book";
-#if TAG_MAJOR_VERSION == 34			
+#if TAG_MAJOR_VERSION == 34
 		case SHOP_FOOD:
 			return "Food";
 #endif

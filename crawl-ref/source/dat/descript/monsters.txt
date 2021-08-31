@@ -983,7 +983,7 @@ wizard's experiment.
 %%%%
 electric eel
 
-A type of fish capable of generating a powerful electric field. The dungeon's 
+A type of fish capable of generating a powerful electric field. The dungeon's
 eels are highly evolved and can wriggle across dry land for brief periods of time.
 %%%%
 elemental wellspring
@@ -1991,8 +1991,8 @@ foes.
 %%%%
 silent spectre
 
-A terrible spirit which has the power to bring an unearthly silence to the 
-area around it, making it impossible to recite the magical incantations 
+A terrible spirit which has the power to bring an unearthly silence to the
+area around it, making it impossible to recite the magical incantations
 involved with casting spells or reading scrolls.
 %%%%
 simulacrum
@@ -2178,8 +2178,8 @@ and enormous scaly wings crackling with sparks.
 %%%%
 subtractor snake
 
-An ancient, intelligent, and deadly snake. It adds its allies into the fray 
-and then subtracts its foes from existence. 
+An ancient, intelligent, and deadly snake. It adds its allies into the fray
+and then subtracts its foes from existence.
 %%%%
 sun demon
 
@@ -2224,7 +2224,7 @@ and weaponry instead of spellcasting.
 %%%%
 elevengu
 
-A terrifyingly powerful humanoid with the head and talons of a bird and 
+A terrifyingly powerful humanoid with the head and talons of a bird and
 the destructive magics of demonkind. It makes a tengu look like a sevengu.
 %%%%
 tentacle
@@ -2515,7 +2515,7 @@ A corpse raised to undeath by necromancy.
 %%%%
 zotbot
 
-A magical robotic guardian of the realm of Zot. It fires high energy 
+A magical robotic guardian of the realm of Zot. It fires high energy
 projectiles from its chest.
 %%%%
 zotling

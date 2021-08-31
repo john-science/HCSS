@@ -375,7 +375,7 @@ static void _remove_spell_attributes(spell_type spell)
             mprf(MSGCH_DURATION, "Your icy armour evaporates.");
         }
         break;
-	
+
 	case SPELL_REGENERATION:
 	    if (you.attribute[ATTR_SPELL_REGEN])
         {
@@ -453,7 +453,7 @@ static void _remove_spell_attributes(spell_type spell)
             mprf(MSGCH_DURATION, "Your ring of flames gutters out.");
         }
         break;
-    case SPELL_INFUSION: 
+    case SPELL_INFUSION:
         if (you.attribute[ATTR_INFUSION])
         {
             you.attribute[ATTR_INFUSION] = 0;
@@ -1450,14 +1450,14 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
             return "you are already teleporting projectiles to their destination";
         }
         break;
-		
+
     case SPELL_BATTLESPHERE:
         if(temp && you.attribute[ATTR_BATTLESPHERE])
         {
             return "you already have your battlesphere prepared";
         }
         break;
-		
+
     case SPELL_SPELLFORGED_SERVITOR:
         if(temp && you.attribute[ATTR_SERVITOR])
         {
@@ -1502,7 +1502,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (you.undead_state(false))
             return "you're too dead.";
         break;
-		
+
     case SPELL_SONG_OF_SLAYING:
         if (temp && you.attribute[ATTR_SONG_OF_SLAYING])
             return "you're already singing.";
@@ -1525,7 +1525,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (temp && you.attribute[ATTR_BONE_ARMOUR])
             return "the film of ice won't work on corpses.";
         break;
-		
+
     case SPELL_RING_OF_FLAMES:
         if (temp && you.attribute[ATTR_FIRE_SHIELD])
             return "you are already surrounded by a ring of flames";
@@ -1594,7 +1594,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (you.get_mutation_level(MUT_NO_LOVE))
             return "you cannot coerce anything to obey you.";
         break;
-		
+
     case SPELL_INFESTATION:
         if(temp && you.attribute[ATTR_INFESTATION])
             return "you're already infesting your enemies";
@@ -1610,7 +1610,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (env.level_state & LSTATE_STILL_WINDS)
             return "the air is too still for clouds to form.";
         break;
-    
+
     case SPELL_AURA_OF_ABJURATION:
         if (temp && you.attribute[ATTR_ABJURATION_AURA])
             return "you are already abjuring hostile summons.";

@@ -1232,7 +1232,7 @@ void torment_cell(coord_def where, actor *attacker, torment_source_type taux)
         return;
     else if (att && attacker->is_monster() && mons_aligned( mons, att))
         return;
-		
+
     int hploss = max(0, mons->hit_points * (50 - mons->res_negative_energy() * 5) / 100 - 1);
 
     if (hploss)

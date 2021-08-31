@@ -1910,7 +1910,7 @@ spret_type cast_animate_dead(int pow, god_type god, bool fail)
     }
     fail_check();
     mpr("You call on the dead to rise!");
-    
+
     you.attribute[ATTR_ANIMATE_DEAD] = 1;
 
     return SPRET_SUCCESS;
@@ -2432,7 +2432,7 @@ void init_servitor(monster* servitor, actor* caster)
 spret_type player_spellforged_servitor(int pow, god_type god, bool fail)
 {
 	fail_check();
-	
+
     you.attribute[ATTR_SERVITOR] = 1;
     mprf("You prepare to summon your spellforged servitor.");
 
@@ -2655,7 +2655,7 @@ bool battlesphere_can_mirror(spell_type spell)
     return spell == SPELL_SANDBLAST
         || spell == SPELL_AIRSTRIKE
         || spell == SPELL_FREEZE
-        || spell == SPELL_FIREBALL     
+        || spell == SPELL_FIREBALL
         || spell == SPELL_BOLT_OF_FIRE
         || spell == SPELL_MEPHITIC_CLOUD
         || spell == SPELL_BOLT_OF_DRAINING
@@ -3082,7 +3082,7 @@ spret_type cast_spectral_weapon(actor *agent, int pow, god_type god, bool fail)
 void summon_spectral_weapon(actor *agent, int pow, god_type god)
 {
     ASSERT(agent);
-	
+
     //don't summon anything if a spectral weapon is already alive
     monster *old_weapon = find_spectral_weapon(agent);
     if (old_weapon)
@@ -3090,11 +3090,11 @@ void summon_spectral_weapon(actor *agent, int pow, god_type god)
 
     const int dur = min(2 + random2(1 + div_rand_round(pow, 25)), 4);
     item_def* wpn = agent->weapon();
-	
+
     //don't do anything if the weapon can't be spectral
     if (!weapon_can_be_spectral(wpn))
         return;
-	
+
     mgen_data mg(MONS_SPECTRAL_WEAPON,
                  agent->is_player() ? BEH_FRIENDLY
                                     : SAME_ATTITUDE(agent->as_monster()),

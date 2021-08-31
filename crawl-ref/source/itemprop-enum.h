@@ -42,28 +42,28 @@ enum armour_type
     ARM_TROLL_HIDE,
 #endif
     ARM_TROLL_LEATHER_ARMOUR,
-	
+
 #if TAG_MAJOR_VERSION == 34
     ARM_FIRE_DRAGON_HIDE,
 #endif
     ARM_FIRE_DRAGON_ARMOUR,
 #if TAG_MAJOR_VERSION == 34
     ARM_ICE_DRAGON_HIDE,
-#endif	
+#endif
     ARM_ICE_DRAGON_ARMOUR,
-#if TAG_MAJOR_VERSION == 34	
+#if TAG_MAJOR_VERSION == 34
     ARM_STEAM_DRAGON_HIDE,
 #endif
     ARM_STEAM_DRAGON_ARMOUR,
-#if TAG_MAJOR_VERSION == 34	
+#if TAG_MAJOR_VERSION == 34
     ARM_ACID_DRAGON_HIDE,
 #endif
     ARM_ACID_DRAGON_ARMOUR,
-#if TAG_MAJOR_VERSION == 34	
+#if TAG_MAJOR_VERSION == 34
     ARM_STORM_DRAGON_HIDE,
 #endif
     ARM_STORM_DRAGON_ARMOUR,
-#if TAG_MAJOR_VERSION == 34	
+#if TAG_MAJOR_VERSION == 34
     ARM_GOLD_DRAGON_HIDE,
 #endif
     ARM_GOLD_DRAGON_ARMOUR,
@@ -155,7 +155,7 @@ enum brand_type // item_def.special
     SPWPN_ACID,    // acid bite and Punk
 #if TAG_MAJOR_VERSION > 34
     SPWPN_CONFUSE, // Confusing Touch only for the moment
-#endif 
+#endif
     SPWPN_DEBUG_RANDART,
     NUM_SPECIAL_WEAPONS,
 };
@@ -492,7 +492,7 @@ enum special_missile_type // to separate from weapons in general {dlb}
     SPMSL_FROST,
     SPMSL_POISONED,
     SPMSL_CURARE,                      // Needle-only brand
-#if TAG_MAJOR_VERSION == 34    
+#if TAG_MAJOR_VERSION == 34
 	SPMSL_RETURNING,
 #endif
     SPMSL_CHAOS,

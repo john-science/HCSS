@@ -570,7 +570,7 @@ static const mutation_def mut_data[] =
   {"You evolve.", ""},
 
   {"You feel nature experimenting on you. Don't worry, failures die fast.",
-   "", 
+   "",
    ""},
 
   {"Nature stops experimenting on you.", "", ""},
@@ -1103,9 +1103,9 @@ static const mutation_def mut_data[] =
 { MUT_ICEMAIL, 0, 2, mutflag::GOOD, false,
   "icemail",
 
-  {"A meltable icy envelope protects you from harm. (AC +", 
+  {"A meltable icy envelope protects you from harm. (AC +",
    "A meltable icy envelope protects you from harm. (AC +", ""},
-  {"An icy envelope takes form around you.", 
+  {"An icy envelope takes form around you.",
    "Your icy envelope grows thicker.", ""},
   {"", "", ""},
 },
@@ -1591,9 +1591,9 @@ static const mutation_def mut_data[] =
 { MUT_IGNITE_BLOOD, 0, 2, mutflag::GOOD, false,
   "ignite blood",
 
-  {"Your demonic aura occasionally causes spilled blood to erupt in flames.", 
+  {"Your demonic aura occasionally causes spilled blood to erupt in flames.",
    "Your demonic aura causes spilled blood to erupt in flames.", ""},
-  {"Your blood runs red-hot!", 
+  {"Your blood runs red-hot!",
    "Your blood burns even hotter!", ""},
   {"", "", ""},
 },
@@ -1689,9 +1689,9 @@ static const mutation_def mut_data[] =
 { MUT_BLACK_MARK, 0, 2, mutflag::GOOD, false,
   "black mark",
 
-  {"Your melee attacks may debilitate your foes.", 
+  {"Your melee attacks may debilitate your foes.",
    "Your melee attacks frequently debilitate your foes", ""},
-  {"An ominous black mark forms on your body.", 
+  {"An ominous black mark forms on your body.",
    "Your black mark grows larger.", ""},
   {"", "", ""},
 },
@@ -2065,7 +2065,7 @@ static const mutation_def mut_data[] =
 { MUT_OUT_OF_LOS_HPREGEN, 0, 2, mutflag::GOOD | mutflag::JIYVA, true,
   "jiyva regeneration",
 
-  {"Your regeneration increases when no monsters are visible.", 
+  {"Your regeneration increases when no monsters are visible.",
    "Your regeneration greatly increases when no monsters are visible.", ""},
   {"You feel blessed with divine regeneration.", "You feel blessed with divine regeneration", ""},
   {"You feel less blessed.", "You feel less blessed.", ""},
@@ -2074,7 +2074,7 @@ static const mutation_def mut_data[] =
 { MUT_OUT_OF_LOS_MPREGEN, 0, 2, mutflag::GOOD | mutflag::JIYVA, true,
   "jiyva magic regeneration",
 
-  {"Your magic regeneration increases when no monsters are visible.", 
+  {"Your magic regeneration increases when no monsters are visible.",
    "Your magic regeneration greatly increases when no monsters are visible.", ""},
   {"You feel blessed with divine magic regeneration.", "You feel blessed with divine magic regeneration", ""},
   {"You feel less blessed.", "You feel less blessed.", ""},

@@ -643,7 +643,7 @@ void trap_def::trigger(actor& triggerer)
             }
         }
         break;
-		
+
 #if TAG_MAJOR_VERSION == 34
     case TRAP_NET:
         if (you_trigger)
@@ -956,7 +956,7 @@ trap_type get_trap_type(const coord_def& pos)
 void search_around()
 {
     ASSERT(!crawl_state.game_is_arena());
-	
+
     int max_dist = 5;
 
     for (radius_iterator ri(you.pos(), max_dist, C_SQUARE, LOS_NO_TRANS); ri; ++ri)
@@ -977,7 +977,7 @@ void search_around()
         mprf("You found %s!",
             ptrap->name(DESC_A).c_str());
         learned_something_new(HINT_SEEN_TRAP, *ri);
-        
+
     }
 }
 

@@ -359,7 +359,7 @@ stab_type find_stab_type(const actor *attacker,
     {
         return STAB_NO_STAB;
     }
-	
+
     // No stabbing monsters that cannot fight (e.g.  plants) or monsters
     // the attacker can't see (either due to invisibility or being behind
     // opaque clouds).
@@ -813,7 +813,7 @@ int weapon_min_delay(const item_def &weapon, bool check_speed)
         min_delay *= 2;
         min_delay /= 3;
     }
-	
+
     if (check_speed && get_weapon_brand(weapon) == SPWPN_DEVASTATION)
     {
         min_delay *= 3;

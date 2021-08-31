@@ -460,8 +460,8 @@ targetter_transference::targetter_transference(const actor* act) :
 targeter_walljump::targeter_walljump() :
     targetter_smite(&you, LOS_RADIUS, 1, 1, false, nullptr)
 {
-}	
-	
+}
+
 bool targeter_walljump::valid_aim(coord_def a)
 {
     return wu_jian_can_wall_jump(a, why_not);

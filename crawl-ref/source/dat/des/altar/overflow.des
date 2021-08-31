@@ -3031,7 +3031,7 @@ SHUFFLE: fgh
 SUBST: f = c, g = x, h = b
 MAP
   fff
- ffBff   
+ ffBff
 ff...ff g@g
 ff...ffgg.gg
  ff.ffgg...gg hhh
@@ -3153,7 +3153,7 @@ MAP
     ...ttt...
    ...t...t...
   ...t..B..t...
-   ...t...t... 
+   ...t...t...
  ......ttt......
 ..ttt.......ttt..
 .t...t.....t...t.
@@ -3409,7 +3409,7 @@ TAGS: temple_overflow_generic_2
     subst("eh = .")
   elseif altarcount == "10" then
     subst("dfgh = B")
-    subst("e = .")  
+    subst("e = .")
   elseif altarcount == "11" then
     subst("defg = B")
     subst("h = .")

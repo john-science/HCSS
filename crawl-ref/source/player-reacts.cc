@@ -637,7 +637,7 @@ static void _decrement_simple_duration(duration_type dur, int delay)
  */
 static void _decrement_durations()
 {
-	
+
     const int delay = you.time_taken;
 
     _decrement_confusion(delay);
@@ -656,14 +656,14 @@ static void _decrement_durations()
             you.props.erase(ICY_ARMOUR_KEY);
         you.redraw_armour_class = true;
     }
-	
+
     if(_decrement_a_duration(DUR_WALL_JUMP_EV, delay, "You feel less evasive."))
     {
         if (you.props.exists(WALL_JUMP_EV_KEY))
             you.props.erase(WALL_JUMP_EV_KEY);
         you.redraw_evasion = true;
     }
-	
+
     if (you.attribute[ATTR_OZO_ARMOUR])
         you.redraw_armour_class = true;
 
@@ -874,7 +874,7 @@ static void _decrement_durations()
 
     if (you.duration[DUR_DRAGON_CALL])
         do_dragon_call(delay);
-	
+
     if(you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN])
         you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN] = max(you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN] - delay, 0);
 
@@ -897,7 +897,7 @@ static void _decrement_durations()
     {
         _try_to_respawn_ancestor();
     }
-	
+
     if(in_good_standing(GOD_YREDELEMNUL)
        && you.props.exists(YRED_ENSLAVED_SOUL_KEY)
        && you.attribute[ATTR_YRED_SOUL_TIMEOUT]
@@ -1016,11 +1016,11 @@ void player_reacts()
 
     if (you.unrand_reacts.any())
         unrand_reacts();
-	
+
     //decrement song of slaying's bonus over time
     //chance to decrement is spellpower dependent
     if (you.attribute[ATTR_SONG_OF_SLAYING]
-        && x_chance_in_y(you.time_taken * 50, 
+        && x_chance_in_y(you.time_taken * 50,
            (50 + calc_spell_power(SPELL_SONG_OF_SLAYING, true)) * 8 * BASELINE_DELAY))
     {
         const int sos_bonus = you.attribute[ATTR_SONG_OF_SLAYING];
@@ -1039,7 +1039,7 @@ void player_reacts()
             you.redraw_armour_class = true;
         }
     }
-	
+
     //decrement skeleton armour
     if (you.attribute[ATTR_SKELETON_ARMOUR]
         && x_chance_in_y(you.time_taken, 14 * BASELINE_DELAY))
@@ -1048,8 +1048,8 @@ void player_reacts()
 		if (bone_armour > 0)
         {
             you.attribute[ATTR_SKELETON_ARMOUR] = bone_armour - 1;
-            you.redraw_armour_class = true;	
-        }		
+            you.redraw_armour_class = true;
+        }
     }
 
     if (x_chance_in_y(you.time_taken, 10 * BASELINE_DELAY))
@@ -1089,7 +1089,7 @@ void player_reacts()
         mprf("The lava roasts you! (%d)", lava_damage);
         ouch(lava_damage, KILLED_BY_LAVA);
     }
-	
+
     // Handle starvation before subtracting hunger for this turn (including
     // hunger from the berserk duration) and before monsters react, so you
     // always get a turn (though it may be a delay or macro!) between getting
@@ -1119,10 +1119,10 @@ void player_reacts()
     dec_disease_player(you.time_taken);
     if (you.duration[DUR_POISONING])
         handle_player_poison(you.time_taken);
-	
+
     if (you.get_mutation_level(MUT_RADIOACTIVE))
         _malmutation_aura();
-	
+
     if (you.get_mutation_level(MUT_DREAM_DUST))
         _dream_aura();
 
@@ -1143,7 +1143,7 @@ void player_reacts()
 
     if (you.props[EMERGENCY_FLIGHT_KEY].get_bool())
         _handle_emergency_flight();
-	
+
     //recalc pproj power every turn
     if(you.attribute[ATTR_PORTAL_PROJECTILE] > 0)
     {
@@ -1165,7 +1165,7 @@ void player_reacts()
         && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
             untransform();
         unfreeze_mp();
-    }	
+    }
     const int mp_to_freeze = calculate_frozen_mp();
     if (mp_to_freeze > get_real_mp(true,true))
     {
@@ -1182,7 +1182,7 @@ void player_reacts()
     {
         freeze_mp(mp_to_freeze);
     }
-	
+
     //de-attune amulet of destruction if dur is up and the last action wasn't destructive
     if(you.props.exists(AMULET_DESTRUCTIVE_SPELL)
         && !you.props.exists(LAST_ACTION_DESTRUCTIVE_KEY)
@@ -1190,7 +1190,7 @@ void player_reacts()
     {
         you.props.erase(AMULET_DESTRUCTIVE_SPELL);
     }
-	
+
     // doom clock
     if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN && env.turns_on_level == 649)
     {
@@ -1213,7 +1213,7 @@ void update_divine_vigour()
     else
         you.attribute[ATTR_DIVINE_VIGOUR] = 0;
     calc_hp();
-    calc_mp();	
+    calc_mp();
 }
 
 void extract_manticore_spikes(const char* endmsg)

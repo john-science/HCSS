@@ -83,7 +83,7 @@ function fixup_bazaar()
   dgn.change_floor_tile(tile.floor)
   dgn.change_rock_tile(tile.rock)
 end
-  
+
 dgn.set_branch_epilogue("Bazaar", "fixup_bazaar")
 
 }}
@@ -188,7 +188,7 @@ T..O..T
   ...
    C
 ENDMAP
-   
+
 NAME: bzr_entry_metal_box
 NSUBST: x = 1:+ / *:v
 : place_bazaar_portal(_G)

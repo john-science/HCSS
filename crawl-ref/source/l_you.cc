@@ -146,7 +146,7 @@ LUARET1(you_teleporting, boolean, you.duration[DUR_TELEPORT])
 LUARET1(you_anchored, boolean, you.duration[DUR_DIMENSION_ANCHOR])
 LUARET1(you_rooted, boolean, you.duration[DUR_GRASPING_ROOTS])
 LUARET1(you_poisoned, boolean, you.duration[DUR_POISONING])
-LUARET1(you_invisible, boolean, you.duration[DUR_INVIS] 
+LUARET1(you_invisible, boolean, you.duration[DUR_INVIS]
                                    || you.attribute[ATTR_PERMAINVIS])
 LUARET1(you_mesmerised, boolean, you.duration[DUR_MESMERISED])
 LUARET1(you_on_fire, boolean, you.duration[DUR_LIQUID_FLAMES])

@@ -1324,7 +1324,7 @@ monster_type transform_mons()
 string blade_parts(bool terse)
 {
     string str;
-	
+
 	if (you.species == SP_OCTOPODE)
         str = "tentacle";
     else
@@ -1443,7 +1443,7 @@ static mutation_type _beastly_appendage()
             continue;
         if (physiology_mutation_conflict(app))
             continue;
-        
+
         chosen = app;
         return chosen;
     }

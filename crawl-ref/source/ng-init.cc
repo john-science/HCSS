@@ -85,15 +85,15 @@ void initialise_branch_depths()
     // You will get one of Shoals/Swamp/Spider/Snake.
     branch_type lair_branch[] =
     {
-        BRANCH_SWAMP, 
+        BRANCH_SWAMP,
 		BRANCH_SHOALS,
-        BRANCH_SNAKE,  	
+        BRANCH_SNAKE,
 		BRANCH_SPIDER
     };
-	
-	branch_type enabled_branch = random_choose(BRANCH_SWAMP, BRANCH_SHOALS, 
+
+	branch_type enabled_branch = random_choose(BRANCH_SWAMP, BRANCH_SHOALS,
 	BRANCH_SNAKE, BRANCH_SPIDER);
-	
+
     for (branch_type disabled : lair_branch)
     {
 		if(branches[disabled].shortname != branches[enabled_branch].shortname)
@@ -102,18 +102,18 @@ void initialise_branch_depths()
         brentry[disabled].clear();
 		}
     }
-	
+
 	 branch_type hell_branch[] =
     {
-        BRANCH_DIS, 
+        BRANCH_DIS,
 		BRANCH_TARTARUS,
-        BRANCH_COCYTUS,  	
+        BRANCH_COCYTUS,
 		BRANCH_GEHENNA
     };
-	
-	branch_type enabled_hell = random_choose(BRANCH_DIS, BRANCH_TARTARUS, 
+
+	branch_type enabled_hell = random_choose(BRANCH_DIS, BRANCH_TARTARUS,
 	BRANCH_COCYTUS, BRANCH_GEHENNA);
-	
+
 	for (branch_type disabled : hell_branch)
     {
 		if(branches[disabled].shortname != branches[enabled_hell].shortname)

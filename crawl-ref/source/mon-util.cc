@@ -1914,7 +1914,7 @@ mon_attack_def mons_attack_spec(const monster& m, int attk_number,
         {
             return { mon.ghost->att_type, mon.ghost->att_flav,
                      mon.ghost->damage };
-                                        
+
         }
 
         return { AT_NONE, AF_PLAIN, 0 };

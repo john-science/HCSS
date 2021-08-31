@@ -487,7 +487,7 @@ static bool _can_quaff_potion(const item_def &potion)
 	const string no_quaff_reason = cannot_quaff_item_reason(potion);
     if(no_quaff_reason.empty())
         return true;
-    
+
     mpr(no_quaff_reason);
     return false;
 }
@@ -863,9 +863,9 @@ void ArmourOnDelay::finish()
             freeze_mp(calculate_frozen_mp());
         }
     }
-	
+
     equip_item(eq_slot, armour.link);
-	
+
     if (you.no_cast() && you.mp_frozen > 0)
     {
         mpr("Something interferes with your magic!");
@@ -874,8 +874,8 @@ void ArmourOnDelay::finish()
         && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
             untransform();
         unfreeze_mp();
-    }	
-	
+    }
+
     check_item_hint(armour, old_talents);
 }
 
@@ -972,7 +972,7 @@ void SlowPotionDelay::finish()
             {
                 you.increase_duration(DUR_AGILITY, 15 + random2(15), 30);
             }
-	
+
             if (in_inventory(potion))
             {
                 dec_inv_item_quantity(potion.link, 1);
