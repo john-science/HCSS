@@ -2,8 +2,8 @@
 use strict;
 use Encode;
 
-## Checks the commit diff for suspicious lines not covered by util/checkwhite
-## and util/unbrace, namely unresolved merges.
+## Checks the commit diff for suspicious lines not covered by util/checkwhite,
+## namely unresolved merges.
 
 open DIFF, "git diff-index -p -M --cached HEAD --|"
     or die "pre-commit: Can't obtain the diff. Run git commit -n to ignore.\n";

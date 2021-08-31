@@ -1,0 +1,17 @@
+name: HCSS Build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  linting:
+    name: Code Linting
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkwhite
+        run: util/checkwhite -n
+        working-directory: crawl-ref/source

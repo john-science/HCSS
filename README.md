@@ -3,7 +3,7 @@
 > Kill the dead. End their suffering.
 
 
-## Standing Upon the Shoulders of Giants
+## Standing Upon the Shoulders of Frost Giants
 
 > HCSS is a fork of [Hellcrawl](https://github.com/Hellmonk/hellcrawl) which is a fork of [DCSS](https://github.com/crawl/crawl) v0.19.
 
@@ -20,5 +20,5 @@ able to play a vampire or a mummy, that's for sure. And you will have to pick a 
 
 One of my personal design goals for HCSS is to have a simpler version of DCSS, with less tedium. As such, I decided to use [Hellcrawl](https://github.com/Hellmonk/hellcrawl) as my starting place.
 
-I am sure I will make a ton of decisions in HCSS that the creators of Hellcrawl and indeed DCSS will not like. That's fine. The online gaming world is notoriously persnickety, and I woni't defend my
-choices. This fork is just for my own lawls, and I expect most people will continue playing the venerated games I forked from.
+I am sure I will make a ton of decisions in HCSS that the creators of Hellcrawl and indeed DCSS will not like. That's fine. The online gaming world is notoriously persnickety, and I won't defend my
+choices. This fork is just for my own lawls, and I expect most people will continue playing the awesome games I forked from.
