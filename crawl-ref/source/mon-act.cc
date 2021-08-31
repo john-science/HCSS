@@ -944,7 +944,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
         weapon = mons->mslot_item(MSLOT_WEAPON);
         if (weapon && weapon != launcher && weapon->cursed())
         {
-            if(created)
+            if (created)
                 destroy_item(missile->index());
             return false;
         }
@@ -969,7 +969,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
             simple_monster_message(*mons,
                                 " is stunned by your will and fails to attack.",
                                 MSGCH_GOD);
-            if(created)
+            if (created)
                 destroy_item(missile->index());
             return false;
         }
@@ -1015,7 +1015,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
     {
         if (check_only)
         {
-            if(created)
+            if (created)
                 destroy_item(missile->index());
             return true;
         }
@@ -1030,7 +1030,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
         return mons_throw(mons, beem, *missile, teleport);
     }
 
-    if(created)
+    if (created)
         destroy_item(missile->index());
 
     return false;

@@ -369,7 +369,7 @@ bool melee_attack::handle_phase_hit()
     if (attacker->is_player() && you.duration[DUR_MIASMATA])
     {
         // scale the chance to do anything with necro skill
-        if(x_chance_in_y(10 + you.skill_rdiv(SK_NECROMANCY, 2, 3), 50))
+        if (x_chance_in_y(10 + you.skill_rdiv(SK_NECROMANCY, 2, 3), 50))
         {
             mprf("You engulf %s in miasma!",
                 you.can_see(*defender)? defender->name(DESC_THE).c_str() : "something");
@@ -379,7 +379,7 @@ bool melee_attack::handle_phase_hit()
 
     if (attacker->is_player() && you.attribute[ATTR_INFESTATION])
     {
-        if(!defender->is_summoned() && !(defender->as_monster()->flags & MF_HARD_RESET))
+        if (!defender->is_summoned() && !(defender->as_monster()->flags & MF_HARD_RESET))
         {
             const int dur = (5 + random2avg(calc_spell_power(SPELL_INFESTATION, true) / 2, 2)) * BASELINE_DELAY;
             defender->as_monster()->add_ench(mon_enchant(ENCH_INFESTATION, 0, &you, dur));
@@ -848,12 +848,12 @@ bool melee_attack::attack()
     {
         noisy_equipment();
     }
-    //excruciating wounds sometimes makes noise, spellpower-dependent chance
-    if(attacker->is_player()
+    // excruciating wounds sometimes makes noise, spellpower-dependent chance
+    if (attacker->is_player()
         && weapon
         && you.attribute[ATTR_EXCRUCIATING_WOUNDS] > 0)
     {
-        if(x_chance_in_y(1, 10 + div_rand_round(calc_spell_power(SPELL_EXCRUCIATING_WOUNDS, true),2)))
+        if (x_chance_in_y(1, 10 + div_rand_round(calc_spell_power(SPELL_EXCRUCIATING_WOUNDS, true),2)))
         {
             string msg = "@Your_weapon@ shrieks terribly!";
             item_noise(*weapon, msg, 15);
@@ -1795,7 +1795,7 @@ void melee_attack::handle_noise(const coord_def & pos)
 
     int loudness = damage_done / 4;
 
-    if(attacker->is_player() && you.attribute[ATTR_SONG_OF_SLAYING])
+    if (attacker->is_player() && you.attribute[ATTR_SONG_OF_SLAYING])
     {
         loudness += random2(5) + 1;
     }
@@ -2341,7 +2341,7 @@ bool melee_attack::mons_attack_effects()
     {
         mons_apply_attack_flavour();
 
-        if(mons_class_flag(attacker->type, M_INVIS)
+        if (mons_class_flag(attacker->type, M_INVIS)
                          &&!defender->can_see(*attacker))
             attacker->as_monster()->del_ench(ENCH_INVIS, true);
 
@@ -2634,7 +2634,7 @@ void melee_attack::mons_apply_attack_flavour()
         break;
 
     case AF_CONTAM:
-        if(defender->is_player())
+        if (defender->is_player())
         {
             contaminate_player(1000 + random2(1000), false);
         }
@@ -3119,9 +3119,9 @@ void melee_attack::emit_foul_stench()
 void melee_attack::do_minotaur_retaliation()
 {
     // no retaliating while in bad terrain
-    if(grd(defender->pos()) == DNGN_DEEP_WATER || grd(defender->pos()) == DNGN_LAVA)
+    if (grd(defender->pos()) == DNGN_DEEP_WATER || grd(defender->pos()) == DNGN_LAVA)
     {
-        if(!defender->airborne())
+        if (!defender->airborne())
             return;
     }
 

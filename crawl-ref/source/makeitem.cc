@@ -1415,7 +1415,7 @@ static void _generate_book_item(item_def& item, bool allow_uniques,
             {
                 item.skill = static_cast<skill_type>(random2(SK_UNARMED_COMBAT + 1));
             }
-            while(item.skill == SK_STABBING || item.skill == SK_TRAPS
+            while (item.skill == SK_STABBING || item.skill == SK_TRAPS
                 || item.skill == SK_STAVES || item.skill == SK_LONG_BLADES
                 || item.skill == SK_SLINGS || item.skill == SK_CROSSBOWS);
         }

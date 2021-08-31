@@ -359,7 +359,7 @@ static void _end_horror()
 
 static void _malmutation_aura()
 {
-    if(you_worship(GOD_ZIN))
+    if (you_worship(GOD_ZIN))
         return;
     if (you.magic_contamination < 2500)
         contaminate_player(2500 - you.magic_contamination);
@@ -657,7 +657,7 @@ static void _decrement_durations()
         you.redraw_armour_class = true;
     }
 
-    if(_decrement_a_duration(DUR_WALL_JUMP_EV, delay, "You feel less evasive."))
+    if (_decrement_a_duration(DUR_WALL_JUMP_EV, delay, "You feel less evasive."))
     {
         if (you.props.exists(WALL_JUMP_EV_KEY))
             you.props.erase(WALL_JUMP_EV_KEY);
@@ -689,7 +689,7 @@ static void _decrement_durations()
         you.props.erase(EMERGENCY_FLIGHT_KEY);
     }
 
-    if(you.transform_uncancellable || you.form == TRAN_SHADOW)
+    if (you.transform_uncancellable || you.form == TRAN_SHADOW)
     {
         if (_decrement_a_duration(DUR_TRANSFORMATION, delay, nullptr, random2(3),
                             "Your transformation is almost over."))
@@ -697,7 +697,7 @@ static void _decrement_durations()
             untransform();
         }
     }
-    if(you.form == TRAN_HYDRA)
+    if (you.form == TRAN_HYDRA)
     {
         const int heads = you.heads();
         set_hydra_form_heads(1 + calc_spell_power(SPELL_HYDRA_FORM, true) / 10);
@@ -875,7 +875,7 @@ static void _decrement_durations()
     if (you.duration[DUR_DRAGON_CALL])
         do_dragon_call(delay);
 
-    if(you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN])
+    if (you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN])
         you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN] = max(you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN] - delay, 0);
 
     if (you.attribute[ATTR_ABJURATION_AURA])
@@ -898,7 +898,7 @@ static void _decrement_durations()
         _try_to_respawn_ancestor();
     }
 
-    if(in_good_standing(GOD_YREDELEMNUL)
+    if (in_good_standing(GOD_YREDELEMNUL)
        && you.props.exists(YRED_ENSLAVED_SOUL_KEY)
        && you.attribute[ATTR_YRED_SOUL_TIMEOUT]
        && !you.duration[DUR_SOUL_DELAY])
@@ -1138,14 +1138,14 @@ void player_reacts()
         xom_tick();
     else if (you_worship(GOD_QAZLAL))
         qazlal_storm_clouds();
-    else if(you_worship(GOD_ELYVILON))
+    else if (you_worship(GOD_ELYVILON))
         update_divine_vigour();
 
     if (you.props[EMERGENCY_FLIGHT_KEY].get_bool())
         _handle_emergency_flight();
 
     //recalc pproj power every turn
-    if(you.attribute[ATTR_PORTAL_PROJECTILE] > 0)
+    if (you.attribute[ATTR_PORTAL_PROJECTILE] > 0)
     {
         you.attribute[ATTR_PORTAL_PROJECTILE] = 1 + calc_spell_power(SPELL_PORTAL_PROJECTILE, true);
     }
@@ -1161,7 +1161,7 @@ void player_reacts()
     {
         mpr("Something interferes with your magic!");
         dispel_permanent_buffs();
-        if(you.form && !you.transform_uncancellable
+        if (you.form && !you.transform_uncancellable
         && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
             untransform();
         unfreeze_mp();
@@ -1172,7 +1172,7 @@ void player_reacts()
         set_mp(0);
         mpr("Your magical reserves are completely exhausted.");
         dispel_permanent_buffs();
-        if(you.form && !you.transform_uncancellable
+        if (you.form && !you.transform_uncancellable
         && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
             untransform();
         unfreeze_mp();
@@ -1184,7 +1184,7 @@ void player_reacts()
     }
 
     //de-attune amulet of destruction if dur is up and the last action wasn't destructive
-    if(you.props.exists(AMULET_DESTRUCTIVE_SPELL)
+    if (you.props.exists(AMULET_DESTRUCTIVE_SPELL)
         && !you.props.exists(LAST_ACTION_DESTRUCTIVE_KEY)
         && !you.duration[DUR_DESTRUCTION])
     {
@@ -1206,7 +1206,7 @@ void player_reacts()
 
 void update_divine_vigour()
 {
-    if(have_passive(passive_t::divine_vigour))
+    if (have_passive(passive_t::divine_vigour))
     {
         you.attribute[ATTR_DIVINE_VIGOUR] = piety_rank() - 1;
     }

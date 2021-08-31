@@ -461,7 +461,7 @@ static void _remove_spell_attributes(spell_type spell)
         }
         break;
     case SPELL_EXCRUCIATING_WOUNDS:
-        if(you.attribute[ATTR_EXCRUCIATING_WOUNDS])
+        if (you.attribute[ATTR_EXCRUCIATING_WOUNDS])
         {
             you.attribute[ATTR_EXCRUCIATING_WOUNDS] = 0;
             item_def *wpn = you.weapon();
@@ -1228,7 +1228,7 @@ bool spell_is_form(spell_type spell)
 
 bool already_in_form(spell_type spell)
 {
-    if(!you.form)
+    if (!you.form)
         return false;
     switch (spell)
     {
@@ -1371,7 +1371,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         // mere corona is not enough, but divine light blocks it completely
         if (temp && (you.haloed() || !prevent && have_passive(passive_t::halo)))
             return "darkness is useless against divine light.";
-        if(temp && you.attribute[ATTR_DARKNESS])
+        if (temp && you.attribute[ATTR_DARKNESS])
             return "it's already dark.";
         break;
 
@@ -1421,7 +1421,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
             return "you can't regenerate without divine aid.";
         if (you.undead_state(temp) == US_UNDEAD)
             return "you're too dead to regenerate.";
-        if(temp && you.attribute[ATTR_SPELL_REGEN])
+        if (temp && you.attribute[ATTR_SPELL_REGEN])
             return "you're already regenerating.";
         break;
 
@@ -1439,27 +1439,27 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         }
         break;
     case SPELL_SPECTRAL_WEAPON:
-        if(temp && you.attribute[ATTR_SPECTRAL_WEAPON])
+        if (temp && you.attribute[ATTR_SPECTRAL_WEAPON])
         {
             return "you already have your spectral weapon prepared";
         }
         break;
     case SPELL_PORTAL_PROJECTILE:
-        if(temp && you.attribute[ATTR_PORTAL_PROJECTILE])
+        if (temp && you.attribute[ATTR_PORTAL_PROJECTILE])
         {
             return "you are already teleporting projectiles to their destination";
         }
         break;
 
     case SPELL_BATTLESPHERE:
-        if(temp && you.attribute[ATTR_BATTLESPHERE])
+        if (temp && you.attribute[ATTR_BATTLESPHERE])
         {
             return "you already have your battlesphere prepared";
         }
         break;
 
     case SPELL_SPELLFORGED_SERVITOR:
-        if(temp && you.attribute[ATTR_SERVITOR])
+        if (temp && you.attribute[ATTR_SERVITOR])
         {
             return "you already have your spellforged servitor prepared";
         }
@@ -1509,7 +1509,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         break;
 
     case SPELL_INFUSION:
-        if(temp && you.attribute[ATTR_INFUSION])
+        if (temp && you.attribute[ATTR_INFUSION])
             return "you are already infusing your attacks with magic.";
         break;
 
@@ -1586,7 +1586,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         break;
 
     case SPELL_ANIMATE_DEAD:
-        if(temp && you.attribute[ATTR_ANIMATE_DEAD])
+        if (temp && you.attribute[ATTR_ANIMATE_DEAD])
             return "you are already reaping the dead.";
     case SPELL_TWISTED_RESURRECTION:
     case SPELL_CONTROL_UNDEAD:
@@ -1596,7 +1596,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         break;
 
     case SPELL_INFESTATION:
-        if(temp && you.attribute[ATTR_INFESTATION])
+        if (temp && you.attribute[ATTR_INFESTATION])
             return "you're already infesting your enemies";
         if (you.get_mutation_level(MUT_NO_LOVE))
             return "you cannot coerce anything to obey you.";

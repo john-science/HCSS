@@ -101,4 +101,3 @@ mon_glyph += trivial sensed monster : lightgray
 mon_glyph += easy sensed monster : gray
 mon_glyph += tough sensed monster : red
 mon_glyph += nasty sensed monster : lightred
-

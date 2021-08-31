@@ -108,7 +108,7 @@ void start_recall(recall_t type)
         {
             if (!(mi->holiness() & MH_UNDEAD))
                 continue;
-            if(mons_enslaved_soul(**mi) && you.attribute[ATTR_YRED_SOUL_TIMEOUT])
+            if (mons_enslaved_soul(**mi) && you.attribute[ATTR_YRED_SOUL_TIMEOUT])
                 continue;
         }
         else if (type == RECALL_BEOGH)

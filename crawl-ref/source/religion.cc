@@ -941,7 +941,7 @@ static bool _give_nemelex_gift(bool forced = false)
             deck.flags |= ISFLAG_KNOW_TYPE;
 
             simple_god_message(" grants you a gift!");
-            if(move_item_to_inv(deck))
+            if (move_item_to_inv(deck))
             {
                 _inc_gift_timeout(5 + random2avg(6, 2));
                 you.num_current_gifts[you.religion]++;
@@ -2362,10 +2362,10 @@ bool gain_piety(int original_gain, int denominator, bool should_scale_piety)
         }
         you.piety_max[you.religion] = you.piety;
     }
-    //redraw the title
+    // redraw the title
     you.redraw_title = true;
-    //redraw AC if have WJC passive
-    if(have_passive(passive_t::wu_jian_glass_cannon))
+    // redraw AC if have WJC passive
+    if (have_passive(passive_t::wu_jian_glass_cannon))
         you.redraw_armour_class = true;
 
     return true;
@@ -2470,7 +2470,7 @@ void lose_piety(int pgn)
     }
 
     //redraw AC if worshipping WJC (might have lost passive)
-    if(you_worship(GOD_WU_JIAN))
+    if (you_worship(GOD_WU_JIAN))
         you.redraw_armour_class = true;
 }
 
@@ -3391,9 +3391,9 @@ static void _join_trog()
 
 static void _join_xom()
 {
-    if(!you.attribute[ATTR_XOM_MUT_XP])
+    if (!you.attribute[ATTR_XOM_MUT_XP])
         you.attribute[ATTR_XOM_MUT_XP] = 20 * you.experience_level;
-    if(!you.attribute[ATTR_XOM_GIFT_XP])
+    if (!you.attribute[ATTR_XOM_GIFT_XP])
         you.attribute[ATTR_XOM_GIFT_XP] = 20 * you.experience_level;
 }
 
@@ -3503,7 +3503,7 @@ void join_religion(god_type which_god)
     // unholy and evil beings hostile.
     if (is_good_god(you.religion))
     {
-        if(query_daction_counter(DACT_ALLY_UNHOLY_EVIL))
+        if (query_daction_counter(DACT_ALLY_UNHOLY_EVIL))
         {
             add_daction(DACT_ALLY_UNHOLY_EVIL);
             mprf(MSGCH_MONSTER_ENCHANT, "Your unholy and evil allies forsake you.");
@@ -3875,7 +3875,7 @@ bool god_protects_from_harm()
 
     if (you_worship(GOD_ELYVILON))
     {
-        if(elyvilon_lifesaving() > 0 && x_chance_in_y(you.piety, 150))
+        if (elyvilon_lifesaving() > 0 && x_chance_in_y(you.piety, 150))
         {
             //extra ely chance to save your life costs piety
             lose_piety(10 + random2(you.piety / 2));

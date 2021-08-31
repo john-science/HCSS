@@ -1093,7 +1093,7 @@ void MiscastEffect::_ice(int severity)
         mon_msg = "Heat is drained from @the_monster@.";
         if (_ouch(5 + random2avg(13, 2), BEAM_COLD) && target->alive())
             target->expose_to_element(BEAM_COLD, 4);
-        if(!target->alive())
+        if (!target->alive())
             break;
         if (target->is_player())
             you.increase_duration(DUR_FROZEN, 4 + random2(7), 50);

@@ -814,7 +814,7 @@ level_id stair_destination(dungeon_feature_type feat, const string &dst,
         && feat != DNGN_EXIT_ZIGGURAT)
     {
         level_id lev = brentry[you.where_are_you];
-        if(feat == DNGN_EXIT_TEMPLE)
+        if (feat == DNGN_EXIT_TEMPLE)
         {
             return level_id(BRANCH_DUNGEON, 1);
         }
@@ -907,7 +907,7 @@ level_id stair_destination(dungeon_feature_type feat, const string &dst,
         return level_id(BRANCH_VESTIBULE);
 
     case DNGN_ENTER_BAZAAR:
-        if(for_real)
+        if (for_real)
             brentry[BRANCH_BAZAAR] = level_id::current();
         return level_id(BRANCH_BAZAAR);
 

@@ -472,7 +472,7 @@ void bazaar_postlevel_shops()
         if (grd(c) == DNGN_FLOOR) //need this in case another shop was already placed here
         {
             shop_type type = static_cast<shop_type>(random2(NUM_SHOPS));
-            while(type == SHOP_FOOD)
+            while (type == SHOP_FOOD)
             {
                  type = static_cast<shop_type>(random2(NUM_SHOPS));
             }
@@ -535,7 +535,7 @@ void zap_close_monsters()
                 for (radius_iterator rj(you.pos(), LOS_NONE); rj; ++rj)
                 {
                     monster* monj = monster_at(*rj);
-                    if((monj && (monj->type == MONS_DUVESSA || monj->type == MONS_DOWAN))
+                    if ((monj && (monj->type == MONS_DUVESSA || monj->type == MONS_DOWAN))
                         && mon->type != monj->type)
                     {
                         monj->flags |= MF_HARD_RESET;
@@ -2688,10 +2688,10 @@ static const map_def *_dgn_random_map_for_place(bool minivault)
         }
     }
 
-    if(player_in_branch(BRANCH_BAZAAR))
+    if (player_in_branch(BRANCH_BAZAAR))
     {
         const map_def *vault = random_map_for_tag("bazaar", false, false, MB_FALSE);
-        if(vault)
+        if (vault)
             return vault;
     }
 

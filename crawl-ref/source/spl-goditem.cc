@@ -1219,7 +1219,7 @@ void torment_cell(coord_def where, actor *attacker, torment_source_type taux)
     // Is the player in this cell?
     if (where == you.pos())
     {
-        if(!(att && attacker->is_monster() && att->attitude > ATT_NEUTRAL))
+        if (!(att && attacker->is_monster() && att->attitude > ATT_NEUTRAL))
             torment_player(attacker, taux);
     }
     // Don't return, since you could be standing on a monster.

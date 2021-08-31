@@ -923,7 +923,7 @@ ability_type fixup_ability(ability_type ability)
 
     case ABIL_YRED_RECALL_UNDEAD_SLAVES:
     case ABIL_YRED_TRANSFERENCE:
-        if(!you.props.exists(YRED_ENSLAVED_SOUL_KEY))
+        if (!you.props.exists(YRED_ENSLAVED_SOUL_KEY))
             return ABIL_NON_ABILITY;
     case ABIL_BEOGH_RECALL_ORCISH_FOLLOWERS:
         if (you.get_mutation_level(MUT_NO_LOVE))
@@ -2127,7 +2127,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
     {
         fail_check();
         monster* old_spectral = find_spectral_weapon(&you);
-        if(old_spectral)
+        if (old_spectral)
             end_spectral_weapon(old_spectral, false);
         you.attribute[ATTR_SPECTRAL_WEAPON] = 0;
         mpr("You stop readying your spectral weapon.");
@@ -2138,7 +2138,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
     {
         fail_check();
         monster* old_bsphere = find_battlesphere(&you);
-        if(old_bsphere)
+        if (old_bsphere)
             end_battlesphere(old_bsphere, false);
         you.attribute[ATTR_BATTLESPHERE] = 0;
         mpr("You stop readying your battlesphere.");
@@ -2149,7 +2149,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
     {
         fail_check();
         /*monster* old_servitor = find_battlesphere(&you);
-        if(old_servitor)
+        if (old_servitor)
             end_battlesphere(old_servitor, false);*/
         you.attribute[ATTR_SERVITOR] = 0;
         mpr("You stop readying your servitor.");
@@ -2378,7 +2378,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
             mpr("You feel life flooding into your body.");
             inc_hp(damage / 2);
             monster *soul = yred_soul_mon();
-            if(soul && you.can_see(*soul))
+            if (soul && you.can_see(*soul))
             {
                 mpr("Your enslaved soul is healed.");
                 soul->heal(damage / 2);

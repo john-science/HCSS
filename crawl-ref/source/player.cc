@@ -212,7 +212,7 @@ static bool _check_moveto_dangerous(const coord_def& p, const string& msg)
     if (env.grid(p) == DNGN_LAVA && env.grid(you.pos()) != DNGN_LAVA
     && !player_likes_lava() && !you.airborne())
     {
-        if(!yesno("Really immerse yourself in lava?", false, 'n'))
+        if (!yesno("Really immerse yourself in lava?", false, 'n'))
         {
             mpr("Okay, then.");
             return false;
@@ -1181,7 +1181,7 @@ int player_regen()
     if (rr > 20)
         rr = 20 + ((rr - 20) / 2);
 
-    if(you.get_mutation_level(MUT_OUT_OF_LOS_HPREGEN) && !there_are_monsters_nearby(true))
+    if (you.get_mutation_level(MUT_OUT_OF_LOS_HPREGEN) && !there_are_monsters_nearby(true))
         rr *= 2 + you.get_mutation_level(MUT_OUT_OF_LOS_HPREGEN);
 
     // Add in miscellaneous bonuses
@@ -1215,7 +1215,7 @@ int player_mp_regen()
         multiplier += 100;
     if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
         multiplier += 50;
-    if(you.get_mutation_level(MUT_OUT_OF_LOS_MPREGEN) && !there_are_monsters_nearby(true))
+    if (you.get_mutation_level(MUT_OUT_OF_LOS_MPREGEN) && !there_are_monsters_nearby(true))
         multiplier *= 2 + you.get_mutation_level(MUT_OUT_OF_LOS_MPREGEN);
 
     return regen_amount * multiplier / 100;
@@ -2265,7 +2265,7 @@ int player_shield_class()
     if (you.shield())
     {
         const item_def& item = you.inv[you.equip[EQ_SHIELD]];
-        if(item.base_type != OBJ_STAVES)
+        if (item.base_type != OBJ_STAVES)
         {
             int size_factor = (you.body_size(PSIZE_TORSO) - SIZE_MEDIUM)
                         * (item.sub_type - ARM_LARGE_SHIELD);
@@ -3888,9 +3888,9 @@ int get_real_mp(bool include_items, bool frozen)
     // Now applied after scaling so that power items are more useful -- bwr
     if (include_items)
     {
-        if(you.wearing_ego(EQ_CLOAK, SPARM_MAGICAL_POWER))
+        if (you.wearing_ego(EQ_CLOAK, SPARM_MAGICAL_POWER))
             enp += 9;
-        if(you.wearing_ego(EQ_HELMET, SPARM_MAGICAL_POWER))
+        if (you.wearing_ego(EQ_HELMET, SPARM_MAGICAL_POWER))
             enp += 9;
         enp +=      you.scan_artefacts(ARTP_MAGICAL_POWER);
     }
@@ -5883,7 +5883,7 @@ int player::armour_class(bool /*calc_unid*/) const
     AC -= get_mutation_level(MUT_EXPOSED)
           ? get_mutation_level(MUT_EXPOSED) * 300 : 0;
     //WJC passive goes last and affects all sources of AC
-    if(you_worship(GOD_WU_JIAN) && have_passive(passive_t::wu_jian_glass_cannon))
+    if (you_worship(GOD_WU_JIAN) && have_passive(passive_t::wu_jian_glass_cannon))
     {
         AC *= 10 - piety_rank();
         AC /= 10;

@@ -1867,7 +1867,7 @@ void yred_make_enslaved_soul(monster* mon, bool force_hostile, bool silent)
         invalidate_agrid();
     }
 
-    if(!silent)
+    if (!silent)
     {
         mprf("%s soul %s.", whose.c_str(),
          !force_hostile ? "is now yours" : "fights you");

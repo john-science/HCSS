@@ -1239,7 +1239,7 @@ static void _unequip_jewellery_effect(item_def &item, bool mesg, bool meld,
         break;
 
     case AMU_DESTRUCTION:
-        if(you.duration[DUR_DESTRUCTION])
+        if (you.duration[DUR_DESTRUCTION])
             you.duration[DUR_DESTRUCTION] = 0;
         break;
 

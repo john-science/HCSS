@@ -844,7 +844,7 @@ static void _evolve(int time_delta)
 
             bool evol = false;
 
-            if(you.species == SP_KOBOLD && one_chance_in(7))
+            if (you.species == SP_KOBOLD && one_chance_in(7))
             {
                evol = one_chance_in(4) ?
                     delete_mutation(RANDOM_KOBOLD_MUTATION, "evolution", false) :
@@ -914,15 +914,15 @@ static void _antiscumming(int /*time_delta*/)
         mprf(MSGCH_WARN, "You feel yourself rotting away!");
         return;
     }
-    if(env.turns_on_level < 3000)
+    if (env.turns_on_level < 3000)
         return;
-    if(player_in_branch(BRANCH_ABYSS))
+    if (player_in_branch(BRANCH_ABYSS))
         return;
     //make it loud
     noisy(30, you.pos());
     mprf(MSGCH_WARN, "The dungeon lashes out against you!");
     int num_summons = 2 + random2(4);
-    for(int i = 1; i <= num_summons; ++i)
+    for (int i = 1; i <= num_summons; ++i)
     {
         _antiscumming_summon();
     }
@@ -938,7 +938,7 @@ static void _timeout_traps(int /*time_delta*/)
             if (ptrap && ptrap->type == TRAP_ZOT && ptrap->ammo_qty)
             {
                 ptrap->ammo_qty -= 1;
-                if(ptrap->ammo_qty <= 0)
+                if (ptrap->ammo_qty <= 0)
                     destroy_trap(*ri);
             }
         }

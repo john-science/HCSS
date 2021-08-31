@@ -2397,7 +2397,7 @@ static void tag_read_you(reader &th)
     you.hp_max_adj_temp           = unmarshallShort(th);
     you.hp_max_adj_perm           = unmarshallShort(th);
     you.mp_max_adj                = unmarshallShort(th);
-    if(th.getMinorVersion() >= TAG_MINOR_PERMABUFFS)
+    if (th.getMinorVersion() >= TAG_MINOR_PERMABUFFS)
         you.mp_frozen                 = unmarshallShort(th);
 #if TAG_MAJOR_VERSION == 34
     if (th.getMinorVersion() < TAG_MINOR_REMOVE_BASE_MP)
@@ -2421,7 +2421,7 @@ static void tag_read_you(reader &th)
 #endif
 
 #if TAG_MAJOR_VERSION == 34
-    if(th.getMinorVersion() >= TAG_MINOR_GOLDIFY_BOOKS)
+    if (th.getMinorVersion() >= TAG_MINOR_GOLDIFY_BOOKS)
 #endif
         unmarshallFixedBitVector<NUM_SPELLS>(th, you.spell_library);
 
@@ -2759,71 +2759,71 @@ static void tag_read_you(reader &th)
     }
         //other mutations are flattened
     {
-        if(you.mutation[MUT_AGILE] > 1)
+        if (you.mutation[MUT_AGILE] > 1)
         {
             you.mutation[MUT_AGILE] = 1;
         }
-        if(you.mutation[MUT_CLUMSY] > 1)
+        if (you.mutation[MUT_CLUMSY] > 1)
         {
             you.mutation[MUT_CLUMSY] = 1;
         }
-        if(you.mutation[MUT_CLEVER] > 1)
+        if (you.mutation[MUT_CLEVER] > 1)
         {
             you.mutation[MUT_CLEVER] = 1;
         }
-        if(you.mutation[MUT_DOPEY] > 1)
+        if (you.mutation[MUT_DOPEY] > 1)
         {
             you.mutation[MUT_DOPEY] = 1;
         }
-        if(you.mutation[MUT_STRONG] > 1)
+        if (you.mutation[MUT_STRONG] > 1)
         {
             you.mutation[MUT_STRONG] = 1;
         }
-        if(you.mutation[MUT_WEAK] > 1)
+        if (you.mutation[MUT_WEAK] > 1)
         {
             you.mutation[MUT_WEAK] = 1;
         }
-        if(you.mutation[MUT_TENTACLE_SPIKE] > 1)
+        if (you.mutation[MUT_TENTACLE_SPIKE] > 1)
         {
             you.mutation[MUT_TENTACLE_SPIKE] = 1;
         }
-        if(you.mutation[MUT_STURDY_FRAME] > 1)
+        if (you.mutation[MUT_STURDY_FRAME] > 1)
         {
             you.mutation[MUT_STURDY_FRAME] = 1;
         }
-        if(you.mutation[MUT_CAMOUFLAGE] > 1)
+        if (you.mutation[MUT_CAMOUFLAGE] > 1)
         {
             you.mutation[MUT_CAMOUFLAGE] = 1;
         }
-        if(you.mutation[MUT_EVOLUTION] > 1)
+        if (you.mutation[MUT_EVOLUTION] > 1)
         {
             you.mutation[MUT_EVOLUTION] = 1;
         }
-        if(you.mutation[MUT_SHAGGY_FUR] > 1)
+        if (you.mutation[MUT_SHAGGY_FUR] > 1)
         {
             you.mutation[MUT_SHAGGY_FUR] = 1;
         }
-        if(you.mutation[MUT_STINGER] > 1)
+        if (you.mutation[MUT_STINGER] > 1)
         {
             you.mutation[MUT_STINGER] = 1;
         }
-        if(you.mutation[MUT_PASSIVE_MAPPING] > 1)
+        if (you.mutation[MUT_PASSIVE_MAPPING] > 1)
         {
             you.mutation[MUT_PASSIVE_MAPPING] = 1;
         }
-        if(you.mutation[MUT_TENGU_FLIGHT] > 1)
+        if (you.mutation[MUT_TENGU_FLIGHT] > 1)
         {
             you.mutation[MUT_TENGU_FLIGHT] = 1;
         }
-        if(you.mutation[MUT_TOUGH_SKIN] > 1)
+        if (you.mutation[MUT_TOUGH_SKIN] > 1)
         {
             you.mutation[MUT_TOUGH_SKIN] = 1;
         }
-        if(you.mutation[MUT_TRANSLUCENT_SKIN] > 1)
+        if (you.mutation[MUT_TRANSLUCENT_SKIN] > 1)
         {
             you.mutation[MUT_TRANSLUCENT_SKIN] = 1;
         }
-        if(you.mutation[MUT_PSEUDOPODS] > 1)
+        if (you.mutation[MUT_PSEUDOPODS] > 1)
         {
             you.mutation[MUT_PSEUDOPODS] = 1;
         }
@@ -3610,7 +3610,7 @@ static void tag_read_you_items(reader &th)
                 you.unrand_reacts.set(i);
         }
         // unequip any staves if they're in the wrong hand
-        if(th.getMinorVersion() < TAG_MINOR_MAGICAL_STAVES && item && item->base_type == OBJ_STAVES)
+        if (th.getMinorVersion() < TAG_MINOR_MAGICAL_STAVES && item && item->base_type == OBJ_STAVES)
         {
             you.equip[i] = -1;
             you.melded.set(i, false);
@@ -3620,7 +3620,7 @@ static void tag_read_you_items(reader &th)
     unmarshallFixedBitVector<NUM_RUNE_TYPES>(th, you.runes);
     you.obtainable_runes = unmarshallByte(th);
 
-    if(th.getMinorVersion() >= TAG_MINOR_GOLDIFY_MANUALS)
+    if (th.getMinorVersion() >= TAG_MINOR_GOLDIFY_MANUALS)
     {
         // List of manuals carried
         count = unmarshallShort(th);

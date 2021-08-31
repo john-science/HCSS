@@ -1858,7 +1858,7 @@ bool delete_mutation(mutation_type which_mutation, const string &reason,
     {
         mutat = _delete_random_kobold_mutation();
 
-        if(mutat == NUM_MUTATIONS)
+        if (mutat == NUM_MUTATIONS)
             return false;
     }
 

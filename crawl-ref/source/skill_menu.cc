@@ -624,7 +624,7 @@ string SkillMenuSwitch::get_help()
                 causes.push_back(apostrophise(god_name(you.religion))
                                  + " heroism");
             }
-            if(have_passive(passive_t::magic_skill_boost))
+            if (have_passive(passive_t::magic_skill_boost))
             {
                 causes.push_back(apostrophise(god_name(you.religion))
                                  + " power");
@@ -1303,7 +1303,7 @@ void SkillMenu::init_switches()
 {
     SkillMenuSwitch* sw;
 
-    if(you.species == SP_KOBOLD || you.species == SP_GNOLL)
+    if (you.species == SP_KOBOLD || you.species == SP_GNOLL)
     {
         sw = new SkillMenuSwitch("Ko", '*');
         m_switches[SKM_VIEW] = sw;

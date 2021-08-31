@@ -1016,7 +1016,7 @@ static void _give_weapon(monster* mon, int level, bool melee_only = false,
         force_item = true;
         item.base_type = OBJ_WEAPONS;
         item.sub_type = WPN_QUARTERSTAFF;
-        if(coinflip())
+        if (coinflip())
             set_item_ego_type(item, OBJ_WEAPONS, SPWPN_PAIN);
         else
             set_item_ego_type(item, OBJ_WEAPONS, SPWPN_NORMAL);
@@ -1174,7 +1174,7 @@ static void _give_ammo(monster* mon, int level, bool mons_summoned)
         const object_class_type xitc = OBJ_MISSILES;
         int xitt = fires_ammo_type(*launcher);
 
-        if(xitt == MI_ARROW)
+        if (xitt == MI_ARROW)
             return;
 
         const int thing_created = items(false, xitc, xitt, level);

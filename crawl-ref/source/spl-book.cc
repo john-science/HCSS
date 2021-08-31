@@ -370,7 +370,7 @@ static void _list_available_spells(spell_set &available_spells)
     // Collect the list of all spells in all available spellbooks.
     for (spell_type st = SPELL_NO_SPELL; st < NUM_SPELLS; st++)
     {
-        if(you.spell_library[st])
+        if (you.spell_library[st])
             available_spells.insert(st);
     }
     // Handle Vehumet gifts

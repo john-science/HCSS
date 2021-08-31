@@ -590,7 +590,7 @@ bool choose_game(newgame_def& ng, newgame_def& choice,
     ng.name = choice.name;
     ng.type = choice.type;
 
-    switch(choice.difficulty)
+    switch (choice.difficulty)
     {
         case DIFFICULTY_CASUAL:
         case DIFFICULTY_NORMAL:
@@ -1839,7 +1839,7 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
 
         tmp->set_highlight_colour(GREEN);
 
-        switch(difficulty)
+        switch (difficulty)
         {
         case 0:
             tmp->set_fg_colour(WHITE);

@@ -1611,11 +1611,11 @@ void wu_jian_wall_jump_effects(const coord_def& old_pos)
     // Walljumping multiple targets gives an ev boost.
     // The boost value may be increased by a later walljump,
     // however the duration will not be extended
-    if(evasion_boost > 0 && (!you.props.exists(WALL_JUMP_EV_KEY)
+    if (evasion_boost > 0 && (!you.props.exists(WALL_JUMP_EV_KEY)
        || evasion_boost > you.props[WALL_JUMP_EV_KEY].get_int()))
     {
         you.props[WALL_JUMP_EV_KEY] = evasion_boost;
-        if(!you.duration[DUR_WALL_JUMP_EV])
+        if (!you.duration[DUR_WALL_JUMP_EV])
         {
             you.increase_duration(DUR_WALL_JUMP_EV, random_range(15,25), 25);
             mpr("Your acrobatic leap heightens your reflexes.");

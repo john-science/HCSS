@@ -810,7 +810,7 @@ bool cast_a_spell(bool check_range, spell_type spell)
     }
 
     int cost = spell_mana(spell);
-    if(you.props.exists(AMULET_DESTRUCTIVE_SPELL)
+    if (you.props.exists(AMULET_DESTRUCTIVE_SPELL)
         && you.props[AMULET_DESTRUCTIVE_SPELL].get_int() == spell)
     {
         cost = cost > 6 ? cost -2 : max(0, cost - 1);
@@ -1140,7 +1140,7 @@ static bool _spellcasting_aborted(spell_type spell, bool fake_spell)
     const int severity = fail_severity(spell);
     const string failure_rate = spell_failure_rate_string(spell);
 
-    if(!is_buff_spell(spell))
+    if (!is_buff_spell(spell))
     {
         if (Options.fail_severity_to_confirm > 0
         && Options.fail_severity_to_confirm <= severity
@@ -1585,7 +1585,7 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
     if (vehumet_supports_spell(spell) && you.wearing(EQ_AMULET, AMU_DESTRUCTION)
       && !(flags & SPFLAG_PERMABUFF))
     {
-        if(!you.props.exists(AMULET_DESTRUCTIVE_SPELL) || you.props[AMULET_DESTRUCTIVE_SPELL].get_int() != spell)
+        if (!you.props.exists(AMULET_DESTRUCTIVE_SPELL) || you.props[AMULET_DESTRUCTIVE_SPELL].get_int() != spell)
             mprf("Your amulet of destruction attunes itself to %s", spell_title(spell));
 
         you.props[AMULET_DESTRUCTIVE_SPELL] = spell;
@@ -1596,7 +1596,7 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
     {
         mpr("Your amulet of destruction loses attunement.");
         you.props.erase(AMULET_DESTRUCTIVE_SPELL);
-        if(you.duration[DUR_DESTRUCTION])
+        if (you.duration[DUR_DESTRUCTION])
             you.duration[DUR_DESTRUCTION] = 0;
     }
 
@@ -1627,11 +1627,11 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
                     mprf("You summon your battlesphere!");
             }
         }
-        if(you.attribute[ATTR_SERVITOR] && vehumet_supports_spell(spell) && can_summon_avatar
+        if (you.attribute[ATTR_SERVITOR] && vehumet_supports_spell(spell) && can_summon_avatar
             && !(flags & SPFLAG_PERMABUFF))
         {
             monster* servitor = find_servitor(&you);
-            if(!servitor)
+            if (!servitor)
             {
                 cast_spellforged_servitor(calc_spell_power(SPELL_SPELLFORGED_SERVITOR, true), god, false);
             }
@@ -1730,7 +1730,7 @@ bool is_buff_spell(spell_type spell)
 
 static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, god_type god, bool fail)
 {
-    switch(spell)
+    switch (spell)
     {
         case SPELL_REGENERATION:
             return cast_regen(powc, false);
@@ -1781,7 +1781,7 @@ static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, go
 
 static spret_type _handle_form_spells(spell_type spell, int powc, bolt& beam, god_type god, bool fail)
 {
-    switch(spell)
+    switch (spell)
     {
     // Transformations.
         case SPELL_BEASTLY_APPENDAGE:
@@ -1829,7 +1829,7 @@ static spret_type _do_cast(spell_type spell, int powc,
     if (is_buff_spell(spell))
         return _handle_buff_spells(spell, powc, beam, god, fail);
 
-    if(spell_is_form(spell))
+    if (spell_is_form(spell))
         return _handle_form_spells(spell, powc, beam, god, fail);
 
     switch (spell)

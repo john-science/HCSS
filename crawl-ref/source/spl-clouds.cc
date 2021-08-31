@@ -196,7 +196,7 @@ spret_type cast_ring_of_flames(int power, bool fail)
     mpr("The air around you leaps into flames!");
     manage_fire_shield(1);
     // remove ozocubu's armour
-    if(you.attribute[ATTR_OZO_ARMOUR])
+    if (you.attribute[ATTR_OZO_ARMOUR])
     {
         you.attribute[ATTR_OZO_ARMOUR] = 0;
         you.redraw_armour_class = true;

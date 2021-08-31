@@ -1596,9 +1596,9 @@ bool ensnare(actor *fly)
 
 bool curse(actor *target)
 {
-    if(!target)
+    if (!target)
         return false;
-    if(!target->is_player())
+    if (!target->is_player())
         return false;
     vector<coord_def> locations;
     for (radius_iterator ai(target->pos(), 1, C_SQUARE, LOS_SOLID); ai; ++ai)
@@ -1610,7 +1610,7 @@ bool curse(actor *target)
         if (feat == DNGN_FLOOR)
             locations.push_back(*ai);
     }
-    if(!locations.empty())
+    if (!locations.empty())
     {
         coord_def trap_loc = locations[random2(locations.size())];
         place_specific_trap(trap_loc, TRAP_ZOT, 2);

@@ -467,7 +467,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_DEATH_CHANNEL:
-        if(you.attribute[ATTR_DEATH_CHANNEL])
+        if (you.attribute[ATTR_DEATH_CHANNEL])
         {
             inf->light_colour = LIGHTMAGENTA;
             inf->light_text = "DChan";
@@ -475,7 +475,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_ANIMATE_DEAD:
-        if(you.attribute[ATTR_ANIMATE_DEAD])
+        if (you.attribute[ATTR_ANIMATE_DEAD])
         {
             inf->light_colour = LIGHTMAGENTA;
             inf->light_text = "Reap";
@@ -483,7 +483,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_SONG_OF_SLAYING:
-        if(you.attribute[ATTR_SONG_OF_SLAYING])
+        if (you.attribute[ATTR_SONG_OF_SLAYING])
         {
             inf->light_colour = WHITE;
             inf->light_text
@@ -493,7 +493,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_DARKNESS:
-        if(you.attribute[ATTR_DARKNESS])
+        if (you.attribute[ATTR_DARKNESS])
         {
             inf->light_colour = LIGHTMAGENTA;
             inf->light_text = "Dark";
@@ -501,7 +501,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_ABJURATION:
-        if(you.attribute[ATTR_ABJURATION_AURA])
+        if (you.attribute[ATTR_ABJURATION_AURA])
         {
             inf->light_colour = LIGHTMAGENTA;
             inf->light_text = "Abj";
@@ -509,7 +509,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
 
     case STATUS_OZO_ARMOUR:
-        if(you.attribute[ATTR_OZO_ARMOUR])
+        if (you.attribute[ATTR_OZO_ARMOUR])
         {
             inf->light_colour = LIGHTBLUE;
             inf->light_text = "";
@@ -729,7 +729,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_PORTAL_PROJECTILE:
     {
-        if(you.attribute[ATTR_PORTAL_PROJECTILE])
+        if (you.attribute[ATTR_PORTAL_PROJECTILE])
         {
             inf->light_text = "PProj";
             if (!is_pproj_active())
@@ -742,7 +742,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_INFUSION:
     {
-        if(you.attribute[ATTR_INFUSION])
+        if (you.attribute[ATTR_INFUSION])
         {
             inf->light_text = "Infus";
             if (!enough_mp(1, true, false))
@@ -755,7 +755,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_INFESTATION:
     {
-        if(you.attribute[ATTR_INFESTATION])
+        if (you.attribute[ATTR_INFESTATION])
         {
             inf->light_text = "Infest";
             inf->light_colour = WHITE;
@@ -765,7 +765,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_BATTLESPHERE:
     {
-        if(you.attribute[ATTR_BATTLESPHERE])
+        if (you.attribute[ATTR_BATTLESPHERE])
         {
             inf->light_text = "Bsphere";
             monster* battlesphere = find_battlesphere(&you);
@@ -779,7 +779,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_SHROUD:
     {
-        if(you.get_mutation_level(MUT_SLIME_SHROUD)
+        if (you.get_mutation_level(MUT_SLIME_SHROUD)
                 && !you.duration[DUR_SHROUD_TIMEOUT])
         {
             inf->light_text = "Shroud";
@@ -789,7 +789,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_PIERCING_SHOT:
     {
-        if(you.attribute[ATTR_PIERCING_SHOT])
+        if (you.attribute[ATTR_PIERCING_SHOT])
         {
             inf->light_text = "Pierce";
             if (!is_pierce_active())
@@ -802,7 +802,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_SERVITOR:
     {
-        if(you.attribute[ATTR_SERVITOR])
+        if (you.attribute[ATTR_SERVITOR])
         {
             inf->light_text = "Servitor";
             monster* servitor = find_servitor(&you);
@@ -816,7 +816,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_SPECTRAL_WEAPON:
     {
-        if(you.attribute[ATTR_SPECTRAL_WEAPON])
+        if (you.attribute[ATTR_SPECTRAL_WEAPON])
         {
             const item_def* weapon = you.weapon();
             inf->light_text = "Weap";
@@ -1053,7 +1053,7 @@ static void _describe_speed(status_info* inf)
     }
     else if (fast)
     {
-        if(you.attribute[ATTR_PERMAHASTE])
+        if (you.attribute[ATTR_PERMAHASTE])
             inf->light_colour = WHITE;
         else
             inf->light_colour = _dur_colour(BLUE, dur_expiring(DUR_HASTE));
@@ -1176,7 +1176,7 @@ static void _describe_invisible(status_info* inf)
     if (!you.attribute[ATTR_PERMAINVIS] && !you.duration[DUR_INVIS] && you.form != TRAN_SHADOW)
         return;
 
-    if(you.attribute[ATTR_PERMAINVIS])
+    if (you.attribute[ATTR_PERMAINVIS])
     {
         inf->light_colour = WHITE;
     }

@@ -1643,11 +1643,11 @@ static bool _reaping(monster *mons)
 
 static bool _reap_dead(monster *mons)
 {
-    if(! you.attribute[ATTR_ANIMATE_DEAD])
+    if (!you.attribute[ATTR_ANIMATE_DEAD])
         return false;
 
     int rd = calc_spell_power(SPELL_ANIMATE_DEAD, true);
-    if(!x_chance_in_y(200 + rd, 400))
+    if (!x_chance_in_y(200 + rd, 400))
         return false;
     return _mons_reaped(&you, mons);
 }
@@ -2737,7 +2737,7 @@ item_def* monster_die(monster* mons, killer_type killer,
         unwind_var<int> fakehp(mons->hit_points, 1);
         monster_drop_things(mons, YOU_KILL(killer) || pet_kill);
     }
-    else if(!mons_enslaved_soul(*mons) || killer == KILL_DISMISSED)
+    else if (!mons_enslaved_soul(*mons) || killer == KILL_DISMISSED)
     {
         // Destroy the items belonging to MF_HARD_RESET monsters so they
         // don't clutter up mitm[].
@@ -2773,7 +2773,7 @@ item_def* monster_die(monster* mons, killer_type killer,
         {
             //the genius hack
             mons->heal(9999);
-            if(you.where_are_you == BRANCH_DUNGEON && you.depth == 1)
+            if (you.where_are_you == BRANCH_DUNGEON && you.depth == 1)
                 mons->set_transit(level_id(BRANCH_ZOT,5));
             else
                 mons->set_transit(level_id(BRANCH_DUNGEON,1));
@@ -2797,12 +2797,12 @@ item_def* monster_die(monster* mons, killer_type killer,
     {
         autotoggle_autopickup(false);
     }
-    if(!(mons->flags & MF_EXPLODE_KILL))
+    if (!(mons->flags & MF_EXPLODE_KILL))
     {
         if (corpse && _reaping(mons))
             corpse = nullptr;
 
-        if(corpse && _reap_dead(mons))
+        if (corpse && _reap_dead(mons))
             corpse = nullptr;
     }
 
@@ -2822,7 +2822,7 @@ item_def* monster_die(monster* mons, killer_type killer,
                          was_visible);
     }
     // Reeeeeeeeeeeeeeeeeemove corpses
-    if(corpse)
+    if (corpse)
     {
         item_was_destroyed(*corpse);
         destroy_item(corpse->index());

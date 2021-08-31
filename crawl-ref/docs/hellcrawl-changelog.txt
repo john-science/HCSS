@@ -15,7 +15,7 @@ Damage dealt is displayed for most damage sources.
 Ally kills grant full exp.
 Orb status does not apply until after grabbing the orb.
 Spellbooks do not take up inventory space.
-Many spells are now “permabuffs” that reserve max mp. Amount reserved is based on success rate and spell level.
+Many spells are now permabuffs that reserve max mp. Amount reserved is based on success rate and spell level.
 Stat zero is removed; can't drop below 1 in a stat.
 Ambient noise doesn't depend on branch.
 Chain confusion is an unthing: you can't be confused again while already confused and get a brief immunity when it wears off (like paralysis).
@@ -23,16 +23,16 @@ Monsters no longer use consumables.
 Corpses don't drop as an item.
 You can train any skill without having to find a related item first.
 Piety display is numeric.
-All species can “swim” slowly (but not attack) in deep water or lava. Lava swimming also does damage every turn.
+All species can swim slowly (but not attack) in deep water or lava. Lava swimming also does damage every turn.
 Casual difficulty mode with double experience and no turn limit but reduced score. Intended to provide difficulty more in line with normal DCSS.
 Speed difficulty mode with double experience, faster mp regen, and automatically mapped stairs, but a 500 turn clock on each floor. Intended to be played fast.
 
 Dungeon Layout:
-Canonical branch order for a “3 rune game” is D->Orc->Sbranch->Vaults->Slime->Depths->Zot->Hell. Shortcuts are available for more challenge and 6 additional runes are available from Pan and Hell for a 9 rune “extended” game option.
+Canonical branch order for a 3 rune game is D->Orc->Sbranch->Vaults->Slime->Depths->Zot->Hell. Shortcuts are available for more challenge and 6 additional runes are available from Pan and Hell for a 9 rune extended game option.
 Temple, Lair, Crypt, Tomb, Lab, Desolation, and Zig are removed
 All available altars spawn between D:2 and D:8
 Orc entrance spawns on D:15
-Only one of swamp/snake/shoals/spider generates each game. The entrance is on Orc:2. 
+Only one of swamp/snake/shoals/spider generates each game. The entrance is on Orc:2.
 Swamp/snake/shoals/spider is 3 floors long.
 Vaults entrance is accessible from the bottom of swamp/snake/shoals/spider or from D:15 (skips 1 rune).
 Vaults is 3 floors long.
@@ -141,10 +141,10 @@ Makhleb's lesser servant costs more piety.
 Dithmenos no longer prohibits fire.
 Dithmenos provides monster detection and see invisible as passives.
 Vehumet gifts start at spell level 3 and always end with 3 level 9 spells.
-Wu Jian Council passively reduces AC by a percentage but provides a flat slaying bonus. 
+Wu Jian Council passively reduces AC by a percentage but provides a flat slaying bonus.
 Wu Jian Council's walljump ability provides a short duration EV bonus when multiple targets are hit (4 EV per target beyond the first).
 Jiyva is reworked: Piety from exploration rather than jellies eating items, no jelly swarms or summoning, all item eating is passive over time, provides damage shaving as a passive at high piety. J altar is always available.
-Yred is completely reworked: *.....: injury mirror. **....: enslave soul with a longer duration on the status and lower piety cost. ****..: soul transfer (same as Hep's transference). *****.: drain life with a higher piety cost. The enslaved soul respawns when killed like Hep ancestor. Yred no longer gifts allies. 
+Yred is completely reworked: *.....: injury mirror. **....: enslave soul with a longer duration on the status and lower piety cost. ****..: soul transfer (same as Hep's transference). *****.: drain life with a higher piety cost. The enslaved soul respawns when killed like Hep ancestor. Yred no longer gifts allies.
 Zin gifts mutation removals beginning at ***... piety.
 
 Skill Changes:
@@ -166,7 +166,7 @@ Potions of curing no longer cure confusion.
 Elec brand does less damage.
 Distortion brand does not inflict teleports.
 Longbows have 2 less base damage.
-Boots can generate with the dexterity ego. 
+Boots can generate with the dexterity ego.
 Cloaks can generate with the stealth ego.
 Ego body armour is slightly more common.
 More spellbooks and fewer wands generate, on average.
@@ -207,7 +207,7 @@ Conjure ball lightning is level 7 air.
 All other conjuration spells have the conjuration school dropped.
 Throw Icicle, Fireball, Bolt of Draining, Bolt of Fire, and Iron Shot do slightly less damage to make up for being single school.
 Shock, Throw Flame, Throw Frost, Stone Arrow, Bolt of Magma, Lightning Bolt, Bolt of Cold, Lehudib's Crystal Spear, Animate Skeleton, Corpse Rot, Simulacrum, Shroud of Golubria and Gell's Gravitas are no longer castable by players.
-The following spells are “permabuffs” that reserve max mp until canceled: Infusion, Song of Slaying, Repel Missiles, Deflect Missiles, Ring of Flames, Ozocubu's Armour, Cigotuvi's Embrace, Animate Dead, Aura of Abjuration, Death Channel, Darkness, Regeneration, Excruciating Wounds, Iskendrun's Battlesphere, Spellforged Servitor, Infestation, Invisibility, Haste, all transmutation form spells.
+The following spells are permabuffs that reserve max mp until canceled: Infusion, Song of Slaying, Repel Missiles, Deflect Missiles, Ring of Flames, Ozocubu's Armour, Cigotuvi's Embrace, Animate Dead, Aura of Abjuration, Death Channel, Darkness, Regeneration, Excruciating Wounds, Iskendrun's Battlesphere, Spellforged Servitor, Infestation, Invisibility, Haste, all transmutation form spells.
 Spider form and blade hands do not penalize spellcasting.
 Spectral weapon does not share damage with the player and briefly goes on cooldown when it dies.
 Animate Dead functions like death channel but with zombies. The chance to raise a zombie depends on spellpower; 50% at max power.
@@ -222,6 +222,6 @@ Miscellaneous/Memes:
 Petrified/Petrifying statuses do not reduce damage taken.
 Many mutations (stat up/down, stinger, shaggy fur, sturdy frame, camouflage, tentacle spike) are single level with greater impact.
 Scale muts are not available to most species.
-Default name for failed name generation is “dong”.
+Default name for failed name generation is dong.
 Dank new randart names.
 Liches say some funny lines from the twitter account dasharez0ne.

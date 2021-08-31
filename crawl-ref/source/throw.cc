@@ -508,7 +508,7 @@ void fire_thing(int item)
         special_missile_type ego = SPMSL_NORMAL;
         if (weapon && weapon->is_valid() && weapon->base_type == OBJ_WEAPONS)
         {
-            switch(weapon->sub_type)
+            switch (weapon->sub_type)
                     {
                         case WPN_HAND_CROSSBOW:
                         case WPN_TRIPLE_CROSSBOW:

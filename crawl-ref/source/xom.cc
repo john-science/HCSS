@@ -2245,9 +2245,9 @@ struct xom_event
 //have Xom do something when you reach a new level, sometimes
 void xom_new_level_effect()
 {
-    if(!you_worship(GOD_XOM))
+    if (!you_worship(GOD_XOM))
         return;
-    if(one_chance_in(8))
+    if (one_chance_in(8))
     {
         switch (random2(3))
         {
@@ -2267,7 +2267,7 @@ void xom_new_level_effect()
         2 * (exp_needed(you.experience_level + 1)
                 - exp_needed(you.experience_level)) / (1 + random2(4));
     }
-    else if(one_chance_in(10))
+    else if (one_chance_in(10))
     {
         give_xom_gift(50);
     }
@@ -2275,9 +2275,9 @@ void xom_new_level_effect()
 
 void give_xom_gift(int acq_chance)
 {
-    if(!you_worship(GOD_XOM))
+    if (!you_worship(GOD_XOM))
         return;
-    if(x_chance_in_y(acq_chance, 100))
+    if (x_chance_in_y(acq_chance, 100))
         _xom_acquirement(5 + random2(you.experience_level* 7));
     else
         _xom_random_item(5 + random2(you.experience_level* 7));
@@ -2300,7 +2300,7 @@ bool xom_wants_to_help(monster* mon)
 void xom_mutate_player(bool penance)
 {
     _xom_shuffle_mutations(penance);
-    if(penance)
+    if (penance)
         return;
     you.attribute[ATTR_XOM_MUT_XP] +=
         ((10 + random2(10)) * (exp_needed(you.experience_level + 1)

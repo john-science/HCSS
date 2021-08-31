@@ -1861,7 +1861,7 @@ string scorefile_entry::single_cdesc() const
 string scorefile_entry::difficulty_name() const
 {
     string result;
-    switch(difficulty)
+    switch (difficulty)
     {
     case DIFFICULTY_CASUAL:
         result = "CASUAL";

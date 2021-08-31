@@ -1657,7 +1657,7 @@ bool monster::pickup_armour(item_def &item, bool msg, bool force)
     if (!force && !wants_armour(item))
         return false;
 
-    if(item.base_type == OBJ_STAVES)
+    if (item.base_type == OBJ_STAVES)
         return false;
 
     const monster_type genus = mons_genus(mons_species(true));
@@ -3403,7 +3403,7 @@ int monster::evasion(ev_ignore_type evit, const actor* /*act*/) const
     else if (confused() || has_ench(ENCH_GRASPING_ROOTS))
         ev /= 2;
 
-    if(has_ench(ENCH_PHASE_SHIFT))
+    if (has_ench(ENCH_PHASE_SHIFT))
         ev += 8;
 
     return max(ev, 0);

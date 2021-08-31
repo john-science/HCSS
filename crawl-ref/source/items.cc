@@ -1588,7 +1588,7 @@ void merge_item_stacks(const item_def &source, item_def &dest, int quant)
 
     if (source.base_type == OBJ_WANDS && dest.base_type == OBJ_WANDS)
     {
-        if(source.charges >0)
+        if (source.charges >0)
         {
             // it's otherwise treated as empty despite having charges
             dest.used_count = 0;
@@ -1864,7 +1864,7 @@ bool add_held_books_to_library()
     bool added = false;
     for (item_def& it : you.inv)
     {
-        if(it.base_type == OBJ_BOOKS && it.sub_type != BOOK_MANUAL)
+        if (it.base_type == OBJ_BOOKS && it.sub_type != BOOK_MANUAL)
         {
             _get_book(it, true);
             added = true;
@@ -1972,7 +1972,7 @@ static bool _merge_stackable_item_into_inv(const item_def &it, int quant_got,
         {
             inc_inv_item_quantity(inv_slot, quant_got);
         }
-        if(is_deck(it))
+        if (is_deck(it))
         {
             you.inv[inv_slot].used_count = -cards_in_deck(you.inv[inv_slot]);
         }
@@ -1981,7 +1981,7 @@ static bool _merge_stackable_item_into_inv(const item_def &it, int quant_got,
 
         if (!quiet)
         {
-            if(!is_deck(it))
+            if (!is_deck(it))
             {
                 mprf_nocap("%s (gained %d%s)",
                            get_menu_colour_prefix_tags(you.inv[inv_slot],
@@ -2594,7 +2594,7 @@ bool drop_item(int item_dropped, int quant_drop)
     ASSERT(item.defined());
 
     bool deck = false;
-    if(is_deck(item))
+    if (is_deck(item))
         deck = true;
 
     if (!copy_item_to_grid(item, you.pos(), quant_drop, true, true))

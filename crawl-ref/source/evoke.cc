@@ -276,7 +276,7 @@ static bool _evoke_horn_of_geryon(item_def &item)
 
 static bool _check_crystal_ball(item_def item)
 {
-    if(!evoker_is_charged(item))
+    if (!evoker_is_charged(item))
     {
         mpr("That is presently inert.");
         return false;

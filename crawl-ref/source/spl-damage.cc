@@ -1410,12 +1410,12 @@ void detonation_brand(actor *wielder, coord_def where, int pow)
     // do the actual damage
     for (auto mon : affected_monsters)
     {
-        if(!mon || mon == nullptr || mon->type >= NUM_MONSTERS)
+        if (!mon || mon == nullptr || mon->type >= NUM_MONSTERS)
             continue;
         int dam = resist_adjust_damage(mon, BEAM_FIRE, 1 + random2(pow) / 2);
-        if(you.can_see(*mon))
+        if (you.can_see(*mon))
         {
-            if(dam > 0)
+            if (dam > 0)
                 mprf("%s is burned (%d)!", mon->name(DESC_THE).c_str(), dam);
 
             beam_visual.explosion_draw_cell(mon->pos());
@@ -2722,7 +2722,7 @@ vector<bolt> get_spray_rays(const actor *caster, coord_def aim, int range,
                 continue;
 
             //Don't aim at fire immune enemies
-            if(monster_at(*di)->res_fire() >= 3)
+            if (monster_at(*di)->res_fire() >= 3)
                 continue;
 
             if (!caster->can_see(*monster_at(*di)))

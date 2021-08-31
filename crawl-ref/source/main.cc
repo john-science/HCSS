@@ -434,7 +434,7 @@ NORETURN static void _launch_game()
                     << endl;
 
         msg::stream << "<yellow>You are playing on ";
-        switch(crawl_state.difficulty)
+        switch (crawl_state.difficulty)
         {
         case DIFFICULTY_CASUAL:
             msg::stream << "Casual";
@@ -1681,7 +1681,7 @@ static bool _prompt_dangerous_portal(dungeon_feature_type ftype)
 
 static bool _prompt_skippable_branch(dungeon_feature_type ftype)
 {
-    switch(ftype)
+    switch (ftype)
     {
     case DNGN_ENTER_VAULTS:
         if (player_in_branch(BRANCH_DUNGEON))

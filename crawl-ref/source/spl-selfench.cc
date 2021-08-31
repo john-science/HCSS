@@ -372,7 +372,7 @@ spret_type cast_haste(int pow, bool fail)
 {
     fail_check();
     you.attribute[ATTR_PERMAHASTE] = 1;
-    if(you.duration[DUR_HASTE])
+    if (you.duration[DUR_HASTE])
         mpr("You feel as though you will remain fast.");
     else
         mpr("You feel yourself speed up.");
@@ -383,7 +383,7 @@ spret_type cast_invisibility(int pow, bool fail)
 {
     fail_check();
     you.attribute[ATTR_PERMAINVIS] = 1;
-    if(you.duration[DUR_INVIS] || you.form == TRAN_SHADOW)
+    if (you.duration[DUR_INVIS] || you.form == TRAN_SHADOW)
         mpr("You feel more invisible than before");
     else
         mpr("You fade into invisibility.");
@@ -396,7 +396,7 @@ spret_type cast_piercing_shot(int pow, bool fail)
     you.attribute[ATTR_PIERCING_SHOT] = 1;
 
     // Piercing Shot and Portal Projectile are mutually exclusive.
-    if(you.attribute[ATTR_PORTAL_PROJECTILE])
+    if (you.attribute[ATTR_PORTAL_PROJECTILE])
     {
         you.attribute[ATTR_PORTAL_PROJECTILE] = 0;
         mprf("You are no longer teleporting projectiles to their destination.");

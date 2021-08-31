@@ -1110,7 +1110,7 @@ sort_menus = [menu:](true | false | auto:X)[:sort_order]
         any:    All menus; this is the default when unspecified.
 
         For example,
-           
+
   sort_menus = true : equipped, basename, qualname, curse, qty
         will produce the same inventory and drop menus as by default,
         with the exception that all worn/wielded items come first. This
@@ -1342,8 +1342,7 @@ status_caption_colour = brown
 enemy_hp_colour = green green brown brown magenta red
         Colours enemy health appropriately in the monster pane. The
         colourings correspond to full health, lightly wounded, moderately
-   
-     wounded, heavily wounded, severely wounded, and almost dead.
+        wounded, heavily wounded, severely wounded, and almost dead.
 
 clear_messages = false
         Setting this option to true will cause messages to cleared
@@ -2422,7 +2421,6 @@ mon_glyph -= <monster name or symbol>
         existing symbols. For instance, if you want to put elves on E
         and elementals on e, you can do this:
 
-            
  mon_glyph += e : E
              mon_glyph += E : e
 
@@ -2651,4 +2649,3 @@ The above caveat applies to the "wiz_mode" option as well. Instead of
 conditionalized wiz_mode, you can add to the command line
 "-extra-opt-last wiz_mode=yes" to make any new game start in wizard
 mode.
-

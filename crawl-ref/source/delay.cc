@@ -485,7 +485,7 @@ static bool _can_read_scroll(const item_def& scroll)
 static bool _can_quaff_potion(const item_def &potion)
 {
     const string no_quaff_reason = cannot_quaff_item_reason(potion);
-    if(no_quaff_reason.empty())
+    if (no_quaff_reason.empty())
         return true;
 
     mpr(no_quaff_reason);
@@ -870,7 +870,7 @@ void ArmourOnDelay::finish()
     {
         mpr("Something interferes with your magic!");
         dispel_permanent_buffs();
-        if(you.form && !you.transform_uncancellable
+        if (you.form && !you.transform_uncancellable
         && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
             untransform();
         unfreeze_mp();
@@ -966,9 +966,9 @@ void BlurryScrollDelay::finish()
 void SlowPotionDelay::finish()
 {
     if (_can_quaff_potion(potion))
-        if(quaff_potion(potion))
+        if (quaff_potion(potion))
         {
-            if(you.get_mutation_level(MUT_POTION_AGILITY))
+            if (you.get_mutation_level(MUT_POTION_AGILITY))
             {
                 you.increase_duration(DUR_AGILITY, 15 + random2(15), 30);
             }

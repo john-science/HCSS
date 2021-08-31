@@ -1452,7 +1452,7 @@ equipment_type get_armour_slot(const item_def &item)
 {
     ASSERT(item.base_type == OBJ_ARMOUR || item.base_type == OBJ_STAVES);
 
-    if(item.base_type == OBJ_STAVES)
+    if (item.base_type == OBJ_STAVES)
         return EQ_SHIELD;
 
     return Armour_prop[ Armour_index[item.sub_type] ].slot;
@@ -1514,7 +1514,7 @@ static int _fit_armour_size(armour_type sub_type, size_type size)
  */
 int fit_armour_size(const item_def &item, size_type size)
 {
-    if(item.base_type == OBJ_STAVES)
+    if (item.base_type == OBJ_STAVES)
         return 0;
     ASSERT(item.base_type == OBJ_ARMOUR);
     return _fit_armour_size(static_cast<armour_type>(item.sub_type), size);
