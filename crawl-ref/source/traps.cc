@@ -648,7 +648,7 @@ void trap_def::trigger(actor& triggerer)
     case TRAP_NET:
         if (you_trigger)
         {
-			mpr("A net swings high above you.");
+            mpr("A net swings high above you.");
             trap_destroyed = true;
         }
         else if (m)
@@ -657,7 +657,7 @@ void trap_def::trigger(actor& triggerer)
                 simple_monster_message(*m, " fails to trigger a net trap.");
             else
                 hide();
-		}
+        }
         break;
 #endif
 
@@ -1379,7 +1379,7 @@ static level_id _generic_shaft_dest(level_pos lpos, bool known = false)
     int curr_depth = lid.depth;
     int max_depth = brdepth[lid.branch];
 
-	//shaft traps always drop you 1 level only
+    // shaft traps always drop you 1 level only
     lid.depth += 1;
 
     if (lid.depth > max_depth)
@@ -1609,7 +1609,7 @@ bool curse(actor *target)
         dungeon_feature_type feat = grd(*ai);
         if (feat == DNGN_FLOOR)
             locations.push_back(*ai);
-	}
+    }
     if(!locations.empty())
     {
         coord_def trap_loc = locations[random2(locations.size())];

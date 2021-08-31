@@ -335,11 +335,11 @@ void spawn_random_monsters()
     if (player_on_orb_run())
         rate = have_passive(passive_t::slow_orb_run) ? 16 : 8;
     else if (!player_in_starting_abyss())
-	{
+    {
         rate = _scale_spawn_parameter(rate, 6 * rate, 0);
-	}
+    }
 
-	if (player_in_branch(BRANCH_ABYSS))
+    if (player_in_branch(BRANCH_ABYSS))
     {
         if (!player_in_starting_abyss())
             rate = 5;
@@ -381,12 +381,12 @@ void spawn_random_monsters()
     }
 
     mgen_data mg(WANDERING_MONSTER);
-	if(player_in_branch(BRANCH_ABYSS)) //no free lunch in the abyss
-	{
-    mg.set_summoned(nullptr, 0, 0);
-    mg.non_actor_summoner = "the Abyss";
-    mg.extra_flags |= (MF_NO_REWARD | MF_HARD_RESET);
-	}
+    if (player_in_branch(BRANCH_ABYSS)) // no free lunch in the abyss
+    {
+        mg.set_summoned(nullptr, 0, 0);
+        mg.non_actor_summoner = "the Abyss";
+        mg.extra_flags |= (MF_NO_REWARD | MF_HARD_RESET);
+    }
     if (player_in_branch(BRANCH_PANDEMONIUM)
         && !env.properties.exists("vault_mon_weights")
         && !one_chance_in(40))
@@ -1390,7 +1390,7 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
             bonus_hp = mbase->avg_hp_10x;
         }
         mon->set_hit_dice(mg.hd);
-		mon->props[VAULT_HD_KEY] = mg.hd;
+        mon->props[VAULT_HD_KEY] = mg.hd;
         // Re-roll HP.
         const int base_avg_hp = m_ent->avg_hp_10x + bonus_hp;
         const int new_avg_hp = div_rand_round(base_avg_hp * mg.hd, m_ent->HD);
@@ -1407,7 +1407,7 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
     {
         mon->max_hit_points = mg.hp;
         mon->hit_points = mg.hp;
-		mon->props[KNOWN_MAX_HP_KEY] = mg.hp;
+        mon->props[KNOWN_MAX_HP_KEY] = mg.hp;
     }
 
     if (!crawl_state.game_is_arena())
@@ -2031,7 +2031,7 @@ static const map<monster_type, band_set> bands_by_leader = {
     { MONS_KILLER_BEE,      { {}, {{ BAND_KILLER_BEES, {2, 6} }}}},
     { MONS_CAUSTIC_SHRIKE,  { {}, {{ BAND_CAUSTIC_SHRIKE, {2, 5} }}}},
     { MONS_SHARD_SHRIKE,    { {}, {{ BAND_SHARD_SHRIKE, {1, 4} }}}},
-	{ MONS_GHOST_ROBIN,     { {}, {{ BAND_GHOST_ROBIN, {1, 4} }}}},
+    { MONS_GHOST_ROBIN,     { {}, {{ BAND_GHOST_ROBIN, {1, 4} }}}},
     { MONS_DIESEL_ROBIN,     { {}, {{ BAND_DIESEL_ROBIN, {2, 5} }}}},
     { MONS_COMBO_ROBIN,     { {}, {{ BAND_COMBO_ROBIN, {4, 8} }}}},
     { MONS_FLYING_SKULL,    { {}, {{ BAND_FLYING_SKULLS, {2, 6} }}}},
@@ -2157,11 +2157,11 @@ static const map<monster_type, band_set> bands_by_leader = {
     { MONS_DEATH_SCARAB,    { {}, {{ BAND_DEATH_SCARABS, {3, 6} }}}},
     { MONS_SERAPH,          { {}, {{ BAND_HOLIES, {1, 4}, true }}}},
     { MONS_IRON_GIANT,      { {}, {{ BAND_ANCIENT_CHAMPIONS, {2, 3}, true }}}},
-	{ MONS_ZOTLING,         { {}, {{ BAND_ZOTLINGS, {3, 6} }}}},
-	{ MONS_ANTIMATTER_ELF,  { {}, {{ BAND_ANTIMATTER_ELF, {1, 2} }}}},
+    { MONS_ZOTLING,         { {}, {{ BAND_ZOTLINGS, {3, 6} }}}},
+    { MONS_ANTIMATTER_ELF,  { {}, {{ BAND_ANTIMATTER_ELF, {1, 2} }}}},
     { MONS_ELEVENGU,        { {}, {{ BAND_ELEVENGU, {1, 2} }}}},
-	{ MONS_SUBTRACTOR_SNAKE, { {}, {{ BAND_SUBTRACTOR_SNAKE, {1, 4} }}}},
-	{ MONS_MUTATATOTOT,     { {}, {{ BAND_MUTATATOTOT, {1, 2} }}}},
+    { MONS_SUBTRACTOR_SNAKE, { {}, {{ BAND_SUBTRACTOR_SNAKE, {1, 4} }}}},
+    { MONS_MUTATATOTOT,     { {}, {{ BAND_MUTATATOTOT, {1, 2} }}}},
     { MONS_SPARK_WASP,      { {0, 0, []() {
         return you.where_are_you == BRANCH_DEPTHS;
     }},                           {{ BAND_SPARK_WASPS, {1, 4} }}}},
@@ -2565,27 +2565,26 @@ static const map<band_type, vector<member_possibilites>> band_membership = {
                                   {MONS_IRONBRAND_CONVOKER, 2},
                                   {MONS_GUARDIAN_SERPENT, 2},
                                   {MONS_IMPERIAL_MYRMIDON, 2}}}},
-	{ BAND_GHOST_ROBIN,         {{{MONS_GHOST_ROBIN, 1}}}},
+    { BAND_GHOST_ROBIN,         {{{MONS_GHOST_ROBIN, 1}}}},
     { BAND_DIESEL_ROBIN,         {{{MONS_DIESEL_ROBIN, 1}}}},
     { BAND_COMBO_ROBIN,         {{{MONS_DIESEL_ROBIN, 1},
                                   {MONS_GHOST_ROBIN, 1},
                                   {MONS_CAUSTIC_SHRIKE, 1},
                                   {MONS_SHARD_SHRIKE, 1}}}},
-	{ BAND_ZOTLINGS,            {{{MONS_SUBTRACTOR_SNAKE, 1},
+    { BAND_ZOTLINGS,            {{{MONS_SUBTRACTOR_SNAKE, 1},
                                   {MONS_PLUTONIUM_CRAB, 1},
-								  {MONS_ZOTBOT, 1},
-								  {MONS_DEV_FAVORITE, 1}},
+                                  {MONS_ZOTBOT, 1},
+                                  {MONS_DEV_FAVORITE, 1}},
 
                                  {{MONS_ZOTLING, 1}}}},
-	{ BAND_ANTIMATTER_ELF,      {{{MONS_ANTIMATTER_ELF, 100},
+    { BAND_ANTIMATTER_ELF,      {{{MONS_ANTIMATTER_ELF, 100},
                                   {MONS_GIANT_GIANT, 30},
                                   {MONS_CURSE_SKULL, 15},
                                   {MONS_ANCIENT_LICH, 5}}}},
     { BAND_ELEVENGU,            {{{MONS_ELEVENGU, 1}}}},
-	{ BAND_MUTATATOTOT,         {{{MONS_MUTATATOTOT, 1}}}},
-	{ BAND_SUBTRACTOR_SNAKE,    {{{MONS_GOLDEN_DRAGON, 5},{MONS_SHADOW_DRAGON, 5},{MONS_QUICKSILVER_DRAGON, 2}},
-
-	                            {{MONS_CAUSTIC_SHRIKE, 10}, {MONS_GHOST_ROBIN, 10}, {MONS_SHARD_SHRIKE, 7}, {MONS_DIESEL_ROBIN, 10}}}},
+    { BAND_MUTATATOTOT,         {{{MONS_MUTATATOTOT, 1}}}},
+    { BAND_SUBTRACTOR_SNAKE,    {{{MONS_GOLDEN_DRAGON, 5},{MONS_SHADOW_DRAGON, 5},{MONS_QUICKSILVER_DRAGON, 2}},
+                                {{MONS_CAUSTIC_SHRIKE, 10}, {MONS_GHOST_ROBIN, 10}, {MONS_SHARD_SHRIKE, 7}, {MONS_DIESEL_ROBIN, 10}}}},
 };
 
 /**

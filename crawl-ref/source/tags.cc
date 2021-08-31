@@ -1665,7 +1665,7 @@ static void tag_construct_you_items(writer &th)
     marshallByte(th, you.obtainable_runes);
 
     // List of manuals carried by the player
-	marshallShort(th, you.manuals_in_inventory.size());
+    marshallShort(th, you.manuals_in_inventory.size());
     for (const auto &manual : you.manuals_in_inventory)
          marshallItem(th, manual);
 
@@ -2421,9 +2421,9 @@ static void tag_read_you(reader &th)
 #endif
 
 #if TAG_MAJOR_VERSION == 34
-	if(th.getMinorVersion() >= TAG_MINOR_GOLDIFY_BOOKS)
+    if(th.getMinorVersion() >= TAG_MINOR_GOLDIFY_BOOKS)
 #endif
-	    unmarshallFixedBitVector<NUM_SPELLS>(th, you.spell_library);
+        unmarshallFixedBitVector<NUM_SPELLS>(th, you.spell_library);
 
 #if TAG_MAJOR_VERSION == 34
     if (th.getMinorVersion() >= TAG_MINOR_GOLDIFY_IMPROVEMENT)
@@ -2516,7 +2516,7 @@ static void tag_read_you(reader &th)
                 a -= 1;
         }
 
-		if (th.getMinorVersion() < TAG_MINOR_MOTTLED_REMOVAL)
+        if (th.getMinorVersion() < TAG_MINOR_MOTTLED_REMOVAL)
         {
             if (a == ABIL_BREATHE_STICKY_FLAME)
                 a = ABIL_BREATHE_FIRE;

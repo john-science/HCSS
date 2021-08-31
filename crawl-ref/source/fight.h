@@ -40,7 +40,7 @@ bool wielded_weapon_check(item_def *weapon);
 
 stab_type find_stab_type(const actor *attacker,
                          const actor &defender,
-						 bool actual = true);
+                         bool actual = true);
 
 int stab_bonus_denom(stab_type stab);
 

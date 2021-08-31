@@ -241,14 +241,14 @@ bool i_feel_safe(bool announce, bool want_move, bool just_monsters,
         if (is_sanctuary(you.pos()) && env.sanctuary_time >= 5)
             return true;
 
-        //don't rest in lava
-        if(env.grid(you.pos()) == DNGN_LAVA && !you.airborne())
+        // don't rest in lava
+        if (env.grid(you.pos()) == DNGN_LAVA && !you.airborne())
         {
             if (announce)
                 mprf(MSGCH_WARN, "You are swimming in lava!");
 
             return false;
-		}
+        }
     }
 
     // Monster check.

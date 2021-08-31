@@ -1012,7 +1012,7 @@ static const species_skill_aptitude species_skill_aptitudes[] =
     APT(SP_GARGOYLE,         SK_INVOCATIONS,     1),
     APT(SP_GARGOYLE,         SK_EVOCATIONS,     -1),
 
-	#if TAG_MAJOR_VERSION == 34
+    #if TAG_MAJOR_VERSION == 34
     // SP_GHOUL
     APT(SP_GHOUL,           SK_FIGHTING,        1),
     APT(SP_GHOUL,           SK_SHORT_BLADES,   -1),

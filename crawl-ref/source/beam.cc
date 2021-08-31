@@ -2144,11 +2144,11 @@ int silver_damages_victim(actor* victim, int damage, string &dmg_msg)
         ret = damage * multiplier / 100;
     }
     else
-	{
+    {
         return 0;
-	}
+    }
 
-	std::string d = std::to_string(ret);
+    std::string d = std::to_string(ret);
     dmg_msg = "The silver sears " + victim->name(DESC_THE) + " (" + d + ")!";
     return ret;
 }
@@ -3279,7 +3279,7 @@ bool bolt::misses_player()
                 }
                 else if (you.get_mutation_level(MUT_REFLECTION) > 0)
                 {
-					mprf("Your crystalline skin reflects the %s!",
+                    mprf("Your crystalline skin reflects the %s!",
                             refl_name.c_str());
                 }
                 else
@@ -3512,9 +3512,9 @@ void bolt::affect_player_enchantment(bool resistible)
         const int dam = resist_adjust_damage(&you, flavour, damage.roll());
         if (dam)
         {
-			std::string d = std::to_string(dam);
+            std::string d = std::to_string(dam);
             mprf("Pain shoots through your body (%s)!",
-				d.c_str());
+                d.c_str());
             internal_ouch(dam);
             obvious_effect = true;
         }
@@ -3529,15 +3529,15 @@ void bolt::affect_player_enchantment(bool resistible)
         break;
 
     case BEAM_DISPEL_UNDEAD:
-	{
+    {
         if (you.undead_state() == US_ALIVE)
         {
             canned_msg(MSG_YOU_UNAFFECTED);
             break;
         }
 
-		const int damg = damage.roll();
-		std::string dm = std::to_string(damg);
+        const int damg = damage.roll();
+        std::string dm = std::to_string(damg);
         mprf("You convulse (%s)!", dm.c_str());
 
         if (aux_source.empty())
@@ -3546,10 +3546,10 @@ void bolt::affect_player_enchantment(bool resistible)
         internal_ouch(damg);
         obvious_effect = true;
         break;
-	}
+    }
 
     case BEAM_DISINTEGRATION:
-	{
+    {
         mpr("You are blasted!");
 
         if (aux_source.empty())
@@ -3564,8 +3564,8 @@ void bolt::affect_player_enchantment(bool resistible)
         }
 
         obvious_effect = true;
-		break;
-	}
+        break;
+    }
 
     case BEAM_PORKALATOR:
         if (!transform(ench_power, TRAN_PIG, true))
@@ -3843,12 +3843,12 @@ void bolt::affect_player()
     }
 
     hurted = check_your_resists(hurted, flavour, "", this);
-	std::string d = std::to_string(hurted);
+    std::string d = std::to_string(hurted);
 
-	if (hurted > 0)
-	{
-		mprf("That hurt (%s)!", d.c_str());
-	}
+    if (hurted > 0)
+    {
+        mprf("That hurt (%s)!", d.c_str());
+    }
 
     if (flavour == BEAM_MIASMA && hurted > 0)
         was_affected = miasma_player(agent(), name);
@@ -3870,7 +3870,7 @@ void bolt::affect_player()
     // handling of missiles
     if (item && item->base_type == OBJ_MISSILES)
     {
-		if (item->sub_type == MI_DART_CURARE)
+        if (item->sub_type == MI_DART_CURARE)
         {
             if (x_chance_in_y(90 - 3 * you.armour_class(), 100))
             {
@@ -4844,13 +4844,13 @@ void bolt::affect_monster(monster* mon)
         if (hit_verb.empty())
             hit_verb = engulfs ? "engulfs" : "hits";
 
-		std::string d = std::to_string(final);
+        std::string d = std::to_string(final);
 
         mprf("The %s %s %s (%s).",
              name.c_str(),
              hit_verb.c_str(),
              mon->name(DESC_THE).c_str(),
-			 d.c_str());
+             d.c_str());
 
     }
     else if (heard && !hit_noise_msg.empty())
@@ -5246,14 +5246,14 @@ mon_resist_type bolt::apply_enchantment_to_monster(monster* mon)
         return MON_AFFECTED;
 
     case BEAM_DISPEL_UNDEAD:
-	{
+    {
         const int dddd = damage.roll();
         const string m = make_stringf(" convulses (%d)!", dddd);
         if (simple_monster_message(*mon, m.c_str()))
             obvious_effect = true;
         mon->hurt(agent(), dddd);
         return MON_AFFECTED;
-	}
+    }
     case BEAM_ENSLAVE_SOUL:
     {
         if (!ench_flavour_affects_monster(flavour, mon))

@@ -321,11 +321,11 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_RING_OF_FLAMES:
     {
-		if (you.attribute[ATTR_FIRE_SHIELD])
+        if (you.attribute[ATTR_FIRE_SHIELD])
         {
             inf->light_colour = LIGHTMAGENTA;
             inf->light_text = "RoF";
-			inf->long_text += "You are surrounded by a ring of flames.\n";
+            inf->long_text += "You are surrounded by a ring of flames.\n";
             inf->long_text += "You are immune to clouds of flame.";
         }
         break;
@@ -441,7 +441,7 @@ bool fill_status_info(int status, status_info* inf)
         }
         break;
 
-	case STATUS_SERPENTS_LASH:
+    case STATUS_SERPENTS_LASH:
         if (you.attribute[ATTR_SERPENTS_LASH] > 0)
         {
             inf->light_colour = WHITE;
@@ -505,7 +505,7 @@ bool fill_status_info(int status, status_info* inf)
         {
             inf->light_colour = LIGHTMAGENTA;
             inf->light_text = "Abj";
-		}
+        }
         break;
 
     case STATUS_OZO_ARMOUR:
@@ -515,7 +515,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_text = "";
             inf->short_text   = "icy armour";
             inf->long_text    = "You are protected by icy armour.";
-		}
+        }
         break;
 
     case STATUS_BEOGH:
@@ -800,7 +800,7 @@ bool fill_status_info(int status, status_info* inf)
         break;
     }
 
-	case STATUS_SERVITOR:
+    case STATUS_SERVITOR:
     {
         if(you.attribute[ATTR_SERVITOR])
         {
@@ -822,7 +822,7 @@ bool fill_status_info(int status, status_info* inf)
             inf->light_text = "Weap";
             if (!weapon_can_be_spectral(weapon))
             {
-			    inf->short_text   = "unsuitable spectral weapon";
+                inf->short_text   = "unsuitable spectral weapon";
                 inf->long_text    = "can't summon spectral weapon";
                 inf->light_colour = DARKGREY;
             }
@@ -840,7 +840,7 @@ bool fill_status_info(int status, status_info* inf)
             }
         }
         break;
-	}
+    }
 
     case STATUS_ORB:
     {
@@ -855,7 +855,7 @@ bool fill_status_info(int status, status_info* inf)
 
     case STATUS_DOOM:
     {
-	    if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
+        if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
         {
             inf->light_colour = LIGHTRED;
             inf->light_text = make_stringf("DOOM(%d)", env.turns_on_level < 500 ? 500 - env.turns_on_level : 0);

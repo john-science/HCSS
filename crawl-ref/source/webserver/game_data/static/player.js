@@ -354,7 +354,7 @@ function ($, comm, enums, map_knowledge, messages, options) {
         if (player.wizard)
             $("#stats_wizmode").text("WIZARD");
         else if (player.diff == -1)
-			$("#stats_wizmode").text("CASUAL");
+            $("#stats_wizmode").text("CASUAL");
         else if (player.diff == 0)
             $("#stats_wizmode").text("CASUAL");
         else if (player.diff == 1)

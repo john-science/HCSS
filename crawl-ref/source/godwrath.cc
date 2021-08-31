@@ -292,7 +292,7 @@ static void _zin_remove_good_mutations()
     }
 
     if (success && !you.how_mutated())
-	{
+    {
         simple_god_message(" rids your body of chaos!", god);
     }
 }

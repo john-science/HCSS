@@ -912,7 +912,7 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
     item_def *launcher = nullptr;
     const item_def *weapon = nullptr;
     const int mon_item = mons_usable_missile(mons, &launcher);
-	item_def *missile = nullptr;
+    item_def *missile = nullptr;
     bool created = false;
 
     launcher = mons->mslot_item(MSLOT_WEAPON);
@@ -926,13 +926,13 @@ bool handle_throw(monster* mons, bolt & beem, bool teleport, bool check_only)
     {
         if (launcher && is_range_weapon(*launcher))
         {
-		    int p = items(false, OBJ_MISSILES, MI_ARROW, 0, SPMSL_NORMAL);
+            int p = items(false, OBJ_MISSILES, MI_ARROW, 0, SPMSL_NORMAL);
             missile = &mitm[p];
             created = true;
         }
         else
             return false;
-	}
+    }
     else
         missile = &mitm[mon_item];
 

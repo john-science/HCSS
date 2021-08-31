@@ -632,7 +632,7 @@ string player::unarmed_attack_name() const
 
     if (has_usable_claws(true))
     {
-		default_name = "Claws";
+        default_name = "Claws";
     }
     else if (has_usable_tentacles(true))
         default_name = "Tentacles";

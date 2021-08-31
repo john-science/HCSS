@@ -1325,7 +1325,7 @@ string blade_parts(bool terse)
 {
     string str;
 
-	if (you.species == SP_OCTOPODE)
+    if (you.species == SP_OCTOPODE)
         str = "tentacle";
     else
         str = "hand";
@@ -1779,7 +1779,7 @@ bool transform(int pow, transformation_type which_trans, bool involuntary,
 
     case TRAN_SPIDER:
         leave_web();
-		break;
+        break;
 
     case TRAN_TREE:
         mpr("Your roots penetrate the ground.");

@@ -376,21 +376,21 @@ static void _remove_spell_attributes(spell_type spell)
         }
         break;
 
-	case SPELL_REGENERATION:
-	    if (you.attribute[ATTR_SPELL_REGEN])
+    case SPELL_REGENERATION:
+        if (you.attribute[ATTR_SPELL_REGEN])
         {
             you.attribute[ATTR_SPELL_REGEN] = 0;
             mprf(MSGCH_DURATION, "Your regeneration ceases.");
         }
         break;
-	case SPELL_SONG_OF_SLAYING:
-	    if (you.attribute[ATTR_SONG_OF_SLAYING])
+    case SPELL_SONG_OF_SLAYING:
+        if (you.attribute[ATTR_SONG_OF_SLAYING])
         {
             you.attribute[ATTR_SONG_OF_SLAYING] = 0;
             mprf(MSGCH_DURATION, "Your song of slaying ends.");
         }
         break;
-	case SPELL_DEATH_CHANNEL:
+    case SPELL_DEATH_CHANNEL:
         if (you.attribute[ATTR_DEATH_CHANNEL])
         {
             you.attribute[ATTR_DEATH_CHANNEL] = 0;
@@ -398,7 +398,7 @@ static void _remove_spell_attributes(spell_type spell)
         }
         break;
     case SPELL_DARKNESS:
-	    if (you.attribute[ATTR_DARKNESS])
+        if (you.attribute[ATTR_DARKNESS])
         {
             you.attribute[ATTR_DARKNESS] = 0;
             update_vision_range();
@@ -432,14 +432,14 @@ static void _remove_spell_attributes(spell_type spell)
         }
         break;
     case SPELL_INVISIBILITY:
-	    if (you.attribute[ATTR_PERMAINVIS])
+        if (you.attribute[ATTR_PERMAINVIS])
         {
             you.attribute[ATTR_PERMAINVIS] = 0;
             mprf(MSGCH_DURATION, "Your permanent invisibility ends.");
         }
         break;
     case SPELL_CIGOTUVIS_EMBRACE:
-	    if (you.attribute[ATTR_BONE_ARMOUR])
+        if (you.attribute[ATTR_BONE_ARMOUR])
         {
             you.attribute[ATTR_BONE_ARMOUR] = 0;
             you.redraw_armour_class = true;
@@ -447,7 +447,7 @@ static void _remove_spell_attributes(spell_type spell)
         }
         break;
     case SPELL_RING_OF_FLAMES:
-	    if (you.attribute[ATTR_FIRE_SHIELD])
+        if (you.attribute[ATTR_FIRE_SHIELD])
         {
             you.attribute[ATTR_FIRE_SHIELD] = 0;
             mprf(MSGCH_DURATION, "Your ring of flames gutters out.");
@@ -464,7 +464,7 @@ static void _remove_spell_attributes(spell_type spell)
         if(you.attribute[ATTR_EXCRUCIATING_WOUNDS])
         {
             you.attribute[ATTR_EXCRUCIATING_WOUNDS] = 0;
-		    item_def *wpn = you.weapon();
+            item_def *wpn = you.weapon();
             end_weapon_brand(*wpn,true);
             mprf(MSGCH_DURATION, "Your weapon looks less painful.");
         }
@@ -1436,7 +1436,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (temp && you.attribute[ATTR_EXCRUCIATING_WOUNDS])
         {
             return "your weapon is already branded with pain";
-		}
+        }
         break;
     case SPELL_SPECTRAL_WEAPON:
         if(temp && you.attribute[ATTR_SPECTRAL_WEAPON])
@@ -1537,7 +1537,7 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         if (temp && you.attribute[ATTR_OZO_ARMOUR])
             return "the corpses won't embrace your icy flesh.";
         if (temp && you.attribute[ATTR_BONE_ARMOUR])
-			return "you are already converting the dead into corpse armour.";
+            return "you are already converting the dead into corpse armour.";
         break;
 
     case SPELL_SUBLIMATION_OF_BLOOD:

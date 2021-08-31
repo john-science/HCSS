@@ -677,9 +677,9 @@ const char* potion_type_name(int potiontype)
     case POT_AMBROSIA:          return "ambrosia";
     case POT_INVISIBILITY:      return "invisibility";
 #if TAG_MAJOR_VERSION == 34
-	case POT_DEGENERATION:      return "degeneration";
+    case POT_DEGENERATION:      return "degeneration";
     case POT_DECAY:             return "decay";
-	case POT_EXPERIENCE:        return "experience";
+    case POT_EXPERIENCE:        return "experience";
 #endif
     case POT_MAGIC:             return "magic";
 #if TAG_MAJOR_VERSION == 34
@@ -799,7 +799,7 @@ const char* jewellery_effect_name(int jeweltype, bool terse)
 #endif
         case AMU_MANA_REGENERATION: return "magic regeneration";
 #if TAG_MAJOR_VERSION == 34
-		case AMU_THE_GOURMAND:		return "gourmand";
+        case AMU_THE_GOURMAND:      return "gourmand";
         case AMU_CONSERVATION:      return "conservation";
         case AMU_CONTROLLED_FLIGHT: return "controlled flight";
         case AMU_INACCURACY:        return "garbage";
@@ -864,7 +864,7 @@ const char* jewellery_effect_name(int jeweltype, bool terse)
 // lua doesn't want "the" in gourmand, but we do, so...
 static const char* _jewellery_effect_prefix(int jeweltype)
 {
-	return "";
+    return "";
 }
 
 /**
@@ -3199,7 +3199,7 @@ bool is_good_item(const item_def &item)
         case POT_GAIN_STRENGTH:
         case POT_GAIN_INTELLIGENCE:
         case POT_GAIN_DEXTERITY:
-		case POT_EXPERIENCE:
+        case POT_EXPERIENCE:
 #endif
             return true;
 #if TAG_MAJOR_VERSION == 34
@@ -3586,7 +3586,7 @@ bool is_useless_item(const item_def &item, bool temp)
         case RING_RESIST_CORROSION:
             return you.res_corr(false, false);
 #if TAG_MAJOR_VERSION == 34
-		case AMU_THE_GOURMAND:
+        case AMU_THE_GOURMAND:
             return player_likes_chunks(true) == 3
                    || you.get_mutation_level(MUT_GOURMAND) > 0
                    || you.get_mutation_level(MUT_HERBIVOROUS) == 3

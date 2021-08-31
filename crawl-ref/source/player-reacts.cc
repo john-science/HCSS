@@ -596,11 +596,11 @@ static void _try_to_respawn_ancestor()
  */
 static void _try_to_respawn_enslaved_soul()
 {
-	if (try_recall(yred_soul()))
+    if (try_recall(yred_soul()))
     {
         mprf("Your enslaved soul returns to your service.");
         return;
-	}
+    }
     monster *soul = create_monster(yred_enslaved_soul_data());
     if (!soul)
         return;
@@ -1017,35 +1017,35 @@ void player_reacts()
     if (you.unrand_reacts.any())
         unrand_reacts();
 
-    //decrement song of slaying's bonus over time
-    //chance to decrement is spellpower dependent
+    // decrement song of slaying's bonus over time
+    // chance to decrement is spellpower dependent
     if (you.attribute[ATTR_SONG_OF_SLAYING]
         && x_chance_in_y(you.time_taken * 50,
            (50 + calc_spell_power(SPELL_SONG_OF_SLAYING, true)) * 8 * BASELINE_DELAY))
     {
         const int sos_bonus = you.attribute[ATTR_SONG_OF_SLAYING];
-		if (sos_bonus > 1)
+        if (sos_bonus > 1)
             you.attribute[ATTR_SONG_OF_SLAYING] = sos_bonus - 1;
     }
 
-    //decrement cigotuvi's embrace
+    // decrement cigotuvi's embrace
     if (you.attribute[ATTR_BONE_ARMOUR]
         && x_chance_in_y(you.time_taken, 14 * BASELINE_DELAY))
     {
         const int bone_armour = you.attribute[ATTR_BONE_ARMOUR];
-		if (bone_armour > 1)
+        if (bone_armour > 1)
         {
             you.attribute[ATTR_BONE_ARMOUR] = bone_armour - 1;
             you.redraw_armour_class = true;
         }
     }
 
-    //decrement skeleton armour
+    // decrement skeleton armour
     if (you.attribute[ATTR_SKELETON_ARMOUR]
         && x_chance_in_y(you.time_taken, 14 * BASELINE_DELAY))
     {
         const int bone_armour = you.attribute[ATTR_SKELETON_ARMOUR];
-		if (bone_armour > 0)
+        if (bone_armour > 0)
         {
             you.attribute[ATTR_SKELETON_ARMOUR] = bone_armour - 1;
             you.redraw_armour_class = true;
@@ -1154,7 +1154,7 @@ void player_reacts()
     if (you_worship(GOD_TROG) && you.mp_frozen > 0)
     {
         did_god_conduct(DID_SPELL_CASTING, 1 + random2(5));
-		redraw_screen();
+        redraw_screen();
     }
     //-cast disrupts permabuffs and voluntary transformations
     if (you.no_cast() && you.mp_frozen > 0)
@@ -1199,7 +1199,7 @@ void player_reacts()
     else if (crawl_state.difficulty == DIFFICULTY_NORMAL && env.turns_on_level == 2499
         && !player_in_branch(BRANCH_ABYSS))
     {
-		mprf(MSGCH_WARN, "You feel the dungeon grow hostile. You need to %s quickly!",
+        mprf(MSGCH_WARN, "You feel the dungeon grow hostile. You need to %s quickly!",
                 is_connected_branch(level_id::current().branch) ? "descend" : "move on");
     }
 }

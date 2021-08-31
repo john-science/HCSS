@@ -610,7 +610,7 @@ function armour_value(it, cur, it2)
               or name:find("lightning scales")) then
         return -1,-1
       end
-	end
+    end
     else
       if name:find("barding") then
         return -1,-1
@@ -3413,7 +3413,7 @@ function plan_read_id()
         items.swap_slots(weap.slot, items.letter_to_index('Y'), false)
       end
         return read2(scroll_letter, ".Y" .. string.char(27) .. "YB")
-	  end
+      end
     end
   end
   return false

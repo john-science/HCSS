@@ -443,14 +443,14 @@ bool InventoryRegion::update_tip_text(string& tip)
                 cmd.push_back(CMD_REMOVE_JEWELLERY);
                 break;
             case OBJ_MISSILES:
-				tmp += "Fire (%)";
+                tmp += "Fire (%)";
                 cmd.push_back(CMD_FIRE);
 
                 if (wielded || you.can_wield(item))
                     _handle_wield_tip(tmp, cmd, "\n[Ctrl + L-Click] ", wielded);
                 break;
             case OBJ_WANDS:
-				tmp += "Evoke (%)";
+                tmp += "Evoke (%)";
                 cmd.push_back(CMD_EVOKE);
                 if (wielded)
                     _handle_wield_tip(tmp, cmd, "\n[Ctrl + L-Click] ", true);

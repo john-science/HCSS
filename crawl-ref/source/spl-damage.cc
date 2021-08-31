@@ -522,7 +522,7 @@ static int _drain_player(const actor* agent, int pow, int avg, bool actual)
 
     if (actual)
     {
-		mprf("That hurt (%d)!", hurted);
+        mprf("That hurt (%d)!", hurted);
         const monster* mons = agent ? agent->as_monster() : 0;
         ouch(hurted, KILLED_BY_BEAM, mons ? mons->mid : MID_NOBODY,
              "by drain life");
@@ -864,7 +864,7 @@ spret_type vampiric_drain(int pow, monster* mons, bool fail)
 
     const bool mons_was_summoned = mons->is_summoned();
 
-	mprf("You drain life from %s (%d)!", mons->name(DESC_THE).c_str(), hp_gain);
+    mprf("You drain life from %s (%d)!", mons->name(DESC_THE).c_str(), hp_gain);
 
     mons->hurt(&you, hp_gain);
 
@@ -900,11 +900,11 @@ spret_type cast_freeze(int pow, monster* mons, bool fail)
 
     const bool abort = stop_attack_prompt(mons, false, you.pos());
 
-	bolt beam;
+    bolt beam;
     beam.flavour = BEAM_COLD;
     beam.thrower = KILL_YOU;
 
-	const int orig_hurted = roll_dice(1, 3 + pow / 3);
+    const int orig_hurted = roll_dice(1, 3 + pow / 3);
     int hurted = mons_adjust_flavoured(mons, beam, orig_hurted);
 
     if (!abort && !fail)
@@ -962,7 +962,7 @@ spret_type cast_airstrike(int pow, const dist &beam, bool fail)
     fail_check();
     set_attack_conducts(conducts, mons);
 
-	int hurted = 7 + random2(2+div_rand_round(pow,6));
+    int hurted = 7 + random2(2+div_rand_round(pow,6));
 
     bolt pbeam;
     pbeam.flavour = BEAM_AIR;
@@ -1043,7 +1043,7 @@ static int _shatter_mon_dice(const monster *mon)
         const bool petrifying = mon->petrifying();
         const bool petrified = mon->petrified();
 
-		// Extra damage to petrifying/petrified things.
+        // Extra damage to petrifying/petrified things.
         if (petrifying || petrified)
             return 6;
         // reduced damage to insubstantials.
@@ -1084,10 +1084,10 @@ static int _shatter_monsters(coord_def where, int pow, actor *agent)
             remove_sanctuary(true);
     }
     else
-	{
+    {
         mprf("%s shudders (%d).", mon->name(DESC_THE).c_str(), damage);
         mon->hurt(agent, damage);
-	}
+    }
 
     return damage;
 }
@@ -1246,12 +1246,12 @@ static int _shatter_player(int pow, actor *wielder, bool devastator = false)
 
     if (damage > 0)
     {
-		std::string d = std::to_string(damage);
-		if(damage > 15)
-			mprf("You shudder from the earth-shattering force (%s).",
-						d.c_str());
+        std::string d = std::to_string(damage);
+        if (damage > 15)
+            mprf("You shudder from the earth-shattering force (%s).",
+            d.c_str());
         else
-			mprf("You shudder (%s).", d.c_str());
+            mprf("You shudder (%s).", d.c_str());
 
         if (devastator)
             ouch(damage, KILLED_BY_MONSTER, wielder->mid);
@@ -1389,13 +1389,13 @@ void detonation_brand(actor *wielder, coord_def where, int pow)
         {
             continue;
         }
-        if(mon && wielder->is_monster() && wielder->as_monster()->attitude == mon->attitude)
+        if (mon && wielder->is_monster() && wielder->as_monster()->attitude == mon->attitude)
         {
-			continue;
+            continue;
         }
-        else if(mon && wielder->is_player() && mon->attitude != ATT_HOSTILE)
+        else if (mon && wielder->is_player() && mon->attitude != ATT_HOSTILE)
         {
-			continue;
+            continue;
         }
         affected_monsters.push_back(mon);
     }
@@ -1428,7 +1428,7 @@ void detonation_brand(actor *wielder, coord_def where, int pow)
             && wielder->as_monster()->attitude == ATT_HOSTILE)
     {
         int dam = resist_adjust_damage(&you, BEAM_FIRE, 1 + random2(pow) / 2);
-		beam_visual.explosion_draw_cell(you.pos());
+        beam_visual.explosion_draw_cell(you.pos());
         mprf("you are burned (%d)!", dam);
         expose_player_to_element(BEAM_FIRE, 1 + dam / 5);
         ouch(dam, KILLED_BY_MONSTER, wielder->mid);
@@ -2014,7 +2014,7 @@ int discharge_monsters(coord_def where, int pow, actor *agent)
 
     if (victim->is_player())
     {
-		damage = 1 + random2(3 + div_rand_round(pow,15));
+        damage = 1 + random2(3 + div_rand_round(pow,15));
         dprf("You: static discharge damage: %d", damage);
         damage = check_your_resists(damage, BEAM_ELECTRICITY,
                                     "static discharge");
@@ -2042,7 +2042,7 @@ int discharge_monsters(coord_def where, int pow, actor *agent)
         {
             mprf("%s is struck by lightning (%d).",
                  mons->name(DESC_THE).c_str(),
-				 damage);
+                 damage);
             if (agent->is_player())
             {
                 _player_hurt_monster(*mons, damage);
@@ -2971,7 +2971,7 @@ void handle_searing_ray()
     const int pow = calc_spell_power(SPELL_SEARING_RAY, true);
 
     bolt beam;
-	beam.flavour = BEAM_FIRE;
+    beam.flavour = BEAM_FIRE;
     beam.thrower = KILL_YOU_MISSILE;
     beam.range   = calc_spell_range(SPELL_SEARING_RAY, pow);
     beam.source  = you.pos();

@@ -484,7 +484,7 @@ static bool _can_read_scroll(const item_def& scroll)
 
 static bool _can_quaff_potion(const item_def &potion)
 {
-	const string no_quaff_reason = cannot_quaff_item_reason(potion);
+    const string no_quaff_reason = cannot_quaff_item_reason(potion);
     if(no_quaff_reason.empty())
         return true;
 

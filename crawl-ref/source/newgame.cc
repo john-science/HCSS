@@ -184,7 +184,7 @@ static const species_type species_order[] =
     SP_HUMAN,          SP_DEEP_ELF,
     SP_MOUNTAIN_DWARF,
     // small species
-    SP_KOBOLD,		   SP_SPRIGGAN,
+    SP_KOBOLD,         SP_SPRIGGAN,
     // large species
     SP_OGRE, SP_TROLL,
     // significantly different body type from human ("monstrous")
@@ -1814,87 +1814,87 @@ static bool _choose_weapon(newgame_def& ng, newgame_def& ng_choice,
 static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
                            const newgame_def& defaults)
 {
-	if (ng_choice.difficulty != DIFFICULTY_ASK)
+    if (ng_choice.difficulty != DIFFICULTY_ASK)
         return true;
 
     PrecisionMenu menu;
     menu.set_select_type(PrecisionMenu::PRECISION_SINGLESELECT);
-	MenuFreeform* freeform = new MenuFreeform();
-	freeform->init(coord_def(1,1), coord_def(get_number_of_cols(),
-				   get_number_of_lines()), "freeform");
-	menu.attach_object(freeform);
-	menu.set_active_object(freeform);
+    MenuFreeform* freeform = new MenuFreeform();
+    freeform->init(coord_def(1,1), coord_def(get_number_of_cols(),
+                   get_number_of_lines()), "freeform");
+    menu.attach_object(freeform);
+    menu.set_active_object(freeform);
 
     static const int ITEMS_START_Y = 5;
     TextItem* tmp = nullptr;
-	string text;
+    string text;
 
-	for (int difficulty = 0; difficulty < 3; difficulty ++)
+    for (int difficulty = 0; difficulty < 3; difficulty ++)
     {
         coord_def min_coord(0,0);
-	    coord_def max_coord(0,0);
+        coord_def max_coord(0,0);
 
-		tmp = new TextItem();
-		text.clear();
+        tmp = new TextItem();
+        text.clear();
 
-		tmp->set_highlight_colour(GREEN);
+        tmp->set_highlight_colour(GREEN);
 
-		switch(difficulty)
-		{
+        switch(difficulty)
+        {
         case 0:
-			tmp->set_fg_colour(WHITE);
-			tmp->add_hotkey('n');
-			tmp->set_id(DIFFICULTY_NORMAL);
-			text += "n - Normal";
-			freeform->set_active_item(tmp);
-			break;
+            tmp->set_fg_colour(WHITE);
+            tmp->add_hotkey('n');
+            tmp->set_id(DIFFICULTY_NORMAL);
+            text += "n - Normal";
+            freeform->set_active_item(tmp);
+            break;
         case 1:
-			tmp->set_fg_colour(GREEN);
-			tmp->add_hotkey('c');
-			tmp->set_id(DIFFICULTY_CASUAL);
-			text += "c - Casual";
-			break;
+            tmp->set_fg_colour(GREEN);
+            tmp->add_hotkey('c');
+            tmp->set_id(DIFFICULTY_CASUAL);
+            text += "c - Casual";
+            break;
         case 2:
-			tmp->set_fg_colour(RED);
-			tmp->add_hotkey('s');
-			tmp->set_id(DIFFICULTY_SPEEDRUN);
-			text += "s - Speedrun";
-			break;
-		}
+            tmp->set_fg_colour(RED);
+            tmp->add_hotkey('s');
+            tmp->set_id(DIFFICULTY_SPEEDRUN);
+            text += "s - Speedrun";
+            break;
+        }
 
-	//	tmp->set_fg_colour(LIGHTGRAY);
-	//	tmp->set_highlight_colour(BLUE);
+        // tmp->set_fg_colour(LIGHTGRAY);
+        // tmp->set_highlight_colour(BLUE);
 
-		// Fill to column width to give extra padding for the highlight
-		text.append(WEAPON_COLUMN_WIDTH - text.size() - 1 , ' ');
-		tmp->set_text(text);
+        // Fill to column width to give extra padding for the highlight
+        text.append(WEAPON_COLUMN_WIDTH - text.size() - 1 , ' ');
+        tmp->set_text(text);
 
-		min_coord.x = X_MARGIN;
-		min_coord.y = ITEMS_START_Y + difficulty;
-		max_coord.x = min_coord.x + text.size();
-		max_coord.y = min_coord.y + 1;
-		tmp->set_bounds(min_coord, max_coord);
+        min_coord.x = X_MARGIN;
+        min_coord.y = ITEMS_START_Y + difficulty;
+        max_coord.x = min_coord.x + text.size();
+        max_coord.y = min_coord.y + 1;
+        tmp->set_bounds(min_coord, max_coord);
 
-		freeform->attach_item(tmp);
-		tmp->set_visible(true);
-	}
+        freeform->attach_item(tmp);
+        tmp->set_visible(true);
+    }
 
-	BoxMenuHighlighter* highlighter = new BoxMenuHighlighter(&menu);
-	highlighter->init(coord_def(0,0), coord_def(0,0), "highlighter");
-	menu.attach_object(highlighter);
+    BoxMenuHighlighter* highlighter = new BoxMenuHighlighter(&menu);
+    highlighter->init(coord_def(0,0), coord_def(0,0), "highlighter");
+    menu.attach_object(highlighter);
 
 #ifdef USE_TILE_LOCAL
-	tiles.get_crt()->attach_menu(&menu);
+    tiles.get_crt()->attach_menu(&menu);
 #endif
 
-	freeform->set_visible(true);
-	highlighter->set_visible(true);
+    freeform->set_visible(true);
+    highlighter->set_visible(true);
 
-	textcolour(CYAN);
-	cprintf("\nSelect the desired difficulty.  ");
+    textcolour(CYAN);
+    cprintf("\nSelect the desired difficulty.  ");
 
-	ng_choice.difficulty = DIFFICULTY_ASK;
-	while (ng_choice.difficulty == DIFFICULTY_ASK)
+    ng_choice.difficulty = DIFFICULTY_ASK;
+    while (ng_choice.difficulty == DIFFICULTY_ASK)
     {
         menu.draw_menu();
 
@@ -1912,19 +1912,19 @@ static bool _choose_difficulty(newgame_def& ng, newgame_def& ng_choice,
             return false;
 
         // We have a significant key input!
-		// Construct selection vector
+        // Construct selection vector
         vector<MenuItem*> selection = menu.get_selected_items();
-		// There should only be one selection, otherwise something broke
-		if (selection.size() != 1)
-		{
-			// poll a new key
-			continue;
-		}
+        // There should only be one selection, otherwise something broke
+        if (selection.size() != 1)
+        {
+            // poll a new key
+            continue;
+        }
 
-		// Get the stored id from the selection
-		int selection_ID = selection.at(0)->get_id();
-		ng_choice.difficulty = static_cast<game_difficulty_level> (selection_ID);
-	}
+        // Get the stored id from the selection
+        int selection_ID = selection.at(0)->get_id();
+        ng_choice.difficulty = static_cast<game_difficulty_level> (selection_ID);
+    }
 
     return true;
 }

@@ -469,15 +469,15 @@ void bazaar_postlevel_shops()
     {
         tries--;
         coord_def c = locations[random2(locations.size())];
-        if(grd(c) == DNGN_FLOOR) //need this in case another shop was already placed here
+        if (grd(c) == DNGN_FLOOR) //need this in case another shop was already placed here
         {
-			shop_type type = static_cast<shop_type>(random2(NUM_SHOPS));
+            shop_type type = static_cast<shop_type>(random2(NUM_SHOPS));
             while(type == SHOP_FOOD)
             {
                  type = static_cast<shop_type>(random2(NUM_SHOPS));
             }
             place_spec_shop(c, type);
-			added_shop_count--;
+            added_shop_count--;
             map_cell& cell = env.map_knowledge(c);
             cell.clear_cloud();
             cell.clear_item();
@@ -500,10 +500,10 @@ void map_stairs_down()
         || grd(*ri) == DNGN_ENTER_SLIME || grd(*ri) == DNGN_ENTER_SHOALS
         || grd(*ri) == DNGN_ENTER_SWAMP || grd(*ri) == DNGN_ENTER_SNAKE
         || grd(*ri) == DNGN_ENTER_SPIDER || grd(*ri) == DNGN_ENTER_ORC
-		|| grd(*ri) == DNGN_ENTER_ZOT || grd(*ri) == DNGN_ENTER_HELL
-		|| grd(*ri) == DNGN_EXIT_DUNGEON || grd(*ri) == DNGN_ENTER_DIS
+        || grd(*ri) == DNGN_ENTER_ZOT || grd(*ri) == DNGN_ENTER_HELL
+        || grd(*ri) == DNGN_EXIT_DUNGEON || grd(*ri) == DNGN_ENTER_DIS
         || grd(*ri) == DNGN_ENTER_GEHENNA || grd(*ri) == DNGN_ENTER_COCYTUS
-	    || grd(*ri) == DNGN_ENTER_TARTARUS || grd(*ri) == DNGN_ENTER_ELF)
+        || grd(*ri) == DNGN_ENTER_TARTARUS || grd(*ri) == DNGN_ENTER_ELF)
         {
             env.map_knowledge(*ri).set_feature(grd(*ri));
             set_terrain_mapped(*ri);
@@ -541,7 +541,7 @@ void zap_close_monsters()
                         monj->flags |= MF_HARD_RESET;
                         monster_die(monj, KILL_DISMISSED, NON_MONSTER, true, true);
                     }
-				}
+                }
 
             // Do a silent, wizard-mode monster_die() just to be extra sure the
             // player sees nothing.
@@ -1298,10 +1298,10 @@ void dgn_reset_level(bool enable_random_maps)
         // No random monsters in tutorial or ecu temple
         env.spawn_random_rate = 0;
     }
-	else if (player_on_orb_run() && !player_in_branch(BRANCH_ABYSS))
-	{
-		env.spawn_random_rate = 420; // make the orbrun great again
-	}
+    else if (player_on_orb_run() && !player_in_branch(BRANCH_ABYSS))
+    {
+        env.spawn_random_rate = 420; // make the orbrun great again
+    }
     else if (player_in_connected_branch())
         env.spawn_random_rate = 0; //ood spawning is actually not a good mechanic
     else if (player_in_branch(BRANCH_ABYSS))
@@ -1359,7 +1359,7 @@ static int _num_mons_wanted()
 
     if (player_in_branch(BRANCH_VESTIBULE))
     {
-		mon_wanted = roll_dice(3, 7);
+        mon_wanted = roll_dice(3, 7);
     }
 
     if (player_in_hell())
@@ -2322,7 +2322,7 @@ static void _ruin_level(Iterator iter,
 static void _post_vault_build()
 {
     if (player_in_branch(BRANCH_DUNGEON)
-		&& you.depth >= 10 && one_chance_in(4) )
+        && you.depth >= 10 && one_chance_in(4) )
     {
         int depth = you.depth - 6;
         _ruin_level(rectangle_iterator(1), MMT_VAULT,
@@ -2626,10 +2626,10 @@ static bool _pan_level()
 
 static bool _bazaar_level()
 {
-	const map_def *vault = nullptr;
+    const map_def *vault = nullptr;
     vault = random_map_for_tag("bazaar", false, false, MB_FALSE);
     ASSERT(vault);
-	_dgn_ensure_vault_placed(_build_primary_vault(vault), false);
+    _dgn_ensure_vault_placed(_build_primary_vault(vault), false);
     return vault->orient != MAP_ENCOMPASS;
 }
 
@@ -5515,7 +5515,7 @@ static bool _valid_item_for_shop(int item_index, shop_type shop_type_,
 
     // Don't generate gold in shops! This used to be possible with
     // general stores (GDL)
-	//don't generate food either, since it's removed forever
+    // don't generate food either, since it's removed forever
     if (item.base_type == OBJ_GOLD || item.base_type == OBJ_FOOD)
         return false;
 
@@ -5651,12 +5651,12 @@ void place_spec_shop(const coord_def& where, shop_spec &spec, int shop_level)
     shop.type = spec.sh_type;
     if (shop.type == SHOP_RANDOM)
     {
-		do
-		{
-			shop.type = static_cast<shop_type>(random2(NUM_SHOPS));
-		}
-		while(shop_type_removed(shop.type));
-	}
+        do
+        {
+            shop.type = static_cast<shop_type>(random2(NUM_SHOPS));
+        }
+        while (shop_type_removed(shop.type));
+    }
     shop.greed = _shop_greed(shop.type, level_number, spec.greed);
     shop.pos = where;
 
@@ -5702,8 +5702,8 @@ object_class_type item_in_shop(shop_type shop_type)
         return OBJ_BOOKS;
 
 #if TAG_MAJOR_VERSION == 34
-	//food shops shouldn't generate, but make extra sure to not generate food just in case
-	case SHOP_FOOD:
+    // food shops shouldn't generate, but make extra sure to not generate food just in case
+    case SHOP_FOOD:
         return OBJ_RANDOM;
 #endif
 

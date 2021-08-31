@@ -70,7 +70,7 @@ struct armour_def
 #define DRAGON_ARMOUR(id, name, ac, evp, prc, res)                          \
     { ARM_ ## id ## _DRAGON_HIDE, "removed " name " dragon hide", 0, 0, 0,  \
       EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, res, 0 },             \
-	{ ARM_ ## id ## _DRAGON_ARMOUR, name " dragon scales",  ac, evp, prc,   \
+    { ARM_ ## id ## _DRAGON_ARMOUR, name " dragon scales",  ac, evp, prc,   \
       EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, res, 25 }
 #else
 #define DRAGON_ARMOUR(id, name, ac, evp, prc, res)
@@ -719,12 +719,12 @@ void init_properties()
 const set<pair<object_class_type, int> > removed_items =
 {
 #if TAG_MAJOR_VERSION == 34
-	{ OBJ_JEWELLERY, AMU_THE_GOURMAND },
+    { OBJ_JEWELLERY, AMU_THE_GOURMAND },
     { OBJ_JEWELLERY, AMU_CONTROLLED_FLIGHT },
     { OBJ_JEWELLERY, AMU_CONSERVATION },
-	{ OBJ_JEWELLERY, AMU_DISMISSAL },
-	{ OBJ_JEWELLERY, AMU_HARM },
-	{ OBJ_JEWELLERY, AMU_INACCURACY },
+    { OBJ_JEWELLERY, AMU_DISMISSAL },
+    { OBJ_JEWELLERY, AMU_HARM },
+    { OBJ_JEWELLERY, AMU_INACCURACY },
     { OBJ_JEWELLERY, AMU_RAGE },
     { OBJ_JEWELLERY, AMU_MANA_REGENERATION },
     { OBJ_JEWELLERY, RING_REGENERATION },
@@ -738,32 +738,32 @@ const set<pair<object_class_type, int> > removed_items =
     { OBJ_JEWELLERY, RING_FLIGHT },
     { OBJ_JEWELLERY, RING_MAGICAL_POWER },
     { OBJ_JEWELLERY, RING_SEE_INVISIBLE },
-	{ OBJ_STAVES, 	 STAFF_POISON },
+    { OBJ_STAVES,    STAFF_POISON },
     { OBJ_STAVES,    STAFF_ENCHANTMENT },
     { OBJ_STAVES,    STAFF_CHANNELING },
-	{ OBJ_STAVES, 	 STAFF_ENERGY },
-    { OBJ_STAVES, 	 STAFF_CONJURATION },
-    { OBJ_STAVES, 	 STAFF_POWER },
+    { OBJ_STAVES,    STAFF_ENERGY },
+    { OBJ_STAVES,    STAFF_CONJURATION },
+    { OBJ_STAVES,    STAFF_POWER },
     { OBJ_POTIONS,   POT_GAIN_STRENGTH },
     { OBJ_POTIONS,   POT_GAIN_DEXTERITY },
     { OBJ_POTIONS,   POT_GAIN_INTELLIGENCE },
     { OBJ_POTIONS,   POT_WATER },
     { OBJ_POTIONS,   POT_STRONG_POISON },
-	{ OBJ_POTIONS,	 POT_BLOOD},
+    { OBJ_POTIONS,   POT_BLOOD},
     { OBJ_POTIONS,   POT_BLOOD_COAGULATED },
     { OBJ_POTIONS,   POT_PORRIDGE },
     { OBJ_POTIONS,   POT_SLOWING },
     { OBJ_POTIONS,   POT_DECAY },
     { OBJ_POTIONS,   POT_POISON },
     { OBJ_POTIONS,   POT_RESTORE_ABILITIES },
-	{ OBJ_POTIONS, 	 POT_EXPERIENCE },
-	{ OBJ_POTIONS, 	 POT_DEGENERATION },
+    { OBJ_POTIONS,   POT_EXPERIENCE },
+    { OBJ_POTIONS,   POT_DEGENERATION },
     { OBJ_POTIONS,   POT_CURE_MUTATION },
     { OBJ_POTIONS,   POT_BENEFICIAL_MUTATION },
     { OBJ_POTIONS,   POT_AGILITY },
     { OBJ_POTIONS,   POT_BRILLIANCE },
     { OBJ_POTIONS,   POT_CURING },
-	{ OBJ_BOOKS, 	 BOOK_YOUNG_POISONERS },
+    { OBJ_BOOKS,     BOOK_YOUNG_POISONERS },
     { OBJ_BOOKS,     BOOK_WIZARDRY },
     { OBJ_BOOKS,     BOOK_CONTROL },
     { OBJ_BOOKS,     BOOK_BUGGY_DESTRUCTION },
@@ -786,19 +786,19 @@ const set<pair<object_class_type, int> > removed_items =
     { OBJ_WANDS,     WAND_FIRE_REMOVED },
     { OBJ_WANDS,     WAND_COLD_REMOVED },
     { OBJ_WANDS,     WAND_INVISIBILITY_REMOVED },
-	{ OBJ_WANDS, 	 WAND_HASTING},
-	{ OBJ_WANDS,     WAND_TELEPORTATION },
+    { OBJ_WANDS,     WAND_HASTING},
+    { OBJ_WANDS,     WAND_TELEPORTATION },
     { OBJ_WANDS,     WAND_HEAL_WOUNDS_REMOVED },
     { OBJ_WANDS,     WAND_RANDOM_EFFECTS },
     { OBJ_WANDS,     WAND_SLOWING },
     { OBJ_SCROLLS,   SCR_CURSE_WEAPON },
     { OBJ_SCROLLS,   SCR_CURSE_ARMOUR },
     { OBJ_SCROLLS,   SCR_CURSE_JEWELLERY },
-	{ OBJ_SCROLLS,   SCR_IDENTIFY },
-	{ OBJ_SCROLLS,   SCR_REMOVE_CURSE },
-	{ OBJ_SCROLLS,   SCR_RANDOM_USELESSNESS },
+    { OBJ_SCROLLS,   SCR_IDENTIFY },
+    { OBJ_SCROLLS,   SCR_REMOVE_CURSE },
+    { OBJ_SCROLLS,   SCR_RANDOM_USELESSNESS },
     { OBJ_SCROLLS,   SCR_RECHARGING },
-	{ OBJ_MISSILES,   MI_NEEDLE },
+    { OBJ_MISSILES,   MI_NEEDLE },
 #endif
     // Outside the #if because we probably won't remove these.
     { OBJ_RUNES,     RUNE_ELF },
@@ -1413,7 +1413,7 @@ static map<armour_type, monster_type> hide_to_mons = _make_hide_monster_map();
  * @param arm   The type of armour in question.
  * @return      The corresponding monster type; e.g. MONS_FIRE_DRAGON for
  *              ARM_FIRE_DRAGON_ARMOUR,
- *				MONS_TROLL for ARM_TROLL_LEATHER_ARMOUR...
+ *              MONS_TROLL for ARM_TROLL_LEATHER_ARMOUR...
  */
 monster_type monster_for_hide(armour_type arm)
 {
@@ -1638,7 +1638,7 @@ bool is_offensive_wand(const item_def& item)
     // Monsters don't use those, so no need to warn the player about them.
     case WAND_ENSLAVEMENT:
     case WAND_DIGGING:
-		return false;
+        return false;
 
     case WAND_FLAME:
     case WAND_PARALYSIS:
@@ -2866,10 +2866,10 @@ bool is_shield_incompatible(const item_def &weapon, const item_def *shield)
 
 bool shield_reflects(const item_def &shield)
 {
-    if(shield.base_type == OBJ_STAVES)
+    if (shield.base_type == OBJ_STAVES)
         return false;
 
-	ASSERT(is_shield(shield));
+    ASSERT(is_shield(shield));
 
     return get_armour_ego_type(shield) == SPARM_REFLECTION;
 }
@@ -2979,7 +2979,7 @@ static const map<int, const char*> debt_map = {
     { MISC_LAMP_OF_FIRE,        "lamp_debt" },
     { MISC_PHIAL_OF_FLOODS,     "phial_debt" },
     { MISC_HORN_OF_GERYON,      "horn_debt" },
-	{ MISC_CRYSTAL_BALL_OF_ENERGY, "ball_debt"},
+    { MISC_CRYSTAL_BALL_OF_ENERGY, "ball_debt"},
 };
 
 /**

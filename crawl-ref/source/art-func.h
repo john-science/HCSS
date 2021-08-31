@@ -684,13 +684,13 @@ static void _WYRMBANE_melee_effects(item_def* weapon, actor* attacker,
 
     if (!mondied)
     {
-		int bonus_damage = 1 + random2(3*dam/2);
-		std::string d = std::to_string(bonus_damage);
+        int bonus_damage = 1 + random2(3*dam/2);
+        std::string d = std::to_string(bonus_damage);
 
         mprf("%s %s (%s)!",
             defender->name(DESC_THE).c_str(),
             defender->conj_verb("convulse").c_str(),
-			d.c_str());
+            d.c_str());
 
         defender->hurt(attacker, bonus_damage);
 
@@ -740,12 +740,12 @@ static void _UNDEADHUNTER_melee_effects(item_def* item, actor* attacker,
     if (defender->holiness() & MH_UNDEAD && !one_chance_in(3)
         && !mondied && dam)
     {
-		int bonus_damage = random2avg((1 + (dam * 3)), 3);
-		std::string d = std::to_string(bonus_damage);
+        int bonus_damage = random2avg((1 + (dam * 3)), 3);
+        std::string d = std::to_string(bonus_damage);
         mprf("%s %s blasted by disruptive energy (%s)!",
               defender->name(DESC_THE).c_str(),
               defender->conj_verb("be").c_str(),
-			  d.c_str());
+              d.c_str());
         defender->hurt(attacker, bonus_damage);
     }
 }
@@ -956,7 +956,7 @@ static void _ELEMENTAL_STAFF_melee_effects(item_def*, actor* attacker,
     }
 
     const int bonus_dam = _calc_elemental_staff_damage(flavour, defender);
-	std::string d = std::to_string(bonus_dam);
+    std::string d = std::to_string(bonus_dam);
 
     if (bonus_dam <= 0)
         return;
@@ -966,7 +966,7 @@ static void _ELEMENTAL_STAFF_melee_effects(item_def*, actor* attacker,
          attacker->conj_verb(verb).c_str(),
          (attacker == defender ? defender->pronoun(PRONOUN_REFLEXIVE)
                                : defender->name(DESC_THE)).c_str(),
-		 d.c_str());
+         d.c_str());
 
     defender->hurt(attacker, bonus_dam, flavour);
 
@@ -1232,12 +1232,12 @@ static void _CAPTAIN_melee_effects(item_def* weapon, actor* attacker,
         item_def *wpn = defender->as_monster()->disarm();
         if (wpn)
         {
-			int bonus_damage = 18 + random2(18);
-			std::string d = std::to_string(bonus_damage);
+            int bonus_damage = 18 + random2(18);
+            std::string d = std::to_string(bonus_damage);
 
             mprf("The captain's cutlass flashes! You lacerate %s (%s)!!",
                 defender->name(DESC_THE).c_str(),
-				d.c_str());
+                d.c_str());
             mprf("%s %s falls to the floor!",
                 apostrophise(defender->name(DESC_THE)).c_str(),
                 wpn->name(DESC_PLAIN).c_str());
@@ -1295,7 +1295,7 @@ static void _VINES_unequip(item_def *item, bool *show_msgs)
 
 static void _KRYIAS_equip(item_def *item, bool *show_msgs, bool unmeld)
 {
-	_equip_mpr(show_msgs, "Your attunement to healing devices increases!");
+    _equip_mpr(show_msgs, "Your attunement to healing devices increases!");
 }
 
 static void _KRYIAS_unequip(item_def *item, bool *show_msgs)

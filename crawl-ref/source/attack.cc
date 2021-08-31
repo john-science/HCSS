@@ -218,8 +218,8 @@ int attack::calc_to_hit(bool random)
         // hit roll
         mhit = maybe_random2(mhit, random);
 
-		//inaccuracy from sac eye
-		mhit -= 5 * attacker->inaccuracy();
+        // inaccuracy from sac eye
+        mhit -= 5 * attacker->inaccuracy();
     }
     else    // Monster to-hit.
     {
@@ -460,23 +460,23 @@ bool attack::distortion_affects_defender()
                                                        25,  NONE);
 
     if (simu && !(choice == SMALL_DMG || choice == BIG_DMG))
-	{
+    {
         return false;
-	}
+    }
 
     switch (choice)
     {
     case SMALL_DMG:
-		special_damage += 1 + random2avg(7, 2);
+        special_damage += 1 + random2avg(7, 2);
         special_damage_message = make_stringf("Space bends around %s (%d).",
                                               defender_name(false).c_str(),
-											  special_damage);
+                                              special_damage);
         break;
     case BIG_DMG:
-		special_damage += 3 + random2avg(24, 2);
+        special_damage += 3 + random2avg(24, 2);
         special_damage_message = make_stringf("Space warps horribly around %s (%d)!",
                                               defender_name(false).c_str(),
-											  special_damage);
+                                              special_damage);
         break;
     case BLINK:
         if (defender_visible)
@@ -530,14 +530,14 @@ void attack::pain_affects_defender()
     {
         special_damage += resist_adjust_damage(defender, BEAM_NEG,
                               random2(1 + user->skill_rdiv(SK_NECROMANCY)));
-		std::string d = std::to_string(special_damage);
+        std::string d = std::to_string(special_damage);
         if (special_damage && defender_visible)
         {
             special_damage_message =
                 make_stringf("%s %s in agony",
                              defender->name(DESC_THE).c_str(),
                              defender->conj_verb("writhe").c_str());
-			special_damage_message = special_damage_message + " (" + d + ").";
+            special_damage_message = special_damage_message + " (" + d + ").";
         }
     }
 }
@@ -961,14 +961,14 @@ void attack::drain_defender()
 
     special_damage = resist_adjust_damage(defender, BEAM_NEG,
                                           (3 + random2(3) + random2(damage_done)) / 2);
-	std::string d = std::to_string(special_damage);
+    std::string d = std::to_string(special_damage);
     if (defender->drain_exp(attacker, true, 20 + min(35, damage_done)))
     {
         if (defender->is_player())
-		{
-			mpr("You feel drained (" + d +").");
+        {
+            mpr("You feel drained (" + d +").");
             obvious_effect = true;
-		}
+        }
         else if (defender_visible)
         {
             special_damage_message =
@@ -977,7 +977,7 @@ void attack::drain_defender()
                     atk_name(DESC_THE).c_str(),
                     attacker->conj_verb("drain").c_str(),
                     defender_name(true).c_str());
-			special_damage_message = special_damage_message + " (" + d + ")!";
+            special_damage_message = special_damage_message + " (" + d + ")!";
         }
     }
 }
@@ -1047,7 +1047,7 @@ string attack::debug_damage_number()
  */
 string attack::attack_strength_punctuation(int dmg)
 {
-	std::string d = std::to_string(dmg);
+    std::string d = std::to_string(dmg);
     if (dmg < HIT_WEAK)
         return " (" + d + ").";
     else if (dmg < HIT_MED)

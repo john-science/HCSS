@@ -125,7 +125,7 @@ static string _booktype_header(mon_spell_slot_flag type, size_t num_books,
         _ability_type_vulnerabilities(type, has_silencable);
     const string spell_filter_desc = has_filtered ? _describe_spell_filtering(type, pronoun)
                                                   : "";
-	const string ranges = " (spell ranges are listed in parentheses)";
+    const string ranges = " (spell ranges are listed in parentheses)";
 
     if (type == MON_SPELL_WIZARD)
     {

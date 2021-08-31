@@ -105,7 +105,7 @@ static const vector<god_passive> god_passives[] =
         },
         { -1, passive_t::restore_hp_mp_vs_evil,
               "gain health and magic from killing evil beings" },
-		{ -1, passive_t::no_stabbing,
+        { -1, passive_t::no_stabbing,
               "are prevented from stabbing unaware creatures" },
         {  0, passive_t::halo, "are surrounded by divine halo" },
     },
@@ -146,7 +146,7 @@ static const vector<god_passive> god_passives[] =
     // Sif Muna
     {
         {  2, passive_t::miscast_protection, "GOD protects you from miscasts" },
-		{  3, passive_t::magic_skill_boost, "GOD improves your magical skills" },
+        {  3, passive_t::magic_skill_boost, "GOD improves your magical skills" },
     },
 
     // Trog

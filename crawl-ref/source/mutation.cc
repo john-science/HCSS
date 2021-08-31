@@ -871,7 +871,7 @@ static mutation_type _get_mut_with_use(mutflag mt)
 
 static mutation_type _get_kobold_enhancer_mutation()
 {
-	mutation_type mutat = random_choose_weighted(
+    mutation_type mutat = random_choose_weighted(
                                     2, MUT_HEX_ENHANCER,
                                     2, MUT_CHARMS_ENHANCER,
                                     2, MUT_SUMMON_ENHANCER,
@@ -909,7 +909,7 @@ static mutation_type _delete_random_slime_mutation()
 
 static mutation_type _delete_random_kobold_mutation()
 {
-	mutation_type mutat;
+    mutation_type mutat;
 
     while (true)
     {
@@ -1482,7 +1482,7 @@ bool mutate(mutation_type which_mutation, const string &reason, bool failMsg,
         case MUT_LARGE_BONE_PLATES:
             {
                 const char *arms;
-				if (you.species == SP_OCTOPODE)
+                if (you.species == SP_OCTOPODE)
                     arms = "tentacles";
                 else
                     break;
@@ -1496,7 +1496,7 @@ bool mutate(mutation_type which_mutation, const string &reason, bool failMsg,
         case MUT_MISSING_HAND:
             {
                 const char *hands;
-				if (you.species == SP_OCTOPODE)
+                if (you.species == SP_OCTOPODE)
                     hands = "tentacles";
                 else
                     break;
@@ -1589,7 +1589,7 @@ bool mutate(mutation_type which_mutation, const string &reason, bool failMsg,
             {
                 remove_one_equip(EQ_CLOAK, false, true);
             }
-			break;
+            break;
 
         case MUT_ACUTE_VISION:
             // We might have to turn autopickup back on again.
@@ -1597,7 +1597,7 @@ bool mutate(mutation_type which_mutation, const string &reason, bool failMsg,
             break;
 
         case MUT_NIGHTSTALKER:
-		case MUT_DAYWALKER:
+        case MUT_DAYWALKER:
             update_vision_range();
             break;
 
@@ -1856,7 +1856,7 @@ bool delete_mutation(mutation_type which_mutation, const string &reason,
     }
     else if (which_mutation == RANDOM_KOBOLD_MUTATION)
     {
-		mutat = _delete_random_kobold_mutation();
+        mutat = _delete_random_kobold_mutation();
 
         if(mutat == NUM_MUTATIONS)
             return false;
@@ -2179,7 +2179,7 @@ static const facet_def _demon_facets[] =
       { -33, -33, -33 } },
     { 0, { MUT_TALONS, MUT_TALONS, MUT_TALONS },
       { -33, -33, -33 } },
-	{ 0, { MUT_PREHENSILE_TENTACLE, MUT_PREHENSILE_TENTACLE, MUT_PREHENSILE_TENTACLE },
+    { 0, { MUT_PREHENSILE_TENTACLE, MUT_PREHENSILE_TENTACLE, MUT_PREHENSILE_TENTACLE },
       { -33, -33, -33 } },
     // Scale mutations
     { 1, { MUT_DISTORTION_FIELD, MUT_DISTORTION_FIELD, MUT_DISTORTION_FIELD },

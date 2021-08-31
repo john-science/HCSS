@@ -94,7 +94,7 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_GHOST_ROBIN,
+    {  MST_GHOST_ROBIN,
       {
         { SPELL_VAMPIRIC_DRAINING, 24, MON_SPELL_NATURAL },
       }
@@ -245,12 +245,12 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_ANTIMATTER_ELF,
+    {  MST_ANTIMATTER_ELF,
       {
        { SPELL_DIMENSION_ANCHOR, 24, MON_SPELL_WIZARD },
-	   { SPELL_SLOW, 24, MON_SPELL_WIZARD },
-	   { SPELL_HASTE, 12, MON_SPELL_WIZARD },
-	   { SPELL_PLANEREND, 24, MON_SPELL_WIZARD },
+       { SPELL_SLOW, 24, MON_SPELL_WIZARD },
+       { SPELL_HASTE, 12, MON_SPELL_WIZARD },
+       { SPELL_PLANEREND, 24, MON_SPELL_WIZARD },
       }
     },
 
@@ -624,8 +624,8 @@ static const mon_spellbook mspell_list[] =
     {  MST_ORB_SPIDER,
       {
        { SPELL_ORB_OF_ELECTRICITY, 50, MON_SPELL_MAGICAL },
-	   { SPELL_BLINK, 19, MON_SPELL_MAGICAL },
-	   { SPELL_LIGHTNING_BOLT, 19, MON_SPELL_MAGICAL },
+       { SPELL_BLINK, 19, MON_SPELL_MAGICAL },
+       { SPELL_LIGHTNING_BOLT, 19, MON_SPELL_MAGICAL },
       }
     },
 
@@ -654,7 +654,7 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_PLUTONIUM_CRAB,
+    {  MST_PLUTONIUM_CRAB,
       {
        { SPELL_RADIATION_BREATH, 62, MON_SPELL_NATURAL },
       }
@@ -674,10 +674,10 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_DEV_FAVORITE,
+    {  MST_DEV_FAVORITE,
       {
        { SPELL_BLINK_OTHER_CLOSE, 19, MON_SPELL_WIZARD },
-	   { SPELL_FLASH_FREEZE, 19, MON_SPELL_WIZARD },
+       { SPELL_FLASH_FREEZE, 19, MON_SPELL_WIZARD },
       }
     },
 
@@ -798,12 +798,12 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_GIANT_GIANT,
+    {  MST_GIANT_GIANT,
       {
        { SPELL_IRON_SHOT, 17, MON_SPELL_WIZARD },
        { SPELL_BOLT_OF_COLD, 17, MON_SPELL_WIZARD },
-	   { SPELL_LIGHTNING_BOLT, 17, MON_SPELL_WIZARD },
-	   { SPELL_BOLT_OF_FIRE, 17, MON_SPELL_WIZARD },
+       { SPELL_LIGHTNING_BOLT, 17, MON_SPELL_WIZARD },
+       { SPELL_BOLT_OF_FIRE, 17, MON_SPELL_WIZARD },
       }
     },
 
@@ -881,11 +881,11 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_THE_GIAGGOSTUONO,
+    {  MST_THE_GIAGGOSTUONO,
       {
        { SPELL_FLAMING_CLOUD, 31, MON_SPELL_NATURAL | MON_SPELL_BREATH
                                  | MON_SPELL_NOISY },
-	   { SPELL_ISKENDERUNS_MYSTIC_BLAST, 31, MON_SPELL_NATURAL },
+       { SPELL_ISKENDERUNS_MYSTIC_BLAST, 31, MON_SPELL_NATURAL },
       }
     },
 
@@ -1281,7 +1281,7 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_SUBTRACTOR_SNAKE,
+    {  MST_SUBTRACTOR_SNAKE,
       {
        { SPELL_POISON_ARROW, 39, MON_SPELL_WIZARD },
        { SPELL_BLINK_ALLIES_ENCIRCLE, 39, MON_SPELL_WIZARD },
@@ -1339,7 +1339,7 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_SILENT_SPECTRE,
+    {  MST_SILENT_SPECTRE,
       {
        { SPELL_SILENCE, 80, MON_SPELL_WIZARD },
       }
@@ -1597,12 +1597,12 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_ZOTBOT,
+    {  MST_ZOTBOT,
       {
        { SPELL_CALL_DOWN_DAMNATION, 17, MON_SPELL_MAGICAL },
-	   { SPELL_AIRSTRIKE, 17, MON_SPELL_MAGICAL },
-	   { SPELL_QUICKSILVER_BOLT, 17, MON_SPELL_MAGICAL },
-	   { SPELL_FORCE_LANCE, 17, MON_SPELL_MAGICAL },
+       { SPELL_AIRSTRIKE, 17, MON_SPELL_MAGICAL },
+       { SPELL_QUICKSILVER_BOLT, 17, MON_SPELL_MAGICAL },
+       { SPELL_FORCE_LANCE, 17, MON_SPELL_MAGICAL },
       }
     },
 
@@ -1882,10 +1882,10 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-	{  MST_MUTATATOTOT,
+    {  MST_MUTATATOTOT,
       {
        { SPELL_CORRUPTING_PULSE, 40, MON_SPELL_MAGICAL },
-	   { SPELL_CORROSIVE_BOLT, 29, MON_SPELL_MAGICAL },
+       { SPELL_CORROSIVE_BOLT, 29, MON_SPELL_MAGICAL },
       }
     },
 

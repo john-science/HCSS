@@ -148,9 +148,8 @@ bool melee_attack::handle_phase_attempted()
     if (attacker->is_player())
     {
         // Set delay now that we know the attack won't be cancelled.
-        if (!is_riposte
-           && (wu_jian_attack == WU_JIAN_ATTACK_NONE))
-		{
+        if (!is_riposte && (wu_jian_attack == WU_JIAN_ATTACK_NONE))
+        {
             you.time_taken = you.attack_delay().roll();
         }
         if (weapon)
@@ -361,21 +360,21 @@ bool melee_attack::handle_phase_hit()
         return false;
     }
 
-	if (attacker->is_player() && you.attribute[ATTR_SPECTRAL_WEAPON]
+    if (attacker->is_player() && you.attribute[ATTR_SPECTRAL_WEAPON]
         && !(you.duration[DUR_SPECTRAL_WEAPON_COOLDOWN] > 0) && !mons_is_firewood(*defender->as_monster()))
     {
         summon_spectral_weapon(&you, calc_spell_power(SPELL_SPECTRAL_WEAPON,true),you.religion);
-	}
+    }
 
     if (attacker->is_player() && you.duration[DUR_MIASMATA])
     {
-		//scale the chance to do anything with necro skill
+        // scale the chance to do anything with necro skill
         if(x_chance_in_y(10 + you.skill_rdiv(SK_NECROMANCY, 2, 3), 50))
         {
             mprf("You engulf %s in miasma!",
                 you.can_see(*defender)? defender->name(DESC_THE).c_str() : "something");
             place_cloud(CLOUD_MIASMA, defender->pos(), 5 + random2(6), &you);
-		}
+        }
     }
 
     if (attacker->is_player() && you.attribute[ATTR_INFESTATION])
@@ -854,7 +853,7 @@ bool melee_attack::attack()
         && weapon
         && you.attribute[ATTR_EXCRUCIATING_WOUNDS] > 0)
     {
-		if(x_chance_in_y(1, 10 + div_rand_round(calc_spell_power(SPELL_EXCRUCIATING_WOUNDS, true),2)))
+        if(x_chance_in_y(1, 10 + div_rand_round(calc_spell_power(SPELL_EXCRUCIATING_WOUNDS, true),2)))
         {
             string msg = "@Your_weapon@ shrieks terribly!";
             item_noise(*weapon, msg, 15);
@@ -1167,7 +1166,7 @@ void melee_attack::player_aux_setup(unarmed_attack_type atk)
     aux_attack = aux->get_name();
     aux_verb = aux->get_verb();
 
-	if (wu_jian_attack != WU_JIAN_ATTACK_NONE)
+    if (wu_jian_attack != WU_JIAN_ATTACK_NONE)
         wu_jian_attack = WU_JIAN_ATTACK_TRIGGERED_AUX;
 }
 
@@ -1798,7 +1797,7 @@ void melee_attack::handle_noise(const coord_def & pos)
 
     if(attacker->is_player() && you.attribute[ATTR_SONG_OF_SLAYING])
     {
-		loudness += random2(5) + 1;
+        loudness += random2(5) + 1;
     }
 
     // Cap melee noise at shouting volume unless singing.
@@ -1989,11 +1988,11 @@ void melee_attack::apply_staff_damage()
         return;
 
     if (weapon->base_type != OBJ_STAVES)
-	{
+    {
         return;
-	}
+    }
 
-	std::string d = std::to_string(0);
+    std::string d = std::to_string(0);
 
     switch (weapon->sub_type)
     {
@@ -2002,14 +2001,14 @@ void melee_attack::apply_staff_damage()
             resist_adjust_damage(defender,
                                  BEAM_ELECTRICITY,
                                  staff_damage(SK_AIR_MAGIC));
-		d = std::to_string(special_damage);
+        d = std::to_string(special_damage);
         if (special_damage)
         {
             special_damage_message =
                 make_stringf("%s %s electrocuted (%s)!",
                              defender->name(DESC_THE).c_str(),
                              defender->conj_verb("are").c_str(),
-							 d.c_str());
+                             d.c_str());
             special_damage_flavour = BEAM_ELECTRICITY;
         }
 
@@ -2020,7 +2019,7 @@ void melee_attack::apply_staff_damage()
             resist_adjust_damage(defender,
                                  BEAM_COLD,
                                  staff_damage(SK_ICE_MAGIC));
-		d = std::to_string(special_damage);
+        d = std::to_string(special_damage);
         if (special_damage)
         {
             special_damage_message =
@@ -2029,7 +2028,7 @@ void melee_attack::apply_staff_damage()
                     attacker->name(DESC_THE).c_str(),
                     attacker->is_player() ? "" : "s",
                     defender->name(DESC_THE).c_str(),
-					d.c_str());
+                    d.c_str());
             special_damage_flavour = BEAM_COLD;
         }
         break;
@@ -2037,7 +2036,7 @@ void melee_attack::apply_staff_damage()
     case STAFF_EARTH:
         special_damage = staff_damage(SK_EARTH_MAGIC);
         special_damage = apply_defender_ac(special_damage);
-		d = std::to_string(special_damage);
+        d = std::to_string(special_damage);
         if (special_damage > 0)
         {
             special_damage_message =
@@ -2046,7 +2045,7 @@ void melee_attack::apply_staff_damage()
                     attacker->name(DESC_THE).c_str(),
                     attacker->is_player() ? "" : "es",
                     defender->name(DESC_THE).c_str(),
-					d.c_str());
+                    d.c_str());
         }
         break;
 
@@ -2055,7 +2054,7 @@ void melee_attack::apply_staff_damage()
             resist_adjust_damage(defender,
                                  BEAM_FIRE,
                                  staff_damage(SK_FIRE_MAGIC));
-		d = std::to_string(special_damage);
+        d = std::to_string(special_damage);
         if (special_damage)
         {
             special_damage_message =
@@ -2064,7 +2063,7 @@ void melee_attack::apply_staff_damage()
                     attacker->name(DESC_THE).c_str(),
                     attacker->is_player() ? "" : "s",
                     defender->name(DESC_THE).c_str(),
-					d.c_str());
+                    d.c_str());
             special_damage_flavour = BEAM_FIRE;
 
             if (defender->is_player())
@@ -2077,7 +2076,7 @@ void melee_attack::apply_staff_damage()
             resist_adjust_damage(defender,
                                  BEAM_NEG,
                                  staff_damage(SK_NECROMANCY));
-		d = std::to_string(special_damage);
+        d = std::to_string(special_damage);
         if (special_damage)
         {
             special_damage_message =
@@ -2085,7 +2084,7 @@ void melee_attack::apply_staff_damage()
                     "%s %s in agony (%s)!",
                     defender->name(DESC_THE).c_str(),
                     defender->conj_verb("writhe").c_str(),
-					d.c_str());
+                    d.c_str());
 
             attacker->god_conduct(DID_EVIL, 4);
         }
@@ -2095,7 +2094,7 @@ void melee_attack::apply_staff_damage()
 #if TAG_MAJOR_VERSION == 34
     case STAFF_POWER:
     case STAFF_CONJURATION:
-	case STAFF_POISON:
+    case STAFF_POISON:
     case STAFF_ENCHANTMENT:
     case STAFF_ENERGY:
 #endif
@@ -2634,18 +2633,18 @@ void melee_attack::mons_apply_attack_flavour()
             drain_defender();
         break;
 
-	case AF_CONTAM:
-		if(defender->is_player())
-		{
-			contaminate_player(1000 + random2(1000), false);
-		}
-		else if (one_chance_in(8)) // fall back to af_mutate behavior, but less frequent
+    case AF_CONTAM:
+        if(defender->is_player())
+        {
+            contaminate_player(1000 + random2(1000), false);
+        }
+        else if (one_chance_in(8)) // fall back to af_mutate behavior, but less frequent
         {
             defender->malmutate(you.can_see(*attacker) ?
                 apostrophise(attacker->name(DESC_PLAIN)) + " mutagenic touch" :
                 "mutagenic touch");
         }
-		break;
+        break;
 
     case AF_PARALYSE:
     {
@@ -2839,12 +2838,12 @@ void melee_attack::mons_apply_attack_flavour()
                                               special_damage);
         if (needs_message && special_damage)
         {
-			std::string d = std::to_string(special_damage);
+            std::string d = std::to_string(special_damage);
             mprf("%s %s %s (%s)!",
                     atk_name(DESC_THE).c_str(),
                     attacker->conj_verb("burn").c_str(),
                     defender_name(true).c_str(),
-					d.c_str());
+                    d.c_str());
 
             _print_resist_messages(defender, special_damage, BEAM_FIRE);
         }
@@ -2885,7 +2884,7 @@ void melee_attack::mons_apply_attack_flavour()
         break;
 
     case AF_SHADOWSTAB:
-		attacker->as_monster()->del_ench(ENCH_INVIS, true);
+        attacker->as_monster()->del_ench(ENCH_INVIS, true);
         break;
 
     case AF_DROWN:
@@ -3119,14 +3118,14 @@ void melee_attack::emit_foul_stench()
 
 void melee_attack::do_minotaur_retaliation()
 {
-	// no retaliating while in bad terrain
+    // no retaliating while in bad terrain
     if(grd(defender->pos()) == DNGN_DEEP_WATER || grd(defender->pos()) == DNGN_LAVA)
     {
-		if(!defender->airborne())
+        if(!defender->airborne())
             return;
-	}
+    }
 
-	if (!defender->is_player())
+    if (!defender->is_player())
     {
         // monsters have no STR or DEX
         if (x_chance_in_y(2, 5))

@@ -709,7 +709,7 @@ void init_book_theme_randart(item_def &book, vector<spell_type> spells)
     if(spells[0] == SPELL_NO_SPELL)
     {
         spells[0] = SPELL_BLINK;
-	}
+    }
     ASSERT(spells[0] != SPELL_NO_SPELL);
 
     CrawlHashTable &props = book.props;

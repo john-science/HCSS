@@ -2074,8 +2074,8 @@ bool flavour_triggers_damageless(attack_flavour flavour)
         || flavour == AF_DROWN
         || flavour == AF_CORRODE
         || flavour == AF_HUNGER
-		|| flavour == AF_CLEAVE
-		|| flavour == AF_CONTAM;
+        || flavour == AF_CLEAVE
+        || flavour == AF_CONTAM;
 }
 
 /**
@@ -2481,7 +2481,7 @@ monster_type random_draconian_monster_species()
 
 #if TAG_MAJOR_VERSION == 34
     // Special case to skip mottled draconian
-	while (drac_type == MONS_MOTTLED_DRACONIAN)
+    while (drac_type == MONS_MOTTLED_DRACONIAN)
         drac_type = random_range(MONS_FIRST_BASE_DRACONIAN, MONS_LAST_SPAWNED_DRACONIAN);
 #endif
 
@@ -2495,7 +2495,7 @@ monster_type random_draconian_job()
 
 #if TAG_MAJOR_VERSION == 34
     // Special case to skip draconian zealots
-	while (drac_type == MONS_DRACONIAN_ZEALOT)
+    while (drac_type == MONS_DRACONIAN_ZEALOT)
         drac_type = random_range(MONS_FIRST_NONBASE_DRACONIAN, MONS_LAST_NONBASE_DRACONIAN);
 #endif
 
@@ -3736,7 +3736,7 @@ bool mons_has_incapacitating_ranged_attack(const monster& mon, const actor& foe)
 
     const item_def *missile = mon.missiles();
 
-	if (missile && missile->sub_type == MI_DART_CURARE)
+    if (missile && missile->sub_type == MI_DART_CURARE)
     {
         // Not actually incapacitating, but marked as such so that
         // assassins will prefer using it while ammo remains

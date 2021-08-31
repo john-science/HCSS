@@ -1496,7 +1496,7 @@ bool is_stackable_item(const item_def &item)
         || item.base_type == OBJ_SCROLLS
         || item.base_type == OBJ_POTIONS
         || item.base_type == OBJ_GOLD
-		|| item.base_type == OBJ_WANDS)
+        || item.base_type == OBJ_WANDS)
     {
         return true;
     }
@@ -1505,9 +1505,9 @@ bool is_stackable_item(const item_def &item)
         || item.is_type(OBJ_MISCELLANY, MISC_ZIGGURAT)
         || item.is_type(OBJ_MISCELLANY, MISC_SACK_OF_SPIDERS)
         || item.is_type(OBJ_MISCELLANY, MISC_BOX_OF_BEASTS)
-	    || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION)
-		|| item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE)
-		|| item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING))
+        || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION)
+        || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE)
+        || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING))
     {
         return true;
     }
@@ -1586,22 +1586,22 @@ void merge_item_stacks(const item_def &source, item_def &dest, int quant)
 
     ASSERT_RANGE(quant, 0 + 1, source.quantity + 1);
 
-	if (source.base_type == OBJ_WANDS && dest.base_type == OBJ_WANDS)
+    if (source.base_type == OBJ_WANDS && dest.base_type == OBJ_WANDS)
     {
-		if(source.charges >0)
-		{
-			//it's otherwise treated as empty despite having charges
-			dest.used_count = 0;
-			dest.charges += source.charges;
-		}
+        if(source.charges >0)
+        {
+            // it's otherwise treated as empty despite having charges
+            dest.used_count = 0;
+            dest.charges += source.charges;
+        }
     }
-	if ((source.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION) && dest.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION))
-	    || (source.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE) && dest.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE))
-	    || (source.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING) && dest.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING)))
+    if ((source.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION) && dest.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION))
+        || (source.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE) && dest.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE))
+        || (source.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING) && dest.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING)))
     {
-		merge_decks(source, dest);
-		dest.used_count = -cards_in_deck(dest);
-	}
+        merge_decks(source, dest);
+        dest.used_count = -cards_in_deck(dest);
+    }
     if (is_perishable_stack(source) && is_perishable_stack(dest))
         merge_perishable_stacks(source, dest, quant);
 }
@@ -1960,41 +1960,41 @@ static bool _merge_stackable_item_into_inv(const item_def &it, int quant_got,
             you.inv[inv_slot].inscription = it.inscription;
         }
 
-		int quant = quant_got;
-		if (it.base_type == OBJ_WANDS)
-		{
-			quant = it.charges;
-		}
+        int quant = quant_got;
+        if (it.base_type == OBJ_WANDS)
+        {
+            quant = it.charges;
+        }
 
         merge_item_stacks(it, you.inv[inv_slot], quant_got);
 
-		if (it.base_type != OBJ_WANDS && !is_deck(it))
-		{
-			inc_inv_item_quantity(inv_slot, quant_got);
-		}
-		if(is_deck(it))
-		{
-			you.inv[inv_slot].used_count = -cards_in_deck(you.inv[inv_slot]);
-		}
+        if (it.base_type != OBJ_WANDS && !is_deck(it))
+        {
+            inc_inv_item_quantity(inv_slot, quant_got);
+        }
+        if(is_deck(it))
+        {
+            you.inv[inv_slot].used_count = -cards_in_deck(you.inv[inv_slot]);
+        }
 
-		you.last_pickup[inv_slot] = quant_got;
+        you.last_pickup[inv_slot] = quant_got;
 
         if (!quiet)
         {
-			if(!is_deck(it))
-			{
-				mprf_nocap("%s (gained %d%s)",
+            if(!is_deck(it))
+            {
+                mprf_nocap("%s (gained %d%s)",
+                           get_menu_colour_prefix_tags(you.inv[inv_slot],
+                                                       DESC_INVENTORY).c_str(),
+                           quant,
+                           it.base_type == OBJ_WANDS ? " charges" : "");
+            }
+            else
+            {
+                mprf_nocap("%s",
                         get_menu_colour_prefix_tags(you.inv[inv_slot],
-                                                    DESC_INVENTORY).c_str(),
-                        quant,
-						it.base_type == OBJ_WANDS ? " charges" : "");
-			}
-			else
-			{
-				mprf_nocap("%s",
-				        get_menu_colour_prefix_tags(you.inv[inv_slot],
                                                     DESC_INVENTORY).c_str());
-			}
+            }
         }
 
         return true;
@@ -2089,11 +2089,11 @@ static int _place_item_in_free_slot(item_def &it, int quant_got,
 
     god_id_item(item);
     if (item.base_type == OBJ_WANDS
-	    || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION)
-		|| item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE)
-		|| item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING))
+        || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_DESTRUCTION)
+        || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_ESCAPE)
+        || item.is_type(OBJ_MISCELLANY, MISC_DECK_OF_SUMMONING))
     {
-		item.quantity = 1;
+        item.quantity = 1;
         set_ident_type(item, true);
 
         if (have_passive(passive_t::identify_devices)
@@ -2161,7 +2161,7 @@ static bool _merge_items_into_inv(item_def &it, int quant_got,
         return true;
     }
 
-	// Books are also massless.
+    // Books are also massless.
     if (it.base_type == OBJ_BOOKS)
     {
         if (it.sub_type != BOOK_MANUAL)
@@ -2171,7 +2171,7 @@ static bool _merge_items_into_inv(item_def &it, int quant_got,
         }
         else
         {
-			_get_manual(it, quiet);
+            _get_manual(it, quiet);
             return true;
         }
     }
@@ -2282,8 +2282,8 @@ bool move_item_to_grid(int *const obj, const coord_def& p, bool silent)
                 // of obj, while returning the found item. -- bwr
                 merge_item_stacks(item, *si);
 
-				if (item.base_type != OBJ_WANDS && !is_deck(item))
-					inc_mitm_item_quantity(si->index(), item.quantity);
+                if (item.base_type != OBJ_WANDS && !is_deck(item))
+                    inc_mitm_item_quantity(si->index(), item.quantity);
 
                 destroy_item(ob);
                 ob = si->index();
@@ -2593,9 +2593,9 @@ bool drop_item(int item_dropped, int quant_drop)
 
     ASSERT(item.defined());
 
-	bool deck = false;
-	if(is_deck(item))
-		deck = true;
+    bool deck = false;
+    if(is_deck(item))
+        deck = true;
 
     if (!copy_item_to_grid(item, you.pos(), quant_drop, true, true))
     {
@@ -2620,10 +2620,10 @@ bool drop_item(int item_dropped, int quant_drop)
 
     dec_inv_item_quantity(item_dropped, quant_drop);
 
-	if (deck)
-	{
-		mprf("Nemelex Xobeh reclaims the deck.");
-	}
+    if (deck)
+    {
+        mprf("Nemelex Xobeh reclaims the deck.");
+    }
 
     you.turn_is_over = true;
 
@@ -2821,10 +2821,10 @@ static void _autoinscribe_item(item_def& item)
             item.inscription = old_inscription + ", " + item.inscription;
     }
 
-	if (is_deck(item))
-	{
-		item.inscription += "!d";
-	}
+    if (is_deck(item))
+    {
+        item.inscription += "!d";
+    }
 
 }
 
@@ -3406,7 +3406,7 @@ zap_type item_def::zap() const
     case NUM_WANDS:
 #if TAG_MAJOR_VERSION == 34
     case WAND_HASTING:
-	case WAND_TELEPORTATION:
+    case WAND_TELEPORTATION:
     case WAND_INVISIBILITY_REMOVED:
     case WAND_MAGIC_DARTS_REMOVED:
     case WAND_FIRE_REMOVED:
@@ -4894,8 +4894,7 @@ item_info get_item_info(const item_def& item)
             }
             ii.props[CARD_KEY] = info_cards;
             ii.props[CARD_FLAG_KEY] = info_card_flags;
-
-			ii.used_count = -cards_in_deck(item);
+            ii.used_count = -cards_in_deck(item);
         }
         break;
     case OBJ_GOLD:

@@ -624,11 +624,11 @@ string SkillMenuSwitch::get_help()
                 causes.push_back(apostrophise(god_name(you.religion))
                                  + " heroism");
             }
-			if(have_passive(passive_t::magic_skill_boost))
-			{
-				causes.push_back(apostrophise(god_name(you.religion))
+            if(have_passive(passive_t::magic_skill_boost))
+            {
+                causes.push_back(apostrophise(god_name(you.religion))
                                  + " power");
-			}
+            }
             if (_any_crosstrained())
                 causes.push_back("cross-training");
             result = "Skills enhanced by "
@@ -687,12 +687,12 @@ string SkillMenuSwitch::get_help()
         if (you.species == SP_KOBOLD)
         {
             return "Kobolds gain 0.5 levels in all skills each time they level up. "
-		    "They do not train skills normally. ";
+            "They do not train skills normally. ";
         }
         else if (you.species == SP_GNOLL)
         {
             return "Gnolls gain 0.5 levels in all skills each time they level up "
-		    "and start with a level in all skills. They do not train skills normally. ";
+            "and start with a level in all skills. They do not train skills normally. ";
         }
         else return "How did you get here lol ";
     }

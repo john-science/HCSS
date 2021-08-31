@@ -182,7 +182,7 @@ const char* jewellery_base_ability_string(int subtype)
 #endif
     case AMU_MANA_REGENERATION:   return "RegenMP";
 #if TAG_MAJOR_VERSION == 34
-	case AMU_THE_GOURMAND:		  return "Gourm";
+    case AMU_THE_GOURMAND:        return "Gourm";
     case AMU_CONSERVATION:        return "Cons";
     case AMU_CONTROLLED_FLIGHT:   return "cFly";
 #endif
@@ -437,8 +437,8 @@ static const char* _jewellery_base_ability_description(int subtype)
     case AMU_MANA_REGENERATION:
         return "It increases your magic regeneration.";
 #if TAG_MAJOR_VERSION == 34
-	case AMU_THE_GOURMAND:
-		return "It lets you eat chunks and shit";
+    case AMU_THE_GOURMAND:
+        return "It lets you eat chunks and shit";
     case AMU_CONSERVATION:
         return "It protects your inventory from destruction.";
 #endif
@@ -1714,7 +1714,7 @@ static string _describe_armour(const item_def &item, bool verbose)
     else
     {
         const int max_ench = armour_max_enchant(item);
-		if (item.plus < max_ench || !item_ident(item, ISFLAG_KNOW_PLUSES))
+        if (item.plus < max_ench || !item_ident(item, ISFLAG_KNOW_PLUSES))
         {
             description += "\n\nIt can be maximally enchanted to +"
                            + to_string(max_ench) + ".";
@@ -1847,7 +1847,7 @@ static string _describe_deck(const item_def &item)
                                 MIN_STARTING_CARDS,
                                 MAX_STARTING_CARDS);
 
-	description += "\nNemelex Xobeh will take the deck from you if you drop it.";
+    description += "\nNemelex Xobeh will take the deck from you if you drop it.";
 
     const int num_cards = cards_in_deck(item);
     // The list of known cards, ending at the first one not known to be at the
@@ -3060,8 +3060,8 @@ static string _flavour_effect(attack_flavour flavour, int HD)
         { AF_KITE,              "" },
         { AF_SWOOP,             "" },
         { AF_PLAIN,             "" },
-		{ AF_CLEAVE,            "cleave through adjacent enemies"},
-		{ AF_CONTAM,            "cause magical contamination"},
+        { AF_CLEAVE,            "cleave through adjacent enemies"},
+        { AF_CONTAM,            "cause magical contamination"},
     };
 
     const string* base_desc = map_find(base_descs, flavour);
@@ -3251,12 +3251,12 @@ static void _add_energy_to_string(int speed, int energy, string what,
  */
 static void _describe_monster_hp(const monster_info& mi, ostringstream &result)
 {
-	 result << "Max HP: " << mi.get_max_hp_desc() << "\n";
+     result << "Max HP: " << mi.get_max_hp_desc() << "\n";
 }
 
 static void _describe_monster_hd(const monster_info mi, ostringstream &result)
 {
-	std::string s = std::to_string(mi.hd);
+    std::string s = std::to_string(mi.hd);
     result << "Hit Dice: " + s + "\n";
 }
 
@@ -3269,16 +3269,16 @@ static void _describe_monster_hd(const monster_info mi, ostringstream &result)
 static void _describe_monster_ac(const monster_info& mi, ostringstream &result)
 {
     // print an actual number for monster ac
-	if (mons_class_is_zombified(mi.type) || mons_genus(mi.type) == MONS_DRACONIAN)
-	{
-		std::string s = std::to_string(mi.ac);
-		result << "Base AC: " + s + "\n";
-	}
-	else
-	{
-		std::string s = std::to_string(get_mons_class_ac(mi.type));
-		result << "Base AC: " + s + "\n";
-	}
+    if (mons_class_is_zombified(mi.type) || mons_genus(mi.type) == MONS_DRACONIAN)
+    {
+        std::string s = std::to_string(mi.ac);
+        result << "Base AC: " + s + "\n";
+    }
+    else
+    {
+        std::string s = std::to_string(get_mons_class_ac(mi.type));
+        result << "Base AC: " + s + "\n";
+    }
 }
 
 /**
@@ -3289,16 +3289,16 @@ static void _describe_monster_ac(const monster_info& mi, ostringstream &result)
  */
 static void _describe_monster_ev(const monster_info& mi, ostringstream &result)
 {
-    //print an actual number for monster ev
-	std::string s = std::to_string(mi.base_ev);
-	if (mi.base_ev < 0)
-	{
-	result << "Base EV: 0\n";
-	}
-	else
-	{
-    result << "Base EV: " + s + "\n";
-	}
+    // print an actual number for monster ev
+    std::string s = std::to_string(mi.base_ev);
+    if (mi.base_ev < 0)
+    {
+        result << "Base EV: 0\n";
+    }
+    else
+    {
+        result << "Base EV: " + s + "\n";
+    }
 }
 
 /**
@@ -3314,9 +3314,9 @@ static void _describe_monster_mr(const monster_info& mi, ostringstream &result)
         result << "Base MR: ∞\n";
         return;
     }
-	//print an actual number for magic resistance
-		std::string s = std::to_string(mi.res_magic());
-		result << "Base MR: " + s + "\n";
+    // print an actual number for magic resistance
+    std::string s = std::to_string(mi.res_magic());
+    result << "Base MR: " + s + "\n";
 }
 
 

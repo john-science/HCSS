@@ -86,41 +86,41 @@ void initialise_branch_depths()
     branch_type lair_branch[] =
     {
         BRANCH_SWAMP,
-		BRANCH_SHOALS,
+        BRANCH_SHOALS,
         BRANCH_SNAKE,
-		BRANCH_SPIDER
+        BRANCH_SPIDER
     };
 
-	branch_type enabled_branch = random_choose(BRANCH_SWAMP, BRANCH_SHOALS,
-	BRANCH_SNAKE, BRANCH_SPIDER);
+    branch_type enabled_branch = random_choose(BRANCH_SWAMP, BRANCH_SHOALS,
+    BRANCH_SNAKE, BRANCH_SPIDER);
 
     for (branch_type disabled : lair_branch)
     {
-		if(branches[disabled].shortname != branches[enabled_branch].shortname)
-		{
-        dprf("Disabling branch: %s", branches[disabled].shortname);
-        brentry[disabled].clear();
-		}
+        if (branches[disabled].shortname != branches[enabled_branch].shortname)
+        {
+            dprf("Disabling branch: %s", branches[disabled].shortname);
+            brentry[disabled].clear();
+        }
     }
 
-	 branch_type hell_branch[] =
+    branch_type hell_branch[] =
     {
         BRANCH_DIS,
-		BRANCH_TARTARUS,
+        BRANCH_TARTARUS,
         BRANCH_COCYTUS,
-		BRANCH_GEHENNA
+        BRANCH_GEHENNA
     };
 
-	branch_type enabled_hell = random_choose(BRANCH_DIS, BRANCH_TARTARUS,
-	BRANCH_COCYTUS, BRANCH_GEHENNA);
+    branch_type enabled_hell = random_choose(BRANCH_DIS, BRANCH_TARTARUS,
+    BRANCH_COCYTUS, BRANCH_GEHENNA);
 
-	for (branch_type disabled : hell_branch)
+    for (branch_type disabled : hell_branch)
     {
-		if(branches[disabled].shortname != branches[enabled_hell].shortname)
-		{
-        dprf("Disabling branch: %s", branches[disabled].shortname);
-        brentry[disabled].clear();
-		}
+        if (branches[disabled].shortname != branches[enabled_hell].shortname)
+        {
+            dprf("Disabling branch: %s", branches[disabled].shortname);
+            brentry[disabled].clear();
+        }
     }
 
     for (branch_iterator it; it; ++it)

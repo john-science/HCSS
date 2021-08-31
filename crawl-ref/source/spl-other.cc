@@ -118,7 +118,7 @@ void start_recall(recall_t type)
         }
         else if (type == RECALL_SPELL)
         {
-			if(mons_enslaved_soul(**mi) && you.attribute[ATTR_YRED_SOUL_TIMEOUT])
+            if (mons_enslaved_soul(**mi) && you.attribute[ATTR_YRED_SOUL_TIMEOUT])
                 continue;
         }
 
@@ -283,19 +283,19 @@ spret_type cast_passwall(const coord_def& delta, int pow, bool fail)
     {
         string msg= "";
         if (grd(dest) == DNGN_DEEP_WATER)
-		{
+        {
             mpr("You sense a large body of water on the other side of the rock.");
-            if(!you.can_swim() && !you.airborne())
+            if (!you.can_swim() && !you.airborne())
             {
-			    if(!yesno("Really passwall into deep water?", false, 'n'))
+                if (!yesno("Really passwall into deep water?", false, 'n'))
                 {
                     mpr("Okay, then.");
-			        return SPRET_SUCCESS;
+                    return SPRET_SUCCESS;
                 }
             }
-		}
+        }
         else if (grd(dest) == DNGN_LAVA)
-		{
+        {
             mpr("You sense an intense heat on the other side of the rock.");
         }
 

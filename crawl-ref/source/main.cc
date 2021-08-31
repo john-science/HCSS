@@ -433,21 +433,21 @@ NORETURN static void _launch_game()
                     << " " << get_job_name(you.char_class) << ".</yellow>"
                     << endl;
 
-	    msg::stream << "<yellow>You are playing on ";
+        msg::stream << "<yellow>You are playing on ";
         switch(crawl_state.difficulty)
         {
         case DIFFICULTY_CASUAL:
-        	msg::stream << "Casual";
-        	break;
+            msg::stream << "Casual";
+            break;
         case DIFFICULTY_NORMAL:
-        	msg::stream << "Normal";
-        	break;
+            msg::stream << "Normal";
+            break;
         case DIFFICULTY_SPEEDRUN:
-        	msg::stream << "Speedrun";
-        	break;
+            msg::stream << "Speedrun";
+            break;
         default:
             msg::stream << "Buggy";
-        	break;
+            break;
         }
         msg::stream << " difficulty. </yellow><yellow></yellow>" << endl;
     }
@@ -1681,7 +1681,7 @@ static bool _prompt_dangerous_portal(dungeon_feature_type ftype)
 
 static bool _prompt_skippable_branch(dungeon_feature_type ftype)
 {
-	switch(ftype)
+    switch(ftype)
     {
     case DNGN_ENTER_VAULTS:
         if (player_in_branch(BRANCH_DUNGEON))
@@ -1754,7 +1754,7 @@ static bool _prompt_stairs(dungeon_feature_type ygrd, bool down, bool shaft)
     }
 
     // Leaving runes behind. Make sure it's not a side-portal to prevent unnecessary warnings.
-	// Currently, only icecaves and bazaars can spawn on rune floors.
+    // Currently, only icecaves and bazaars can spawn on rune floors.
     if (ygrd != DNGN_ENTER_ICE_CAVE && ygrd != DNGN_ENTER_BAZAAR)
     {
         if (!_prompt_unique_rune(ygrd))
@@ -2542,8 +2542,8 @@ void world_reacts()
     if (you.elapsed_time >= 4*1000*1000)
     {
         // limit total game time to 4,000,000 aut. This should be long enough
-		// for reasonable play to win even with a weak combo while preventing
-		// unreasonable levels of scumming.
+        // for reasonable play to win even with a weak combo while preventing
+        // unreasonable levels of scumming.
         mpr("Outside, the world ends.");
         mpr("Sorry, but your quest for the Orb is now rather pointless. "
             "You quit...");
@@ -2566,7 +2566,7 @@ void world_reacts()
 
     wu_jian_end_of_turn_effects();
 
-	viewwindow();
+    viewwindow();
 
     if (you.cannot_act() && any_messages()
         && crawl_state.repeat_cmd != CMD_WIZARD)
@@ -3385,21 +3385,21 @@ static void _move_player(coord_def move)
             // Non-swimmers cannot attack while in deep water
             if (grd(you.pos()) == DNGN_DEEP_WATER
                 && !you.can_swim() && (!species_likes_water(you.species) || !form_likes_water())
-				&& !you.airborne())
+                && !you.airborne())
             {
                 mpr("You cannot attack while swimming in deep water!");
                 return;
             }
 
-			//You can't attack while in lava either
-			if (grd(you.pos()) == DNGN_LAVA
+            // You can't attack while in lava either
+            if (grd(you.pos()) == DNGN_LAVA
                 && !player_likes_lava() && !you.airborne())
             {
                 mpr("You cannot attack while walking through lava!");
                 return;
             }
 
-			// Don't allow the player to freely locate invisible monsters
+            // Don't allow the player to freely locate invisible monsters
             // with confirmation prompts.
             if (!you.can_see(*targ_monst)
                 && !you.confused()
@@ -3538,7 +3538,7 @@ static void _move_player(coord_def move)
         if (you_are_delayed() && current_delay()->is_run())
             env.travel_trail.push_back(you.pos());
 
-	    // Serpent's Lash = 1 means half of the wall jump time is refunded, so the modifier is 2 * 1/2 = 1;
+        // Serpent's Lash = 1 means half of the wall jump time is refunded, so the modifier is 2 * 1/2 = 1;
         int wall_jump_modifier = (did_wall_jump && you.attribute[ATTR_SERPENTS_LASH] != 1) ? 2 : 1;
 
         you.time_taken *= wall_jump_modifier * player_movement_speed();

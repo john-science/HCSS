@@ -46,7 +46,7 @@
 void make_hungry(int hunger_amount, bool suppress_msg,
                  bool magic)
 {
-	return;
+    return;
 }
 
 void set_hunger(int new_hunger_level, bool suppress_msg)
@@ -67,7 +67,7 @@ bool eat_food(int slot)
 
 bool eat_item(item_def &food)
 {
-	return false;
+    return false;
 }
 
 // Returns true if an item of basetype FOOD or CORPSES cannot currently

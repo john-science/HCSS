@@ -2564,7 +2564,7 @@ static bool _is_cancellable_scroll(scroll_type scroll)
            || scroll == SCR_REMOVE_CURSE
            || scroll == SCR_CURSE_ARMOUR
            || scroll == SCR_CURSE_JEWELLERY
-		   || scroll == SCR_IDENTIFY
+           || scroll == SCR_IDENTIFY
 #endif
            || scroll == SCR_BRAND_WEAPON
            || scroll == SCR_ENCHANT_WEAPON

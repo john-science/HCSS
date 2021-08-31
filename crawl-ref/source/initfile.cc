@@ -3314,7 +3314,7 @@ void game_options::read_option_line(const string &str, bool runscript)
             game.difficulty = DIFFICULTY_SPEEDRUN;
         else
             game.difficulty = DIFFICULTY_ASK;
-	}
+    }
 
     // Catch-all else, copies option into map
     else if (runscript)

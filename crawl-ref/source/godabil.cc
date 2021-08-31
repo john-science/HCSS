@@ -3564,7 +3564,7 @@ static int _slouch_monsters(coord_def where)
     // towards the middle.
     const int dmg = roll_dice(_slouch_damage(mon), 3) / 2;
 
-	mprf("%s is slouched (%d)!",mon->name(DESC_THE).c_str(), dmg);
+    mprf("%s is slouched (%d)!",mon->name(DESC_THE).c_str(), dmg);
     mon->hurt(&you, dmg, BEAM_MMISSILE, KILLED_BY_BEAM, "", "", true);
     return 1;
 }
@@ -4249,7 +4249,7 @@ static void _setup_gozag_shop(int index, vector<shop_type> &valid_shops)
  */
 static string _gozag_special_shop_name(shop_type type)
 {
-	return "";
+    return "";
 }
 
 /**
@@ -4386,7 +4386,7 @@ bool gozag_call_merchant()
     {
         shop_type type = static_cast<shop_type>(i);
         if (type == SHOP_FOOD)
-			continue;
+            continue;
         if (type == SHOP_EVOKABLES && you.get_mutation_level(MUT_NO_ARTIFICE))
             continue;
         valid_shops.push_back(type);
@@ -4793,24 +4793,24 @@ spret_type qazlal_upheaval(coord_def target, bool quiet, bool fail)
 spret_type qazlal_elemental_force(bool fail)
 {
    static const map<cloud_type, monster_type> elemental_clouds = {
-		{ CLOUD_FIRE,           MONS_FIRE_ELEMENTAL },
-		{ CLOUD_FOREST_FIRE,    MONS_FIRE_ELEMENTAL },
-		{ CLOUD_COLD,           MONS_WATER_ELEMENTAL },
-		{ CLOUD_RAIN,           MONS_WATER_ELEMENTAL },
-		{ CLOUD_DUST_TRAIL,     MONS_EARTH_ELEMENTAL },
-		{ CLOUD_PETRIFY,        MONS_EARTH_ELEMENTAL },
-		{ CLOUD_BLACK_SMOKE,    MONS_AIR_ELEMENTAL },
-		{ CLOUD_GREY_SMOKE,     MONS_AIR_ELEMENTAL },
-		{ CLOUD_BLUE_SMOKE,     MONS_AIR_ELEMENTAL },
-		{ CLOUD_PURPLE_SMOKE,   MONS_AIR_ELEMENTAL },
-		{ CLOUD_STORM,          MONS_AIR_ELEMENTAL },
+        { CLOUD_FIRE,           MONS_FIRE_ELEMENTAL },
+        { CLOUD_FOREST_FIRE,    MONS_FIRE_ELEMENTAL },
+        { CLOUD_COLD,           MONS_WATER_ELEMENTAL },
+        { CLOUD_RAIN,           MONS_WATER_ELEMENTAL },
+        { CLOUD_DUST_TRAIL,     MONS_EARTH_ELEMENTAL },
+        { CLOUD_PETRIFY,        MONS_EARTH_ELEMENTAL },
+        { CLOUD_BLACK_SMOKE,    MONS_AIR_ELEMENTAL },
+        { CLOUD_GREY_SMOKE,     MONS_AIR_ELEMENTAL },
+        { CLOUD_BLUE_SMOKE,     MONS_AIR_ELEMENTAL },
+        { CLOUD_PURPLE_SMOKE,   MONS_AIR_ELEMENTAL },
+        { CLOUD_STORM,          MONS_AIR_ELEMENTAL },
   };
 
     vector<coord_def> targets;
     for (radius_iterator ri(you.pos(), LOS_RADIUS, C_SQUARE, true); ri; ++ri)
     {
         const cloud_struct* cloud = cloud_at(*ri);
-		if (cloud && elemental_clouds.count(cloud->type))
+        if (cloud && elemental_clouds.count(cloud->type))
             targets.push_back(*ri);
     }
 
@@ -4854,7 +4854,7 @@ spret_type qazlal_elemental_force(bool fail)
 
 spret_type qazlal_cloud_surge(bool fail)
 {
-	fail_check();
+    fail_check();
 
     const int pow = you.skill(SK_INVOCATIONS, 10);
     int radius = 2 + min(5,random2avg(div_rand_round(pow, 33),2));
@@ -4867,10 +4867,10 @@ spret_type qazlal_cloud_surge(bool fail)
         if (cell_is_solid(*ri))
             continue;
         if (cloud_at(*ri))
-		{
+        {
             cloud_struct* cloud = cloud_at(*ri);
-			cloud->decay += 100 + random2(pow*2);
-			cloud->set_whose(KC_YOU);
+            cloud->decay += 100 + random2(pow*2);
+            cloud->set_whose(KC_YOU);
             extended = true;
         }
         else
@@ -6421,15 +6421,15 @@ static bool _get_stomped(monster& mons)
     int die_size = 2 + div_rand_round(you.skill(SK_INVOCATIONS), 2);
     damage += roll_dice(2, die_size);
 
-	const monster m = mons;
+    const monster m = mons;
 
     damage = mons.hurt(&you, damage, BEAM_ENERGY, KILLED_BY_BEAM, "", "", true);
 
     if (mons.alive() && you.can_see(mons))
-	{
-		mprf("%s gets stomped (%d)!", m.name(DESC_THE).c_str(), damage);
+    {
+        mprf("%s gets stomped (%d)!", m.name(DESC_THE).c_str(), damage);
         print_wounds(mons);
-	}
+    }
 
     return true;
 }

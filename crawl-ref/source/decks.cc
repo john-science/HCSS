@@ -579,12 +579,12 @@ static bool _check_buggy_deck(item_def& deck)
     if (num_cards > deck.initial_cards)
     {
         if (deck.initial_cards == 0)
-		{
+        {
             strm << "Deck was created with zero cards???" << endl;
             problems  = true;
         }
         else if (deck.initial_cards < 0)
-		{
+        {
             strm << "Deck was created with *negative* cards?!" << endl;
             problems  = true;
         }
@@ -743,7 +743,7 @@ bool deck_deal()
     }
 
     if (deck.quantity > 0)
-		deck.used_count = -cards_in_deck(deck);
+        deck.used_count = -cards_in_deck(deck);
 
     return true;
 }
@@ -1483,9 +1483,9 @@ static void _damaging_card(card_type card, int power, deck_rarity_type rarity,
         for (int i = 0; i < how_many; i++)
         {
             if (monster *elemental = _friendly(MONS_AIR_ELEMENTAL, 3))
-			{
+            {
                 successes++;
-				elemental->foe = MHITYOU;
+                elemental->foe = MHITYOU;
             }
         }
 
@@ -2085,14 +2085,14 @@ static void _famine_card(int power, deck_rarity_type rarity)
 
         if (x_chance_in_y(power_level, 8))
         {
-			mons->paralyse(&you, random2(5) + 2);
-			something_happened = true;
+            mons->paralyse(&you, random2(5) + 2);
+            something_happened = true;
         }
         else if (x_chance_in_y(2 * power_level + 1, 10) && mons->can_go_frenzy())
         {
             mons->go_frenzy(&you);
             something_happened = true;
-		}
+        }
         else
         {
             mons->weaken(&you, 12);
@@ -2387,36 +2387,36 @@ void init_deck(item_def &item)
 
 void merge_decks(const item_def& source, item_def& dest)
 {
-	const CrawlHashTable &source_props = source.props;
-	CrawlHashTable &dest_props = dest.props;
+    const CrawlHashTable &source_props = source.props;
+    CrawlHashTable &dest_props = dest.props;
 
-	ASSERT(is_deck(source));
-	ASSERT(is_deck(dest));
-	ASSERT_RANGE(cards_in_deck(source), 1, 128);
-	ASSERT_RANGE(cards_in_deck(dest), 1, 128);
+    ASSERT(is_deck(source));
+    ASSERT(is_deck(dest));
+    ASSERT_RANGE(cards_in_deck(source), 1, 128);
+    ASSERT_RANGE(cards_in_deck(dest), 1, 128);
 
-	CrawlVector    &dest_cards = dest_props[CARD_KEY].get_vector();
+    CrawlVector    &dest_cards = dest_props[CARD_KEY].get_vector();
     CrawlVector    &dest_flags = dest_props[CARD_FLAG_KEY].get_vector();
 
-	const CrawlVector    &source_cards = source_props[CARD_KEY].get_vector();
+    const CrawlVector    &source_cards = source_props[CARD_KEY].get_vector();
     //CrawlVector    &source_flags = source_props[CARD_FLAG_KEY].get_vector();
 
-	for (int i = 0; i < cards_in_deck(source); ++i)
-	{
-	    uint8_t   _flags;
+    for (int i = 0; i < cards_in_deck(source); ++i)
+    {
+        uint8_t   _flags;
 
         int num_cards = source_cards.size();
         int idx       = num_cards - i - 1;
 
-		ASSERT(num_cards > 0);
+        ASSERT(num_cards > 0);
 
         card_type card = get_card_and_flags(source, idx, _flags);
-		if(cards_in_deck(dest) < 127)
-		{
-		dest_cards.insert(0,(char) card);
-		dest_flags.insert(0,(char) _flags);
-		}
-	}
+        if (cards_in_deck(dest) < 127)
+        {
+            dest_cards.insert(0,(char) card);
+            dest_flags.insert(0,(char) _flags);
+        }
+    }
 }
 
 void shuffle_all_decks_on_level()

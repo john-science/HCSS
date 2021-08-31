@@ -196,10 +196,10 @@ enum tag_minor_version
     TAG_MINOR_PAKELLAS_WRATH,      // fix Pakellas passive wrath not expiring
     TAG_MINOR_GLOBAL_BR_INFO,      // move global branch info to a reserved location
     TAG_MINOR_SPIT_POISON_AGAIN,   // Make Naga poison spit a 2-level mutation.
-	TAG_MINOR_HIDE_TO_SCALE,       // Rename dragon hides to scales.
-	TAG_MINOR_MOTTLED_REMOVAL,     // Mottled dracos get breathe fire
+    TAG_MINOR_HIDE_TO_SCALE,       // Rename dragon hides to scales.
+    TAG_MINOR_MOTTLED_REMOVAL,     // Mottled dracos get breathe fire
     TAG_MINOR_SLIME_WALL_CLEAR,    // Turn existing Slime:$ walls clear, so they'll be removed on TRJ death.
-	TAG_MINOR_GOLDIFY_BOOKS,       // Don't make books take up an inventory slot
+    TAG_MINOR_GOLDIFY_BOOKS,       // Don't make books take up an inventory slot
     TAG_MINOR_PERMABUFFS,          // Permanent buffs reserve max mp
     TAG_MINOR_TRAINING_TARGETS,    // training targets for skills
     TAG_MINOR_MAGICAL_STAVES,      // moved magical staves to the offhand

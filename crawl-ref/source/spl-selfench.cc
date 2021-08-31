@@ -409,90 +409,90 @@ spret_type cast_piercing_shot(int pow, bool fail)
 int calculate_frozen_mp()
 {
     int frozen_mp = 0;
-	if (you.attribute[ATTR_OZO_ARMOUR] > 0)
+    if (you.attribute[ATTR_OZO_ARMOUR] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_OZOCUBUS_ARMOUR);
-	}
-	if (you.attribute[ATTR_SPELL_REGEN] > 0)
+        frozen_mp += spell_mp_freeze(SPELL_OZOCUBUS_ARMOUR);
+    }
+    if (you.attribute[ATTR_SPELL_REGEN] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_REGENERATION);
-	}
-	if (you.attribute[ATTR_SONG_OF_SLAYING] > 0)
+        frozen_mp += spell_mp_freeze(SPELL_REGENERATION);
+    }
+    if (you.attribute[ATTR_SONG_OF_SLAYING] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_SONG_OF_SLAYING);
-	}
-	if (you.attribute[ATTR_DEATH_CHANNEL] > 0)
+        frozen_mp += spell_mp_freeze(SPELL_SONG_OF_SLAYING);
+    }
+    if (you.attribute[ATTR_DEATH_CHANNEL] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_DEATH_CHANNEL);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_DEATH_CHANNEL);
+    }
     if (you.attribute[ATTR_DARKNESS] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_DARKNESS);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_DARKNESS);
+    }
     if (you.attribute[ATTR_ABJURATION_AURA] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_AURA_OF_ABJURATION);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_AURA_OF_ABJURATION);
+    }
     if (you.attribute[ATTR_DEFLECT_MISSILES] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_DEFLECT_MISSILES);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_DEFLECT_MISSILES);
+    }
     if (you.attribute[ATTR_REPEL_MISSILES] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_REPEL_MISSILES);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_REPEL_MISSILES);
+    }
     if (you.attribute[ATTR_PERMAHASTE] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_HASTE);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_HASTE);
+    }
     if (you.attribute[ATTR_PERMAINVIS] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_INVISIBILITY);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_INVISIBILITY);
+    }
     if (you.attribute[ATTR_BONE_ARMOUR] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_CIGOTUVIS_EMBRACE);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_CIGOTUVIS_EMBRACE);
+    }
     if (you.attribute[ATTR_FIRE_SHIELD] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_RING_OF_FLAMES);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_RING_OF_FLAMES);
+    }
     if (you.attribute[ATTR_INFUSION] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_INFUSION);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_INFUSION);
+    }
     if (you.attribute[ATTR_PORTAL_PROJECTILE] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_PORTAL_PROJECTILE);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_PORTAL_PROJECTILE);
+    }
     if (you.attribute[ATTR_EXCRUCIATING_WOUNDS] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_EXCRUCIATING_WOUNDS);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_EXCRUCIATING_WOUNDS);
+    }
     if (you.attribute[ATTR_ANIMATE_DEAD] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_ANIMATE_DEAD);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_ANIMATE_DEAD);
+    }
     if (you.attribute[ATTR_SPECTRAL_WEAPON] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_SPECTRAL_WEAPON);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_SPECTRAL_WEAPON);
+    }
     if (you.attribute[ATTR_INFESTATION] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_INFESTATION);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_INFESTATION);
+    }
     if (you.attribute[ATTR_BATTLESPHERE] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_BATTLESPHERE);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_BATTLESPHERE);
+    }
     if (you.attribute[ATTR_SERVITOR] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_SPELLFORGED_SERVITOR);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_SPELLFORGED_SERVITOR);
+    }
     if (you.attribute[ATTR_PIERCING_SHOT] > 0)
     {
-		frozen_mp += spell_mp_freeze(SPELL_PIERCING_SHOT);
-	}
+        frozen_mp += spell_mp_freeze(SPELL_PIERCING_SHOT);
+    }
     // Forms. Only check for cancelable forms here; uncancellable goodforms shouldn't reserve mp.
     if (you.form && !you.transform_uncancellable)
     {
@@ -532,117 +532,117 @@ int calculate_frozen_mp()
 void dispel_permanent_buffs(bool evil_only)
 {
     bool dispelled = false;
-    if(you.attribute[ATTR_OZO_ARMOUR] && !evil_only)
+    if (you.attribute[ATTR_OZO_ARMOUR] && !evil_only)
     {
-	    you.attribute[ATTR_OZO_ARMOUR] = 0;
+        you.attribute[ATTR_OZO_ARMOUR] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_SPELL_REGEN])
+    if (you.attribute[ATTR_SPELL_REGEN])
     {
-	    you.attribute[ATTR_SPELL_REGEN] = 0;
+        you.attribute[ATTR_SPELL_REGEN] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_SONG_OF_SLAYING] && !evil_only)
+    if (you.attribute[ATTR_SONG_OF_SLAYING] && !evil_only)
     {
         you.attribute[ATTR_SONG_OF_SLAYING] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_DEATH_CHANNEL])
+    if (you.attribute[ATTR_DEATH_CHANNEL])
     {
         you.attribute[ATTR_DEATH_CHANNEL] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_DARKNESS] && !evil_only)
+    if (you.attribute[ATTR_DARKNESS] && !evil_only)
     {
         you.attribute[ATTR_DARKNESS] = 0;
         update_vision_range();
         dispelled = true;
     }
-    if(you.attribute[ATTR_DEFLECT_MISSILES] && !evil_only)
+    if (you.attribute[ATTR_DEFLECT_MISSILES] && !evil_only)
     {
         you.attribute[ATTR_DEFLECT_MISSILES] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_REPEL_MISSILES] && !evil_only)
+    if (you.attribute[ATTR_REPEL_MISSILES] && !evil_only)
     {
         you.attribute[ATTR_REPEL_MISSILES] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_ABJURATION_AURA] && !evil_only)
+    if (you.attribute[ATTR_ABJURATION_AURA] && !evil_only)
     {
         you.attribute[ATTR_ABJURATION_AURA] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_PERMAHASTE] && !evil_only)
+    if (you.attribute[ATTR_PERMAHASTE] && !evil_only)
     {
         you.attribute[ATTR_PERMAHASTE] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_PERMAINVIS] && !evil_only)
+    if (you.attribute[ATTR_PERMAINVIS] && !evil_only)
     {
         you.attribute[ATTR_PERMAINVIS] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_PIERCING_SHOT] && !evil_only)
+    if (you.attribute[ATTR_PIERCING_SHOT] && !evil_only)
     {
         you.attribute[ATTR_PIERCING_SHOT] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_BONE_ARMOUR])
+    if (you.attribute[ATTR_BONE_ARMOUR])
     {
         you.attribute[ATTR_BONE_ARMOUR] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_FIRE_SHIELD] && !evil_only)
+    if (you.attribute[ATTR_FIRE_SHIELD] && !evil_only)
     {
         you.attribute[ATTR_FIRE_SHIELD] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_INFUSION] && !evil_only)
+    if (you.attribute[ATTR_INFUSION] && !evil_only)
     {
         you.attribute[ATTR_INFUSION] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_ANIMATE_DEAD])
+    if (you.attribute[ATTR_ANIMATE_DEAD])
     {
         you.attribute[ATTR_ANIMATE_DEAD] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_INFESTATION])
+    if (you.attribute[ATTR_INFESTATION])
     {
         you.attribute[ATTR_INFESTATION] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_PORTAL_PROJECTILE] && !evil_only)
+    if (you.attribute[ATTR_PORTAL_PROJECTILE] && !evil_only)
     {
         you.attribute[ATTR_PORTAL_PROJECTILE] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_SPECTRAL_WEAPON] && !evil_only)
+    if (you.attribute[ATTR_SPECTRAL_WEAPON] && !evil_only)
     {
         monster* old_weap = find_spectral_weapon(&you);
-        if(old_weap)
+        if (old_weap)
             end_spectral_weapon(old_weap, false);
         you.attribute[ATTR_SPECTRAL_WEAPON] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_BATTLESPHERE] && !evil_only)
+    if (you.attribute[ATTR_BATTLESPHERE] && !evil_only)
     {
         monster* old_sphere = find_battlesphere(&you);
-        if(old_sphere)
+        if (old_sphere)
             end_battlesphere(old_sphere, false);
         you.attribute[ATTR_BATTLESPHERE] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_SERVITOR] && !evil_only)
+    if (you.attribute[ATTR_SERVITOR] && !evil_only)
     {
         /*monster* old_sphere = find_battlesphere(&you);
-        if(old_sphere)
+        if (old_sphere)
             end_battlesphere(old_sphere, false);*/
         you.attribute[ATTR_SERVITOR] = 0;
         dispelled = true;
     }
-    if(you.attribute[ATTR_EXCRUCIATING_WOUNDS])
+    if (you.attribute[ATTR_EXCRUCIATING_WOUNDS])
     {
         item_def *wpn = you.weapon();
         end_weapon_brand(*wpn,true);

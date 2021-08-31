@@ -698,7 +698,7 @@ void zap_wand(int slot)
     {
         wand.used_count = ZAPCOUNT_EMPTY;
         mpr("The wand breaks as it expends its last charge.");
-		dec_inv_item_quantity(wand.link, 1);
+        dec_inv_item_quantity(wand.link, 1);
     }
 
     practise_evoking(1);
@@ -1076,10 +1076,9 @@ static bool _ball_of_energy()
     const int surge = pakellas_surge_devices();
     surge_power(you.spec_evoke() + surge);
 
-	mpr("You are suffused with power!");
-        inc_mp(
-        player_adjust_evoc_power(
-            1 + random2avg(div_rand_round(you.skill(SK_EVOCATIONS)*8,3), 2), surge));
+    mpr("You are suffused with power!");
+    inc_mp(player_adjust_evoc_power(
+           1 + random2avg(div_rand_round(you.skill(SK_EVOCATIONS)*8,3), 2), surge));
     ret = true;
 
     if (random2(div_rand_round(you.skill(SK_EVOCATIONS)*2,2)) < 2)
@@ -1936,10 +1935,10 @@ bool evoke_item(int slot, bool check_range)
             if (!_check_crystal_ball(item))
                 unevokable = true;
             else if (_ball_of_energy())
-			{
-				expend_xp_evoker(item);
+            {
+                expend_xp_evoker(item);
                 practise_evoking(1);
-			}
+            }
             break;
 
         case MISC_DISC_OF_STORMS:

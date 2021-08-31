@@ -949,9 +949,9 @@ int main(int argc, char* argv[])
                 case AF_SWOOP:
                     monsterattacks += "(swoop)";
                     break;
-				case AF_CLEAVE:
-					monsterattacks += "(cleave)";
-					break;
+                case AF_CLEAVE:
+                    monsterattacks += "(cleave)";
+                    break;
                 case AF_ACID:
                     monsterattacks +=
                         colour(YELLOW, damage_flavour("acid", "7d3"));
@@ -1077,8 +1077,8 @@ int main(int argc, char* argv[])
                 case AF_WEAKNESS:
                     monsterattacks += colour(LIGHTRED, "(weakness)");
                     break;
-				case AF_CONTAM:
-					monsterattacks += colour(YELLOW, "(contam)");
+                case AF_CONTAM:
+                    monsterattacks += colour(YELLOW, "(contam)");
                 case AF_CRUSH:
                 case AF_PLAIN:
                     break;

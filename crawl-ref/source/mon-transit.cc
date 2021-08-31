@@ -405,23 +405,23 @@ static bool _tag_follower_at(const coord_def &pos, bool &real_follower)
     }
 
     // Monster is an ally, following player through stairs.
-	if(fol->friendly())
-	{
-	real_follower = true;
-    fol->flags |= MF_TAKING_STAIRS;
-
-    // Clear patrolling/travel markers.
-    fol->patrol_point.reset();
-    fol->travel_path.clear();
-    fol->travel_target = MTRAV_NONE;
-
-    fol->clear_clinging();
-
-    dprf("%s is marked for following.",
-         fol->name(DESC_THE, true).c_str());
-
-	return true;
-	}
+    if (fol->friendly())
+    {
+        real_follower = true;
+        fol->flags |= MF_TAKING_STAIRS;
+ 
+        // Clear patrolling/travel markers.
+        fol->patrol_point.reset();
+        fol->travel_path.clear();
+        fol->travel_target = MTRAV_NONE;
+ 
+        fol->clear_clinging();
+ 
+        dprf("%s is marked for following.",
+             fol->name(DESC_THE, true).c_str());
+ 
+        return true;
+    }
 
     return false;
 }

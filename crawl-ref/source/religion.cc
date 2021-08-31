@@ -127,7 +127,7 @@ const vector<god_power> god_powers[NUM_GODS] =
     // Yredelemnul
     { { 0, ABIL_YRED_RECALL_UNDEAD_SLAVES, "recall your enslaved soul" },
       { 1, ABIL_YRED_INJURY_MIRROR, "mirror injuries on your foes" },
-	  { 2, ABIL_YRED_ENSLAVE_SOUL, "enslave living souls" },
+      { 2, ABIL_YRED_ENSLAVE_SOUL, "enslave living souls" },
       { 4, ABIL_YRED_TRANSFERENCE, "swap creatures with your enslaved soul" },
       { 5, ABIL_YRED_DRAIN_LIFE, "drain ambient life force" },
     },
@@ -144,7 +144,7 @@ const vector<god_power> god_powers[NUM_GODS] =
 
     // Okawaru
     { { 2, "Okawaru improves your combat prowess.",
-		   "Okawaru no longer improves your combat prowess."},
+           "Okawaru no longer improves your combat prowess."},
       { 5, ABIL_OKAWARU_FINESSE, "speed up your combat" },
     },
 
@@ -162,8 +162,8 @@ const vector<god_power> god_powers[NUM_GODS] =
            "request divine energy" },
       { 2, "Sif Muna is protecting you from the effects of miscast magic.",
            "Sif Muna no longer protects you from the effects of miscast magic." },
-	  { 3, "Sif Muna improves your magical skills.",
-		   "Sif Muna no longer improves your magic."},
+      { 3, "Sif Muna improves your magical skills.",
+           "Sif Muna no longer improves your magic."},
       { 3, ABIL_SIF_MUNA_CHANNEL_ENERGY, "call upon Sif Muna for magical energy"},
       { 4, ABIL_SIF_MUNA_FORGET_SPELL, "freely open your mind to new spells",
           "forget spells at will" },
@@ -236,7 +236,7 @@ const vector<god_power> god_powers[NUM_GODS] =
 
     // Ashenzari
     { { 0, ABIL_ASHENZARI_CURSE, "curse your items" },
-	  { 0, "The more cursed you are, the more Ashenzari supports your skills."},
+      { 0, "The more cursed you are, the more Ashenzari supports your skills."},
       { 1, ABIL_ASHENZARI_SCRYING, "scry through walls" },
       { 2, "Ashenzari reveals the unseen.",
            "Ashenzari no longer reveals the unseen." },
@@ -406,7 +406,7 @@ bool is_unavailable_god(god_type god)
 {
     // Disabled, pending a rework.
     if (god == GOD_PAKELLAS || god == GOD_FEDHAS || god == GOD_ASHENZARI
-		|| god == GOD_BEOGH || god == GOD_HEPLIAKLQANA)
+        || god == GOD_BEOGH || god == GOD_HEPLIAKLQANA)
         return true;
 
     return false;
@@ -943,16 +943,16 @@ static bool _give_nemelex_gift(bool forced = false)
             simple_god_message(" grants you a gift!");
             if(move_item_to_inv(deck))
             {
-				_inc_gift_timeout(5 + random2avg(6, 2));
-				you.num_current_gifts[you.religion]++;
-				you.num_total_gifts[you.religion]++;
-				take_note(Note(NOTE_GOD_GIFT, you.religion));
-			}
-			else
-				mprf("...but your inventory is too cluttered to receive it.");
+                _inc_gift_timeout(5 + random2avg(6, 2));
+                you.num_current_gifts[you.religion]++;
+                you.num_total_gifts[you.religion]++;
+                take_note(Note(NOTE_GOD_GIFT, you.religion));
+            }
+            else
+                mprf("...but your inventory is too cluttered to receive it.");
         }
 
-		destroy_item(thing_created);
+        destroy_item(thing_created);
         return true;
     }
 
@@ -1711,7 +1711,7 @@ bool do_god_gift(bool forced)
             break;
 
         case GOD_ZIN:
-		    if (forced || you.piety >= piety_breakpoint(3))
+            if (forced || you.piety >= piety_breakpoint(3))
                 success = _give_zin_gift();
             break;
 
@@ -2402,7 +2402,7 @@ void lose_piety(int pgn)
     else
         you.piety -= pgn;
 
-	// Redraw piety display
+    // Redraw piety display
     you.redraw_title = true;
 
     // Don't bother printing out these messages if you're under
@@ -3915,10 +3915,10 @@ void handle_god_time(int /*time_delta*/)
         switch (you.religion)
         {
         case GOD_TROG:
-		case GOD_OKAWARU:
-			if (one_chance_in(9))
-				lose_piety(1);
-			break;
+        case GOD_OKAWARU:
+            if (one_chance_in(9))
+                lose_piety(1);
+            break;
 
         case GOD_MAKHLEB:
         case GOD_BEOGH:
@@ -3935,7 +3935,7 @@ void handle_god_time(int /*time_delta*/)
             break;
 
         case GOD_ASHENZARI:
-		case GOD_DITHMENOS:
+        case GOD_DITHMENOS:
         case GOD_ELYVILON:
         case GOD_HEPLIAKLQANA:
         case GOD_FEDHAS:
@@ -4462,7 +4462,7 @@ static bool _is_disabled_god(god_type god)
 {
     // Disabled, pending a rework.
     return god == GOD_PAKELLAS || god == GOD_FEDHAS || god == GOD_ASHENZARI
-		|| god == GOD_BEOGH || god == GOD_HEPLIAKLQANA;
+        || god == GOD_BEOGH || god == GOD_HEPLIAKLQANA;
 }
 
 static bool _is_temple_god(god_type god)

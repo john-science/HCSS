@@ -243,11 +243,11 @@ enum class passive_t
     /// Hep reduces your max HP
     frail,
 
-	/// TSO prevents you from stabbing
+    /// TSO prevents you from stabbing
     no_stabbing,
 
-	///sif muna improves your magical skills
-	magic_skill_boost,
+    ///sif muna improves your magical skills
+    magic_skill_boost,
 
     ///heroism
     heroism,

@@ -183,8 +183,8 @@ int artefact_value(const item_def &item)
 const set<int> removed_shops =
 {
 #if TAG_MAJOR_VERSION == 34
-	{SHOP_FOOD, },
-	#endif
+    {SHOP_FOOD, },
+#endif
 };
 
 bool shop_type_removed(int subtype)
@@ -319,7 +319,7 @@ unsigned int item_value(item_def item, bool ident)
             case SPMSL_EXPLODING:
             case SPMSL_POISONED:
 #if TAG_MAJOR_VERSION == 34
-			case SPMSL_RETURNING:
+            case SPMSL_RETURNING:
             case SPMSL_SLOW:
             case SPMSL_SICKNESS:
 #endif
@@ -1347,7 +1347,7 @@ bool ShopMenu::process_key(int keyin)
         draw_menu();
         return true;
     }
-	else if (keyin - 'A' >= 0 && keyin - 'A' < (int)items.size())
+    else if (keyin - 'A' >= 0 && keyin - 'A' < (int)items.size())
     {
         const auto index = letter_to_index(keyin) % 26;
         auto entry = dynamic_cast<ShopEntry*>(items[index]);
@@ -1468,8 +1468,8 @@ string shop_type_name(shop_type type)
         case SHOP_BOOK:
             return "Book";
 #if TAG_MAJOR_VERSION == 34
-		case SHOP_FOOD:
-			return "Food";
+        case SHOP_FOOD:
+            return "Food";
 #endif
         case SHOP_SCROLL:
             return "Magic Scroll";

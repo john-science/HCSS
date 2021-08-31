@@ -403,10 +403,10 @@ bool drain_player(int power, bool announce_full, bool ignore_protection, bool pr
 
     if (power > 0)
     {
-		if(print_drained)
-		{
-        mpr("You feel drained.");
-		}
+        if (print_drained)
+        {
+            mpr("You feel drained.");
+        }
 
         you.attribute[ATTR_XP_DRAIN] += power;
         // Losing skills may affect AC/EV.

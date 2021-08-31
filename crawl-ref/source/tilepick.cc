@@ -130,8 +130,8 @@ tileidx_t tileidx_shop(const shop_struct *shop)
         case SHOP_EVOKABLES:
             return TILE_SHOP_GADGETS;
 #if TAG_MAJOR_VERSION == 34
-		case SHOP_FOOD:
-			return TILE_SHOP_FOOD;
+        case SHOP_FOOD:
+            return TILE_SHOP_FOOD;
 #endif
         case SHOP_BOOK:
             return TILE_SHOP_BOOKS;
@@ -1691,14 +1691,14 @@ static tileidx_t _tileidx_monster_no_props(const monster_info& mon)
             switch (item_attack_skill(item))
             {
             case SK_SHORT_BLADES:
-			    {
+                {
                     const weapon_type wt = (weapon_type)item.sub_type;
-					if (wt == WPN_DAGGER || wt == WPN_RAPIER
-	                    || wt == WPN_QUICK_BLADE)
+                    if (wt == WPN_DAGGER || wt == WPN_RAPIER
+                        || wt == WPN_QUICK_BLADE)
                         return TILEP_MONS_SPECTRAL_SBL;
                     else
                         return TILEP_MONS_SPECTRAL_LBL;
-			    }
+                }
             case SK_AXES:
                 return TILEP_MONS_SPECTRAL_AXE;
             case SK_POLEARMS:
@@ -1709,7 +1709,7 @@ static tileidx_t _tileidx_monster_no_props(const monster_info& mon)
                     if (wt == WPN_WHIP || wt == WPN_FLAIL
                             || wt == WPN_DEMON_WHIP || wt == WPN_SACRED_SCOURGE)
                         return TILEP_MONS_SPECTRAL_WHIP;
-					else if (wt == WPN_MACE || wt == WPN_MORNINGSTAR
+                    else if (wt == WPN_MACE || wt == WPN_MORNINGSTAR
                             || wt == WPN_GREAT_MACE || wt == WPN_GIANT_CLUB
                             || wt == WPN_GIANT_SPIKED_CLUB)
                         return TILEP_MONS_SPECTRAL_MACE;

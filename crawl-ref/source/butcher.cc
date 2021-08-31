@@ -41,7 +41,7 @@
  */
 static bool _start_butchering(item_def& corpse)
 {
-	mpr("Butchering corpses is strictly forbidden in this dungeon.");
+    mpr("Butchering corpses is strictly forbidden in this dungeon.");
     return false;
 }
 

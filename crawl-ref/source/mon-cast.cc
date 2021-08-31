@@ -445,7 +445,7 @@ static const map<spell_type, mons_spell_logic> spell_to_logic = {
     { SPELL_CONFUSE, _hex_logic(SPELL_CONFUSE) },
     { SPELL_BANISHMENT, _hex_logic(SPELL_BANISHMENT) },
     /*{ SPELL_CURSE, {_always_worthwhile,
-	_fire_simple_beam, nullptr}},*/
+    _fire_simple_beam, nullptr}},*/
     { SPELL_PARALYSE, _hex_logic(SPELL_PARALYSE) },
     { SPELL_PETRIFY, _hex_logic(SPELL_PETRIFY) },
     { SPELL_PAIN, _hex_logic(SPELL_PAIN) },
@@ -760,7 +760,7 @@ static void _cast_cantrip(monster &mons, mon_spell_slot slot, bolt& pbolt)
 static void _cast_phase_shift(monster &mons, mon_spell_slot, bolt&)
 {
     simple_monster_message(mons, " begins phasing through reality.", MSGCH_MONSTER_SPELL);
-	mons.add_ench(mon_enchant(ENCH_PHASE_SHIFT, 0, &mons,
+    mons.add_ench(mon_enchant(ENCH_PHASE_SHIFT, 0, &mons,
                               random_range(12, 25) * BASELINE_DELAY));
 }
 
@@ -783,7 +783,7 @@ static void _cast_smiting(monster &caster, mon_spell_slot slot, bolt&)
     actor* foe = caster.get_foe();
     ASSERT(foe);
 
-	int damage = 7 + random2avg(11, 2);
+    int damage = 7 + random2avg(11, 2);
 
     if (foe->is_player())
         mprf("%s smites you (%d)!", _god_name(god).c_str(), damage);
@@ -1484,7 +1484,7 @@ bolt mons_spell_beam(const monster* mons, spell_type spell_cast, int power,
         beam.pierce       = true;
         break;
 
-	case SPELL_RADIATION_BREATH:
+    case SPELL_RADIATION_BREATH:
         beam.name         = "blast of radiation";
         beam.aux_source   = "blast of radiation breath";
         beam.damage       = dice_def(1, 3 * mons->get_hit_dice() / 2);
@@ -4544,7 +4544,7 @@ static void _mons_vampiric_drain(monster &mons, mon_spell_slot slot, bolt&)
         if (mons.heal(hp_cost * 2 / 3))
         {
             mprf("%s draws life force from you (%d) and is healed!",
-				mons.name(DESC_THE).c_str(), hp_cost);
+                mons.name(DESC_THE).c_str(), hp_cost);
         }
     }
     else
@@ -4555,8 +4555,7 @@ static void _mons_vampiric_drain(monster &mons, mon_spell_slot slot, bolt&)
         if (mtarget->is_summoned())
         {
             mprf("%s draws life force from %s (%d)!",
-				mons.name(DESC_THE).c_str(), targname.c_str(), hp_cost);
-
+                 mons.name(DESC_THE).c_str(), targname.c_str(), hp_cost);
         }
         else if (mons.heal(hp_cost * 2 / 3))
         {
@@ -4594,7 +4593,7 @@ static bool _mons_cast_freeze(monster* mons)
     {
         mprf("%s %s frozen (%d).", target->name(DESC_THE).c_str(),
                               target->conj_verb("are").c_str(),
-							  damage);
+                              damage);
     }
 
     target->hurt(mons, damage, BEAM_COLD, KILLED_BY_BEAM, "", "by Freeze");
@@ -5836,12 +5835,12 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         {
             if (foe->airborne())
                 mprf("The water rises up and strikes %s (%d)!",
-					foe->name(DESC_THE).c_str(),
-					damage_taken);
+                     foe->name(DESC_THE).c_str(),
+                     damage_taken);
             else
                 mprf("The water swirls and strikes %s (%d)!",
-					foe->name(DESC_THE).c_str(),
-					damage_taken);
+                     foe->name(DESC_THE).c_str(),
+                     damage_taken);
         }
 
         foe->hurt(mons, damage_taken, BEAM_MISSILE, KILLED_BY_BEAM,
@@ -5851,15 +5850,15 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
 
     case SPELL_AIRSTRIKE:
     {
-		pbolt.flavour = BEAM_AIR;
+       pbolt.flavour = BEAM_AIR;
 
-		// Damage averages 14 for 5HD, 18 for 10HD, 28 for 20HD, +50% if flying.
+        // Damage averages 14 for 5HD, 18 for 10HD, 28 for 20HD, +50% if flying.
         int damage_taken = 10 + 2 * mons->get_hit_dice();
         damage_taken = foe->beam_resists(pbolt, damage_taken, false);
 
-		// Previous method of damage calculation (in line with player
+        // Previous method of damage calculation (in line with player
         // airstrike) had absurd variance.
-		damage_taken = foe->apply_ac(random2avg(damage_taken, 3));
+        damage_taken = foe->apply_ac(random2avg(damage_taken, 3));
 
         if (foe->is_player())
         {
@@ -5867,10 +5866,10 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         }
         else
         {
-			const monster* enemy = foe->as_monster();
+            const monster* enemy = foe->as_monster();
             mprf("%s is struck by the twisting air (%d)!",
-				enemy->name(DESC_THE).c_str(),
-				damage_taken);
+                 enemy->name(DESC_THE).c_str(),
+                 damage_taken);
         }
 
         foe->hurt(mons, damage_taken, BEAM_MISSILE, KILLED_BY_BEAM,
@@ -6629,8 +6628,8 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         _blink_allies_encircle(mons);
         return;
 
-     case SPELL_CURSE:
-	 {
+    case SPELL_CURSE:
+    {
         actor *target = mons->get_foe();
         if (!curse(target))
         {
@@ -6638,7 +6637,7 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
                 get_monster_data(mons->type)->energy_usage.spell;
         }
         return;
-	 }
+    }
 
     case SPELL_MASS_CONFUSION:
         _mons_mass_confuse(mons);

@@ -641,7 +641,7 @@ static void _print_stats_equip(int x, int y)
             }
             else if (!you_can_wear(eqslot, true))
                 cprintf(" ");
-	    else
+        else
                 cprintf(".");
         }
     }
@@ -1454,7 +1454,7 @@ void print_stats()
     }
     you.wield_change  = false;
 
-	if (you.redraw_quiver || you.wield_change)
+    if (you.redraw_quiver || you.wield_change)
         _print_stats_qv(10 + yhack);
 
     you.redraw_quiver = false;

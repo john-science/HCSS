@@ -185,9 +185,9 @@ public:
 
 enum game_difficulty_level
 {
-	DIFFICULTY_ASK = -1,
-	DIFFICULTY_CASUAL = 0,
-	DIFFICULTY_NORMAL = 1,
+    DIFFICULTY_ASK = -1,
+    DIFFICULTY_CASUAL = 0,
+    DIFFICULTY_NORMAL = 1,
     DIFFICULTY_SPEEDRUN = 2,
 };
 
@@ -501,7 +501,7 @@ enum ability_type
     ABIL_END_BATTLESPHERE,
     ABIL_END_SERVITOR,
     ABIL_END_PPROJ,
-	ABIL_END_PIERCE,
+    ABIL_END_PIERCE,
     NUM_ABILITIES
 };
 
@@ -642,7 +642,7 @@ enum attribute_type
     ATTR_SERVITOR,             // spellforged servitor
     ATTR_YRED_SOUL_TIMEOUT,    // enslaved soul timeout
     ATTR_WALL_JUMP_READY,      // Ready to perform a wall jump.
-	ATTR_PIERCING_SHOT,        // Piercing shot
+    ATTR_PIERCING_SHOT,        // Piercing shot
     ATTR_XOM_MUT_XP,           // How much XP before Xom mutates the player again
     ATTR_XOM_GIFT_XP,          // How much XP before Xom gifts the player again
     NUM_ATTRIBUTES
@@ -2630,7 +2630,7 @@ enum monster_type                      // menv[].type
 #if TAG_MAJOR_VERSION > 34
     MONS_SHOCK_SERPENT,
     MONS_MANA_VIPER,
-	MONS_SUBTRACTOR_SNAKE,
+    MONS_SUBTRACTOR_SNAKE,
 #endif
     MONS_RAT,
 #if TAG_MAJOR_VERSION == 34
@@ -2737,7 +2737,7 @@ enum monster_type                      // menv[].type
     MONS_GOLDEN_DRAGON,
     MONS_PEARL_DRAGON,
 #if TAG_MAJOR_VERSION > 34
-	MONS_THE_GIAGGOSTUONO
+    MONS_THE_GIAGGOSTUONO
 #endif
     MONS_OOZE,
     MONS_JELLY,
@@ -2759,7 +2759,7 @@ enum monster_type                      // menv[].type
     MONS_GREAT_ORB_OF_EYES,
     MONS_GLOWING_ORANGE_BRAIN,
 #if TAG_MAJOR_VERSION > 34
-	MONS_MUTATATOTOT,
+    MONS_MUTATATOTOT,
 #endif
 
     MONS_DANCING_WEAPON,
@@ -2774,7 +2774,7 @@ enum monster_type                      // menv[].type
     MONS_BENNU,
     MONS_CAUSTIC_SHRIKE,
     MONS_SHARD_SHRIKE,
-	MONS_GHOST_ROBIN,
+    MONS_GHOST_ROBIN,
 #endif
     MONS_FIRE_CRAB,
 #if TAG_MAJOR_VERSION == 34
@@ -2783,7 +2783,7 @@ enum monster_type                      // menv[].type
 #else
     MONS_GHOST_CRAB,
     MONS_CRAB,
-	MONS_PLUTONIUM_CRAB,
+    MONS_PLUTONIUM_CRAB,
 #endif
 
     MONS_BUTTERFLY,
@@ -2813,7 +2813,7 @@ enum monster_type                      // menv[].type
     MONS_BEETLE,
 #if TAG_MAJOR_VERSION == 34
     MONS_BORING_BEETLE,
-	MONS_BOULDER_BEETLE,
+    MONS_BOULDER_BEETLE,
 #endif
 #if TAG_MAJOR_VERSION > 34
     MONS_DEATH_SCARAB,
@@ -2881,7 +2881,7 @@ enum monster_type                      // menv[].type
     MONS_SPHINX,
     MONS_ORB_GUARDIAN,
 #if TAG_MAJOR_VERSION > 34
-	MONS_DEV_FAVORITE
+    MONS_DEV_FAVORITE
 #endif
 
     MONS_GOLEM,                 // genus
@@ -2892,7 +2892,7 @@ enum monster_type                      // menv[].type
 #else
     MONS_SALTLING,
     MONS_PEACEKEEPER,
-	MONS_ZOTLING,
+    MONS_ZOTLING,
 #endif
 #if TAG_MAJOR_VERSION == 34
     MONS_IRON_GOLEM,
@@ -2904,7 +2904,7 @@ enum monster_type                      // menv[].type
     MONS_GUARDIAN_GOLEM,
     MONS_SPELLFORGED_SERVITOR,
     MONS_USHABTI,
-	MONS_ZOTBOT,
+    MONS_ZOTBOT,
 #endif
     MONS_ORB_OF_FIRE,    // Swords renamed to fit -- bwr
 #if TAG_MAJOR_VERSION > 34
@@ -3048,7 +3048,7 @@ MONS_ANTIMATTER_ELF,
     MONS_MERFOLK,
     MONS_SIREN,
 #if TAG_MAJOR_VERSION == 34
-	MONS_MERFOLK_AVATAR,
+    MONS_MERFOLK_AVATAR,
 #endif
 #if TAG_MAJOR_VERSION > 34
     MONS_DROWNED_SOUL,
@@ -3080,7 +3080,7 @@ MONS_ANTIMATTER_ELF,
     MONS_DEEP_TROLL_EARTH_MAGE,
     MONS_DEEP_TROLL_SHAMAN,
 #endif
-    MONS_GIANT,  	// genus
+    MONS_GIANT,  // genus
 #if TAG_MAJOR_VERSION == 34
     MONS_HILL_GIANT,
 #endif
@@ -3093,7 +3093,7 @@ MONS_ANTIMATTER_ELF,
 #if TAG_MAJOR_VERSION > 34
     MONS_JUGGERNAUT,
     MONS_IRON_GIANT,
-	MONS_GIANT_GIANT,
+    MONS_GIANT_GIANT,
 #endif
     MONS_HUMAN,
     MONS_SLAVE,
@@ -3176,7 +3176,7 @@ MONS_ANTIMATTER_ELF,
     MONS_SWAMP_WORM,
 #if TAG_MAJOR_VERSION == 34
     MONS_SHARK,
-	MONS_KRAKEN,
+    MONS_KRAKEN,
     MONS_KRAKEN_TENTACLE,
     MONS_KRAKEN_TENTACLE_SEGMENT,
 #endif
@@ -3675,16 +3675,16 @@ MONS_ANTIMATTER_ELF,
     MONS_DREAM_SHEEP,
     MONS_FROG,
     MONS_FROGTAUR,
-	MONS_SUBTRACTOR_SNAKE,
-	MONS_THE_GIAGGOSTUONO,
-	MONS_ANTIMATTER_ELF,
-	MONS_ZOTLING,
-	MONS_GHOST_ROBIN,
-	MONS_DEV_FAVORITE,
-	MONS_PLUTONIUM_CRAB,
-	MONS_GIANT_GIANT,
-	MONS_MUTATATOTOT,
-	MONS_ZOTBOT,
+    MONS_SUBTRACTOR_SNAKE,
+    MONS_THE_GIAGGOSTUONO,
+    MONS_ANTIMATTER_ELF,
+    MONS_ZOTLING,
+    MONS_GHOST_ROBIN,
+    MONS_DEV_FAVORITE,
+    MONS_PLUTONIUM_CRAB,
+    MONS_GIANT_GIANT,
+    MONS_MUTATATOTOT,
+    MONS_ZOTBOT,
     MONS_ELEVENGU,
     MONS_DIESEL_ROBIN,
     MONS_COMBO_ROBIN,
@@ -4139,7 +4139,7 @@ enum potion_type
     POT_DEGENERATION,
     POT_DECAY,
     POT_WATER,
-	POT_EXPERIENCE,
+    POT_EXPERIENCE,
 #endif
     POT_MAGIC,
 #if TAG_MAJOR_VERSION == 34
@@ -4272,7 +4272,7 @@ enum shop_type
     SHOP_EVOKABLES, // wands, rods, and misc items
     SHOP_BOOK,
 #if TAG_MAJOR_VERSION == 34
-	SHOP_FOOD,
+    SHOP_FOOD,
 #endif
     SHOP_DISTILLERY,
     SHOP_SCROLL,
@@ -4904,7 +4904,7 @@ enum spell_type : int
     SPELL_DREAM_DUST,
     SPELL_BECKONING,
     SPELL_UPHEAVAL,
-	SPELL_RADIATION_BREATH,
+    SPELL_RADIATION_BREATH,
     SPELL_IGNITION,
     SPELL_PIERCING_SHOT,
     SPELL_CURSE,

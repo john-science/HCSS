@@ -893,13 +893,13 @@ static const pop_entry _antiscum_summons[] =
 
 static bool _antiscumming_summon()
 {
-	monster_type mtyp = pick_monster_from(_antiscum_summons,
+    monster_type mtyp = pick_monster_from(_antiscum_summons,
                                               you.experience_level);
-	mgen_data mg = mgen_data::hostile_at(mtyp, true, you.pos())
+    mgen_data mg = mgen_data::hostile_at(mtyp, true, you.pos())
                     .set_summoned(nullptr, 0, 0)
                     .set_non_actor_summoner("The dungeon");
     mg.extra_flags |= (MF_NO_REWARD | MF_HARD_RESET);
-	return create_monster(mg, false);
+    return create_monster(mg, false);
 }
 
 static void _antiscumming(int /*time_delta*/)
@@ -909,11 +909,11 @@ static void _antiscumming(int /*time_delta*/)
     if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN
         && env.turns_on_level > 500)
     {
-		int amount = 3 + (env.turns_on_level - 500) / 40;
+        int amount = 3 + (env.turns_on_level - 500) / 40;
         rot_hp(amount);
         mprf(MSGCH_WARN, "You feel yourself rotting away!");
         return;
-	}
+    }
     if(env.turns_on_level < 3000)
         return;
     if(player_in_branch(BRANCH_ABYSS))
@@ -921,7 +921,7 @@ static void _antiscumming(int /*time_delta*/)
     //make it loud
     noisy(30, you.pos());
     mprf(MSGCH_WARN, "The dungeon lashes out against you!");
-	int num_summons = 2 + random2(4);
+    int num_summons = 2 + random2(4);
     for(int i = 1; i <= num_summons; ++i)
     {
         _antiscumming_summon();
@@ -930,7 +930,7 @@ static void _antiscumming(int /*time_delta*/)
 
 static void _timeout_traps(int /*time_delta*/)
 {
-	for (rectangle_iterator ri(0); ri; ++ri)
+    for (rectangle_iterator ri(0); ri; ++ri)
     {
         if (in_bounds(*ri))
         {
@@ -975,7 +975,7 @@ static struct timed_effect timed_effects[] =
     { _jiyva_effects,                100,   300, false },
     { _evolve,                      5000, 15000, false },
 #if TAG_MAJOR_VERSION == 34
-	{  nullptr,                        0,     0, false },
+    {  nullptr,                        0,     0, false },
 #endif
     { _timeout_traps,                200,   300, false },
 };

@@ -1229,7 +1229,7 @@ static int _actor_cloud_damage(const actor *act,
                                                        cloud_base_damage,
                                                        maximum_damage);
 
-		std::string d = std::to_string(lightning_dam);
+        std::string d = std::to_string(lightning_dam);
 
         if (maximum_damage)
         {
@@ -1242,16 +1242,16 @@ static int _actor_cloud_damage(const actor *act,
 
         if (act->is_player())
             mprf("You are struck by lightning (%s)!",
-			d.c_str());
+            d.c_str());
         else if (you.can_see(*act))
         {
-			if (act->is_monster())
-			{
-				const monster* mons = act->as_monster();
-				mprf("Lightning strikes %s (%s)!",
-				mons->name(DESC_THE).c_str(),
-				d.c_str());
-			}
+            if (act->is_monster())
+            {
+                const monster* mons = act->as_monster();
+                mprf("Lightning strikes %s (%s)!",
+                mons->name(DESC_THE).c_str(),
+                d.c_str());
+            }
         }
         else if (you.see_cell(act->pos()))
         {
@@ -1638,11 +1638,11 @@ void cloud_struct::announce_actor_engulfed(const actor *act,
 {
     ASSERT(act); // XXX: change to const actor &act
     if (!you.can_see(*act))
-	{
+    {
         return;
-	}
+    }
 
-	std::string d = std::to_string(dam);
+    std::string d = std::to_string(dam);
 
     // Normal clouds. (Unmodified rain clouds have a different message.)
     if (type != CLOUD_RAIN && type != CLOUD_STORM)
@@ -1652,7 +1652,7 @@ void cloud_struct::announce_actor_engulfed(const actor *act,
              beneficial ? act->conj_verb("bask").c_str()
                         : (act->conj_verb("are") + " engulfed").c_str(),
              cloud_name().c_str(),
-			 d.c_str());
+             d.c_str());
         return;
     }
 

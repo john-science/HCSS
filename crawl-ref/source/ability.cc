@@ -298,7 +298,7 @@ static const ability_def Ability_List[] =
       0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_END_RING_OF_FLAMES, "End Ring of Flames",
       0, 0, 0, 0, {}, abflag::NONE },
-	{ ABIL_END_REGENERATION, "End Regeneration",
+    { ABIL_END_REGENERATION, "End Regeneration",
       0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_END_DARKNESS, "End Darkness",
       0, 0, 0, 0, {}, abflag::NONE },
@@ -306,7 +306,7 @@ static const ability_def Ability_List[] =
       0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_END_CIGOTUVIS, "End Cigotuvi's Embrace",
       0, 0, 0, 0, {}, abflag::NONE },
-	{ ABIL_END_DCHAN, "End Death Channel",
+    { ABIL_END_DCHAN, "End Death Channel",
       0, 0, 0, 0, {}, abflag::NONE },
     { ABIL_END_ABJURATION, "End Aura of Abjuration",
       0, 0, 0, 0, {}, abflag::NONE },
@@ -1532,7 +1532,7 @@ static bool _check_ability_possible(const ability_def& abil,
             }
             return false;
         }
-	    return true;
+        return true;
     default:
         return true;
     }
@@ -2271,7 +2271,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         break;
 
     case ABIL_TSO_CLEANSING_FLAME:
-	{
+    {
         targetter_los hitfunc(&you, LOS_SOLID, 2);
         {
             if (stop_attack_prompt(hitfunc, "harm", _cleansing_flame_affects))
@@ -2281,7 +2281,7 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
         cleansing_flame(10 + you.skill_rdiv(SK_INVOCATIONS, 7, 6),
                         CLEANSING_FLAME_INVOCATION, you.pos(), &you);
         break;
-	}
+    }
 
     case ABIL_TSO_SUMMON_DIVINE_WARRIOR:
         fail_check();

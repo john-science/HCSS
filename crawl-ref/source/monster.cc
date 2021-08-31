@@ -3599,7 +3599,7 @@ int monster::known_chaos(bool check_spells_god) const
 
     if (has_attack_flavour(AF_MUTATE)
         || has_attack_flavour(AF_CHAOTIC)
-	    || has_attack_flavour(AF_CONTAM))
+        || has_attack_flavour(AF_CONTAM))
     {
         chaotic++;
     }
@@ -4289,11 +4289,11 @@ void monster::splash_with_acid(const actor* evildoer, int /*acid_strength*/,
 {
     const int dam = roll_dice(2, 4);
     const int post_res_dam = resist_adjust_damage(this, BEAM_ACID, dam);
-	std::string d = std::to_string(post_res_dam);
+    std::string d = std::to_string(post_res_dam);
 
     if (this->observable())
          mprf("%s is splashed with acid (%s).", this->name(DESC_THE).c_str(),
-		 d.c_str());
+              d.c_str());
 
     if (!one_chance_in(3))
         corrode_equipment();
@@ -5639,7 +5639,7 @@ void monster::lose_energy(energy_use_type et, int div, int mult)
 
     // Randomize movement cost slightly, to make it less predictable,
     // and make pillar-dancing not entirely safe.
-	// Actually, energy randomization is dumb and bad and therefore removed :^)
+    // Actually, energy randomization is dumb and bad and therefore removed :^)
     // No randomization for allies following you to avoid traffic jam
 
     speed_increment -= energy_loss;

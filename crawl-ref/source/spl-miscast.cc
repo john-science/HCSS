@@ -1131,7 +1131,7 @@ void MiscastEffect::_earth(int severity)
     switch (severity)
     {
     case 0:         // just a harmless message
-	    you_msg        = "Motes of dust swirl before your eyes.";
+        you_msg        = "Motes of dust swirl before your eyes.";
         mon_msg_seen   = "Motes of dust swirl around @the_monster@.";
         mon_msg_unseen = "Motes of dust swirl around in the air.";
         do_msg();

@@ -1493,7 +1493,7 @@ static int _award_modified_experience()
     int xp = you.experience;
     int result = 0;
 
-	result += xp / 4;
+    result += xp / 4;
 
     return result;
 }
@@ -1549,7 +1549,7 @@ void scorefile_entry::init(time_t dt)
      *    + runes * (runes + 12) * 1000        (for everyone)
      *    + (250000 + 2 * (runes + 2) * 1000)  (winners only)
      *    + 250000 * 25000 * runes^2 / turns   (winners only)
-	 *
+     *
      *  Hellcrawl scoring:
      *
      *    Nobody gives a shit about experience for won games,
@@ -1594,7 +1594,7 @@ void scorefile_entry::init(time_t dt)
             pt += num_runes * 10000;
             pt += _award_modified_experience();
         }
-		if (crawl_state.difficulty == DIFFICULTY_CASUAL)
+        if (crawl_state.difficulty == DIFFICULTY_CASUAL)
             pt = pt / 100;
 
         points = pt;
@@ -1860,24 +1860,24 @@ string scorefile_entry::single_cdesc() const
 
 string scorefile_entry::difficulty_name() const
 {
-	string result;
-	switch(difficulty)
-	{
-	case DIFFICULTY_CASUAL:
-		result = "CASUAL";
-		break;
+    string result;
+    switch(difficulty)
+    {
+    case DIFFICULTY_CASUAL:
+        result = "CASUAL";
+        break;
     case DIFFICULTY_NORMAL:
         result = "NORMAL";
-		break;
+        break;
     case DIFFICULTY_SPEEDRUN:
         result = "SPEED";
         break;
-	default:
-		result = "BUGGY";
-		break;
-	}
+    default:
+        result = "BUGGY";
+        break;
+    }
 
-	return result;
+    return result;
 }
 
 

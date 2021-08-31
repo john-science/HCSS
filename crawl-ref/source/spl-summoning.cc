@@ -141,7 +141,7 @@ spret_type cast_sticks_to_snakes(int pow, god_type god, bool fail)
     for (item_def& i : you.inv)
         if (i.is_type(OBJ_MISSILES, MI_ARROW)
             && check_warning_inscriptions(i, OPER_DESTROY)
-			&&i.quantity >= 8)
+            &&i.quantity >= 8)
         {
             // If the player has bow skill, assume that they
             // would prefer that their regular ammo would be
@@ -2431,7 +2431,7 @@ void init_servitor(monster* servitor, actor* caster)
 
 spret_type player_spellforged_servitor(int pow, god_type god, bool fail)
 {
-	fail_check();
+    fail_check();
 
     you.attribute[ATTR_SERVITOR] = 1;
     mprf("You prepare to summon your spellforged servitor.");
@@ -3246,7 +3246,7 @@ bool confirm_attack_spectral_weapon(monster* mons, const actor *defender)
 
 spret_type cast_infestation(int pow, bool fail)
 {
-	if (is_good_god(you.religion))
+    if (is_good_god(you.religion))
     {
         mprf("%s forbids you from sustaining this spell.", god_name(you.religion).c_str());
         return SPRET_ABORT;

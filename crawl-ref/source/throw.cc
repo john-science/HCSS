@@ -496,7 +496,7 @@ void fire_thing(int item)
     dist target;
     item = get_ammo_to_shoot(item, target, is_pproj_active());
 
-	if (!target.isValid)
+    if (!target.isValid)
          return;
 
     item_def *ammo = nullptr;
@@ -525,7 +525,7 @@ void fire_thing(int item)
         else
             return;
 
-		if (!ammo)
+        if (!ammo)
         {
                 int p = items(false, OBJ_MISSILES, missileType, 0, ego);
                 ammo = &mitm[p];
@@ -794,10 +794,10 @@ bool throw_it(bolt &pbolt, item_def& thrown, dist *target, bool created)
 
     string ammo_name;
 
-    if(_is_always_penetrating_attack(you, you.weapon(), item))
+    if (_is_always_penetrating_attack(you, you.weapon(), item))
     {
         pierce = false;
-	}
+    }
 
     if (_setup_missile_beam(&you, pbolt, item, ammo_name, returning))
     {
@@ -1070,7 +1070,7 @@ bool mons_throw(monster* mons, bolt &beam, item_def& thrown, bool teleport)
 
     const int weapon    = mons->inv[MSLOT_WEAPON];
 
-	mon_inv_type slot = get_mon_equip_slot(mons, thrown);
+    mon_inv_type slot = get_mon_equip_slot(mons, thrown);
 
     // Energy is already deducted for the spell cast, if using portal projectile
     // FIXME: should it use this delay and not the spell delay?
@@ -1213,9 +1213,9 @@ bool thrown_object_destroyed(item_def *item, const coord_def& where)
         return false;
 
     if (ammo_never_destroyed(*item))
-	{
-		return false;
-	}
+    {
+        return false;
+    }
 
-	return true;
+    return true;
 }

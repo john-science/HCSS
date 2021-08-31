@@ -4302,8 +4302,8 @@ void do_interlevel_travel()
 
         // Don't ask for a destination if you can only travel
         // within level anyway.
-		you.travel_x = you.running.pos.x;
-		you.travel_y = you.running.pos.y;
+        you.travel_x = you.running.pos.x;
+        you.travel_y = you.running.pos.y;
         you.travel_z = level_id::current();
         start_travel(you.running.pos);
 

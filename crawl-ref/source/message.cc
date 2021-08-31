@@ -1724,7 +1724,7 @@ void canned_msg(canned_message_type which_message)
         {
             const char* when =
             (which_message == MSG_EMPTY_HANDED_ALREADY ? "already" : "now");
-			if (you.has_usable_claws(true))
+            if (you.has_usable_claws(true))
                 mprf("You are %s empty-clawed.", when);
             else if (you.has_usable_tentacles(true))
                 mprf("You are %s empty-tentacled.", when);

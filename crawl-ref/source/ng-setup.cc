@@ -151,11 +151,11 @@ item_def* newgame_make_item(object_class_type base,
     // Don't check useless books because it causes an assert failure.
     if (item.base_type != OBJ_BOOKS)
     {
-	    if (is_useless_item(item))
-	    {
-		    item = item_def();
-		    return nullptr;
-	    }
+        if (is_useless_item(item))
+        {
+            item = item_def();
+            return nullptr;
+        }
     }
 
     if ((item.base_type == OBJ_WEAPONS && can_wield(&item, false, false)

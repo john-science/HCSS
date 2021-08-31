@@ -386,7 +386,7 @@ static void _abyss_lose_monster(monster& mons)
     }
     else if (yred_soul() == mons.mid)
     {
-	    move_companion_to(&mons, level_id(BRANCH_DUNGEON, 1));
+        move_companion_to(&mons, level_id(BRANCH_DUNGEON, 1));
         you.attribute[ATTR_YRED_SOUL_TIMEOUT] = 1;
         you.duration[DUR_SOUL_DELAY] = random_range(50, 150); //~5-15 turns
         monster_cleanup(&mons);
@@ -753,7 +753,7 @@ static void _abyss_generate_monsters(int nmonsters)
         return;
 
     mgen_data mg;
-	mg.set_summoned(nullptr, 0, 0);
+    mg.set_summoned(nullptr, 0, 0);
     mg.set_non_actor_summoner("the Abyss");
     mg.extra_flags |= (MF_NO_REWARD | MF_HARD_RESET);
     mg.proximity = PROX_ANYWHERE;

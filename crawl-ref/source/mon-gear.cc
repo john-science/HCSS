@@ -174,7 +174,7 @@ static void _give_wand(monster* mon, int level)
 
 static void _give_potion(monster* mon, int level)
 {
-	if (mons_is_unique(mon->type) && one_chance_in(4)
+    if (mons_is_unique(mon->type) && one_chance_in(4)
                 && _should_give_unique_item(mon))
     {
         const int thing_created = items(false, OBJ_POTIONS, OBJ_RANDOM,
@@ -502,10 +502,10 @@ static void _give_weapon(monster* mon, int level, bool melee_only = false,
                 { WPN_DAGGER,           1 },
         } } },
         { MONS_DEEP_ELF_MASTER_ARCHER, { { { WPN_LONGBOW, 1 } } } },
-		{ MONS_ANTIMATTER_ELF,
-			{ { { WPN_DEMON_WHIP,       1 },
+        { MONS_ANTIMATTER_ELF,
+            { { { WPN_DEMON_WHIP,       1 },
                 { WPN_DOUBLE_SWORD,     1 },
-		  } } },
+          } } },
         { MONS_VASHNIA,                 { NAGA_WEAPONS, {}, {}, 1 } },
         { MONS_NAGA_SHARPSHOOTER,       { NAGA_WEAPONS } },
         { MONS_NAGA,                    { NAGA_WEAPONS } },
@@ -530,7 +530,7 @@ static void _give_weapon(monster* mon, int level, bool melee_only = false,
         { MONS_NAGA_RITUALIST,
             { { { WPN_DAGGER,       1 },
                 { WPN_SCIMITAR,     1 },
-		  } } },
+          } } },
         { MONS_RUPERT,
             // Rupert favours big two-handers with visceral up-close
             // effects, i.e. no polearms.
@@ -1257,7 +1257,7 @@ static void _give_ammo(monster* mon, int level, bool mons_summoned)
                 if (active_monster_band == BAND_MERFOLK_JAVELINEER)
                     break;
             }
-			break;
+            break;
 
          case MONS_SONJA:
             weap_type  = MI_DART_CURARE;
@@ -1752,7 +1752,7 @@ static void _give_armour(monster* mon, int level, bool spectral_orcs)
         item.base_type = OBJ_ARMOUR;
         if (one_chance_in(30))
         {
-			level = ISPEC_GOOD_ITEM;
+            level = ISPEC_GOOD_ITEM;
             item.sub_type  = random_choose(ARM_TROLL_LEATHER_ARMOUR,
                                            ARM_FIRE_DRAGON_ARMOUR,
                                            ARM_ICE_DRAGON_ARMOUR,

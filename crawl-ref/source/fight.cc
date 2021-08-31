@@ -347,11 +347,11 @@ bool fight_melee(actor *attacker, actor *defender, bool *did_hit, bool simu)
  */
 stab_type find_stab_type(const actor *attacker,
                          const actor &defender,
-						 bool actual)
+                         bool actual)
 {
     const monster* def = defender.as_monster();
 
-	// Stabbing intelligent monsters is unchivalric, and disabled under TSO!
+    // Stabbing intelligent monsters is unchivalric, and disabled under TSO!
     // When just checking for display purposes, still indicate when monsters
     // are sleeping/paralysed etc.
     if (actual && attacker && attacker->is_player()
@@ -407,7 +407,7 @@ stab_type find_stab_type(const actor *attacker,
 
     // Distracted (but not batty); this only applies to players.
     if (attacker && attacker->is_player()
-	&& def && def->foe != MHITYOU && !mons_is_batty(*def))
+        && def && def->foe != MHITYOU && !mons_is_batty(*def))
     {
         return STAB_DISTRACTED;
     }
@@ -704,7 +704,7 @@ void get_cleave_targets(const actor &attacker, const coord_def& def,
     const item_def* weap = attacker.weapon(which_attack);
 
     if (weap && item_attack_skill(*weap) == SK_AXES
-			|| attacker.type == MONS_JUGGERNAUT //ugly hack to give juggs cleave
+            || attacker.type == MONS_JUGGERNAUT //ugly hack to give juggs cleave
             || attacker.is_player()
                && (you.form == TRAN_HYDRA && you.heads() > 1
                    || you.duration[DUR_CLEAVE]))
@@ -1069,14 +1069,14 @@ bool stop_attack_prompt(targetter &hitfunc, const char* verb,
 
 void spooky(actor *defender)
 {
-    if(!defender->is_monster())
+    if (!defender->is_monster())
         return;
-    if(defender->paralysed())
+    if (defender->paralysed())
         return;
     mprf("Boo! %s is paralyzed with terror!", defender->name(DESC_THE).c_str());
     noisy(12, you.pos());
-	defender->paralyse(&you, 2 + random2(4));
-    if(you.experience_level >= 13)
+    defender->paralyse(&you, 2 + random2(4));
+    if (you.experience_level >= 13)
     {
         mprf("You radiate an aura of fear!");
         mass_enchantment(ENCH_FEAR, you.experience_level * 4, false);

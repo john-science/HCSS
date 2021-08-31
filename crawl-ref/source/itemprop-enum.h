@@ -230,7 +230,7 @@ enum jewellery_type
 #endif
     AMU_MANA_REGENERATION,
 #if TAG_MAJOR_VERSION == 34
-	AMU_THE_GOURMAND,
+    AMU_THE_GOURMAND,
     AMU_CONSERVATION,
     AMU_CONTROLLED_FLIGHT,
     AMU_INACCURACY,
@@ -493,7 +493,7 @@ enum special_missile_type // to separate from weapons in general {dlb}
     SPMSL_POISONED,
     SPMSL_CURARE,                      // Needle-only brand
 #if TAG_MAJOR_VERSION == 34
-	SPMSL_RETURNING,
+    SPMSL_RETURNING,
 #endif
     SPMSL_CHAOS,
     SPMSL_PENETRATION,

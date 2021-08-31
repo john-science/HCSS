@@ -429,7 +429,7 @@ static void _create_monster_hide(const item_def &corpse, bool silent)
                                                       // XXX: refactor
     }
 
-	// after messaging, for better results
+    // after messaging, for better results
     set_ident_flags(item, ISFLAG_IDENT_MASK);
 }
 
@@ -484,8 +484,8 @@ item_def* place_monster_corpse(const monster& mons, bool silent, bool force)
     // if a shifter turns into a ballistomycete spore and explodes. In this
     // case we place no corpse since the explosion means anything left
     // over would be scattered, tiny chunks of shifter.
-	if (!in_bounds(mons.pos()) && !force)
-		return nullptr;
+    if (!in_bounds(mons.pos()) && !force)
+        return nullptr;
 
     // Don't attempt to place corpses within walls, either.
     if (feat_is_solid(grd(mons.pos())) && !force)
@@ -522,8 +522,8 @@ item_def* place_monster_corpse(const monster& mons, bool silent, bool force)
         return nullptr;
     }
 
-	if (in_bounds(mons.pos()))
-		move_item_to_grid(&o, mons.pos(), !mons.swimming());
+    if (in_bounds(mons.pos()))
+        move_item_to_grid(&o, mons.pos(), !mons.swimming());
 
     if (o == NON_ITEM)
         return nullptr;
@@ -1643,7 +1643,7 @@ static bool _reaping(monster *mons)
 
 static bool _reap_dead(monster *mons)
 {
-	if(! you.attribute[ATTR_ANIMATE_DEAD])
+    if(! you.attribute[ATTR_ANIMATE_DEAD])
         return false;
 
     int rd = calc_spell_power(SPELL_ANIMATE_DEAD, true);
@@ -2164,7 +2164,7 @@ item_def* monster_die(monster* mons, killer_type killer,
         const int bone_armour = you.attribute[ATTR_BONE_ARMOUR];
         const int max_bone_armour = 6 + div_rand_round(calc_spell_power(SPELL_CIGOTUVIS_EMBRACE, true),20);
         if (bone_armour < max_bone_armour) // spellpower dependent cap
-		{
+        {
             you.attribute[ATTR_BONE_ARMOUR] = min(max_bone_armour, bone_armour + 1);
             you.redraw_armour_class = true;
         }
@@ -2647,20 +2647,20 @@ item_def* monster_die(monster* mons, killer_type killer,
 
 
     // If we are in the abyss, need to "give exp" to the abyssal exit timeout
-	// for abyssal durable summons.
+    // for abyssal durable summons.
     if (!gives_player_xp
         && mons_class_gives_xp(mons->type)
-		&& player_in_branch(BRANCH_ABYSS)
+        && player_in_branch(BRANCH_ABYSS)
         && !summoned
         && !fake_abjure
         && !mons->friendly()
-		&& (killer == KILL_YOU
+        && (killer == KILL_YOU
             || killer == KILL_YOU_MISSILE
             || killer == KILL_YOU_CONF
             || pet_kill))
     {
         int fake_experience = exper_value(*mons);
-		const int xp_factor =
+        const int xp_factor =
         max(min((int)exp_needed(you.experience_level+1, 0) / 7,
                 you.experience_level * 425),
             you.experience_level*2 + 15) / 5;
@@ -2783,7 +2783,7 @@ item_def* monster_die(monster* mons, killer_type killer,
                 mprf("Your enslaved soul has left this plane.");
             }
             you.attribute[ATTR_YRED_SOUL_TIMEOUT] = 1;
-			you.duration[DUR_SOUL_DELAY] = random_range(300, 600);
+            you.duration[DUR_SOUL_DELAY] = random_range(300, 600);
         }
     }
 

@@ -365,7 +365,7 @@ int raw_spell_fail(spell_type spell)
     int chance2 = max((((chance + 426) * chance + 82670) * chance + 7245398)
                       / 262144, 0);
 
-	if(!spell_is_form(spell))
+    if (!spell_is_form(spell))
     {
         chance2 += get_form()->spellcasting_penalty;
     }
@@ -1582,7 +1582,7 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
                                       potion, fail);
 
     //attune amulet of destruction to the spell, if supported
-    if(vehumet_supports_spell(spell) && you.wearing(EQ_AMULET, AMU_DESTRUCTION)
+    if (vehumet_supports_spell(spell) && you.wearing(EQ_AMULET, AMU_DESTRUCTION)
       && !(flags & SPFLAG_PERMABUFF))
     {
         if(!you.props.exists(AMULET_DESTRUCTIVE_SPELL) || you.props[AMULET_DESTRUCTIVE_SPELL].get_int() != spell)
@@ -1591,8 +1591,8 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
         you.props[AMULET_DESTRUCTIVE_SPELL] = spell;
         you.props[LAST_ACTION_DESTRUCTIVE_KEY] = true;
         you.set_duration(DUR_DESTRUCTION, 10, 10);
-	}
-    else if(you.props.exists(AMULET_DESTRUCTIVE_SPELL))
+    }
+    else if (you.props.exists(AMULET_DESTRUCTIVE_SPELL))
     {
         mpr("Your amulet of destruction loses attunement.");
         you.props.erase(AMULET_DESTRUCTIVE_SPELL);
@@ -1618,15 +1618,15 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
         {
             dithmenos_shadow_spell(&beam, spell);
         }
-        if(you.attribute[ATTR_BATTLESPHERE] && battlesphere_can_mirror(spell) && can_summon_avatar)
+        if (you.attribute[ATTR_BATTLESPHERE] && battlesphere_can_mirror(spell) && can_summon_avatar)
         {
             monster* battlesphere = find_battlesphere(&you);
-            if(!battlesphere)
+            if (!battlesphere)
             {
-                if(cast_battlesphere(&you, calc_spell_power(SPELL_BATTLESPHERE, true), god, false) == SPRET_SUCCESS)
+                if (cast_battlesphere(&you, calc_spell_power(SPELL_BATTLESPHERE, true), god, false) == SPRET_SUCCESS)
                     mprf("You summon your battlesphere!");
             }
-		}
+        }
         if(you.attribute[ATTR_SERVITOR] && vehumet_supports_spell(spell) && can_summon_avatar
             && !(flags & SPFLAG_PERMABUFF))
         {
@@ -1730,7 +1730,7 @@ bool is_buff_spell(spell_type spell)
 
 static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, god_type god, bool fail)
 {
-	switch(spell)
+    switch(spell)
     {
         case SPELL_REGENERATION:
             return cast_regen(powc, false);
@@ -1754,7 +1754,7 @@ static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, go
             return cast_invisibility(powc, false);
         case SPELL_CIGOTUVIS_EMBRACE:
             return corpse_armour(powc, false);
-		case SPELL_RING_OF_FLAMES:
+        case SPELL_RING_OF_FLAMES:
             return cast_ring_of_flames(powc, false);
         case SPELL_INFUSION:
             return cast_infusion(powc, false);
@@ -1775,7 +1775,7 @@ static spret_type _handle_buff_spells(spell_type spell, int powc, bolt& beam, go
         case SPELL_PIERCING_SHOT:
             return cast_piercing_shot(powc, false);
         default:
-		    return SPRET_NONE;
+            return SPRET_NONE;
     }
 }
 
@@ -2134,15 +2134,15 @@ int spell_mp_freeze (spell_type spell)
 {
     //no need to freeze mp if it's not a buff spell
     if (!is_buff_spell(spell) && !spell_is_form(spell))
-	    return 0;
+        return 0;
     else
     {
         // divide by the square of the success rate to prevent dumb shit like casting 99% fail charms
-		double success = 1 - _get_true_fail_rate(raw_spell_fail(spell));
+        double success = 1 - _get_true_fail_rate(raw_spell_fail(spell));
         // and max out an absurdly high value to avoid weird behaviors
         if (success < 0.05)
             return 400;
-		double mp_to_freeze = spell_difficulty(spell) / (success * success);
+        double mp_to_freeze = spell_difficulty(spell) / (success * success);
         return (int) mp_to_freeze;
     }
 }
@@ -2318,7 +2318,7 @@ string spell_power_string(spell_type spell)
 
 string spell_reserved_mp_string(spell_type spell)
 {
-	if (!is_buff_spell(spell) && !spell_is_form(spell))
+    if (!is_buff_spell(spell) && !spell_is_form(spell))
         return "N/A";
     else
     {

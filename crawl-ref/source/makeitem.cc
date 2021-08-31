@@ -137,7 +137,7 @@ static bool _is_boring_item(int type, int sub_type)
             return false;
         default:
             break;
-		}
+        }
         break;
     case OBJ_JEWELLERY:
         return sub_type == AMU_NOTHING;
@@ -167,11 +167,11 @@ static weapon_type _determine_weapon_subtype(int item_level)
         while (true)
         {
             const int wpntype = random2(NUM_WEAPONS);
-			if (wpntype != WPN_BLOWGUN)
-			{
-				if (x_chance_in_y(weapon_rarity(wpntype), 10))
-					return static_cast<weapon_type>(wpntype);
-			}
+            if (wpntype != WPN_BLOWGUN)
+            {
+                if (x_chance_in_y(weapon_rarity(wpntype), 10))
+                    return static_cast<weapon_type>(wpntype);
+            }
         }
     }
     else if (x_chance_in_y(item_level, item_level+7))
@@ -681,17 +681,17 @@ static void _generate_missile_item(item_def& item, int force_type,
     if (item.sub_type == MI_JAVELIN || item.sub_type == MI_TOMAHAWK
         || item.sub_type == MI_DART_CURARE || item.sub_type == MI_DART_FRENZY)
     {
-		if (get_ammo_brand(item) == SPMSL_DISPERSAL)
-			item.quantity = random_range(4, 12);
+        if (get_ammo_brand(item) == SPMSL_DISPERSAL)
+            item.quantity = random_range(4, 12);
         else if (item.sub_type == MI_DART_CURARE || item.sub_type == MI_DART_FRENZY)
-			item.quantity = random_range(6, 18);
-		else
-			item.quantity = random_range(40, 120);
+            item.quantity = random_range(6, 18);
+        else
+            item.quantity = random_range(40, 120);
     }
     else if (get_ammo_brand(item) != SPMSL_NORMAL)
-	{
-		item.quantity = 10 + random2(40) + random2(40) + random2(30);
-	}
+    {
+        item.quantity = 10 + random2(40) + random2(40) + random2(30);
+    }
     else
         item.quantity = 10 + random2(40) + random2(40) + random2(30) + random2(30);
 }
@@ -789,7 +789,7 @@ static special_armour_type _generate_armour_type_ego(armour_type type,
     case ARM_CLOAK:
         return random_choose(SPARM_POISON_RESISTANCE,
                              SPARM_MAGIC_RESISTANCE,
-							 SPARM_STEALTH,
+                             SPARM_STEALTH,
                              SPARM_MAGICAL_POWER);
 
     case ARM_HAT:
@@ -836,7 +836,7 @@ static special_armour_type _generate_armour_type_ego(armour_type type,
 
     // dragon/troll armour, animal hides, and crystal plate are never generated
     // with egos. (unless they're artefacts, but those aren't handled here.)
-	// TODO: deduplicate with armour_is_special() (same except for animal skin)
+    // TODO: deduplicate with armour_is_special() (same except for animal skin)
     if (armour_type_is_hide(type)
         || type == ARM_ANIMAL_SKIN
         || type == ARM_CRYSTAL_PLATE_ARMOUR)
@@ -897,8 +897,8 @@ bool is_armour_brand_ok(int type, int brand, bool strict)
 #endif
         return slot == EQ_BOOTS;
 
-	case SPARM_STEALTH:
-		return slot == EQ_BOOTS || slot == EQ_CLOAK;
+    case SPARM_STEALTH:
+        return slot == EQ_BOOTS || slot == EQ_CLOAK;
 
     case SPARM_MAGICAL_POWER:
         return slot == EQ_CLOAK || type == ARM_HAT;
@@ -928,10 +928,10 @@ bool is_armour_brand_ok(int type, int brand, bool strict)
     case SPARM_ARCHERY:
         return slot == EQ_GLOVES;
 
-	case SPARM_DEXTERITY:
-		if (!strict)
+    case SPARM_DEXTERITY:
+        if (!strict)
             return true;
-		return slot == EQ_GLOVES || slot == EQ_BOOTS;
+        return slot == EQ_GLOVES || slot == EQ_BOOTS;
 
     case SPARM_SEE_INVISIBLE:
     case SPARM_INTELLIGENCE:
@@ -1296,7 +1296,7 @@ static void _generate_potion_item(item_def& item, int force_type,
                                             70, POT_FLIGHT,
                                             60, POT_MIGHT,
                                             60, POT_HASTE,
-											50, POT_CANCELLATION,
+                                            50, POT_CANCELLATION,
                                             50, POT_AMBROSIA,
                                             35, POT_INVISIBILITY,
                                             35, POT_RESISTANCE,
@@ -1329,8 +1329,8 @@ static void _generate_scroll_item(item_def& item, int force_type,
             // total weight:    789  if depth_mod < 4
             //                  908  otherwise
             //                 -112  in sprint
-	    // id/curse removal: drop scrolls of id, rc, and random uselessness
-	    // reallocate item weight to gold, provisionally  --mps
+            // id/curse removal: drop scrolls of id, rc, and random uselessness
+            // reallocate item weight to gold, provisionally  --mps
             item.sub_type = random_choose_weighted(
                  // [Cha] don't generate teleportation scrolls if in sprint
                  80, (crawl_state.game_is_sprint() ? NUM_SCROLLS : SCR_TELEPORTATION),
@@ -1404,7 +1404,7 @@ static void _generate_book_item(item_def& item, bool allow_uniques,
                                                      random2(NUM_SKILLS -
                                                              SK_SPELLCASTING));
             }
-		        while (item.skill == SK_POISON_MAGIC
+                while (item.skill == SK_POISON_MAGIC
                    || item.skill == SK_CONJURATIONS
                    || item.skill == SK_SPELLCASTING);
         }
@@ -1414,8 +1414,8 @@ static void _generate_book_item(item_def& item, bool allow_uniques,
             do
             {
                 item.skill = static_cast<skill_type>(random2(SK_UNARMED_COMBAT + 1));
-			}
-			while(item.skill == SK_STABBING || item.skill == SK_TRAPS
+            }
+            while(item.skill == SK_STABBING || item.skill == SK_TRAPS
                 || item.skill == SK_STAVES || item.skill == SK_LONG_BLADES
                 || item.skill == SK_SLINGS || item.skill == SK_CROSSBOWS);
         }
@@ -1512,7 +1512,7 @@ static bool _try_make_jewellery_unrandart(item_def& item, int force_type,
  */
 static int _good_jewellery_plus(int subtype)
 {
-	switch (subtype)
+    switch (subtype)
     {
         case RING_STRENGTH:
         case RING_DEXTERITY:
@@ -1736,9 +1736,9 @@ int items(bool allow_uniques,
                 || item.base_type == OBJ_WANDS)
             && random2(7) >= item_level)
         {
-	  item.base_type = OBJ_GOLD; /* try drying out early game to compensate
-				      * for id removal --mps */
-	  //item.base_type = coinflip() ? OBJ_POTIONS : OBJ_SCROLLS;
+      item.base_type = OBJ_GOLD; /* try drying out early game to compensate
+                      * for id removal --mps */
+      //item.base_type = coinflip() ? OBJ_POTIONS : OBJ_SCROLLS;
         }
     }
 
@@ -2080,8 +2080,8 @@ void makeitem_tests()
 #if TAG_MAJOR_VERSION == 34
         if (type == ARM_CAP)
             type = ARM_HAT;
-		if (type == ARM_CENTAUR_BARDING)
-			type = ARM_NAGA_BARDING;
+        if (type == ARM_CENTAUR_BARDING)
+            type = ARM_NAGA_BARDING;
 #endif
         _generate_armour_item(item,
                               coinflip(),

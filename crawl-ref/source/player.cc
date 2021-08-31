@@ -212,15 +212,15 @@ static bool _check_moveto_dangerous(const coord_def& p, const string& msg)
     if (env.grid(p) == DNGN_LAVA && env.grid(you.pos()) != DNGN_LAVA
     && !player_likes_lava() && !you.airborne())
     {
-	    if(!yesno("Really immerse yourself in lava?", false, 'n'))
+        if(!yesno("Really immerse yourself in lava?", false, 'n'))
         {
             mpr("Okay, then.");
-			return false;
+            return false;
         }
         else return true;
     }
 
-	if (you.can_swim() && feat_is_water(env.grid(p))
+    if (you.can_swim() && feat_is_water(env.grid(p))
         || you.airborne() || !is_feat_dangerous(env.grid(p)))
     {
         return true;
@@ -458,11 +458,11 @@ void moveto_location_effects(dungeon_feature_type old_feat,
 
         else if (feat_is_lava(new_grid) && feat_is_lava(old_feat))
         {
-			if (stepped)
+            if (stepped)
             {
-			    you.time_taken *= 2;
-			}
-		}
+                you.time_taken *= 2;
+            }
+        }
 
         if (feat_is_water(new_grid))
         {
@@ -596,7 +596,7 @@ bool is_feat_unpleasant(dungeon_feature_type grid, bool permanently,
     {
         return true;
     }
-	else
+    else
         return false;
 }
 
@@ -1133,7 +1133,7 @@ static int _player_bonus_regen()
     // Fast heal mutation.
     rr += you.get_mutation_level(MUT_REGENERATION) * REGEN_PIP;
 
-	if(you.get_mutation_level(MUT_OUT_OF_LOS_HPREGEN) && !there_are_monsters_nearby(true))
+    if (you.get_mutation_level(MUT_OUT_OF_LOS_HPREGEN) && !there_are_monsters_nearby(true))
         rr *= 2 + you.get_mutation_level(MUT_OUT_OF_LOS_HPREGEN);
 
     // Powered By Death mutation, boosts regen by variable strength
@@ -1209,12 +1209,12 @@ int player_mp_regen()
     if (you.get_mutation_level(MUT_MANA_REGENERATION))
         multiplier += 100;
     if (you.wearing(EQ_AMULET, AMU_REGENERATION)
-		&& you.props[REGEN_AMULET_ACTIVE].get_int() == 1)
+        && you.props[REGEN_AMULET_ACTIVE].get_int() == 1)
         multiplier += 100;
     if (player_equip_unrand(UNRAND_ETHERIC_CAGE))
         multiplier += 100;
     if (crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
-	    multiplier += 50;
+        multiplier += 50;
     if(you.get_mutation_level(MUT_OUT_OF_LOS_MPREGEN) && !there_are_monsters_nearby(true))
         multiplier *= 2 + you.get_mutation_level(MUT_OUT_OF_LOS_MPREGEN);
 
@@ -2290,7 +2290,7 @@ int player_shield_class()
             stat = stat * (base_shield + 13) / 26;
 
             shield += stat;
-		}
+        }
     }
 
     // mutations
@@ -2539,8 +2539,8 @@ static void _handle_stat_loss(int exp)
     int loss = div_rand_round(exp * 3 / 2,
                               max(1, calc_skill_cost(you.skill_cost_level) - 3));
 
-    //special case since their skill exp gain is whack
-	if (you.species == SP_KOBOLD || you.species == SP_GNOLL)
+    // special case since their skill exp gain is whack
+    if (you.species == SP_KOBOLD || you.species == SP_GNOLL)
     {
         loss = div_rand_round(exp * 3 / 2,
                               max(1, calc_skill_cost(you.experience_level) - 3));
@@ -2561,8 +2561,8 @@ static void _handle_xp_drain(int exp)
     int loss = div_rand_round(exp * 3 / 2,
                               calc_skill_cost(you.skill_cost_level));
 
-    //special case since their skill exp gain is whack
-	if (you.species == SP_KOBOLD || you.species == SP_GNOLL)
+    // special case since their skill exp gain is whack
+    if (you.species == SP_KOBOLD || you.species == SP_GNOLL)
     {
         loss = div_rand_round(exp * 3 / 2, calc_skill_cost(you.experience_level));
     }
@@ -2603,10 +2603,10 @@ static void _handle_god_wrath(int exp)
 
 static void _handle_xom_effects(int exp)
 {
-    if(!you_worship(GOD_XOM))
+    if (!you_worship(GOD_XOM))
         return;
     you.attribute[ATTR_XOM_MUT_XP] -= exp;
-	you.attribute[ATTR_XOM_GIFT_XP] -= exp;
+    you.attribute[ATTR_XOM_GIFT_XP] -= exp;
     if (you.attribute[ATTR_XOM_MUT_XP] < 0)
     {
         you.attribute[ATTR_XOM_MUT_XP] = 0;
@@ -2649,9 +2649,9 @@ void gain_exp(unsigned int exp_gained, unsigned int* actual_gain)
     //multiply both exp gain and skill exp (but don't multiply xp-gated effects)
     if (crawl_state.difficulty == DIFFICULTY_CASUAL || crawl_state.difficulty == DIFFICULTY_SPEEDRUN)
     {
-	    exp_gained *= 2;
+        exp_gained *= 2;
         skill_xp *= 2;
-	}
+    }
 
     if (player_under_penance(GOD_HEPLIAKLQANA))
         return; // no xp for you!
@@ -3040,7 +3040,7 @@ int check_stealth()
 
     const item_def *arm = you.slot_item(EQ_BODY_ARMOUR, false);
     const item_def *boots = you.slot_item(EQ_BOOTS, false);
-	const item_def *cloak = you.slot_item(EQ_CLOAK, false);
+    const item_def *cloak = you.slot_item(EQ_CLOAK, false);
 
     if (arm)
     {
@@ -3073,7 +3073,7 @@ int check_stealth()
         stealth += STEALTH_PIP;
 
     if (cloak && get_armour_ego_type(*cloak) == SPARM_STEALTH)
-	    stealth += STEALTH_PIP;
+        stealth += STEALTH_PIP;
 
     // Mutations.
     stealth += STEALTH_PIP * you.get_mutation_level(MUT_NIGHTSTALKER);
@@ -4068,9 +4068,9 @@ bool confuse_player(int amount, bool quiet, bool force)
         return false;
     }
 
-    if(!force && have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (!force && have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from confusion.");
+        simple_god_message(" protects you from confusion.");
         return false;
     }
 
@@ -4115,9 +4115,9 @@ bool poison_player(int amount, string source, string source_aux, bool force)
         return false;
     }
 
-	if(have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from poison.");
+        simple_god_message(" protects you from poison.");
         return false;
     }
 
@@ -4454,9 +4454,9 @@ bool slow_player(int turns, bool force)
     if (check_stasis())
         return false;
 
-    if(!force && have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (!force && have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from slowing.");
+        simple_god_message(" protects you from slowing.");
         return false;
     }
 
@@ -4962,7 +4962,7 @@ player::player()
 
     spell_library.reset();
 
-	manuals_in_inventory.clear();
+    manuals_in_inventory.clear();
 
     spells.init(SPELL_NO_SPELL);
     old_vehumet_gifts.clear();
@@ -5538,11 +5538,11 @@ void player::shield_block_succeeded(actor *foe)
 
 int player::missile_deflection() const
 {
-    //power-dependent chance of getting the full effect, otherwise as rmsl
+    // power-dependent chance of getting the full effect, otherwise as rmsl
     if (attribute[ATTR_DEFLECT_MISSILES])
     {
         if (x_chance_in_y(200 + calc_spell_power(SPELL_DEFLECT_MISSILES, true), 400))
-	        return 2;
+            return 2;
         else return 1;
     }
 
@@ -5554,7 +5554,7 @@ int player::missile_deflection() const
         return 1;
     }
 
-	// spell version has a chance to do nothing, depending on power
+    // spell version has a chance to do nothing, depending on power
     if (attribute[ATTR_REPEL_MISSILES]
         && x_chance_in_y(100 + calc_spell_power(SPELL_REPEL_MISSILES, true), 200))
         return 1;
@@ -5677,12 +5677,12 @@ int player::skill(skill_type sk, int scale, bool real, bool drained) const
     }
 
     if (have_passive(passive_t::magic_skill_boost))
-	{
-		if(sk >= SK_FIRST_MAGIC_SCHOOL && sk <= SK_LAST_MAGIC )
-		{
-			level = min(level + (50 + you.piety) * scale / 100, 27 * scale);
-		}
-	}
+    {
+        if (sk >= SK_FIRST_MAGIC_SCHOOL && sk <= SK_LAST_MAGIC )
+        {
+            level = min(level + (50 + you.piety) * scale / 100, 27 * scale);
+        }
+    }
 
 
     if (have_passive(passive_t::heroism) && sk <= SK_LAST_MUNDANE && sk != SK_STEALTH)
@@ -5709,7 +5709,7 @@ int player_icemail_armour_class()
  */
 static int _bone_armour_bonus()
 {
-	if(you.attribute[ATTR_SKELETON_ARMOUR])
+    if (you.attribute[ATTR_SKELETON_ARMOUR])
         return you.attribute[ATTR_SKELETON_ARMOUR] * 100;
 
     if (!you.attribute[ATTR_BONE_ARMOUR])
@@ -6446,9 +6446,9 @@ int player::hurt(const actor *agent, int amount, beam_type flavour,
 
 void player::drain_stat(stat_type s, int amount)
 {
-    if(have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from stat loss.");
+        simple_god_message(" protects you from stat loss.");
         return;
     }
 
@@ -6468,9 +6468,9 @@ bool player::rot(actor *who, int amount, bool quiet, bool /*no_cleanup*/)
         return false;
     }
 
-    if(have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from rotting.");
+        simple_god_message(" protects you from rotting.");
         return false;
     }
 
@@ -6545,7 +6545,7 @@ void player::splash_with_acid(const actor* evildoer, int acid_strength,
 
     const int dam = roll_dice(4, acid_strength);
     const int post_res_dam = resist_adjust_damage(&you, BEAM_ACID, dam);
-	std::string d = std::to_string(post_res_dam);
+    std::string d = std::to_string(post_res_dam);
 
     mpr("You are splashed with acid!");
     if (post_res_dam > 0)
@@ -6595,9 +6595,9 @@ void player::paralyse(actor *who, int str, string source)
         return;
     }
 
-    if(who && have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (who && have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from paralysis.");
+        simple_god_message(" protects you from paralysis.");
         return;
     }
 
@@ -6633,9 +6633,9 @@ void player::petrify(actor *who, bool force)
         return;
     }
 
-    if(have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from petrification.");
+        simple_god_message(" protects you from petrification.");
         return;
     }
 
@@ -6860,9 +6860,9 @@ bool player::sicken(int amount)
         return false;
     }
 
-	if(have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from disease.");
+        simple_god_message(" protects you from disease.");
         return false;
     }
 
@@ -7454,9 +7454,9 @@ bool player::made_nervous_by(const monster *mons)
 
 void player::weaken(actor *attacker, int pow)
 {
-    if(have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
+    if (have_passive(passive_t::purification) && x_chance_in_y(you.piety, 200))
     {
-		simple_god_message(" protects you from weakness.");
+        simple_god_message(" protects you from weakness.");
         return;
     }
 

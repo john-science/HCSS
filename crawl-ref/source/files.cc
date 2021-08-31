@@ -1472,9 +1472,9 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
 
         if (just_created_level)
         {
-            if(you.depth > 2 || !player_in_branch(BRANCH_DUNGEON))
+            if (you.depth > 2 || !player_in_branch(BRANCH_DUNGEON))
                 xom_new_level_effect();
-	    }
+        }
     }
 
 

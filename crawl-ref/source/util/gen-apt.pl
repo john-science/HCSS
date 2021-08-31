@@ -152,7 +152,7 @@ sub aptitude_table
         if($sp eq 'Vampire')
         {
             $sp = 'Jiangshi';
-		}
+        }
 
         my $line = '';
         $line .= fix_draco_species($sp, \$seen_draconian_length);
@@ -284,7 +284,7 @@ sub load_mods
         if ($sp eq 'Vampire')
         {
             $sp = 'Jiangshi';
-		}
+        }
         my ($xp, $hp, $mp, $mr) = $file =~ /$sp.*\n.*\n *(-?\d), (-?\d), (-?\d), (\d),/;
 
         $SPECIES_SKILLS{$_}{"Experience"} = $xp;
