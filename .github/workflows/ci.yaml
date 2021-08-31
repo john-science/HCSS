@@ -1,4 +1,4 @@
-name: HCSS Build
+name: HCSS_Build
 
 on:
   pull_request:

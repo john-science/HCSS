@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/john-science/HCSS/workflows/HCSS Build/badge.svg)](https://github.com/john-science/HCSS/actions/)
+[![Build Status](https://github.com/john-science/HCSS/workflows/HCSS_Build/badge.svg)](https://github.com/john-science/HCSS/actions/)
 
 # Hell Crawl Stone Soup (HCSS)
 
