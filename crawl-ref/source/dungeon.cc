@@ -453,7 +453,7 @@ static void _builder_assertions()
 
 void bazaar_postlevel_shops()
 {
-	int added_shop_count = one_chance_in(6) ? 2 + random2(4) : 1;
+    int added_shop_count = one_chance_in(6) ? 2 + random2(4) : 1;
     vector<coord_def> locations;
     int tries = 50;
     for (rectangle_iterator ri(0); ri; ++ri)
