@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/john-science/HCSS/workflows/HCSS Build/badge.svg)](https://github.com/john-science/HCSS/actions/)
+
 # Hell Crawl Stone Soup (HCSS)
 
 > Kill the dead. End their suffering.
