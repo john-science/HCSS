@@ -19,6 +19,9 @@ jobs:
         run: git submodule update --init
       - name: setting terminal
         run: export TERM=xterm-256color
-      - name: testing
-        run: make debug test
+#      - name: testing
+#        run: make debug test
+#        working-directory: crawl-ref/source
+      - name: just build from source
+        run: make
         working-directory: crawl-ref/source
