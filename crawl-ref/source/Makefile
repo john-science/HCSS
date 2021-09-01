@@ -107,7 +107,7 @@ include Makefile.obj
 STDFLAG = -std=c++0x
 
 CFOTHERS := -pipe $(EXTERNAL_FLAGS)
-CFWARN := 
+CFWARN :=
 CFWARN_L := -Wall -Wformat-security -Wundef
 
 DEFINES := $(EXTERNAL_DEFINES)
@@ -232,7 +232,7 @@ ifeq ($(uname_S),Darwin)
 		BUILD_SDL2 = YesPlease
 		BUILD_SDL2IMAGE = YesPlease
 		ifdef SOUND
-			ifndef WIN32 
+			ifndef WIN32
 				BUILD_SDL2MIXER = YesPlease
 			endif
 		endif
@@ -257,7 +257,7 @@ ifdef BUILD_ALL
 	BUILD_SDL2 = YesPlease
 	BUILD_SDL2IMAGE = YesPlease
 	ifdef SOUND
-		ifndef WIN32 
+		ifndef WIN32
 			BUILD_SDL2MIXER = YesPlease
 		endif
 	endif
@@ -688,7 +688,7 @@ SDL2_LDFLAGS := $(shell $(PKGCONFIG) sdl2 --libs-only-L) $(shell $(PKGCONFIG) sd
 endif
 
 ifdef SOUND
-ifndef WIN32 
+ifndef WIN32
 LIBS += -lSDL2_mixer
 endif
 endif
@@ -973,7 +973,7 @@ endif
 
 ifdef BUILD_PCRE
 DEFINES += -DREGEX_PCRE
-else 
+else
   ifdef USE_PCRE
   DEFINES += -DREGEX_PCRE
   LIBS += -lpcre
@@ -1735,7 +1735,7 @@ mac-app-console: all
 #
 
 android-project/AndroidManifest.xml: android-project/AndroidManifest.xml.in
-	sed "s/@CRAWL_VERSION@/${SRC_VERSION}/" <android-project/AndroidManifest.xml.in >android-project/AndroidManifest.xml
+	sed "s/@HCSS_VERSION@/${SRC_VERSION}/" <android-project/AndroidManifest.xml.in >android-project/AndroidManifest.xml
 
 android: install-data .android-cflags android-project/AndroidManifest.xml
 ifeq ($(ANDROID),)
@@ -1750,7 +1750,7 @@ endif
 # Canned tests
 #
 
-test: test-test test-all
+test: test-test
 nonwiztest: test-test test-nonwiz
 nondebugtest: test-all
 

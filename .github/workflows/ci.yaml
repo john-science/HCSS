@@ -7,11 +7,16 @@ on:
       - main
 
 jobs:
-  linting:
-    name: Code Linting
+  build:
+    name: Build
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Checkwhite
+      - name: linting
         run: util/checkwhite -n
+        working-directory: crawl-ref/source
+      - name: submodules
+        run: git submodule update --init
+      - name: testing
+        run: make debug test
         working-directory: crawl-ref/source

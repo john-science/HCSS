@@ -12,10 +12,10 @@
 
 namespace Version
 {
-    const char* Major          = CRAWL_VERSION_MAJOR;
-    const char* Short          = CRAWL_VERSION_SHORT;
-    const char* Long           = CRAWL_VERSION_LONG;
-    const rel_type ReleaseType = CRAWL_VERSION_RELEASE;
+    const char* Major          = HCSS_VERSION_MAJOR;
+    const char* Short          = HCSS_VERSION_SHORT;
+    const char* Long           = HCSS_VERSION_LONG;
+    const rel_type ReleaseType = HCSS_VERSION_RELEASE;
 }
 
 #if defined(__GNUC__) && defined(__VERSION__)

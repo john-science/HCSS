@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="org.develz.crawl"
       android:versionCode="1"
-      android:versionName="@CRAWL_VERSION@"
+      android:versionName="@HCSS_VERSION@"
       android:installLocation="auto">
 
     <application android:label="@string/app_name"

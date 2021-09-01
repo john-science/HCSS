@@ -13,15 +13,7 @@ $mergebase or $mergebase = "";
 
 mkdir dirname($outfile);
 
-$_ = `git describe --tags $mergebase`
-    || (open(IN, "<", "$scriptpath/release_ver") ? <IN>
-        : die "No Git, and $scriptpath/release_ver doesn't exist.\n")
-    or die "couldn't get the version information\n";
-
 chomp;
-
-/v?(([0-9]+\.[0-9]+)(?:\.[0-9]+)?(?:-([a-zA-Z]+[0-9]+))?)(?:-[0-9]+-g[a-fA-F0-9]+)?/
-    or die "Version string '$_' is malformed.\n";
 
 my ($major, $tag, $pretyp) = ($2, $1, $3);
 
@@ -34,6 +26,6 @@ print OUT <<__eof__;
 #define ${prefix}_VERSION_MAJOR "$major"
 #define ${prefix}_VERSION_RELEASE VER_$rel
 #define ${prefix}_VERSION_SHORT "$tag"
-#define ${prefix}_VERSION_LONG "$_"
+#define ${prefix}_VERSION_LONG "$major"
 __eof__
 close OUT or die $!;
