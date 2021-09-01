@@ -2418,7 +2418,6 @@ enum job_type
     JOB_PRIEST,
 #endif
     JOB_GLADIATOR,
-    JOB_NECROMANCER,
     JOB_ASSASSIN,
     JOB_HUNTER,
     JOB_CONJURER,

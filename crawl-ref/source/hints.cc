@@ -250,13 +250,10 @@ static job_type _get_hints_job(unsigned int type)
 {
     switch (type)
     {
-    case HINT_MAGIC_CHAR:
-        return JOB_CONJURER;
     case HINT_RANGER_CHAR:
         return JOB_GLADIATOR;
     default:
-        // Use something fancy for debugging.
-        return JOB_NECROMANCER;
+        return JOB_CONJURER;
     }
 }
 

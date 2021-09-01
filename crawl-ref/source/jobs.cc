@@ -147,9 +147,10 @@ void debug_jobdata()
 {
     string fails;
 
+    // test that jobs defined in enum match those in jobs-data.cc
     for (int i = 0; i < NUM_JOBS; i++)
         if (!job_data.count(static_cast<job_type>(i)))
-            fails += "job number " + to_string(i) + "is not present\n";
+            fails += "job number " + to_string(i) + " is not present\n";
 
     item_list dummy;
     for (auto& entry : job_data)
