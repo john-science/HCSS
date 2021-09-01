@@ -374,12 +374,7 @@ void player_quiver::_get_fire_order(vector<int>& order,
         return;
     }
 
-    if (launcher && launcher->base_type == OBJ_WEAPONS
-    && (launcher->sub_type == WPN_SHORTBOW
-            || launcher->sub_type == WPN_LONGBOW
-            || launcher->sub_type == WPN_ARBALEST
-            || launcher->sub_type == WPN_TRIPLE_CROSSBOW
-    ))
+    if (launcher)
         return;
 
     for (int i_inv = inv_start; i_inv < ENDOFPACK; i_inv++)
@@ -570,10 +565,11 @@ static ammo_t _get_weapon_ammo_type(const item_def* weapon)
     {
         case WPN_SHORTBOW:
         case WPN_LONGBOW:
+            return AMMO_BOW;
         case WPN_HAND_CROSSBOW:
         case WPN_ARBALEST:
         case WPN_TRIPLE_CROSSBOW:
-            return AMMO_BOW;
+            return AMMO_CROSSBOW;
         default:
             return AMMO_THROW;
     }

@@ -49,7 +49,7 @@ static int _upgrade_weapon_type(int old_type, bool has_shield, bool highlevel)
                                                  WPN_DOUBLE_SWORD;
 
         case WPN_HAND_AXE:    return WPN_WAR_AXE;
-            // Low level orcs shouldn't get fairly rare items.
+        // Low level orcs shouldn't get fairly rare items.
         case WPN_WAR_AXE:     return !highlevel  ? WPN_WAR_AXE   :
                                      has_shield  ? WPN_BROAD_AXE :
                                                    WPN_BATTLEAXE;
@@ -61,11 +61,13 @@ static int _upgrade_weapon_type(int old_type, bool has_shield, bool highlevel)
         case WPN_HALBERD:     return WPN_GLAIVE;
         case WPN_GLAIVE:      return highlevel ? WPN_BARDICHE : WPN_GLAIVE;
 
+        case WPN_HAND_CROSSBOW: return !has_shield ? WPN_ARBALEST :
+                                                     WPN_HAND_CROSSBOW;
         case WPN_ARBALEST:      return highlevel ? WPN_TRIPLE_CROSSBOW :
                                                    WPN_ARBALEST;
         case WPN_SHORTBOW:      return highlevel ? WPN_LONGBOW : WPN_SHORTBOW;
 
-        default:              return old_type;
+        default:                return old_type;
     }
 }
 

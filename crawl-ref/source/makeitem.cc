@@ -652,6 +652,7 @@ static void _generate_missile_item(item_def& item, int force_type,
     {
         item.sub_type =
             random_choose_weighted(4,  MI_DART_POISONED,
+                                   20, MI_ARROW,
                                    3,  MI_TOMAHAWK,
                                    2,  MI_JAVELIN,
                                    1,  MI_DART_CURARE,
