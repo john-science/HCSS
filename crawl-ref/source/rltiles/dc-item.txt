@@ -176,17 +176,13 @@ i-flaming BRAND_FLAMING BRAND_WEP_FIRST
 i-freezing BRAND_FREEZING
 i-holy_wrath BRAND_HOLY_WRATH
 i-electrocution BRAND_ELECTROCUTION
-# Remove _slaying brands when TAG_MAJOR_VERSION > 34
 i-confusion BRAND_ORC_SLAYING
 i-confusion BRAND_DRAGON_SLAYING
-# End removals
 i-venom BRAND_VENOM
 i-protection BRAND_PROTECTION
 i-draining BRAND_DRAINING
 i-speed BRAND_SPEED
 i-vorpal BRAND_VORPAL
-# Remove the BRAND_FLAME and BRAND_FROST line s(but not the tiles, which are
-# still used for melee weapons) when TAG_MAJOR_VERSION > 34
 i-flaming BRAND_FLAME
 i-freezing BRAND_FROST
 i-vampirism BRAND_VAMPIRISM
@@ -195,13 +191,10 @@ i-pain BRAND_PAIN
 i-antimagic BRAND_ANTIMAGIC
 %rim 0
 i-distortion BRAND_DISTORTION
-# Remove when TAG_MAJOR_VERSION > 34
 i-confusion BRAND_REACHING
-# Move i-returning down to missile-only brands when TAG_MAJOR_VERSION > 34
 i-returning BRAND_RETURNING
 i-chaos BRAND_CHAOS
 i-evasion BRAND_EVASION
-# Move i-confusion down to missile-only brands when TAG_MAJOR_VERSION > 34
 i-devastation BRAND_DEVASTATION
 i-confusion BRAND_CONFUSION
 i-penetration BRAND_PENETRATION
@@ -212,7 +205,6 @@ i-explosion BRAND_EXPLOSION
 i-venom BRAND_POISONED
 i-curare BRAND_CURARE
 i-electrocution BRAND_ELECTRIC
-# Remove sickness and slowing when TAG_MAJOR_VERSION > 34
 i-sickness BRAND_SICKNESS
 i-slowing BRAND_SLOWING
 i-paralysis BRAND_PARALYSIS
@@ -513,7 +505,6 @@ gem_plastic
 
 %sdir item/wand
 #### These must be in the same order as the enum in itemprop-enum.h!
-# Remove REMOVEMEs when TAG_MAJOR_VERSION > 34
 i-flame WAND_FLAME WAND_ID_FIRST
 i-flame WAND_REMOVEME
 i-slowing WAND_SLOWING
@@ -608,7 +599,6 @@ i-torment SCR_TORMENT
 %back scroll-grey
 i-random_uselessness SCR_RANDOM_USELESSNESS
 %back scroll-grey
-#### Remove curse foo when TAG_MAJOR_VERSION > 34
 i-curse_weapon SCR_CURSE_WEAPON
 i-curse_armour SCR_CURSE_ARMOUR
 i-immolation SCR_IMMOLATION
@@ -621,7 +611,6 @@ i-fog SCR_FOG
 %back scroll-cyan
 i-acquirement SCR_ACQUIREMENT
 %back scroll-green
-#if TAG_MAJOR_VERSION == 34 # Remove the two i-enchant-weapon
 i-enchant-weapon SCR_ENCHANT_WEAPON_II
 i-brand-weapon SCR_BRAND_WEAPON
 i-recharging SCR_RECHARGING
@@ -634,7 +623,6 @@ i-silence SCR_SILENCE
 %back scroll-yellow
 i-amnesia SCR_AMNESIA
 %back scroll-grey
-#### Remove curse foo when TAG_MAJOR_VERSION > 34
 i-curse-jewellery SCR_CURSE_JEWELLERY SCR_ID_LAST
 %back none
 
@@ -693,7 +681,6 @@ snake
 ###########icons
 %sdir item/ring
 #### These must be in the same order as the enum in itemprop-enum.h!
-# Remove regeneration when TAG_MAJOR_VERSION > 34 (and mark protection as 1st)
 i-protection RING_REGENERATION RING_ID_FIRST
 i-protection RING_PROTECTION
 i-r-fire RING_PROTECTION_FROM_FIRE
@@ -706,7 +693,6 @@ i-r-corrosion RING_RESIST_CORROSION
 i-loudness RING_LOUDNESS
 i-teleport RING_TELEPORTATION
 i-evasion RING_EVASION
-# Remove sustat when TAG_MAJOR_VERSION > 34
 i-s-attr RING_SUSTAIN_ATTRIBUTES
 i-stealth RING_STEALTH
 i-dex RING_DEXTERITY
@@ -718,7 +704,6 @@ i-life-protection RING_LIFE_PROTECTION
 i-r-magic RING_PROTECTION_FROM_MAGIC
 i-fire RING_FIRE
 i-ice RING_ICE
-# remove teleport control when TAG_MAJOR_VERSION > 34 and mark ice as last
 i-c-teleport RING_TELEPORT_CONTROL RING_ID_LAST
 
 ############amulets
@@ -767,7 +752,6 @@ sun
 ###########icons
 %sdir item/amulet
 # These must be in the same order as the enum in itemprop-enum.h!
-# remove REMOVEMEs when TAG_MAJOR_VERSION > 34
 i-rage AMU_RAGE AMU_ID_FIRST
 i-harm AMU_HARM
 i-dismissal AMU_DISMISSAL
@@ -920,7 +904,6 @@ i-staff_poison STAFF_POISON
 i-staff_energy STAFF_ENERGY
 i-staff_death STAFF_DEATH
 i-staff_conjuration STAFF_CONJURATION
-# Remove when TAG_MAJOR_VERSION > 34
 i-staff_enchantment STAFF_ENCHANTMENT
 i-staff_summoning STAFF_SUMMONING
 i-staff_air STAFF_AIR
@@ -928,7 +911,6 @@ i-staff_earth STAFF_EARTH
 %rim 0
 i-staff_channeling STAFF_CHANNELING STAFF_ID_LAST
 
-# Remove rods TAG_MAJOR_VERSION > 34
 %sdir item/rod
 rod00 ROD
 rod01
@@ -968,13 +950,11 @@ misc_fan MISC_FAN_OF_GALES
 misc_fan_inert MISC_FAN_OF_GALES_INERT
 misc_lamp MISC_LAMP_OF_FIRE
 misc_lamp_inert MISC_LAMP_OF_FIRE_INERT
-# Remove stone when TAG_MAJOR_VERSION > 34
 misc_stone MISC_STONE_OF_TREMORS
 misc_stone_inert MISC_STONE_OF_TREMORS_INERT
 misc_phial MISC_PHIAL_OF_FLOODS
 misc_phial_inert MISC_PHIAL_OF_FLOODS_INERT
 %rim 1
-# Remove when TAG_MAJOR_VERSION > 34
 misc_lantern MISC_LANTERN_OF_SHADOWS
 misc_horn MISC_HORN_OF_GERYON
 misc_box MISC_BOX_OF_BEASTS
@@ -992,7 +972,6 @@ misc_deck MISC_DECK
 %compose misc_deck
 %compose i-deck_destruction
 %finish
-# Remove when TAG_MAJOR_VERSION > 34
 %start
 %compose misc_deck
 %compose i-deck_dungeons
@@ -1002,7 +981,6 @@ misc_deck MISC_DECK
 %compose i-deck_summoning
 %finish
 %start
-# Remove when TAG_MAJOR_VERSION > 34
 %compose misc_deck
 %compose i-deck_wonders
 %finish
@@ -1010,7 +988,6 @@ misc_deck MISC_DECK
 %compose misc_deck
 %compose i-deck_punishment
 %finish
-# Remove war, changes and defense when TAG_MAJOR_VERSION > 34
 %start
 %compose misc_deck
 %compose i-deck_war
@@ -1032,7 +1009,6 @@ misc_deck_rare MISC_DECK_RARE
 %compose misc_deck_rare
 %compose i-deck_destruction
 %finish
-# Remove dungeons, summoning and wonders when TAG_MAJOR_VERSION > 34
 %start
 %compose misc_deck_rare
 %compose i-deck_dungeons
@@ -1053,7 +1029,6 @@ misc_deck_rare MISC_DECK_RARE
 %compose misc_deck_rare
 %compose i-deck_war
 %finish
-# Remove changes and defense when TAG_MAJOR_VERSION > 34
 %start
 %compose misc_deck_rare
 %compose i-deck_changes
@@ -1071,7 +1046,6 @@ misc_deck_legendary MISC_DECK_LEGENDARY
 %compose misc_deck_legendary
 %compose i-deck_destruction
 %finish
-# Remove dungeons, summoning and wonders when TAG_MAJOR_VERSION > 34
 %start
 %compose misc_deck_legendary
 %compose i-deck_dungeons
@@ -1092,7 +1066,6 @@ misc_deck_legendary MISC_DECK_LEGENDARY
 %compose misc_deck_legendary
 %compose i-deck_war
 %finish
-# Remove changes and defense when TAG_MAJOR_VERSION > 34
 %start
 %compose misc_deck_legendary
 %compose i-deck_changes

@@ -66,14 +66,6 @@ static vector<level_id> vault_mon_places;
 static vector<int> vault_mon_weights;
 static vector<bool> vault_mon_bands;
 
-#if TAG_MAJOR_VERSION > 34
-#define VAULT_MON_TYPES_KEY   "vault_mon_types"
-#define VAULT_MON_BASES_KEY   "vault_mon_bases"
-#define VAULT_MON_PLACES_KEY  "vault_mon_places"
-#define VAULT_MON_WEIGHTS_KEY "vault_mon_weights"
-#define VAULT_MON_BANDS_KEY   "vault_mon_bands"
-#endif
-
 // proximity is the same as for mons_place:
 // 0 is no restrictions
 // 1 attempts to place near player

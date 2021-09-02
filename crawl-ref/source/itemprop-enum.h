@@ -11,9 +11,6 @@ enum armour_type
     ARM_CHAIN_MAIL,
     ARM_PLATE_ARMOUR,
     ARM_LAST_MUNDANE_BODY = ARM_PLATE_ARMOUR,
-#if TAG_MAJOR_VERSION > 34
-    ARM_CRYSTAL_PLATE_ARMOUR,
-#endif
 
     ARM_CLOAK,
 
@@ -75,10 +72,6 @@ enum armour_type
     ARM_PEARL_DRAGON_HIDE,
 #endif
     ARM_PEARL_DRAGON_ARMOUR,
-#if TAG_MAJOR_VERSION > 34
-    ARM_SHADOW_DRAGON_ARMOUR,
-    ARM_QUICKSILVER_DRAGON_ARMOUR,
-#endif
 #if TAG_MAJOR_VERSION == 34
     ARM_CENTAUR_BARDING,
 #endif
@@ -153,9 +146,6 @@ enum brand_type // item_def.special
     NUM_REAL_SPECIAL_WEAPONS,
 
     SPWPN_ACID,    // acid bite and Punk
-#if TAG_MAJOR_VERSION > 34
-    SPWPN_CONFUSE, // Confusing Touch only for the moment
-#endif
     SPWPN_DEBUG_RANDART,
     NUM_SPECIAL_WEAPONS,
 };
@@ -590,9 +580,6 @@ enum weapon_type
     WPN_SHORT_SWORD,
 #endif
     WPN_RAPIER,
-#if TAG_MAJOR_VERSION > 34
-    WPN_CUTLASS,
-#endif
 
     WPN_FALCHION,
     WPN_LONG_SWORD,
@@ -613,25 +600,10 @@ enum weapon_type
     WPN_GLAIVE,
     WPN_BARDICHE,
 
-#if TAG_MAJOR_VERSION == 34
     WPN_BLOWGUN,
-#endif
-
-#if TAG_MAJOR_VERSION > 34
-    WPN_HAND_CROSSBOW,
-#endif
     WPN_ARBALEST,
-#if TAG_MAJOR_VERSION > 34
-    WPN_TRIPLE_CROSSBOW,
-#endif
-
     WPN_SHORTBOW,
     WPN_LONGBOW,
-
-#if TAG_MAJOR_VERSION > 34
-    WPN_HUNTING_SLING,
-    WPN_FUSTIBALUS,
-#endif
 
     WPN_DEMON_WHIP,
     WPN_GIANT_CLUB,

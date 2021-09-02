@@ -423,9 +423,6 @@ static const char *weapon_brands_terse[] =
     "evade", "confuse",
 #endif
     "penet", "reap", "devast", "buggy-num", "acid",
-#if TAG_MAJOR_VERSION > 34
-    "confuse",
-#endif
     "debug",
 };
 
@@ -448,10 +445,6 @@ static const char *weapon_brands_verbose[] =
     "evasion", "confusion",
 #endif
     "penetration", "reaping", "devastation", "buggy-num", "acid",
-#if TAG_MAJOR_VERSION > 34
-    "confusion",
-#endif
-
     "debug",
 };
 

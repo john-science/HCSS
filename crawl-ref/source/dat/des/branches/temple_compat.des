@@ -11,7 +11,7 @@
 # the game expected.
 #
 # If other temple maps are removed in future commits, they should also
-# go here. This file can be cut when TAG_MAJOR_VERSION > 34.
+# go here.
 
 {{
 function get_altar_count(e, default)

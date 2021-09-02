@@ -132,15 +132,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_SUMMON_HYDRA,
 },
 
-#if TAG_MAJOR_VERSION > 34
-{   // Book of Battle
-    SPELL_INFUSION,
-    SPELL_SONG_OF_SLAYING,
-    SPELL_REGENERATION,
-    SPELL_OZOCUBUS_ARMOUR,
-    SPELL_SPECTRAL_WEAPON,
-},
-#endif
 {   // Book of Clouds
     SPELL_CONJURE_FLAME,
     SPELL_MEPHITIC_CLOUD,

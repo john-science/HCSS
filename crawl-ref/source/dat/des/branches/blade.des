@@ -1,9 +1,5 @@
 ##############################################################################
 # The Hall of Blades
-#
-# This file is here for save compatibility reasons, and should be removed when
-# TAG_MAJOR_VERSION >= 35. (i.e, it is only necessary if the TAG_MAJOR_VERSION
-# is 34)
 ##############################################################################
 : require('dlua/vault.lua')
 
