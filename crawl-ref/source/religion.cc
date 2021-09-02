@@ -2966,7 +2966,7 @@ int gozag_service_fee()
 
 bool player_can_join_god(god_type which_god)
 {
-    if (is_evil_god(which_god) && you.undead_or_demonic())
+    if (is_evil_god(which_god))
         return false;
 
     if (which_god == GOD_TROG && you.mp_frozen > 0)
@@ -3613,6 +3613,13 @@ void god_pitch(god_type which_god)
         {
             simple_god_message(" says: How dare you approach in such a "
                                "loathsome form!",
+                               which_god);
+        }
+        else if (is_evil_god(which_god))
+        {
+            simple_god_message(" does not accept worship from those such as"
+                               " you while you live, but waits to torture"
+                               " you forever after you die!",
                                which_god);
         }
         else
