@@ -9,7 +9,7 @@
 
 > HCSS is a fork of [Hellcrawl](https://github.com/Hellmonk/hellcrawl) which is a fork of [DCSS](https://github.com/crawl/crawl) v0.19.
 
-On the off-chance it helps, you will find the full README for DCSS v0.19 [here](README_DCSS_0.19.md) and the source code [here](https://github.com/crawl/crawl/releases/tag/0.19.6).
+On the off-chance it helps, you will find the full README for DCSS v0.19 [here](crawl-ref/README_DCSS_0.19.md) and the source code [here](https://github.com/crawl/crawl/releases/tag/0.19.6).
 
 
 ## Fewer Options, Hopefully More Story
