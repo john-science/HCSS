@@ -1,3 +1,15 @@
+Hell Crawl Stone Stoup
+Copyright 2021 John Stilley
+
+I  hereby copyright my work under the standard GPLv3:
+https://www.gnu.org/licenses/gpl-3.0.en.html
+
+Please note that my work started based upon Hellcrawl, which itself started
+based on the DCSS codebase. To that end, I include a full copy of the DCSS
+license below.
+
+*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*&*
+
 Dungeon Crawl Stone Soup
 Copyright 1997-2015 Linley Henzell, the dev team, and the contributors
 (please refer to CREDITS.txt for details).
