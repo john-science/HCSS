@@ -15,13 +15,10 @@ jobs:
       - name: linting
         run: util/checkwhite -n
         working-directory: crawl-ref/source
-      - name: submodules
+      - name: grab submodules
         run: git submodule update --init
-      - name: setting terminal
-        run: export TERM=xterm-256color
-#      - name: testing
-#        run: make debug test
-#        working-directory: crawl-ref/source
-      - name: just build from source
-        run: make
+      - name: testing
+        run: make debug test
         working-directory: crawl-ref/source
+        env:
+          TERM: dumb
