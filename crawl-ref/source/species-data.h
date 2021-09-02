@@ -196,7 +196,6 @@ static const map<species_type, species_def> species_data =
     {}, // not a starting race
 } },
 
-#if TAG_MAJOR_VERSION == 34
 { SP_MOTTLED_DRACONIAN, {
     "Dr",
     "Mottled Draconian", "Draconian", "Draconian",
@@ -213,7 +212,6 @@ static const map<species_type, species_def> species_data =
     {}, // not a starting race
     {}, // not a starting race
 } },
-#endif
 
 { SP_PALE_DRACONIAN, {
     "Dr",
@@ -500,7 +498,7 @@ static const map<species_type, species_def> species_data =
     { SK_SHORT_BLADES, SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
       SK_BOWS },
 } },
-#if TAG_MAJOR_VERSION == 34
+
 { SP_SLUDGE_ELF, {
     "SE",
     "Sludge Elf", "Elven", "Elf",
@@ -654,7 +652,6 @@ static const map<species_type, species_def> species_data =
       JOB_ICE_ELEMENTALIST, JOB_EARTH_ELEMENTALIST },
     { SK_UNARMED_COMBAT, SK_BOWS },
 } },
-#endif
 
 // Ideally this wouldn't be necessary...
 { SP_UNKNOWN, { // Line 1: enum

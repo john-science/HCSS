@@ -91,7 +91,7 @@ KMONS:   B = elf ; nothing
 KMONS:   C = dwarf ; nothing
 KMONS:   D = orc ; nothing
 KMONS:   E = merfolk ; nothing
-KMONS:   F = nothing
+KMONS:   F = halfling ; nothing
 KMONS:   G = kobold ; nothing
 KMONS:   H = spriggan ; nothing
 KMONS:   I = naga ; nothing
@@ -101,17 +101,17 @@ KMONS:   L = troll
 KMONS:   M = minotaur ; nothing
 KMONS:   N = tengu ; nothing
 KMONS:   O = draconian ; nothing
-KMONS:   P = demonspawn ; nothing
-KMONS:   Q = mummy
-KMONS:   R = nothing
-KMONS:   S = ghoul
+KMONS:   P = orc ; nothing
+KMONS:   Q = dwarf ; nothing
+KMONS:   R = elf ; nothing
+KMONS:   S = human ; nothing
 KMONS:   T = jiangshi
-KMONS:   U = demigod ; nothing
+KMONS:   U = orc ; nothing
 KMONS:   V = octopode ; nothing
 KMONS:   W = formicid ; nothing
 KMONS:   X = gargoyle ; nothing
 KMONS:   Y = vine stalker ; nothing
-KMONS:   Z = skeletal warrior ; nothing
+KMONS:   Z = minotaur ; nothing
 MAP
  ccccc
  c.{.c

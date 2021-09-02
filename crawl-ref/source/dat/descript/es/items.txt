@@ -283,6 +283,7 @@ javelin
 
 Una larga y ligera vara que puede ser lanzada con la mano. {{
     if you.race() == "Kobold"
+        or you.race() == "Halfling"
         or you.race() == "Spriggan"
     then
         return "Por desgracia, es demasiada larga y rara para ti, así que eres

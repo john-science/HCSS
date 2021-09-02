@@ -45,7 +45,7 @@ static const map<job_type, job_def> job_data =
 { JOB_ARTIFICER, {
     "Ar", "Artificer",
     4, 3, 5,
-    { SP_KOBOLD, SP_SPRIGGAN, SP_BASE_DRACONIAN, },
+    { SP_HALFLING, SP_KOBOLD, SP_SPRIGGAN, SP_BASE_DRACONIAN, },
     { "dagger", "leather armour", "wand of flame charges:15",
       "wand of enslavement charges:15", "wand of iceblast charges:1" },
     WCHOICE_NONE,
@@ -107,7 +107,7 @@ static const map<job_type, job_def> job_data =
 { JOB_HUNTER, {
     "Hu", "Hunter",
     4, 3, 5,
-    { SP_MOUNTAIN_DWARF, SP_KOBOLD, SP_OGRE, SP_TROLL, SP_GNOLL},
+    { SP_MOUNTAIN_DWARF, SP_HALFLING, SP_KOBOLD, SP_OGRE, SP_TROLL, SP_GNOLL},
     { "dagger", "leather armour" },
     WCHOICE_RANGED,
     { { SK_FIGHTING, 2 }, { SK_DODGING, 2 }, { SK_STEALTH, 1 },
@@ -138,7 +138,7 @@ static const map<job_type, job_def> job_data =
 { JOB_SKALD, {
     "Sk", "Skald",
     4, 4, 4,
-    { SP_MERFOLK, SP_BASE_DRACONIAN, SP_GNOLL},
+    { SP_HALFLING, SP_MERFOLK, SP_BASE_DRACONIAN, SP_GNOLL},
     { "leather armour", "book of Battle" },
     WCHOICE_PLAIN,
     { { SK_FIGHTING, 2 }, { SK_ARMOUR, 1 }, { SK_DODGING, 1 },
@@ -187,7 +187,7 @@ static const map<job_type, job_def> job_data =
       { SK_NECROMANCY, 1 }, { SK_FIRE_MAGIC, 1 },
     },
 } },
-#if TAG_MAJOR_VERSION == 34
+
 { JOB_CONJURER, {
     "Cj", "Conjurer",
     0, 0, 0,
@@ -251,5 +251,4 @@ static const map<job_type, job_def> job_data =
     { },
 } },
 
-#endif
 };

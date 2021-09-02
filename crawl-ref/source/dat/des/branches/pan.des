@@ -2333,7 +2333,7 @@ TAGS: no_trap_gen
 WEIGHT: 1
 KMONS:  p = human / elf / orc / naga / centaur / ogre / \
             minotaur / troll / kobold / mummy / ghoul / spriggan / \
-            octopode / vampire / demigod / \
+            octopode / vampire / demigod / halfling / \
             demonspawn / merfolk / gargoyle / formicid / vine stalker
 NSUBST: t = 10:p / *:', b = 10:p / *:'
 KPROP:  p' = no_tele_into

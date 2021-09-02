@@ -360,6 +360,7 @@ Dieser leichtgewichtige Speer wurde zum werfen entworfen und verursacht ernste
 Verwundungen .
 {{
     if you.race() == "Kobold"
+        or you.race() == "Halfling"
         or you.race() == "Spriggan"
     then
         return "Bedauerlicherweise ist er zu lang und unhandlich für dich."

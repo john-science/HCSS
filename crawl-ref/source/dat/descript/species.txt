@@ -35,6 +35,16 @@ A vaguely doglike species, gnolls begin with a little knowledge of everything.
 Like kobolds, they improve all skills equally when reaching a new experience
 level.
 %%%%
+Halfling
+
+Small but hardy, Halflings excel with slings. They have an increased resistance
+to mutagenic effects.
+%%%%
+Halfling
+
+Small but hardy, Halflings excel with slings. They have an increased resistance
+to mutagenic effects.
+%%%%
 Hill Orc
 
 Orcs are skilled in close combat, and often dabble in offensive magic. Hated by
