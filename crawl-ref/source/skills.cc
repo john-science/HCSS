@@ -65,7 +65,7 @@ static void _train_skills(int exp, const int cost, const bool simu);
 // NOTE: If a skill name is changed, remember to also adapt the database entry.
 static const char *skill_titles[NUM_SKILLS][6] =
 {
-  //  Skill name        levels 1-7       levels 8-14        levels 15-20       levels 21-26      level 27
+    //  Skill name        levels 1-7       levels 8-14        levels 15-20       levels 21-26      level 27
     {"Fighting",       "Skirmisher",    "Fighter",         "Warrior",         "Slayer",         "Conqueror"},
     {"Blades",         "Slasher",       "Carver",          "Fencer",          "@Adj@ Blade",    "Swordmaster"},
     {"Long Blades",    "Slasher",       "Carver",          "Fencer",          "@Adj@ Blade",    "Swordmaster"},
@@ -80,13 +80,10 @@ static const char *skill_titles[NUM_SKILLS][6] =
     {"Armour",         "Covered",       "Protected",       "Tortoise",        "Impregnable",    "Invulnerable"},
     {"Dodging",        "Ducker",        "Nimble",          "Spry",            "Acrobat",        "Intangible"},
     {"Stealth",        "Sneak",         "Covert",          "Unseen",          "Imperceptible",  "Ninja"},
-#if TAG_MAJOR_VERSION == 34
     {"Stabbing",       "Miscreant",     "Blackguard",      "Backstabber",     "Cutthroat",      "Politician"},
-#endif
     {"Shields",        "Shield-Bearer", "Blocker",         "Peltast",         "Hoplite",        "@Adj@ Barricade"},
-#if TAG_MAJOR_VERSION == 34
     {"Traps",          "Scout",         "Disarmer",        "Vigilant",        "Perceptive",     "Dungeon Master"},
-#endif
+
     // STR based fighters, for DEX/martial arts titles see below. Felids get their own category, too.
     {"Unarmed Combat", "Ruffian",       "Grappler",        "Brawler",         "Wrestler",       "@Weight@weight Champion"},
 
@@ -1540,13 +1537,11 @@ void init_skill_order()
 
 bool is_useless_skill(skill_type skill)
 {
-#if TAG_MAJOR_VERSION == 34
     if (skill == SK_STABBING || skill == SK_TRAPS
         || skill == SK_POISON_MAGIC || skill == SK_SPELLCASTING)
     {
         return true;
     }
-#endif
 
     if ((skill == SK_AIR_MAGIC && you.get_mutation_level(MUT_NO_AIR_MAGIC))
         || (skill == SK_CHARMS && you.get_mutation_level(MUT_NO_CHARM_MAGIC))

@@ -327,9 +327,7 @@ static void _dispellable_player_buffs(player_debuff_effects &buffs)
 {
     // attributes
     static const attribute_type dispellable_attributes[] = {
-#if TAG_MAJOR_VERSION == 34
         ATTR_DELAYED_FIREBALL,
-#endif
         ATTR_SWIFTNESS,
     };
 
@@ -385,11 +383,9 @@ void debuff_player()
     for (auto attr : buffs.attributes)
     {
         you.attribute[attr] = 0;
-#if TAG_MAJOR_VERSION == 34
         if (attr == ATTR_DELAYED_FIREBALL)
             mprf(MSGCH_DURATION, "Your charged fireball dissipates.");
         else
-#endif
             need_msg = true;
     }
 
@@ -709,7 +705,6 @@ bool remove_curse(bool alreadyknown, const string &pre_msg)
     return success;
 }
 
-#if TAG_MAJOR_VERSION == 34
 static bool _selectively_curse_item(bool armour, const string &pre_msg)
 {
     while (1)
@@ -765,7 +760,6 @@ bool curse_item(bool armour, const string &pre_msg)
 
     return _selectively_curse_item(armour, pre_msg);
 }
-#endif
 
 static bool _do_imprison(int pow, const coord_def& where, bool zin)
 {

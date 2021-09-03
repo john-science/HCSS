@@ -1082,7 +1082,6 @@ int main(int argc, char* argv[])
                 case AF_CRUSH:
                 case AF_PLAIN:
                     break;
-#if TAG_MAJOR_VERSION == 34
                 case AF_DISEASE:
                 case AF_PLAGUE:
                 case AF_STEAL_FOOD:
@@ -1096,7 +1095,6 @@ int main(int argc, char* argv[])
                 case AF_MIASMATA:
                     monsterattacks += colour(LIGHTRED, "(?\?\?)");
                     break;
-#endif
                     // let the compiler issue warnings for us
                     //      default:
                     //        monsterattacks += "(???)";

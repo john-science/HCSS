@@ -125,12 +125,10 @@ deck_archetype deck_of_punishment =
     { CARD_TORMENT,    {5, 5, 5} },
 };
 
-#if TAG_MAJOR_VERSION == 34
 deck_archetype removed_deck =
 {
     { CARD_XOM, {5, 5, 5} },
 };
-#endif
 
 struct deck_type_data
 {
@@ -148,26 +146,21 @@ static map<misc_item_type, deck_type_data> all_decks =
     { MISC_DECK_OF_DESTRUCTION, {
         "destruction", &deck_of_destruction,
     } },
-#if TAG_MAJOR_VERSION == 34
     { MISC_DECK_OF_DUNGEONS, {
         "dungeons", &removed_deck,
     } },
-#endif
     { MISC_DECK_OF_SUMMONING, {
         "summoning", &deck_of_summoning,
     } },
-#if TAG_MAJOR_VERSION == 34
     { MISC_DECK_OF_WONDERS, {
         "wonders", &removed_deck,
     } },
     { MISC_DECK_OF_ODDITIES, {
         "oddities", &removed_deck,
     } },
-#endif
     { MISC_DECK_OF_PUNISHMENT, {
         "punishment", &deck_of_punishment,
     } },
-#if TAG_MAJOR_VERSION == 34
     { MISC_DECK_OF_WAR, {
         "war", &removed_deck,
     } },
@@ -177,7 +170,6 @@ static map<misc_item_type, deck_type_data> all_decks =
     { MISC_DECK_OF_DEFENCE, {
         "defence", &removed_deck,
     } },
-#endif
 };
 
 int cards_in_deck(const item_def &deck)
@@ -278,7 +270,6 @@ const char* card_name(card_type card)
     case CARD_DEGEN:           return "Degeneration";
     case CARD_FAMINE:          return "Famine";
 
-#if TAG_MAJOR_VERSION == 34
     // Removed cards.
     case CARD_MERCENARY:       return "the Mercenary";
     case CARD_ALCHEMIST:       return "the Alchemist";
@@ -317,7 +308,6 @@ const char* card_name(card_type card)
     case CARD_SUMMON_SKELETON: return "the Bones";
     case CARD_WATER:           return "Water";
     case CARD_SWAP:            return "Swap";
-#endif
 
     case NUM_CARDS:            return "a buggy card";
     }
@@ -1867,7 +1857,6 @@ static void _summon_rangers(int power, deck_rarity_type rarity)
     _friendly(placed_choice, 5 - power_level);
 }
 
-#if TAG_MAJOR_VERSION == 34
 bool recruit_mercenary(int mid)
 {
     monster *mon = monster_by_mid(mid);
@@ -1900,7 +1889,6 @@ bool recruit_mercenary(int mid)
     you.del_gold(fee);
     return true;
 }
-#endif
 
 static void _cloud_card(int power, deck_rarity_type rarity)
 {
@@ -2195,7 +2183,6 @@ void card_effect(card_type which_card, deck_rarity_type rarity,
             mpr("You feel a momentary urge to oink.");
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case CARD_VENOM:
     case CARD_HAMMER:
     case CARD_FORTITUDE:
@@ -2235,7 +2222,6 @@ void card_effect(card_type which_card, deck_rarity_type rarity,
     case CARD_DOWSING:
         mpr("This type of card no longer exists!");
         break;
-#endif
 
     case NUM_CARDS:
         // The compiler will complain if any card remains unhandled.

@@ -182,9 +182,7 @@ int artefact_value(const item_def &item)
 
 const set<int> removed_shops =
 {
-#if TAG_MAJOR_VERSION == 34
     {SHOP_FOOD, },
-#endif
 };
 
 bool shop_type_removed(int subtype)
@@ -307,10 +305,8 @@ unsigned int item_value(item_def item, bool ident)
                 valued *= 30;
                 break;
 
-#if TAG_MAJOR_VERSION == 34
             case SPMSL_FLAME:
             case SPMSL_FROST:
-#endif
             case SPMSL_SLEEP:
             case SPMSL_CONFUSION:
                 valued *= 25;
@@ -318,11 +314,9 @@ unsigned int item_value(item_def item, bool ident)
 
             case SPMSL_EXPLODING:
             case SPMSL_POISONED:
-#if TAG_MAJOR_VERSION == 34
             case SPMSL_RETURNING:
             case SPMSL_SLOW:
             case SPMSL_SICKNESS:
-#endif
             case SPMSL_FRENZY:
                 valued *= 20;
                 break;
@@ -349,18 +343,14 @@ unsigned int item_value(item_def item, bool ident)
             case SPARM_COLD_RESISTANCE:
             case SPARM_DEXTERITY:
             case SPARM_FIRE_RESISTANCE:
-#if TAG_MAJOR_VERSION == 34
             case SPARM_SEE_INVISIBLE:
-#endif
             case SPARM_INTELLIGENCE:
             case SPARM_FLYING:
             case SPARM_STEALTH:
             case SPARM_MAGICAL_POWER:
             case SPARM_SPIRIT_SHIELD:
             case SPARM_STRENGTH:
-#if TAG_MAJOR_VERSION == 34
             case SPARM_INVISIBILITY:
-#endif
             case SPARM_MAGIC_RESISTANCE:
             case SPARM_PROTECTION:
             case SPARM_ARCHERY:
@@ -466,13 +456,10 @@ unsigned int item_value(item_def item, bool ident)
         {
             switch (item.sub_type)
             {
-#if TAG_MAJOR_VERSION == 34
             case POT_EXPERIENCE:
                 valued += 500;
                 break;
-#endif
 
-#if TAG_MAJOR_VERSION == 34
             case POT_GAIN_DEXTERITY:
             case POT_GAIN_INTELLIGENCE:
             case POT_GAIN_STRENGTH:
@@ -483,7 +470,6 @@ unsigned int item_value(item_def item, bool ident)
             case POT_CURE_MUTATION:
                 valued += 250;
                 break;
-#endif
 
             case POT_RESISTANCE:
             case POT_HASTE:
@@ -501,28 +487,22 @@ unsigned int item_value(item_def item, bool ident)
             case POT_BERSERK_RAGE:
             case POT_HEAL_WOUNDS:
             case POT_MIGHT:
-#if TAG_MAJOR_VERSION == 34
             case POT_RESTORE_ABILITIES:
-#endif
                 valued += 50;
                 break;
 
 
-#if TAG_MAJOR_VERSION == 34
             case POT_AGILITY:
             case POT_BRILLIANCE:
                 valued += 40;
                 break;
-#endif
-#if TAG_MAJOR_VERSION == 34
+
             case POT_CURING:
-#endif
             case POT_LIGNIFY:
             case POT_FLIGHT:
                 valued += 30;
                 break;
 
-#if TAG_MAJOR_VERSION == 34
             case POT_POISON:
             case POT_STRONG_POISON:
             case POT_PORRIDGE:
@@ -532,12 +512,10 @@ unsigned int item_value(item_def item, bool ident)
             case POT_DEGENERATION:
                 valued += 10;
                 break;
-#endif
-#if TAG_MAJOR_VERSION == 34
+
             case POT_BLOOD_COAGULATED:
                 valued += 5;
                 break;
-#endif
             }
         }
         break;
@@ -584,27 +562,22 @@ unsigned int item_value(item_def item, bool ident)
             case SCR_MAGIC_MAPPING:
                 valued += 35;
                 break;
-#if TAG_MAJOR_VERSION == 34
+
             case SCR_REMOVE_CURSE:
-#endif
             case SCR_TELEPORTATION:
                 valued += 30;
                 break;
 
             case SCR_FOG:
-#if TAG_MAJOR_VERSION == 34
             case SCR_IDENTIFY:
             case SCR_CURSE_ARMOUR:
             case SCR_CURSE_WEAPON:
             case SCR_CURSE_JEWELLERY:
-#endif
                 valued += 20;
                 break;
 
             case SCR_NOISE:
-#if TAG_MAJOR_VERSION == 34
             case SCR_RANDOM_USELESSNESS:
-#endif
                 valued += 10;
                 break;
             }
@@ -665,9 +638,7 @@ unsigned int item_value(item_def item, bool ident)
                 switch (item.sub_type)
                 {
                 case AMU_FAITH:
-#if TAG_MAJOR_VERSION == 34
                 case AMU_RAGE:
-#endif
                     valued += 400;
                     break;
 
@@ -683,17 +654,15 @@ unsigned int item_value(item_def item, bool ident)
                 case RING_PROTECTION_FROM_MAGIC:
                     valued += 250;
                     break;
-#if TAG_MAJOR_VERSION == 34
+
                 case RING_MAGICAL_POWER:
-#endif
                 case RING_LIFE_PROTECTION:
                 case RING_POISON_RESISTANCE:
                 case RING_RESIST_CORROSION:
                     valued += 200;
                     break;
-#if TAG_MAJOR_VERSION == 34
-                case RING_STEALTH:
 
+                case RING_STEALTH:
                 case RING_FLIGHT:
                     valued += 175;
                     break;
@@ -703,7 +672,6 @@ unsigned int item_value(item_def item, bool ident)
 
                 case RING_LOUDNESS:
                 case RING_TELEPORTATION:
-#endif
                 case AMU_NOTHING:
                     valued += 75;
                     break;
@@ -762,10 +730,8 @@ unsigned int item_value(item_def item, bool ident)
     {
         valued = 150;
         const book_type book = static_cast<book_type>(item.sub_type);
-#if TAG_MAJOR_VERSION == 34
         if (book == BOOK_BUGGY_DESTRUCTION)
             break;
-#endif
 
         if (item_type_known(item))
         {
@@ -828,14 +794,12 @@ bool is_worthless_consumable(const item_def &item)
     case OBJ_POTIONS:
         switch (item.sub_type)
         {
-#if TAG_MAJOR_VERSION == 34
         // Blood potions are worthless because they are easy to make.
         case POT_BLOOD:
         case POT_BLOOD_COAGULATED:
         case POT_SLOWING:
         case POT_DECAY:
         case POT_POISON:
-#endif
         case POT_DEGENERATION:
             return true;
         default:
@@ -844,11 +808,9 @@ bool is_worthless_consumable(const item_def &item)
     case OBJ_SCROLLS:
         switch (item.sub_type)
         {
-#if TAG_MAJOR_VERSION == 34
         case SCR_CURSE_ARMOUR:
         case SCR_CURSE_WEAPON:
         case SCR_CURSE_JEWELLERY:
-#endif
         case SCR_NOISE:
         case SCR_RANDOM_USELESSNESS:
             return true;
@@ -1467,10 +1429,8 @@ string shop_type_name(shop_type type)
             return "Gadget";
         case SHOP_BOOK:
             return "Book";
-#if TAG_MAJOR_VERSION == 34
         case SHOP_FOOD:
             return "Food";
-#endif
         case SHOP_SCROLL:
             return "Magic Scroll";
         case SHOP_GENERAL_ANTIQUE:
@@ -1506,11 +1466,10 @@ string shop_name(const shop_struct& shop)
 
     string sh_name = "";
 
-#if TAG_MAJOR_VERSION == 34
     // xref ShopInfo::load
     if (shop.shop_name == " ")
         return shop.shop_type_name;
-#endif
+
     if (!shop.shop_name.empty())
         sh_name += apostrophise(shop.shop_name) + " ";
     else
@@ -1943,7 +1902,6 @@ void ShoppingList::item_type_identified(object_class_type base_type,
     // Only restore the excursion at the very end.
     level_excursion le;
 
-#if TAG_MAJOR_VERSION == 34
     // Handle removed Gozag shops from old saves. Only do this once:
     // future Gozag abandonment will call remove_dead_shops itself.
     if (!you.props.exists(REMOVED_DEAD_SHOPS_KEY))
@@ -1951,7 +1909,6 @@ void ShoppingList::item_type_identified(object_class_type base_type,
         remove_dead_shops();
         you.props[REMOVED_DEAD_SHOPS_KEY] = true;
     }
-#endif
 
     for (CrawlHashTable &thing : *list)
     {

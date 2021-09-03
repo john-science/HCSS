@@ -104,7 +104,6 @@ scimitar of Flaming Death
 A scimitar with a mysteriously smoking blade. Occasionally its heat leaks out,
 covering opponents in magical flame.
 %%%%
-# TAG_MAJOR_VERSION == 34
 eveningstar "Brilliance"
 
 A brightly shining morningstar. It illuminates the dungeon's recesses, but its
@@ -181,7 +180,6 @@ A jewelled morningstar, glowing brightly with the light of the dawn. It
 illuminates the dungeon's recesses, revealing the machinations of those who
 would prefer to stay invisible.
 %%%%
-# TAG_MAJOR_VERSION == 34
 spear of the Botono
 
 A dark and malign artefact. It increases the potency of hexes cast by anyone
@@ -212,7 +210,6 @@ longbow "Piercer"
 
 An exceptionally large metal longbow.
 %%%%
-# TAG_MAJOR_VERSION == 34
 blowgun of the Assassin
 
 This blowgun seems to guide the needle to seek the most lethal point to hit
@@ -248,12 +245,10 @@ whip "Snakebite"
 A double-ended whip made from the cured hides of black mambas, and enchanted
 with toxins ranging from ordinary venoms to asphyxiating curare.
 %%%%
-# TAG_MAJOR_VERSION == 34
 knife of Accuracy
 
 It is almost unerringly accurate.
 %%%%
-# TAG_MAJOR_VERSION == 34
 Lehudib's crystal spear
 
 Presumably this relic led to the invention of the famous spell, or maybe the
@@ -293,7 +288,6 @@ cloak of the Thief
 A pitch-black cloak which allows its wearer to excel in the arts of thievery,
 and can be evoked to release thick clouds of smoke for a hasty escape.
 %%%%
-# TAG_MAJOR_VERSION == 34
 large shield "Bullseye"
 
 Just in case you had trouble getting hit.
@@ -311,7 +305,6 @@ robe of Misfortune
 
 A splendid flowing robe of fur and silk.
 %%%%
-# TAG_MAJOR_VERSION == 34
 cloak of Flash
 
 A cloak that twitches and jerks without any intervention.
@@ -421,7 +414,6 @@ A black ring that makes its wearer one with the shadows. It creates a dark
 umbra that surrounds the wearer and increases stealth greatly, and reduces the
 accuracy of all those within it. It also greatly increases the wearer's dexterity.
 %%%%
-# TAG_MAJOR_VERSION == 34
 amulet of Cekugob
 
 A strange-looking piece of crystal on an ordinary-looking string, with an odd
@@ -535,7 +527,6 @@ macabre finger necklace
 
 An ugly dangling finger on a string. It would look better with a ring on it.
 %%%%
-# TAG_MAJOR_VERSION == 34
 boots of the spider
 
 A novel pair of boots invented by a suitor of Arachne.
@@ -603,7 +594,6 @@ contamination almost as effectively. Anyone reckless enough to place it on
 their head would find their magic regeneration dramatically increased, at the
 cost of multiplying any magical contamination received.
 %%%%
-# TAG_MAJOR_VERSION == 34
 crown of Eternal Torment
 
 A gold crown set with jet-black gems. It permanently afflicts its wearer with

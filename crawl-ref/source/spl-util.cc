@@ -357,7 +357,6 @@ static void _remove_spell_attributes(spell_type spell)
         }
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case SPELL_DELAYED_FIREBALL:
         if (you.attribute[ATTR_DELAYED_FIREBALL])
         {
@@ -365,7 +364,6 @@ static void _remove_spell_attributes(spell_type spell)
             mprf(MSGCH_DURATION, "Your charged fireball dissipates.");
         }
         break;
-#endif
 
     case SPELL_OZOCUBUS_ARMOUR:
         if (you.attribute[ATTR_OZO_ARMOUR])
@@ -653,7 +651,7 @@ int spell_difficulty(spell_type which_spell)
 int spell_levels_required(spell_type which_spell)
 {
     int levels = spell_difficulty(which_spell);
-#if TAG_MAJOR_VERSION == 34
+
     if (which_spell == SPELL_DELAYED_FIREBALL
         && you.has_spell(SPELL_FIREBALL))
     {
@@ -664,7 +662,6 @@ int spell_levels_required(spell_type which_spell)
     {
         levels = 0;
     }
-#endif
 
     return levels;
 }
@@ -1314,7 +1311,6 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
     if (!fake_spell && cannot_use_schools(get_spell_disciplines(spell)))
         return "you cannot use spells of this school.";
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC)
     {
         if (spell == SPELL_OZOCUBUS_ARMOUR)
@@ -1333,7 +1329,6 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
         }
 
     }
-#endif
 
     switch (spell)
     {
@@ -1473,12 +1468,10 @@ string spell_uselessness_reason(spell_type spell, bool temp, bool prevent,
             return "you must stand on solid ground to cast this.";
         }
         break;
-#if TAG_MAJOR_VERSION == 34
     case SPELL_DELAYED_FIREBALL:
         if (temp && you.attribute[ATTR_DELAYED_FIREBALL])
             return "you are already charged.";
         break;
-#endif
     case SPELL_BORGNJORS_REVIVIFICATION:
         if (temp && you.hp == you.hp_max)
             return "you cannot be healed further.";

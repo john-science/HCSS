@@ -35,13 +35,9 @@ enum deck_type
     // pure decks
     DECK_OF_ESCAPE,
     DECK_OF_DESTRUCTION,
-#if TAG_MAJOR_VERSION == 34
     DECK_OF_DUNGEONS,
-#endif
     DECK_OF_SUMMONING,
-#if TAG_MAJOR_VERSION == 34
     DECK_OF_WONDERS,
-#endif
 };
 
 enum card_flags_type
@@ -55,38 +51,29 @@ enum card_flags_type
 
 enum card_type
 {
-#if TAG_MAJOR_VERSION == 34
     CARD_PORTAL,              // teleport, maybe controlled
     CARD_WARP,                // blink, maybe controlled
     CARD_SWAP,                // player and monster position
-#endif
     CARD_VELOCITY,            // remove slow, alter others' speeds
 
     CARD_TOMB,                // a ring of rock walls
-#if TAG_MAJOR_VERSION == 34
     CARD_BANSHEE,             // cause fear and drain
-#endif
     CARD_EXILE,               // banish others, maybe self
-#if TAG_MAJOR_VERSION == 34
     CARD_SOLITUDE,            // dispersal
     CARD_WARPWRIGHT,          // create teleport trap
-#endif
     CARD_SHAFT,               // under the user, maybe others
 
     CARD_VITRIOL,             // acid damage
     CARD_CLOUD,               // encage enemies in rings of clouds
-#if TAG_MAJOR_VERSION == 34
     CARD_HAMMER,              // straightforward earth conjurations
     CARD_VENOM,               // poison damage, maybe poison vuln
     CARD_FORTITUDE,           // strength and damage shaving
-#endif
     CARD_STORM,               // wind and rain
     CARD_PAIN,                // necromancy, manipulating life itself
     CARD_TORMENT,             // symbol of
     CARD_ORB,                 // pure bursts of energy
 
     CARD_ELIXIR,              // restoration of hp and mp
-#if TAG_MAJOR_VERSION == 34
     CARD_BATTLELUST,          // melee boosts
     CARD_METAMORPHOSIS,       // transmutations
     CARD_HELM,                // defence boosts
@@ -96,11 +83,9 @@ enum card_type
 
     CARD_CRUSADE,             // aura of abjuration and mass enslave
     CARD_SUMMON_ANIMAL,       // scattered herd
-#endif
     CARD_SUMMON_DEMON,        // dual demons
     CARD_SUMMON_WEAPON,       // a dance partner
     CARD_SUMMON_FLYING,       // swarms from the swamp
-#if TAG_MAJOR_VERSION == 34
     CARD_SUMMON_SKELETON,     // bones, bones, bones
     CARD_SUMMON_UGLY,         // or very, or both
 
@@ -108,9 +93,7 @@ enum card_type
     CARD_FOCUS,               // lowest stat down, highest stat up
     CARD_SHUFFLE,             // stats, specifically
     CARD_EXPERIENCE,          // like the potion
-#endif
     CARD_WILD_MAGIC,          // miscasts for everybody
-#if TAG_MAJOR_VERSION == 34
     CARD_SAGE,                // skill training
     CARD_HELIX,               // precision mutation alteration
     CARD_ALCHEMIST,           // health / mp for gold
@@ -120,19 +103,14 @@ enum card_type
     CARD_DOWSING,             // mapping/detect traps/items/monsters
     CARD_TROWEL,              // create altars, statues, portal
     CARD_MINEFIELD,           // plant traps
-#endif
     CARD_STAIRS,              // moves stairs around
 
-#if TAG_MAJOR_VERSION == 34
     CARD_GENIE,               // acquirement or rotting/deterioration
     CARD_BARGAIN,             // shopping discount
-#endif
     CARD_WRATH,               // random godly wrath
     CARD_WRAITH,              // drain XP
     CARD_XOM,                 // 's attention turns to you
-#if TAG_MAJOR_VERSION == 34
     CARD_FEAST,               // engorged
-#endif
     CARD_FAMINE,              // starving
     CARD_CURSE,               // curse your items
     CARD_SWINE,               // *oink*
@@ -141,9 +119,7 @@ enum card_type
     CARD_DEGEN,               // polymorph hostiles down hd, malmutate
     CARD_ELEMENTS,            // primal animals of the elements
     CARD_RANGERS,             // sharpshooting
-#if TAG_MAJOR_VERSION == 34
     CARD_PLACID_MAGIC,        // cancellation and antimagic
-#endif
 
     NUM_CARDS
 };

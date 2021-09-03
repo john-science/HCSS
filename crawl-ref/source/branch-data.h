@@ -42,7 +42,6 @@ const Branch branches[NUM_BRANCHES] =
       WHITE, ETC_ELVEN_BRICK,
       'E', {}, 0 },
 
-#if TAG_MAJOR_VERSION == 34
     { BRANCH_DWARF, BRANCH_VAULTS, -1, -1, 0, 17,
       BFLAG_NONE,
       DNGN_ENTER_DWARF, DNGN_EXIT_DWARF, NUM_FEATURES,
@@ -59,7 +58,6 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       GREEN, BROWN,
       'L', {}, 0 },
-#endif
 
     { BRANCH_SWAMP, BRANCH_ORC, 2, 2, 3, 15,
       BFLAG_DANGEROUS_END | BFLAG_SPOTTY,
@@ -108,7 +106,6 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       LIGHTGREY, BROWN,
       'V', { RUNE_VAULTS }, 0 },
-#if TAG_MAJOR_VERSION == 34
     { BRANCH_BLADE, BRANCH_VAULTS, 3, 4, 1, 21,
       BFLAG_NO_ITEMS,
       DNGN_ENTER_BLADE, DNGN_EXIT_BLADE, NUM_FEATURES,
@@ -133,7 +130,6 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       BROWN, BROWN,
       'W', { RUNE_TOMB }, 0 },
-#endif
 
     { BRANCH_VESTIBULE, NUM_BRANCHES, 27, 27, 1, 27,
       BFLAG_NO_ITEMS,
@@ -182,7 +178,7 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       BLACK, BLACK, // set per-map
       'Z', {}, 0 },
-#if TAG_MAJOR_VERSION == 34
+
     { BRANCH_FOREST, BRANCH_VAULTS, 2, 3, 5, 19,
       BFLAG_SPOTTY,
       DNGN_ENTER_FOREST, DNGN_EXIT_FOREST, NUM_FEATURES,
@@ -190,7 +186,6 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       BROWN, BROWN,
       'F', {}, 0 },
-#endif
 
     { BRANCH_ABYSS, NUM_BRANCHES, -1, -1, 5, 24,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_MAP | BFLAG_NO_ITEMS,
@@ -210,7 +205,6 @@ const Branch branches[NUM_BRANCHES] =
       'R', { RUNE_DEMONIC, RUNE_MNOLEG, RUNE_LOM_LOBON, RUNE_CEREBOV,
              RUNE_GLOORX_VLOQ }, 0 },
 
-#if TAG_MAJOR_VERSION == 34
     { BRANCH_ZIGGURAT, BRANCH_DEPTHS, -1, -1, 27, 27,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_ZIGGURAT, DNGN_EXIT_ZIGGURAT, DNGN_FLOOR,
@@ -218,7 +212,6 @@ const Branch branches[NUM_BRANCHES] =
       "You land on top of a ziggurat so tall you cannot make out the ground.",
       BLACK, BLACK,
       'Q', {}, 0 },
-#endif
 
     { BRANCH_LABYRINTH, NUM_BRANCHES, -1, -1, 1, 15,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS | BFLAG_NO_MAP,

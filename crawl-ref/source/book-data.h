@@ -12,7 +12,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_CALL_CANINE_FAMILIAR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {   // Book of Conjurations
     SPELL_SANDBLAST,
     SPELL_SEARING_RAY,
@@ -20,7 +19,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_THROW_ICICLE,
     SPELL_BATTLESPHERE,
 },
-#endif
 
 {   // Book of Flames
     SPELL_FLAME_TONGUE,
@@ -78,13 +76,11 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_HASTE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {   // Young Poisoner's Handbook
     SPELL_MEPHITIC_CLOUD,
     SPELL_OLGREBS_TOXIC_RADIANCE,
     SPELL_INTOXICATE,
 },
-#endif
 
 {   // Book of the Tempests
     SPELL_DISCHARGE,
@@ -191,13 +187,11 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_DISJUNCTION,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {   // Book of Envenomations
     SPELL_SPIDER_FORM,
     SPELL_OLGREBS_TOXIC_RADIANCE,
     SPELL_INTOXICATE,
 },
-#endif
 
 {   // Book of Unlife
     SPELL_RECALL,
@@ -207,7 +201,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_DEATH_CHANNEL,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {   // Book of Control
     SPELL_CONTROL_UNDEAD,
     SPELL_ENGLACIATION,
@@ -220,7 +213,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_OZOCUBUS_ARMOUR,
     SPELL_SPECTRAL_WEAPON,
 },
-#endif
 
 {   // Book of Geomancy
     SPELL_SANDBLAST,
@@ -238,7 +230,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_SHATTER,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {   // Book of Wizardry
     SPELL_FORCE_LANCE,
     SPELL_AGONY,
@@ -246,7 +237,6 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_SPELLFORGED_SERVITOR,
     SPELL_HASTE,
 },
-#endif
 
 {   // Book of Power
     SPELL_FULMINANT_PRISM,
@@ -273,14 +263,12 @@ static const vector<spell_type> spellbook_templates[] =
     SPELL_INVISIBILITY
 },
 
-#if TAG_MAJOR_VERSION == 34
 {   // Akashic Record
     SPELL_DISPERSAL,
     SPELL_MALIGN_GATEWAY,
     SPELL_DISJUNCTION,
     SPELL_CONTROLLED_BLINK,
 },
-#endif
 
 {   // Book of Arcane Marksmanship
     SPELL_CORONA,
