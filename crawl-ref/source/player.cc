@@ -81,9 +81,7 @@
 #include "view.h"
 #include "xom.h"
 
-#if TAG_MAJOR_VERSION == 34
 const int DJ_MP_RATE = 2;
-#endif
 
 static int _bone_armour_bonus();
 
@@ -438,7 +436,6 @@ void moveto_location_effects(dungeon_feature_type old_feat,
             // Extra time if you stepped in.
             if (stepped)
                 you.time_taken *= 2;
-#if TAG_MAJOR_VERSION == 34
             if (player_likes_lava(false))
             {
                 // This gets called here because otherwise you wouldn't heat
@@ -447,7 +444,6 @@ void moveto_location_effects(dungeon_feature_type old_feat,
                     mpr("The lava instantly superheats you.");
                 you.temperature = TEMP_MAX;
             }
-#endif
         }
 
         else if (!feat_is_lava(new_grid) && feat_is_lava(old_feat))
@@ -1282,28 +1278,22 @@ int player_spell_levels()
 {
     int sl = min(player_total_spell_levels(), 99);
 
-#if TAG_MAJOR_VERSION == 34
     bool fireball = false;
     bool delayed_fireball = false;
-#endif
 
     for (const spell_type spell : you.spells)
     {
-#if TAG_MAJOR_VERSION == 34
         if (spell == SPELL_FIREBALL)
             fireball = true;
         else if (spell == SPELL_DELAYED_FIREBALL)
             delayed_fireball = true;
-#endif
         if (spell != SPELL_NO_SPELL)
             sl -= spell_difficulty(spell);
     }
 
-#if TAG_MAJOR_VERSION == 34
     // Fireball is free for characters with delayed fireball
     if (fireball && delayed_fireball)
         sl += spell_difficulty(SPELL_FIREBALL);
-#endif
 
     // Note: This can happen because of draining. -- bwr
     if (sl < 0)
@@ -1351,7 +1341,6 @@ int player_res_fire(bool calc_unid, bool temp, bool items)
         }
     }
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC)
     {
         if (temperature_effect(LORC_FIRE_RES_I))
@@ -1361,7 +1350,6 @@ int player_res_fire(bool calc_unid, bool temp, bool items)
         if (temperature_effect(LORC_FIRE_RES_III))
             rf++;
     }
-#endif
 
     // mutations:
     rf += you.get_mutation_level(MUT_HEAT_RESISTANCE, temp);
@@ -1437,10 +1425,8 @@ int player_res_cold(bool calc_unid, bool temp, bool items)
 
         rc += get_form()->res_cold();
 
-#if TAG_MAJOR_VERSION == 34
         if (you.species == SP_LAVA_ORC && temperature_effect(LORC_COLD_VULN))
             rc--;
-#endif
     }
 
     if (items)
@@ -1574,10 +1560,7 @@ bool player_res_torment(bool random)
 
     return get_form()->res_neg() == 3
            || you.petrified()
-#if TAG_MAJOR_VERSION == 34
-           || player_equip_unrand(UNRAND_ETERNAL_TORMENT)
-#endif
-           ;
+           || player_equip_unrand(UNRAND_ETERNAL_TORMENT);
 }
 
 // Kiku protects you from torment to a degree.
@@ -1713,10 +1696,8 @@ int player_spec_fire()
     // rings of fire:
     sf += you.wearing(EQ_RINGS, RING_FIRE);
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC && temperature_effect(LORC_FIRE_BOOST))
         sf++;
-#endif
 
     if (you.duration[DUR_FIRE_SHIELD])
         sf++;
@@ -1740,14 +1721,12 @@ int player_spec_cold()
     // rings of ice:
     sc += you.wearing(EQ_RINGS, RING_ICE);
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC
         && (temperature_effect(LORC_LAVA_BOOST)
             || temperature_effect(LORC_FIRE_BOOST)))
     {
         sc--;
     }
-#endif
 
     return sc;
 }
@@ -3856,10 +3835,8 @@ int get_real_hp(bool trans, bool rotted)
     if (trans) // Some transformations give you extra hp.
         hitp = hitp * form_hp_mod() / 10;
 
-#if TAG_MAJOR_VERSION == 34
     if (trans && player_equip_unrand(UNRAND_ETERNAL_TORMENT))
         hitp = hitp * 4 / 5;
-#endif
 
     return max(1, hitp);
 }
@@ -4990,10 +4967,8 @@ player::player()
     lives = 0;
     deaths = 0;
 
-#if TAG_MAJOR_VERSION == 34
     temperature = 1; // 1 is min; 15 is max.
     temperature_last = 1;
-#endif
 
     xray_vision = false;
 
@@ -5123,9 +5098,8 @@ player::player()
     redraw_status_lights = false;
     redraw_hit_points    = false;
     redraw_magic_points  = false;
-#if TAG_MAJOR_VERSION == 34
     redraw_temperature   = false;
-#endif
+
     redraw_stats.init(false);
     redraw_experience    = false;
     redraw_armour_class  = false;
@@ -5855,11 +5829,9 @@ int player::armour_class(bool /*calc_unid*/) const
               // +1, +2, +3
     AC += get_mutation_level(MUT_IRIDESCENT_SCALES, mutation_activity_type::FULL) * 200;
               // +2, +4, +6
-#if TAG_MAJOR_VERSION == 34
     AC += get_mutation_level(MUT_ROUGH_BLACK_SCALES, mutation_activity_type::FULL)
           ? -100 + get_mutation_level(MUT_ROUGH_BLACK_SCALES, mutation_activity_type::FULL) * 300 : 0;
               // +2, +5, +8
-#endif
     AC += get_mutation_level(MUT_RUGGED_BROWN_SCALES, mutation_activity_type::FULL) * 100;
               // +1, +2, +3
     AC += get_mutation_level(MUT_ICY_BLUE_SCALES, mutation_activity_type::FULL)
@@ -7647,7 +7619,6 @@ int player::scale_device_healing(int healing_amount)
     return div_rand_round(healing_amount * _get_device_heal_factor(), 3);
 }
 
-#if TAG_MAJOR_VERSION == 34
 // Lava orcs!
 int temperature()
 {
@@ -7803,7 +7774,6 @@ void temperature_changed(float change)
 
 #ifdef USE_TILE
     init_player_doll();
-#endif
 
     // Just do this every turn to be safe. Can be fixed later if there
     // any performance issues.
@@ -8342,10 +8312,8 @@ void player_end_berserk()
     if (!you.duration[DUR_PARALYSIS] && !you.petrified())
         mprf(MSGCH_WARN, "You are exhausted.");
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC)
         mpr("You feel less hot-headed.");
-#endif
 
     // This resets from an actual penalty or from NO_BERSERK_PENALTY.
     you.berserk_penalty = 0;

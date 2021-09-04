@@ -197,14 +197,12 @@ static feature_def feat_defs[] =
     FFT_NONE, MF_FLOOR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     DNGN_BADLY_SEALED_DOOR, "", "badly_sealed_door",
     DCHAR_FLOOR, DCHAR_FLOOR_MAGIC,
     COLOUR_IS(ETC_FLOOR),
     FFT_NONE, MF_FLOOR,
 },
-#endif
 
 {
     DNGN_EXPIRED_PORTAL, "collapsed entrance", "expired_portal",
@@ -230,10 +228,8 @@ static feature_def feat_defs[] =
 
 TRAP(DNGN_TRAP_MECHANICAL, "mechanical trap", "trap_mechanical", LIGHTCYAN),
 TRAP(DNGN_TRAP_TELEPORT, "teleport trap", "trap_teleport", LIGHTBLUE),
-#if TAG_MAJOR_VERSION == 34
 TRAP(DNGN_TRAP_SHADOW, "shadow trap", "trap_shadow", BLUE),
 TRAP(DNGN_TRAP_SHADOW_DORMANT, "dormant shadow trap", "trap_shadow_dormant", BLUE),
-#endif
 TRAP(DNGN_TRAP_ALARM, "alarm trap", "trap_alarm", LIGHTRED),
 TRAP(DNGN_TRAP_ZOT, "Zot trap", "trap_zot", LIGHTMAGENTA),
 TRAP(DNGN_PASSAGE_OF_GOLUBRIA, "passage of Golubria", "passage of golubria", GREEN),
@@ -364,9 +360,7 @@ PORTAL_EXIT(DNGN_EXIT_VAULTS, "gate leading back out of this place", "exit_vault
 PORTAL_ENTRANCE(DNGN_ENTER_ZOT, "gate to the Realm of Zot", "enter_zot", MAGENTA),
 PORTAL_EXIT(DNGN_EXIT_ZOT, "gate leading back out of this place", "exit_zot", MAGENTA),
 
-#if TAG_MAJOR_VERSION == 34
 PORTAL_ENTRANCE(DNGN_ENTER_PORTAL_VAULT, "gate leading to a distant place", "enter_portal_vault", ETC_SHIMMER_BLUE),
-#endif
 PORTAL_ENTRANCE(DNGN_ENTER_ZIGGURAT, "gateway to a ziggurat", "enter_ziggurat", ETC_SHIMMER_BLUE),
 PORTAL_ENTRANCE(DNGN_ENTER_BAZAAR, "gateway to a bazaar", "enter_bazaar", ETC_SHIMMER_BLUE),
 PORTAL_ENTRANCE(DNGN_ENTER_TROVE, "portal to a secret trove of treasure", "enter_trove", BLUE),
@@ -378,9 +372,7 @@ PORTAL_ENTRANCE(DNGN_ENTER_VOLCANO, "dark tunnel", "enter_volcano", RED),
 PORTAL_ENTRANCE(DNGN_ENTER_WIZLAB, "magical portal", "enter_wizlab", ETC_SHIMMER_BLUE),
 PORTAL_ENTRANCE(DNGN_ENTER_DESOLATION, "ruined gateway", "enter_desolation", WHITE),
 PORTAL_ENTRANCE(DNGN_ENTER_ELF, "portal to the Elven Halls", "enter_elven_halls", WHITE),
-#if TAG_MAJOR_VERSION == 34
 PORTAL_EXIT(DNGN_EXIT_PORTAL_VAULT, "gate leading back out of this place", "exit_portal_vault", ETC_SHIMMER_BLUE),
-#endif
 PORTAL_EXIT(DNGN_EXIT_ZIGGURAT, "gate leading back out of this place", "exit_ziggurat", ETC_SHIMMER_BLUE),
 PORTAL_EXIT(DNGN_EXIT_BAZAAR, "gate leading back out of this place", "exit_bazaar", ETC_SHIMMER_BLUE),
 PORTAL_EXIT(DNGN_EXIT_TROVE, "gate leading back out of this place", "exit_trove", BLUE),
@@ -432,14 +424,12 @@ BRANCH_EXIT(DNGN_EXIT_SLIME, "staircase back to the Dungeon", "exit_slime_pits")
 },
 BRANCH_EXIT(DNGN_EXIT_ORC, "staircase back to the Dungeon", "exit_orcish_mines"),
 
-#if TAG_MAJOR_VERSION == 34
 BRANCH_ENTRANCE(DNGN_ENTER_DWARF, "staircase to the Dwarven Hall", "enter_dwarven_hall"),
 BRANCH_ENTRANCE(DNGN_ENTER_FOREST, "staircase to the Enchanted Forest", "enter_forest"),
 BRANCH_ENTRANCE(DNGN_ENTER_BLADE, "staircase to the Hall of Blades", "enter_hall_of_blades"),
 BRANCH_EXIT(DNGN_EXIT_DWARF, "staircase back to the Vaults", "exit_dwarven_hall"),
 BRANCH_EXIT(DNGN_EXIT_FOREST, "staircase back to the Vaults", "exit_forest"),
 BRANCH_EXIT(DNGN_EXIT_BLADE, "staircase back to the Vaults", "exit_hall_of_blades"),
-#endif
 
 BRANCH_ENTRANCE(DNGN_ENTER_LAIR, "staircase to the Lair", "enter_lair"),
 BRANCH_EXIT(DNGN_EXIT_LAIR, "staircase back to the Dungeon", "exit_lair"),
@@ -516,11 +506,9 @@ FOUNTAIN(DNGN_FOUNTAIN_BLUE, "fountain of clear blue water", "fountain_blue", BL
 FOUNTAIN(DNGN_FOUNTAIN_SPARKLING, "fountain of sparkling water", "fountain_sparkling", LIGHTBLUE),
 FOUNTAIN(DNGN_FOUNTAIN_BLOOD, "fountain of blood", "fountain_blood", RED),
 FOUNTAIN(DNGN_DRY_FOUNTAIN, "dry fountain", "dry_fountain", LIGHTGREY),
-#if TAG_MAJOR_VERSION == 34
 FOUNTAIN(DNGN_DRY_FOUNTAIN_BLUE, "dry fountain", "non-fountain_blue", LIGHTGREY),
 FOUNTAIN(DNGN_DRY_FOUNTAIN_SPARKLING, "dry fountain", "non-fountain_sparkling", LIGHTGREY),
 FOUNTAIN(DNGN_DRY_FOUNTAIN_BLOOD, "dry fountain", "non-fountain_blood", LIGHTGREY),
-#endif
 
 {
     DNGN_TELEPORTER, "short-range portal", "teleporter",

@@ -31,13 +31,9 @@ map_marker::marker_reader map_marker::readers[NUM_MAP_MARKER_TYPES] =
     &map_wiz_props_marker::read,
     &map_tomb_marker::read,
     &map_malign_gateway_marker::read,
-#if TAG_MAJOR_VERSION == 34
     &map_phoenix_marker::read,
-#endif
     &map_position_marker::read,
-#if TAG_MAJOR_VERSION == 34
     &map_door_seal_marker::read,
-#endif
     &map_terrain_change_marker::read,
     &map_cloud_spreader_marker::read
 };
@@ -658,7 +654,6 @@ string map_malign_gateway_marker::debug_describe() const
     return make_stringf("Malign gateway (%d, %s)", duration,
                         is_player ? "player" : "monster");
 }
-#if TAG_MAJOR_VERSION == 34
 
 //////////////////////////////////////////////////////////////////////////
 // map_phoenix_marker
@@ -757,7 +752,6 @@ string map_door_seal_marker::debug_describe() const
 {
     return make_stringf("Door seal marker (%d, %d)", duration, mon_num);
 }
-#endif
 
 ////////////////////////////////////////////////////////////////////////////
 // map_terrain_change_marker
@@ -791,11 +785,10 @@ void map_terrain_change_marker::read(reader &in)
     new_feature = static_cast<dungeon_feature_type>(unmarshallUByte(in));
     change_type = static_cast<terrain_change_type>(unmarshallUByte(in));
     mon_num = unmarshallShort(in);
-#if TAG_MAJOR_VERSION == 34
+
     if (in.getMinorVersion() < TAG_MINOR_SAVE_TERRAIN_COLOUR)
         colour = BLACK;
     else
-#endif
         colour = unmarshallUByte(in);
 }
 
