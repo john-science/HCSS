@@ -7774,6 +7774,7 @@ void temperature_changed(float change)
 
 #ifdef USE_TILE
     init_player_doll();
+#endif
 
     // Just do this every turn to be safe. Can be fixed later if there
     // any performance issues.
@@ -7869,7 +7870,6 @@ string temperature_text(int temp)
             return "";
     }
 }
-#endif
 
 void player_open_door(coord_def doorpos)
 {
