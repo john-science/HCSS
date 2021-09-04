@@ -15,7 +15,7 @@ const Branch branches[NUM_BRANCHES] =
       NUM_FEATURES, DNGN_EXIT_DUNGEON, NUM_FEATURES,
       "Dungeon", "the Dungeon", "D",
       nullptr,
-      LIGHTGREY, BROWN,
+      LIGHTGREY, LIGHTRED,
       'D', {}, 0 },
 
     { BRANCH_TEMPLE, BRANCH_DUNGEON, -1, -1, 1, 5,
@@ -49,7 +49,6 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       BROWN, BROWN,
       'K', {}, 0 },
-
 
     { BRANCH_LAIR, BRANCH_DUNGEON, -1, -1, 6, 10,
       BFLAG_NONE,
@@ -106,6 +105,7 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       LIGHTGREY, BROWN,
       'V', { RUNE_VAULTS }, 0 },
+
     { BRANCH_BLADE, BRANCH_VAULTS, 3, 4, 1, 21,
       BFLAG_NO_ITEMS,
       DNGN_ENTER_BLADE, DNGN_EXIT_BLADE, NUM_FEATURES,
@@ -113,7 +113,6 @@ const Branch branches[NUM_BRANCHES] =
       nullptr,
       LIGHTGREY, BROWN,
       'B', {}, 0 },
-
 
     { BRANCH_CRYPT, BRANCH_VAULTS, -1, -1, 3, 19,
       BFLAG_DANGEROUS_END,

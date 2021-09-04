@@ -84,8 +84,8 @@ void tile_default_flv(branch_type br, int depth, tile_flavour &flv)
     switch (br)
     {
     case BRANCH_DUNGEON:
-        flv.wall  = TILE_WALL_NORMAL;
-        flv.floor = TILE_FLOOR_NORMAL;
+        flv.wall  = TILE_WALL_ZOT_RED;
+        flv.floor = TILE_FLOOR_ROUGH_RED;
         return;
 
     case BRANCH_DEPTHS:
