@@ -484,11 +484,7 @@ sub process_line
 my @art_order = (
     "NAME", "APPEAR", "TYPE", "INSCRIP", "\n",
     "base_type", "sub_type", "plus", "plus2", "COLOUR", "VALUE", "\n",
-    "flags",
-
-    # Move FOG after FLY, and remove four copies of "unused", when
-    # it is no longer the case that TAG_MAJOR_VERSION == 34
-    "{", "BRAND", "AC", "EV", "STR", "INT", "DEX", "\n",
+    "flags", "{", "BRAND", "AC", "EV", "STR", "INT", "DEX", "\n",
     "FIRE", "COLD", "ELEC", "POISON", "LIFE", "MAGIC", "\n",
     "SEEINV", "INV", "FLY", "BLINK", "BERSERK",  "NOISES", "\n",
     "NOSPELL", "RND_TELE", "NOTELEP", "ANGRY", "unused", "\n",
@@ -505,9 +501,7 @@ my @art_order = (
 sub art_to_str
 {
     my ($artefact) = @_;
-
     my $indent = 1;
-
     my $str = "{\n    ";
 
     for (my $i = 0; $i < @art_order; $i++)

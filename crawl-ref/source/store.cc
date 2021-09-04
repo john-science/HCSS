@@ -1209,15 +1209,11 @@ void CrawlHashTable::read(reader &th)
 
     ASSERT(empty());
 
-#if TAG_MAJOR_VERSION == 34
     unsigned int _size;
     if (th.getMinorVersion() < TAG_MINOR_16_BIT_TABLE)
         _size = unmarshallByte(th);
     else
         _size = unmarshallUnsigned(th);
-#else
-    unsigned int _size = unmarshallUnsigned(th);
-#endif
 
     for (unsigned int i = 0; i < _size; i++)
     {
@@ -1395,7 +1391,6 @@ void CrawlVector::read(reader &th)
     ASSERT(default_flags == 0);
     ASSERT(max_size == VEC_MAX_SIZE);
 
-#if TAG_MAJOR_VERSION == 34
     vec_size _size;
     if (th.getMinorVersion() < TAG_MINOR_16_BIT_TABLE)
         _size = (vec_size) unmarshallByte(th);
@@ -1406,14 +1401,10 @@ void CrawlVector::read(reader &th)
     }
     else
         _size = (vec_size) unmarshallUnsigned(th);
-#else
-    vec_size _size = (vec_size) unmarshallUnsigned(th);
-#endif
 
     if (_size == 0)
         return;
 
-#if TAG_MAJOR_VERSION == 34
     if (th.getMinorVersion() < TAG_MINOR_16_BIT_TABLE)
         max_size = static_cast<vec_size>(unmarshallByte(th));
     else if (th.getMinorVersion() < TAG_MINOR_REALLY_16_BIT_VEC)
@@ -1422,15 +1413,14 @@ void CrawlVector::read(reader &th)
         max_size = (vec_size) (unsigned char) unmarshallUnsigned(th);
     }
     else
-#endif
-    max_size      = static_cast<vec_size>(unmarshallUnsigned(th));
-#if TAG_MAJOR_VERSION == 34
+        max_size = static_cast<vec_size>(unmarshallUnsigned(th));
+
     if (th.getMinorVersion() < TAG_MINOR_FIX_8_BIT_VEC_MAX
         && max_size == 0xFF)
     {
         max_size = VEC_MAX_SIZE;
     }
-#endif
+
     type          = static_cast<store_val_type>(unmarshallByte(th));
     default_flags = static_cast<store_flags>(unmarshallByte(th));
 

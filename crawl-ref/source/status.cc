@@ -388,7 +388,6 @@ bool fill_status_info(int status, status_info* inf)
         _describe_transform(inf);
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case STATUS_FIREBALL:
         if (you.attribute[ATTR_DELAYED_FIREBALL])
         {
@@ -398,7 +397,6 @@ bool fill_status_info(int status, status_info* inf)
             inf->long_text    = "You have a stored fireball ready to release.";
         }
         break;
-#endif
 
     case STATUS_BONE_ARMOUR:
         if (you.attribute[ATTR_BONE_ARMOUR] > 0 || you.attribute[ATTR_SKELETON_ARMOUR] > 0)

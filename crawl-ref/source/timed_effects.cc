@@ -957,26 +957,18 @@ static struct timed_effect timed_effects[] =
 {
     { rot_floor_items,               200,   200, true  },
     { _hell_effects,                 200,   600, false },
-#if TAG_MAJOR_VERSION == 34
     { nullptr,                         0,     0, false },
-#endif
     { _handle_magic_contamination,   200,   600, false },
-#if TAG_MAJOR_VERSION == 34
     { nullptr,                         0,     0, false },
-#endif
     { handle_god_time,               100,   300, false },
-#if TAG_MAJOR_VERSION == 34
     { nullptr,                                0,     0, false },
-#endif
     { _antiscumming,                 400,   700, false },
     { _wait_practice,                100,   300, false },
     { _lab_change,                  1000,  3000, false },
     { _abyss_speed,                  100,   300, false },
     { _jiyva_effects,                100,   300, false },
     { _evolve,                      5000, 15000, false },
-#if TAG_MAJOR_VERSION == 34
     {  nullptr,                        0,     0, false },
-#endif
     { _timeout_traps,                200,   300, false },
 };
 

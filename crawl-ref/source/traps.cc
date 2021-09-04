@@ -59,9 +59,7 @@ bool trap_def::type_has_ammo() const
 {
     switch (type)
     {
-#if TAG_MAJOR_VERSION == 34
     case TRAP_DART:
-#endif
     case TRAP_ARROW:  case TRAP_BOLT:
     case TRAP_NEEDLE: case TRAP_SPEAR:
         return true;
@@ -197,10 +195,8 @@ bool trap_def::is_safe(actor* act) const
     if (category() == DNGN_TRAP_WEB) // && act->is_web_immune()
         return true;
 
-#if TAG_MAJOR_VERSION == 34
     if (type == TRAP_SHADOW_DORMANT || type == TRAP_SHADOW)
         return true;
-#endif
 
     if (!act->is_player())
         return false;
@@ -644,7 +640,6 @@ void trap_def::trigger(actor& triggerer)
         }
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case TRAP_NET:
         if (you_trigger)
         {
@@ -659,7 +654,6 @@ void trap_def::trigger(actor& triggerer)
                 hide();
         }
         break;
-#endif
 
     case TRAP_WEB:
         if (triggerer.body_size(PSIZE_BODY) >= SIZE_GIANT)
@@ -830,22 +824,18 @@ void trap_def::trigger(actor& triggerer)
         }
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case TRAP_GAS:
         if (in_sight && you_know)
             mpr("The gas trap seems to be inoperative.");
         trap_destroyed = true;
         break;
-#endif
 
     case TRAP_PLATE:
         dungeon_events.fire_position_event(DET_PRESSURE_PLATE, pos);
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case TRAP_SHADOW:
     case TRAP_SHADOW_DORMANT:
-#endif
     default:
         break;
     }
@@ -1140,16 +1130,12 @@ item_def trap_def::generate_trap_item()
 
     switch (type)
     {
-#if TAG_MAJOR_VERSION == 34
     case TRAP_DART:   base = OBJ_MISSILES; sub = MI_DART;          break;
-#endif
     case TRAP_ARROW:  base = OBJ_MISSILES; sub = MI_ARROW;         break;
     case TRAP_BOLT:   base = OBJ_MISSILES; sub = MI_ARROW;         break;
     case TRAP_SPEAR:  base = OBJ_WEAPONS;  sub = WPN_SPEAR;        break;
     case TRAP_NEEDLE: base = OBJ_MISSILES; sub = MI_DART_POISONED; break;
-#if TAG_MAJOR_VERSION == 34
     case TRAP_NET:    base = OBJ_MISSILES; sub = MI_THROWING_NET;  break;
-#endif
     default:          return item;
     }
 
@@ -1299,23 +1285,19 @@ dungeon_feature_type trap_category(trap_type type)
         return DNGN_TRAP_ZOT;
     case TRAP_GOLUBRIA:
         return DNGN_PASSAGE_OF_GOLUBRIA;
-#if TAG_MAJOR_VERSION == 34
     case TRAP_SHADOW:
         return DNGN_TRAP_SHADOW;
     case TRAP_SHADOW_DORMANT:
         return DNGN_TRAP_SHADOW_DORMANT;
-#endif
 
     case TRAP_ARROW:
     case TRAP_SPEAR:
     case TRAP_BLADE:
     case TRAP_BOLT:
     case TRAP_NEEDLE:
-#if TAG_MAJOR_VERSION == 34
     case TRAP_NET:
     case TRAP_GAS:
     case TRAP_DART:
-#endif
     case TRAP_PLATE:
         return DNGN_TRAP_MECHANICAL;
 

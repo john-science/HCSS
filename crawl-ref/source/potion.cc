@@ -211,7 +211,6 @@ public:
 /**
  * Return a message for the player drinking blood when a non-vampire.
  */
-#if TAG_MAJOR_VERSION == 34
 static string _blood_flavour_message()
 {
     if (you.get_mutation_level(MUT_HERBIVOROUS) < 3 && player_likes_chunks())
@@ -257,7 +256,6 @@ public:
         return true;
     }
 };
-#endif
 
 class PotionHaste : public PotionEffect
 {
@@ -408,7 +406,6 @@ public:
     }
 };
 
-#if TAG_MAJOR_VERSION == 34
 class PotionPoison : public PotionEffect
 {
 private:
@@ -434,7 +431,6 @@ public:
         return true;
     }
 };
-#endif
 
 class PotionCancellation : public PotionEffect
 {
@@ -552,7 +548,7 @@ public:
         return true;
     }
 };
-#if TAG_MAJOR_VERSION == 34
+
 class PotionExperience : public PotionEffect
 {
 private:
@@ -588,7 +584,7 @@ public:
         return true;
     }
 };
-#endif
+
 class PotionMagic : public PotionEffect
 {
 private:
@@ -817,7 +813,6 @@ public:
 };
 
 // Removed potions
-#if TAG_MAJOR_VERSION == 34
 class PotionDecay : public PotionEffect
 {
 private:
@@ -1219,7 +1214,6 @@ public:
         return true;
     }
 };
-#endif
 
 // placeholder 'buggy' potion
 class PotionStale : public PotionEffect
@@ -1247,47 +1241,31 @@ static const PotionEffect* potion_effects[] =
     &PotionMight::instance(),
     &PotionBrilliance::instance(),
     &PotionAgility::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionGainStrength::instance(),
     &PotionGainDexterity::instance(),
     &PotionGainIntelligence::instance(),
-#endif
     &PotionFlight::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionPoison::instance(),
     &PotionSlowing::instance(),
-#endif
     &PotionCancellation::instance(),
     &PotionAmbrosia::instance(),
     &PotionInvisibility::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionPorridge::instance(),
-#endif
     &PotionDegeneration::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionDecay::instance(),
     &PotionWater::instance(),
-#endif
     &PotionExperience::instance(),
     &PotionMagic::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionRestoreAbilities::instance(),
     &PotionPoison::instance(),
-#endif
     &PotionBerserk::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionCureMutation::instance(),
-#endif
     &PotionMutation::instance(),
     &PotionResistance::instance(),
     &PotionBlood::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionBloodCoagulated::instance(),
-#endif
     &PotionLignify::instance(),
-#if TAG_MAJOR_VERSION == 34
     &PotionBeneficialMutation::instance(),
-#endif
     &PotionStale::instance()
 };
 

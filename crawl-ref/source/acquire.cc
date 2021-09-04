@@ -652,9 +652,7 @@ static const acquirement_subtype_finder _subtype_finders[] =
     _acquirement_misc_subtype,
     0, // no corpses
     0, // gold handled elsewhere, and doesn't have subtypes anyway
-#if TAG_MAJOR_VERSION == 34
     0, // no rods
-#endif
     0, // no runes either
 };
 

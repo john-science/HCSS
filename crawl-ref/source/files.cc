@@ -1494,7 +1494,6 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
     if (you.position != env.old_player_pos)
        shake_off_monsters(you.as_player());
 
-#if TAG_MAJOR_VERSION == 34
     if (make_changes && you.props.exists("zig-fixup")
         && you.where_are_you == BRANCH_TOMB
         && you.depth == brdepth[BRANCH_TOMB])
@@ -1508,7 +1507,6 @@ bool load_level(dungeon_feature_type stair_taken, load_mode_type load_mode,
         }
         you.props.erase("zig-fixup");
     }
-#endif
 
     return just_created_level;
 }
@@ -1523,11 +1521,7 @@ static void _save_level(const level_id& lid)
     _write_tagged_chunk(lid.describe(), TAG_LEVEL);
 }
 
-#if TAG_MAJOR_VERSION == 34
-# define CHUNK(short, long) short
-#else
-# define CHUNK(short, long) long
-#endif
+#define CHUNK(short, long) short
 
 #define SAVEFILE(short, long, savefn)           \
     do                                          \
@@ -2100,10 +2094,9 @@ static bool _read_char_chunk(package *save)
         if (major == TAG_MAJOR_VERSION && minor == TAG_MINOR_VERSION)
             inf.fail_if_not_eof("chr");
 
-#if TAG_MAJOR_VERSION == 34
         if (major == 33 && minor == TAG_MINOR_0_11)
             return true;
-#endif
+
         return major == TAG_MAJOR_VERSION && minor <= TAG_MINOR_VERSION;
     }
     catch (short_read_exception &E)
@@ -2123,10 +2116,7 @@ static bool _tagged_chunk_version_compatible(reader &inf, string* reason)
         return false;
     }
 
-    if (major != TAG_MAJOR_VERSION
-#if TAG_MAJOR_VERSION == 34
-        && (major != 33 || minor != 17)
-#endif
+    if (major != TAG_MAJOR_VERSION && (major != 33 || minor != 17)
        )
     {
         if (Version::ReleaseType)

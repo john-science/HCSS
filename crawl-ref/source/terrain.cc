@@ -196,10 +196,9 @@ FEATFN_MEMOIZED(feat_is_portal_entrance, feat)
             return true;
         }
     }
-#if TAG_MAJOR_VERSION == 34
+
     if (feat == DNGN_ENTER_PORTAL_VAULT)
         return true;
-#endif
 
     return false;
 }
@@ -219,10 +218,9 @@ FEATFN_MEMOIZED(feat_is_portal_exit, feat)
             return true;
         }
     }
-#if TAG_MAJOR_VERSION == 34
+
     if (feat == DNGN_EXIT_PORTAL_VAULT)
         return true;
-#endif
 
     return false;
 }

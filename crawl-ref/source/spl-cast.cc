@@ -535,13 +535,11 @@ static int _spell_enhancement(spell_type spell)
     enhanced += you.archmagi();
     enhanced += player_equip_unrand(UNRAND_MAJIN);
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC && temperature_effect(LORC_LAVA_BOOST)
         && (typeflags & SPTYP_FIRE) && (typeflags & SPTYP_EARTH))
     {
         enhanced++;
     }
-#endif
 
     // These are used in an exponential way, so we'll limit them a bit. -- bwr
     if (enhanced > 3)
@@ -892,7 +890,6 @@ bool cast_a_spell(bool check_range, spell_type spell)
         count_action(CACT_CAST, spell);
     }
 
-#if TAG_MAJOR_VERSION == 34
     // Nasty special cases.
     if (spell == SPELL_SUBLIMATION_OF_BLOOD && you.hp == you.hp_max)
     {
@@ -900,7 +897,6 @@ bool cast_a_spell(bool check_range, spell_type spell)
         inc_mp(cost, true);
     }
     else // Redraw MP
-#endif
         flush_mp();
 
     if (sifcast_amount)
@@ -1068,7 +1064,6 @@ static void _try_monster_cast(spell_type spell, int powc,
 
 static void _maybe_cancel_repeat(spell_type spell)
 {
-#if TAG_MAJOR_VERSION == 34
     switch (spell)
     {
     case SPELL_DELAYED_FIREBALL:        crawl_state.cant_cmd_repeat(make_stringf("You can't repeat %s.",
@@ -1078,7 +1073,6 @@ static void _maybe_cancel_repeat(spell_type spell)
     default:
         break;
     }
-#endif
 }
 
 static spret_type _do_cast(spell_type spell, int powc,
@@ -1501,7 +1495,6 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
                                       : GOD_NO_GOD;
 
     int fail = 0;
-#if TAG_MAJOR_VERSION == 34
     bool antimagic = false; // lost time but no other penalty
 
     if (allow_fail && you.duration[DUR_ANTIMAGIC]
@@ -1511,11 +1504,10 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
         fail = antimagic = true;
     }
     else
-#endif
-
     if (evoked_item && evoked_item->charges == 0)
+    {
         return SPRET_FAIL;
-
+    }
     else if (allow_fail)
     {
         int spfl = random2(_outcomes());
@@ -1641,10 +1633,8 @@ spret_type your_spells(spell_type spell, int powc, bool allow_fail,
     }
     case SPRET_FAIL:
     {
-#if TAG_MAJOR_VERSION == 34
         if (antimagic)
             return SPRET_FAIL;
-#endif
 
         mprf("You miscast %s.", spell_title(spell));
         flush_input_buffer(FLUSH_ON_FAILURE);
@@ -1859,10 +1849,8 @@ static spret_type _do_cast(spell_type spell, int powc,
     case SPELL_CALL_DOWN_DAMNATION:
         return cast_smitey_damnation(powc, beam) ? SPRET_SUCCESS : SPRET_ABORT;
 
-#if TAG_MAJOR_VERSION == 34
     case SPELL_DELAYED_FIREBALL:
         return cast_delayed_fireball(fail);
-#endif
 
     // LOS spells
 
@@ -2078,7 +2066,6 @@ static spret_type _do_cast(spell_type spell, int powc,
     case SPELL_SCATTERSHOT:
         return cast_scattershot(&you, powc, target, fail);
 
-#if TAG_MAJOR_VERSION == 34
     // Removed spells.
     case SPELL_ABJURATION:
     case SPELL_CIGOTUVIS_DEGENERATION:
@@ -2108,7 +2095,6 @@ static spret_type _do_cast(spell_type spell, int powc,
     case SPELL_CURE_POISON:
         mpr("Sorry, this spell is gone!");
         return SPRET_ABORT;
-#endif
 
     default:
         break;

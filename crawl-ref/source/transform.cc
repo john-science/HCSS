@@ -577,22 +577,16 @@ public:
     string get_untransform_message() const override
     {
         // This only handles lava orcs going statue -> stoneskin.
-        if (
-#if TAG_MAJOR_VERSION == 34
-            you.species == SP_LAVA_ORC && temperature_effect(LORC_STONESKIN)
-            ||
-#endif
-            you.species == SP_GARGOYLE)
+        if (you.species == SP_LAVA_ORC && temperature_effect(LORC_STONESKIN)
+            || you.species == SP_GARGOYLE)
         {
             return "You revert to a slightly less stony form.";
         }
-#if TAG_MAJOR_VERSION == 34
+
         if (you.species != SP_LAVA_ORC)
-#endif
             return "You revert to your normal fleshy form.";
-#if TAG_MAJOR_VERSION == 34
+
         return Form::get_untransform_message();
-#endif
     }
 
     /**
@@ -623,11 +617,9 @@ public:
      */
     string get_untransform_message() const override
     {
-#if TAG_MAJOR_VERSION == 34
         if (you.species == SP_LAVA_ORC && !temperature_effect(LORC_STONESKIN))
             return "Your icy form melts away into molten rock.";
         else
-#endif
             return "You warm up again.";
     }
 
@@ -866,7 +858,6 @@ public:
     }
 };
 
-#if TAG_MAJOR_VERSION == 34
 class FormWisp : public Form
 {
 private:
@@ -884,7 +875,6 @@ private:
 public:
     static const FormJelly &instance() { static FormJelly inst; return inst; }
 };
-#endif
 
 class FormFungus : public Form
 {
@@ -991,21 +981,16 @@ static const Form* forms[] =
     &FormSpider::instance(),
     &FormBlade::instance(),
     &FormStatue::instance(),
-
     &FormIce::instance(),
     &FormDragon::instance(),
     &FormLich::instance(),
     &FormBat::instance(),
-
     &FormPig::instance(),
     &FormAppendage::instance(),
     &FormTree::instance(),
     &FormPorcupine::instance(),
-
     &FormWisp::instance(),
-#if TAG_MAJOR_VERSION == 34
     &FormJelly::instance(),
-#endif
     &FormFungus::instance(),
     &FormShadow::instance(),
     &FormHydra::instance(),
@@ -1111,16 +1096,12 @@ bool form_likes_water(transformation_type form)
 
 bool form_likes_lava(transformation_type form)
 {
-#if TAG_MAJOR_VERSION == 34
     // Lava orcs can only swim in non-phys-change forms.
     // However, ice beast & statue form will melt back to lava, so they're OK
     return you.species == SP_LAVA_ORC
            && (!form_changed_physiology(form)
                || form == TRAN_ICE_BEAST
                || form == TRAN_STATUE);
-#else
-    return false;
-#endif
 }
 
 // Used to mark transformations which override species intrinsics.
@@ -1670,14 +1651,12 @@ bool transform(int pow, transformation_type which_trans, bool involuntary,
         msg = "You cannot become a lich while in Death's Door.";
         success = false;
     }
-#if TAG_MAJOR_VERSION == 34
     else if (you.species == SP_LAVA_ORC && !temperature_effect(LORC_STONESKIN)
              && (which_trans == TRAN_ICE_BEAST || which_trans == TRAN_STATUE))
     {
         msg =  "Your temperature is too high to benefit from that spell.";
         success = false;
     }
-#endif
 
     if (!just_check && previous_trans != TRAN_NONE)
         untransform(true);

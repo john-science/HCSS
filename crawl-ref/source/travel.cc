@@ -2858,10 +2858,8 @@ level_id level_id::get_next_level_id(const coord_def &pos)
 
     if (gridc == branches[id.branch].exit_stairs)
         return stair_destination(pos);
-#if TAG_MAJOR_VERSION == 34
     if (gridc == DNGN_ENTER_PORTAL_VAULT)
         return stair_destination(pos);
-#endif
 
     for (branch_iterator it; it; ++it)
     {

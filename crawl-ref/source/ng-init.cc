@@ -39,11 +39,8 @@ static uint8_t _random_potion_description()
 
     // nature and colour correspond to primary and secondary in
     // itemname.cc.
-
-#if TAG_MAJOR_VERSION == 34
     if (PCOLOUR(desc) == PDC_CLEAR) // only water can be clear, re-roll
         return _random_potion_description();
-#endif
 
     return desc;
 }
@@ -328,7 +325,6 @@ void initialise_temples()
     }
 }
 
-#if TAG_MAJOR_VERSION == 34
 static int _get_random_porridge_desc()
 {
     return PDESCQ(PDQ_GLUGGY, one_chance_in(3) ? PDC_BROWN
@@ -364,7 +360,6 @@ static int _get_random_coagulated_blood_desc()
             return desc;
     }
 }
-#endif
 
 static int _get_random_blood_desc()
 {
@@ -377,14 +372,12 @@ void initialise_item_descriptions()
 {
     // Must remember to check for already existing colours/combinations.
     you.item_description.init(255);
-#if TAG_MAJOR_VERSION == 34
     you.item_description[IDESC_POTIONS][POT_BLOOD]
         = _get_random_blood_desc();
     you.item_description[IDESC_POTIONS][POT_BLOOD_COAGULATED]
         = _get_random_coagulated_blood_desc();
     you.item_description[IDESC_POTIONS][POT_PORRIDGE]
         = _get_random_porridge_desc();
-#endif
 
     // The order here must match that of IDESC in describe.h
     const int max_item_number[6] = { NUM_WANDS,
@@ -420,9 +413,7 @@ void initialise_item_descriptions()
                     break;
 
 
-#if TAG_MAJOR_VERSION == 34
                 case IDESC_SCROLLS_II: // unused but validated
-#endif
                 case IDESC_SCROLLS: // scrolls: random seed for the name
                 {
                     // this is very weird and probably a linleyism.
