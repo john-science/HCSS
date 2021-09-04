@@ -296,7 +296,6 @@ monster* yred_soul_mon()
     return nullptr;
 }
 
-#if TAG_MAJOR_VERSION == 34
 // A temporary routine to clean up some references to invalid companions and
 // prevent crashes on load. Should be unnecessary once the cloning bugs that
 // allow the creation of these invalid companions are fully mopped up
@@ -310,4 +309,3 @@ void fixup_bad_companions()
             ++i;
     }
 }
-#endif

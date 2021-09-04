@@ -223,11 +223,9 @@ static bool _is_true_equipped_item(const item_def &item)
 // apart from dropping it.
 static bool _can_use_item(const item_def &item, bool equipped)
 {
-#if TAG_MAJOR_VERSION == 34
     // There's nothing you can do with an empty box if you can't unwield it.
     if (!equipped && item.sub_type == MISC_BUGGY_EBONY_CASKET)
         return false;
-#endif
 
     if (equipped && item.cursed())
     {
@@ -623,10 +621,7 @@ static void _fill_item_info(InventoryTile &desc, const item_info &item)
 
     if (type == OBJ_WEAPONS || type == OBJ_MISSILES
         || type == OBJ_ARMOUR
-#if TAG_MAJOR_VERSION == 34
-        || type == OBJ_RODS
-#endif
-       )
+        || type == OBJ_RODS)
     {
         desc.special = tileidx_known_brand(item);
     }

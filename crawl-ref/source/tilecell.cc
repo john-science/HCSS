@@ -38,9 +38,7 @@ void packed_cell::clear()
     travel_trail     = 0;
     quad_glow        = 0;
     disjunct         = 0;
-#if TAG_MAJOR_VERSION == 34
     heat_aura        = 0;
-#endif
 }
 
 bool packed_cell::operator ==(const packed_cell &other) const
@@ -48,7 +46,6 @@ bool packed_cell::operator ==(const packed_cell &other) const
     if (fg != other.fg) return false;
     if (bg != other.bg) return false;
     if (cloud != other.cloud) return false;
-
     if (is_bloody != other.is_bloody) return false;
     if (is_silenced != other.is_silenced) return false;
     if (halo != other.halo) return false;
@@ -64,10 +61,7 @@ bool packed_cell::operator ==(const packed_cell &other) const
     if (travel_trail != other.travel_trail) return false;
     if (quad_glow != other.quad_glow) return false;
     if (disjunct != other.disjunct) return false;
-#if TAG_MAJOR_VERSION == 34
     if (heat_aura != other.heat_aura) return false;
-#endif
-
     if (num_dngn_overlay != other.num_dngn_overlay) return false;
     for (int i = 0; i < num_dngn_overlay; ++i)
         if (dngn_overlay[i] != other.dngn_overlay[i]) return false;

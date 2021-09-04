@@ -45,8 +45,6 @@ mid_t yred_soul();
 monster* hepliaklqana_ancestor_mon();
 monster* yred_soul_mon();
 
-#if TAG_MAJOR_VERSION == 34
 void fixup_bad_companions();
-#endif
 
 #endif

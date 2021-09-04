@@ -177,7 +177,6 @@ static monsterentry mondata[] =
 
 // Axed monsters.
 // AXED_MON(MONS_MOTHER_IN_LAW)
-#if TAG_MAJOR_VERSION == 34
     AXED_MON(MONS_BUMBLEBEE)
     AXED_MON(MONS_WOOD_GOLEM)
     AXED_MON(MONS_ANT_LARVA)
@@ -305,7 +304,6 @@ static monsterentry mondata[] =
     AXED_MON(MONS_DRACONIAN_STORMCALLER)
     AXED_MON(MONS_TIAMAT)
     AXED_MON(MONS_IJYB)
-#endif
 
 // Used for genus monsters (which are used for grouping monsters by how they
 // work and in comes-into-view messages).
@@ -1556,7 +1554,6 @@ DUMMY(MONS_GIANT_LIZARD, 'l', LIGHTGREY, "giant lizard", TILEP_MONS_LEOPARD_GECK
     {TILEP_MONS_ORC_HIGH_PRIEST}, TILE_ERROR
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     MONS_LAVA_ORC, 'o', RED, "lava orc",
     M_WARM_BLOOD | M_SPEAKS | M_NO_POLY_TO | M_NO_GEN_DERIVED,
@@ -1569,7 +1566,6 @@ DUMMY(MONS_GIANT_LIZARD, 'l', LIGHTGREY, "giant lizard", TILEP_MONS_LEOPARD_GECK
     MONUSE_WEAPONS_ARMOUR, SIZE_MEDIUM, MON_SHAPE_HUMANOID,
     {TILEP_MONS_PROGRAM_BUG}, TILE_ERROR
 },
-#endif
 
 // humans ('p')
 {

@@ -4561,10 +4561,8 @@ bool monster::is_trap_safe(const coord_def& where, bool just_check) const
     if (trap.type == TRAP_SHAFT)
         return true;
 
-#if TAG_MAJOR_VERSION == 34
     if (trap.type == TRAP_SHADOW_DORMANT || trap.type == TRAP_SHADOW)
         return true;
-#endif
 
     // No friendly monsters will ever enter a Zot trap you know.
     if (player_knows_trap && friendly() && trap.type == TRAP_ZOT)
@@ -5688,23 +5686,17 @@ bool monster::can_drink_potion(potion_type ptype) const
 
     switch (ptype)
     {
-#if TAG_MAJOR_VERSION == 34
         case POT_CURING:
-#endif
         case POT_HEAL_WOUNDS:
             return !(holiness() & (MH_NONLIVING | MH_PLANT));
-#if TAG_MAJOR_VERSION == 34
         case POT_BLOOD:
         case POT_BLOOD_COAGULATED:
-#endif
             return mons_species() == MONS_VAMPIRE;
         case POT_BERSERK_RAGE:
             return can_go_berserk();
         case POT_HASTE:
         case POT_MIGHT:
-#if TAG_MAJOR_VERSION == 34
         case POT_AGILITY:
-#endif
         case POT_INVISIBILITY:
         case POT_RESISTANCE:
             // If there are any item using monsters that are permanently
@@ -5721,19 +5713,15 @@ bool monster::should_drink_potion(potion_type ptype) const
 {
     switch (ptype)
     {
-#if TAG_MAJOR_VERSION == 34
     case POT_CURING:
         return hit_points <= max_hit_points / 2
                || has_ench(ENCH_POISON)
                || has_ench(ENCH_SICK)
                || has_ench(ENCH_CONFUSION);
-#endif
     case POT_HEAL_WOUNDS:
         return hit_points <= max_hit_points / 2;
-#if TAG_MAJOR_VERSION == 34
     case POT_BLOOD:
     case POT_BLOOD_COAGULATED:
-#endif
         return hit_points <= max_hit_points / 2;
     case POT_BERSERK_RAGE:
         // this implies !berserk()
@@ -5743,10 +5731,8 @@ bool monster::should_drink_potion(potion_type ptype) const
         return !has_ench(ENCH_HASTE);
     case POT_MIGHT:
         return !has_ench(ENCH_MIGHT) && foe_distance() <= 2;
-#if TAG_MAJOR_VERSION == 34
     case POT_AGILITY:
         return !has_ench(ENCH_AGILE);
-#endif
     case POT_RESISTANCE:
         return !has_ench(ENCH_RESISTANCE);
     case POT_INVISIBILITY:
@@ -5769,7 +5755,6 @@ bool monster::drink_potion_effect(potion_type pot_eff, bool card)
 
     switch (pot_eff)
     {
-#if TAG_MAJOR_VERSION == 34
     case POT_CURING:
     {
         if (heal(5 + random2(7)))
@@ -5784,17 +5769,14 @@ bool monster::drink_potion_effect(potion_type pot_eff, bool card)
             del_ench(cured);
     }
     break;
-#endif
 
     case POT_HEAL_WOUNDS:
         if (heal(10 + random2avg(28, 3)))
             simple_monster_message(*this, " is healed!");
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case POT_BLOOD:
     case POT_BLOOD_COAGULATED:
-#endif
         if (mons_species() == MONS_VAMPIRE)
         {
             heal(10 + random2avg(28, 3));
@@ -5817,11 +5799,9 @@ bool monster::drink_potion_effect(potion_type pot_eff, bool card)
     case POT_INVISIBILITY:
         enchant_actor_with_flavour(this, this, BEAM_INVISIBILITY);
         break;
-#if TAG_MAJOR_VERSION == 34
     case POT_AGILITY:
         enchant_actor_with_flavour(this, this, BEAM_AGILITY);
         break;
-#endif
     case POT_RESISTANCE:
         enchant_actor_with_flavour(this, this, BEAM_RESISTANCE);
         break;

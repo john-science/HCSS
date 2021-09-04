@@ -1692,10 +1692,8 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
         mon->set_ghost(ghost);
         mon->uglything_init();
     }
-#if TAG_MAJOR_VERSION == 34
     else if (mon->type == MONS_LABORATORY_RAT)
         mon->type = MONS_RAT;
-#endif
     else if (mons_class_is_animated_weapon(mon->type))
     {
         ghost_demon ghost;
@@ -1883,7 +1881,6 @@ void roll_zombie_hp(monster* mon)
 
 void define_zombie(monster* mon, monster_type ztype, monster_type cs)
 {
-#if TAG_MAJOR_VERSION == 34
     // Upgrading monster enums is a losing battle, they sneak through too many
     // channels, like env props, etc. So convert them on placement, too.
     if (cs == MONS_ZOMBIE_SMALL || cs == MONS_ZOMBIE_LARGE)
@@ -1892,7 +1889,6 @@ void define_zombie(monster* mon, monster_type ztype, monster_type cs)
         cs = MONS_SKELETON;
     if (cs == MONS_SIMULACRUM_SMALL || cs == MONS_SIMULACRUM_LARGE)
         cs = MONS_SIMULACRUM;
-#endif
 
     ASSERT(ztype != MONS_NO_MONSTER);
     ASSERT(!invalid_monster_type(ztype));

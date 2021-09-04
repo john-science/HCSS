@@ -180,7 +180,6 @@ static const form_entry formdata[] =
     FC_DEFAULT, FC_FORBID, FC_ENABLE, true, false,
     "squeak", -8, "front leg", "", "curl into a sanctuary of spikes before", "flesh"
 },
-#if TAG_MAJOR_VERSION == 34
 {
     TRAN_WISP, MONS_INSUBSTANTIAL_WISP, "Wisp", "wisp-form", "wisp",
     "an insubstantial wisp.",
@@ -205,7 +204,6 @@ static const form_entry formdata[] =
     FC_DEFAULT, FC_FORBID, FC_FORBID, false, false,
     "", 0, "", "", "", ""
 },
-#endif
 
 {
     TRAN_FUNGUS, MONS_WANDERING_MUSHROOM, "Fungus", "fungus-form", "fungus",

@@ -17,7 +17,6 @@
 #
 NAME:   layout_twisted_forest
 DEPTH:  D:1, Forest
-# TAG_MAJOR_VERSION == 34
 # Remove Forest weighting on version bump
 WEIGHT: 0 (D), 100 (Forest)
 ORIENT: encompass

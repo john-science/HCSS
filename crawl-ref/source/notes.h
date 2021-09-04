@@ -56,10 +56,8 @@ enum NOTE_TYPES
     NOTE_OFFERED_SPELL,         /* needs: spell idx */
     NOTE_PERM_MUTATION,         /* needs: mutation idx, reason (string) */
     NOTE_ANCESTOR_TYPE,          /* needs: ancestor class (string) */
-#if TAG_MAJOR_VERSION == 34
     NOTE_ANCESTOR_DEATH,         /* needs: ancestor death (string) */
     NOTE_ANCESTOR_SPECIALIZATION, /* needs: ancestor specialization (string) */
-#endif
     NOTE_NUM_TYPES
 };
 

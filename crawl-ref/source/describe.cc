@@ -165,34 +165,24 @@ const char* jewellery_base_ability_string(int subtype)
 {
     switch (subtype)
     {
-#if TAG_MAJOR_VERSION == 34
     case RING_SUSTAIN_ATTRIBUTES: return "SustAt";
-#endif
     case RING_WIZARDRY:           return "Wiz";
     case RING_FIRE:               return "Fire";
     case RING_ICE:                return "Ice";
-#if TAG_MAJOR_VERSION == 34
     case RING_TELEPORTATION:      return "*Tele";
-#endif
     case RING_RESIST_CORROSION:   return "rCorr";
-#if TAG_MAJOR_VERSION == 34
     case RING_TELEPORT_CONTROL:   return "+cTele";
     case AMU_HARM:                return "Harm";
     case AMU_DISMISSAL:           return "Dismiss";
-#endif
     case AMU_MANA_REGENERATION:   return "RegenMP";
-#if TAG_MAJOR_VERSION == 34
     case AMU_THE_GOURMAND:        return "Gourm";
     case AMU_CONSERVATION:        return "Cons";
     case AMU_CONTROLLED_FLIGHT:   return "cFly";
-#endif
     case AMU_DESTRUCTION:         return "Destruction";
     case AMU_GUARDIAN_SPIRIT:     return "Spirit";
     case AMU_FAITH:               return "Faith";
     case AMU_REFLECTION:          return "Reflect";
-#if TAG_MAJOR_VERSION == 34
     case AMU_INACCURACY:          return "Inacc";
-#endif
     }
     return "";
 }
@@ -414,10 +404,8 @@ static const char* _jewellery_base_ability_description(int subtype)
 {
     switch (subtype)
     {
-#if TAG_MAJOR_VERSION == 34
     case RING_SUSTAIN_ATTRIBUTES:
         return "It sustains your strength, intelligence and dexterity.";
-#endif
     case RING_WIZARDRY:
         return "It improves your spell success rate.";
     case RING_FIRE:
@@ -426,22 +414,18 @@ static const char* _jewellery_base_ability_description(int subtype)
         return "It enhances your ice magic.";
     case RING_TELEPORTATION:
         return "It may teleport you next to monsters.";
-#if TAG_MAJOR_VERSION == 34
     case RING_TELEPORT_CONTROL:
         return "It can be evoked for teleport control.";
     case AMU_HARM:
         return "It increases damage dealt and taken.";
     case AMU_DISMISSAL:
         return "It may teleport away creatures that harm you.";
-#endif
     case AMU_MANA_REGENERATION:
         return "It increases your magic regeneration.";
-#if TAG_MAJOR_VERSION == 34
     case AMU_THE_GOURMAND:
         return "It lets you eat chunks and shit";
     case AMU_CONSERVATION:
         return "It protects your inventory from destruction.";
-#endif
     case AMU_DESTRUCTION:
         return "It reduces the cost of successive casts of the same destructive "
                "spell.";
@@ -584,18 +568,14 @@ static string _randart_descrip(const item_def &item)
 
 static const char *trap_names[] =
 {
-#if TAG_MAJOR_VERSION == 34
     "dart",
-#endif
     "arrow", "spear",
     "permanent teleport",
     "alarm", "blade",
     "bolt", "net", "Zot", "needle",
     "shaft", "passage", "pressure plate", "web",
-#if TAG_MAJOR_VERSION == 34
     "gas", "teleport",
     "shadow", "dormant shadow",
-#endif
 };
 
 string trap_name(trap_type trap)
@@ -1377,7 +1357,6 @@ static string _describe_ammo(const item_def &item)
 
         switch (item.brand)
         {
-#if TAG_MAJOR_VERSION == 34
         case SPMSL_FLAME:
             description += "It burns those it strikes, causing extra injury "
                     "to most foes and up to half again as much damage against "
@@ -1391,7 +1370,6 @@ static string _describe_ammo(const item_def &item)
                     "cold-blooded creatures. Compared to normal ammo, it is "
                     "twice as likely to be destroyed on impact.";
             break;
-#endif
         case SPMSL_CHAOS:
             description += "When ";
 
@@ -1422,21 +1400,17 @@ static string _describe_ammo(const item_def &item)
         case SPMSL_CONFUSION:
             description += "It is tipped with a substance that causes confusion.";
             break;
-#if TAG_MAJOR_VERSION == 34
         case SPMSL_SICKNESS:
             description += "It has been contaminated by something likely to cause disease.";
             break;
-#endif
         case SPMSL_FRENZY:
             description += "It is tipped with a substance that causes a mindless "
                 "rage, making people attack friend and foe alike.";
             break;
-#if TAG_MAJOR_VERSION == 34
         case SPMSL_RETURNING:
             description += "A skilled user can throw it in such a way "
                 "that it will return to its owner.";
             break;
-#endif
         case SPMSL_PENETRATION:
             description += "It will pass through any targets it hits, "
                 "potentially hitting all targets in its path until it "
@@ -1613,14 +1587,12 @@ static string _describe_armour(const item_def &item, bool verbose)
         case SPARM_POISON_RESISTANCE:
             description += "It protects its wearer from poison.";
             break;
-#if TAG_MAJOR_VERSION == 34
         case SPARM_SEE_INVISIBLE:
             description += "It allows its wearer to see invisible things.";
             break;
         case SPARM_INVISIBILITY:
             description += "It does nothing special.";
             break;
-#endif
         case SPARM_STRENGTH:
             description += "It increases the physical power of its wearer (+3 to strength).";
             break;
@@ -1664,11 +1636,9 @@ static string _describe_armour(const item_def &item, bool verbose)
             description += "It increases the power of its wearer's "
                 "magical spells.";
             break;
-#if TAG_MAJOR_VERSION == 34
         case SPARM_PRESERVATION:
             description += "It does nothing special.";
             break;
-#endif
         case SPARM_REFLECTION:
             description += "It reflects blocked things back in the "
                 "direction they came from.";
@@ -2144,9 +2114,7 @@ string get_item_description(const item_def &item, bool verbose,
     case OBJ_ORBS:
     case OBJ_GOLD:
     case OBJ_RUNES:
-#if TAG_MAJOR_VERSION == 34
     case OBJ_RODS:
-#endif
         // No extra processing needed for these item types.
         break;
 

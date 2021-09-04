@@ -66,18 +66,11 @@ struct armour_def
 
 // would be nice to lookup the name from monster_for_armour, but that
 // leads to static initialization races (plus 'gold' special case)
-#if TAG_MAJOR_VERSION == 34
 #define DRAGON_ARMOUR(id, name, ac, evp, prc, res)                          \
     { ARM_ ## id ## _DRAGON_HIDE, "removed " name " dragon hide", 0, 0, 0,  \
       EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, res, 0 },             \
     { ARM_ ## id ## _DRAGON_ARMOUR, name " dragon scales",  ac, evp, prc,   \
       EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, res, 25 }
-#else
-#define DRAGON_ARMOUR(id, name, ac, evp, prc, res)
-    { ARM_ ## id ## _DRAGON_ARMOUR, name " dragon scales",  ac, evp, prc,   \
-      EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, res, 25 }
-#endif
-
 
 // Note: the Little-Giant range is used to make armours which are very
 // flexible and adjustable and can be worn by any player character...
@@ -91,7 +84,6 @@ static const armour_def Armour_prop[] =
         EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_BIG, true, ARMF_NO_FLAGS, 1000 },
     { ARM_LEATHER_ARMOUR,       "leather armour",         3,  -40,   20,
         EQ_BODY_ARMOUR, SIZE_SMALL,  SIZE_MEDIUM, true },
-
     { ARM_RING_MAIL,            "ring mail",              5,  -70,   40,
         EQ_BODY_ARMOUR, SIZE_SMALL,  SIZE_MEDIUM, true, ARMF_NO_FLAGS, 1000 },
     { ARM_SCALE_MAIL,           "scale mail",             6, -100,   40,
@@ -102,11 +94,8 @@ static const armour_def Armour_prop[] =
         EQ_BODY_ARMOUR, SIZE_SMALL, SIZE_MEDIUM, true, ARMF_NO_FLAGS, 1000 },
     { ARM_CRYSTAL_PLATE_ARMOUR, "crystal plate armour",  14, -230,   800,
         EQ_BODY_ARMOUR, SIZE_SMALL, SIZE_MEDIUM, false, ARMF_NO_FLAGS, 500 },
-
-#if TAG_MAJOR_VERSION == 34
     { ARM_TROLL_HIDE, "removed troll hide",              0,    0,      0,
        EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, ARMF_REGENERATION, 0 },
-#endif
     { ARM_TROLL_LEATHER_ARMOUR, "troll leather armour",  4,  -40,    150,
        EQ_BODY_ARMOUR, SIZE_LITTLE, SIZE_GIANT, false, ARMF_REGENERATION, 50 },
 
@@ -141,10 +130,8 @@ static const armour_def Armour_prop[] =
     { ARM_HELMET,               "helmet",                 1,   0,   45,
         EQ_HELMET,      SIZE_SMALL,  SIZE_MEDIUM, true },
 
-#if TAG_MAJOR_VERSION == 34
     { ARM_CAP,                  "cap",                    0,   0,   45,
         EQ_HELMET,      SIZE_LITTLE, SIZE_LARGE, true },
-#endif
 
     { ARM_HAT,                  "hat",                    0,   0,   40,
         EQ_HELMET,      SIZE_TINY, SIZE_LARGE, true },
@@ -156,10 +143,8 @@ static const armour_def Armour_prop[] =
         EQ_BOOTS,       SIZE_SMALL,  SIZE_MEDIUM, true },
     // Changed max. barding size to large to allow for the appropriate
     // monster types (monsters don't differentiate between torso and general).
-#if TAG_MAJOR_VERSION == 34
     { ARM_CENTAUR_BARDING,      "centaur barding",        4,  -60,  230,
         EQ_BOOTS,       SIZE_MEDIUM, SIZE_LARGE, true },
-#endif
     { ARM_NAGA_BARDING,         "naga barding",           4,  -60,  230,
         EQ_BOOTS,       SIZE_MEDIUM, SIZE_LARGE, true },
 
@@ -340,7 +325,6 @@ static int Weapon_index[NUM_WEAPONS];
 static const weapon_def Weapon_prop[] =
 {
     // Maces & Staves
-#if TAG_MAJOR_VERSION == 34
     { WPN_CLUB,              "club",                5,  3, 13,
         SK_MACES_FLAILS, SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_CRUSHING, 0, 0, 0, {} },
@@ -348,7 +332,6 @@ static const weapon_def Weapon_prop[] =
     { WPN_SPIKED_FLAIL,      "spiked flail",        5,  3, 13,
         SK_MACES_FLAILS, SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_CRUSHING, 0, 0, 0, {} },
-#endif
     { WPN_WHIP,              "whip",                6,  2, 11,
         SK_MACES_FLAILS, SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_SLASHING, 4, 0, 25, {
@@ -363,11 +346,9 @@ static const weapon_def Weapon_prop[] =
             { SPWPN_DISTORTION,     2 },
             { SPWPN_ANTIMAGIC,      1 },
         }},
-#if TAG_MAJOR_VERSION == 34
     { WPN_HAMMER,            "hammer",              7,  3, 13,
         SK_MACES_FLAILS, SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_CRUSHING, 0, 0, 0, M_AND_F_BRANDS },
-#endif
     { WPN_MACE,              "mace",                8,  3, 14,
         SK_MACES_FLAILS, SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_CRUSHING, 9, 10, 30, M_AND_F_BRANDS },
@@ -394,7 +375,6 @@ static const weapon_def Weapon_prop[] =
     { WPN_SACRED_SCOURGE,    "sacred scourge",     12,  0, 11,
         SK_MACES_FLAILS, SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_SLASHING, 0, 0, 200, HOLY_BRANDS },
-#if TAG_MAJOR_VERSION == 34
     { WPN_DIRE_FLAIL,        "dire flail",         13, -3, 13,
         SK_MACES_FLAILS, SIZE_MEDIUM, NUM_SIZE_LEVELS, MI_NONE,
         DAMV_CRUSHING | DAM_PIERCE, 0, 0, 0, M_AND_F_BRANDS },
@@ -412,7 +392,6 @@ static const weapon_def Weapon_prop[] =
             { SPWPN_PAIN,            2 },
             { SPWPN_VAMPIRISM,       2 },
         }},
-#endif
     { WPN_GREAT_MACE,        "great mace",         17, -4, 17,
         SK_MACES_FLAILS, SIZE_MEDIUM, NUM_SIZE_LEVELS, MI_NONE,
         DAMV_CRUSHING, 3, 10, 65, M_AND_F_BRANDS },
@@ -477,7 +456,6 @@ static const weapon_def Weapon_prop[] =
     { WPN_TRIPLE_SWORD,          "triple sword",          18, -4, 19,
         SK_SHORT_BLADES,  SIZE_MEDIUM, NUM_SIZE_LEVELS, MI_NONE,
         DAMV_SLICING, 0, 2, 100, LBL_BRANDS },
-#if TAG_MAJOR_VERSION == 34
     { WPN_BLESSED_FALCHION,      "old falchion",         7,  2, 13,
         SK_SHORT_BLADES,  SIZE_LITTLE, SIZE_LITTLE, MI_NONE,
         DAMV_SLICING, 0, 0, 0, {} },
@@ -496,7 +474,6 @@ static const weapon_def Weapon_prop[] =
     { WPN_BLESSED_TRIPLE_SWORD,      "old triple sword", 17, -4, 19,
         SK_SHORT_BLADES,  SIZE_MEDIUM, NUM_SIZE_LEVELS,  MI_NONE,
         DAMV_SLICING, 0, 0, 0, {} },
-#endif
 
     // Axes
     { WPN_HAND_AXE,          "hand axe",            7,  3, 13,
@@ -565,7 +542,6 @@ static const weapon_def Weapon_prop[] =
             { SPWPN_HOLY_WRATH,  2 },
             { SPWPN_ANTIMAGIC,   2 },
         }},
-#if TAG_MAJOR_VERSION == 34
     { WPN_LAJATANG,          "lajatang",            16,-3, 14,
         SK_MACES_FLAILS,       SIZE_LITTLE, NUM_SIZE_LEVELS, MI_NONE,
         DAMV_SLICING, 0, 0, 0, {
@@ -576,14 +552,11 @@ static const weapon_def Weapon_prop[] =
             { SPWPN_ANTIMAGIC,       4 },
             { SPWPN_DISTORTION,      3 },
         }},
-#endif
 
     // Range weapons
-    #if TAG_MAJOR_VERSION == 34
     { WPN_BLOWGUN,           "blowgun",             0,  2, 10,
         SK_THROWING,     SIZE_LITTLE, SIZE_LITTLE, MI_NEEDLE,
         DAMV_NON_MELEE, 0, 0, 0, {}, },
-    #endif
 
     { WPN_HUNTING_SLING,     "hunting sling",       5,  2, 12,
         SK_SLINGS,       SIZE_LITTLE, SIZE_LITTLE, MI_STONE,
@@ -623,23 +596,15 @@ struct missile_def
 static int Missile_index[NUM_MISSILES];
 static const missile_def Missile_prop[] =
 {
-#if TAG_MAJOR_VERSION == 34
     { MI_DART,          "dart",          2, 1, 1, true  },
     { MI_NEEDLE,        "needle",        0, 2, 2, false },
-#endif
     { MI_STONE,         "stone",         2, 1, 1, true  },
     { MI_ARROW,         "arrow",         0, 2, 2, false },
-#if TAG_MAJOR_VERSION == 34
     { MI_BOLT,          "bolt",          0, 2, 2, false },
-#endif
     { MI_LARGE_ROCK,    "large rock",   20, 7, 7, true  },
-#if TAG_MAJOR_VERSION == 34
     { MI_SLING_BULLET,  "sling bullet",  4, 5, 5, false },
-#endif
     { MI_JAVELIN,       "javelin",      10, 8, 8, true  },
-#if TAG_MAJOR_VERSION == 34
     { MI_THROWING_NET,  "throwing net",  0, 30, 30, true },
-#endif
     { MI_TOMAHAWK,      "tomahawk",      6, 5, 5, true  },
     { MI_DART_POISONED, "poisoned dart", 0, 3, 3, true  },
     { MI_DART_CURARE,   "curare dart",   0, 10, 10, true  },
@@ -670,7 +635,6 @@ static const food_def Food_prop[] =
     { FOOD_ROYAL_JELLY,  "royal jelly",  2000,     0,     0,  3 },
     { FOOD_PIZZA,        "pizza",        1500,     0,     0,  1 },
 
-#if TAG_MAJOR_VERSION == 34
     // is_real_food assumes we list FOOD_UNUSED as the first removed
     // food here, after all the unremoved foods.
     { FOOD_UNUSED,       "buggy",           0,     0,     0,  1 },
@@ -689,7 +653,6 @@ static const food_def Food_prop[] =
     { FOOD_SULTANA,      "buggy",          70,   -20,    20,  1 },
     { FOOD_CHEESE,       "buggy",        1200,     0,     0,  1 },
     { FOOD_SAUSAGE,      "buggy",        1200,   150,  -400,  1 },
-#endif
 };
 
 // Must call this functions early on so that the above tables can
@@ -718,7 +681,6 @@ void init_properties()
 
 const set<pair<object_class_type, int> > removed_items =
 {
-#if TAG_MAJOR_VERSION == 34
     { OBJ_JEWELLERY, AMU_THE_GOURMAND },
     { OBJ_JEWELLERY, AMU_CONTROLLED_FLIGHT },
     { OBJ_JEWELLERY, AMU_CONSERVATION },
@@ -799,7 +761,6 @@ const set<pair<object_class_type, int> > removed_items =
     { OBJ_SCROLLS,   SCR_RANDOM_USELESSNESS },
     { OBJ_SCROLLS,   SCR_RECHARGING },
     { OBJ_MISSILES,   MI_NEEDLE },
-#endif
     // Outside the #if because we probably won't remove these.
     { OBJ_RUNES,     RUNE_ELF },
     { OBJ_RUNES,     RUNE_FOREST },
@@ -1130,20 +1091,16 @@ static iflags_t _full_ident_mask(const item_def& item)
     case OBJ_ORBS:
     case OBJ_RUNES:
     case OBJ_GOLD:
-#if TAG_MAJOR_VERSION == 34
     case OBJ_RODS:
-#endif
         flagset = 0;
         break;
     case OBJ_BOOKS:
-#if TAG_MAJOR_VERSION == 34
         if (item.sub_type == BOOK_BUGGY_DESTRUCTION)
         {
             flagset = 0;
             break;
         }
         // Intentional fall-through.
-#endif
     case OBJ_SCROLLS:
     case OBJ_POTIONS:
         flagset = ISFLAG_KNOW_TYPE;
@@ -2079,13 +2036,9 @@ bool has_launcher(const item_def &ammo)
 {
     ASSERT(ammo.base_type == OBJ_MISSILES);
     return ammo.sub_type != MI_LARGE_ROCK
-#if TAG_MAJOR_VERSION == 34
            && ammo.sub_type != MI_DART
-#endif
            && ammo.sub_type != MI_JAVELIN
-#if TAG_MAJOR_VERSION == 34
            && ammo.sub_type != MI_THROWING_NET
-#endif
            && ammo.sub_type != MI_TOMAHAWK;
 
 }
@@ -2193,9 +2146,7 @@ bool item_is_horn_of_geryon(const item_def &item)
 bool item_is_spellbook(const item_def &item)
 {
     return item.base_type == OBJ_BOOKS
-#if TAG_MAJOR_VERSION == 34
            && item.sub_type != BOOK_BUGGY_DESTRUCTION
-#endif
            && item.sub_type != BOOK_MANUAL;
 }
 
@@ -2260,7 +2211,6 @@ bool ring_has_stackable_effect(const item_def &item)
 //
 // Food functions:
 //
-#if TAG_MAJOR_VERSION == 34
 bool is_real_food(food_type food)
 {
     return food < NUM_FOODS && Food_index[food] < Food_index[FOOD_UNUSED];
@@ -2271,11 +2221,8 @@ bool is_blood_potion(const item_def &item)
         return false;
 
     return item.sub_type == POT_BLOOD
-           || item.sub_type == POT_BLOOD_COAGULATED
-
-            ;
+           || item.sub_type == POT_BLOOD_COAGULATED;
 }
-#endif
 
 bool food_is_meaty(int food_type)
 {
@@ -2710,10 +2657,8 @@ bool gives_ability(const item_def &item)
         if (artefact_property(item, static_cast<artefact_prop_type>(rap)))
             return true;
 
-#if TAG_MAJOR_VERSION == 34
     if (artefact_property(item, ARTP_FOG))
         return true;
-#endif
 
     return false;
 }
@@ -2824,9 +2769,7 @@ equipment_type get_item_slot(object_class_type type, int sub_type)
     switch (type)
     {
     case OBJ_WEAPONS:
-#if TAG_MAJOR_VERSION == 34
     case OBJ_RODS:
-#endif
     case OBJ_MISCELLANY:
         return EQ_WEAPON;
 

@@ -10,20 +10,18 @@
 // from slain monsters.
 enum item_source_type
 {
-    IT_SRC_NONE   = 0,
+    IT_SRC_NONE = 0,
 
     // Empty space for the gods
 
-    AQ_SCROLL     = 100,
-#if TAG_MAJOR_VERSION == 34
+    AQ_SCROLL = 100,
     AQ_CARD_GENIE,
-#endif
     IT_SRC_START,
     IT_SRC_SHOP,
 
     // Empty space for new non-wizmode acquisition methods
 
-    AQ_WIZMODE    = 200,
+    AQ_WIZMODE = 200,
 };
 
 /// top-priority item override colour

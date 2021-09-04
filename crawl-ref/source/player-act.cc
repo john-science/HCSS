@@ -177,10 +177,7 @@ bool player::is_habitable_feat(dungeon_feature_type actual_grid) const
         return true;
     }
 
-    if (
-#if TAG_MAJOR_VERSION == 34
-        actual_grid == DNGN_LAVA && species != SP_LAVA_ORC ||
-#endif
+    if (actual_grid == DNGN_LAVA && species != SP_LAVA_ORC ||
         actual_grid == DNGN_DEEP_WATER && !can_swim())
     {
         return false;
@@ -765,14 +762,12 @@ bool player::go_berserk(bool intentional, bool potion)
 
     you.redraw_quiver = true; // Account for no firing.
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC)
     {
         mpr("You burn with rage!");
         // This will get sqrt'd later, so.
         you.temperature = TEMP_MAX;
     }
-#endif
 
     if (player_equip_unrand(UNRAND_SWORD_OF_RIGHTEOUSNESS))
         for (monster_near_iterator mi(you.pos(), LOS_NO_TRANS); mi; ++mi)

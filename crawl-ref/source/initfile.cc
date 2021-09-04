@@ -430,10 +430,8 @@ object_class_type item_class_by_sym(char32_t c)
     case 0x00a3: // £
     case 0x00a5: // ¥
         return OBJ_GOLD;
-#if TAG_MAJOR_VERSION == 34
     case '\\': // Compat break: used to be staves (why not '|'?).
         return OBJ_RODS;
-#endif
     default:
         return NUM_OBJECT_CLASSES;
     }

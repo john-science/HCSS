@@ -614,7 +614,6 @@ static const duration_def duration_data[] =
       {{ "", wu_jian_heaven_tick }}},
     { DUR_SPECTRAL_WEAPON_COOLDOWN, 0, "", "", "spectral weapon cooldown", "", D_NO_FLAGS},
 
-#if TAG_MAJOR_VERSION == 34
     // And removed ones
     { DUR_MAGIC_SAPPED, 0, "", "", "old magic sapped", "", D_NO_FLAGS},
     { DUR_REPEL_MISSILES, 0, "", "", "old repel missiles", "", D_NO_FLAGS},
@@ -649,5 +648,4 @@ static const duration_def duration_data[] =
     { DUR_MAGIC_ARMOUR, 0, "", "", "old magic armour", "", D_NO_FLAGS},
     { DUR_MAGIC_SHIELD, 0, "", "", "old magic shield", "", D_NO_FLAGS},
     { DUR_FORTITUDE, 0, "", "", "old fortitude", "", D_NO_FLAGS},
-#endif
 };

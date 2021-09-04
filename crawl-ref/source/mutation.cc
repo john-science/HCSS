@@ -128,9 +128,7 @@ static const int conflict[][3] =
     { MUT_REGENERATION,        MUT_INHIBITED_REGENERATION, 0},
     { MUT_ACUTE_VISION,        MUT_BLURRY_VISION,          0},
     { MUT_FAST,                MUT_SLOW,                   0},
-#if TAG_MAJOR_VERSION == 34
     { MUT_STRONG_STIFF,        MUT_FLEXIBLE_WEAK,          1},
-#endif
     { MUT_STRONG,              MUT_WEAK,                   1},
     { MUT_CLEVER,              MUT_DOPEY,                  1},
     { MUT_AGILE,               MUT_CLUMSY,                 1},
@@ -262,9 +260,7 @@ static const mutation_type _all_scales[] =
     MUT_DISTORTION_FIELD,           MUT_ICY_BLUE_SCALES,
     MUT_IRIDESCENT_SCALES,          MUT_LARGE_BONE_PLATES,
     MUT_MOLTEN_SCALES,
-#if TAG_MAJOR_VERSION == 34
     MUT_ROUGH_BLACK_SCALES,
-#endif
     MUT_RUGGED_BROWN_SCALES,        MUT_SLIMY_GREEN_SCALES,
     MUT_THIN_METALLIC_SCALES,       MUT_THIN_SKELETAL_STRUCTURE,
     MUT_YELLOW_SCALES,              MUT_SANGUINE_ARMOUR,
@@ -309,10 +305,9 @@ mutation_activity_type mutation_activity_level(mutation_type mut)
                 return mutation_activity_type::FULL;
         }
         // Dex and HP changes are kept in all forms.
-#if TAG_MAJOR_VERSION == 34
         if (mut == MUT_ROUGH_BLACK_SCALES)
             return mutation_activity_type::PARTIAL;
-#endif
+
         if (mut == MUT_RUGGED_BROWN_SCALES)
             return mutation_activity_type::PARTIAL;
         else if (_get_mutation_def(mut).form_based)
@@ -333,9 +328,7 @@ mutation_activity_type mutation_activity_level(mutation_type mut)
         case MUT_IRIDESCENT_SCALES:
             return mutation_activity_type::INACTIVE;
         case MUT_LARGE_BONE_PLATES:
-#if TAG_MAJOR_VERSION == 34
         case MUT_ROUGH_BLACK_SCALES:
-#endif
         case MUT_RUGGED_BROWN_SCALES:
             return mutation_activity_type::PARTIAL;
         case MUT_YELLOW_SCALES:
@@ -687,7 +680,6 @@ string describe_mutations(bool center_title)
     return result;
 }
 
-#if TAG_MAJOR_VERSION == 34
 static const string _lava_orc_Ascreen_footer = (
 #ifndef USE_TILE_LOCAL
     "Press '<w>!</w>'"
@@ -696,9 +688,7 @@ static const string _lava_orc_Ascreen_footer = (
 #endif
     " to toggle between mutations and properties depending on your\n"
     "temperature.\n");
-#endif
 
-#if TAG_MAJOR_VERSION == 34
 static void _display_temperature()
 {
     ASSERT(you.species == SP_LAVA_ORC);
@@ -715,7 +705,6 @@ static void _display_temperature()
     if (offset < 0) offset = 0;
 
     result += string(offset, ' ');
-
     result += "<white>";
     result += title;
     result += "</white>\n\n";
@@ -761,7 +750,6 @@ static void _display_temperature()
     }
 
     result += "\n";
-
     result += "You get hot in tense situations, when berserking, or when you enter lava. You \ncool down when your rage ends or when you enter water.";
     result += "\n";
     result += "\n";
@@ -778,7 +766,6 @@ static void _display_temperature()
         display_mutations();
     }
 }
-#endif
 
 void display_mutations()
 {
@@ -792,7 +779,6 @@ void display_mutations()
     if (_num_transient)
         extra += "<magenta>[]</magenta>   : Transient mutations.";
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC)
     {
         if (!extra.empty())
@@ -800,7 +786,6 @@ void display_mutations()
 
         extra += _lava_orc_Ascreen_footer;
     }
-#endif
 
     if (!extra.empty())
     {
@@ -815,14 +800,12 @@ void display_mutations()
 
     mutation_menu.show();
 
-#if TAG_MAJOR_VERSION == 34
     if (you.species == SP_LAVA_ORC
         && (mutation_menu.getkey() == '!'
             || mutation_menu.getkey() == CK_MOUSE_CMD))
     {
         _display_temperature();
     }
-#endif
 }
 
 static bool _accept_mutation(mutation_type mutat, bool ignore_weight = false)
@@ -1915,7 +1898,6 @@ bool delete_temp_mutation()
             if (you.has_temporary_mutation(static_cast<mutation_type>(i)) && one_chance_in(++count))
                 mutat = static_cast<mutation_type>(i);
 
-#if TAG_MAJOR_VERSION == 34
         // We had a brief period (between 0.14-a0-1589-g48c4fed and
         // 0.14-a0-1604-g40af2d8) where we corrupted attributes in transferred
         // games.
@@ -1925,10 +1907,6 @@ bool delete_temp_mutation()
             you.attribute[ATTR_TEMP_MUTATIONS] = 0;
             return false;
         }
-#else
-        ASSERTM(mutat != NUM_MUTATIONS, "Found no temp mutations, expected %d",
-                                        you.attribute[ATTR_TEMP_MUTATIONS]);
-#endif
 
         if (_delete_single_mutation_level(mutat, "temp mutation expiry", true))
             return true;

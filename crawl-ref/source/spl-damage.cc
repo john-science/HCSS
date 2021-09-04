@@ -47,7 +47,6 @@
 #include "viewchar.h"
 #include "view.h"
 
-#if TAG_MAJOR_VERSION == 34
 // This spell has two main advantages over Fireball:
 //
 // (1) The release is instantaneous, so monsters will not
@@ -82,7 +81,6 @@ spret_type cast_delayed_fireball(bool fail)
     you.attribute[ATTR_DELAYED_FIREBALL] = 1;
     return SPRET_SUCCESS;
 }
-#endif
 
 void setup_fire_storm(const actor *source, int pow, bolt &beam)
 {

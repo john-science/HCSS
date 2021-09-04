@@ -65,7 +65,7 @@ function init_item(item)
     item.plus1 = false
   end
   if item.plus2 == nil then
-    item.plus2 = false -- #if TAG_MAJOR_VERSION == 34
+    item.plus2 = false
   end
   if item.artefact_name == nil then
     item.artefact_name = false

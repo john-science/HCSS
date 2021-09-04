@@ -4661,10 +4661,9 @@ static void _dgn_give_mon_spec_items(mons_spec &mspec,
 monster* dgn_place_monster(mons_spec &mspec, coord_def where,
                            bool force_pos, bool generate_awake, bool patrolling)
 {
-#if TAG_MAJOR_VERSION == 34
     if ((int)mspec.type == -1) // or rebuild the des cache
         return 0;
-#endif
+
     if (mspec.type == MONS_NO_MONSTER)
         return 0;
 
@@ -5701,11 +5700,9 @@ object_class_type item_in_shop(shop_type shop_type)
     case SHOP_BOOK:
         return OBJ_BOOKS;
 
-#if TAG_MAJOR_VERSION == 34
     // food shops shouldn't generate, but make extra sure to not generate food just in case
     case SHOP_FOOD:
         return OBJ_RANDOM;
-#endif
 
     case SHOP_DISTILLERY:
         return OBJ_POTIONS;
@@ -5732,9 +5729,7 @@ static bool _spotty_seed_ok(const coord_def& p)
 static bool _feat_is_wall_floor_liquid(dungeon_feature_type feat)
 {
     return feat_is_water(feat)
-#if TAG_MAJOR_VERSION == 34
            || player_in_branch(BRANCH_FOREST) && feat == DNGN_TREE
-#endif
            || player_in_branch(BRANCH_SWAMP) && feat == DNGN_TREE
            || feat_is_lava(feat)
            || feat_is_wall(feat)
@@ -5836,10 +5831,8 @@ static void _place_specific_trap(const coord_def& where, trap_spec* spec,
     }
 
     while (spec_type >= NUM_TRAPS
-#if TAG_MAJOR_VERSION == 34
            || spec_type == TRAP_DART || spec_type == TRAP_GAS
            || spec_type == TRAP_SHADOW || spec_type == TRAP_SHADOW_DORMANT
-#endif
            || !is_valid_shaft_level(known) && spec_type == TRAP_SHAFT)
     {
         spec_type = static_cast<trap_type>(random2(TRAP_MAX_REGULAR + 1));

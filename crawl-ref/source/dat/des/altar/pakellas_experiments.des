@@ -164,13 +164,11 @@ function callback.pakellas_cloud_cycle(self, fog_machine, triggerer, marker,
   fog_machine.cloud_type = cloud_types[index]
   if self.chamber_fog then
     self.chamber_fog.cloud_type = cloud_types[index]
-    -- TAG_MAJOR_VERSION == 34
     -- Previously the subject machine was stored instead of the chamber one.
   elseif self.subject_fog then
     self.subject_fog.cloud_type = cloud_types[index]
   end
 end
--- TAG_MAJOR_VERSION == 34
 -- Function was renamed to use the callback namespace.
 cycle_cloud_type = callback.pakellas_cloud_cycle
 

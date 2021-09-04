@@ -1454,10 +1454,8 @@ static string _killer_type_name(killer_type killer)
         return "banished";
     case KILL_TIMEOUT:
         return "timeout";
-#if TAG_MAJOR_VERSION == 34
     case KILL_UNSUMMONED:
         return "unsummoned";
-#endif
     case KILL_PACIFIED:
         return "pacified";
     case KILL_ENSLAVED:

@@ -21,7 +21,6 @@ enum tag_minor_version
 {
     TAG_MINOR_INVALID         = -1,
     TAG_MINOR_RESET           = 0, // Minor tags were reset
-#if TAG_MAJOR_VERSION == 34
     TAG_MINOR_BRANCHES_LEFT,       // Note the first time branches are left
     TAG_MINOR_VAULT_LIST,          // Don't try to store you.vault_list as prop
     TAG_MINOR_TRAPS_DETERM,        // Searching for traps is deterministic.
@@ -38,7 +37,7 @@ enum tag_minor_version
     TAG_MINOR_LUA_DUMMY_1,         // dummy to unbreak util/gen-luatags.pl
     TAG_MINOR_LUA_DUMMY_2,         // dummy to unbreak util/gen-luatags.pl
     TAG_MINOR_LUA_DUMMY_3,         // dummy to unbreak util/gen-luatags.pl
-    TAG_MINOR_0_11,                 // 0.11 final saves
+    TAG_MINOR_0_11,                // 0.11 final saves
     TAG_MINOR_0_12,                // (no change)
     TAG_MINOR_BATTLESPHERE_MID,    // Monster battlesphere (mid of creator)
     TAG_MINOR_MALMUTATE,           // Convert Polymorph to Malmutate on old monsters
@@ -205,7 +204,6 @@ enum tag_minor_version
     TAG_MINOR_MAGICAL_STAVES,      // moved magical staves to the offhand
     TAG_MINOR_GOLDIFY_IMPROVEMENT, // allow spell hiding
     TAG_MINOR_GOLDIFY_MANUALS,     // Don't make manuals take up an inventory slot either
-#endif
     NUM_TAG_MINORS,
     TAG_MINOR_VERSION = NUM_TAG_MINORS - 1
 };
