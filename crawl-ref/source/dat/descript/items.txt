@@ -513,8 +513,7 @@ ammunition, rather than rocks found on the floor.
 %%%%
 ice dragon scales
 
-The scales of a cold-breathing dragon. It provides great protection from cold,
-while rendering its wearer more susceptible to fire.
+The scales of a cold-breathing dragon. It provides great protection from cold.
 %%%%
 inedible chunk of flesh
 
