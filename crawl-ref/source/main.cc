@@ -1679,37 +1679,6 @@ static bool _prompt_dangerous_portal(dungeon_feature_type ftype)
     }
 }
 
-static bool _prompt_skippable_branch(dungeon_feature_type ftype)
-{
-    switch (ftype)
-    {
-    case DNGN_ENTER_VAULTS:
-        if (player_in_branch(BRANCH_DUNGEON))
-            return yesno("This shortcut to the Vaults bypasses a rune. "
-                         "Enter anyway?", false, 'n');
-        else return true;
-    case DNGN_ENTER_SLIME:
-        if (player_in_branch(BRANCH_ORC))
-            return yesno("This shortcut to the Slime Pits bypasses two runes. "
-                         "Enter anyway?", false, 'n');
-        else return true;
-    case DNGN_ENTER_DEPTHS:
-        if (player_in_branch(BRANCH_DUNGEON))
-            return yesno("This shortcut to the Depths bypasses three runes. "
-                         "Enter anyway?", false, 'n');
-        else if (player_in_branch(BRANCH_VAULTS))
-            return yesno("This shortcut to the Depths bypasses a runes. "
-                         "Enter anyway?", false, 'n');
-        else return true;
-    case DNGN_ENTER_ZOT:
-        if (!you.uniq_map_tags.count("uniq_holypan"))
-        return yesno("The runes of Pandemonium will be lost if you enter Zot now. "
-                     "Enter anyway?", false, 'n');
-    default:
-        return true;
-    }
-}
-
 static bool _prompt_unique_rune(dungeon_feature_type ygrd)
 {
     item_def* rune = find_floor_item(OBJ_RUNES);
@@ -1762,13 +1731,6 @@ static bool _prompt_stairs(dungeon_feature_type ygrd, bool down, bool shaft)
             canned_msg(MSG_OK);
             return false;
         }
-    }
-
-    // Prompt if the player is skipping branches.
-    if (!_prompt_skippable_branch(ygrd))
-    {
-        canned_msg(MSG_OK);
-        return false;
     }
 
     if (!down && player_in_branch(BRANCH_ZOT) && you.depth == 5
