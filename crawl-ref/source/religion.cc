@@ -375,11 +375,7 @@ static void _place_delayed_monsters();
 
 bool is_evil_god(god_type god)
 {
-    return god == GOD_KIKUBAAQUDGHA
-           || god == GOD_MAKHLEB
-           || god == GOD_YREDELEMNUL
-           || god == GOD_BEOGH
-           || god == GOD_LUGONU;
+    return !is_good_god(god);
 }
 
 bool is_good_god(god_type god)
