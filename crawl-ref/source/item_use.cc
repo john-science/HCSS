@@ -1991,19 +1991,6 @@ void prompt_inscribe_item()
     inscribe_item(you.inv[item_slot]);
 }
 
-static bool _check_blood_corpses_on_ground()
-{
-    for (stack_iterator si(you.pos(), true); si; ++si)
-    {
-        if (si->is_type(OBJ_CORPSES, CORPSE_BODY)
-            && mons_has_blood(si->mon_type))
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
 /**
  * If the player is unable to (r)ead the item in the given slot, return the
  * reason why. Otherwise (if they are able to read it), returns "", the empty
