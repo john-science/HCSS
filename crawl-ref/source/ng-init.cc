@@ -225,14 +225,21 @@ void initialise_temples()
 
     you.props[TEMPLE_MAP_KEY] = main_temple->name;
 
-    const vector<coord_def> altar_coords
+    vector<coord_def> altar_coords
         = main_temple->find_glyph('B');
-    const unsigned int main_temple_size = altar_coords.size();
+    unsigned int main_temple_size = altar_coords.size();
 
     if (main_temple_size == 0)
     {
-        end(1, false, "Main temple '%s' has no altars",
-            main_temple->name.c_str());
+        // assume Q is the good-god replacement altar symbol
+        altar_coords = main_temple->find_glyph('Q');
+        main_temple_size = altar_coords.size();
+
+        if (main_temple_size == 0)
+        {
+            end(1, false, "Main temple '%s' has no altars",
+                main_temple->name.c_str());
+        }
     }
 
 #ifdef DEBUG_TEMPLES

@@ -2704,7 +2704,15 @@ string map_def::validate_temple_map()
     }
 
     if (altars.empty())
-        return "Temple vault must contain at least one altar.";
+    {
+        // assume Q is the good-god replacement logic
+        altars = find_glyph('Q');
+
+        if (altars.empty())
+        {
+            return "Temple vault must contain at least one altar.";
+        }
+    }
 
     // TODO: check for substitutions and shuffles
 
