@@ -1,4 +1,3 @@
-// This needs to be re-ordered when TAG_MAJOR_VERSION changes!
 static const vector<spell_type> spellbook_templates[] =
 {
 

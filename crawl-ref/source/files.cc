@@ -2116,8 +2116,7 @@ static bool _tagged_chunk_version_compatible(reader &inf, string* reason)
         return false;
     }
 
-    if (major != TAG_MAJOR_VERSION && (major != 33 || minor != 17)
-       )
+    if (major != TAG_MAJOR_VERSION && (major != 33 || minor != 17))
     {
         if (Version::ReleaseType)
         {
