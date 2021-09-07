@@ -191,7 +191,7 @@ static const pop_entry pop_elf[] =
   {  1,  1,   10, FLAT, MONS_DEEP_ELF_MASTER_ARCHER },
   { 0,0,0,FLAT,MONS_0 }
 };
-#if TAG_MAJOR_VERSION == 34
+
 static const pop_entry pop_dwarf[] =
 { // Dwarven Hall
   {  1,  1,  690, FLAT, MONS_DEATH_KNIGHT },
@@ -213,7 +213,6 @@ static const pop_entry pop_blade[] =
   {  1,  1, 1000, FLAT, MONS_DANCING_WEAPON },
   { 0,0,0,FLAT,MONS_0 }
 };
-#endif
 
 static const pop_entry pop_lair[] =
 { // Lair
@@ -660,7 +659,7 @@ static const pop_entry pop_zot[] =
   {  1,  5,   42, FLAT, MONS_ORB_OF_FIRE },
   { 0,0,0,FLAT,MONS_0 }
 };
-#if TAG_MAJOR_VERSION == 34
+
 static const pop_entry pop_forest[] =
 { // Forest
   {  1,  5,  120, FALL, MONS_WOLF },
@@ -688,7 +687,6 @@ static const pop_entry pop_forest[] =
   {  1,  5,  125, FLAT, MONS_BUTTERFLY },
   { 0,0,0,FLAT,MONS_0 }
 };
-#endif
 
 static const pop_entry pop_abyss[] =
 { // Abyss
@@ -1028,9 +1026,7 @@ static const struct { const pop_entry *pop; int count; } population[] =
     POP(temple),
     POP(orc),
     POP(elf),
-#if TAG_MAJOR_VERSION == 34
     POP(dwarf),
-#endif
     POP(lair),
     POP(swamp),
     POP(shoals),
@@ -1038,9 +1034,7 @@ static const struct { const pop_entry *pop; int count; } population[] =
     POP(spider),
     POP(slime),
     POP(vaults),
-#if TAG_MAJOR_VERSION == 34
     POP(blade),
-#endif
     POP(crypt),
     POP(tomb),
     POP(hell),
@@ -1049,9 +1043,7 @@ static const struct { const pop_entry *pop; int count; } population[] =
     POP(coc),
     POP(tar),
     POP(zot),
-#if TAG_MAJOR_VERSION == 34
     POP(forest),
-#endif
     POP(abyss),
     POP(pan),
     POP(zig),
@@ -1064,9 +1056,7 @@ static const struct { const pop_entry *pop; int count; } population[] =
     POP(icecv),
     POP(volcano),
     POP(wizlab),
-#if TAG_MAJOR_VERSION == 34
     POP(depths),
-#endif
     POP(desolation),
 };
 
@@ -1122,9 +1112,7 @@ static const struct { const pop_entry *pop; int count; } population_zombie[] =
     POP(temple),
     POP(orc),
     POP(elf),
-#if TAG_MAJOR_VERSION == 34
     POP(dwarf),
-#endif
     POP(lair),
     POP(swamp),
     POP(shoals),
@@ -1132,9 +1120,7 @@ static const struct { const pop_entry *pop; int count; } population_zombie[] =
     POP(spider),
     POP(slime),
     POP(vaults),
-#if TAG_MAJOR_VERSION == 34
     POP(blade),
-#endif
     POP(generic_late_zombie),
     POP(generic_late_zombie),
     POP(generic_late_zombie),
@@ -1143,9 +1129,7 @@ static const struct { const pop_entry *pop; int count; } population_zombie[] =
     POP(generic_late_zombie),
     POP(generic_late_zombie),
     POP(zot),
-#if TAG_MAJOR_VERSION == 34
     POP(forest),
-#endif
     POP(generic_late_zombie),
     POP(generic_late_zombie),
     POP(zig),
@@ -1158,9 +1142,7 @@ static const struct { const pop_entry *pop; int count; } population_zombie[] =
     POP(icecv),
     POP(volcano),
     POP(wizlab),
-#if TAG_MAJOR_VERSION == 34
     POP(depths),
-#endif
     POP(desolation),
 };
 
@@ -1223,9 +1205,7 @@ static const struct { const pop_entry *pop; int count; } population_water[] =
     POP(water_generic),
     POP(water_generic),
     POP(water_generic),
-#if TAG_MAJOR_VERSION == 34
     POP(water_generic),
-#endif
     POP(water_generic),
     POP(water_swamp),
     POP(water_generic),
@@ -1233,9 +1213,7 @@ static const struct { const pop_entry *pop; int count; } population_water[] =
     POP(water_generic),
     POP(water_generic),
     POP(water_generic),
-#if TAG_MAJOR_VERSION == 34
     POP(water_generic),
-#endif
     POP(water_generic),
     POP(water_generic),
     POP(water_hell),
@@ -1244,9 +1222,7 @@ static const struct { const pop_entry *pop; int count; } population_water[] =
     POP(water_hell),
     POP(water_hell),
     POP(water_generic),
-#if TAG_MAJOR_VERSION == 34
     POP(water_generic), // Forest
-#endif
     POP(water_generic),
     POP(water_generic),
     POP(water_generic),
@@ -1259,9 +1235,7 @@ static const struct { const pop_entry *pop; int count; } population_water[] =
     POP(water_generic),
     POP(water_generic),
     POP(water_generic),
-#if TAG_MAJOR_VERSION == 34
     POP(water_depths),
-#endif
     POP(water_generic),
 };
 
@@ -1322,9 +1296,7 @@ static const struct { const pop_entry *pop; int count; } population_lava[] =
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),
-#if TAG_MAJOR_VERSION == 34
     POP(lava_generic),
-#endif
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),
@@ -1332,9 +1304,7 @@ static const struct { const pop_entry *pop; int count; } population_lava[] =
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),
-#if TAG_MAJOR_VERSION == 34
     POP(lava_generic),
-#endif
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_hell),
@@ -1343,9 +1313,6 @@ static const struct { const pop_entry *pop; int count; } population_lava[] =
     POP(lava_hell),
     POP(lava_hell),
     POP(lava_generic),
-#if TAG_MAJOR_VERSION == 34
-    POP(lava_generic),
-#endif
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),
@@ -1358,8 +1325,7 @@ static const struct { const pop_entry *pop; int count; } population_lava[] =
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),
-#if TAG_MAJOR_VERSION == 34
+    POP(lava_generic),
     POP(lava_depths),
-#endif
     POP(lava_generic),
 };

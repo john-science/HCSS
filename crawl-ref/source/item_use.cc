@@ -798,14 +798,13 @@ bool can_wear_armour(const item_def &item, bool verbose, bool ignore_temporary)
 
     size_type player_size = you.body_size(PSIZE_TORSO, ignore_temporary);
     int bad_size = fit_armour_size(item, player_size);
-#if TAG_MAJOR_VERSION == 34
+
     if (is_unrandom_artefact(item, UNRAND_TALOS))
     {
         // adjust bad_size for the oversized plate armour
         // negative means levels too small, positive means levels too large
         bad_size = SIZE_LARGE - player_size;
     }
-#endif
 
     if (bad_size)
     {
@@ -2104,11 +2103,12 @@ void drink(item_def* potion)
         dec_mitm_item_quantity(potion->index(), 1);
     count_action(CACT_USE, OBJ_POTIONS);
     you.turn_is_over = true;
-#if TAG_MAJOR_VERSION == 34
+
     // This got deferred from PotionExperience::effect to prevent SIGHUP abuse.
     if (potion->sub_type == POT_EXPERIENCE)
+    {
         level_change();
-#endif
+    }
 }
 
 // XXX: there's probably a nicer way of doing this.
@@ -2504,13 +2504,11 @@ static void _handle_read_book(item_def& book)
 
     ASSERT(book.sub_type != BOOK_MANUAL);
 
-#if TAG_MAJOR_VERSION == 34
     if (book.sub_type == BOOK_BUGGY_DESTRUCTION)
     {
         mpr("This item has been removed, sorry!");
         return;
     }
-#endif
 
     set_ident_flags(book, ISFLAG_IDENT_MASK);
     mark_had_book(book);
@@ -2542,17 +2540,13 @@ static void _vulnerability_scroll()
 static bool _is_cancellable_scroll(scroll_type scroll)
 {
     return scroll == SCR_BLINKING
-#if TAG_MAJOR_VERSION == 34
            || scroll == SCR_RECHARGING
-#endif
            || scroll == SCR_ENCHANT_ARMOUR
            || scroll == SCR_AMNESIA
-#if TAG_MAJOR_VERSION == 34
            || scroll == SCR_REMOVE_CURSE
            || scroll == SCR_CURSE_ARMOUR
            || scroll == SCR_CURSE_JEWELLERY
            || scroll == SCR_IDENTIFY
-#endif
            || scroll == SCR_BRAND_WEAPON
            || scroll == SCR_ENCHANT_WEAPON
            || scroll == SCR_MAGIC_MAPPING;
@@ -2627,11 +2621,9 @@ string cannot_read_item_reason(const item_def &item)
     if (you.duration[DUR_NO_SCROLLS])
         return "You cannot read scrolls in your current state!";
 
-#if TAG_MAJOR_VERSION == 34
     // Prevent hot lava orcs reading scrolls
     if (you.species == SP_LAVA_ORC && temperature_effect(LORC_NO_SCROLLS))
         return "You'd burn any scroll you tried to read!";
-#endif
 
     // don't waste the player's time reading known scrolls in situations where
     // they'd be useless
@@ -2650,7 +2642,6 @@ string cannot_read_item_reason(const item_def &item)
                 return "You have no spells to forget!";
             return "";
 
-#if TAG_MAJOR_VERSION == 34
         case SCR_CURSE_WEAPON:
             if (!you.weapon())
                 return "This scroll only affects a wielded weapon!";
@@ -2662,7 +2653,6 @@ string cannot_read_item_reason(const item_def &item)
             if (get_weapon_brand(*you.weapon()) == SPWPN_HOLY_WRATH)
                 return "Holy weapons cannot be cursed!";
             return "";
-#endif
 
         case SCR_ENCHANT_ARMOUR:
             return _no_items_reason(OSEL_ENCHANTABLE_ARMOUR, true);
@@ -2670,7 +2660,6 @@ string cannot_read_item_reason(const item_def &item)
         case SCR_ENCHANT_WEAPON:
             return _no_items_reason(OSEL_ENCHANTABLE_WEAPON, true);
 
-#if TAG_MAJOR_VERSION == 34
         case SCR_IDENTIFY:
             return _no_items_reason(OSEL_UNIDENT, true);
 
@@ -2685,7 +2674,6 @@ string cannot_read_item_reason(const item_def &item)
 
         case SCR_CURSE_JEWELLERY:
             return _no_items_reason(OSEL_UNCURSED_WORN_JEWELLERY);
-#endif
 
         default:
             return "";
@@ -2799,11 +2787,9 @@ void read_scroll(item_def& scroll)
 
     switch (which_scroll)
     {
-#if TAG_MAJOR_VERSION == 34
     case SCR_RANDOM_USELESSNESS:
         random_uselessness();
         break;
-#endif
 
     case SCR_BLINKING:
     {
@@ -2838,7 +2824,6 @@ void read_scroll(item_def& scroll)
         you_teleport();
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case SCR_REMOVE_CURSE:
         if (!alreadyknown)
         {
@@ -2848,7 +2833,6 @@ void read_scroll(item_def& scroll)
         else
             cancel_scroll = !remove_curse(true, pre_succ_msg);
         break;
-#endif
 
     case SCR_ACQUIREMENT:
         mpr("This is a scroll of acquirement!");
@@ -2921,7 +2905,6 @@ void read_scroll(item_def& scroll)
         break;
     }
 
-#if TAG_MAJOR_VERSION == 34
     case SCR_CURSE_WEAPON:
     {
         // Not you.weapon() because we want to handle melded weapons too.
@@ -2943,7 +2926,6 @@ void read_scroll(item_def& scroll)
         }
         break;
     }
-#endif
 
     case SCR_ENCHANT_WEAPON:
         if (!alreadyknown)
@@ -2967,7 +2949,6 @@ void read_scroll(item_def& scroll)
         cancel_scroll = !_handle_brand_weapon(alreadyknown, pre_succ_msg);
         break;
 
-#if TAG_MAJOR_VERSION == 34
     case SCR_IDENTIFY:
         if (!alreadyknown)
         {
@@ -2989,7 +2970,6 @@ void read_scroll(item_def& scroll)
         }
         cancel_scroll = (recharge_wand(alreadyknown, pre_succ_msg) == -1);
         break;
-#endif
 
     case SCR_ENCHANT_ARMOUR:
         if (!alreadyknown)
@@ -3002,7 +2982,6 @@ void read_scroll(item_def& scroll)
             (_handle_enchant_armour(alreadyknown, pre_succ_msg) == -1);
         break;
 
-#if TAG_MAJOR_VERSION == 34
     // Should always be identified by Ashenzari.
     case SCR_CURSE_ARMOUR:
     case SCR_CURSE_JEWELLERY:
@@ -3011,7 +2990,6 @@ void read_scroll(item_def& scroll)
         cancel_scroll = !curse_item(armour, pre_succ_msg);
         break;
     }
-#endif
 
     case SCR_HOLY_WORD:
     {

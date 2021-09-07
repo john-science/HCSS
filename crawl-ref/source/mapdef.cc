@@ -3524,11 +3524,11 @@ mons_spec mons_list::pick_monster(mons_spec_slot &slot)
             pick = spec;
     }
 
-#if TAG_MAJOR_VERSION == 34
     // Force rebuild of the des cache to drop this check.
     if ((int)pick.type < -1)
+    {
         pick = (monster_type)(-100 - (int)pick.type);
-#endif
+    }
 
     if (slot.fix_slot)
     {
@@ -4793,15 +4793,11 @@ static int _str_to_ego(item_spec &spec, string ego_str)
         "resistance",
         "positive_energy",
         "archmagi",
-#if TAG_MAJOR_VERSION == 34
         "preservation",
-#endif
         "reflection",
         "spirit_shield",
         "archery",
-#if TAG_MAJOR_VERSION == 34
         "jumping",
-#endif
         "magical_power",
         nullptr
     };
@@ -4813,32 +4809,24 @@ static int _str_to_ego(item_spec &spec, string ego_str)
         "freezing",
         "holy_wrath",
         "electrocution",
-#if TAG_MAJOR_VERSION == 34
         "orc_slaying",
         "dragon_slaying",
-#endif
         "venom",
         "protection",
         "draining",
         "speed",
         "vorpal",
-#if TAG_MAJOR_VERSION == 34
         "flame",
         "frost",
-#endif
         "vampirism",
         "pain",
         "antimagic",
         "distortion",
-#if TAG_MAJOR_VERSION == 34
         "reaching",
         "returning",
-#endif
         "chaos",
         "evasion",
-#if TAG_MAJOR_VERSION == 34
         "confuse",
-#endif
         "penetration",
         "devastation",
         "reaping",
@@ -4852,9 +4840,7 @@ static int _str_to_ego(item_spec &spec, string ego_str)
         "frost",
         "poisoned",
         "curare",
-#if TAG_MAJOR_VERSION == 34
         "returning",
-#endif
         "chaos",
         "penetration",
         "dispersal",
@@ -4862,14 +4848,10 @@ static int _str_to_ego(item_spec &spec, string ego_str)
         "steel",
         "silver",
         "paralysis",
-#if TAG_MAJOR_VERSION == 34
         "slow",
-#endif
         "sleep",
         "confusion",
-#if TAG_MAJOR_VERSION == 34
         "sickness",
-#endif
         "frenzy",
         nullptr
     };

@@ -76,7 +76,7 @@ static const struct spell_desc spelldata[] =
     1, 0,
     TILEG_APPORTATION,
 },
-#if TAG_MAJOR_VERSION == 34
+
 {
     SPELL_DELAYED_FIREBALL, "Delayed Fireball",
     SPTYP_FIRE,
@@ -87,7 +87,7 @@ static const struct spell_desc spelldata[] =
     7, 0,
     TILEG_ERROR,
 },
-#endif
+
 {
     SPELL_CONJURE_FLAME, "Conjure Flame",
     SPTYP_FIRE | SPTYP_AIR,
@@ -414,7 +414,6 @@ static const struct spell_desc spelldata[] =
     TILEG_MASS_ABJURATION,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SUMMON_SCORPIONS, "Summon Scorpions",
     SPTYP_SUMMONING,
@@ -425,7 +424,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_BOLT_OF_DRAINING, "Bolt of Draining",
@@ -449,7 +447,6 @@ static const struct spell_desc spelldata[] =
     TILEG_LEHUDIBS_CRYSTAL_SPEAR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_BOLT_OF_INACCURACY, "Bolt of Inaccuracy",
     SPTYP_CONJURATION,
@@ -460,7 +457,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_TORNADO, "Tornado",
@@ -563,7 +559,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ISKENDERUNS_MYSTIC_BLAST,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SUMMON_SWARM, "Summon Swarm",
     SPTYP_SUMMONING,
@@ -574,7 +569,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SUMMON_HORRIBLE_THINGS, "Summon Horrible Things",
@@ -699,7 +693,6 @@ static const struct spell_desc spelldata[] =
     TILEG_FREEZE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SUMMON_ELEMENTAL, "Summon Elemental",
     SPTYP_SUMMONING,
@@ -710,7 +703,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_OZOCUBUS_REFRIGERATION, "Ozocubu's Refrigeration",
@@ -789,7 +781,6 @@ static const struct spell_desc spelldata[] =
     TILEG_BERSERKER_RAGE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_FRENZY, "Frenzy",
     SPTYP_CHARMS,
@@ -800,7 +791,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_DISPEL_UNDEAD, "Dispel Undead",
@@ -813,7 +803,6 @@ static const struct spell_desc spelldata[] =
     TILEG_DISPEL_UNDEAD,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_FULSOME_DISTILLATION, "Fulsome Distillation",
     SPTYP_TRANSMUTATION | SPTYP_NECROMANCY,
@@ -824,7 +813,6 @@ static const struct spell_desc spelldata[] =
     1, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_POISON_ARROW, "Poison Arrow",
@@ -872,7 +860,6 @@ static const struct spell_desc spelldata[] =
     TILEG_BANISHMENT,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_CIGOTUVIS_DEGENERATION, "Cigotuvi's Degeneration",
     SPTYP_TRANSMUTATION | SPTYP_NECROMANCY,
@@ -883,7 +870,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_STING, "Sting",
@@ -930,7 +916,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SUMMON_DEMON,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_DEMONIC_HORDE, "Demonic Horde",
     SPTYP_SUMMONING,
@@ -941,7 +926,6 @@ static const struct spell_desc spelldata[] =
     5, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SUMMON_GREATER_DEMON, "Summon Greater Demon",
@@ -965,7 +949,6 @@ static const struct spell_desc spelldata[] =
     TILEG_CORPSE_ROT,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_FIRE_BRAND, "Fire Brand",
     SPTYP_CHARMS | SPTYP_FIRE,
@@ -999,7 +982,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ERROR,
 },
 
-#endif
 {
     SPELL_IRON_SHOT, "Iron Shot",
     SPTYP_EARTH,
@@ -1044,7 +1026,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SWIFTNESS,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_FLY, "Flight",
     SPTYP_CHARMS | SPTYP_AIR,
@@ -1066,9 +1047,7 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_CURE_POISON, "Cure Poison",
     SPTYP_CHARMS,
@@ -1079,9 +1058,7 @@ static const struct spell_desc spelldata[] =
     1, 0,
     TILEG_ERROR,
 },
-#endif
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_CONTROL_TELEPORT, "Control Teleport",
     SPTYP_CHARMS | SPTYP_TRANSLOCATION,
@@ -1104,7 +1081,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ERROR,
 },
 
-#endif
 {
     SPELL_DEBUGGING_RAY, "Debugging Ray",
     SPTYP_CONJURATION,
@@ -1304,7 +1280,6 @@ static const struct spell_desc spelldata[] =
     TILEG_CONFUSING_TOUCH,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SURE_BLADE, "Sure Blade",
     SPTYP_HEXES | SPTYP_CHARMS,
@@ -1315,7 +1290,7 @@ static const struct spell_desc spelldata[] =
     2, 0,
     TILEG_ERROR,
 },
-#endif
+
 {
     SPELL_FLAME_TONGUE, "Flame Tongue",
     SPTYP_FIRE,
@@ -1404,7 +1379,6 @@ static const struct spell_desc spelldata[] =
     TILEG_METABOLIC_ENGLACIATION,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SEE_INVISIBLE, "See Invisible",
     SPTYP_CHARMS,
@@ -1415,7 +1389,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_PHASE_SHIFT, "Phase Shift",
@@ -1439,7 +1412,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SUMMON_BUTTERFLIES,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_WARP_BRAND, "Warp Weapon",
     SPTYP_CHARMS | SPTYP_TRANSLOCATION,
@@ -1450,7 +1422,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SILENCE, "Silence",
@@ -1518,7 +1489,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ALISTAIRS_INTOXICATION,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_EVAPORATE, "Evaporate",
     SPTYP_FIRE | SPTYP_TRANSMUTATION,
@@ -1529,7 +1499,6 @@ static const struct spell_desc spelldata[] =
     2, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_LRD, "Lee's Rapid Deconstruction",
@@ -1553,7 +1522,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SANDBLAST,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_CONDENSATION_SHIELD, "Condensation Shield",
     SPTYP_ICE,
@@ -1575,7 +1543,6 @@ static const struct spell_desc spelldata[] =
     2, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SIMULACRUM, "Simulacrum",
@@ -1676,7 +1643,6 @@ static const struct spell_desc spelldata[] =
     TILEG_FULMINANT_PRISM,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SINGULARITY, "Singularity",
     SPTYP_TRANSLOCATION,
@@ -1687,7 +1653,6 @@ static const struct spell_desc spelldata[] =
     20, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_PARALYSE, "Paralyse",
@@ -1736,7 +1701,6 @@ static const struct spell_desc spelldata[] =
     TILEG_HURL_DAMNATION,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_VAMPIRE_SUMMON, "Vampire Summon",
     SPTYP_SUMMONING,
@@ -1747,7 +1711,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_BRAIN_FEED, "Brain Feed",
@@ -1760,7 +1723,6 @@ static const struct spell_desc spelldata[] =
     TILEG_BRAIN_FEED,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_FAKE_RAKSHASA_SUMMON, "Rakshasa Summon",
     SPTYP_SUMMONING,
@@ -1771,7 +1733,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_FAKE_RAKSHASA_SUMMON,
 },
-#endif
 
 {
     SPELL_NOXIOUS_CLOUD, "Noxious Cloud",
@@ -2042,7 +2003,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ERROR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_DRACONIAN_BREATH, "Draconian Breath",
     SPTYP_CONJURATION,
@@ -2053,7 +2013,6 @@ static const struct spell_desc spelldata[] =
     8, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_WATER_ELEMENTALS, "Summon Water Elementals",
@@ -2155,7 +2114,6 @@ static const struct spell_desc spelldata[] =
     TILEG_FIRE_ELEMENTALS,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_IRON_ELEMENTALS, "Summon Iron Elementals",
     SPTYP_SUMMONING,
@@ -2166,7 +2124,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_IRON_ELEMENTALS,
 },
-#endif
 
 {
     SPELL_SLEEP, "Sleep",
@@ -2190,7 +2147,6 @@ static const struct spell_desc spelldata[] =
     TILEG_FAKE_MARA_SUMMON,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SUMMON_RAKSHASA, "Summon Rakshasa",
     SPTYP_SUMMONING,
@@ -2212,7 +2168,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SUMMON_ILLUSION, "Summon Illusion",
@@ -2293,7 +2248,6 @@ static const struct spell_desc spelldata[] =
     TILEG_MIGHT_OTHER,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SUNRAY, "Sunray",
     SPTYP_CONJURATION,
@@ -2304,7 +2258,6 @@ static const struct spell_desc spelldata[] =
     -9, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_AWAKEN_FOREST, "Awaken Forest",
@@ -2361,7 +2314,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SUMMON_SPECTRAL_ORCS,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_HOLY_LIGHT, "Holy Light",
     SPTYP_CONJURATION,
@@ -2372,7 +2324,6 @@ static const struct spell_desc spelldata[] =
     6, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SUMMON_HOLIES, "Summon Holies",
@@ -2487,7 +2438,6 @@ static const struct spell_desc spelldata[] =
     TILEG_MESMERISE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_MELEE, "Melee",
     SPTYP_NONE,
@@ -2498,7 +2448,6 @@ static const struct spell_desc spelldata[] =
     1, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_FIRE_SUMMON, "Fire Summon",
@@ -2555,7 +2504,6 @@ static const struct spell_desc spelldata[] =
     TILEG_BEASTLY_APPENDAGE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SILVER_BLAST, "Silver Blast",
     SPTYP_CONJURATION,
@@ -2566,7 +2514,6 @@ static const struct spell_desc spelldata[] =
     0, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_ENSNARE, "Ensnare",
@@ -2623,7 +2570,6 @@ static const struct spell_desc spelldata[] =
     TILEG_MALMUTATE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SUMMON_TWISTER, "Summon Twister",
     SPTYP_SUMMONING | SPTYP_AIR,
@@ -2634,7 +2580,6 @@ static const struct spell_desc spelldata[] =
     0, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_DAZZLING_SPRAY, "Dazzling Spray",
@@ -2747,7 +2692,6 @@ static const struct spell_desc spelldata[] =
     TILEG_BLINK_ALLIES_ENCIRCLE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SHAFT_SELF, "Shaft Self",
     SPTYP_EARTH,
@@ -2758,7 +2702,6 @@ static const struct spell_desc spelldata[] =
     100, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_AWAKEN_VINES, "Awaken Vines",
@@ -2771,7 +2714,6 @@ static const struct spell_desc spelldata[] =
     TILEG_AWAKEN_VINES,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_CONTROL_WINDS, "Control Winds",
     SPTYP_CHARMS | SPTYP_AIR,
@@ -2782,7 +2724,6 @@ static const struct spell_desc spelldata[] =
     5, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_THORN_VOLLEY, "Volley of Thorns",
@@ -2817,7 +2758,6 @@ static const struct spell_desc spelldata[] =
     TILEG_WATERSTRIKE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_HASTE_PLANTS, "Haste Plants",
     SPTYP_CHARMS,
@@ -2828,7 +2768,6 @@ static const struct spell_desc spelldata[] =
     5, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_WIND_BLAST, "Wind Blast",
@@ -2874,7 +2813,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SONG_OF_SLAYING,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_SONG_OF_SHIELDING, "Song of Shielding",
     SPTYP_CHARMS,
@@ -2885,7 +2823,6 @@ static const struct spell_desc spelldata[] =
     0, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SPECTRAL_WEAPON, "Spectral Weapon",
@@ -2964,7 +2901,6 @@ static const struct spell_desc spelldata[] =
     TILEG_VIRULENCE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_IGNITE_POISON_SINGLE, "Localized Ignite Poison",
     SPTYP_FIRE | SPTYP_TRANSMUTATION,
@@ -2975,7 +2911,6 @@ static const struct spell_desc spelldata[] =
     3, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_ORB_OF_ELECTRICITY, "Orb of Electricity",
@@ -2988,7 +2923,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ORB_OF_ELECTRICITY,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_EXPLOSIVE_BOLT, "Explosive Bolt",
     SPTYP_FIRE,
@@ -2999,7 +2933,6 @@ static const struct spell_desc spelldata[] =
     6, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_FLASH_FREEZE, "Flash Freeze",
@@ -3023,7 +2956,6 @@ static const struct spell_desc spelldata[] =
     TILEG_LEGENDARY_DESTRUCTION,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_EPHEMERAL_INFUSION, "Ephemeral Infusion",
     SPTYP_CHARMS | SPTYP_NECROMANCY,
@@ -3034,7 +2966,6 @@ static const struct spell_desc spelldata[] =
     5, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_FORCEFUL_INVITATION, "Forceful Invitation",
@@ -3091,7 +3022,6 @@ static const struct spell_desc spelldata[] =
     TILEG_BLACK_MARK,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_GRAND_AVATAR, "Grand Avatar",
     SPTYP_CHARMS | SPTYP_HEXES,
@@ -3102,7 +3032,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SAP_MAGIC, "Sap Magic",
@@ -3126,7 +3055,6 @@ static const struct spell_desc spelldata[] =
     TILEG_CORRUPT_BODY,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_REARRANGE_PIECES, "Rearrange the Pieces",
     SPTYP_HEXES,
@@ -3137,7 +3065,6 @@ static const struct spell_desc spelldata[] =
     0, 0,
     TILEG_REARRANGE_PIECES,
 },
-#endif
 
 {
     SPELL_MAJOR_DESTRUCTION, "Major Destruction",
@@ -3260,7 +3187,6 @@ static const struct spell_desc spelldata[] =
     TILEG_CLOUD_CONE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_WEAVE_SHADOWS, "Weave Shadows",
     SPTYP_SUMMONING,
@@ -3271,7 +3197,6 @@ static const struct spell_desc spelldata[] =
     4, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_DRAGON_CALL, "Dragon's Call",
@@ -3295,7 +3220,6 @@ static const struct spell_desc spelldata[] =
     TILEG_SPELLFORGED_SERVITOR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_FORCEFUL_DISMISSAL, "Forceful Dismissal",
     SPTYP_SUMMONING,
@@ -3306,7 +3230,6 @@ static const struct spell_desc spelldata[] =
     5, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_SUMMON_MANA_VIPER, "Summon Mana Viper",
@@ -3518,7 +3441,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ERROR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_THROW, "Throw",
     SPTYP_TRANSLOCATION,
@@ -3529,7 +3451,6 @@ static const struct spell_desc spelldata[] =
     0, 5,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_CORRUPTING_PULSE, "Corrupting Pulse",
@@ -3641,7 +3562,6 @@ static const struct spell_desc spelldata[] =
     TILEG_ERROR,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_HUNTING_CRY, "Hunting Cry",
     SPTYP_HEXES,
@@ -3652,7 +3572,6 @@ static const struct spell_desc spelldata[] =
     25, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_CLEANSING_FLAME, "Cleansing Flame",
@@ -3676,7 +3595,6 @@ static const struct spell_desc spelldata[] =
     TILEG_CIGOTUVIS_EMBRACE,
 },
 
-#if TAG_MAJOR_VERSION == 34
 {
     SPELL_GRAVITAS, "Gell's Gravitas",
     SPTYP_TRANSLOCATION,
@@ -3698,7 +3616,6 @@ static const struct spell_desc spelldata[] =
     5, 0,
     TILEG_ERROR,
 },
-#endif
 
 {
     SPELL_VIOLENT_UNRAVELLING, "Yara's Violent Unravelling",

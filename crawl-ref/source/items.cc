@@ -600,11 +600,10 @@ void unlink_item(int dest)
         //
         // Use the items (x,y) to access the list (igrd[x][y]) where
         // the item should be linked.
-
-#if TAG_MAJOR_VERSION == 34
         if (mitm[dest].pos.x != 0 || mitm[dest].pos.y < 5)
-#endif
-        ASSERT_IN_BOUNDS(mitm[dest].pos);
+        {
+            ASSERT_IN_BOUNDS(mitm[dest].pos);
+        }
 
         // First check the top:
         if (igrd(mitm[dest].pos) == dest)
@@ -1213,7 +1212,7 @@ bool origin_is_acquirement(const item_def& item, item_source_type *type)
     *type = IT_SRC_NONE;
 
     const int iorig = -item.orig_monnum;
-#if TAG_MAJOR_VERSION == 34
+
 // Copy pasting is bad but this will autoupdate on version bump
     if (iorig == AQ_CARD_GENIE)
     {
@@ -1221,7 +1220,6 @@ bool origin_is_acquirement(const item_def& item, item_source_type *type)
         return true;
     }
 
-#endif
     if (iorig == AQ_SCROLL || iorig == AQ_WIZMODE)
     {
         *type = static_cast<item_source_type>(iorig);
@@ -1256,11 +1254,9 @@ string origin_desc(const item_def &item)
             case AQ_SCROLL:
                 desc += "You acquired " + _article_it(item) + " ";
                 break;
-#if TAG_MAJOR_VERSION == 34
             case AQ_CARD_GENIE:
                 desc += "You drew the Genie ";
                 break;
-#endif
             case AQ_WIZMODE:
                 desc += "Your wizardly powers created "+ _article_it(item)+ " ";
                 break;
@@ -2896,9 +2892,7 @@ static int _autopickup_subtype(const item_def &item)
             return item.sub_type;
         else
             return max_type;
-#if TAG_MAJOR_VERSION == 34
     case OBJ_RODS:
-#endif
     case OBJ_GOLD:
     case OBJ_RUNES:
         return max_type;
@@ -3320,9 +3314,7 @@ int get_max_subtype(object_class_type base_type)
         NUM_MISCELLANY,
         -1,              // corpses     -- handled specially
         1,              // gold         -- handled specially
-#if TAG_MAJOR_VERSION == 34
         NUM_RODS,
-#endif
         NUM_RUNE_TYPES,
     };
     COMPILE_CHECK(ARRAYSZ(max_subtype) == NUM_OBJECT_CLASSES);
@@ -3404,7 +3396,6 @@ zap_type item_def::zap() const
     case WAND_CLOUDS:
     case WAND_SCATTERSHOT:
     case NUM_WANDS:
-#if TAG_MAJOR_VERSION == 34
     case WAND_HASTING:
     case WAND_TELEPORTATION:
     case WAND_INVISIBILITY_REMOVED:
@@ -3415,7 +3406,6 @@ zap_type item_def::zap() const
     case WAND_HEAL_WOUNDS_REMOVED:
     case WAND_SLOWING:
     case WAND_RANDOM_EFFECTS:  /* impossible */
-#endif
         break;
     }
     return result;
@@ -3542,27 +3532,21 @@ colour_t item_def::missile_colour() const
     {
         case MI_STONE:
             return BROWN;
-#if TAG_MAJOR_VERSION == 34
         case MI_DART:
-#endif
         case MI_SLING_BULLET:
             return CYAN;
         case MI_LARGE_ROCK:
             return LIGHTGREY;
         case MI_ARROW:
             return BLUE;
-#if TAG_MAJOR_VERSION == 34
         case MI_NEEDLE:
             return WHITE;
         case MI_BOLT:
             return LIGHTBLUE;
-#endif
         case MI_JAVELIN:
             return RED;
-#if TAG_MAJOR_VERSION == 34
         case MI_THROWING_NET:
             return MAGENTA;
-#endif
         case MI_TOMAHAWK:
             return GREEN;
         case MI_DART_POISONED:
@@ -3596,15 +3580,11 @@ colour_t item_def::armour_colour() const
         case ARM_CLOAK:
             return WHITE;
         case ARM_NAGA_BARDING:
-#if TAG_MAJOR_VERSION == 34
         case ARM_CENTAUR_BARDING:
-#endif
             return GREEN;
         case ARM_ROBE:
             return RED;
-#if TAG_MAJOR_VERSION == 34
         case ARM_CAP:
-#endif
         case ARM_HAT:
         case ARM_HELMET:
             return MAGENTA;
@@ -3672,10 +3652,8 @@ colour_t item_def::potion_colour() const
     // (use an array of [name, colour] tuples/structs)
     static const COLOURS potion_colours[] =
     {
-#if TAG_MAJOR_VERSION == 34
         // clear
         LIGHTGREY,
-#endif
         // blue, black, silvery, cyan, purple, orange
         BLUE, LIGHTGREY, WHITE, CYAN, MAGENTA, LIGHTRED,
         // inky, red, yellow, green, brown, pink, white
@@ -3950,16 +3928,12 @@ colour_t item_def::miscellany_colour() const
     {
         case MISC_FAN_OF_GALES:
             return CYAN;
-#if TAG_MAJOR_VERSION == 34
         case MISC_BOTTLED_EFREET:
             return RED;
-#endif
         case MISC_PHANTOM_MIRROR:
             return RED;
-#if TAG_MAJOR_VERSION == 34
         case MISC_STONE_OF_TREMORS:
             return BROWN;
-#endif
         case MISC_DISC_OF_STORMS:
             return LIGHTGREY;
         case MISC_PHIAL_OF_FLOODS:
@@ -3974,12 +3948,10 @@ colour_t item_def::miscellany_colour() const
             return YELLOW;
         case MISC_SACK_OF_SPIDERS:
             return WHITE;
-#if TAG_MAJOR_VERSION == 34
         case MISC_BUGGY_LANTERN_OF_SHADOWS:
         case MISC_BUGGY_EBONY_CASKET:
         case MISC_XOMS_CHESSBOARD:
             return DARKGREY;
-#endif
         case MISC_QUAD_DAMAGE:
             return ETC_DARK;
         case MISC_ZIGGURAT:
@@ -4003,12 +3975,10 @@ colour_t item_def::corpse_colour() const
         case CORPSE_BODY:
         {
             const colour_t class_colour = mons_class_colour(mon_type);
-#if TAG_MAJOR_VERSION == 34
             if (class_colour == COLOUR_UNDEF)
+            {
                 return LIGHTRED;
-#else
-            ASSERT(class_colour != COLOUR_UNDEF);
-#endif
+            }
             return class_colour;
         }
         default:
@@ -4063,10 +4033,8 @@ colour_t item_def::get_colour() const
             return LIGHTGREY;
         case OBJ_BOOKS:
             return book_colour();
-#if TAG_MAJOR_VERSION == 34
         case OBJ_RODS:
             return YELLOW;
-#endif
         case OBJ_STAVES:
             return BROWN;
         case OBJ_ORBS:
@@ -4098,10 +4066,7 @@ bool item_type_has_unidentified(object_class_type base_type)
         || base_type == OBJ_BOOKS
         || base_type == OBJ_STAVES
         || base_type == OBJ_MISCELLANY
-#if TAG_MAJOR_VERSION == 34
-        || base_type == OBJ_RODS
-#endif
-        ;
+        || base_type == OBJ_RODS;
 }
 
 // Checks whether the item is actually a good one.
@@ -4832,11 +4797,9 @@ item_info get_item_info(const item_def& item)
         if (item.sub_type == BOOK_MANUAL && item_type_known(item))
             ii.skill = item.skill; // manual skill
         break;
-#if TAG_MAJOR_VERSION == 34
     case OBJ_RODS:
         ii.sub_type = NUM_RODS;
         break;
-#endif
     case OBJ_STAVES:
         ii.sub_type = item_type_known(item) ? item.sub_type : NUM_STAVES;
         ii.subtype_rnd = item.subtype_rnd;

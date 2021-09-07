@@ -1071,9 +1071,7 @@ static void _mimic_vanish(const coord_def& pos, const string& name)
  */
 static void _destroy_mimic_feature(const coord_def &pos)
 {
-#if TAG_MAJOR_VERSION == 34
     const dungeon_feature_type feat = grd(pos);
-#endif
 
     unnotice_feature(level_pos(level_id::current(), pos));
     grd(pos) = DNGN_FLOOR;
@@ -1081,10 +1079,10 @@ static void _destroy_mimic_feature(const coord_def &pos)
     set_terrain_changed(pos);
     remove_markers_and_listeners_at(pos);
 
-#if TAG_MAJOR_VERSION == 34
     if (feat_is_door(feat))
+    {
         env.level_map_mask(pos) |= MMT_WAS_DOOR_MIMIC;
-#endif
+    }
 }
 
 void discover_mimic(const coord_def& pos)
@@ -1181,10 +1179,8 @@ bool mons_is_base_draconian(monster_type mc)
 bool mons_is_demonspawn(monster_type mc)
 {
     return
-#if TAG_MAJOR_VERSION == 34
         mc == MONS_DEMONSPAWN ||
-#endif
-        mc >= MONS_FIRST_DEMONSPAWN && mc <= MONS_LAST_DEMONSPAWN;
+            mc >= MONS_FIRST_DEMONSPAWN && mc <= MONS_LAST_DEMONSPAWN;
 }
 
 // Conjured (as opposed to summoned) monsters are actually here, even
@@ -1411,11 +1407,7 @@ bool mons_can_shout(monster_type mc)
 
 bool mons_is_ghost_demon(monster_type mc)
 {
-    return mons_class_flag(mc, M_GHOST_DEMON)
-#if TAG_MAJOR_VERSION == 34
-           || mc == MONS_CHIMERA;
-#endif
-           ;
+    return mons_class_flag(mc, M_GHOST_DEMON) || mc == MONS_CHIMERA;;
 }
 
 bool mons_is_pghost(monster_type mc)
@@ -1620,7 +1612,6 @@ monster_type mons_zombie_base(const monster& mon)
 
 bool mons_class_is_zombified(monster_type mc)
 {
-#if TAG_MAJOR_VERSION == 34
     switch (mc)
     {
         case MONS_ZOMBIE_SMALL:     case MONS_ZOMBIE_LARGE:
@@ -1630,7 +1621,6 @@ bool mons_class_is_zombified(monster_type mc)
         default:
             break;
     }
-#endif
 
     return mc == MONS_ZOMBIE
         || mc == MONS_SKELETON
@@ -2034,18 +2024,12 @@ string mon_attack_name(attack_type attack)
         "constrict",
         "trample",
         "trunk-slap",
-#if TAG_MAJOR_VERSION == 34
         "snap closed at",
         "splash",
-#endif
         "pounce on",
-#if TAG_MAJOR_VERSION == 34
         "sting",
-#endif
         "hit", // AT_CHERUB
-#if TAG_MAJOR_VERSION == 34
         "hit", // AT_SHOOT
-#endif
         "hit", // AT_WEAP_ONLY,
         "hit", // AT_RANDOM
     };
@@ -2479,11 +2463,9 @@ monster_type random_draconian_monster_species()
 {
       int drac_type = random_range(MONS_FIRST_BASE_DRACONIAN, MONS_LAST_SPAWNED_DRACONIAN);
 
-#if TAG_MAJOR_VERSION == 34
     // Special case to skip mottled draconian
     while (drac_type == MONS_MOTTLED_DRACONIAN)
         drac_type = random_range(MONS_FIRST_BASE_DRACONIAN, MONS_LAST_SPAWNED_DRACONIAN);
-#endif
 
     return static_cast<monster_type>(drac_type);
 }
@@ -2493,11 +2475,11 @@ monster_type random_draconian_job()
 {
     int drac_type = random_range(MONS_FIRST_NONBASE_DRACONIAN, MONS_LAST_NONBASE_DRACONIAN);
 
-#if TAG_MAJOR_VERSION == 34
     // Special case to skip draconian zealots
     while (drac_type == MONS_DRACONIAN_ZEALOT)
+    {
         drac_type = random_range(MONS_FIRST_NONBASE_DRACONIAN, MONS_LAST_NONBASE_DRACONIAN);
-#endif
+    }
 
     return static_cast<monster_type>(drac_type);
 }
@@ -4095,9 +4077,7 @@ mon_inv_type item_to_mslot(const item_def &item)
     {
     case OBJ_WEAPONS:
     case OBJ_STAVES:
-#if TAG_MAJOR_VERSION == 34
     case OBJ_RODS:
-#endif
         return MSLOT_WEAPON;
     case OBJ_MISSILES:
         return MSLOT_MISSILE;

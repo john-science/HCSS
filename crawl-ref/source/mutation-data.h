@@ -277,7 +277,6 @@ static const mutation_def mut_data[] =
   {"", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_TELEPORT_CONTROL, 0, 1, mutflag::GOOD, false,
   "teleport control",
 
@@ -285,7 +284,6 @@ static const mutation_def mut_data[] =
   {"You feel controlled.", "", ""},
   {"You feel random.", "", ""},
 },
-#endif
 
 { MUT_TELEPORT, 3, 3, mutflag::BAD, false,
   "teleportitis",
@@ -385,7 +383,6 @@ static const mutation_def mut_data[] =
    ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_BREATHE_FLAMES, 0, 3, mutflag::GOOD, false,
   "breathe flames",
 
@@ -417,7 +414,7 @@ static const mutation_def mut_data[] =
    "You feel less sure on your feet.",
    "You feel less sure on your feet."},
 },
-#endif
+
 { MUT_BLINK, 3, 1, mutflag::GOOD, false,
   "blink",
 
@@ -426,7 +423,6 @@ static const mutation_def mut_data[] =
   {"You no longer feel jittery.", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_STRONG_STIFF, 0, 3, mutflag::GOOD, false,
   "strong stiff",
 
@@ -458,7 +454,6 @@ static const mutation_def mut_data[] =
    "Your muscles feel sore.",
    "Your muscles feel sore."},
 },
-#endif
 
 { MUT_SCREAM, 6, 3, mutflag::BAD | mutflag::XOM, false,
   "screaming",
@@ -641,7 +636,6 @@ static const mutation_def mut_data[] =
    "You feel less resistant to negative energy."},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_MUMMY_RESTORATION, 0, 1, mutflag::GOOD, false,
   "restore body",
 
@@ -655,7 +649,6 @@ static const mutation_def mut_data[] =
 
   {"", "", ""},
 },
-#endif
 
 { MUT_NECRO_ENHANCER, 0, 2, mutflag::GOOD, false,
   "in touch with death",
@@ -892,7 +885,6 @@ static const mutation_def mut_data[] =
 
   {"Your tentacle spike disappears.", "", ""},
 },
-#if TAG_MAJOR_VERSION == 34
 
 { MUT_BREATHE_POISON, 0, 1, mutflag::GOOD, false,
   "breathe poison",
@@ -901,7 +893,6 @@ static const mutation_def mut_data[] =
   {"You taste something nasty.", "", ""},
   {"Your breath is less nasty.", "", ""},
 },
-#endif
 
 { MUT_CONSTRICTING_TAIL, 0, 1, mutflag::GOOD, true,
   "constrict 1",
@@ -931,7 +922,6 @@ static const mutation_def mut_data[] =
   {"Your wings shrivel and weaken.", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_SAPROVOROUS, 0, 3, mutflag::GOOD, false,
   "saprovore",
 
@@ -946,7 +936,6 @@ static const mutation_def mut_data[] =
   {"", "", ""},
 },
 
-#endif
 // species-dependent innate mutations
 { MUT_ROT_IMMUNITY, 0, 1, mutflag::GOOD, false,
   "rot immunity",
@@ -956,7 +945,6 @@ static const mutation_def mut_data[] =
   {"You feel vulnerable to rotting.", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_GOURMAND, 0, 1, mutflag::GOOD, false,
   "gourmand",
 
@@ -964,7 +952,6 @@ static const mutation_def mut_data[] =
   {"", "", ""},
   {"", "", ""},
 },
-#endif
 
 { MUT_HOP, 0, 2, mutflag::GOOD, true,
   "stiff legs",
@@ -1070,7 +1057,6 @@ static const mutation_def mut_data[] =
    "Your connection to magic feels less subdued."},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_FORLORN, 0, 1, mutflag::BAD, false,
   "forlorn",
 
@@ -1078,7 +1064,6 @@ static const mutation_def mut_data[] =
   {"You feel forlorn.","",""},
   {"You feel more spiritual.","",""},
 },
-#endif
 
 // No longer stochastic because that was dumb
 // Not bothering to rename the mutation though, sorry
@@ -1110,7 +1095,6 @@ static const mutation_def mut_data[] =
   {"", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_CONSERVE_SCROLLS, 0, 1, mutflag::GOOD, false,
   "conserve scrolls",
 
@@ -1126,7 +1110,6 @@ static const mutation_def mut_data[] =
   {"You feel less concerned about cold.", "", ""},
   {"", "", ""},
 },
-#endif
 
 { MUT_PASSIVE_FREEZE, 3, 1, mutflag::GOOD, false,
   "passive freeze",
@@ -1330,7 +1313,6 @@ static const mutation_def mut_data[] =
   {"Your pseudopods retract into your body.", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_FOOD_JELLY, 0, 1, mutflag::GOOD, false,
   "spawn jellies when eating",
 
@@ -1338,7 +1320,6 @@ static const mutation_def mut_data[] =
   {"You feel more connected to the slimes.", "", ""},
   {"Your connection to the slimes vanishes.", "", ""},
 },
-#endif
 
 { MUT_ACIDIC_BITE, 0, 1, mutflag::GOOD | mutflag::JIYVA, true,
   "acidic bite",
@@ -1453,7 +1434,6 @@ static const mutation_def mut_data[] =
    "Your molten scales recede somewhat."},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_ROUGH_BLACK_SCALES, 0, 3, mutflag::GOOD, true,
   "rough black scales",
 
@@ -1469,7 +1449,6 @@ static const mutation_def mut_data[] =
    "Your rough black scales recede somewhat.",
    "Your rough black scales recede somewhat."},
 },
-#endif
 
 { MUT_RUGGED_BROWN_SCALES, 0, 3, mutflag::GOOD, true,
   "rugged brown scales",
@@ -1644,7 +1623,6 @@ static const mutation_def mut_data[] =
   {"You briefly stop moving.", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_TRAMPLE_RESISTANCE, 0, 1, mutflag::GOOD, false,
   "trample resistance",
 
@@ -1684,7 +1662,6 @@ static const mutation_def mut_data[] =
   {"You fume.", "You fume more.", ""},
   {"You stop fuming.", "You fume less.", ""},
 },
-#endif
 
 { MUT_BLACK_MARK, 0, 2, mutflag::GOOD, false,
   "black mark",
@@ -1720,7 +1697,6 @@ static const mutation_def mut_data[] =
   {"", "", ""},
 },
 
-#if TAG_MAJOR_VERSION == 34
 { MUT_SUSTAIN_ATTRIBUTES, 0, 1, mutflag::GOOD, false,
     "sustain attributes",
 
@@ -1728,7 +1704,6 @@ static const mutation_def mut_data[] =
     {"", "", ""},
     {"", "", ""},
 },
-#endif
 
 { MUT_NO_DRINK, 0, 1, mutflag::BAD, false,
   "inability to drink while threatened",

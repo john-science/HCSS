@@ -2045,96 +2045,36 @@ static inline int _mod_speed(int val, int speed)
 static const char *enchant_names[] =
 {
     "none", "berserk", "haste", "might", "fatigue", "slow", "fear",
-    "confusion", "invis", "poison",
-#if TAG_MAJOR_VERSION == 34
-    "rot",
-#endif
-    "summon", "abj", "corona",
+    "confusion", "invis", "poison", "rot", "summon", "abj", "corona",
     "charm", "sticky_flame", "glowing_shapeshifter", "shapeshifter", "tp",
     "sleep_wary", "submerged", "short_lived", "paralysis", "sick",
-#if TAG_MAJOR_VERSION == 34
-    "sleepy",
-#endif
-    "held",
-#if TAG_MAJOR_VERSION == 34
-     "battle_frenzy", "temp_pacif",
-#endif
-    "petrifying",
+    "sleepy", "held", "battle_frenzy", "temp_pacif", "petrifying",
     "petrified", "lowered_mr", "soul_ripe", "slowly_dying",
-#if TAG_MAJOR_VERSION == 34
-    "eat_items",
-#endif
-    "aquatic_land", "spore_production",
-#if TAG_MAJOR_VERSION == 34
-    "slouch",
-#endif
-    "swift", "tide",
-    "insane", "silenced", "awaken_forest", "exploding",
-#if TAG_MAJOR_VERSION == 34
-    "bleeding",
-#endif
-    "tethered", "severed", "antimagic",
-#if TAG_MAJOR_VERSION == 34
-    "fading_away", "preparing_resurrect",
-#endif
-    "regen",
-    "magic_res", "mirror_dam",
-#if TAG_MAJOR_VERSION == 34
-    "stoneskin",
-#endif
-    "fear inspiring", "temporarily pacified",
-#if TAG_MAJOR_VERSION == 34
-    "withdrawn", "attached",
-#endif
+    "eat_items", "aquatic_land", "spore_production", "slouch", "swift",
+    "tide", "insane", "silenced", "awaken_forest", "exploding",
+    "bleeding", "tethered", "severed", "antimagic",
+    "fading_away", "preparing_resurrect", "regen",
+    "magic_res", "mirror_dam", "stoneskin",
+    "fear inspiring", "temporarily pacified", "withdrawn", "attached",
     "guardian_timer", "flight", "liquefying", "tornado", "fake_abjuration",
     "dazed", "mute", "blind", "dumb", "mad", "silver_corona", "recite timer",
-    "inner_flame",
-#if TAG_MAJOR_VERSION == 34
-    "roused",
-#endif
-    "breath timer",
-#if TAG_MAJOR_VERSION == 34
-    "deaths_door",
-#endif
+    "inner_flame", "roused", "breath timer", "deaths_door",
     "rolling", "ozocubus_armour", "wretched", "screamed", "rune_of_recall",
-    "injury bond", "drowning", "flayed", "haunting",
-#if TAG_MAJOR_VERSION == 34
-    "retching",
-#endif
+    "injury bond", "drowning", "flayed", "haunting", "retching",
     "weak", "dimension_anchor", "awaken vines",
-#if TAG_MAJOR_VERSION == 34
-    "control_winds", "wind_aided",
-#endif
-    "summon_capped",
+    "control_winds", "wind_aided", "summon_capped",
     "toxic_radiance", "grasping_roots_source", "grasping_roots",
     "iood_charged", "fire_vuln", "tornado_cooldown", "merfolk_avatar_song",
-    "barbs",
-#if TAG_MAJOR_VERSION == 34
-    "building_charge",
-#endif
-    "poison_vuln", "icemail", "agile",
-    "frozen",
-#if TAG_MAJOR_VERSION == 34
-    "ephemeral_infusion",
-#endif
-    "black_mark",
-#if TAG_MAJOR_VERSION == 34
-    "grand_avatar",
-#endif
+    "barbs", "building_charge", "poison_vuln", "icemail", "agile",
+    "frozen", "ephemeral_infusion", "black_mark", "grand_avatar",
     "sap magic", "shroud", "phantom_mirror", "bribed", "permabribed",
     "corrosion", "gold_lust", "drained", "repel missiles",
-    "deflect missiles",
-#if TAG_MAJOR_VERSION == 34
-    "negative_vuln", "condensation_shield",
-#endif
+    "deflect missiles", "negative_vuln", "condensation_shield",
     "resistant", "hexed", "corpse_armour",
-#if TAG_MAJOR_VERSION == 34
     "chanting_fire_storm", "chanting_word_of_entropy",
-#endif
     "aura_of_brilliance", "empowered_spells", "gozag_incite", "pain_bond",
     "idealised", "bound_soul", "infestation",
-    "stilling the winds", "pinned_by_whirlwind", "phase_shift",
-    "buggy",
+    "stilling the winds", "pinned_by_whirlwind", "phase_shift", "buggy",
 };
 
 static const char *_mons_enchantment_name(enchant_type ench)
