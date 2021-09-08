@@ -48,7 +48,9 @@ void place_transiting_monsters();
 void place_followers();
 
 void place_transiting_items();
-
+void handle_followers(const coord_def &from,
+                      bool (*handler)(const coord_def &pos,
+                                      const coord_def &from, bool &real));
 void tag_followers();
 void untag_followers();
 

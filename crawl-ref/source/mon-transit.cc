@@ -349,88 +349,85 @@ void follower::restore_mons_items(monster& m)
     }
 }
 
-static bool _is_religious_follower(const monster* mon)
+static bool _is_religious_follower(const monster &mon)
 {
     return (you_worship(GOD_YREDELEMNUL)
             || will_have_passive(passive_t::convert_orcs)
             || you_worship(GOD_FEDHAS))
-                && is_follower(*mon);
+                && is_follower(mon);
 }
 
-static bool _tag_follower_at(const coord_def &pos, bool &real_follower)
+static bool _mons_can_follow_player_from(const monster &mons,
+                                         const coord_def from,
+                                         bool within_level = false)
 {
-    if (!in_bounds(pos) || pos == you.pos())
+    if (!mons.alive()
+        || mons.speed_increment < 50
+        || mons.incapacitated()
+        || mons.is_stationary())
+    {
+        return false;
+    }
+
+    if (!monster_habitable_grid(&mons, DNGN_FLOOR))
+        return false;
+
+    // Only non-wandering friendly monsters or those actively
+    // seeking the player will follow up/down stairs.
+    if (!mons.friendly()
+          && (!mons_is_seeking(mons) || mons.foe != MHITYOU)
+        || mons.foe == MHITNOT)
+    {
+        return false;
+    }
+
+    // Unfriendly monsters must be directly adjacent to follow.
+    if (!mons.friendly() && (mons.pos() - from).rdist() > 1)
+        return false;
+
+    // Monsters that can't use stairs can still be marked as followers
+    // (though they'll be ignored for transit), so any adjacent real
+    // follower can follow through. (jpeg)
+    if (!within_level && !mons_can_use_stairs(mons, env.grid(from)))
+    {
+        if (_is_religious_follower(mons))
+            return true;
+
+        return false;
+    }
+    return true;
+}
+
+static bool _tag_follower_at(const coord_def &pos, const coord_def &from,
+                             bool &real_follower)
+{
+    if (!in_bounds(pos) || pos == from)
         return false;
 
     monster* fol = monster_at(pos);
     if (fol == nullptr)
         return false;
 
-    if (!fol->alive()
-        || fol->speed_increment < 50
-        || fol->incapacitated()
-        || mons_is_boulder(*fol)
-        || fol->is_stationary())
-    {
-        return false;
-    }
-
-    if (!monster_habitable_grid(fol, DNGN_FLOOR))
+    if (!_mons_can_follow_player_from(*fol, from))
         return false;
 
-    // Only non-wandering friendly monsters or those actively
-    // seeking the player will follow up/down stairs.
-    if (!fol->friendly()
-          && (!mons_is_seeking(*fol) || fol->foe != MHITYOU)
-        || fol->foe == MHITNOT)
-    {
-        return false;
-    }
+    real_follower = true;
+    fol->flags |= MF_TAKING_STAIRS;
 
-    // Unfriendly monsters must be directly adjacent to follow.
-    if (!fol->friendly() && (pos - you.pos()).rdist() > 1)
-        return false;
+    // Clear patrolling/travel markers.
+    fol->patrol_point.reset();
+    fol->travel_path.clear();
+    fol->travel_target = MTRAV_NONE;
 
-    // Monsters that can't use stairs can still be marked as followers
-    // (though they'll be ignored for transit), so any adjacent real
-    // follower can follow through. (jpeg)
-    if (!mons_can_use_stairs(*fol, grd(you.pos())))
-    {
-        if (_is_religious_follower(fol))
-        {
-            fol->flags |= MF_TAKING_STAIRS;
-            return true;
-        }
-        return false;
-    }
-
-    // Monster is an ally, following player through stairs.
-    if (fol->friendly())
-    {
-        real_follower = true;
-        fol->flags |= MF_TAKING_STAIRS;
-
-        // Clear patrolling/travel markers.
-        fol->patrol_point.reset();
-        fol->travel_path.clear();
-        fol->travel_target = MTRAV_NONE;
-
-        fol->clear_clinging();
-
-        dprf("%s is marked for following.",
-             fol->name(DESC_THE, true).c_str());
-
-        return true;
-    }
-
-    return false;
+    dprf("%s is marked for following.", fol->name(DESC_THE, true).c_str());
+    return true;
 }
 
-static int follower_tag_radius()
+static int _follower_tag_radius(const coord_def &from)
 {
     // If only friendlies are adjacent, we set a max radius of 5, otherwise
     // only adjacent friendlies may follow.
-    for (adjacent_iterator ai(you.pos()); ai; ++ai)
+    for (adjacent_iterator ai(from); ai; ++ai)
     {
         if (const monster* mon = monster_at(*ai))
             if (!mon->friendly())
@@ -440,31 +437,45 @@ static int follower_tag_radius()
     return 5;
 }
 
-void tag_followers()
+/**
+ * Handle movement of adjacent player followers from a given location. This is
+ * used when traveling through stairs or a transporter.
+ *
+ * @param from       The location from which the player moved.
+ * @param handler    A handler function that does movement of the actor to the
+ *                   destination, returning true if the actor was friendly. The
+ *                   `real` argument tracks whether the actor was an actual
+ *                   follower that counts towards the follower limit.
+ **/
+void handle_followers(const coord_def &from,
+                      bool (*handler)(const coord_def &pos,
+                                      const coord_def &from, bool &real))
 {
-    const int radius = follower_tag_radius();
+    const int radius = _follower_tag_radius(from);
     int n_followers = 18;
 
     vector<coord_def> places[2];
     int place_set = 0;
 
-    places[place_set].push_back(you.pos());
-    memset(travel_point_distance, 0, sizeof(travel_distance_grid_t));
+    bool visited[GXM][GYM];
+    memset(&visited, 0, sizeof(visited));
+
+    places[place_set].push_back(from);
     while (!places[place_set].empty())
     {
-        for (const coord_def p : places[place_set])
+        for (const coord_def &p : places[place_set])
         {
             for (adjacent_iterator ai(p); ai; ++ai)
             {
-                if ((*ai - you.pos()).rdist() > radius
-                    || travel_point_distance[ai->x][ai->y])
+                if ((*ai - from).rdist() > radius
+                    || visited[ai->x][ai->y])
                 {
                     continue;
                 }
-                travel_point_distance[ai->x][ai->y] = 1;
+                visited[ai->x][ai->y] = true;
 
                 bool real_follower = false;
-                if (_tag_follower_at(*ai, real_follower))
+                if (handler(*ai, from, real_follower))
                 {
                     // If we've run out of our follower allowance, bail.
                     if (real_follower && --n_followers <= 0)
@@ -476,6 +487,11 @@ void tag_followers()
         places[place_set].clear();
         place_set = !place_set;
     }
+}
+
+void tag_followers()
+{
+    handle_followers(you.pos(), _tag_follower_at);
 }
 
 void untag_followers()
