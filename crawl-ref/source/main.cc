@@ -2038,8 +2038,16 @@ void process_command(command_type cmd)
 
     case CMD_GO_UPSTAIRS:
     case CMD_GO_DOWNSTAIRS:
-        _take_stairs(cmd == CMD_GO_DOWNSTAIRS);
+    {
+        if (feat_is_altar(env.grid(you.pos()))) {
+            pray();
+        }
+        else
+        {
+            _take_stairs(cmd == CMD_GO_DOWNSTAIRS);
+        }
         break;
+    }
 
     case CMD_OPEN_DOOR:      _open_door(); break;
 
