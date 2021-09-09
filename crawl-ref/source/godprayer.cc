@@ -165,8 +165,8 @@ void pray(bool allow_conversion)
         && target_god != GOD_NO_GOD
         && you.religion != target_god)
     {
-        if (_try_god_conversion(target_god, beogh_priest))
-            return;
+        _try_god_conversion(target_god, beogh_priest);
+        return;
     }
 
     ASSERT(!you.turn_is_over);
