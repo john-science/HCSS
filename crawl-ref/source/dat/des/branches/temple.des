@@ -789,7 +789,7 @@ PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  15
 MONS:    bush, plant
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 NSUBST:  . = 12:1 / 7:2 / *:.
 COLOUR:  ' : darkgrey w:3 / white w:1 / lightgrey
 COLOUR:  . = green
@@ -829,7 +829,7 @@ TAGS:    no_rotate no_pool_fixup
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 MONS:    bush, plant
 SUBST:   W = W:30 w, ~ = ':20 W
 NSUBST:  ' = 5:t / 7:1 / 4:2 / *:'
@@ -884,7 +884,7 @@ TAGS:    no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 MONS:    plant, bush
 NSUBST:  . = 10:X / 34:Y / *:.
 SUBST:   X : tXY., X = t., Y : Y., Y = 1112..
@@ -922,7 +922,7 @@ NAME:       minmay_temple_forest_path
 PLACE:      Temple
 ORIENT:     encompass
 WEIGHT:     5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 # No plants in corners (confuses autoexplore),
 # only fringe the edge of the paths with either (no teleport closets).
 KMONS:      P = plant / bush w:1 / fungus w:1
@@ -975,7 +975,7 @@ NAME:   minmay_temple_curvy_loop
 TAGS:   no_rotate no_pool_fixup
 PLACE:  Temple
 WEIGHT: 10
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 ORIENT: encompass
 MONS:   plant
 SUBST:  y : Ww, z : Ww, Y : W., Z : W.
@@ -1032,7 +1032,7 @@ TAGS:   no_pool_fixup
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 10
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SUBST:  A : TUV
 : local wrnd = crawl.random2(9)
 : if wrnd == 0 then
@@ -1084,7 +1084,7 @@ TAGS:    no_pool_fixup
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: JK, MN
 SUBST:   JMP : GTt., KNS : GTt.
 NSUBST:  { = 1:{ / *:.
@@ -1129,7 +1129,7 @@ NAME:    nicolae_temple_figure_zero
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: Cc / Dd
 SUBST:   cD = Q, Cd = .
 MAP
@@ -1173,7 +1173,7 @@ TAGS:    no_pool_fixup no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 MAP
 ccccccccccccccccccccccccccccccccccccccccccccccccccc
 cwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwc
@@ -1202,7 +1202,7 @@ TAGS:    no_pool_fixup no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : set_border_fill_type("open_sea")
 MAP
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
@@ -1268,7 +1268,7 @@ TAGS:    no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SUBST:   X : xc.
 MAP
          ccccccccccccc
@@ -1298,7 +1298,7 @@ ENDMAP
 NAME:    minmay_temple_curvy_branch
 PLACE:   Temple
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 ORIENT:  encompass
 SHUFFLE: GT, C'D" / D"C' / C'E` / E`C'
 SUBST:   C = Q, '"D = ., E` = x
@@ -1350,7 +1350,7 @@ TAGS:   no_rotate no_pool_fixup
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 5
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KFEAT:  A = w
 SUBST:  c : c-""""""", " = c-
 MARKER: A = lua:fog_machine { cloud_type = "thin mist", pow_min = 2, \
@@ -1419,7 +1419,7 @@ ENDMAP
 NAME:   nicolae_temple_figure_eight
 PLACE:  Temple
 WEIGHT: 10
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 ORIENT: encompass
 NSUBST: A = 1:{ / *:Q
 MAP
@@ -1459,7 +1459,7 @@ NAME:    nicolae_temple_god_jail
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KFEAT:   m = iron_grate
 SHUFFLE: PSR
 SUBST:   PS = m, R = +
@@ -1484,7 +1484,7 @@ NAME:    nicolae_temple_great_sept
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 # Sadly, console doesn't have colors for orange and indigo,
 # so brown and cyan will have to do.
 KFEAT:   roygbiv = n
@@ -1552,7 +1552,7 @@ TAGS:    no_rotate no_pool_fixup
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: {<defgh / {<defgh / <{hgfed
 SHUFFLE: def, PMRS, -' / -' / ="
 SUBST:   < = Q, d : W.., e : W.ccc, fgh = c
@@ -1598,7 +1598,7 @@ TAGS:    no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KMONS:   P = plant
 KMONS:   b = bush
 SHUFFLE: de, fg, DEFGHI
@@ -1648,7 +1648,7 @@ NAME:    dpeg_five_rooms_temple
 TAGS:    no_rotate
 PLACE:   Temple
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 ORIENT:  encompass
 SUBST:   X : GUT
 MAP
@@ -1691,7 +1691,7 @@ TAGS:    no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: CD, ab, cde, fgh, ij, klm, no, pq, rs, tu, vw, yz, @&
 SUBST:   C = Q, D = ., a : x., c : x., f : x., i : x., k : x.
 SUBST:   n : x., p : x., r : x., t : x., v : x., y : x., @ : x.
@@ -1737,7 +1737,7 @@ NAME:    eino_temple_rhombus
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: defghij, klmnopq, rs / rs / sr, tu / tu / ut
 SUBST:   deklrt = x, f : x.., m : x.., ghijnopqsu = .
 SUBST:   W : xx., X : xx., Y : xx., Z : xx.
@@ -1794,7 +1794,7 @@ NAME:    minmay_crystal_spiral_temple
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 MAP
                   bbbbbbb
                   b.....b
@@ -1846,7 +1846,7 @@ NAME:    nicolae_temple_elliptical
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: G{
 NSUBST:  { = 1:{ / *:G
 SUBST:   G : GT, c : ccccvb, d : cccvbxm
@@ -1890,7 +1890,7 @@ TAGS:   no_pool_fixup
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 5
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KFEAT:  ~ = floor
 MARKER: d = lua:fog_machine { cloud_type = "flame", pow_min = 100, \
                               pow_max = 100, delay = 1, start_clouds = 1, \
@@ -1931,7 +1931,7 @@ TAGS:    no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: hi, qrs / qrs / rqs / rsq, xyz / xyz / yxz / yzx, SR, YZ
 SUBST:   hqx = v, i : v.., j : vv., k : vv.
 SUBST:   r : v.., y : v.., szRZ = ., S : v..., Y : v...
@@ -1969,7 +1969,7 @@ TAGS:    no_rotate no_pool_fixup
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  5
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KFEAT:   F = w
 SHUFFLE: HIJKLMN
 SUBST:   HIJKL = Q, M : GTUtx, N : GTUtx, m : nwW, o : nwW
@@ -2015,7 +2015,7 @@ TAGS:    no_rotate
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  10
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: CD / CD / DC, EF / EF / FE, HI / HI / IH, JK / JK / KJ
 SHUFFLE: defghi, jklmno
 SUBST:   CEHJLMP = c, DFIKMOShino = .
@@ -2062,7 +2062,7 @@ TAGS:    temple_altars_10 temple_altars_14 temple_altars_18
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  16
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KMONS:   1 = electric eel
 KMONS:   2 = lava snake
 KFEAT:   1 = deep_water
@@ -2135,7 +2135,7 @@ TAGS:   no_rotate temple_variable temple_altars_9 temple_altars_18
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 8
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 18)
 : if altar_count == "9" then
 SUBST:  C = .
@@ -2172,7 +2172,7 @@ TAGS:    no_rotate temple_variable temple_altars_10 temple_altars_14
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  8
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 14)
 : if altar_count == "14" then
 SUBST:   CDEF = Q, '"-~ = .
@@ -2213,7 +2213,7 @@ TAGS:   temple_altars_9 temple_altars_12 temple_altars_15 temple_altars_19
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 16
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 # Completely different altar points between each setting.
 : local altar_count = get_altar_count(_G, 20)
 : if altar_count == "9" then
@@ -2280,7 +2280,7 @@ TAGS:   no_rotate temple_variable temple_altars_10 temple_altars_14
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 8
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 14)
 : if altar_count == "14" then
 SUBST:  T = Q
@@ -2306,7 +2306,7 @@ TAGS:    temple_variable temple_altars_10 temple_altars_14
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  8
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 14)
 : if altar_count == "14" then
 SUBST:   C = Q, dg = .
@@ -2349,7 +2349,7 @@ TAGS:    temple_variable temple_altars_11 temple_altars_14
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  8
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 # Stairs, tree paths, altars, decorative pillars.
 : local altar_count = get_altar_count(_G, 14)
 : if altar_count == "11" then
@@ -2401,7 +2401,7 @@ TAGS:    temple_variable temple_altars_14 temple_altars_18
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  8
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: C' / D" / E` / F~ / G- / H;
 SUBST:   CDE = Q, '"` = .
 : local altar_count = get_altar_count(_G, 18)
@@ -2452,7 +2452,7 @@ TAGS:    no_rotate temple_variable temple_altars_10 temple_altars_15
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  8
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SHUFFLE: a'- / A"c, += / += / =+
 SUBST:   a = b, '- = ., c = b, + = ., = = b
 CLEAR:   A"
@@ -2491,7 +2491,7 @@ TAGS:   temple_variable temple_altars_12 temple_altars_16
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 8
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 16)
 : if altar_count == "12" then
 SUBST:  D = Q, E = ., g : Ghhh, h : tTV.....
@@ -2538,7 +2538,7 @@ TAGS:    temple_variable temple_altars_12 temple_altars_18
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  8
-KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:   Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 16)
 # Randomize altars versus triangles of points.
 SHUFFLE: QC, DE, FG
@@ -2621,7 +2621,7 @@ TAGS:   temple_altars_9 temple_altars_10 temple_altars_11 temple_altars_12
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 4
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 # XXX: The only temple with this...
 KFEAT:  O = altar_ecumenical
 : local altar_count = get_altar_count(_G, 12)
@@ -2695,7 +2695,7 @@ TAGS:   no_pool_fixup temple_variable temple_altars_9 temple_altars_11
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 2
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KMONS:  P = demonic plant
 KFEAT:  L = altar_lugonu
 SUBST:  . = .:70 x:15 w l:5, ' = ., x = xxxcv
@@ -2740,7 +2740,7 @@ TAGS:   temple_variable temple_altars_11 temple_altars_15
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 4
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 MARKER:  F = lua:fog_machine { cloud_type = "freezing vapour", \
              pow_min = 3, pow_max = 5, delay = 5, start_clouds = 3, \
              size = 2, spread_rate = 0, excl_rad = 0 }
@@ -2773,7 +2773,7 @@ TAGS:   no_cloud_gen temple_variable temple_altars_17 temple_altars_18
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 2
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 SUBST:  A : TUV
 : local altar_count = get_altar_count(_G, 18)
 : if altar_count == "17" then
@@ -2823,7 +2823,7 @@ TAGS:   no_rotate temple_variable temple_altars_9 temple_altars_16
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 4
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 14)
 : if altar_count == "9" then
 SUBST:      C = Q, D = .
@@ -2866,7 +2866,7 @@ TAGS:   no_rotate temple_variable temple_altars_9 temple_altars_11
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 2
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 MAP
     ccc      ccccccc      ccc
    cc.c      c.....c      c.cc
@@ -2907,7 +2907,7 @@ TAGS:   temple_variable temple_altars_11 temple_altars_15 temple_altars_17
 PLACE:  Temple
 ORIENT: encompass
 WEIGHT: 2
-KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:  Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KFEAT:  S : abandoned_shop
 # One door tile to every room, just like-
 NSUBST:  d = 1:+ / *:c, e = 1:+ / *:c, f = 1:+ / *:c, g = 1:+ / *:c
@@ -2948,7 +2948,7 @@ TAGS:      no_rotate temple_variable temple_altars_9 temple_altars_11
 PLACE:     Temple
 ORIENT:    encompass
 WEIGHT:    2
-KFEAT:     Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:     Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 KFEAT:     J = altar_jiyva
 KFEAT:     S = slimy_wall
 SUBST:     - = -.
@@ -2977,7 +2977,7 @@ TAGS:      temple_variable temple_altars_9 temple_altars_11
 PLACE:     Temple
 ORIENT:    encompass
 WEIGHT:    2
-KFEAT:     Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:     Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 11)
 : nsubst("J = " .. altar_count .. ":Q / *:J")
 KFEAT:     J = altar_jiyva
@@ -3026,7 +3026,7 @@ TAGS:    temple_variable temple_altars_12 temple_altars_15 temple_altars_18
 PLACE:   Temple
 ORIENT:  encompass
 WEIGHT:  6
-KFEAT:    Q = altar_the_shining_one / altar_zin / altar_elyvilon
+KFEAT:    Q = altar_the_shining_one / altar_zin / altar_elyvilon / altar_cheibriados
 : local altar_count = get_altar_count(_G, 18)
 : if altar_count == "12" then
 SUBST:   QCEFHIKLNORS = _

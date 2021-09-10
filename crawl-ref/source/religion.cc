@@ -382,7 +382,8 @@ bool is_good_god(god_type god)
 {
     return god == GOD_ZIN
            || god == GOD_SHINING_ONE
-           || god == GOD_ELYVILON;
+           || god == GOD_ELYVILON
+           || god == GOD_CHEIBRIADOS;
 }
 
 bool is_chaotic_god(god_type god)
