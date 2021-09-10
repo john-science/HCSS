@@ -187,12 +187,12 @@ const Branch branches[NUM_BRANCHES] =
       'F', {}, 0 },
 
     { BRANCH_ABYSS, NUM_BRANCHES, -1, -1, 5, 24,
-      BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_MAP | BFLAG_NO_ITEMS,
+      BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_MAP,
       DNGN_ENTER_ABYSS, DNGN_EXIT_ABYSS, DNGN_FLOOR, // can't get trapped in abyss
       "Abyss", "the Abyss", "Abyss",
       nullptr,
       BLACK, BLACK, // set specially
-      'J', {}, 0 },
+      'J', {RUNE_ABYSSAL }, 0 },
 
     { BRANCH_PANDEMONIUM, NUM_BRANCHES, -1, -1, 1, 24,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
