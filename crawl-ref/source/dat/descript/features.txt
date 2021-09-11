@@ -41,7 +41,7 @@ A white marble altar of Elyvilon
 An altar to Elyvilon the Healer, made from purest white marble and topped by a
 sculpture of the Chalice of Purification.
 %%%%
-A blossoming altar of Fedhas
+A decaying altar of Fedhas
 
 An altar to Fedhas Madash, covered in vibrant and colourful plant life.
 %%%%
@@ -101,9 +101,9 @@ A sacrificial altar of Ru
 An altar to Ru the Awakened in the shape of a pair of scales, with a heart in
 one scale and a pictogram representing power and enlightenment in the other.
 %%%%
-A deep blue altar of Sif Muna
+A blood red altar of Sif Muna
 
-An altar of the deepest blue, covered in intricate patterns and writings in
+An altar of the bloddy red, covered in intricate patterns and writings in
 long forgotten scripts, devoted to Sif Muna the Loreminder.
 %%%%
 A bloodstained altar of Trog
@@ -136,10 +136,10 @@ A glowing silver altar of Zin
 An altar to Zin the Law-Giver, made from silver as pristine as Zin's followers
 are expected to be, and glowing gently.
 %%%%
-An ornate altar of the Wu Jian Council
+An gory altar of the Wu Jian Council
 
-An red and gold altar to the Wu Jian Council. Sharp slivers of steel drift
-through the quiet air surrounding it.
+An red and bone altar to the Wu Jian Council. Sharp slivers of steel drift
+through the dank air surrounding it.
 %%%%
 ########################################################################
 ### Terrain

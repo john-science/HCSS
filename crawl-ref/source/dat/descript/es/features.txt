@@ -8,7 +8,7 @@ A bloodstained altar of Trog
 Un altar a Trog el Colérico, burdamente hecho por lo que parecen ser manos de
 gigantes y cubierto con marcas de sangre.
 %%%%
-A blossoming altar of Fedhas
+A decaying altar of Fedhas
 
 Un altar a Fedhas Madash, cubierto con vibrante y colorida vida vegetal.
 %%%%
@@ -30,7 +30,7 @@ A crawl-hole back to the Lair
 
 Puedes usarlo para volver a un sitio menos estresante y con menos telarañas.
 %%%%
-A deep blue altar of Sif Muna
+A blood red altar of Sif Muna
 
 Un altar del azul más oscuro, cubierto de intrincadas formas y escrituras en
 alfabetos ya olvidados hace mucho, dedicado a Sif Muna.

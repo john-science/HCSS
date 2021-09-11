@@ -9,7 +9,7 @@ A bloodstained altar of Trog
 분노의 신, 트로그의 제단이다. 거인의 손으로 대강 만든 듯한 모습으로, 주변에
 핏자국이 흥건하게 묻어있다.
 %%%%
-A blossoming altar of Fedhas
+A decaying altar of Fedhas
 
 식물의 신, 페다스의 제단이다. 생명력으로 가득한 형형색색의 식물과 꽃으로
 덮여있다.
@@ -43,7 +43,7 @@ A crawl-hole back to the Lair
 드문드문 거미줄들이 붙어 있는, 여기보단 좀 덜 답답한 곳으로 통하는 좁은
 구멍이다.
 %%%%
-A deep blue altar of Sif Muna
+A blood red altar of Sif Muna
 
 모든 지식의 신, 시프 무나를 모시는 감청색 제단이다. 복잡한 문양들과 고대 언어로
 쓰인 문장들이 제단에 빼곡하게 적혀있다.

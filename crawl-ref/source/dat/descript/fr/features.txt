@@ -22,7 +22,7 @@ A bloodstained altar of Trog
 Un autel à Trog le Furieux, grossièrement taillé par ce qui semble être des
 mains de géants, et couvert de tâches de sang.
 %%%%
-A blossoming altar of Fedhas
+A decaying altar of Fedhas
 
 Un autel à Fedhas Madash, couvert de végétaux de couleurs vives.
 %%%%
@@ -61,7 +61,7 @@ A crawl-hole back to the Lair
 Un passage qui mène vers des endroits moins exiguës et avec moins de toiles
 d'araignée.
 %%%%
-A deep blue altar of Sif Muna
+A blood red altar of Sif Muna
 
 Un autel du bleu le plus pur, couvert de motifs complexes et d'écrits d'une
 langue depuis longtemps oubliée, dédiée à Sif Muna le Gardien des Savoirs.

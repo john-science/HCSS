@@ -8,7 +8,7 @@ A bloodstained altar of Trog
 一座供奉狂怒者塔洛格的祭坛。它做工粗糙，似乎是由巨人建造出来的；
 表面上溅满了鲜血。
 %%%%
-A blossoming altar of Fedhas
+A decaying altar of Fedhas
 
 一座供奉费德哈·马达许的祭坛。它上面长满了各种各样的植物。
 %%%%
@@ -38,7 +38,7 @@ A crawl-hole back to the Lair
 
 只要爬上这个楼梯，你就能返回外面的宽阔世界了。
 %%%%
-A deep blue altar of Sif Muna
+A blood red altar of Sif Muna
 
 这座深蓝色的祭坛上画满了晦涩的图案与古老的文字。
 它所供奉的神祗即是学识之主席夫·穆纳。

@@ -8,7 +8,7 @@ A bloodstained altar of Trog
 Ein Altar für Trog, den Zornigen, ungehobelt von Riesenhänden gemacht und mit
 Blutflecken überzogen.
 %%%%
-A blossoming altar of Fedhas
+A decaying altar of Fedhas
 
 Ein Altar für Fedhas Madash, ummantelt von lebhaften und bunten Pflanzen.
 %%%%
@@ -40,7 +40,7 @@ A crawl-hole back to the Lair
 
 Diese Passage führt zurück zu weniger engen Plätzen mit weniger Spinnweben.
 %%%%
-A deep blue altar of Sif Muna
+A blood red altar of Sif Muna
 
 Ein tiefblauer Altar, mit komplexen Mustern und längst vergessenen Texten
 verziert; gewidmet Sif Muna, der Wissenden.
