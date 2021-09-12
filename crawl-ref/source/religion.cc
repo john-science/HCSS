@@ -3575,10 +3575,27 @@ void god_pitch(god_type which_god)
         you.turn_is_over = false;
         if (!is_good_god(which_god))
         {
-            simple_god_message(" does not accept worship from those such as"
-                               " you while you live, but waits to torture"
-                               " you forever after you die!",
-                               which_god);
+            string denial = " does not accept worship from those such as"
+                            " you while you live, but waits to %s you"
+                            " forever after you die!";
+
+            switch (which_god)
+            {
+            case GOD_XOM:
+                denial = make_stringf(denial.c_str(), "play with");
+            case GOD_KIKUBAAQUDGHA:
+                denial = make_stringf(denial.c_str(), "enslave");
+            case GOD_GOZAG:
+                denial = make_stringf(denial.c_str(), "own");
+            case GOD_ASHENZARI:
+                denial = make_stringf(denial.c_str(), "curse");
+            case GOD_VEHUMET:
+                denial = make_stringf(denial.c_str(), "burn");
+            default:
+                denial = make_stringf(denial.c_str(), "torture");
+            }
+
+            simple_god_message(denial.c_str(), which_god);
         }
         else if (which_god == GOD_GOZAG)
         {
