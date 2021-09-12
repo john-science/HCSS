@@ -176,7 +176,7 @@ static const map<job_type, job_def> job_data =
 } },
 
 { JOB_WIZARD, {
-    "Wz", "Wizard",
+    "Wz", "Hedge Wizard",
     -1, 10, 3,
     { SP_DEEP_ELF, SP_NAGA, SP_BASE_DRACONIAN, SP_OCTOPODE, SP_HUMAN, },
     { "robe", "hat", "book of Minor Magic" },
