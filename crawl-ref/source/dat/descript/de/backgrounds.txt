@@ -102,6 +102,11 @@ Wanderer
 
 Wanderer beginnen mit zufälliger Ausrüstung und Fertigkeiten.
 %%%%
+Warper
+
+Forvrængere starter med et valgfrit våben og en skriftrulle med blink. De kan
+lære besværgelser fra Bogen om spatiale translokationer.
+%%%%
 Wizard
 
 Zauberer starten mit einem Buch der kleinen Magie, das eine breite Auswahl an
