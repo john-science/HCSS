@@ -53,6 +53,17 @@ static const map<job_type, job_def> job_data =
       { SK_WEAPON, 1 }, { SK_STEALTH, 1 }, },
 } },
 
+{ JOB_ASSASSIN, {
+    "As", "Assassin",
+    3, 3, 6,
+    { SP_TROLL, SP_SPRIGGAN, SP_VINE_STALKER, },
+    { "dagger plus:2", "robe", "cloak", "poisoned dart q:96",
+      "curare dart q:12" },
+    WCHOICE_NONE,
+    { { SK_FIGHTING, 2 }, { SK_DODGING, 1 }, { SK_STEALTH, 4 },
+      { SK_THROWING, 2 }, { SK_WEAPON, 2 }, },
+} },
+
 { JOB_EARTH_ELEMENTALIST, {
     "EE", "Earth Elementalist",
     0, 7, 5,
@@ -235,15 +246,6 @@ static const map<job_type, job_def> job_data =
 
 { JOB_WARPER, {
     "Wr", "Warper",
-    0, 0, 0,
-    { },
-    { },
-    WCHOICE_NONE,
-    { },
-} },
-
-{ JOB_ASSASSIN, {
-    "As", "Assassin",
     0, 0, 0,
     { },
     { },
