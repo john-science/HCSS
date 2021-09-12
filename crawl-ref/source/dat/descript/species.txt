@@ -37,12 +37,12 @@ level.
 %%%%
 Halfling
 
-Small but hardy, Halflings excel with slings. They have an increased resistance
+Small but hardy, Halflings excel at stealth. They have an increased resistance
 to mutagenic effects.
 %%%%
 Halfling
 
-Small but hardy, Halflings excel with slings. They have an increased resistance
+Small but hardy, Halflings excel at stealth. They have an increased resistance
 to mutagenic effects.
 %%%%
 Hill Orc
