@@ -24,3 +24,11 @@ One of my personal design goals for HCSS is to have a simpler version of DCSS, w
 
 I am sure I will make a ton of decisions in HCSS that the creators of Hellcrawl and indeed DCSS will not like. That's fine. The online gaming world is notoriously persnickety, and I won't defend my
 choices. This fork is just for my own lawls, and I expect most people will continue playing the awesome games I forked from.
+
+## Branch Map
+
+Unlike DCSS, HCSS has a very linear branch map. Which we will share here, so no one gets confused.
+
+> SPOILERS! HERE BE DRAGONS! ![Dragon](crawl-ref/source/rltiles/mon/dragons/fire_dragon.png)
+
+* [Branch Map](crawl-ref/docs/branch_map.md) - SPOILERS! A MAP OF THE GAME!
