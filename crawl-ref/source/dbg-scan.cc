@@ -636,36 +636,6 @@ void check_map_validity()
         if (you.depth == 3)
             portal = DNGN_ENTER_PANDEMONIUM;
     }
-    if (player_in_branch(BRANCH_ZOT))
-    {
-        if (you.depth == 5)
-            portal = DNGN_ENTER_HELL;
-    }
-    if (player_in_branch(BRANCH_SWAMP) || player_in_branch(BRANCH_SPIDER)
-        || player_in_branch(BRANCH_SNAKE) || player_in_branch(BRANCH_SHOALS))
-    {
-        if (you.depth == 3)
-             portal = DNGN_ENTER_VAULTS;
-    }
-
-    if (player_in_branch(BRANCH_SLIME))
-    {
-        if (you.depth == 4)
-            portal = DNGN_ENTER_DEPTHS;
-    }
-
-    if (player_in_branch(BRANCH_VAULTS))
-    {
-        if (you.depth == 3)
-            portal = DNGN_ENTER_SLIME;
-    }
-
-    if (player_in_branch(BRANCH_TARTARUS) || player_in_branch(BRANCH_GEHENNA)
-        || player_in_branch(BRANCH_DIS) || player_in_branch(BRANCH_COCYTUS))
-    {
-        if (you.depth == 7)
-            portal = DNGN_EXIT_DUNGEON;
-    }
 
     dungeon_feature_type exit = DNGN_UNSEEN;
 

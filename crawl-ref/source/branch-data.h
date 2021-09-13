@@ -90,7 +90,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, YELLOW,
       'N', { RUNE_SPIDER }, 0 },
 
-    { BRANCH_SLIME, BRANCH_ORC, 2, 2, 3, 17,
+    { BRANCH_SLIME, BRANCH_ORC, 1, 3, 5, 17,
       BFLAG_NO_ITEMS | BFLAG_DANGEROUS_END | BFLAG_SPOTTY,
       DNGN_ENTER_SLIME, DNGN_EXIT_SLIME, NUM_FEATURES,
       "Slime Pits", "the Pits of Slime", "Slime",
@@ -288,7 +288,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREY, BROWN, // set per-map
       '8', {}, 0 },
 
-    { BRANCH_DEPTHS, BRANCH_VAULTS, 3, 3, 3, 22,
+    { BRANCH_DEPTHS, BRANCH_DUNGEON, 15, 15, 3, 22,
       BFLAG_NONE,
       DNGN_ENTER_DEPTHS, DNGN_EXIT_DEPTHS, NUM_FEATURES,
       "Depths", "the Depths", "Depths",
