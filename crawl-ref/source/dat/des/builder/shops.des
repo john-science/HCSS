@@ -62,15 +62,8 @@ end
 # Gozag code uses it to find out where shops can normally place.
 NAME: serial_shops
 TAGS: allow_dup extra luniq
-DEPTH:  D:11-, Depths, Orc:1, Shoals, Snake, Vaults
+DEPTH:  D:11
 CHANCE: 100% (D:11)
-CHANCE: 10% (D:12-)
-CHANCE: 10% (Depths:1)
-CHANCE: 10% (Depths:2)
-CHANCE: 10% (Depths:3)
-CHANCE: 10% (Orc)
-CHANCE: 10% (Vaults)
-CHANCE: 10% (Shoals, Snake)
 {{
 hook("post_place", function()
     dgn.place_maps { tag = "bzr_entry", count = 1 }
