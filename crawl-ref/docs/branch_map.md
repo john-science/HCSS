@@ -1,6 +1,6 @@
 # Branch Map
 
-> SPOILERS! HERE BE DRAGONS! ![Dragon](../source/rltiles/mon/dragons/fire_dragon.png)
+> ![Dragon](../source/rltiles/mon/dragons/fire_dragon.png) SPOILERS! HERE BE DRAGONS! ![Dragon](../source/rltiles/mon/dragons/fire_dragon.png)
 
 HCSS is opting for a very linear map. So much so, that at some point it won't matter if you have a map of the dungeon.
 
@@ -9,10 +9,7 @@ You want a map? Here's your map.
 
 ## HCSS Branch Map - 15 Runes Max
 
-> TODO: Hell is Under Construction: This is not fully implemented in-game. Yet.
-> TODO: These names will need a revamp to match the Hell theme
-> TODO: The Abyssal Rune isn't working
-> TODO: The 4 S Branches are spawning at the bottom of Orc, and only 1 is spawning per game.
+> Hell is Under Construction: This is not fully implemented in-game. Yet.
 
 * **Dungeon** ![entry](../source/rltiles/dngn/gateways/exit_dungeon.png) (15 levels)
   * **Temple** ![entry](../source/rltiles/dngn/gateways/enter_temple.png) (Dungeon 1, 1 level)
