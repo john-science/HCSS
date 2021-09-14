@@ -609,7 +609,6 @@ KMASK:   |O* = no_monster_gen
 KPROP:   |O* = no_jiyva
 KPROP:   |O* = no_tele_into
 KFEAT:   Z = altar_jiyva
-KFEAT:   R = enter_depths
 KITEM:   O = slimy rune of Zot
 KITEM:   * = star_item
 SHUFFLE: ([{

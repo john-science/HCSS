@@ -3,55 +3,6 @@
 #          in the Mines. General (mini)vaults, which can also appear in the
 #          Mines, should go to vaults.des.
 ##############################################################################
-# copy some bazaar utility functions for the endings
-lua {{
-
-function place_bazaar_portal(e)
-  e.kfeat("O = enter_bazaar")
-  e.lua_marker('O', bazaar_portal(false))
-end
-
-function bazaar_portal()
-  return one_way_stair { floor = 'stone_arch' }
-end
-
-function random_bazaar_colour()
-  local colours = {"blue", "red", "lightblue", "magenta", "green"}
-  local ret = colours[crawl.random2(#colours) + 1]
-
-  return ret
-end
-
-function bazaar_setup(e)
-  e.tags('no_monster_gen')
-  e.kfeat("< = stone_arch")
-  e.kfeat("> = exit_bazaar")
-end
-
-function fixup_bazaar()
-  dgn.change_floor_colour(random_bazaar_colour())
-
-  local default = {rock="wall_vault", floor="floor_vault", halo="halo_vault"}
-  local tileset = {
-    blue = {rock="wall_brick_gray", floor="floor_grass", halo="halo_grass"},
-    red = {rock="wall_pebble_red", floor="floor_vault", halo="halo_vault"},
-    lightblue = {rock="wall_pebble_lightblue", floor="floor_grass", halo="halo_grass2"},
-    magenta = {rock="wall_stone_gray", floor="floor_dirt", halo="halo_dirt"},
-    green = {rock="wall_stone_gray", floor="floor_grass", halo="halo_grass"},
-  }
-
-  local tile = tileset[dgn.get_floor_colour()]
-  if (tile == nil) then
-    tile = default
-  end
-
-  dgn.change_floor_tile(tile.floor)
-  dgn.change_rock_tile(tile.rock)
-end
-
-dgn.set_branch_epilogue("Bazaar", "fixup_bazaar")
-
-}}
 
 ##############################################################################
 # Orcish Mines entries
@@ -1349,7 +1300,6 @@ SUBST:   5 = 32, A:+, C:+, B:c, D:c
 SUBST:   T : TIII
 NSUBST:  s = 1:O / *:s
 SHUFFLE: AC/BD
-: place_bazaar_portal(_G)
 MAP
 ...................................
 ...................................
@@ -1379,7 +1329,6 @@ KMONS:   s = ogre / nothing w:5
 KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
-: place_bazaar_portal(_G)
 MAP
   ..........@.........
  ......................
@@ -1412,7 +1361,6 @@ SUBST:   3 = 23
 KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
-: place_bazaar_portal(_G)
 MAP
   ...............@...............
  .................................
@@ -1445,7 +1393,6 @@ KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
 SHUFFLE: 23/45
-: place_bazaar_portal(_G)
 MAP
   ...................
  ...ccccccccccccccc...
@@ -1480,7 +1427,6 @@ MONS:    orc priest / nothing, orc high priest
 KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
-: place_bazaar_portal(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ccccccccccccccccccccccccccccccccccccccx
@@ -1514,7 +1460,6 @@ KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
 SHUFFLE: 74/63
-: place_bazaar_portal(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xcccccccccccccccccccccccccccx
@@ -1554,7 +1499,6 @@ MONS:    ogre mage, two-headed ogre w:14 / ettin w:1, cyclops w:29 / stone giant
 KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
-: place_bazaar_portal(_G)
 MAP
  .....
 ..111..  .... ....
@@ -1578,7 +1522,6 @@ MONS:    orc warrior, orc priest, orc wizard
 KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
-: place_bazaar_portal(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxxxx
 xcccccccccccccccccccccx
@@ -1618,7 +1561,6 @@ KMONS:  D = Blork the orc w:3 / orc wizard, orc wizard
 KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
-: place_bazaar_portal(_G)
 MAP
 cccc  c..@..c  cccc
 cs6ccccI.4.Icccc5sc
@@ -1664,7 +1606,6 @@ NSUBST:  s = 1:O / *:s
 KFEAT: P = enter_pandemonium
 TILE:  c = wall_stone_dark
 FTILE: .1234567@O = floor_pebble_lightred
-: place_bazaar_portal(_G)
 MAP
              cc2@2c
             ccc33ccc
@@ -1718,7 +1659,6 @@ KFEAT:  p = enter_elven_halls
 : else
 KFEAT:  p = abandoned_shop w:5 / fountain_blue / floor w:30
 : end
-: place_bazaar_portal(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

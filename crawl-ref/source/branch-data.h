@@ -26,7 +26,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREY, BROWN,
       'T', {}, 0 },
 
-    { BRANCH_ORC, BRANCH_DUNGEON, 15, 15, 2, 10,
+    { BRANCH_ORC, BRANCH_DUNGEON, 10, 12, 2, 10,
       BFLAG_SPOTTY,
       DNGN_ENTER_ORC, DNGN_EXIT_ORC, NUM_FEATURES,
       "Orcish Mines", "the Orcish Mines", "Orc",
@@ -34,7 +34,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'O', {}, 0 },
 
-    { BRANCH_ELF, NUM_BRANCHES, -1, -1, 1, 15,
+    { BRANCH_ELF, BRANCH_ORC, 2, 2, 3, 15,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_ELF, DNGN_EXIT_ELF, NUM_FEATURES,
       "Elven Halls", "the Elven Halls", "Elf",
@@ -58,7 +58,7 @@ const Branch branches[NUM_BRANCHES] =
       GREEN, BROWN,
       'L', {}, 0 },
 
-    { BRANCH_SWAMP, BRANCH_ORC, 2, 2, 3, 15,
+    { BRANCH_SWAMP, BRANCH_ORC, 2, 2, 4, 15,
       BFLAG_DANGEROUS_END | BFLAG_SPOTTY,
       DNGN_ENTER_SWAMP, DNGN_EXIT_SWAMP, NUM_FEATURES,
       "Swamp", "the Swamp", "Swamp",
@@ -66,7 +66,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'S', { RUNE_SWAMP }, 0 },
 
-    { BRANCH_SHOALS, BRANCH_ORC, 2, 2, 3, 15,
+    { BRANCH_SHOALS, BRANCH_ORC, 2, 2, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SHOALS, DNGN_EXIT_SHOALS, NUM_FEATURES,
       "Shoals", "the Shoals", "Shoals",
@@ -74,7 +74,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'A', { RUNE_SHOALS }, 0 },
 
-    { BRANCH_SNAKE, BRANCH_ORC, 2, 2, 3, 15,
+    { BRANCH_SNAKE, BRANCH_ORC, 2, 2, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SNAKE, DNGN_EXIT_SNAKE, NUM_FEATURES,
       "Snake Pit", "the Snake Pit", "Snake",
@@ -82,7 +82,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREEN, YELLOW,
       'P', { RUNE_SNAKE }, 0 },
 
-    { BRANCH_SPIDER, BRANCH_ORC, 2, 2, 3, 15,
+    { BRANCH_SPIDER, BRANCH_ORC, 2, 2, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SPIDER, DNGN_EXIT_SPIDER, NUM_FEATURES,
       "Spider Nest", "the Spider Nest", "Spider",
@@ -90,7 +90,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, YELLOW,
       'N', { RUNE_SPIDER }, 0 },
 
-    { BRANCH_SLIME, BRANCH_ORC, 1, 3, 5, 17,
+    { BRANCH_SLIME, BRANCH_DEPTHS, 1, 3, 5, 17,
       BFLAG_NO_ITEMS | BFLAG_DANGEROUS_END | BFLAG_SPOTTY,
       DNGN_ENTER_SLIME, DNGN_EXIT_SLIME, NUM_FEATURES,
       "Slime Pits", "the Pits of Slime", "Slime",
@@ -98,7 +98,7 @@ const Branch branches[NUM_BRANCHES] =
       GREEN, BROWN,
       'M', { RUNE_SLIME }, 0 },
 
-    { BRANCH_VAULTS, BRANCH_DUNGEON, 15, 15, 3, 19,
+    { BRANCH_VAULTS, BRANCH_DUNGEON, 12, 14, 5, 19,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_VAULTS, DNGN_EXIT_VAULTS, NUM_FEATURES,
       "Vaults", "the Vaults", "Vaults",
@@ -114,7 +114,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREY, BROWN,
       'B', {}, 0 },
 
-    { BRANCH_CRYPT, BRANCH_VAULTS, -1, -1, 3, 19,
+    { BRANCH_CRYPT, BRANCH_DEPTHS, 1, 3, 3, 19,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_CRYPT, DNGN_EXIT_CRYPT, NUM_FEATURES,
       "Crypt", "the Crypt", "Crypt",
@@ -122,7 +122,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREY, BROWN,
       'C', {}, 0 },
 
-    { BRANCH_TOMB, BRANCH_VAULTS, -1, -1, 3, 21,
+    { BRANCH_TOMB, BRANCH_ZOT, 2, 4, 3, 21,
       BFLAG_ISLANDED | BFLAG_DANGEROUS_END | BFLAG_NO_SHAFTS,
       DNGN_ENTER_TOMB, DNGN_EXIT_TOMB, NUM_FEATURES,
       "Tomb", "the Tomb of the Ancients", "Tomb",
@@ -170,7 +170,7 @@ const Branch branches[NUM_BRANCHES] =
       MAGENTA, MAGENTA,
       'Y', { RUNE_TARTARUS }, 0 },
 
-    { BRANCH_ZOT, BRANCH_DEPTHS, 3, 3, 5, 27,
+    { BRANCH_ZOT, BRANCH_DEPTHS, 5, 5, 5, 27,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_ZOT, DNGN_EXIT_ZOT, NUM_FEATURES,
       "Zot", "the Realm of Zot", "Zot",
@@ -186,7 +186,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'F', {}, 0 },
 
-    { BRANCH_ABYSS, NUM_BRANCHES, -1, -1, 5, 24,
+    { BRANCH_ABYSS, BRANCH_DEPTHS, 1, 3, 5, 24,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_MAP,
       DNGN_ENTER_ABYSS, DNGN_EXIT_ABYSS, DNGN_FLOOR, // can't get trapped in abyss
       "Abyss", "the Abyss", "Abyss",
@@ -194,7 +194,7 @@ const Branch branches[NUM_BRANCHES] =
       BLACK, BLACK, // set specially
       'J', {RUNE_ABYSSAL }, 0 },
 
-    { BRANCH_PANDEMONIUM, NUM_BRANCHES, -1, -1, 1, 24,
+    { BRANCH_PANDEMONIUM, BRANCH_ZOT, 1, 3, 1, 24,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_PANDEMONIUM, DNGN_EXIT_PANDEMONIUM, DNGN_TRANSIT_PANDEMONIUM,
       "Pandemonium", "Pandemonium", "Pan",
@@ -204,7 +204,7 @@ const Branch branches[NUM_BRANCHES] =
       'R', { RUNE_DEMONIC, RUNE_MNOLEG, RUNE_LOM_LOBON, RUNE_CEREBOV,
              RUNE_GLOORX_VLOQ }, 0 },
 
-    { BRANCH_ZIGGURAT, BRANCH_DEPTHS, -1, -1, 27, 27,
+    { BRANCH_ZIGGURAT, BRANCH_ZOT, 1, 3, 27, 27,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_ZIGGURAT, DNGN_EXIT_ZIGGURAT, DNGN_FLOOR,
       "Ziggurat", "a ziggurat", "Zig",
@@ -288,7 +288,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREY, BROWN, // set per-map
       '8', {}, 0 },
 
-    { BRANCH_DEPTHS, BRANCH_DUNGEON, 15, 15, 3, 22,
+    { BRANCH_DEPTHS, BRANCH_DUNGEON, 15, 15, 5, 22,
       BFLAG_NONE,
       DNGN_ENTER_DEPTHS, DNGN_EXIT_DEPTHS, NUM_FEATURES,
       "Depths", "the Depths", "Depths",

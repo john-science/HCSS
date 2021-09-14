@@ -1224,7 +1224,6 @@ KITEM:     O = barnacled rune of Zot mimic
 KFEAT:     O = .
 : else
 KITEM:     O = barnacled rune of Zot
-KFEAT:     O = enter_vaults
 : end
 KPROP:     O = no_tide
 LROCKTILE: wall_pebble_lightgray
@@ -1288,7 +1287,6 @@ KITEM:   d = barnacled rune of zot mimic
 KFEAT:   d = .
 : else
 KITEM:   d = barnacled rune of zot
-KFEAT:   d = enter_vaults
 : end
 KFEAT:   123 = w
 KPROP:   d = no_tide
@@ -1374,7 +1372,6 @@ KITEM:  O = barnacled rune of Zot mimic
 KFEAT:  O = .
 : else
 KITEM:  O = barnacled rune of Zot
-KFEAT:  O = enter_vaults
 : end
 KFEAT:  K = deep_water
 NSUBST: A = 1:. / 1:xxxx. / *:x
@@ -1461,7 +1458,6 @@ KITEM:   O = barnacled rune of Zot mimic
 KFEAT:   O = .
 : else
 KITEM:   O = barnacled rune of Zot
-KFEAT:   O = enter_vaults
 : end
 NSUBST:  1 = 4:1 / 2:1. / 2:1. / 2:2 / 2:2. / 2:2. / *:.
 SHUFFLE: abcdefghijk, ABCDEFGH
