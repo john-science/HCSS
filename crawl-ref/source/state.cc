@@ -79,7 +79,7 @@ void game_state::show_startup_errors()
                            "<cyan>[ + : Page down.   - : Page up."
                            "                    Esc or Enter to continue.]"));
     error_menu.set_title(
-        new MenuEntry("Warning: Crawl encountered errors during startup:",
+        new MenuEntry("Warning: HCSS encountered errors during startup:",
                       MEL_TITLE));
     for (const string &err : startup_errors)
         error_menu.add_entry(new MenuEntry(err));

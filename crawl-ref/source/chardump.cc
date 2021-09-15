@@ -192,7 +192,7 @@ static void _sdump_header(dump_params &par)
     if (type.empty())
         type = CRAWL;
     else
-        type += " DCSS";
+        type += " HCSS";
 
     par.text += " " + type + " version " + Version::Long;
 #ifdef USE_TILE_LOCAL

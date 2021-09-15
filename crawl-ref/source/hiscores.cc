@@ -819,37 +819,16 @@ static const char* _short_branch_name(int branch)
 
 enum old_job_type
 {
-    OLD_JOB_THIEF        = -1,
-    OLD_JOB_DEATH_KNIGHT = -2,
-    OLD_JOB_PALADIN      = -3,
-    OLD_JOB_REAVER       = -4,
-    OLD_JOB_STALKER      = -5,
-    OLD_JOB_JESTER       = -6,
-    OLD_JOB_PRIEST       = -7,
-    OLD_JOB_HEALER       = -8,
-    NUM_OLD_JOBS = -OLD_JOB_HEALER
+    OLD_JOB_DEATH_KNIGHT = -1,
+    NUM_OLD_JOBS = -OLD_JOB_DEATH_KNIGHT
 };
 
 static const char* _job_name(int job)
 {
     switch (job)
     {
-    case OLD_JOB_THIEF:
-        return "Thief";
     case OLD_JOB_DEATH_KNIGHT:
         return "Death Knight";
-    case OLD_JOB_PALADIN:
-        return "Paladin";
-    case OLD_JOB_REAVER:
-        return "Reaver";
-    case OLD_JOB_STALKER:
-        return "Stalker";
-    case OLD_JOB_JESTER:
-        return "Jester";
-    case OLD_JOB_PRIEST:
-        return "Priest";
-    case OLD_JOB_HEALER:
-        return "Healer";
     }
 
     return get_job_name(static_cast<job_type>(job));
@@ -859,22 +838,8 @@ static const char* _job_abbrev(int job)
 {
     switch (job)
     {
-    case OLD_JOB_THIEF:
-        return "Th";
     case OLD_JOB_DEATH_KNIGHT:
         return "DK";
-    case OLD_JOB_PALADIN:
-        return "Pa";
-    case OLD_JOB_REAVER:
-        return "Re";
-    case OLD_JOB_STALKER:
-        return "St";
-    case OLD_JOB_JESTER:
-        return "Jr";
-    case OLD_JOB_PRIEST:
-        return "Pr";
-    case OLD_JOB_HEALER:
-        return "He";
     }
 
     return get_job_abbrev(static_cast<job_type>(job));
@@ -896,31 +861,15 @@ static int _job_by_name(const string& name)
 
 enum old_species_type
 {
-    OLD_SP_ELF = -1,
-    OLD_SP_HILL_DWARF = -2,
-    OLD_SP_OGRE_MAGE = -3,
-    OLD_SP_GREY_ELF = -4,
-    OLD_SP_GNOME = -5,
-    OLD_SP_MOUNTAIN_DWARF = -6,
-    OLD_SP_SLUDGE_ELF = -7,
-    OLD_SP_DJINNI = -8,
-    OLD_SP_LAVA_ORC = -9,
-    NUM_OLD_SPECIES = -OLD_SP_LAVA_ORC
+    OLD_SP_DJINNI = -1,
+    NUM_OLD_SPECIES = -OLD_SP_DJINNI
 };
 
 static string _species_name(int race)
 {
     switch (race)
     {
-    case OLD_SP_ELF: return "Elf";
-    case OLD_SP_HILL_DWARF: return "Hill Dwarf";
-    case OLD_SP_OGRE_MAGE: return "Ogre-Mage";
-    case OLD_SP_GREY_ELF: return "Grey Elf";
-    case OLD_SP_GNOME: return "Gnome";
-    case OLD_SP_MOUNTAIN_DWARF: return "Mountain Dwarf";
-    case OLD_SP_SLUDGE_ELF: return "Sludge Elf";
     case OLD_SP_DJINNI: return "Djinni";
-    case OLD_SP_LAVA_ORC: return "Lava Orc";
     }
 
     return species_name(static_cast<species_type>(race));
@@ -930,15 +879,7 @@ static const char* _species_abbrev(int race)
 {
     switch (race)
     {
-    case OLD_SP_ELF: return "El";
-    case OLD_SP_HILL_DWARF: return "HD";
-    case OLD_SP_OGRE_MAGE: return "OM";
-    case OLD_SP_GREY_ELF: return "GE";
-    case OLD_SP_GNOME: return "Gn";
-    case OLD_SP_MOUNTAIN_DWARF: return "MD";
-    case OLD_SP_SLUDGE_ELF: return "SE";
     case OLD_SP_DJINNI: return "Dj";
-    case OLD_SP_LAVA_ORC: return "LO";
     }
 
     return get_species_abbrev(static_cast<species_type>(race));
@@ -1074,7 +1015,7 @@ void scorefile_entry::set_base_xlog_fields() const
 #ifdef EXPERIMENTAL_BRANCH
     fields->add_field("explbr", EXPERIMENTAL_BRANCH);
 #endif
-    fields->add_field("game", "hellcrawl");
+    fields->add_field("game", "hcss");
     if (tiles)
         fields->add_field("tiles", "%d", tiles);
     fields->add_field("name", "%s", name.c_str());
@@ -1550,7 +1491,7 @@ void scorefile_entry::init(time_t dt)
      *    + (250000 + 2 * (runes + 2) * 1000)  (winners only)
      *    + 250000 * 25000 * runes^2 / turns   (winners only)
      *
-     *  Hellcrawl scoring:
+     *  Hell Crawl scoring:
      *
      *    Nobody gives a shit about experience for won games,
      *    calc based on absdepth, xp, and runes for lost games

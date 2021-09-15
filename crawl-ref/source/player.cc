@@ -3843,7 +3843,7 @@ int get_real_hp(bool trans, bool rotted)
 
 int get_real_mp(bool include_items, bool frozen)
 {
-    // Base formula for Hellcrawl is XL + int*(xl/27)
+    // Base formula for Hell Crawl is XL + int*(xl/27)
     // you.intel() * you.experience_level / 27;
     const int scale = 100;
     int enp = (1 + you.experience_level) * scale
