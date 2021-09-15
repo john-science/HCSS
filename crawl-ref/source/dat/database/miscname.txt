@@ -258,25 +258,25 @@ Lucidity slithers from your feeble grasp.
 %%%%
 welcome_spam
 
-Will you prevail where others failed? Will you find the Orb of Zot?
+Once in a generation, a living champion is sent to Hell to destroy the evil that lurks at the
+bottom of it all. Obviously, no one has ever succeeded before.
 
-The bosom of this dungeon contains the fabled artefact, the Orb of Zot.
+You have been charged with fighting to the bottom of Hell and destroying whatever controls it.
+You aren't expected to succeed.
 
-Will you be the one to retrieve the fabulous Orb of Zot from the depths?
+Damn the priests that sent you here. But if you can destroy whoever is at the bottom of Hell,
+you will save all life everywhere from an eternity of pain.
 
-It is said that the Orb of Zot exists deep within this dungeon.
+It is said that if you can kill whatever awful being exists at the bottom of hell,
+you will free the dead from their eternity of suffering.
 %%%%
 welcome_spam Halloween
 
 @welcome_spam@ Be careful! Halloween tonight.
 
-The monsters here aren't big trick-or-treat fans. If they won't give you the Orb of Zot, you'll have to take it.
-
-A terrible geas has sent you after the Orb of Zot. What a horrible night to have a curse!
-
-As you descend in search of the Orb, ghosts and spectres flock about you. This place is haunted!
-
-You hear a witch cackle, and suddenly arrive in the dungeon. If you don't find the Orb of Zot, you'll turn into a toad!
+The walls of reality are thinnest on Halloween night. So the priests of all the worlds
+religions pulled together and sent you, alive, into Hell.
+Destroy the devil, and free the dead from an eternity of torment.
 %%%%
 hell_effect_quiet
 
