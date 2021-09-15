@@ -248,8 +248,8 @@ MONS:    plant, bush
 SHUFFLE: ABCDEFHIJKLMNOPQRS
 KFEAT:   A = altar_makhleb
 KFEAT:   B = altar_xom
-KFEAT:   C = altar_zin
-KFEAT:   D = altar_the_shining_one
+KFEAT:   C = altar_dithmenos
+KFEAT:   D = altar_trog
 KFEAT:   E = altar_kikubaaqudgha
 KFEAT:   F = altar_yredelemnul
 KFEAT:   H = altar_vehumet
@@ -257,8 +257,8 @@ KFEAT:   I = altar_okawaru
 KFEAT:   J = altar_sif_muna
 KFEAT:   K = altar_trog
 KFEAT:   L = altar_nemelex_xobeh
-KFEAT:   M = altar_elyvilon
-KFEAT:   N = altar_cheibriados
+KFEAT:   M = altar_xom
+KFEAT:   N = altar_okawaru
 KFEAT:   O = altar_dithmenos
 KFEAT:   P = altar_gozag
 KFEAT:   Q = altar_qazlal
