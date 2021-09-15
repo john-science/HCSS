@@ -371,7 +371,7 @@ javelin
 Dette lette spyd er designet til at blive kastet og kan forvolde alvorlige
 skader.
 {{
-    if you.race() == "Halfling"
+    if you.race() == "Gnome"
         or you.race() == "Kobold"
         or you.race() == "Spriggan"
     then

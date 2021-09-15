@@ -1239,7 +1239,7 @@ An ancient undead sorcerer, exhumed by the living divines Sheza and Sargol and
 forced to labour night and day to anchor them to the world. Even after the fall
 of the divine twins, it works to resurrect its fallen masters.
 %%%%
-halfling
+gnome
 
 A humanoid of diminutive stature.
 %%%%

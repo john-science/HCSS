@@ -538,8 +538,8 @@ tileidx_t tilep_species_to_base_tile(int sp, int level)
     case SP_SLUDGE_ELF:
     case SP_DEEP_ELF:
         return TILEP_BASE_DEEP_ELF;
-    case SP_HALFLING:
-        return TILEP_BASE_HALFLING;
+    case SP_GNOME:
+        return TILEP_BASE_GNOME;
     case SP_HILL_ORC:
         return TILEP_BASE_ORC;
     case SP_LAVA_ORC:

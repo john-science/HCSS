@@ -517,7 +517,7 @@ Cette lance légère est prévue pour être lancée et peu causer de sérieuse
 blessures.
 {{
     if you.race() == "Kobold"
-       or you.race() == "Halfling"
+       or you.race() == "Gnome"
        or you.race() == "Spriggan"
     then
         return "Malheureusement, vous êtes trop petit et maladroit pour " ..

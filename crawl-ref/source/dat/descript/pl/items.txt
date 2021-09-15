@@ -286,7 +286,7 @@ javelin
 
 Długi, lekki patyk do rzucania. {{
     if you.race() == "Kobold"
-        or you.race() == "Halfling"
+        or you.race() == "Gnome"
         or you.race() == "Spriggan"
     then
         return "Niestety, jest za duży dla ciebie."

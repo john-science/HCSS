@@ -184,7 +184,7 @@ static const species_type species_order[] =
     SP_HUMAN,          SP_DEEP_ELF,
     SP_MOUNTAIN_DWARF,
     // small species
-    SP_HALFLING,       SP_KOBOLD,
+    SP_GNOME,       SP_KOBOLD,
     SP_SPRIGGAN,
     // large species
     SP_OGRE, SP_TROLL,
@@ -975,8 +975,8 @@ static species_group species_groups[] =
         coord_def(25, 0),
         20,
         {
+            SP_GNOME,
             SP_HUMAN,
-            SP_HALFLING,
             SP_KOBOLD,
             SP_OGRE,
             SP_VINE_STALKER,

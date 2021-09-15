@@ -145,7 +145,7 @@ sub aptitude_table
         next if $sp eq 'Mottled Draconian';
         next if $sp eq 'Frogtaur';
         next if $sp eq 'Ghoul';
-        next if $sp eq 'Halfling';
+        next if $sp eq 'Gnome';
         next if $sp eq 'Ogre';
         next if $sp eq 'Hill Orc';
 

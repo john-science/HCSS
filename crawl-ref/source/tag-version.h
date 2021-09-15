@@ -46,7 +46,7 @@ enum tag_minor_version
     TAG_MINOR_COMPANION_LIST,      // Added companion list
     TAG_MINOR_INCREMENTAL_RECALL,  // Made recall incremental
     TAG_MINOR_GOD_GIFT,            // Remove {god gift} from inscriptions.
-    TAG_MINOR_NOME_NO_MORE,        // Remove unused gnome variable.
+    TAG_MINOR_NOME_NO_MORE,        // Remove unused nome variable.
     TAG_MINOR_NO_SPLINT,           // Remove splint mail
     TAG_MINOR_ORIG_MONNUM,         // orig_monnum is type rather than type+1.
     TAG_MINOR_SPRINT_SCORES,       // Separate score lists for each sprint map

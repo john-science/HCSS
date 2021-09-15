@@ -1198,9 +1198,9 @@ filth-coat
 gob-dollager
 %%%%
 ##########################################################
-# noun, Halfling special
+# noun, Gnome special
 ##########################################################
-insult halfling noun
+insult gnome noun
 
 w:100
 @small_food@

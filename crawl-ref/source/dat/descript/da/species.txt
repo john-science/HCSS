@@ -26,7 +26,7 @@ Gargoyle
 
 Gargoiler er skabt af levende sten, og har et overnaturligt talent for jorden.
 %%%%
-Halfling
+Gnome
 
 De er små, men hårdføre, og fremragende til at bruge slynger. De har begrænset
 modstandskraft over for mutagene virkninger.

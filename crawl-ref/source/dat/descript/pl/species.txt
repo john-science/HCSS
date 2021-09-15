@@ -28,7 +28,7 @@ Ghoul
 Nieumarli których ciała wiecznie gniją. Ciągle poszukują zepsutego mięsa które
 może wpaść im w szpony.
 %%%%
-Halfling
+Gnome
 
 Małe lecz odważne, niziołki są zabójcze z procą w ręku.
 %%%%

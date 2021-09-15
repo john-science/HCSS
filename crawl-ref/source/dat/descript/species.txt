@@ -35,14 +35,14 @@ A vaguely doglike species, gnolls begin with a little knowledge of everything.
 Like kobolds, they improve all skills equally when reaching a new experience
 level.
 %%%%
-Halfling
+Gnome
 
-Small but hardy, Halflings excel at stealth. They have an increased resistance
+Small but hardy, Gnomes excel at stealth. They have an increased resistance
 to mutagenic effects.
 %%%%
-Halfling
+Gnome
 
-Small but hardy, Halflings excel at stealth. They have an increased resistance
+Small but hardy, Gnomes excel at stealth. They have an increased resistance
 to mutagenic effects.
 %%%%
 Hill Orc

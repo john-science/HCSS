@@ -1198,7 +1198,7 @@ w:40
 w:1
 @The_weapon@ @_screams_@, "NI! NI!! NI!!! NI!!! NI!!!"
 
-# Order of the Stick's Belkar Bitterleaf, chaotic evil ranger/barbarian halfling
+# Order of the Stick's Belkar Bitterleaf, chaotic evil ranger/barbarian gnome
 @The_weapon@ @_screams_@, "I AM A SEXY SHOELESS GOD OF WAR!"
 
 # Terry Pratchett, Foul Old Ron

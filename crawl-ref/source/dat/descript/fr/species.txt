@@ -35,7 +35,7 @@ Gargoyle
 Fait de pierre vivante, les gargouilles ont une affinité naturelle avec la
 terre.
 %%%%
-Halfling
+Gnome
 
 Petit mais robuste, ils sont excellents avec une fronde. Ils ont une résistance
 supplémentaire aux effets mutagènes.

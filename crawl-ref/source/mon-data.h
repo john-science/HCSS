@@ -103,7 +103,7 @@
    size:
      SIZE_TINY,              // rats/bats
      SIZE_LITTLE,            // spriggans
-     SIZE_SMALL,             // halflings/kobolds
+     SIZE_SMALL,             // gnomes/kobolds
      SIZE_MEDIUM,            // humans/elves/dwarves
      SIZE_LARGE,             // trolls/ogres/centaurs/nagas
      SIZE_BIG,               // large quadrupeds
@@ -213,9 +213,6 @@ static monsterentry mondata[] =
     AXED_MON(MONS_DJINNI)
     AXED_MON(MONS_RAKSHASA_FAKE)
     AXED_MON(MONS_MARA_FAKE)
-    // GNOME_NO_MORE
-    AXED_MON(MONS_GNOME)
-    // GOLEM_NO_MORE
     AXED_MON(MONS_CLAY_GOLEM)
     AXED_MON(MONS_STONE_GOLEM)
     AXED_MON(MONS_FORMICID_VENOM_MAGE)
@@ -1804,16 +1801,16 @@ DUMMY(MONS_GIANT_LIZARD, 'l', LIGHTGREY, "giant lizard", TILEP_MONS_LEOPARD_GECK
 },
 
 { // dummy... literally; single vault
-    MONS_HALFLING, 'p', LIGHTGREY, "halfling",
+    MONS_GNOME, 'p', LIGHTGREY, "gnome",
     M_WARM_BLOOD | M_SPEAKS | M_NO_POLY_TO,
     MR_NO_FLAGS,
-    10, MONS_HALFLING, MONS_HALFLING, MH_NATURAL, 10,
+    10, MONS_GNOME, MONS_GNOME, MH_NATURAL, 10,
     { {AT_HIT, AF_PLAIN, 6}, AT_NO_ATK, AT_NO_ATK, AT_NO_ATK },
     3, 105,
     2, 12, MST_NO_SPELLS, CE_CLEAN, S_SHOUT,
     I_HUMAN, HT_LAND, 10, DEFAULT_ENERGY,
     MONUSE_WEAPONS_ARMOUR, SIZE_SMALL, MON_SHAPE_HUMANOID,
-    {TILEP_MONS_HALFLING}, TILE_CORPSE_HALFLING
+    {TILEP_MONS_GNOME}, TILE_CORPSE_GNOME
 },
 
 // rodents ('r')

@@ -23,7 +23,7 @@ Ghoul
 Epäkuollut, kirottu mätänemään ikuisesti. He aina etsivät syötäväksi
 pilaantunutta ruokaa, hakkaamalla kaiken kynsillään.
 %%%%
-Halfling
+Gnome
 
 Pieniä mutta kovapintaisia, he ovat hyviä linkojen kanssa. He pystyvät myös
 puolustautumaan mutaatioefekteiltä jonkin verran.

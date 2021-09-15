@@ -602,12 +602,12 @@ static const map<species_type, species_def> species_data =
       SK_BOWS },
 } },
 
-{ SP_HALFLING, {
-    "Ha",
-    "Halfling", nullptr, nullptr,
+{ SP_GNOME, {
+    "No",
+    "Gnome", nullptr, nullptr,
     SPF_NONE,
     1, -1, 0, 3,
-    MONS_HALFLING,
+    MONS_GNOME,
     HT_LAND, US_ALIVE, SIZE_SMALL,
     9, 6, 9, // 24
     { STAT_DEX }, 5,

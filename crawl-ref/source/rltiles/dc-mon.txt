@@ -581,7 +581,7 @@ vault/hellbinder MONS_HELLBINDER
 vault/master_elementalist MONS_MASTER_ELEMENTALIST
 %rim 1
 ## From an entry vault
-halfling MONS_HALFLING
+gnome MONS_GNOME
 %rim 0
 demigod MONS_DEMIGOD
 

@@ -2088,7 +2088,7 @@ static void tag_construct_companions(writer &th)
 // Save versions 30-32.26 are readable but don't store the names.
 static const char* old_species[]=
 {
-    "Human", "High Elf", "Deep Elf", "Sludge Elf", "Mountain Dwarf", "Halfling",
+    "Human", "High Elf", "Deep Elf", "Sludge Elf", "Mountain Dwarf", "Gnome",
     "Hill Orc", "Kobold", "Mummy", "Naga", "Ogre", "Troll",
     "Red Draconian", "White Draconian", "Green Draconian", "Yellow Draconian",
     "Grey Draconian", "Black Draconian", "Purple Draconian", "Mottled Draconian",
@@ -2815,7 +2815,7 @@ static void tag_read_you(reader &th)
             you.mutation[MUT_HERBIVOROUS] -= 1;
             you.innate_mutation[MUT_HERBIVOROUS] -= 1;
         }
-        else if (you.species == SP_HALFLING)
+        else if (you.species == SP_GNOME)
         {
             you.mutation[MUT_SLOW_METABOLISM] -= 1;
             you.innate_mutation[MUT_SLOW_METABOLISM] -= 1;

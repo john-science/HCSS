@@ -23,7 +23,7 @@ Ghoul
 Nemirėliai, prakeikti amžinai pūti. Jie visada ieško supuvusio maisto,
 kapodamiesi savo nagais.
 %%%%
-Halfling
+Gnome
 
 Maži bet atsparūs, jie pranoksta visus kitus naudodami laidynes. Jie turi
 padidintą atsparumą mutageniniams efektams.
