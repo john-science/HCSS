@@ -22,7 +22,8 @@ const Branch branches[NUM_BRANCHES] =
       BFLAG_NO_ITEMS,
       DNGN_ENTER_TEMPLE, DNGN_EXIT_TEMPLE, NUM_FEATURES,
       "Temple", "the Ecumenical Temple", "Temple",
-      nullptr,
+      "The priests of the world built this place for you.\n"
+      "Choose a god to aid you in your assault on Hell.",
       LIGHTGREY, BROWN,
       'T', {}, 0 },
 
@@ -58,7 +59,7 @@ const Branch branches[NUM_BRANCHES] =
       GREEN, BROWN,
       'L', {}, 0 },
 
-    { BRANCH_SWAMP, BRANCH_ORC, 2, 2, 4, 15,
+    { BRANCH_SWAMP, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END | BFLAG_SPOTTY,
       DNGN_ENTER_SWAMP, DNGN_EXIT_SWAMP, NUM_FEATURES,
       "Swamp", "the Swamp", "Swamp",
@@ -66,7 +67,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'S', { RUNE_SWAMP }, 0 },
 
-    { BRANCH_SHOALS, BRANCH_ORC, 2, 2, 4, 15,
+    { BRANCH_SHOALS, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SHOALS, DNGN_EXIT_SHOALS, NUM_FEATURES,
       "Shoals", "the Shoals", "Shoals",
@@ -74,7 +75,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'A', { RUNE_SHOALS }, 0 },
 
-    { BRANCH_SNAKE, BRANCH_ORC, 2, 2, 4, 15,
+    { BRANCH_SNAKE, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SNAKE, DNGN_EXIT_SNAKE, NUM_FEATURES,
       "Snake Pit", "the Snake Pit", "Snake",
@@ -82,7 +83,7 @@ const Branch branches[NUM_BRANCHES] =
       LIGHTGREEN, YELLOW,
       'P', { RUNE_SNAKE }, 0 },
 
-    { BRANCH_SPIDER, BRANCH_ORC, 2, 2, 4, 15,
+    { BRANCH_SPIDER, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SPIDER, DNGN_EXIT_SPIDER, NUM_FEATURES,
       "Spider Nest", "the Spider Nest", "Spider",
