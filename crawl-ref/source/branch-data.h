@@ -34,7 +34,7 @@ const Branch branches[NUM_BRANCHES] =
       BROWN, BROWN,
       'O', {}, 0 },
 
-    { BRANCH_ELF, BRANCH_ORC, 2, 2, 3, 15,
+    { BRANCH_ELF, BRANCH_DUNGEON, 12, 14, 3, 15,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_ELF, DNGN_EXIT_ELF, NUM_FEATURES,
       "Elven Halls", "the Elven Halls", "Elf",
@@ -194,7 +194,7 @@ const Branch branches[NUM_BRANCHES] =
       BLACK, BLACK, // set specially
       'J', {RUNE_ABYSSAL }, 0 },
 
-    { BRANCH_PANDEMONIUM, BRANCH_ZOT, 1, 3, 1, 24,
+    { BRANCH_PANDEMONIUM, BRANCH_ZOT, 2, 4, 1, 24,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_PANDEMONIUM, DNGN_EXIT_PANDEMONIUM, DNGN_TRANSIT_PANDEMONIUM,
       "Pandemonium", "Pandemonium", "Pan",
