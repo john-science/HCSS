@@ -13,10 +13,10 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_DUNGEON, NUM_BRANCHES, 0, 0, 15, 0,
       BFLAG_NONE,
       NUM_FEATURES, DNGN_EXIT_DUNGEON, NUM_FEATURES,
-      "Dungeon", "the Dungeon", "Dungeon",
+      "Hell", "the Dungeon of Hell", "D",
       nullptr,
       LIGHTGREY, LIGHTRED,
-      'H', {}, 0 },
+      'D', {}, 0 },
 
     { BRANCH_TEMPLE, BRANCH_DUNGEON, 1, 1, 1, 5,
       BFLAG_NO_ITEMS,
@@ -137,7 +137,7 @@ const Branch branches[NUM_BRANCHES] =
       "Demon", "the Vestibule of Demon Dimensions", "Demon",
       "This place is connects Hell to the Demon Dimensions.",
       LIGHTGREY, LIGHTRED,
-      'D', {}, 0 },
+      'H', {}, 0 },
 
     { BRANCH_DIS, BRANCH_VESTIBULE, 1, 1, 7, 28,
       BFLAG_NO_ITEMS | BFLAG_DANGEROUS_END,
