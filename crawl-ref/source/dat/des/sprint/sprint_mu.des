@@ -1209,7 +1209,7 @@ MARKER: L = lua:fog_machine { \
 COLOUR: # = red
 KFEAT: # = closed_door
 MARKER: # = lua:props_marker({ \
-            door_description_suffix=" to Hell", \
+            door_description_suffix=" to the Demon Dimensions", \
             door_description_noun="gateway", \
          })
 MARKER: # = lua:restrict_door()

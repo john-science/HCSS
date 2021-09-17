@@ -511,7 +511,7 @@ _mon_hex_zap(ZAP_BANISHMENT, BEAM_BANISH, 150),
     true,
     false,
     true,
-    9 // XXX: Even louder because it's hellish?
+    9 // XXX: Even louder because it's demonish?
 },
 
 {

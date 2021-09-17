@@ -130,7 +130,7 @@ void tile_default_flv(branch_type br, int depth, tile_flavour &flv)
         return;
 
     case BRANCH_VESTIBULE:
-        flv.wall  = TILE_WALL_HELL;
+        flv.wall  = TILE_WALL_DEMON;
         flv.floor = TILE_FLOOR_CAGE;
         return;
 
@@ -800,8 +800,8 @@ static tileidx_t _get_floor_bg(const coord_def& gc)
 
         if (is_unknown_stair(gc)
             && env.map_knowledge(gc).feat() != DNGN_ENTER_ZOT
-            && !(player_in_hell()
-                 && env.map_knowledge(gc).feat() == DNGN_ENTER_HELL))
+            && !(player_in_demon()
+                 && env.map_knowledge(gc).feat() == DNGN_ENTER_DEMON))
         {
             bg |= TILE_FLAG_NEW_STAIR;
         }

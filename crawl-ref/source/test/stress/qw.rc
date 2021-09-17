@@ -3887,7 +3887,7 @@ end
 function want_to_stairdance_up()
   local feat = view.feature_at(0,0)
   if not (feat:find("stone_stairs_up") or
-          feat:find("exit_") and (feat == "exit_hell" or feat == "exit_vaults"
+          feat:find("exit_") and (feat == "exit_demon" or feat == "exit_vaults"
           or feat == "exit_zot" or feat == "exit_slime_pits"
           or feat == "exit_orcish_mines" or feat == "exit_lair"
           or feat == "exit_crypt" or feat == "exit_snake_pit"

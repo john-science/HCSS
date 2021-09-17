@@ -1014,17 +1014,17 @@ abyss_white6
 abyss_white7
 
 %sdir dngn/wall
-hell01 WALL_HELL
-hell02
-hell03
-hell04
-hell05
-hell06
-hell07
-hell08
-hell09
-hell10
-hell11
+demon01 WALL_DEMON
+demon02
+demon03
+demon04
+demon05
+demon06
+demon07
+demon08
+demon09
+demon10
+demon11
 
 %weight 10
 ice_wall0 WALL_ICE

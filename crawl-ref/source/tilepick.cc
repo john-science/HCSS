@@ -194,10 +194,10 @@ tileidx_t tileidx_feature_base(dungeon_feature_type feat)
         return TILE_FLOOR_NORMAL;
     case DNGN_ENDLESS_SALT:
         return TILE_DNGN_ENDLESS_SALT;
-    case DNGN_ENTER_HELL:
-        if (player_in_hell())
+    case DNGN_ENTER_DEMON:
+        if (player_in_demon())
             return TILE_DNGN_RETURN_VESTIBULE;
-        return TILE_DNGN_ENTER_HELL;
+        return TILE_DNGN_ENTER_DEMON;
     case DNGN_OPEN_DOOR:
         return TILE_DNGN_OPEN_DOOR;
     case DNGN_TRAP_MECHANICAL:
@@ -252,13 +252,13 @@ tileidx_t tileidx_feature_base(dungeon_feature_type feat)
         return TILE_DNGN_ENTER_ABYSS;
     case DNGN_ABYSSAL_STAIR:
         return TILE_DNGN_ABYSSAL_STAIR;
-    case DNGN_EXIT_HELL:
-        return TILE_DNGN_RETURN_HELL;
+    case DNGN_EXIT_DEMON:
+        return TILE_DNGN_RETURN_DEMON;
     case DNGN_EXIT_ABYSS:
         return TILE_DNGN_EXIT_ABYSS;
     case DNGN_STONE_ARCH:
         if (player_in_branch(BRANCH_VESTIBULE))
-            return TILE_DNGN_STONE_ARCH_HELL;
+            return TILE_DNGN_STONE_ARCH_DEMON;
         return TILE_DNGN_STONE_ARCH;
     case DNGN_ENTER_PANDEMONIUM:
         return TILE_DNGN_ENTER_PANDEMONIUM;
@@ -2287,7 +2287,7 @@ static tileidx_t _tileidx_rune(const item_def &item)
 {
     switch (item.sub_type)
     {
-    // the hell runes:
+    // the demon dimension runes:
     case RUNE_DIS:         return TILE_RUNE_DIS;
     case RUNE_GEHENNA:     return TILE_RUNE_GEHENNA;
     case RUNE_COCYTUS:     return TILE_RUNE_COCYTUS;

@@ -195,7 +195,7 @@ function pan_entry_vault_contents(e, glyph)
     e.mons("common demon")
     e.mons("lesser demon")
     if crawl.x_chance_in_y(you.depth() + 3, you.depth() + 5) then
-        e.tags("luniq_hellpanabyss_threat_entry")
+        e.tags("luniq_demonpanabyss_threat_entry")
         e.kmons(glyph .. " = green death / blizzard demon / balrug / "
                       .. "   cacodemon / hell beast / hellion / reaper / "
                       .. "   lorocyproca / tormentor / shadow demon")

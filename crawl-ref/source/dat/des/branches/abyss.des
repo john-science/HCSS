@@ -50,7 +50,7 @@ O
 ENDMAP
 
 NAME:    minmay_room_of_horrors
-TAGS:    nolayout_encompass luniq_hellpanabyss_threat_entry
+TAGS:    nolayout_encompass luniq_demonpanabyss_threat_entry
 MONS:    small abomination, large abomination, unseen horror / chaos spawn
 SHUFFLE: 123
 : abyss_entry(_G, '_')

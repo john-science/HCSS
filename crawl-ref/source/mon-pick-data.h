@@ -481,8 +481,8 @@ static const pop_entry pop_tomb[] =
   { 0,0,0,FLAT,MONS_0 }
 };
 
-static const pop_entry pop_hell[] =
-{ // Hell
+static const pop_entry pop_demon[] =
+{ // Demon Dimensions
   {  1,  1,   89, FLAT, MONS_HELL_RAT },
   {  1,  1,   89, FLAT, MONS_DEMONIC_CRAWLER },
   {  1,  1,   89, FLAT, MONS_HELL_HOUND },
@@ -1037,7 +1037,7 @@ static const struct { const pop_entry *pop; int count; } population[] =
     POP(blade),
     POP(crypt),
     POP(tomb),
-    POP(hell),
+    POP(demon),
     POP(dis),
     POP(geh),
     POP(coc),
@@ -1186,8 +1186,8 @@ static const pop_entry pop_water_snake[] =
   { 0,0,0,FLAT,MONS_0 }
 };
 
-static const pop_entry pop_water_hell[] =
-{ // Hell branch water monsters
+static const pop_entry pop_water_demon[] =
+{ // Demon Dimension branch water monsters
   {  1,  7,   150, FLAT, MONS_SPINY_FROG },
   {  1,  7,   120, FLAT, MONS_ALLIGATOR },
   {  1,  7,   130, FLAT, MONS_ANACONDA },
@@ -1216,11 +1216,11 @@ static const struct { const pop_entry *pop; int count; } population_water[] =
     POP(water_generic),
     POP(water_generic),
     POP(water_generic),
-    POP(water_hell),
-    POP(water_hell),
-    POP(water_hell),
-    POP(water_hell),
-    POP(water_hell),
+    POP(water_demon),
+    POP(water_demon),
+    POP(water_demon),
+    POP(water_demon),
+    POP(water_demon),
     POP(water_generic),
     POP(water_generic), // Forest
     POP(water_generic),
@@ -1281,8 +1281,8 @@ static const pop_entry pop_lava_depths[] =
   { 0,0,0,FLAT,MONS_0 }
 };
 
-static const pop_entry pop_lava_hell[] =
-{ // Hell branch lava monsters
+static const pop_entry pop_lava_demon[] =
+{ // Demon Dimension branch lava monsters
   {  1,  8,   300, FALL, MONS_FIRE_ELEMENTAL },
   {  1,  6,    25, FALL, MONS_MOLTEN_GARGOYLE },
   {  1,  7,    25, FLAT, MONS_SMOKE_DEMON },
@@ -1307,11 +1307,11 @@ static const struct { const pop_entry *pop; int count; } population_lava[] =
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),
-    POP(lava_hell),
-    POP(lava_hell),
-    POP(lava_hell),
-    POP(lava_hell),
-    POP(lava_hell),
+    POP(lava_demon),
+    POP(lava_demon),
+    POP(lava_demon),
+    POP(lava_demon),
+    POP(lava_demon),
     POP(lava_generic),
     POP(lava_generic),
     POP(lava_generic),

@@ -1,38 +1,38 @@
 ##############################################################################
-# hell.des: Vestibule entry vaults; the Vestibule itself.
-#           Vaults specific to the Hell branches should go to one of
-#           dis.des, geh.des, coc.des, or tar.des.
+# demon.des: Vestibule entry vaults; the Vestibule itself.
+#            Vaults specific to the demon branches should go to one of
+#            dis.des, geh.des, coc.des, or tar.des.
 ##############################################################################
 
 {{
-function hell_entry_feature(e, glyph)
-    e.tags("extra luniq_enter_hell chance_enter_hell")
+function demon_entry_feature(e, glyph)
+    e.tags("extra luniq_enter_demon chance_enter_demon")
     e.depth_chance("Crypt", 10000)
     e.depth_chance("D:21-", 10000)
-    e.kfeat(glyph .. " = enter_hell")
+    e.kfeat(glyph .. " = enter_demon")
 end
 
-function hell_entry_tier(e, tier)
+function demon_entry_tier(e, tier)
     e.tags("nolayout_encompass")
     if tier ~= "low" then
-        e.tags("luniq_hellpanabyss_threat_entry")
+        e.tags("luniq_demonpanabyss_threat_entry")
         if tier == "high" then
-            e.tags("uniq_hell_entry_high")
+            e.tags("uniq_demon_entry_high")
         end
     end
 end
 
-function hell_water_abbrev(e, type, baseweight)
+function demon_water_abbrev(e, type, baseweight)
     return "patrolling " .. type .. " zombie w:" .. math.floor(baseweight/2) ..
         " / patrolling " .. type .. " skeleton w:" .. math.floor(baseweight/3) ..
         " / patrolling " .. type .. " simulacrum w:" .. math.floor(baseweight/6)
 end
 
-function hell_water_spawns(e)
-    e.kmons("P = " .. hell_water_abbrev(_G, "spiny frog", 150) ..
-               " / " .. hell_water_abbrev(_G, "alligator", 120) ..
-               " / " .. hell_water_abbrev(_G, "anaconda", 130) ..
-               " / " .. hell_water_abbrev(_G, "hydra", 230) ..
+function demon_water_spawns(e)
+    e.kmons("P = " .. demon_water_abbrev(_G, "spiny frog", 150) ..
+               " / " .. demon_water_abbrev(_G, "alligator", 120) ..
+               " / " .. demon_water_abbrev(_G, "anaconda", 130) ..
+               " / " .. demon_water_abbrev(_G, "hydra", 230) ..
                "/ titan zombie w:25 / titan simulacrum w:12 \
                 / patrolling water elemental w:113")
     e.kfeat("Pw = w")
@@ -40,7 +40,7 @@ function hell_water_spawns(e)
     e.nsubst("w = 8:P / 4 = Pw / *:w")
 end
 
-function hell_lava_spawns(e)
+function demon_lava_spawns(e)
     e.kmons("~ = patrolling molten gargoyle w:5 / patrolling smoke demon w:5 / \
                  patrolling fire elemental w:60")
     e.kfeat("~l = l")
@@ -55,21 +55,21 @@ default-depth: Zot, D:21-
 # Vestibule entries
 ##############################################################################
 
-# This replaces the hardcoded placement of a hell entrance on D:21-27;
+# This replaces the hardcoded placement of a demon entrance on D:21-27;
 # it also acts as the backup entrance and the entrance for encompass vault
 # placements.
-NAME:   hell_entry
+NAME:   demon_entry
 TAGS:   allow_dup overwrite_floor_cell no_exits replace_portal transparent
-TAGS:   fallback_enter_hell
+TAGS:   fallback_enter_demon
 WEIGHT: 50
-: hell_entry_feature(_G, 'O')
+: demon_entry_feature(_G, 'O')
 MAP
 O
 ENDMAP
 
 ##############################################################################
-# Hellmouth (Lemuel)
-NAME:   hellmouth_1
+# Demonmouth (Lemuel)
+NAME:   demonmouth_1
 ORIENT: float
 TAGS:   no_rotate
 MONS:   crimson imp / hellwing / hell hound
@@ -79,8 +79,8 @@ ITEM:   good_item demon blade / good_item demon whip / \
 ITEM:   ring of fire ident:type / Necronomicon / \
         grand grimoire / scroll of torment ident:type
 SUBST:  d=de, ?:?.l, ?=l.
-: hell_entry_feature(_G, 'A')
-: hell_entry_tier(_G, "mid")
+: demon_entry_feature(_G, 'A')
+: demon_entry_tier(_G, "mid")
 MAP
 xxxxxxxxxxxxxxxxxxx
 xxxxxxxxlllxxxxxxxx
@@ -103,8 +103,8 @@ xxxxxxxxl?@xxxxxxxx
 ENDMAP
 
 ##############################################################################
-# Hellmouth 2 (Lemuel)
-NAME:   hellmouth_2
+# Demonmouth 2 (Lemuel)
+NAME:   demonmouth_2
 WEIGHT: 6
 ORIENT: float
 TAGS:   no_monster_gen transparent
@@ -118,8 +118,8 @@ ITEM:   good_item demon blade / good_item demon whip /\
         good_item demon trident / w:30 nothing
 SUBST:  d=de, ?:?.l, ?=l.
 SUBST:  b : b:30 c v .
-: hell_entry_feature(_G, 'A')
-: hell_entry_tier(_G, "high")
+: demon_entry_feature(_G, 'A')
+: demon_entry_tier(_G, "high")
 MAP
 ..........................
 .......bbbbbbbbbbbb.......
@@ -144,16 +144,16 @@ MAP
 ENDMAP
 
 ##############################################################################
-# Hellmouth 3 (Lemuel)
-NAME:   hellmouth_3
+# Demonmouth 3 (Lemuel)
+NAME:   demonmouth_3
 ORIENT: float
 MONS:   crimson imp / hellwing / hell hound
 MONS:   hellion / balrug / soul eater / smoke demon
 ITEM:   demon blade / demon whip / demon trident / nothing
 KMASK:  12Ad = opaque
 SUBST:  ? : . l ?:40, ?=l.
-: hell_entry_feature(_G, 'A')
-: hell_entry_tier(_G, "mid")
+: demon_entry_feature(_G, 'A')
+: demon_entry_tier(_G, "mid")
 MAP
               ..??..      ....
    .....     .......     ..??.
@@ -177,7 +177,7 @@ ENDMAP
 
 ##############################################################################
 
-NAME:   grunt_hell_entry_demonic_statue
+NAME:   grunt_demon_entry_demonic_statue
 WEIGHT: 6
 ORIENT: float
 TAGS:   no_monster_gen no_tele_into
@@ -197,8 +197,8 @@ KPROP:  b = nothing / w:5 bloody
 KITEM:  b = nothing / w:1 gold
 MARKER: H = lua:props_marker { stop_explore = "statue" }
 KFEAT:  HI = G
-: hell_entry_feature(_G, 'A')
-: hell_entry_tier(_G, "high")
+: demon_entry_feature(_G, 'A')
+: demon_entry_tier(_G, "high")
 MAP
       xxxxxxx
     xxxbbbbbxxx
@@ -224,17 +224,17 @@ ENDMAP
 ###############################################################################
 
 NAME: lightli_too_deep
-TAGS: no_monster_gen nolayout_encompass uniq_hell_entry_high
+TAGS: no_monster_gen nolayout_encompass uniq_demon_entry_high
 ORIENT: northeast
 MONS: balrug
 MONS: sun demon
-: hell_entry_feature(_G, 'H')
+: demon_entry_feature(_G, 'H')
 SUBST: y = x..
 SUBST: ; = %A.....l
 : dgn.delayed_decay(_G, '%', 'dwarf skeleton')
 KITEM: A = any weapon w:20 / chain mail w:60 / plate armour w:19 / \
            crystal plate armour w:1
-: hell_entry_tier(_G, "mid")
+: demon_entry_tier(_G, "mid")
 MAP
 xxxxxxxxxxxxxxx
 xxxxcccccccxxxx
@@ -255,13 +255,13 @@ xxxy.%...yxxxxx
 ENDMAP
 
 ##############################################################################
-NAME: grunt_hell_horde
+NAME: grunt_demon_horde
 WEIGHT: 6
-TAGS: nolayout_encompass uniq_hell_entry_high
-: hell_entry_feature(_G, 'O')
+TAGS: nolayout_encompass uniq_demon_entry_high
+: demon_entry_feature(_G, 'O')
 NSUBST: + = 1:+ / 1:+x / *:x
 MONS: hell hog / hell hound, hell hound / nothing
-: hell_entry_tier(_G, "high")
+: demon_entry_tier(_G, "high")
 MAP
  xxx+xxx
 xxl2.2lxx
@@ -277,8 +277,8 @@ ENDMAP
 NAME: grunt_metal_band
 WEIGHT: 6
 KMONS: O = Margery band / hell knight band w:4, hell knight band
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "high")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "high")
 MAP
  xxxxxxx
 xx..O..xx
@@ -290,15 +290,15 @@ x.......x
 ENDMAP
 
 NAME: grunt_mini_vestibule
-TAGS: nolayout_encompass no_monster_gen uniq_hell_entry_high
-: hell_entry_feature(_G, 'O')
+TAGS: nolayout_encompass no_monster_gen uniq_demon_entry_high
+: demon_entry_feature(_G, 'O')
 KMONS: O = hell beast
 MONS: simulacrum w:20 / freezing wraith / ice devil
 MONS: rust devil w:20 / iron troll
 MONS: hell hound / sun demon
 MONS: skeleton / zombie / skeletal warrior band / flying skull band / \
       ancient champion band w:5 / soul eater
-: hell_entry_tier(_G, "mid")
+: demon_entry_tier(_G, "mid")
 MAP
   .....@.....
  ..ccnc+cncc..
@@ -321,15 +321,15 @@ ENDMAP
 # Some branch-inspired mini entries. Total weight 14 for each branch.
 NAME:    hangedman_geh_valley
 WEIGHT:  4
-TAGS:    transparent uniq_hell_entry_geh
+TAGS:    transparent uniq_demon_entry_geh
 KMONS:   O = sun demon / crimson imp w:20 / nothing
 SHUFFLE: +- / +- / =+
 NSUBST:  - = 1:+cc / *:c
 SUBST:   = = c
 KMASK:   l = no_monster_gen
 TILE:    c = dngn_stone_wall_red
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
   xxxxxxxxx
 xxxllcccllxxx
@@ -344,8 +344,8 @@ xxx  xxx  xxx
 ENDMAP
 
 # Inspired by the grated corridors in evilmike_geh.
-NAME:   pf_hell_entry_great_geh
-TAGS:   uniq_hell_entry_geh
+NAME:   pf_demon_entry_great_geh
+TAGS:   uniq_demon_entry_geh
 WEIGHT: 4
 KFEAT:  m = iron_grate
 TILE:   c = dngn_stone_wall_red
@@ -353,8 +353,8 @@ COLOUR: c = red
 FTILE:  .O = floor_infernal_blank
 KMASK:  l = no_monster_gen
 KPROP:  l = no_tele_into
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
 cccc@cccc
 clm...mlc
@@ -374,13 +374,13 @@ ENDMAP
 
 # Inspired by the entrance to evilmike_geh.
 NAME:    pf_vacation_house_of_asmodeus
-TAGS:    transparent uniq_hell_entry_geh
+TAGS:    transparent uniq_demon_entry_geh
 WEIGHT:  4
 TILE:    c = dngn_stone_wall_red
 COLOUR:  c = red
 FTILE:  'O = floor_infernal_blank
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
        @
   ccccc'ccccc
@@ -401,15 +401,15 @@ ENDMAP
 
 # Inspired by the end of lightli_geh, sort of.
 # (Low weight because the associated vault is disabled. -- Grunt)
-NAME:   pf_dread_powers_of_hell
-TAGS:   transparent uniq_hell_entry_geh
+NAME:   pf_dread_powers_of_demon
+TAGS:   transparent uniq_demon_entry_geh
 WEIGHT: 2
 KMONS:  i = crimson imp ; wand of flame ident:type
 TILE:   c = dngn_stone_wall_red
 COLOUR: c = red
 FTILE:  'iO = floor_infernal_blank
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
      ........
     ..cccccc...
@@ -428,14 +428,14 @@ ENDMAP
 
 NAME:    hangedman_coc_ice_floe
 WEIGHT:  7
-TAGS:    transparent no_pool_fixup uniq_hell_entry_coc
+TAGS:    transparent no_pool_fixup uniq_demon_entry_coc
 KMONS:   O = ice devil / white imp w:20 / nothing
 KFEAT:   A = stone_arch
 SHUFFLE: ab / ab / ba
 SUBST:   a : xww, b = x
 TILE:    x = wall_ice
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
    ..  ..
  .........
@@ -455,13 +455,13 @@ ENDMAP
 # A variant on hangedman_coc_ice_floe.
 NAME:   pf_coc_iceberg
 WEIGHT: 7
-TAGS:   transparent no_pool_fixup uniq_hell_entry_coc
+TAGS:   transparent no_pool_fixup uniq_demon_entry_coc
 TILE:   x = wall_ice
 COLOUR: x = lightcyan
 FTILE:  'O = floor_frozen
 COLOUR: ' = lightblue
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
    ..  ..
   .........
@@ -482,15 +482,15 @@ ENDMAP
 
 NAME:    hangedman_tar_grid_catacomb
 WEIGHT:  4
-TAGS:    transparent uniq_hell_entry_tar
+TAGS:    transparent uniq_demon_entry_tar
 KMONS:   O = shadow imp w:20 / nothing
 KFEAT:   A = stone_arch
 SHUFFLE: o@O& / O&o@
 SUBST:   o = ., & = x
 NSUBST:  O = 1:O / *:A
 TILE:    c = wall_cobalt_stone
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
     x&xxxx&x
     &.OxxO.&
@@ -508,14 +508,14 @@ xx....cccc....xx
 ENDMAP
 
 # Inspired by the loot vaults in tar_minmay_river.
-NAME:   pf_hell_entry_tar_spiral
-TAGS:   transparent no_monster_gen uniq_hell_entry_tar
+NAME:   pf_demon_entry_tar_spiral
+TAGS:   transparent no_monster_gen uniq_demon_entry_tar
 WEIGHT: 5
 TILE:   c = wall_cobalt_stone
 COLOUR: . = magenta
 FTILE:  +.O = floor_infernal_blank
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
     cccc
   ccc..ccc
@@ -536,8 +536,8 @@ ENDMAP
 
 # Inspired by the sad fish in tar_minmay river. They've never gotten a kill. :(
 # (They probably won't get a kill here, either.)
-NAME:   pf_hell_entry_tar_river
-TAGS:   transparent no_pool_fixup uniq_hell_entry_tar
+NAME:   pf_demon_entry_tar_river
+TAGS:   transparent no_pool_fixup uniq_demon_entry_tar
 WEIGHT: 5
 COLOUR: . = magenta
 FTILE:  .O = floor_infernal_blank
@@ -545,8 +545,8 @@ NSUBST: w = 5=F / *:w
 KMONS:  F = spectral swamp worm
 KFEAT:  EFw = deep_water
 KMASK:  Ww = no_monster_gen
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
       @
    wwWwwww
@@ -565,11 +565,11 @@ ENDMAP
 
 ####
 # A couple of Dis-inspired mini-entries; total weight 14.
-NAME: grunt_hell_entry_dis_old
-TAGS: transparent nolayout_encompass uniq_hell_entry_dis
+NAME: grunt_demon_entry_dis_old
+TAGS: transparent nolayout_encompass uniq_demon_entry_dis
 WEIGHT: 4
 KMONS: O = rust devil / iron imp w:20 / nothing
-: hell_entry_feature(_G, 'O')
+: demon_entry_feature(_G, 'O')
 MAP
 ...................
 .vvvv.........vvvv.
@@ -588,12 +588,12 @@ MAP
 .........@.........
 ENDMAP
 
-NAME: grunt_hell_entry_dis_mu
-TAGS: transparent nolayout_encompass uniq_hell_entry_dis
+NAME: grunt_demon_entry_dis_mu
+TAGS: transparent nolayout_encompass uniq_demon_entry_dis
 WEIGHT: 5
 KMONS: O = rust devil / iron imp w:20 / nothing
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
 ...................
 ..vvvvvvv.vvv......
@@ -610,12 +610,12 @@ MAP
 .........@.........
 ENDMAP
 
-NAME: grunt_hell_entry_dis_grunt
-TAGS: transparent nolayout_encompass uniq_hell_entry_dis
+NAME: grunt_demon_entry_dis_grunt
+TAGS: transparent nolayout_encompass uniq_demon_entry_dis
 WEIGHT: 5
 KMONS: O = rust devil / iron imp w:20 / nothing
-: hell_entry_feature(_G, 'O')
-: hell_entry_tier(_G, "low")
+: demon_entry_feature(_G, 'O')
+: demon_entry_tier(_G, "low")
 MAP
 ...................
 ...................
@@ -633,7 +633,7 @@ MAP
 ENDMAP
 
 ##############################################################################
-# Vestibule of Hell and Geryon
+# Vestibule of Demon Dimensions and Geryon
 ##############################################################################
 
 default-depth:
@@ -642,8 +642,8 @@ default-depth:
 # The main vault for Vestibule w/subvaults (by Mu.)
 # The old vestibule has been folded into this vault.
 #
-NAME:     vestibule_of_hell_subvaulted
-PLACE:    Hell
+NAME:     vestibule_of_dd_subvaulted
+PLACE:    Demon
 ORIENT:   encompass
 TAGS:     no_rotate no_dump
 : if crawl.game_started() and dgn.br_exists("Dis") then
@@ -858,7 +858,7 @@ NAME: vestibule_geh_old
 TAGS: vestibule_geh
 KFEAT: G = enter_gehenna
 KMONS: G = hellion / balrug
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 xxxxxxxxxxxxxx.l.l.xxxxxxxxxxxxxx
  xxxxxxxxxx...l.l.l...xxxxxxxxxx
@@ -887,7 +887,7 @@ KMONS:  2 = hellion
 KMONS:  3 = sun demon
 KMONS:  2 = reaper / soul eater
 FTILE:  x'5a2V+ = floor_infernal_blank
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 lllllllllllllllllllllllllllllllll
  Lllllllllllllllllllllllllllllll
@@ -920,7 +920,7 @@ KMONS:   H = hellion
 KMONS:   m = crimson imp / smoke demon
 KMONS:   ' = hell beast / hell hound / hell hog / nothing w:140
 FTILE:   AH' = floor_infernal_blank
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 .........bab.........dcd.........
  ...m..bbbabbb.....dddcddd..m...
@@ -949,7 +949,7 @@ MONS: orange demon / hell hound / hell hog
 NSUBST: 2 = 3:2 / *:.
 NSUBST: 3 = 3:3 / *:.
 FTILE: 123+G = floor_infernal_blank
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 lllllllllccccccccccccccclllllllll
  llllllccc'''c''1''c'''cccllllll
@@ -974,7 +974,7 @@ NAME: vestibule_coc_old
 TAGS: vestibule_coc
 KFEAT: C = enter_cocytus
 KMONS: C = blizzard demon / ice statue
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 wwwwwwwwwwwwwwwwCwwwwwwwwww......
  wwwwwwwwwwwwww....wwwwwww......
@@ -1000,7 +1000,7 @@ KFEAT:  C=enter_cocytus
 SUBST:  8 = 8 .:59
 KMONS:  8 = ice statue
 KMONS:  3 = ice devil
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 ...........wwwwwwwwwww...........
  ....33...wwwwwwwwwwwww...33....
@@ -1028,7 +1028,7 @@ SUBST:   a = I, b : w., W = w.
 KMONS:   I = ice statue
 KMONS:   3 = blizzard demon
 KMONS:   2 = ice devil / freezing wraith / white imp / nothing
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
  WWWWwwwwwwwww.....wwwwwwwwwWWWW
@@ -1057,7 +1057,7 @@ SUBST: W = wW.
 KFEAT: A = stone_arch
 KFEAT: C = enter_cocytus
 KFEAT: W = W
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
  wwwwwWWWWWWWWWWwWWWWWWWWWWwwwww
@@ -1296,7 +1296,7 @@ NAME: vestibule_empty_coc_old
 TAGS: vestibule_coc_empty
 KFEAT: C = stone_arch
 KMONS: C = blizzard demon / ice statue
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 wwwwwwwwwwwwwwwwCwwwwwwwwww......
  wwwwwwwwwwwwww....wwwwwww......
@@ -1322,7 +1322,7 @@ KFEAT:  C=stone_arch
 SUBST:  8 = 8 .:59
 KMONS:  8 = ice statue
 KMONS:  3 = ice devil
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 ...........wwwwwwwwwww...........
  ....33...wwwwwwwwwwwww...33....
@@ -1350,7 +1350,7 @@ SUBST:   a = I, b : w., W = w.
 KMONS:   I = ice statue
 KMONS:   3 = blizzard demon
 KMONS:   2 = ice devil / freezing wraith / white imp / nothing
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
  WWWWwwwwwwwww.....wwwwwwwwwWWWW
@@ -1379,7 +1379,7 @@ SUBST: W = wW.
 KFEAT: A = stone_arch
 KFEAT: C = stone_arch
 KFEAT: W = W
-: hell_water_spawns(_G)
+: demon_water_spawns(_G)
 MAP
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
  wwwwwWWWWWWWWWWwWWWWWWWWWWwwwww
@@ -1403,7 +1403,7 @@ NAME: vestibule_empty_geh_old
 TAGS: vestibule_geh_empty
 KFEAT: G = stone_arch
 KMONS: G = hellion / balrug
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 xxxxxxxxxxxxxx.l.l.xxxxxxxxxxxxxx
  xxxxxxxxxx...l.l.l...xxxxxxxxxx
@@ -1432,7 +1432,7 @@ KMONS:  2 = hellion
 KMONS:  3 = sun demon
 KMONS:  2 = reaper / soul eater
 FTILE:  x'5a2V+ = floor_infernal_blank
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 lllllllllllllllllllllllllllllllll
  Lllllllllllllllllllllllllllllll
@@ -1465,7 +1465,7 @@ KMONS:   H = hellion
 KMONS:   m = crimson imp / smoke demon
 KMONS:   ' = hell beast / hell hound / hell hog / nothing w:140
 FTILE:   AH' = floor_infernal_blank
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 .........bab.........dcd.........
  ...m..bbbabbb.....dddcddd..m...
@@ -1494,7 +1494,7 @@ MONS: orange demon / hell hound / hell hog
 NSUBST: 2 = 3:2 / *:.
 NSUBST: 3 = 3:3 / *:.
 FTILE: 123+G = floor_infernal_blank
-: hell_lava_spawns(_G)
+: demon_lava_spawns(_G)
 MAP
 lllllllllccccccccccccccclllllllll
  llllllccc'''c''1''c'''cccllllll

@@ -4495,7 +4495,7 @@ SUBST:  } = }>
 SUBST:  ] = ]>
 # Like the door vault, pick interesting monsters for the 8s in branches,
 # but use normal OOD for D.
-# Also remove the bits of loot for Hell branches and Zot.
+# Also remove the bits of loot for Demon branches and Zot.
 : if you.in_branch("Crypt") then
 KMONS:  8 = bone dragon / lich / ancient lich / w:5 death cob / \
             w:5 curse toe / w:5 zombie / w:5 skeleton / eidolon / \

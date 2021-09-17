@@ -138,7 +138,7 @@ function choose_mset_1(e)
 -- Shoals
   elseif rnd < 69 then
     e.kmons("1 = merfolk")
--- Hell
+-- Demon
   elseif rnd < 79 then
     e.kmons("1 = zombie w:5 / skeleton w:5 / lesser demon w:15 / hell hound w:5")
 -- Giant
@@ -230,7 +230,7 @@ function choose_mset_2(e)
 -- Shoals
   elseif rnd < 74 then
     e.kmons("1 = merfolk w:20 / wyvern / centaur / cyclops w:3")
--- Hell
+-- Demon
   elseif rnd < 80 then
     e.kmons("1 =  zombie / skeleton / lesser demon / hell hound")
 -- Giant

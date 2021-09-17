@@ -420,8 +420,8 @@ static void _list_bribable_branches(vector<branch_type> &targets)
         if (!gozag_branch_bribable(br))
             continue;
 
-        // Only list the Hells once.
-        if (is_hell_subbranch(br))
+        // Only list the Demon Dimensions once.
+        if (is_demon_subbranch(br))
             continue;
 
         // If you don't know the branch exists, don't list it;

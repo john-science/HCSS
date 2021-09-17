@@ -158,10 +158,10 @@ level_id current_level_parent()
     return find_up_level(level_id::current());
 }
 
-bool is_hell_subbranch(branch_type branch)
+bool is_demon_subbranch(branch_type branch)
 {
-    return branch >= BRANCH_FIRST_HELL
-           && branch <= BRANCH_LAST_HELL
+    return branch >= BRANCH_FIRST_DEMON
+           && branch <= BRANCH_LAST_DEMON
            && branch != BRANCH_VESTIBULE;
 }
 

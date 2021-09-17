@@ -3674,7 +3674,7 @@ static branch_type old_entries[] =
     /* Blade */  BRANCH_VAULTS,
     /* Crypt */  BRANCH_VAULTS,
     /* Tomb */   BRANCH_CRYPT, // or Forest
-    /* Hell */   NUM_BRANCHES,
+    /* Demon */  NUM_BRANCHES,
     /* Dis */    BRANCH_VESTIBULE,
     /* Geh */    BRANCH_VESTIBULE,
     /* Coc */    BRANCH_VESTIBULE,

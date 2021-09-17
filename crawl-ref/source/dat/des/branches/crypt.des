@@ -1400,7 +1400,7 @@ KMONS:  Q = titan zombie / fire dragon zombie / golden dragon zombie / ghoul
 COLOUR: = = red
 SUBST:  = = +
 COLOUR: r = red
-TILE:   r = wall_hell
+TILE:   r = wall_demon
 SUBST:  r = c
 # emergency exits; most are closed
 NSUBST: ? = 3:+ / *:v
@@ -1583,7 +1583,7 @@ KMONS:  Q = eidolon
 KMONS:  R = phantasmal warrior / flayed ghost w:8
 KMONS:  S = shadow / wraith / freezing wraith / shadow wraith / wight
 : end
-####### SW monsters (crematory). Either fiery undead or hellish.
+####### SW monsters (crematory). Either fiery undead or demonish.
 : if crawl.coinflip() then
 KMONS:  t = fire giant skeleton / fire dragon skeleton
 KMONS:  X = w:1 curse skull / w:19 revenant

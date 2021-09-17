@@ -2477,7 +2477,7 @@ KMONS:   8 = wizard
 # XXX: no_pickup is incompatible with acquire any.
 # Should be used here, loot is easily missed.
 KITEM:   / = acquire any, any good_item / no_pickup gold good_item w:15
-KFEAT:   / = enter_hell
+KFEAT:   / = enter_demon
 KFEAT:   Q = granite_statue
 KFEAT:   _ = altar_makhleb
 KFEAT:   L = endless_lava

@@ -218,7 +218,7 @@ bool monster_can_submerge(const monster* mon, dungeon_feature_type feat)
 static bool _is_spawn_scaled_area(const level_id &here)
 {
     return is_connected_branch(here.branch)
-           && !is_hell_subbranch(here.branch)
+           && !is_demon_subbranch(here.branch)
            && here.branch != BRANCH_VESTIBULE
            && here.branch != BRANCH_ZOT;
 }
@@ -249,10 +249,10 @@ static int _scale_spawn_parameter(int base_value,
 static void _apply_ood(level_id &place)
 {
     // OODs do not apply to any portal vaults, any 1-level branches, Zot and
-    // hells. What with newnewabyss?
+    // demon dims. What with newnewabyss?
     if (!is_connected_branch(place)
         || place.branch == BRANCH_ZOT
-        || is_hell_subbranch(place.branch)
+        || is_demon_subbranch(place.branch)
         || brdepth[place.branch] <= 1)
     {
         return;
@@ -1240,7 +1240,7 @@ static monster* _place_monster_aux(const mgen_data &mg, const monster *leader,
         case BRANCH_TARTARUS:
             mon->type = MONS_SERPENT_OF_HELL_TARTARUS;
             break;
-        default: ; // if it spawns out of Hell (sprint, wizmode), use Gehenna
+        default: ; // if it spawns out of Demon Dims (sprint, wizmode), use Gehenna
         }
     }
 

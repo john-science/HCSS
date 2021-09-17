@@ -189,7 +189,7 @@ static bool _is_feature_fudged(char32_t glyph, const coord_def& where)
         return feat_is_portal_exit(grd(where))
                || grd(where) == DNGN_EXIT_ABYSS
                || grd(where) == DNGN_EXIT_PANDEMONIUM
-               || grd(where) == DNGN_ENTER_HELL && player_in_hell();
+               || grd(where) == DNGN_ENTER_DEMON && player_in_demon();
     }
     else if (glyph == '>')
     {

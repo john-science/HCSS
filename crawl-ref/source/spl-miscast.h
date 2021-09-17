@@ -21,7 +21,7 @@ enum nothing_happens_when_type
 enum miscast_source
 {
     ZOT_TRAP_MISCAST,
-    HELL_EFFECT_MISCAST,
+    DEMON_EFFECT_MISCAST,
     WIELD_MISCAST,
     MELEE_MISCAST,
     SPELL_MISCAST,

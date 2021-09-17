@@ -100,8 +100,8 @@ static level_id _Src_Level;
 // Remember the last place explore stopped because autopickup failed.
 static coord_def explore_stopped_pos;
 
-// The place in the Vestibule of Hell where all portals to Hell land.
-static level_pos travel_hell_entry;
+// The place in the Vestibule of Demon Dimensions where all portals to Demon land.
+static level_pos travel_dd_entry;
 
 static string trans_travel_dest;
 
@@ -1870,8 +1870,8 @@ static int _get_nearest_level_depth(uint8_t branch)
 {
     int depth = 1;
 
-    // Hell needs special treatment, because we can't walk up
-    // Hell and its branches to the main dungeon.
+    // Demon Dimensions needs special treatment, because we can't walk up
+    // Demon Dimensions and its branches to the main dungeon.
     if (branch == BRANCH_DEPTHS
         && (player_in_branch(BRANCH_VESTIBULE)
             || player_in_branch(BRANCH_COCYTUS)
@@ -1879,7 +1879,7 @@ static int _get_nearest_level_depth(uint8_t branch)
             || player_in_branch(BRANCH_DIS)
             || player_in_branch(BRANCH_GEHENNA)))
     {
-        // BUG: hell gates in the Lair
+        // BUG: demon dimension gates in the Lair
         return brentry[BRANCH_VESTIBULE].depth;
     }
 
@@ -3102,7 +3102,7 @@ void LevelInfo::update_stair(const coord_def& stairpos, const level_pos &p,
         if (!guess && p.id.branch == BRANCH_VESTIBULE
             && id.branch == BRANCH_DEPTHS)
         {
-            travel_hell_entry = p;
+            travel_dd_entry = p;
         }
 
         // All branch stairs land on the same place on the destination level,
@@ -3259,9 +3259,9 @@ void LevelInfo::correct_stair_list(const vector<coord_def> &s)
             si.destination.id = level_id::get_next_level_id(pos);
             if (si.destination.id.branch == BRANCH_VESTIBULE
                 && id.branch == BRANCH_DEPTHS
-                && travel_hell_entry.is_valid())
+                && travel_dd_entry.is_valid())
             {
-                si.destination = travel_hell_entry;
+                si.destination = travel_dd_entry;
             }
             if (!env.map_knowledge(pos).seen())
                 si.type = stair_info::MAPPED;
@@ -3371,10 +3371,10 @@ void LevelInfo::load(reader& inf, int minorVersion)
 
         if (id.branch == BRANCH_DUNGEON
             && si.destination.id.branch == BRANCH_VESTIBULE
-            && !travel_hell_entry.is_valid()
+            && !travel_dd_entry.is_valid()
             && si.destination.is_valid())
         {
-            travel_hell_entry = si.destination;
+            travel_dd_entry = si.destination;
         }
     }
 
@@ -3396,8 +3396,8 @@ void LevelInfo::load(reader& inf, int minorVersion)
 
 void LevelInfo::fixup()
 {
-    // The only fixup we do now is for the hell entry.
-    if (id.branch != BRANCH_DEPTHS || !travel_hell_entry.is_valid())
+    // The only fixup we do now is for the demon dimension entry.
+    if (id.branch != BRANCH_DEPTHS || !travel_dd_entry.is_valid())
         return;
 
     for (stair_info &si : stairs)
@@ -3405,7 +3405,7 @@ void LevelInfo::fixup()
         if (si.destination.id.branch == BRANCH_VESTIBULE
             && !si.destination.is_valid())
         {
-            si.destination = travel_hell_entry;
+            si.destination = travel_dd_entry;
         }
     }
 }
@@ -3680,7 +3680,7 @@ void TravelCache::load(reader& inf, int minorVersion)
         id.load(inf);
 
         LevelInfo linfo;
-        // Must set id before load, or travel_hell_entry will not be
+        // Must set id before load, or travel_dd_entry will not be
         // correctly set.
         linfo.id = id;
         linfo.load(inf, minorVersion);
@@ -4016,7 +4016,7 @@ bool explore_discoveries::merge_feature(
 static bool _feat_is_branchlike(dungeon_feature_type feat)
 {
     return feat_is_branch_entrance(feat)
-        || feat == DNGN_ENTER_HELL
+        || feat == DNGN_ENTER_DEMON
         || feat == DNGN_ENTER_ABYSS
         || feat == DNGN_EXIT_THROUGH_ABYSS
         || feat == DNGN_ENTER_PANDEMONIUM

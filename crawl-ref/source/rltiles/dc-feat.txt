@@ -326,11 +326,11 @@ enter_crypt DNGN_ENTER_CRYPT
 exit_crypt DNGN_EXIT_CRYPT
 enter_tomb DNGN_ENTER_TOMB
 exit_tomb DNGN_EXIT_TOMB
-enter_hell1 DNGN_ENTER_HELL
-enter_hell2
-enter_hell3
+enter_demon1 DNGN_ENTER_DEMON
+enter_demon2
+enter_demon3
 return_vestibule DNGN_RETURN_VESTIBULE
-stone_arch_hell DNGN_STONE_ARCH_HELL
+stone_arch_demon DNGN_STONE_ARCH_DEMON
 enter_dis1 DNGN_ENTER_DIS
 enter_dis2
 enter_dis3
@@ -343,7 +343,7 @@ enter_cocytus3
 enter_tartarus1 DNGN_ENTER_TARTARUS
 enter_tartarus2
 enter_tartarus3
-return_hell DNGN_RETURN_HELL
+return_demon DNGN_RETURN_DEMON
 
 enter_abyss1 DNGN_ENTER_ABYSS
 enter_abyss2

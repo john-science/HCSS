@@ -512,7 +512,7 @@ bool MiscastEffect::_big_cloud(cloud_type cl_type, int cloud_pow, int size,
 
 bool MiscastEffect::_paralyse(int dur)
 {
-    if (special_source != HELL_EFFECT_MISCAST)
+    if (special_source != DEMON_EFFECT_MISCAST)
     {
         target->paralyse(act_source, dur, cause);
         return true;
@@ -523,7 +523,7 @@ bool MiscastEffect::_paralyse(int dur)
 
 bool MiscastEffect::_sleep(int dur)
 {
-    if (!target->can_sleep() || special_source == HELL_EFFECT_MISCAST)
+    if (!target->can_sleep() || special_source == DEMON_EFFECT_MISCAST)
         return false;
 
     if (target->is_player())
@@ -607,7 +607,7 @@ bool MiscastEffect::_create_monster(monster_type what, int abj_deg,
     data.set_summoned(nullptr, abj_deg, SPELL_NO_SPELL, god);
     data.set_non_actor_summoner(cause);
 
-    if (special_source != HELL_EFFECT_MISCAST)
+    if (special_source != DEMON_EFFECT_MISCAST)
         data.extra_flags |= (MF_NO_REWARD | MF_HARD_RESET);
 
     // hostile_at() assumes the monster is hostile to the player,
@@ -768,7 +768,7 @@ void MiscastEffect::_charms(int severity)
 
     case 3:         // potentially lethal
         target->slow_down(act_source, 18);
-        if (special_source == HELL_EFFECT_MISCAST)
+        if (special_source == DEMON_EFFECT_MISCAST)
             all_msg = "Magic is drained from your body!";
         you_msg        = "Magic surges out from your body!";
         mon_msg_seen   = "Magic surges out from @the_monster@!";

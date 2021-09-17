@@ -34,7 +34,7 @@ Losy świata zależą od Kuli Zot!  Idź i zdobądź ją!
 
 Podobno legendarna Kula Zot znajduje się w tych lochach — lecz nikt jeszcze jej nie zdobył.
 %%%%
-hell_effect
+demon_effect
 
 {{
 if you.can_smell() then

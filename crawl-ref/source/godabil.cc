@@ -4429,7 +4429,7 @@ bool gozag_call_merchant()
 
 branch_type gozag_fixup_branch(branch_type branch)
 {
-    if (is_hell_subbranch(branch))
+    if (is_demon_subbranch(branch))
         return BRANCH_VESTIBULE;
 
     return branch;
@@ -4558,15 +4558,15 @@ bool gozag_bribe_branch()
                 branch_type stair_branch = gozag_fixup_branch(it->id);
                 string prompt =
                     make_stringf("Do you want to bribe the denizens of %s?",
-                                 stair_branch == BRANCH_VESTIBULE ? "the Hells"
+                                 stair_branch == BRANCH_VESTIBULE ? "the Vestibule"
                                  : branches[stair_branch].longname);
                 if (yesno(prompt.c_str(), true, 'n'))
                 {
                     branch = stair_branch;
                     prompted = true;
                 }
-                // If we're in the Vestibule, standing on a portal to a Hell
-                // sub-branch, don't prompt twice to bribe the Hells.
+                // If we're in the Vestibule, standing on a portal to a Demon Dimension
+                // sub-branch, don't prompt twice to bribe the Demon Dimensions.
                 else if (branch == stair_branch)
                 {
                     canned_msg(MSG_OK);
@@ -4585,7 +4585,7 @@ bool gozag_bribe_branch()
 
     string prompt =
         make_stringf("Do you want to bribe the denizens of %s?",
-                     branch == BRANCH_VESTIBULE ? "the Hells" :
+                     branch == BRANCH_VESTIBULE ? "the Vestibule" :
                      branches[branch].longname);
 
     if (prompted || yesno(prompt.c_str(), true, 'n'))
@@ -4594,7 +4594,7 @@ bool gozag_bribe_branch()
         you.attribute[ATTR_GOZAG_GOLD_USED] += bribe_amount;
         branch_bribe[branch] += bribe_amount;
         string msg = make_stringf(" spreads your bribe to %s!",
-                                  branch == BRANCH_VESTIBULE ? "the Hells" :
+                                  branch == BRANCH_VESTIBULE ? "the Vestibule" :
                                   branches[branch].longname);
         simple_god_message(msg.c_str());
         add_daction(DACT_SET_BRIBES);

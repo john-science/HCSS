@@ -278,7 +278,7 @@ The walls of reality are thinnest on Halloween night. So the priests of all the 
 religions pulled together and sent you, alive, into Hell.
 Destroy the devil, and free the dead from an eternity of torment.
 %%%%
-hell_effect_quiet
+demon_effect_quiet
 
 {{
 if you.can_smell() then
@@ -316,7 +316,7 @@ You sense a hostile presence.
 
 "We have you now!"
 %%%%
-hell_effect_noisy
+demon_effect_noisy
 
 A gut-wrenching scream fills the air!
 

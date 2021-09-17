@@ -11,7 +11,7 @@
 #  provide a lot of cover for players.  The vaults do not appear
 #  individually.  Sometimes this serial vault contains a simple
 #  temple with a random alter.  There is also a chance of a
-#  portal to Hell, Pan, or the Abyss on deep (D:21-27) levels.
+#  portal to Demon, Pan, or the Abyss on deep (D:21-27) levels.
 #
 # There is a small chance (3.3% per selection = 0.1% total) that
 #  this serial vault will change the floor and rock wall tiles.
@@ -22,7 +22,7 @@
 # The following standard substitutions are used:
 #  -> _JKLMN: probablities of floor tiles
 #  -> Ipqrs: probablities of pillars
-#  -> ?-OP: Hell/Pan/Abyss-themed pillar/floor/portal/portal
+#  -> ?-OP: Demon/Pan/Abyss-themed pillar/floor/portal/portal
 #
 
 {{
@@ -239,9 +239,9 @@ G.T.G
 G.G.G
 ENDMAP
 
-# These are vaults containing portals to Hell, Pandemonium, or
-#  the Abyss.  They only appear on deep maps, and then only
-#  sometimes.  They appear in addition to any other portals.
+# These are vaults containing portals to the Demon Dimensions,
+# Pandemonium, or the Abyss. They only appear on deep maps, and
+# then only sometimes. They appear in addition to any other portals.
 #
 # (4 vaults)
 

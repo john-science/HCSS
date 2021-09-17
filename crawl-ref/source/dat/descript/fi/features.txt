@@ -4,7 +4,7 @@ A gate leading back out of this place
 :name Portti ulos tästä paikasta
 Tämä portti johtaa takaisin luolastoon.
 %%%%
-A gateway to Hell
+A gateway to the Demon Dimensions
 
 Tämä portti vie Helvetin eteiseen. Harvat menisivät sinne vapaaehtoisesti.
 %%%%

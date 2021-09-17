@@ -85,7 +85,7 @@ struct mgen_data
     string          mname;
 
     // This is used to account for non-actor summoners. Blasted by an Ice
-    // Fiend ... summoned by the effects of Hell.
+    // Fiend ... summoned by the effects of the Demon Dimensions.
     string          non_actor_summoner;
 
     // This simply stores the initial shape-shifter type.

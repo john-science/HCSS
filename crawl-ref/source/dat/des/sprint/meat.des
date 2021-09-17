@@ -411,7 +411,7 @@ KFEAT:     _ = altar_makhleb
 KFEAT:     ^ = permanent teleport trap
 KFEAT:     x = rock_wall
 COLOUR:    xX = red
-TILE:      xX = wall_hell
+TILE:      xX = wall_demon
 FTILE:     1234+'*&J = floor_demonic_red
 : blood_monster_definitions(_G)
 : weapon_creation(_G)

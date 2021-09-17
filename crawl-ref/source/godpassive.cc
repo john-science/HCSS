@@ -89,8 +89,8 @@ static const vector<god_passive> god_passives[] =
         { -1, passive_t::resist_mutation, "GOD can shield you from mutations" },
         { -1, passive_t::resist_polymorph,
               "GOD can protect you from unnatural transformations" },
-        { -1, passive_t::resist_hell_effects,
-              "GOD can protect you from effects of Hell" },
+        { -1, passive_t::resist_demon_effects,
+              "GOD can protect you from effects of the Demon Dimensions" },
         { -1, passive_t::warn_shapeshifter,
               "GOD will warn you about shapeshifters" },
     },
@@ -686,7 +686,7 @@ static bool is_ash_portal(dungeon_feature_type feat)
         return true;
     switch (feat)
     {
-    case DNGN_ENTER_HELL:
+    case DNGN_ENTER_DEMON:
     case DNGN_ENTER_BAZAAR:
     case DNGN_ENTER_ABYSS: // for completeness
     case DNGN_EXIT_THROUGH_ABYSS:

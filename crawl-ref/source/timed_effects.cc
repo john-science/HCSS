@@ -58,18 +58,18 @@
 #include "unwind.h"
 
 /**
- * Choose a random, spooky hell effect message, print it, and make a loud noise
+ * Choose a random, spooky demon dimension effect message, print it, and make a loud noise
  * if appropriate. (1/6 chance of loud noise.)
  */
-static void _hell_effect_noise()
+static void _demon_effect_noise()
 {
     const bool loud = one_chance_in(6) && !silenced(you.pos());
-    string msg = getMiscString(loud ? "hell_effect_noisy"
-                                    : "hell_effect_quiet");
+    string msg = getMiscString(loud ? "demon_effect_noisy"
+                                    : "demon_effect_quiet");
     if (msg.empty())
-        msg = "Something hellishly buggy happens.";
+        msg = "Something buggy happens.";
 
-    mprf(MSGCH_HELL_EFFECT, "%s", msg.c_str());
+    mprf(MSGCH_DEMON_EFFECT, "%s", msg.c_str());
     if (loud)
         noisy(15, you.pos());
 }
@@ -78,7 +78,7 @@ static void _hell_effect_noise()
  * Choose a random miscast effect (from a weighted list) & apply it to the
  * player.
  */
-static void _random_hell_miscast()
+static void _random_demon_dim_miscast()
 {
     const spschool_flag_type which_miscast
         = random_choose_weighted(8, SPTYP_NECROMANCY,
@@ -87,15 +87,15 @@ static void _random_hell_miscast()
                                  1, SPTYP_CHARMS,
                                  1, SPTYP_HEXES);
 
-    MiscastEffect(&you, nullptr, HELL_EFFECT_MISCAST, which_miscast,
+    MiscastEffect(&you, nullptr, DEMON_EFFECT_MISCAST, which_miscast,
                   4 + random2(6), random2avg(97, 3),
-                  "the effects of Hell");
+                  "the effects of the Demon Dimensions");
 }
 
-/// The thematically appropriate hell effects for a given hell branch.
-struct hell_effect_spec
+/// The thematically appropriate demon dimension effects for a given demon branch.
+struct demon_effect_spec
 {
-    /// The type of greater demon to spawn from hell effects.
+    /// The type of greater demon to spawn from demonic effects.
     vector<monster_type> fiend_types;
     /// The appropriate theme of miscast effects to toss at the player.
     spschool_flag_type miscast_type;
@@ -103,8 +103,8 @@ struct hell_effect_spec
     vector<pair<monster_type, int>> minor_summons;
 };
 
-/// Hell effects for each branch of hell
-static map<branch_type, hell_effect_spec> hell_effects_by_branch =
+/// Demonic effects for each branch of the demon dimensions
+static map<branch_type, demon_effect_spec> demon_effects_by_branch =
 {
     { BRANCH_DIS, { {RANDOM_DEMON_GREATER}, SPTYP_EARTH, {
         { RANDOM_MONSTER, 100 }, // TODO
@@ -132,16 +132,16 @@ static map<branch_type, hell_effect_spec> hell_effects_by_branch =
 };
 
 /**
- * Either dump a fiend or a hell-appropriate miscast effect on the player.
+ * Either dump a fiend or a demon-dimension-appropriate miscast effect on the player.
  *
  * 40% chance of fiend, 60% chance of miscast.
  */
-static void _themed_hell_summon_or_miscast()
+static void _themed_demon_summon_or_miscast()
 {
-    const hell_effect_spec *spec = map_find(hell_effects_by_branch,
-                                            you.where_are_you);
+    const demon_effect_spec *spec = map_find(demon_effects_by_branch,
+                                             you.where_are_you);
     if (!spec)
-        die("Attempting to call down a hell effect in a non-hellish branch.");
+        die("Attempting to call down a demon dimension effect in a non-demonish branch.");
 
     if (x_chance_in_y(2, 5))
     {
@@ -149,13 +149,13 @@ static void _themed_hell_summon_or_miscast()
             = spec->fiend_types[random2(spec->fiend_types.size())];
         create_monster(
                        mgen_data::hostile_at(fiend, true, you.pos())
-                       .set_non_actor_summoner("the effects of Hell"));
+                       .set_non_actor_summoner("the effects of the demon dimensions"));
     }
     else
     {
-        MiscastEffect(&you, nullptr, HELL_EFFECT_MISCAST, spec->miscast_type,
+        MiscastEffect(&you, nullptr, DEMON_EFFECT_MISCAST, spec->miscast_type,
                       4 + random2(6), random2avg(97, 3),
-                      "the effects of Hell");
+                      "the effects of the Demon Dimensions");
     }
 }
 
@@ -167,18 +167,18 @@ static void _themed_hell_summon_or_miscast()
  *
  * Can and does summon bands as individual spawns.
  */
-static void _minor_hell_summons()
+static void _minor_demon_dim_summons()
 {
-    hell_effect_spec *spec = map_find(hell_effects_by_branch,
+    demon_effect_spec *spec = map_find(demon_effects_by_branch,
                                       you.where_are_you);
     if (!spec)
-        die("Attempting to call down a hell effect in a non-hellish branch.");
+        die("Attempting to call down a demon dimension effect in a non-demonish branch.");
 
     // Try to summon at least one and up to five random monsters. {dlb}
     mgen_data mg;
     mg.pos = you.pos();
     mg.foe = MHITYOU;
-    mg.non_actor_summoner = "the effects of Hell";
+    mg.non_actor_summoner = "the effects of the Demon Dimensions";
     create_monster(mg);
 
     for (int i = 0; i < 4; ++i)
@@ -194,29 +194,29 @@ static void _minor_hell_summons()
     }
 }
 
-/// Nasty things happen to people who spend too long in Hell.
-static void _hell_effects(int /*time_delta*/)
+/// Nasty things happen to people who spend too long in the Demon Dimensions.
+static void _demon_effects(int /*time_delta*/)
 {
-    if (!player_in_hell())
+    if (!player_in_demon())
         return;
 
     // 50% chance at max piety
-    if (have_passive(passive_t::resist_hell_effects)
+    if (have_passive(passive_t::resist_demon_effects)
         && x_chance_in_y(you.piety, MAX_PIETY * 2) || is_sanctuary(you.pos()))
     {
-        simple_god_message("'s power protects you from the chaos of Hell!");
+        simple_god_message("'s power protects you from the chaos of the Demon Dimensions!");
         return;
     }
 
-    _hell_effect_noise();
+    _demon_effect_noise();
 
     if (one_chance_in(5))
-        _random_hell_miscast();
+        _random_demon_dim_miscast();
     else if (x_chance_in_y(4, 11))
-        _themed_hell_summon_or_miscast();
+        _themed_demon_summon_or_miscast();
 
     if (one_chance_in(4))   // NB: No "else"
-        _minor_hell_summons();
+        _minor_demon_dim_summons();
 }
 
 // This function checks whether we can turn a wall into a floor space and
@@ -956,7 +956,7 @@ struct timed_effect
 static struct timed_effect timed_effects[] =
 {
     { rot_floor_items,               200,   200, true  },
-    { _hell_effects,                 200,   600, false },
+    { _demon_effects,                200,   600, false },
     { nullptr,                         0,     0, false },
     { _handle_magic_contamination,   200,   600, false },
     { nullptr,                         0,     0, false },

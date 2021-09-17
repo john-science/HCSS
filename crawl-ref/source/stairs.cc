@@ -256,18 +256,18 @@ static void _update_travel_cache(const level_id& old_level,
 
         bool guess = false;
         // Ugly hack warning:
-        // The stairs in the Vestibule of Hell exhibit special behaviour:
-        // they always lead back to the dungeon level that the player
+        // The stairs in the Vestibule of Demon Dimensions exhibit special
+        // behaviour: they always lead back to the dungeon level that the player
         // entered the Vestibule from. This means that we need to pretend
         // we don't know where the upstairs from the Vestibule go each time
         // we take it. If we don't, interlevel travel may try to use portals
-        // to Hell as shortcuts between dungeon levels, which won't work,
+        // to the Demon Dimensions as shortcuts between dungeon levels, which won't work,
         // and will confuse the dickens out of the player (well, it confused
         // the dickens out of me when it happened).
         if ((new_level_id == BRANCH_DUNGEON || new_level_id == BRANCH_DEPTHS)
             && old_level == BRANCH_VESTIBULE)
         {
-            old_level_info.clear_stairs(DNGN_EXIT_HELL);
+            old_level_info.clear_stairs(DNGN_EXIT_DEMON);
         }
         else
             old_level_info.update_stair(stair_pos, lp, guess);
@@ -275,9 +275,9 @@ static void _update_travel_cache(const level_id& old_level,
         // We *guess* that going up a staircase lands us on a downstair,
         // and that we can descend that downstair and get back to where we
         // came from. This assumption is guaranteed false when climbing out
-        // of one of the branches of Hell.
+        // of one of the branches of the Demon Dimensions.
         if (new_level_id != BRANCH_VESTIBULE
-            || !is_hell_subbranch(old_level.branch))
+            || !is_demon_subbranch(old_level.branch))
         {
             // Set the new level's stair, assuming arbitrarily that going
             // downstairs will land you on the same upstairs you took to
@@ -419,11 +419,11 @@ static level_id _travel_destination(const dungeon_feature_type how,
         return dest;
 
     // Up and down both work for some portals.
-    // Canonicalize the direction: hell exits into the vestibule are considered
+    // Canonicalize the direction: demon dimenions exits into the vestibule are considered
     // going up; everything else is going down. This mostly affects which way you
     // fall if confused.
     if (feat_is_bidirectional_portal(how))
-        going_up = (how == DNGN_ENTER_HELL && player_in_hell());
+        going_up = (how == DNGN_ENTER_DEMON && player_in_demon());
 
     if (_stair_moves_pre(how))
         return dest;
@@ -571,9 +571,9 @@ void floor_transition(dungeon_feature_type how,
 
     // Some branch specific messages.
     if (old_level.branch == BRANCH_VESTIBULE
-        && !is_hell_subbranch(you.where_are_you))
+        && !is_demon_subbranch(you.where_are_you))
     {
-        mpr("Thank you for visiting Hell. Please come again soon.");
+        mpr("Thank you for visiting the Demon Dimensions. Please come again soon.");
     }
 
     if (how == DNGN_EXIT_ABYSS
@@ -591,9 +591,9 @@ void floor_transition(dungeon_feature_type how,
             more();
     }
 
-    // Fixup exits from the Hell branches.
+    // Fixup exits from the Demon Dimensions branches.
     if (player_in_branch(BRANCH_VESTIBULE)
-        && is_hell_subbranch(old_level.branch))
+        && is_demon_subbranch(old_level.branch))
     {
         how = branches[old_level.branch].entry_stairs;
     }
@@ -847,19 +847,19 @@ level_id stair_destination(dungeon_feature_type feat, const string &dst,
         }
         return level_id(you.where_are_you, you.depth - 1);
 
-    case DNGN_EXIT_HELL:
+    case DNGN_EXIT_DEMON:
         // If set, it would be found as a branch exit.
         if (you.wizard)
         {
             if (for_real)
             {
-                mprf(MSGCH_ERROR, "Error: no Hell exit level, how in the "
+                mprf(MSGCH_ERROR, "Error: no Demon Dimensions exit level, how in the "
                                   "Vestibule did you get here? Let's go to D:1.");
             }
             return level_id(BRANCH_DUNGEON, 1);
         }
         else
-            die("hell exit without return destination");
+            die("demon dimension exit without return destination");
 
     case DNGN_ABYSSAL_STAIR:
         ASSERT(player_in_branch(BRANCH_ABYSS));
@@ -898,8 +898,8 @@ level_id stair_destination(dungeon_feature_type feat, const string &dst,
             die("Invalid destination for portal: %s", err.what());
         }
 
-    case DNGN_ENTER_HELL:
-        if (for_real && !player_in_hell())
+    case DNGN_ENTER_DEMON:
+        if (for_real && !player_in_demon())
             brentry[BRANCH_VESTIBULE] = level_id::current();
         return level_id(BRANCH_VESTIBULE);
 

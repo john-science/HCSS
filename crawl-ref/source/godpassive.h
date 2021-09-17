@@ -135,8 +135,8 @@ enum class passive_t
     /// Polymorph resistance increasing with piety.
     resist_polymorph,
 
-    /// Chance of avoiding hell effects, increasing with piety.
-    resist_hell_effects,
+    /// Chance of avoiding demon dimension effects, increasing with piety.
+    resist_demon_effects,
 
     /// Warning about shapeshifters when they come to view.
     warn_shapeshifter,

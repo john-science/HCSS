@@ -501,9 +501,9 @@ A piece of metal headgear.
 %%%%
 horn of Geryon
 
-The horn belonging to Geryon, guardian of the Vestibule of Hell. It has the
-power to call forth demonic beasts. With high Evocations skill, it will call
-greater numbers of beasts, with lower chances of those beasts being hostile.
+The horn belonging to Geryon, guardian of the Vestibule of Demon Dimensions.
+It has the power to call forth demons. With high Evocations skill, it will
+call greater numbers of beasts, with lower chances of those them being hostile.
 %%%%
 hunting sling
 

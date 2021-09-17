@@ -144,7 +144,7 @@ bool feat_is_staircase(dungeon_feature_type feat)
  */
 FEATFN_MEMOIZED(feat_is_branch_entrance, feat)
 {
-    if (feat == DNGN_ENTER_HELL)
+    if (feat == DNGN_ENTER_DEMON)
         return false;
 
     for (branch_iterator it; it; ++it)
@@ -163,7 +163,7 @@ FEATFN_MEMOIZED(feat_is_branch_entrance, feat)
  */
 FEATFN_MEMOIZED(feat_is_branch_exit, feat)
 {
-    if (feat == DNGN_ENTER_HELL || feat == DNGN_EXIT_HELL)
+    if (feat == DNGN_ENTER_DEMON || feat == DNGN_EXIT_DEMON)
         return false;
 
     for (branch_iterator it; it; ++it)
@@ -250,8 +250,8 @@ bool feat_is_travelable_stair(dungeon_feature_type feat)
            || feat_is_branch_entrance(feat)
            || feat_is_branch_exit(feat)
            || feat == DNGN_ENTER_BAZAAR
-           || feat == DNGN_ENTER_HELL
-           || feat == DNGN_EXIT_HELL;
+           || feat == DNGN_ENTER_DEMON
+           || feat == DNGN_EXIT_DEMON;
 }
 
 /** Is this feature an escape hatch?
@@ -286,8 +286,8 @@ bool feat_is_gate(dungeon_feature_type feat)
     case DNGN_EXIT_VAULTS:
     case DNGN_ENTER_ZOT:
     case DNGN_EXIT_ZOT:
-    case DNGN_ENTER_HELL:
-    case DNGN_EXIT_HELL:
+    case DNGN_ENTER_DEMON:
+    case DNGN_EXIT_DEMON:
     case DNGN_ENTER_DIS:
     case DNGN_ENTER_GEHENNA:
     case DNGN_ENTER_COCYTUS:
@@ -319,15 +319,15 @@ command_type feat_stair_direction(dungeon_feature_type feat)
 
     switch (feat)
     {
-    case DNGN_ENTER_HELL:
-        return player_in_hell() ? CMD_GO_UPSTAIRS : CMD_GO_DOWNSTAIRS;
+    case DNGN_ENTER_DEMON:
+        return player_in_demon() ? CMD_GO_UPSTAIRS : CMD_GO_DOWNSTAIRS;
 
     case DNGN_STONE_STAIRS_UP_I:
     case DNGN_STONE_STAIRS_UP_II:
     case DNGN_STONE_STAIRS_UP_III:
     case DNGN_ESCAPE_HATCH_UP:
     case DNGN_ENTER_SHOP:
-    case DNGN_EXIT_HELL:
+    case DNGN_EXIT_DEMON:
     case DNGN_EXIT_BAZAAR:
         return CMD_GO_UPSTAIRS;
 
@@ -583,8 +583,8 @@ bool feat_is_bidirectional_portal(dungeon_feature_type feat)
            && feat != DNGN_EXIT_ZOT
            && feat != DNGN_ENTER_VAULTS
            && feat != DNGN_EXIT_VAULTS
-           && feat != DNGN_EXIT_HELL
-           && feat != DNGN_ENTER_HELL;
+           && feat != DNGN_EXIT_DEMON
+           && feat != DNGN_ENTER_DEMON;
 }
 
 /** Is this feature a type of fountain?
@@ -739,7 +739,7 @@ coord_def get_random_stair()
         const dungeon_feature_type feat = grd(*ri);
         if (feat_is_travelable_stair(feat) && !feat_is_escape_hatch(feat)
             && feat != DNGN_EXIT_DUNGEON
-            && feat != DNGN_EXIT_HELL)
+            && feat != DNGN_EXIT_DEMON)
         {
             st.push_back(*ri);
         }
@@ -1926,10 +1926,10 @@ bool is_boring_terrain(dungeon_feature_type feat)
     if (feat_is_altar(feat) && player_in_branch(BRANCH_TEMPLE))
         return true;
 
-    // Only note the first entrance to the Abyss/Pan/Hell
+    // Only note the first entrance to the Abyss/Pan/Demon Dims
     // which is found.
     if ((feat == DNGN_ENTER_ABYSS || feat == DNGN_ENTER_PANDEMONIUM
-         || feat == DNGN_ENTER_HELL)
+         || feat == DNGN_ENTER_DEMON)
          && overview_knows_num_portals(feat) > 1)
     {
         return true;

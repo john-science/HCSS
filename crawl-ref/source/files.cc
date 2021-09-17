@@ -765,16 +765,16 @@ static int _get_dest_stair_type(branch_type old_branch,
         return DNGN_EXIT_DUNGEON;
     }
 
-    if (stair_taken == DNGN_EXIT_HELL)
-        return DNGN_ENTER_HELL;
+    if (stair_taken == DNGN_EXIT_DEMON)
+        return DNGN_ENTER_DEMON;
 
-    if (stair_taken == DNGN_ENTER_HELL)
-        return DNGN_EXIT_HELL;
+    if (stair_taken == DNGN_ENTER_DEMON)
+        return DNGN_EXIT_DEMON;
 
-    if (player_in_hell() && feat_is_stone_stair_down(stair_taken))
+    if (player_in_demon() && feat_is_stone_stair_down(stair_taken))
     {
         find_first = false;
-        return DNGN_ENTER_HELL;
+        return DNGN_ENTER_DEMON;
     }
 
     if (feat_is_stone_stair(stair_taken))
@@ -801,7 +801,7 @@ static int _get_dest_stair_type(branch_type old_branch,
         || stair_taken == DNGN_ENTER_COCYTUS
         || stair_taken == DNGN_ENTER_TARTARUS)
     {
-        return player_in_hell() ? DNGN_ENTER_HELL : stair_taken;
+        return player_in_demon() ? DNGN_ENTER_DEMON : stair_taken;
     }
 
     if (feat_is_branch_exit(stair_taken))

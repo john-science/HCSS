@@ -100,7 +100,7 @@ void initialise_branch_depths()
         }
     }
 
-    branch_type hell_branch[] =
+    branch_type demon_branch[] =
     {
         BRANCH_DIS,
         BRANCH_TARTARUS,
@@ -108,12 +108,12 @@ void initialise_branch_depths()
         BRANCH_GEHENNA
     };
 
-    branch_type enabled_hell = random_choose(BRANCH_DIS, BRANCH_TARTARUS,
+    branch_type enabled_demon = random_choose(BRANCH_DIS, BRANCH_TARTARUS,
     BRANCH_COCYTUS, BRANCH_GEHENNA);
 
-    for (branch_type disabled : hell_branch)
+    for (branch_type disabled : demon_branch)
     {
-        if (branches[disabled].shortname != branches[enabled_hell].shortname)
+        if (branches[disabled].shortname != branches[enabled_demon].shortname)
         {
             dprf("Disabling branch: %s", branches[disabled].shortname);
             brentry[disabled].clear();

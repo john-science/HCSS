@@ -157,7 +157,7 @@ bool overview_knows_portal(branch_type portal)
     return false;
 }
 
-// Ever used only for Pan, Abyss and Hell.
+// Ever used only for Pan, Abyss and Demon.
 int overview_knows_num_portals(dungeon_feature_type portal)
 {
     int num = 0;
@@ -623,7 +623,7 @@ static void _seen_staircase(const coord_def& pos)
     // Only handles stairs, not gates or arches
     // Don't worry about:
     //   - stairs returning to dungeon - predictable
-    //   - entrances to the hells - always in vestibule
+    //   - entrances to the demon dimensions - always in vestibule
 
     // If the branch has already been entered, then the new entry is obviously
     // a mimic, don't add it.
@@ -654,7 +654,7 @@ static void _seen_portal(dungeon_feature_type which_thing, const coord_def& pos)
         || which_thing == DNGN_ENTER_ABYSS
         || which_thing == DNGN_ENTER_PANDEMONIUM
         || which_thing == DNGN_ENTER_BAZAAR
-        || which_thing == DNGN_ENTER_HELL && !player_in_hell())
+        || which_thing == DNGN_ENTER_DEMON && !player_in_demon())
     {
         level_pos where(level_id::current(), pos);
         portals_present[where] = stair_destination(pos).branch;

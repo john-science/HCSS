@@ -602,9 +602,9 @@ bool is_map_persistent()
            || env.properties.exists(FORCE_MAPPABLE_KEY);
 }
 
-bool player_in_hell()
+bool player_in_demon()
 {
-    return is_hell_subbranch(you.where_are_you);
+    return is_demon_subbranch(you.where_are_you);
 }
 
 /**

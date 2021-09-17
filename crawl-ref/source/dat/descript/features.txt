@@ -379,8 +379,8 @@ A gate leading to the Realm of Zot.
 %%%%
 A gateway back into the Dungeon
 
-A gate which allows a feat popularly thought to be impossible: escaping Hell
-alive.
+A gate which allows a feat popularly thought to be impossible: escaping the
+demon dimensions alive.
 %%%%
 A gateway leading out of the Abyss
 
@@ -400,10 +400,10 @@ A gateway to the ashen valley of Gehenna
 
 A gateway leading to Gehenna.
 %%%%
-A gateway to Hell
+A gateway to the Demon Dimensions
 
-A gateway leading to the Vestibule of Hell. Few are permitted to enter
-voluntarily. The Orb of Zot will force the gateway to give you passage.
+A gateway leading to the Vestibule of Demon Dimensions. Few are permitted to
+enter voluntarily. The Orb of Zot will force the gateway to give you passage.
 %%%%
 A gateway to the Iron City of Dis
 

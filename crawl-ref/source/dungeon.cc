@@ -500,7 +500,7 @@ void map_stairs_down()
         || grd(*ri) == DNGN_ENTER_SLIME || grd(*ri) == DNGN_ENTER_SHOALS
         || grd(*ri) == DNGN_ENTER_SWAMP || grd(*ri) == DNGN_ENTER_SNAKE
         || grd(*ri) == DNGN_ENTER_SPIDER || grd(*ri) == DNGN_ENTER_ORC
-        || grd(*ri) == DNGN_ENTER_ZOT || grd(*ri) == DNGN_ENTER_HELL
+        || grd(*ri) == DNGN_ENTER_ZOT || grd(*ri) == DNGN_ENTER_DEMON
         || grd(*ri) == DNGN_EXIT_DUNGEON || grd(*ri) == DNGN_ENTER_DIS
         || grd(*ri) == DNGN_ENTER_GEHENNA || grd(*ri) == DNGN_ENTER_COCYTUS
         || grd(*ri) == DNGN_ENTER_TARTARUS || grd(*ri) == DNGN_ENTER_ELF)
@@ -817,7 +817,7 @@ static bool _is_perm_down_stair(const coord_def &c)
     case DNGN_STONE_STAIRS_DOWN_I:
     case DNGN_STONE_STAIRS_DOWN_II:
     case DNGN_STONE_STAIRS_DOWN_III:
-    case DNGN_EXIT_HELL:
+    case DNGN_EXIT_DEMON:
     case DNGN_EXIT_PANDEMONIUM:
     case DNGN_TRANSIT_PANDEMONIUM:
     case DNGN_EXIT_ABYSS:
@@ -849,7 +849,7 @@ static bool _is_upwards_exit_stair(const coord_def &c)
     case DNGN_EXIT_BAZAAR:
     case DNGN_EXIT_ABYSS:
         return true;
-    case DNGN_ENTER_HELL:
+    case DNGN_ENTER_DEMON:
         return parent_branch(you.where_are_you) == BRANCH_VESTIBULE;
     default:
         return false;
@@ -878,7 +878,7 @@ static bool _is_exit_stair(const coord_def &c)
     case DNGN_EXIT_BAZAAR:
     case DNGN_EXIT_ABYSS:
         return true;
-    case DNGN_ENTER_HELL:
+    case DNGN_ENTER_DEMON:
         return parent_branch(you.where_are_you) == BRANCH_VESTIBULE;
     default:
         return false;
@@ -994,14 +994,14 @@ int dgn_count_disconnected_zones(bool choose_stairless,
                                        fill);
 }
 
-static void _fixup_hell_stairs()
+static void _fixup_demon_stairs()
 {
     for (rectangle_iterator ri(1); ri; ++ri)
     {
         if (feat_is_stone_stair_up(grd(*ri))
             || grd(*ri) == DNGN_ESCAPE_HATCH_UP)
         {
-            _set_grd(*ri, DNGN_ENTER_HELL);
+            _set_grd(*ri, DNGN_ENTER_DEMON);
         }
     }
 }
@@ -1362,7 +1362,7 @@ static int _num_mons_wanted()
         mon_wanted = roll_dice(3, 7);
     }
 
-    if (player_in_hell())
+    if (player_in_demon())
         mon_wanted += roll_dice(3, 6);
 
     if (mon_wanted > 60)
@@ -2375,7 +2375,7 @@ static void _build_dungeon_level(dungeon_feature_type dest_stairs_type)
             // Place any branch entries vaultlessly
             _place_branch_entrances(false);
             // Still place chance vaults - important things like Abyss,
-            // Hell, Pan entries are placed this way
+            // Vestibule, Pan entries are placed this way
             _place_chance_vaults();
         }
 
@@ -2421,8 +2421,8 @@ static void _build_dungeon_level(dungeon_feature_type dest_stairs_type)
         _prepare_water();
     }
 
-    if (player_in_hell())
-        _fixup_hell_stairs();
+    if (player_in_demon())
+        _fixup_demon_stairs();
 }
 
 static void _dgn_set_floor_colours()
@@ -3424,7 +3424,7 @@ static void _place_branch_entrances(bool use_vaults)
         branch_entrance_placed[it->id] = false;
         if (!could_be_placed
             && !branch_is_unfinished(it->id)
-            && !is_hell_subbranch(it->id)
+            && !is_demon_subbranch(it->id)
             && ((you.depth >= it->mindepth
                  && you.depth <= it->maxdepth)
                 || level_id::current() == brentry[it->id]))
@@ -3454,9 +3454,9 @@ static void _place_branch_entrances(bool use_vaults)
     // Place actual branch entrances.
     for (branch_iterator it; it; ++it)
     {
-        // Vestibule and hells are placed by other means.
+        // Vestibule and Demon Dims are placed by other means.
         // Likewise, if we already have an entrance, keep going.
-        if (it->id >= BRANCH_VESTIBULE && it->id <= BRANCH_LAST_HELL
+        if (it->id >= BRANCH_VESTIBULE && it->id <= BRANCH_LAST_DEMON
             || branch_entrance_placed[it->id])
         {
             continue;
@@ -3620,7 +3620,7 @@ static void _place_aquatic_in(vector<coord_def> &places, const pop_entry *pop,
             mg.flags |= MG_PATROLLING;
 
         if (allow_zombies
-            && player_in_hell()
+            && player_in_demon()
             && mons_class_can_be_zombified(mg.cls))
         {
             static const monster_type lut[3] =

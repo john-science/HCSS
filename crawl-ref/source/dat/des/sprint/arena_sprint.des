@@ -376,7 +376,7 @@ function arena_sprint_get_monster_set(round, boss)
         elseif round <= 20 then
             mon_set = {
                 -- Branches: D, Orc, Elf, Shoals, Swamp, Spider, Snake, Slime,
-                -- Blade, Forest, Crypt, Pan, Tomb, Hell
+                -- Blade, Forest, Crypt, Pan, Tomb, Demon
                 "place:D:$ w:30 / w:1 nikola / w:1 frederick",
                 "place:Orc:$ / orc sorcerer w:3 / orc knight / orc warlord w:3 /\
                     iron troll w:5 / stone giant w:5 / orc high priest w:4",
@@ -396,7 +396,7 @@ function arena_sprint_get_monster_set(round, boss)
                 "place:Crypt:$",
                 "common demon w:30 / greater demon w:5",
                 "mummy / w:5 guardian mummy / w:2 mummy priest / w:5 sphinx",
-                "place:Hell w:30 / geryon w:1",
+                "place:Demon w:30 / geryon w:1",
                 -- Fire, Air, Earth, Water, Death
                 "fire elemental / fire dragon / sun demon / efreet / hell hound /\
                     hell hog / fire crab / fire giant / w:5 balrug / w:1 margery /\
@@ -442,7 +442,7 @@ function arena_sprint_get_monster_set(round, boss)
         elseif round <= 26 then
             mon_set = {
                 -- Branches: Vaults, Orc, Elf, Shoals, Swamp, Spider, Snake, Slime,
-                -- Blade, Forest, Crypt, Pan, Tomb, Hell
+                -- Blade, Forest, Crypt, Pan, Tomb, Demon
                 "vault guard w:50 / ancient lich w:5 / lich / yaktaur /\
                     yaktaur captain w:3 / stone giant / shadow dragon /\
                     titan w:5",
@@ -467,8 +467,8 @@ function arena_sprint_get_monster_set(round, boss)
                     w:2 boris / w:2 curse skull",
                 "any demon w:30 / pandemonium lord",
                 "place:Tomb:$ w:70 / sphinx w:20 / greater mummy",
-                "place:Hell w:25 / geryon w:2 / nellie w:2",
-                -- Elements/hells, Holy
+                "place:Demon w:25 / geryon w:2 / nellie w:2",
+                -- Elements/demons, Holy
                 "place:Dis:$ w:20 / hell sentinel / iron dragon / quicksilver dragon /\
                     iron elemental / stone giant / iron giant",
                 "w:5 orb of fire / brimstone fiend / balrug / hellion /\
@@ -514,7 +514,7 @@ function arena_sprint_get_monster_set(round, boss)
         elseif round <= 36 then
             mon_set = {
                 -- Branches: Vaults, Orc, Elf, Shoals, Swamp, Spider, Snake, Slime,
-                -- Blade, Forest, Crypt, Pan, Tomb, Hell
+                -- Blade, Forest, Crypt, Pan, Tomb, Demon
                 "vault guard / ancient lich w:5 / lich / yaktaur /\
                     yaktaur captain w:3 / stone giant / shadow dragon /\
                     titan w:5 / golden dragon / glowing shapeshifter",
@@ -539,7 +539,7 @@ function arena_sprint_get_monster_set(round, boss)
                 "any demon w:20 / pandemonium lord",
                 "place:Tomb:$ w:30 / sphinx w:20 / greater mummy",
                 "hellephant w:15 / w:1 nellie",
-                -- Elements/hells, Holy
+                -- Elements/demons, Holy
                 "hell sentinel / iron dragon / quicksilver dragon /\
                     iron elemental / stone giant / cacodemon",
                 "orb of fire / brimstone fiend / balrug / hellion /\
@@ -587,7 +587,7 @@ function arena_sprint_get_monster_set(round, boss)
         else -- Because somehow, the above stuff was too easy.
             mon_set = {
                 -- Branches: Vaults, Orc, Elf, Shoals, Swamp, Spider, Snake, Slime,
-                -- Blade, Forest, Crypt, Pan, Tomb, Hell
+                -- Blade, Forest, Crypt, Pan, Tomb, Demon
                 "vault guard / ancient lich w:15 / deep elf master archer w:3 /\
                     titan w:15 / golden dragon w:20 / glowing shapeshifter hd:20",
                 "orc sorcerer / orc warlord w:20 / stone giant w:5 /\
@@ -607,7 +607,7 @@ function arena_sprint_get_monster_set(round, boss)
                 "greater demon / pandemonium lord",
                 "sphinx w:20 / greater mummy",
                 "hellephant w:15 / w:1 nellie",
-                -- Elements/hells, Holy
+                -- Elements/demons, Holy
                 "hell sentinel / quicksilver dragon w:20 / iron elemental / cacodemon",
                 "orb of fire w:20 / brimstone fiend / balrug / hellion w:20 /\
                     fire giant",
