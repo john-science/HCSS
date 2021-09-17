@@ -1044,8 +1044,11 @@ static void _add_missing_branches()
     const level_id lc = level_id::current();
 
     // Could do all just in case, but this seems safer:
-    if (lc == level_id(BRANCH_DEPTHS, 3) || lc == level_id(BRANCH_DUNGEON, 24))
+    if (lc == level_id(BRANCH_ZOT, 3) || lc == level_id(BRANCH_DUNGEON, 24))
+    {
         _ensure_entry(BRANCH_PANDEMONIUM);
+    }
+
     if (player_in_branch(BRANCH_VESTIBULE))
     {
         for (rectangle_iterator ri(0); ri; ++ri)
@@ -3718,7 +3721,7 @@ static void tag_read_you_dungeon(reader &th)
         }
         else
 
-        brentry[j]    = unmarshall_level_id(th);
+        brentry[j] = unmarshall_level_id(th);
 
         if (th.getMinorVersion() < TAG_MINOR_BRIBE_BRANCH)
             branch_bribe[j] = 0;
