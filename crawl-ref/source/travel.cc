@@ -4278,32 +4278,47 @@ bool explore_discoveries::stop_explore() const
     return true;
 }
 
+static void _start_translevel_travel_prompt()
+{
+    // Update information for this level. We need it even for the prompts, so
+    // we can't wait to confirm that the user chose to initiate travel.
+    travel_cache.get_level_info(level_id::current()).update();
+
+    level_pos target = prompt_translevel_target(TPF_DEFAULT_OPTIONS,
+            trans_travel_dest);
+    if (target.id.depth <= 0)
+    {
+        canned_msg(MSG_OK);
+        return;
+    }
+
+    start_translevel_travel(target);
+}
+
 void do_interlevel_travel()
 {
     if (Hints.hints_travel)
         Hints.hints_travel = 0;
 
-    if (you.running.pos == you.pos())
+    if (!can_travel_interlevel())
     {
-        mpr("You're already here!");
-        return;
-    }
-    else if (!you.running.pos.x || !you.running.pos.y)
-    {
-        if (you.travel_x && you.travel_y
-           && you.travel_z == level_id::current())
-            start_travel(coord_def(you.travel_x, you.travel_y));
-        else
-            mpr("Sorry, you can't auto-travel with no destination.");
-        return;
-    }
+        if (you.running.pos == you.pos())
+        {
+            mpr("You're already here!");
+            return;
+        }
+        else if (!you.running.pos.x || !you.running.pos.y)
+        {
+            mpr("Sorry, you can't auto-travel out of here.");
+            return;
+        }
 
         // Don't ask for a destination if you can only travel
         // within level anyway.
-        you.travel_x = you.running.pos.x;
-        you.travel_y = you.running.pos.y;
-        you.travel_z = level_id::current();
         start_travel(you.running.pos);
+    }
+    else
+        _start_translevel_travel_prompt();
 
     if (you.running)
         clear_messages();
