@@ -108,18 +108,6 @@ void initialise_branch_depths()
         BRANCH_GEHENNA
     };
 
-    branch_type enabled_demon = random_choose(BRANCH_DIS, BRANCH_TARTARUS,
-    BRANCH_COCYTUS, BRANCH_GEHENNA);
-
-    for (branch_type disabled : demon_branch)
-    {
-        if (branches[disabled].shortname != branches[enabled_demon].shortname)
-        {
-            dprf("Disabling branch: %s", branches[disabled].shortname);
-            brentry[disabled].clear();
-        }
-    }
-
     for (branch_iterator it; it; ++it)
         brdepth[it->id] = it->numlevels;
 }
