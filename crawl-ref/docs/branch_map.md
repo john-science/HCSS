@@ -24,7 +24,7 @@ You want a map? Here's your map.
   * **Crypt** ![entry](../source/rltiles/dngn/gateways/enter_crypt.png) (The Depths 1-3, 3 levels)
   * **The Abyss** ![entry](../source/rltiles/dngn/gateways/enter_abyss1.png) (The Depths 1-3, 5 endless toroidal levels, ![Abyssal rune](../source/rltiles/item/misc/runes/rune_abyss.png))
   * **The Slime Pits** ![entry](../source/rltiles/dngn/gateways/enter_slime.png) (The Depths 1-3, 5 levels, ![Slimy rune](../source/rltiles/item/misc/runes/rune_slime.png))
-  * **Hell** ![entry](../source/rltiles/dngn/gateways/enter_hell1.png) (The Depths 2-4, 1 level)
+  * **Demon Dimensions** ![entry](../source/rltiles/dngn/gateways/enter_demon1.png) (The Depths 2-4, 1 level)
     * **Cocytus** ![entry](../source/rltiles/dngn/gateways/enter_cocytus1.png) (7 levels, ![Icy rune](../source/rltiles/item/misc/runes/rune_cocytus.png))
     * **Gehenna** ![entry](../source/rltiles/dngn/gateways/enter_gehenna1.png) (7 levels, ![Obsidian rune](../source/rltiles/item/misc/runes/rune_gehenna.png))
     * **Tartarus** ![entry](../source/rltiles/dngn/gateways/enter_tartarus1.png) (7 levels, ![Bone rune](../source/rltiles/item/misc/runes/rune_tartarus.png))
