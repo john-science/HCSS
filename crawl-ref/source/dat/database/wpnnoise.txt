@@ -159,7 +159,7 @@ _rare_chatter_
 
 @Your_weapon@ asks, "Do you need to see the manual?"
 
-@Your_weapon@ asks, "Have you heard of the Orb of Zot?"
+@Your_weapon@ asks, "Have you heard of the Heart of Zot?"
 
 @Your_weapon@ moans, "I feel dizzy."
 

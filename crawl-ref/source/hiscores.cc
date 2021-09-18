@@ -2207,7 +2207,7 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity) const
         break;
 
     case KILLED_BY_WINNING:
-        desc += terse? "escaped" : "Escaped with the Orb";
+        desc += terse? "escaped" : "Escaped with the Heart of Zot";
         if (num_runes < 1)
             desc += "!";
         break;

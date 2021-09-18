@@ -29,4 +29,4 @@ test_item_places(niters,
                    { "Dis:$", "iron rune" },
                    { "Geh:$", "obsidian rune" },
                    { "Tomb:$", "golden rune" },
-                   { "Zot:$", "Orb of Zot" } })
+                   { "Zot:$", "Heart of Zot" } })

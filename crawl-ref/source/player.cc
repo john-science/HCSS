@@ -7543,7 +7543,7 @@ int player_monster_detect_radius()
 
 /**
  * Return true if the player has angered Pandemonium by picking up or moving
- * the Orb of Zot.
+ * the Heart of Zot.
  */
 bool player_on_orb_run()
 {
@@ -7552,7 +7552,7 @@ bool player_on_orb_run()
 }
 
 /**
- * Return true if the player has the Orb of Zot.
+ * Return true if the player has the Heart of Zot.
  * @return  True if the player has the Orb, false otherwise.
  */
 bool player_has_orb()

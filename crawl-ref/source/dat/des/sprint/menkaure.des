@@ -836,7 +836,7 @@ mons_gen_marker:add_triggerer(DgnTriggerer:new {
 lua_marker("e", mons_gen_marker) }}
 SUBST:  A = .
 SUBST:  e = .
-KITEM:  Z = Orb of Zot
+KITEM:  Z = Heart of Zot
 NSUBST: a = 3:1 / 3:2 / 27:$ / *:'
 SUBST:  ' = '........
 KFEAT:  ' = net trap / needle trap / bolt trap / spear trap / arrow trap

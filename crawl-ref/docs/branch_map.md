@@ -29,7 +29,7 @@ You want a map? Here's your map.
     * **Gehenna** ![entry](../source/rltiles/dngn/gateways/enter_gehenna1.png) (7 levels, ![Obsidian rune](../source/rltiles/item/misc/runes/rune_gehenna.png))
     * **Tartarus** ![entry](../source/rltiles/dngn/gateways/enter_tartarus1.png) (7 levels, ![Bone rune](../source/rltiles/item/misc/runes/rune_tartarus.png))
     * **The Iron City of Dis** ![entry](../source/rltiles/dngn/gateways/enter_dis1.png) (7 levels, ![Iron rune](../source/rltiles/item/misc/runes/rune_dis.png))
-* **The Realm of Zot** ![entry](../source/rltiles/dngn/gateways/enter_zot_closed.png) (Depths 5, 5 levels, ![Orb of Zot](../source/rltiles/item/misc/misc_orb.png)) - Need 3 runes to enter
+* **The Realm of Zot** ![entry](../source/rltiles/dngn/gateways/enter_zot_closed.png) (Depths 5, 5 levels, ![Heart of Zot](../source/rltiles/item/misc/misc_orb.png)) - Need 3 runes to enter
   * **Ziggurat** ![entry](../source/rltiles/dngn/gateways/zig_portal.png) Zot 1-3, 27 levels
   * **Pandemonium** ![entry](../source/rltiles/dngn/gateways/enter_pandemonium.png) (Zot 2-4, infinite number of levels, 5 runes ![Demonic rune](../source/rltiles/item/misc/runes/rune_demonic_1.png) ![Glowing rune](../source/rltiles/item/misc/runes/rune_demonic_2.png) ![Magical rune](../source/rltiles/item/misc/runes/rune_demonic_3.png) ![Dark rune](../source/rltiles/item/misc/runes/rune_demonic_4.png) ![Fiery rune](../source/rltiles/item/misc/runes/rune_demonic_5.png))
   * **Tomb** ![entry](../source/rltiles/dngn/gateways/enter_tomb.png) (Zot 2-4, 3 levels, ![Gold rune](../source/rltiles/item/misc/runes/rune_tomb.png))

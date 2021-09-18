@@ -811,7 +811,7 @@ static bool _do_imprison(int pow, const coord_def& where, bool zin)
                     veto_spots.push_back(push_targets.front());
             }
 
-            // don't try to shove the orb of zot into lava and/or crash
+            // don't try to shove the heart of Zot into lava and/or crash
             if (igrd(*ai) != NON_ITEM)
             {
                 coord_def newpos;

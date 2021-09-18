@@ -102,9 +102,9 @@ function arena_sprint_end_round(data)
             end
         end
     elseif data.round_id == 27 then
-        crawl.mpr("The Orb of Zot has appeared in the centre of the arena!", "orb")
+        crawl.mpr("The Heart of Zot has appeared in the centre of the arena!", "orb")
         local p = dgn.find_marker_positions_by_prop("centre_point", 1)[1]
-        dgn.create_item(p.x, p.y, "orb of zot")
+        dgn.create_item(p.x, p.y, "heart of zot")
         data.time_left = 1500 + crawl.random2(500)
     end
 

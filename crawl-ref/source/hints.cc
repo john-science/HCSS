@@ -3511,7 +3511,7 @@ static void _hints_describe_feature(int x, int y, ostringstream& ostr)
     case DNGN_EXIT_DUNGEON:
         ostr << "These stairs lead out of the dungeon. Following them "
                 "will end the game. The only way to win is to "
-                "transport the fabled Orb of Zot outside.";
+                "transport the fabled Heart of Zot outside.";
         break;
 
     case DNGN_STONE_STAIRS_UP_I:

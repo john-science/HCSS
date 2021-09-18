@@ -259,16 +259,17 @@ Lucidity slithers from your feeble grasp.
 welcome_spam
 
 Once in a generation, a living champion is sent to Hell to destroy the evil that lurks at the
-bottom of it all. Obviously, no one has ever succeeded before.
+bottom of it all. You must bring it's heart back into the world to destroy it forever. Obviously,
+no one has ever succeeded before.
 
 You have been charged with fighting to the bottom of Hell and destroying whatever controls it.
-You aren't expected to succeed.
+Bring it's heart back to the world to destroy it forever. You aren't expected to succeed.
 
-Damn the priests that sent you here. But if you can destroy whoever is at the bottom of Hell,
-you will save all life everywhere from an eternity of pain.
+Damn the priests that sent you here. But if you can retrieve the Heart of Zot, they can destroy
+it, and you will have save all life everywhere from an eternity of pain.
 
-It is said that if you can kill whatever awful being exists at the bottom of hell,
-you will free the dead from their eternity of suffering.
+It is said the only way to end Hell, and free all life everywhere, is to bring the Heart of Zot
+back to the living world, where it will burn forever in sunlight.
 %%%%
 welcome_spam Halloween
 
@@ -276,7 +277,8 @@ welcome_spam Halloween
 
 The walls of reality are thinnest on Halloween night. So the priests of all the worlds
 religions pulled together and sent you, alive, into Hell.
-Destroy the devil, and free the dead from an eternity of torment.
+Your mission is retrieve the Heart of Zot, and destroy it in the sunlight of the world.
+This will free the dead from an eternity of torment.
 %%%%
 demon_effect_quiet
 

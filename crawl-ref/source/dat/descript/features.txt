@@ -403,7 +403,7 @@ A gateway leading to Gehenna.
 A gateway to the Demon Dimensions
 
 A gateway leading to the Vestibule of Demon Dimensions. Few are permitted to
-enter voluntarily. The Orb of Zot will force the gateway to give you passage.
+enter voluntarily. The Heart of Zot will force the gateway to give you passage.
 %%%%
 A gateway to the Iron City of Dis
 
@@ -455,7 +455,7 @@ A staircase leading out of the dungeon
 This staircase leads back out of the dungeon.
 
 A staircase leading out of the dungeon. Climbing these stairs will end your
-quest, whether you carry the Orb with you or not.
+quest, whether you carry the Heart with you or not.
 %%%%
 A staircase back to the Crypt
 

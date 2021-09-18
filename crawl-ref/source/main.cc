@@ -632,7 +632,7 @@ static string _welcome_spam_suffix()
     return "";
 }
 
-// A one-liner upon game start to mention the orb.
+// A one-liner upon game start to mention the heart.
 static void _announce_goal_message()
 {
     const string type = _welcome_spam_suffix();
@@ -666,9 +666,9 @@ static void _take_starting_note()
     notestr << you.your_name << " the "
             << species_name(you.species) << " "
             << get_job_name(you.char_class)
-            << " began the quest for the Orb.";
+            << " began the quest for the Heart.";
     take_note(Note(NOTE_MESSAGE, 0, 0, notestr.str()));
-    mark_milestone("begin", "began the quest for the Orb.");
+    mark_milestone("begin", "began the quest for the Heart.");
 
     notestr.str("");
     notestr.clear();
@@ -1736,7 +1736,7 @@ static bool _prompt_stairs(dungeon_feature_type ygrd, bool down, bool shaft)
     if (!down && player_in_branch(BRANCH_ZOT) && you.depth == 5
         && you.chapter == CHAPTER_ANGERED_PANDEMONIUM)
     {
-        if (!yesno("Really leave the Orb behind?", false, 'n'))
+        if (!yesno("Really leave the Heart of Zot behind?", false, 'n'))
         {
             canned_msg(MSG_OK);
             return false;
@@ -2515,7 +2515,7 @@ void world_reacts()
         // for reasonable play to win even with a weak combo while preventing
         // unreasonable levels of scumming.
         mpr("Outside, the world ends.");
-        mpr("Sorry, but your quest for the Orb is now rather pointless. "
+        mpr("Sorry, but your quest for the Heart is now rather pointless. "
             "You quit...");
         // Please do not give it a custom ktyp or make it cool in any way
         // whatsoever, because players are insane. Usually, not being dragged

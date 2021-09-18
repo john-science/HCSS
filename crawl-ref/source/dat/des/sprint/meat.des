@@ -184,8 +184,8 @@
       "--                        </red><lightred>You will die a champion.</lightred><red>                          --\n" ..
       "" .. border_bottom .. "</red>")
       crawl.more()
-      crawl.mpr("The Orb of Zot has appeared underneath you.", "orb")
-      dgn.create_item(you_x, you_y, "orb of zot")
+      crawl.mpr("The Heart of Zot has appeared underneath you.", "orb")
+      dgn.create_item(you_x, you_y, "heart of zot")
       crawl.more()
       return
     end

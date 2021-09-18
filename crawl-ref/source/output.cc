@@ -2677,7 +2677,7 @@ string _status_mut_rune_list(int sw)
 
     // print the Orb
     if (player_has_orb())
-        text += "\n<w>0:</w> Orb of Zot";
+        text += "\n<w>0:</w> Heart of Zot";
 
     // print runes
     vector<string> runes;

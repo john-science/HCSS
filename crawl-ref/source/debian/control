@@ -16,7 +16,7 @@ Recommends: crawl | crawl-tiles
 Description: Dungeon Crawl, a text-based roguelike game (data files)
  Crawl is a fun game in the grand tradition of games like Rogue, Hack, and
  Moria. Your objective is to travel deep into a subterranean cave complex and
- retrieve the Orb of Zot, which is guarded by many horrible and hideous
+ retrieve the Heart of Zot, which is guarded by many horrible and hideous
  creatures.
  .
  These are the data and support files.
@@ -29,7 +29,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, crawl-common (= ${source:Version})
 Description: Dungeon Crawl, a text-based roguelike game
  Crawl is a fun game in the grand tradition of games like Rogue, Hack, and
  Moria. Your objective is to travel deep into a subterranean cave complex and
- retrieve the Orb of Zot, which is guarded by many horrible and hideous
+ retrieve the Heart of Zot, which is guarded by many horrible and hideous
  creatures.
  .
  This is the console version, for tiles, use crawl-tiles instead.
@@ -45,7 +45,7 @@ Recommends: crawl-tiles
 Description: Dungeon Crawl, a text-based roguelike game (tile data files)
  Crawl is a fun game in the grand tradition of games like Rogue, Hack, and
  Moria. Your objective is to travel deep into a subterranean cave complex and
- retrieve the Orb of Zot, which is guarded by many horrible and hideous
+ retrieve the Heart of Zot, which is guarded by many horrible and hideous
  creatures.
  .
  These are the tile graphics.
@@ -58,7 +58,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, crawl-common (= ${source:Version}),
 Description: Dungeon Crawl, a roguelike game, tiles version
  Crawl is a fun game in the grand tradition of games like Rogue, Hack, and
  Moria. Your objective is to travel deep into a subterranean cave complex and
- retrieve the Orb of Zot, which is guarded by many horrible and hideous
+ retrieve the Heart of Zot, which is guarded by many horrible and hideous
  creatures.
  .
  This is the graphical (tiles) version.

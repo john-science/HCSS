@@ -208,8 +208,8 @@ static const vector<god_passive> god_passives[] =
         { -1, passive_t::no_haste, "are protected from inadvertent hurry" },
         { -1, passive_t::slowed, "move less quickly" },
         {  0, passive_t::slow_orb_run,
-              "GOD will aid your escape with the Orb of Zot.",
-              "GOD will no longer aid your escape with the Orb of Zot."
+              "GOD will aid your escape with the Heart of Zot.",
+              "GOD will no longer aid your escape with the Heart of Zot."
         },
         {  0, passive_t::stat_boost,
               "GOD supports your attributes",

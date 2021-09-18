@@ -927,7 +927,7 @@ static void _add_formatted_keyhelp(column_composer &cols)
 
     cols.add_formatted(
             0,
-            "<lightmagenta>0</lightmagenta> : the Orb of Zot\n"
+            "<lightmagenta>0</lightmagenta> : the Heart of Zot\n"
             "    Carry it to the surface and win!\n",
             false);
 

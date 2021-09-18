@@ -404,7 +404,7 @@ orange
 
 Eine köstliche, saftige und orangene Frucht.
 %%%%
-orb of zot
+heart of zot
 
 Sobald du zur Oberfläche mit diesem unschätzbaren Artefakt geflüchtet bist, ist
 deine Suche vorbei.

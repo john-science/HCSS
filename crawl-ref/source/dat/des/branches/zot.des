@@ -2246,7 +2246,7 @@ LROCKCOL:   lightmagenta
 LFLOORTILE: floor_rough_magenta
 LROCKTILE:  wall_zot_lightmagenta
 
-KITEM:    Z = Orb of Zot
+KITEM:    Z = Heart of Zot
 
 validate {{ return has_exit_from_glyph('Z') }}
 

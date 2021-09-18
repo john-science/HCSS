@@ -2083,7 +2083,7 @@ ENDMAP
 NAME:    final_vault
 TAGS:    the_final_vault
 KMONS:   98 = patrolling orb guardian
-KITEM:   8 = orb of zot
+KITEM:   8 = heart of zot
 SUBST:   0 = 65., 7 = 5.
 COLOUR:  v = lightmagenta
 TILE:    v = dngn_metal_wall_magenta

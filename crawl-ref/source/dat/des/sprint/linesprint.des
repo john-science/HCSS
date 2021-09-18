@@ -888,7 +888,7 @@ KMONS:    5 = electric golem
 KMONS:    6 = shadow dragon / golden dragon /\
               killer klown / moth of wrath / place:Zot:$
 KMONS:    7 = moth of wrath
-KITEM:    7 = orb of zot
+KITEM:    7 = heart of zot
 KMONS:    8 = moth of wrath
 SUBST:    0 = 122345666
 COLOUR:   123456780 = magenta

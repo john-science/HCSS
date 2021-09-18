@@ -1117,7 +1117,7 @@ string sub_type_string(const item_def &item, bool known)
     case OBJ_RODS:   return "removed rod";
     case OBJ_MISCELLANY: return misc_type_name(sub_type, known);
     // these repeat as base_type_string
-    case OBJ_ORBS: return "orb of Zot";
+    case OBJ_ORBS: return "heart of Zot";
     case OBJ_CORPSES: return "corpse";
     case OBJ_GOLD: return "gold";
     case OBJ_RUNES: return "rune of Zot";
@@ -1895,7 +1895,7 @@ string item_def::name_aux(description_level_type desc, bool terse, bool ident,
 
     // rearranged 15 Apr 2000 {dlb}:
     case OBJ_ORBS:
-        buff.str("Orb of Zot");
+        buff.str("Heart of Zot");
         break;
 
     case OBJ_RUNES:
@@ -2547,10 +2547,10 @@ static MenuEntry* _fixup_runeorb_entry(MenuEntry* me)
     else if (entry->item->is_type(OBJ_ORBS, ORB_ZOT))
     {
         if (player_has_orb())
-            entry->text = "<magenta>The Orb of Zot</magenta>";
+            entry->text = "<magenta>The Heart of Zot</magenta>";
         else
         {
-            entry->text = "<darkgrey>The Orb of Zot"
+            entry->text = "<darkgrey>The Heart of Zot"
                           " (the Realm of Zot)</darkgrey>";
         }
     }

@@ -1713,7 +1713,7 @@ CHANNEL_NAME can currently be one of these:
    diagnostic      = debugging messages
    error           = error messages
    tutorial        = messages from the tutorial
-   orb             = messages about the Orb of Zot
+   orb             = messages about the Heart of Zot
    hell_effect     = messages about environmental effects of the Hells
    dgl_message     = messages from watchers (online console games only)
 
@@ -2186,7 +2186,7 @@ The following events are logged:
         - Receiving a gift from a god (except Xom)
         - Death of a named orcish ally (when worshipping Beogh)
         - Being able to invoke a godly power for the first time
-        - Picking up a rune, the Orb of Zot, or an artefact for the first time.
+        - Picking up a rune, the Heart of Zot, or an artefact for the first time.
         - Identifying items.
         - Killing OOD or unique monsters (see below)
         - Reaching critical HP levels (see below)

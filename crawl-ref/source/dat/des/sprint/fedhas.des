@@ -52,7 +52,7 @@ KMONS:  u = rat
 KITEM:  j = large rock q:3
 KITEM:  n = amulet of invisibility
 KITEM:  M = any book
-KITEM:  # = Orb of Zot
+KITEM:  # = Heart of Zot
 KFEAT:  Z = any shop
 
 MAP

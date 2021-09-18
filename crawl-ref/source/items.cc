@@ -1106,7 +1106,7 @@ static void _milestone_check(const item_def &item)
     if (item.base_type == OBJ_RUNES)
         mark_milestone("rune", _milestone_rune(item));
     else if (item_is_orb(item))
-        mark_milestone("orb", "found the Orb of Zot!");
+        mark_milestone("orb", "found the Heart of Zot!");
 }
 
 static void _check_note_item(item_def &item)
@@ -1906,7 +1906,7 @@ static void _get_rune(const item_def& it, bool quiet)
 }
 
 /**
- * Place the Orb of Zot into the player's inventory.
+ * Place the Heart of Zot into the player's inventory.
  *
  * @param it      The ORB!
  * @param quiet   Unused.
@@ -1915,7 +1915,7 @@ static void _get_orb(const item_def &it, bool quiet)
 {
     run_animation(ANIMATION_ORB, UA_PICKUP);
 
-    mprf(MSGCH_ORB, "You pick up the Orb of Zot!");
+    mprf(MSGCH_ORB, "You pick up the Heart of Zot!");
 
     env.orb_pos = you.pos(); // can be wrong in wizmode
     orb_pickup_noise(you.pos(), 30);
@@ -4106,7 +4106,7 @@ bool item_def::is_valid(bool iinfo) const
     return true;
 }
 
-// The Orb of Zot and unique runes are considered critical.
+// The Heart of Zot and unique runes are considered critical.
 bool item_def::is_critical() const
 {
     if (!defined())

@@ -332,7 +332,7 @@ orange
 
 Una deliciosa y jugosa fruta anaranjada.
 %%%%
-orb of zot
+heart of zot
 
 Una vez que llegues a la superficie con este artilugio de valor incalculable,
 habrás completado tu misión.

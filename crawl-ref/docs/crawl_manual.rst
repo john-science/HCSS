@@ -15,7 +15,7 @@ A. Overview
 
 Crawl is a fun game in the grand tradition of similar games like Rogue, Hack and
 Moria. The objective is to travel deep into a subterranean cave complex and
-retrieve the Orb of Zot, guarded by many horrible and hideous creatures.
+retrieve the Heart of Zot, guarded by many horrible and hideous creatures.
 
 If you have never played Crawl (or a similar game) before, select the tutorial
 from the starting menu. The tutorial explains the interface in five easy
@@ -343,7 +343,7 @@ other mindless undead, who are too stupid to properly operate stairs) and ghosts
 (who feel they belong to their level).
 
 If you ascend an up staircase on level one, you will leave the dungeon forever;
-if you are carrying the magical Orb of Zot, you win the game by doing this.
+if you are carrying the magical Heart of Zot, you win the game by doing this.
 Otherwise, the game ends, and you lose.
 
 Besides the dungeon you start in, Crawl's dungeon has many branches. All of them
@@ -443,13 +443,13 @@ pressing '?' at the prompt.
 The Goal
 ========================================
 
-Your goal is to locate the Orb of Zot, which is held somewhere deep beneath the
-world's surface. The Orb is an ancient and incredibly powerful artefact, and the
-legends promise great things for anyone brave enough to extract it from the
-fearsome Dungeon. Some say it will grant immortality or even godhood to the one
-who carries it into the sunlight; many undead creatures seek it in the hope that
-it will restore them to life. But then, some people will believe anything. Good
-luck!
+Your goal is to locate the Heart of Zot, which is held somewhere deep beneath the
+world's surface. The legends of all the world relgiions say that if the Heart can
+be taken from Hell and exposed to the clear light of day, Hell will fall. And no
+one will ever be trapped there again. Once in a generation a champion is chosen
+from the living world and sent by the most powerful priests and wizards to the
+underworld to undertake this task. Obviously none have ever succeeded before, or
+even survived. Good luck!
 
 Further Help
 ========================================
