@@ -93,14 +93,6 @@ void initialise_branch_depths()
         brentry[disabled].clear();
     }
 
-    branch_type demon_branch[] =
-    {
-        BRANCH_DIS,
-        BRANCH_TARTARUS,
-        BRANCH_COCYTUS,
-        BRANCH_GEHENNA
-    };
-
     for (branch_iterator it; it; ++it)
         brdepth[it->id] = it->numlevels;
 }
