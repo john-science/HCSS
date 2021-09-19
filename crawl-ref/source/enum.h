@@ -2857,7 +2857,7 @@ enum monster_type                      // menv[].type
     MONS_DONALD,
     MONS_URUG,
     MONS_JOSEPH,
-    MONS_SNORG, // was Anita - 16jan2000 {dlb}
+    MONS_SNORG,
     MONS_ERICA,
     MONS_JOSEPHINE,
     MONS_HAROLD,
@@ -2874,6 +2874,7 @@ enum monster_type                      // menv[].type
     MONS_BORIS,
     MONS_POLYPHEMUS,
     MONS_MURRAY,
+    MONS_ZOT,
     MONS_TIAMAT,
     MONS_ROXANNE,
     MONS_SONJA,

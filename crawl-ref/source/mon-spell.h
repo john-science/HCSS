@@ -1787,6 +1787,15 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
+    // ('Z') The Big Bad - Zot!
+    {  MST_ZOT,
+      {
+       { SPELL_BOLT_OF_FIRE, 32, MON_SPELL_MAGICAL },
+       { SPELL_FIREBALL, 32, MON_SPELL_MAGICAL },
+       { SPELL_MALMUTATE, 16, MON_SPELL_MAGICAL },
+      }
+    },
+
     // ('A') Angels.
     {  MST_MENNAS,
       {

@@ -192,7 +192,7 @@ MAP
 'wc.""".s..1.....=4w.w4=......0.s.""".cw'
 'wc.....c.....cccccc.cccccc.""".c.....cw'
 'wccccccc0....+...."""1...+."x".ccc+cccw'
-'wwwwwwccccccccc.""""""".ccc""".c$$$.ccw'
+'wwwwwwccccccccc.""""""".ccc""".c$'$.ccw'
 ''''''wm.......c.""""""".c4=..1.s$$$2mww'
 ''''''wc.x1x1x2c"""xxx"""cwcccccccccccw''
 ''''''WD"""""""D"""xxx"""+.+^^^^^^^^^+w''
@@ -621,6 +621,31 @@ ccnnccccccccccccc++cc..c
 c111111111111111111.n.]c
 c111111111111111111.n..c
 cccccccccccccccccccccccc
+ENDMAP
+
+###########################
+# Mock Thrown Room
+#
+NAME:   heliophobic_mock_thrown_room
+DEPTH:  Zot, !Zot:$
+TILE:   v = wall_church
+COLOUR: vG'i$ = yellow
+TILE:   G = dngn_golden_statue
+FTILE:  G'Z$ = floor_limestone
+KMONS:  Z = obsidian statue / ice statue / oklob plant
+: set_feature_name("granite_statue", "golden statue")
+: set_feature_name("metal_wall", "marble wall")
+: set_feature_name("floor", "marble floor")
+MAP
+vvvvvvvvvvvvv
+vvG'''''''Gvv
+vG'''''''''Gv
+v''''$$$''''v
+'''''$Z$'''''
+v''''$$$''''v
+vG'''''''''Gv
+vvG'''''''Gvv
+vvvvvvvvvvvvv
 ENDMAP
 
 ###########################
@@ -2217,7 +2242,7 @@ TAGS:       no_dump
 # square should be replaced with per-chamber trap NSUBSTs, with separate
 # NSUBSTs for each chamber's inner and outer edges alongside main innards.
 KFEAT:    ~ = w:1 known alarm trap / w:1 known teleport trap / w:40 floor
-KMASK:    1! = no_item_gen
+KMASK:    "!'Z = no_item_gen
 SUBST:    C = X:90 c
 # 1/4 times, lower the chance of forced traps to enter the first chambers,
 # but provide some statues between the first and second chambers instead.
@@ -2246,7 +2271,18 @@ LROCKCOL:   lightmagenta
 LFLOORTILE: floor_rough_magenta
 LROCKTILE:  wall_zot_lightmagenta
 
-KITEM:    Z = Heart of Zot
+## thrown room
+TILE:   v = wall_church
+COLOUR: vG'" = yellow
+TILE:   G = dngn_golden_statue
+FTILE:  G'"Z! = floor_limestone
+KMONS:  " = orb guardian
+KMONS:  Z = Zot
+KITEM:  Z = Heart of Zot
+KPROP:  '"! = no_tele_into
+: set_feature_name("granite_statue", "golden statue")
+: set_feature_name("metal_wall", "marble wall")
+: set_feature_name("floor", "marble floor")
 
 validate {{ return has_exit_from_glyph('Z') }}
 
@@ -2261,15 +2297,15 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXX.............XXXXXXXXXXXXXXXXXXXXXXXXX.............XXXXXXXXXXXXXX
 XXXXXXXXXXXX...................XXXXXXXXXXXXXXXXXXX...................XXXXXXXXXXX
 XXXXXXXXXXX..........3...........XXXXXXXXXXXXXXX...........3..........XXXXXXXXXX
-XXXXXXXXXX..~.....................XXXXXXXXXXXXX.....................~..XXXXXXXXX
-XXXXXXXXXX.......?..?.....~.~.....XXX...1...XXX.....~.~.....?..?.......XXXXXXXXX
-XXXXXXXXXXX.~...........?.........XX..1...1..XX.........?...........~.XXXXXXXXXX
-XXXXXXXXXXXX......................X1...!!!...1X......................XXXXXXXXXXX
-XXXXXXXXXXXXX.....4....2....~.~......1.!Z!.1......~.~....2....4.....XXXXXXXXXXXX
-XXXXXXXXXXXX....?...?.....?...?...X1...!!!...1X...?...?.....?....?...XXXXXXXXXXX
-XXXXXXXXXXX.......?....?..........XX..1...1..XX..........?....2.......XXXXXXXXXX
-XXXXXXXXXX.....~..........~.~.....XXX...1...XXX.....~.~..........~.....XXXXXXXXX
-XXXXXXXXXX...~....................cXXXXXXXXXXXc....................~...XXXXXXXXX
+XXXXXXXXXX..~.....................vvvvvvvvvvvvv.....................~..XXXXXXXXX
+XXXXXXXXXX.......?..?.....~.~.....vvG'''"'''Gvv.....~.~.....?..?.......XXXXXXXXX
+XXXXXXXXXXX.~...........?.........vG''"'''"''Gv.........?...........~.XXXXXXXXXX
+XXXXXXXXXXXX......................v"'''!!!'''"v......................XXXXXXXXXXX
+XXXXXXXXXXXXX.....4....2....~.~...'''"'!Z!'"'''...~.~....2....4.....XXXXXXXXXXXX
+XXXXXXXXXXXX....?...?.....?...?...v"'''!!!'''"v...?...?.....?....?...XXXXXXXXXXX
+XXXXXXXXXXX.......?....?..........vG''"'''"''Gv..........?....2.......XXXXXXXXXX
+XXXXXXXXXX.....~..........~.~.....vvG'''"'''Gvv.....~.~..........~.....XXXXXXXXX
+XXXXXXXXXX...~....................vvvvvvvvvvvvv....................~...XXXXXXXXX
 XXXXXXXXXXX.....~.~.~..~.........ccccccccccccccc........~...~.~.~.....XXXXXXXXXX
 XXXXXXXXXXXX...............~...XcccccccccccccccccX...~............~..XXXXXXXXXXX
 XXXXXXXXXXXXX........~..~...XXXXcccccccccccccccccXXXX...~..~........XXXXXXXXXXXX

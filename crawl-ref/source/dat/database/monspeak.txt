@@ -5094,6 +5094,49 @@ VISUAL:@The_monster@ seems to say something.
 VISUAL:@The_monster@ says something you can't hear. It was probably not a compliment. @player_only@
 ## END silenced Murray ##
 %%%%
+############ ZOT ### The Big Bad
+Zot
+
+@_Zot_common_@
+
+w:5
+@_Zot_rare_@
+%%%%
+_Zot_common_
+
+VISUAL:@The_monster@ rolls around in a circle
+
+VISUAL:@The_monster@ spins like a top.
+
+VISUAL:@The_monster@ spins like a tornado.
+
+VISUAL:@The_monster@ glows evilly.
+
+VISUAL:@The_monster@ pulses like a supernova.
+
+@The_monster@ laughs at you.
+
+@The_monster@ cackles @at_foe@, "I will own your soul for eternity!"
+%%%%
+_Zot_rare_
+
+@The_monster@ says @to_foe@, "When you die, I will feed you to a 12-headed hydra."
+
+@The_monster@ says @to_foe@, "When you die, your soul will be mine."
+
+@The_monster@ says @to_foe@, "The moment you die I will forget you ever existed."
+
+@The_monster@ screams @at_foe@, "You will lose!"
+
+@The_monster@ screams @at_foe@, "For death and pain!"
+
+@The_monster@ shouts @at_foe@, "Let the forces of evil and voodoo overcome you!"
+
+@The_monster@ yells @at_foe@, "I'm a mighty demonic power!"
+
+@The_monster@ yells @at_foe@, "I am the source of all evil and you are nothing!"
+## END Zot ##
+%%%%
 ############ NATASHA ### An abandoned felid familiar.
 Natasha
 
