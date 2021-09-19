@@ -1790,8 +1790,9 @@ static const mon_spellbook mspell_list[] =
     // ('Z') The Big Bad - Zot!
     {  MST_ZOT,
       {
-       { SPELL_BOLT_OF_FIRE, 32, MON_SPELL_MAGICAL },
-       { SPELL_FIREBALL, 32, MON_SPELL_MAGICAL },
+       { SPELL_RANDOM_BOLT, 32, MON_SPELL_MAGICAL },
+       { SPELL_FIREBALL, 24, MON_SPELL_WIZARD },
+       { SPELL_SLOW, 8, MON_SPELL_MAGICAL },
        { SPELL_MALMUTATE, 16, MON_SPELL_MAGICAL },
       }
     },

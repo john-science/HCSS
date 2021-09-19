@@ -5104,13 +5104,13 @@ w:5
 %%%%
 _Zot_common_
 
-VISUAL:@The_monster@ rolls around in a circle
+VISUAL:@The_monster@ pulsates menacingly.
 
-VISUAL:@The_monster@ spins like a top.
+VISUAL:@The_monster@ pulsates like its about to explode.
 
 VISUAL:@The_monster@ spins like a tornado.
 
-VISUAL:@The_monster@ glows evilly.
+VISUAL:@The_monster@ glows like the sun.
 
 VISUAL:@The_monster@ pulses like a supernova.
 
@@ -5119,6 +5119,10 @@ VISUAL:@The_monster@ pulses like a supernova.
 @The_monster@ cackles @at_foe@, "I will own your soul for eternity!"
 %%%%
 _Zot_rare_
+
+@The_monster@ says @to_foe@, "I am the mother of all evil in the universe, what chance do you have?"
+
+@The_monster@ says @to_foe@, "Do you really think you can kill me?"
 
 @The_monster@ says @to_foe@, "When you die, I will feed you to a 12-headed hydra."
 
@@ -5133,6 +5137,12 @@ _Zot_rare_
 @The_monster@ shouts @at_foe@, "Let the forces of evil and voodoo overcome you!"
 
 @The_monster@ yells @at_foe@, "I'm a mighty demonic power!"
+
+@The_monster@ yells @at_foe@, "I am the mother of all Orbs of Fire!"
+
+@The_monster@ yells @at_foe@, "I am the mother of all Wretched Stars!"
+
+@The_monster@ yells @at_foe@, "I am the mother of all hate!"
 
 @The_monster@ yells @at_foe@, "I am the source of all evil and you are nothing!"
 ## END Zot ##
