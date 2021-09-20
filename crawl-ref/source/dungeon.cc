@@ -1342,9 +1342,6 @@ static int _num_items_wanted(int absdepth0)
 
 static int _num_mons_wanted()
 {
-    if (player_in_branch(BRANCH_ABYSS))
-        return 0;
-
     if (player_in_branch(BRANCH_PANDEMONIUM))
         return random2avg(28, 3);
 
@@ -1356,11 +1353,6 @@ static int _num_mons_wanted()
         return 0;
 
     int mon_wanted = roll_dice(5, 7);
-
-    if (player_in_branch(BRANCH_VESTIBULE))
-    {
-        mon_wanted = roll_dice(3, 7);
-    }
 
     if (player_in_demon())
         mon_wanted += roll_dice(3, 6);
