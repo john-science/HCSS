@@ -5104,39 +5104,25 @@ w:5
 %%%%
 _Zot_common_
 
-VISUAL:@The_monster@ pulsates menacingly.
+VISUAL:@The_monster@ pulsates.
 
 VISUAL:@The_monster@ pulsates like its about to explode.
 
-VISUAL:@The_monster@ spins like a tornado.
-
-VISUAL:@The_monster@ glows like the sun.
-
 VISUAL:@The_monster@ pulses like a supernova.
+
+VISUAL:@The_monster@ burns.
+
+VISUAL:@The_monster@ glows.
 
 @The_monster@ laughs at you.
 
-@The_monster@ cackles @at_foe@, "I will own your soul for eternity!"
-%%%%
-_Zot_rare_
-
-@The_monster@ says @to_foe@, "I am the mother of all evil in the universe, what chance do you have?"
-
-@The_monster@ says @to_foe@, "Do you really think you can kill me?"
-
-@The_monster@ says @to_foe@, "When you die, I will feed you to a 12-headed hydra."
-
-@The_monster@ says @to_foe@, "When you die, your soul will be mine."
+@The_monster@ asks @to_foe@, "Do you really think you can kill me?"
 
 @The_monster@ says @to_foe@, "The moment you die I will forget you ever existed."
 
-@The_monster@ screams @at_foe@, "You will lose!"
+@The_monster@ says @to_foe@, "You are nothing."
 
-@The_monster@ screams @at_foe@, "For death and pain!"
-
-@The_monster@ shouts @at_foe@, "Let the forces of evil and voodoo overcome you!"
-
-@The_monster@ yells @at_foe@, "I'm a mighty demonic power!"
+@The_monster@ says @to_foe@, "I am a celestial being, and you are nothing."
 
 @The_monster@ yells @at_foe@, "I am the mother of all Orbs of Fire!"
 
@@ -5144,7 +5130,34 @@ _Zot_rare_
 
 @The_monster@ yells @at_foe@, "I am the mother of all hate!"
 
+@The_monster@ yells @at_foe@, "I am the corrupter of worlds!"
+
+@The_monster@ yells @at_foe@, "I burn the souls of countless dead, and soon yours!"
+
+%%%%
+_Zot_rare_
+
+VISUAL:@The_monster@ suddenly burns blue.
+
+VISUAL:@The_monster@ suddenly burns white.
+
+VISUAL:@The_monster@ suddenly burns purple.
+
+VISUAL:@The_monster@ spins like a tornado.
+
+VISUAL:@The_monster@ pulsates menacingly.
+
+@The_monster@ asks @to_foe@, "I am the mother of all evil in the universe, what chance do you have?"
+
+@The_monster@ says @to_foe@, "After your death, a 3-headed hydra will chew on you for all eternity."
+
+@The_monster@ says @to_foe@, "When you die, your soul will be mine."
+
+@The_monster@ screams @at_foe@, "You will lose!"
+
 @The_monster@ yells @at_foe@, "I am the source of all evil and you are nothing!"
+
+@The_monster@ yells @at_foe@, "I am the destroyer of worlds!"
 ## END Zot ##
 %%%%
 ############ NATASHA ### An abandoned felid familiar.
