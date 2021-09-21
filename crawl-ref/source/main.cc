@@ -1681,6 +1681,13 @@ static bool _prompt_dangerous_portal(dungeon_feature_type ftype)
 
 static bool _prompt_unique_rune(dungeon_feature_type ygrd)
 {
+    if (ygrd != DNGN_TRANSIT_PANDEMONIUM
+        && ygrd != DNGN_EXIT_PANDEMONIUM
+        && ygrd != DNGN_EXIT_THROUGH_ABYSS)
+    {
+        return true;
+    }
+
     item_def* rune = find_floor_item(OBJ_RUNES);
     if (rune && item_is_unique_rune(*rune))
     {
