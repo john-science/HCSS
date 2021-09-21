@@ -168,11 +168,11 @@ static const pop_entry pop_orc[] =
 };
 
 static const pop_entry pop_elf[] =
-{ // Elven Halls
+{ // Elven Hells
   {  1,  1,   50, FLAT, MONS_ORC_HIGH_PRIEST },
   {  1,  1,   50, FLAT, MONS_ORC_SORCERER },
   {  1,  1,  775, FLAT, MONS_DEEP_ELF_MAGE },
-  {  1,  1, 2000, FLAT, MONS_NO_MONSTER }, //formerly deep elf mage
+  {  1,  1, 2000, FLAT, MONS_NO_MONSTER }, // formerly deep elf mage
   {  1,  1, 1385, FLAT, MONS_DANCING_WEAPON },
   {  1,  1,  925, FLAT, MONS_DEEP_ELF_KNIGHT },
   {  1,  1,  925, FLAT, MONS_DEEP_ELF_ARCHER },

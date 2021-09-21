@@ -38,8 +38,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_ELF, BRANCH_DUNGEON, -1, -1, 1, 15,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_ELF, DNGN_EXIT_ELF, NUM_FEATURES,
-      "Elven Halls", "the Elven Halls", "Elf",
-      "You enter the Elven Halls!",
+      "Elven Hells", "the Elven Hells", "Elf",
+      "You enter the Hell of Elves!",
       WHITE, ETC_ELVEN_BRICK,
       'E', {}, 0 },
 

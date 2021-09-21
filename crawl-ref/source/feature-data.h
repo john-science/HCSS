@@ -371,7 +371,7 @@ PORTAL_ENTRANCE(DNGN_ENTER_ICE_CAVE, "frozen archway", "enter_ice_cave", WHITE),
 PORTAL_ENTRANCE(DNGN_ENTER_VOLCANO, "dark tunnel", "enter_volcano", RED),
 PORTAL_ENTRANCE(DNGN_ENTER_WIZLAB, "magical portal", "enter_wizlab", ETC_SHIMMER_BLUE),
 PORTAL_ENTRANCE(DNGN_ENTER_DESOLATION, "ruined gateway", "enter_desolation", WHITE),
-PORTAL_ENTRANCE(DNGN_ENTER_ELF, "portal to the Elven Halls", "enter_elven_halls", WHITE),
+PORTAL_ENTRANCE(DNGN_ENTER_ELF, "portal to the Elven Hells", "enter_elven_hells", WHITE),
 PORTAL_EXIT(DNGN_EXIT_PORTAL_VAULT, "gate leading back out of this place", "exit_portal_vault", ETC_SHIMMER_BLUE),
 PORTAL_EXIT(DNGN_EXIT_ZIGGURAT, "gate leading back out of this place", "exit_ziggurat", ETC_SHIMMER_BLUE),
 PORTAL_EXIT(DNGN_EXIT_BAZAAR, "gate leading back out of this place", "exit_bazaar", ETC_SHIMMER_BLUE),
@@ -383,7 +383,7 @@ PORTAL_EXIT(DNGN_EXIT_ICE_CAVE, "ice covered gate leading back out of this place
 PORTAL_EXIT(DNGN_EXIT_VOLCANO, "rocky tunnel leading out of this place", "exit_volcano", RED),
 PORTAL_EXIT(DNGN_EXIT_WIZLAB, "portal leading out of this place", "exit_wizlab", ETC_SHIMMER_BLUE),
 PORTAL_EXIT(DNGN_EXIT_DESOLATION, "gate leading back out of this place", "exit_desolation", WHITE),
-PORTAL_EXIT(DNGN_EXIT_ELF, "portal leading out of this place", "exit_elven_halls", WHITE),
+PORTAL_EXIT(DNGN_EXIT_ELF, "portal leading out of this place", "exit_elven_hells", WHITE),
 
 #define BRANCH_ENTRANCE(enum, name, vaultname)\
 {\

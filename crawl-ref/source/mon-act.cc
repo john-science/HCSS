@@ -373,7 +373,7 @@ static bool _mon_on_interesting_grid(monster* mon)
     case DNGN_EXIT_ORC:
         return mons_is_native_in_branch(*mon, BRANCH_ORC);
 
-    // Same for elves and the Elven Halls.
+    // Same for elves and the Elven Hells.
     case DNGN_ENTER_ELF:
     case DNGN_EXIT_ELF:
         return mons_is_native_in_branch(*mon, BRANCH_ELF);

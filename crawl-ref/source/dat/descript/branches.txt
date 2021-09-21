@@ -19,12 +19,13 @@ The Orcish Mines are filled with the cave orcs native to the Dungeon, their
 humanoid labourers, and piles of freshly mined gold. Enterprising merchants
 have set up trading posts to help relieve the orcs of the latter.
 %%%%
-Elven Halls
+Elven Hells
 
-The Elven Halls are home to the deep elves, a race that turned their backs on
-the sun long ago. Their halls are filled with riches, but a deadly welcome
-awaits any would-be robbers. In their long seclusion, the deep elves have
-perfected dark sorceries of a power the orcs can only dream of!
+The Elven Hells is the hell to the deep elves, a race that turned their backs
+on the sun long ago. Here they are forced to live in a brightly lit palace,
+with no dark corners anywhere. And they spend eternity without those things
+that all elves value most: food and drink and song. They starve forever in
+these quiet, blinding halls.
 %%%%
 Lair
 

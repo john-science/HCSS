@@ -1655,7 +1655,7 @@ KFEAT:   s = stone_arch
 KITEM:   s = $
 NSUBST:  s = 1:O / *:s
 : if you.where() == dgn.level_name(dgn.br_entrance("Elf")) then
-KFEAT:  p = enter_elven_halls
+KFEAT:  p = enter_elven_hells
 : else
 KFEAT:  p = abandoned_shop w:5 / fountain_blue / floor w:30
 : end

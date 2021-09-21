@@ -45,7 +45,7 @@ enum element_type
     ETC_GOLD,           // colour of gold
     ETC_IRON,           // colour of iron
     ETC_BONE,           // colour of bone
-    ETC_ELVEN_BRICK,    // colour of the walls in the Elven Halls
+    ETC_ELVEN_BRICK,    // colour of the walls in the Elven Hells
     ETC_WAVES,          // cyan, with regularly occurring lightcyan waves
     ETC_TREE,           // colour of trees on land
     ETC_RANDOM,         // any colour (except BLACK)

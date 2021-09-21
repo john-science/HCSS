@@ -469,9 +469,9 @@ A staircase to the Ecumenical Temple
 
 A staircase leading to the Ecumenical Temple.
 %%%%
-A staircase to the Elven Halls
+A staircase to the Elven Hells
 
-A staircase leading to the Elven Halls.
+A staircase leading to the Elven Hells.
 %%%%
 A staircase to the Lair
 
@@ -953,12 +953,12 @@ A monument to the glory of a dead god. The statue has been methodically
 defaced; not a single distinguishing feature remains.
 %%%%
 #elf
-A portal to the Elven Halls
+A portal to the Elven Hells
 
-A staircase-shaped portal to the elven halls. Elves occasionally tempt
-visitors to enter their realm in order to use them for their strange,
-nefarious purposes. A crafty intruder might be able to make away with
-some of their fabled treasures.
+A staircase-shaped portal to the elven hells. The Dark Elves who reside
+here are forced to live in the blinding light of the sun, in cold
+marble halls without food or drink or song. Expect any Elven dead you
+meet here to be crazy with hunger and thirst.
 %%%%
 ########################################################################
 ### Sprint

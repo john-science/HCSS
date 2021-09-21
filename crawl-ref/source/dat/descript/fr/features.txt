@@ -351,7 +351,7 @@ A staircase to the Ecumenical Temple
 
 Cet escalier conduit au Temple des Dieux.
 %%%%
-A staircase to the Elven Halls
+A staircase to the Elven Hells
 
 Cet escalier descend vers les Halls Elfiques.
 %%%%

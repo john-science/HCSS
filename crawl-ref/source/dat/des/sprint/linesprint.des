@@ -954,7 +954,7 @@ COLOUR:   12 = white
 : line_setup(_G)
 : general_item_setup(_G)
 : lua_marker('~', props_marker {
-:           door_description_suffix=" to the Elven Halls",
+:           door_description_suffix=" to the Elven Hells",
 :           })
 MAP
 ###############
