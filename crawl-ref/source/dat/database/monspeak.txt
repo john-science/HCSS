@@ -5128,7 +5128,7 @@ VISUAL:@The_monster@ glows.
 
 @The_monster@ yells @at_foe@, "I am the mother of all Wretched Stars!"
 
-@The_monster@ yells @at_foe@, "I am the mother of all hate!"
+@The_monster@ yells @at_foe@, "I am the mother of all Hells!"
 
 @The_monster@ yells @at_foe@, "I am the corrupter of worlds!"
 
@@ -5154,8 +5154,6 @@ VISUAL:@The_monster@ pulsates menacingly.
 @The_monster@ says @to_foe@, "When you die, your soul will be mine."
 
 @The_monster@ screams @at_foe@, "You will lose!"
-
-@The_monster@ yells @at_foe@, "I am the source of all evil and you are nothing!"
 
 @The_monster@ yells @at_foe@, "I am the destroyer of worlds!"
 ## END Zot ##
