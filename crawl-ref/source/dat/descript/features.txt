@@ -417,10 +417,9 @@ A gateway to the freezing wastes of Cocytus
 
 A gateway leading to Cocytus.
 %%%%
+A hole to the Fear of Spiders
 
-A hole to the Spider Nest
-
-A passage leading to the Spider Nest.
+A passage leading to the Fear of Spiders.
 %%%%
 A one-way gate to the infinite horrors of the Abyss
 

@@ -1,11 +1,11 @@
 ###############################################################################
-# spider.des: All maps and branch endings relating to the Spider Nest.
+# spider.des: All maps and branch endings relating to the Fear of Spiders.
 # Bring lots of Raid!
 ###############################################################################
 
 # Functions for the spider trap
 {{
-function callback.spider_nest_trap(data, triggerable, triggerer, marker, ev)
+function callback.spiders_trap(data, triggerable, triggerer, marker, ev)
   local x, y = marker:pos()
   local youpos = dgn.point(you.pos())
   local spiders = 0
@@ -28,19 +28,19 @@ end
 }}
 
 ##############################################################################
-# Spider Nest entry vaults
+# Fear of Spiders entry vaults
 ##############################################################################
 
 NAME:   dummy_spider_entry
 TAGS:   spider_entry
-KFEAT:  O = enter_spider_nest
+KFEAT:  O = enter_spiders
 MAP
 O
 ENDMAP
 
-NAME:   spider_nest_entry_a
+NAME:   fear_of_spiders_entry_a
 TAGS:   spider_entry patrolling no_monster_gen
-KFEAT:  O = enter_spider_nest
+KFEAT:  O = enter_spiders
 MONS:   redback w:5 / jumping spider w:5 / nothing w:30
 MAP
 .WWW.WWW.
@@ -54,9 +54,9 @@ W.WW.WW.W
 .WWW.WWW.
 ENDMAP
 
-NAME:   spider_nest_entry_webs
+NAME:   fear_of_spiders_entry_webs
 TAGS:   spider_entry patrolling no_monster_gen
-KFEAT:  O = enter_spider_nest
+KFEAT:  O = enter_spiders
 KFEAT:  ^ = web
 MONS:   redback / nothing
 MAP
@@ -74,9 +74,9 @@ x^^^^..xxx...
 ..xxx........
 ENDMAP
 
-NAME:   spider_nest_entry_funnel_web
+NAME:   fear_of_spiders_entry_funnel_web
 TAGS:   spider_entry patrolling no_monster_gen
-KFEAT:  O = enter_spider_nest
+KFEAT:  O = enter_spiders
 KFEAT:  ^ = web / floor
 MONS:   w:5 wolf spider / jumping spider / redback / nothing
 MAP
@@ -93,9 +93,9 @@ xx^^^^^xx
 @@x
 ENDMAP
 
-NAME:   spider_nest_entry_web_field
+NAME:   fear_of_spiders_entry_web_field
 TAGS:   spider_entry patrolling no_monster_gen
-KFEAT:  O = enter_spider_nest
+KFEAT:  O = enter_spiders
 KFEAT:  ^ = known web trap / floor
 KFEAT:  ~ = known web trap / w:20 floor
 MAP
@@ -112,9 +112,9 @@ MAP
 ...~~~~~...
 ENDMAP
 
-NAME:   spider_nest_entry_rubble
+NAME:   fear_of_spiders_entry_rubble
 TAGS:   spider_entry patrolling no_monster_gen
-KFEAT:  O = enter_spider_nest
+KFEAT:  O = enter_spiders
 KMONS:  O = wolf spider / tarantella / redback / jumping spider
 SUBST:  x = ..xx^
 KFEAT:  ^ = web
@@ -134,7 +134,7 @@ ENDMAP
 
 NAME: nicolae_spider_entry_tight_spaces
 TAGS: spider_entry no_pool_fixup no_monster_gen no_trap_gen
-KFEAT: O = enter_spider_nest
+KFEAT: O = enter_spiders
 NSUBST: A = 2:x / '
 SUBST: X = xxx', ' = .....^^1
 KFEAT: ^ = web
@@ -158,7 +158,7 @@ ENDMAP
 NAME: nicolae_spider_entry_non_spiders
 TAGS: spider_entry ruin_lair
 NSUBST: 1 = 21 / 1
-KFEAT: O = enter_spider_nest
+KFEAT: O = enter_spiders
 KMONS: 1 = scorpion / worker ant / giant cockroach
 KMONS: 2 = demonic crawler / hornet / wasp
 MAP
@@ -180,7 +180,7 @@ TAGS: spider_entry no_monster_gen no_pool_fixup no_trap_gen
 KPROP: 'W = no_tele_into
 NSUBST: a = ..x / .
 SUBST: W = w', X = x., Q = xxx@, ' = ...x, . = .....^
-KFEAT: O = enter_spider_nest
+KFEAT: O = enter_spiders
 KFEAT: ^ = web
 KMONS: O = orb spider
 MAP

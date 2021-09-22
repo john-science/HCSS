@@ -78,7 +78,7 @@ serpentine. Vous trouverez dans le donjon soit la Fosse aux Serpents, soit le
 Nid des Araignées, mais pas les deux. Si la Fosse aux Serpents est présente,
 son entrée est située entre l'Antre 3 et 6.
 %%%%
-Spider Nest
+Spiders
 
 Vous pensiez qu'il suffirait de soulever une botte pour les écraser ? Si vous
 n'êtes pas encore arachnophobe, c'est pour bientôt.

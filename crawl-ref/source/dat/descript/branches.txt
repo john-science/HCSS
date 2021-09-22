@@ -34,7 +34,7 @@ And indeed, there is something to be said about getting gored, mauled and eaten
 rather than sliced, burnt or stabbed.
 
 The Lair contains the entrances to one of the Dead Swamp or the Shoals of Reality,
-one of the Fear of Snakes or the Spider Nest, and to the Pits of Slime.
+one of the Fear of Snakes or the Fear of Spiders, and to the Pits of Slime.
 %%%%
 Swamp
 
@@ -59,14 +59,14 @@ Ophidiophobia is so common, there is a special Hell just for people with an
 over-powering Fear of Snakes. But beware, the snakes here deserve a healthy
 fear.
 
-A dungeon features only one of the Fear of Snakes and Spider Nest branches.
+A dungeon features only one of the Fear of Snakes and Fear of Spiders branches.
 %%%%
-Spider Nest
+Spiders
 
-The crumbling, web-choked caverns of the Spider Nest are packed with poisonous
-arthropods and assorted creepy-crawlies.
+Arachnophobia is so common, there is a special Hell just for people with an
+uncontrollable Fear of Spiders. But beware, the spiders here deserve fear.
 
-A dungeon features only one of the Spider Nest and the Fear of Snakes branches.
+A dungeon features only one of the Fear of Spiders and the Fear of Snakes branches.
 %%%%
 Slime Pits
 

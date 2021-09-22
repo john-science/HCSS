@@ -87,8 +87,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_SPIDER, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SPIDER, DNGN_EXIT_SPIDER, NUM_FEATURES,
-      "Spider Nest", "the Spider Nest", "Spider",
-      nullptr,
+      "Spiders", "the Fear of Spiders", "Spider",
+      "You enter the Hell for people with a fear of spiders.",
       BROWN, YELLOW,
       'N', { RUNE_SPIDER }, 0 },
 

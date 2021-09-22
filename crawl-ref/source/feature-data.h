@@ -452,8 +452,8 @@ BRANCH_EXIT(DNGN_EXIT_SWAMP, "staircase back to the Dungeon", "exit_swamp"),
 BRANCH_ENTRANCE(DNGN_ENTER_SHOALS, "staircase to the Shoals of Reality", "enter_shoals"),
 BRANCH_EXIT(DNGN_EXIT_SHOALS, "staircase back to the Dungeon", "exit_shoals"),
 
-BRANCH_ENTRANCE(DNGN_ENTER_SPIDER, "hole to the Spider Nest", "enter_spider_nest"),
-BRANCH_EXIT(DNGN_EXIT_SPIDER, "crawl-hole back to the Dungeon", "exit_spider_nest"),
+BRANCH_ENTRANCE(DNGN_ENTER_SPIDER, "hole to the Fear of Spiders", "enter_spiders"),
+BRANCH_EXIT(DNGN_EXIT_SPIDER, "crawl-hole back to the Dungeon", "exit_spiders"),
 
 BRANCH_ENTRANCE(DNGN_ENTER_DEPTHS, "staircase to the Depths", "enter_depths"),
 BRANCH_EXIT(DNGN_EXIT_DEPTHS, "staircase back to the Dungeon", "exit_depths"),

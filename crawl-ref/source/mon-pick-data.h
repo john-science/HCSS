@@ -324,7 +324,7 @@ static const pop_entry pop_snake[] =
 };
 
 static const pop_entry pop_spider[] =
-{ // Spider Nest
+{ // Fear of Spiders
   { -1,  3,  260, RISE, MONS_HORNET },
   { -1,  7,  765, SEMI, MONS_DEMONIC_CRAWLER },
   {  1,  3,  955, FLAT, MONS_WOLF_SPIDER },

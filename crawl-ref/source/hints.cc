@@ -3480,7 +3480,7 @@ static void _hints_describe_feature(int x, int y, ostringstream& ostr)
         break;
 
     case DNGN_TRAP_WEB:
-        ostr << "Some areas of the dungeon, such as the Spider Nest, may "
+        ostr << "Some areas of the dungeon, such as the Fear of Spiders, may "
                 "be strewn with giant webs that may ensnare you for a short "
                 "time and notify nearby spiders of your location. "
                 "Players in Spider Form can safely navigate the webs (as "

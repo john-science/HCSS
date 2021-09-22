@@ -501,7 +501,7 @@ COLOUR:   12 = brown
 : line_setup(_G)
 : general_item_setup(_G)
 : lua_marker('~', props_marker {
-:           door_description_suffix=" to the Spider Nest",
+:           door_description_suffix=" to the Fear of Spiders",
 :           })
 MAP
 xxxxxxxxxx
