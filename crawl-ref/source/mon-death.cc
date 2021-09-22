@@ -1281,6 +1281,11 @@ static bool _explode_monster(monster* mons, killer_type killer,
                           "is contained.";
         beam.aux_source = "exploding inner flame";
     }
+    else if (type == MONS_ZOT)
+    {
+        // when Zot dies, she explodes in lightning
+        _setup_lightning_explosion(beam, *mons);
+    }
     else
     {
         msg::streams(MSGCH_DIAGNOSTICS) << "Unknown spore type: "
@@ -1985,6 +1990,7 @@ item_def* monster_die(monster* mons, killer_type killer,
 
     if (mons->type == MONS_BALLISTOMYCETE_SPORE
         || mons->type == MONS_BALL_LIGHTNING
+        || mons->type == MONS_ZOT
         || mons->type == MONS_LURKING_HORROR
         || (mons->type == MONS_FULMINANT_PRISM && mons->prism_charge > 0)
         || mons->type == MONS_BENNU
@@ -2772,9 +2778,9 @@ item_def* monster_die(monster* mons, killer_type killer,
             //the genius hack
             mons->heal(9999);
             if (you.where_are_you == BRANCH_DUNGEON && you.depth == 1)
-                mons->set_transit(level_id(BRANCH_ZOT,5));
+                mons->set_transit(level_id(BRANCH_ZOT, 5));
             else
-                mons->set_transit(level_id(BRANCH_DUNGEON,1));
+                mons->set_transit(level_id(BRANCH_DUNGEON, 1));
             mons->destroy_inventory();
             if (!you.can_see(*mons))
             {
