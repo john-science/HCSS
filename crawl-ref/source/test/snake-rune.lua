@@ -10,7 +10,7 @@ local current_iter = 0
 
 local branch_entrance_feats = {
   { dgn.fnum("enter_lair"), "Lair:1" },
-  { dgn.fnum("enter_snake_pit"), "Snake:1" }
+  { dgn.fnum("enter_snakes"), "Snake:1" }
 }
 
 local junk_feat_fn = dgn.feature_set_fn("rock_wall", "floor", "stone_wall")

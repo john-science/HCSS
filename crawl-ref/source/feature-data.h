@@ -440,8 +440,8 @@ BRANCH_EXIT(DNGN_EXIT_CRYPT, "staircase back to the Vaults", "exit_crypt"),
 BRANCH_ENTRANCE(DNGN_ENTER_TEMPLE, "staircase to the Ecumenical Temple", "enter_temple"),
 BRANCH_EXIT(DNGN_EXIT_TEMPLE, "staircase back to the Dungeon", "exit_temple"),
 
-BRANCH_ENTRANCE(DNGN_ENTER_SNAKE, "staircase to the Snake Pit", "enter_snake_pit"),
-BRANCH_EXIT(DNGN_EXIT_SNAKE, "staircase back to the Dungeon", "exit_snake_pit"),
+BRANCH_ENTRANCE(DNGN_ENTER_SNAKE, "staircase to the Fear of Snakes", "enter_snakes"),
+BRANCH_EXIT(DNGN_EXIT_SNAKE, "staircase back to the Dungeon", "exit_snakes"),
 
 BRANCH_ENTRANCE(DNGN_ENTER_TOMB, "staircase to the Tomb", "enter_tomb"),
 BRANCH_EXIT(DNGN_EXIT_TOMB, "staircase back to the Crypt", "exit_tomb"),

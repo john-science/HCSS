@@ -1020,7 +1020,7 @@ occasionally avoid blows entirely.
 %%%%
 Plane Rend spell
 
-Summons some of the greater threats from one of the Snake Pit, the Spider Nest,
+Summons some of the greater threats from one of the Fear of Snakes, the Spider Nest,
 the Swamp, the Shoals, the Pits of Slime, the Elven Hells, the Vaults, the
 Crypt, the Tomb of Ancients, or the Realm of Zot; the specific branch varies
 with each cast of the spell.

@@ -981,7 +981,7 @@ local branch_data = {
   {"L", "the Lair", "Lair"},
   {"S", "the Swamp", "Swamp"},
   {"A", "the Shoals", "Shoals"},
-  {"P", "the Snake Pit", "Snake"},
+  {"P", "the Fear of Snakes", "Snake"},
   {"N", "the Spider Nest", "Spider"},
   --{"M", "the Slime Pits", "Slime"},
   {"V", "the Vaults", "Vaults"},
@@ -3890,7 +3890,7 @@ function want_to_stairdance_up()
           feat:find("exit_") and (feat == "exit_demon" or feat == "exit_vaults"
           or feat == "exit_zot" or feat == "exit_slime_pits"
           or feat == "exit_orcish_mines" or feat == "exit_lair"
-          or feat == "exit_crypt" or feat == "exit_snake_pit"
+          or feat == "exit_crypt" or feat == "exit_snakes"
           or feat == "exit_elven_hells" or feat == "exit_tomb"
           or feat == "exit_swamp" or feat == "exit_shoals"
           or feat == "exit_spider_nest" or feat == "exit_depths")) then

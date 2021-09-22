@@ -604,7 +604,7 @@ KITEM: $ = serpentine rune of zot
 COLOUR: #c = yellow
 KFEAT: # = closed_door
 : lua_marker('#', props_marker {
-:           door_description_suffix=" to the Snake Pit",
+:           door_description_suffix=" to the Fear of Snakes",
 :           })
 MARKER: # = lua:restrict_door()
 

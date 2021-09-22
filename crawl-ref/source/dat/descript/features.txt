@@ -489,9 +489,9 @@ A staircase to the Slime Pits
 
 A staircase leading to the Slime Pits.
 %%%%
-A staircase to the Snake Pit
+A staircase to the Fear of Snakes
 
-A staircase leading to the Snake Pit.
+A staircase leading to the Fear of Snakes.
 %%%%
 A staircase to the Swamp
 

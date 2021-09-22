@@ -519,7 +519,7 @@ COLOUR:   # = yellow
 : line_setup(_G)
 : general_item_setup(_G)
 : lua_marker('~', props_marker {
-:           door_description_suffix=" to the Snake Pit",
+:           door_description_suffix=" to the Fear of Snakes",
 :           })
 MAP
 ##########

@@ -68,7 +68,7 @@ Les Côtes sont profondes de cinq niveaux et contiennent la rune écaillée. Vou
 trouverez dans le donjon soit les Côtes, soit le Marais, mais pas les deux.. Si
 les Côtes sont présentes, leur entrée est située entre l'Antre 3 et 6.
 %%%%
-Snake Pit
+Snakes
 
 Les couloirs de la Fosse aux Serpents sont l'habitat des serpent, et le repaire
 des nagas.

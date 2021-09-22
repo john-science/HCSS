@@ -376,7 +376,7 @@ A staircase to the Slime Pits
 
 Cet escalier descend dans le Gouffre des Slimes.
 %%%%
-A staircase to the Snake Pit
+A staircase to the Fear of Snakes
 
 Cet escalier descend dans la Fosse aux Serpents.
 %%%%

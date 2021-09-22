@@ -305,12 +305,12 @@ static const pop_entry pop_shoals[] =
 };
 
 static const pop_entry pop_snake[] =
-{ // Snake Pit
+{ // Fear of Snakes
   { -4,  2,  750, SEMI, MONS_NAGA },
   {  0,  3,  215, SEMI, MONS_SALAMANDER },
   {  0,  6,  315, SEMI, MONS_ANACONDA },
   {  0,  6,  600, SEMI, MONS_BLACK_MAMBA },
-  {  0,  6,  525, SEMI, MONS_NO_MONSTER}, //remove some mamba weight
+  {  0,  6,  525, SEMI, MONS_NO_MONSTER}, // remove some mamba weight
   {  0,  6,  340, SEMI, MONS_NAGA_WARRIOR },
   {  0,  7,  550, SEMI, MONS_NAGA_MAGE },
   {  0,  7,  225, SEMI, MONS_NAGA_RITUALIST },
@@ -331,7 +331,7 @@ static const pop_entry pop_spider[] =
   {  1,  3,  985, FLAT, MONS_JUMPING_SPIDER },
   {  1,  3,  910, FLAT, MONS_TARANTELLA },
   {  1,  3,  800, FLAT, MONS_REDBACK },
-  {  1,  3,  245, FLAT, MONS_NO_MONSTER}, //don't generate so many redbacks
+  {  1,  3,  245, FLAT, MONS_NO_MONSTER}, // don't generate so many redbacks
   {  1,  3,  550, FLAT, MONS_ORB_SPIDER },
   {  1,  3,   52, FLAT, MONS_WASP },
   {  1,  4,  100, FLAT, MONS_TORPOR_SNAIL },

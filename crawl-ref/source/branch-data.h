@@ -79,8 +79,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_SNAKE, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SNAKE, DNGN_EXIT_SNAKE, NUM_FEATURES,
-      "Snake Pit", "the Snake Pit", "Snake",
-      nullptr,
+      "Snakes", "the Fear of Snakes", "Snake",
+      "You enter the Hell for people with a fear of snakes.",
       LIGHTGREEN, YELLOW,
       'P', { RUNE_SNAKE }, 0 },
 

@@ -1736,9 +1736,9 @@ static void _find_parent_branch(branch_type br, int depth,
 //
 // As an example of what it does, assume this dungeon structure
 //   Stairs to lair on D:11
-//   Stairs to snake pit on lair:5
+//   Stairs to fear of snaks on lair:5
 //
-// If level 3 of the snake pit is the level we want to track back from,
+// If level 3 of the fear of snakes is the level we want to track back from,
 // we'd call _trackback(vec, BRANCH_SNAKE, 3), and the resulting vector will
 // look like:
 // { BRANCH_SNAKE, 3 }, { BRANCH_LAIR, 5 }, { BRANCH_DUNGEON, 11 }

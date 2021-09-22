@@ -1,14 +1,14 @@
 ###############################################################################
-# snake.des: All maps and branch endings relating to the Snake Pit.
+# snake.des: All maps and branch endings relating to the Fear of Snakes.
 ###############################################################################
 
 ##############################################################################
-# Snake Pit entry vaults
+# Fear of Snakes entry vaults
 ##############################################################################
 
 NAME:   dummy_snake_entry
 TAGS:   snake_entry
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 MAP
 O
 ENDMAP
@@ -17,7 +17,7 @@ NAME:   minmay_snake_entry_guardpost_small
 TAGS:   snake_entry
 ORIENT: float
 MONS:   naga, naga / nothing w:3
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 MAP
 ccc.@.ccc
 c.......c
@@ -35,7 +35,7 @@ TAGS:   snake_entry
 WEIGHT: 5
 ORIENT: float
 MONS:   naga, naga / nothing
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 MAP
    ccccccc
  ccc.....ccc
@@ -53,7 +53,7 @@ TAGS:   snake_entry
 WEIGHT: 2
 ORIENT: float
 MONS:   naga, naga / nothing
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 MAP
 c@ccccccc
 c.......cc
@@ -76,7 +76,7 @@ ORIENT: float
 MONS:   ball python, adder, water moccasin, black mamba
 KMONS:  P = plant / fungus w:1 / nothing
 SUBST:  3 = 33444 .:50, 2 = 122333344 .:90, 1 = 122223333 .:90
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 MAP
 xxxx.@1xxxxxxP@xxxxx
 xxxx1.PxxxxxP..xxxxx
@@ -105,7 +105,7 @@ TAGS:   snake_entry
 ORIENT: float
 WEIGHT: 2
 MONS:   guardian serpent
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 MAP
 ...
 .O1
@@ -116,7 +116,7 @@ NAME:   guppyfry_snake_entry_island
 TAGS:   snake_entry patrolling no_monster_gen
 ORIENT: float
 MONS:   naga / nothing, plant
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 SUBST:  - = . W:2 2:1
 MAP
    -WWWWW-
@@ -136,7 +136,7 @@ NAME:   guppyfry_snake_entry_garden
 TAGS:   snake_entry patrolling no_monster_gen
 ORIENT: float
 MONS:  naga / nothing, plant
-KFEAT:  O = enter_snake_pit
+KFEAT:  O = enter_snakes
 SUBST:  - = wW2t.
 MAP
  xxxx@xxxx
@@ -153,7 +153,7 @@ xx---.---xx
 ENDMAP
 
 ##############################################################################
-# Snake Pit specific non-ending non-entry vaults
+# Fear of Snakes specific non-ending non-entry vaults
 ##############################################################################
 
 NAME:   minmay_snake_pond
@@ -943,7 +943,7 @@ ENDMAP
 ################################################################################
 
 ################################################################################
-# Snake Pit: the hunt
+# Fear of Snakes: the hunt
 NAME:    snake_hunt
 PLACE:   Snake:$
 WEIGHT:  20
@@ -1011,9 +1011,9 @@ xxxxxxxxxxxxxxxxxxxxxxx!@!xxxxxxxxxxxxxxxxxx
 ENDMAP
 
 ################################################################################
-# Snake Pit: old level
+# Fear of Snakes: old level
 #
-NAME:   snake_pit
+NAME:   fear_of_snakes
 PLACE:  Snake:$
 WEIGHT: 20
 ORIENT: southwest
@@ -1064,7 +1064,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ENDMAP
 
 ################################################################################
-# Snake Pit: Coiled (minmay)
+# Fear of Snakes: Coiled (minmay)
 #
 NAME:    minmay_snake_end_coiled
 PLACE:   Snake:$
@@ -1130,7 +1130,7 @@ ENDMAP
 # Salamanders (by Mu.)
 # by popular request
 #
-NAME:   snake_pit_salamanders_mu
+NAME:   fear_of_snakes_salamanders_mu
 TAGS:   no_monster_gen
 PLACE:  Snake:$
 ORIENT: north

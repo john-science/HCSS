@@ -342,7 +342,7 @@ With the general form:
 
 where <place> is a valid place name as used in .des files, and <depth> is the
 depth of the branch's entrance in its parent branch. Thus -reset=Snake:1=3
-implies that the entrance of the Snake Pit is assumed to be on Lair:3.
+implies that the entrance of the Fear of Snakes is assumed to be on Lair:3.
 
 You can also disable the use of random maps during level generation with:
                -nomaps
