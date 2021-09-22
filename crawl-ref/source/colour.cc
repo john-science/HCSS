@@ -494,7 +494,7 @@ void init_element_colours()
                             ETC_BEOGH, "beogh",
                             // plain Orc colour
                             60,  LIGHTRED,
-                            // Orcish mines wall/idol colour
+                            // Orcish hells wall/idol colour
                             60,  BROWN,
                         0));
     add_element_colour(_create_random_element_colour_calc(

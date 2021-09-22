@@ -303,7 +303,7 @@ SUBST: 5 = 4...
 COLOUR: # = yellow
 KFEAT: # = closed_door
 : lua_marker('#', props_marker {
-:           door_description_suffix=" to the Orcish Mines",
+:           door_description_suffix=" to the Orcish Hells",
 :           })
 MARKER: # = lua:restrict_door()
 COLOUR: & = yellow
@@ -343,7 +343,7 @@ NSUBST: ^ = 2:4 / 10:~ / *:.
 COLOUR: # = yellow
 KFEAT: # = closed_door
 : lua_marker('#', props_marker {
-:           door_description_suffix=" to the Orcish Mines",
+:           door_description_suffix=" to the Orcish Hells",
 :           })
 MARKER: # = lua:restrict_door()
 COLOUR: & = yellow

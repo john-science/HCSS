@@ -356,7 +356,7 @@ COLOUR:   12345 = brown
 : line_setup(_G)
 : general_item_setup(_G)
 : lua_marker('~', props_marker {
-:           door_description_suffix=" to the Orcish Mines",
+:           door_description_suffix=" to the Orcish Hells",
 :           })
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxx

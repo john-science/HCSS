@@ -30,8 +30,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_ORC, BRANCH_DUNGEON, 10, 12, 4, 10,
       BFLAG_SPOTTY,
       DNGN_ENTER_ORC, DNGN_EXIT_ORC, NUM_FEATURES,
-      "Orcish Mines", "the Orcish Mines", "Orc",
-      nullptr,
+      "Orcish Hells", "the Orcish Hells", "Orc",
+      "You enter the hells of Orcs!",
       BROWN, BROWN,
       'O', {}, 0 },
 
@@ -39,7 +39,7 @@ const Branch branches[NUM_BRANCHES] =
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
       DNGN_ENTER_ELF, DNGN_EXIT_ELF, NUM_FEATURES,
       "Elven Hells", "the Elven Hells", "Elf",
-      "You enter the Hell of Elves!",
+      "You enter the hells of Elves!",
       WHITE, ETC_ELVEN_BRICK,
       'E', {}, 0 },
 
@@ -47,7 +47,7 @@ const Branch branches[NUM_BRANCHES] =
       BFLAG_NONE,
       DNGN_ENTER_DWARF, DNGN_EXIT_DWARF, NUM_FEATURES,
       "Dwarven Hall", "the Dwarven Hall", "Dwarf",
-      nullptr,
+      "You enter the hells of Dwarves! You will find no beer here.",
       BROWN, BROWN,
       'K', {}, 0 },
 
@@ -72,7 +72,7 @@ const Branch branches[NUM_BRANCHES] =
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SHOALS, DNGN_EXIT_SHOALS, NUM_FEATURES,
       "Shoals", "the Shoals of Reality", "Shoals",
-      "You enter the Hell of Merfolk!",
+      "You enter the hells of Merfolk!",
       BROWN, BROWN,
       'A', { RUNE_SHOALS }, 0 },
 

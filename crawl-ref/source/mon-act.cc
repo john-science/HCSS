@@ -367,7 +367,7 @@ static bool _mon_on_interesting_grid(monster* mon)
         return mon->is_holy();
 
     // Orcs will tend to patrol around altars to Beogh, and guard the
-    // stairway from and to the Orcish Mines.
+    // stairway from and to the Orcish Hells.
     case DNGN_ALTAR_BEOGH:
     case DNGN_ENTER_ORC:
     case DNGN_EXIT_ORC:

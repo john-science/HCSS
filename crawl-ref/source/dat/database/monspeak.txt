@@ -5420,7 +5420,7 @@ VISUAL:@The_monster@ checks @possessive@ coin pouch and frowns.
 
 @The_monster@ says, "I'm sure they'll be treated well, anyway."
 
-@The_monster@ says, "I'm sure the Orcish Mines are around here somewhere..."
+@The_monster@ says, "I'm sure the Orcish Hells are around here somewhere..."
 
 @The_monster@ says, "I knew I should've brought a map."
 
@@ -5730,7 +5730,7 @@ w:7
 
 @The_monster@ says @to_foe@, "Down here, you're an orc or you're nobody."
 
-@The_monster@ says @to_foe@, "In the orcish mines, orcs kill the likes of YOU!"
+@The_monster@ says @to_foe@, "In the orcish hells, orcs kill the likes of YOU!"
 %%%%
 _Saint Roka generic_
 

@@ -976,7 +976,7 @@ local v5_entry_turn
 -- branch data: code, full name, where name
 local branch_data = {
   {"T", "the Ecumenical Temple", "Temple"},
-  {"O", "the Orcish Mines", "Orc"},
+  {"O", "the Orcish Hells", "Orc"},
   --{"E", "the Elven Hells", "Elf"},
   {"L", "the Lair", "Lair"},
   {"S", "the Swamp", "Swamp"},
@@ -3889,7 +3889,7 @@ function want_to_stairdance_up()
   if not (feat:find("stone_stairs_up") or
           feat:find("exit_") and (feat == "exit_demon" or feat == "exit_vaults"
           or feat == "exit_zot" or feat == "exit_slime_pits"
-          or feat == "exit_orcish_mines" or feat == "exit_lair"
+          or feat == "exit_orcish_hells" or feat == "exit_lair"
           or feat == "exit_crypt" or feat == "exit_snakes"
           or feat == "exit_elven_hells" or feat == "exit_tomb"
           or feat == "exit_swamp" or feat == "exit_shoals"

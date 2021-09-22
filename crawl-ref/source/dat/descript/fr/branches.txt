@@ -16,7 +16,7 @@ Le Temple des Dieux, un lieu de paix et de refuge loin des insanités du donjon.
 On y trouve généralement des autels dédiés à la majorité des dieux connus. Il
 est localisé entre les niveaux 4 et 7 du donjon principal.
 %%%%
-Orcish Mines
+Orcish Hells
 
 Les mines d'or bien exploitée des tribus orcs. Ces cavernes tortueuses sont
 remplis d'Orcs, de leurs ouvriers humanoïdes, et des piles de leur or

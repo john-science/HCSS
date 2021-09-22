@@ -1,11 +1,11 @@
 ##############################################################################
-# orc.des: Entries to the Orcish Mines, and (mini)vaults which appear _only_
+# orc.des: Entries to the Orcish Hells, and (mini)vaults which appear _only_
 #          in the Mines. General (mini)vaults, which can also appear in the
 #          Mines, should go to vaults.des.
 ##############################################################################
 
 ##############################################################################
-# Orcish Mines entries
+# Orcish Hells entries
 ##############################################################################
 # Dummy Orc entry
 
@@ -13,7 +13,7 @@ NAME:   orc_0_dummy
 TAGS:   orc_entry
 WEIGHT: 50
 ORIENT: float
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 O
 ENDMAP
@@ -28,7 +28,7 @@ ITEM: % / scroll of teleportation / scroll of noise / scroll of immolation
 ITEM: % / w:2 * / scroll of blinking / scroll of fear
 SHUFFLE: %1
 ORIENT: float
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 MAP
            xxx
         xxxxOxxxx
@@ -57,7 +57,7 @@ NAME: david_orc_2
 TAGS: orc_entry no_rotate
 MONS: weight:50 orc / orc warrior / nothing
 ORIENT: float
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 MAP
 xxxx..@..xxxx
 x.....I.....x
@@ -78,7 +78,7 @@ TAGS: orc_entry
 MONS: weight:80 nothing / weight:50 orc / orc priest / orc wizard / orc warrior
 MONS: nothing / orc warrior / warg / orc priest
 ORIENT: float
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 MAP
 1.....@....11
 1............
@@ -103,7 +103,7 @@ NSUBST: a = 1:1 / *:.
 NSUBST: b = 1:1 / *:.
 NSUBST: c = 1:1 / *:.
 NSUBST: d = 1:1 / *:.
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 xxxxxxxxxxxxxxxxxxxxxx
 xx?xxx?xxx?xxx?xxxxxxx
@@ -140,7 +140,7 @@ MONS:    orc w:32 / w:7 orc warrior / w:1 orc knight
 MONS:    orc w:32 / w:7 orc warrior
 : end
 SUBST:   x : cxv
-KFEAT:   O = enter_orcish_mines
+KFEAT:   O = enter_orcish_hells
 MAP
 xxxxxxxxxxxxxxx
 x......O......x
@@ -167,7 +167,7 @@ KFEAT:   1 = 1
 ITEM:    whip, potion of mutation ident:type
 ITEM:    large rock / weight:40 nothing, potion of mutation ident:type
 SHUFFLE: defO
-KFEAT:   O = enter_orcish_mines
+KFEAT:   O = enter_orcish_hells
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 x.........g..........2x...w4xxx
@@ -195,7 +195,7 @@ MONS:  orc warrior
 SUBST: G = 4
 : end
 SUBST: c = c:1000 x
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 MAP
 .............................
 .Iwwwwwwwwwwwwwwwwwwwwwwwwww.
@@ -223,7 +223,7 @@ MONS:   orc warrior / orc priest / orc wizard / nothing
 MONS:   warg / ogre / nothing
 ORIENT: float
 SUBST:  ? = x . $:1
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 MAP
 xxx.xxxxxxxxxxxxxxxxxxx
 xxx?.x?x?xx?xxx??xx?xxx
@@ -264,7 +264,7 @@ SUBST: v : c:60 .
 SUBST: b : c:60 .
 KITEM: 2 = dagger
 KFEAT: 2 = 2
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 #
 MAP
 ..............................
@@ -297,7 +297,7 @@ ORIENT: float
 MONS:   orc w:40 / orc wizard w:2 / orc priest w:2, orc warrior
 SUBST:  ? = .x
 SUBST:  ! : .$
-KFEAT: O = enter_orcish_mines
+KFEAT: O = enter_orcish_hells
 MAP
 x??@....@....@??x
 xx??.........??xx
@@ -329,7 +329,7 @@ SUBST:  ? = @ x:20 +
 COLOUR: ! = brown
 FTILE:  ! = floor_orc
 SUBST:  ! : .$
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 xx?xxxxxxx?xx
 x111xxxxx111x
@@ -362,7 +362,7 @@ MONS:   w:1 orc sorcerer / orc priest / nothing
 MONS:   orc priest / nothing
 : end
 SUBST:  ? = x . $:1
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 xxx.xxxxxxxxxxxxxxxxxxx
 xxx?.x?x?xx?xxx??xx?xxx
@@ -402,7 +402,7 @@ MONS:   orc priest
 : end
 SUBST:  4 = 34
 SUBST:  ? = x . $:1
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 xxxxx..@..xxxxx
 x21....I....12x
@@ -425,7 +425,7 @@ TAGS:   orc_entry
 WEIGHT: 5
 ORIENT: float
 MONS:   patrolling warg / nothing w:2
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 1.1
 .O.
@@ -440,7 +440,7 @@ TAGS:   orc_entry
 ORIENT: float
 MONS:   orc w:40 / orc warrior / orc wizard, patrolling orc priest
 SUBST:  " = 1...
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 ccccccc
 c"""""c
@@ -464,7 +464,7 @@ ORIENT: float
 MONS:   orc w:40 / orc warrior / orc wizard, patrolling orc priest
 SUBST:  " = 1.......
 SUBST:  ' = $.
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MAP
 ccccc   ccccc
 c'''c   c'''c
@@ -493,7 +493,7 @@ ENDMAP
 
 NAME:   kennysheep_orc_monster_closet_entryway
 TAGS:   orc_entry
-KFEAT:  O = enter_orcish_mines
+KFEAT:  O = enter_orcish_hells
 MONS:   gnoll / gnoll sergeant / orc warrior / orc w:15 /\
                 big kobold / ogre
 MONS:   troll
@@ -511,7 +511,7 @@ ENDMAP
 
 
 ############################################################################
-# (Mini)vaults specific to the Orcish Mines
+# (Mini)vaults specific to the Orcish Hells
 ############################################################################
 
 default-depth: Orc

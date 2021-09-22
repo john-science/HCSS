@@ -1434,7 +1434,7 @@ void learned_something_new(hints_event_type seen_what, coord_def gc)
                 "branches."
 
                 "\n\nThe first three branches you'll encounter are the "
-                "Temple, the Lair and the Orcish Mines. While the Lair"
+                "Temple, the Lair and the Orcish Hells. While the Lair"
                 "and the Mines can be dangerous for the new adventurer, "
                 "the Temple is completely safe and contains a number of "
                 "altars at which you might convert to a new god.";

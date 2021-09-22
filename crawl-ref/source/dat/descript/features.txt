@@ -441,9 +441,9 @@ A staircase back to the Lair
 
 A staircase leading back up to the Lair of Beasts.
 %%%%
-A staircase back to the Mines
+A staircase back to the Orcish Hells
 
-A staircase leading back to the Orcish Mines.
+A staircase leading back to the Orcish Hells.
 %%%%
 A staircase back to the Vaults
 
@@ -476,9 +476,9 @@ A staircase to the Lair
 
 A staircase leading to the Lair of Beasts.
 %%%%
-A staircase to the Orcish Mines
+A staircase to the Orcish Hells
 
-A staircase leading to the Orcish Mines.
+A staircase leading to the Orcish Hells.
 %%%%
 A staircase to the Shoals
 

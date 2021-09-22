@@ -417,12 +417,12 @@ PORTAL_EXIT(DNGN_EXIT_ELF, "portal leading out of this place", "exit_elven_hells
 BRANCH_EXIT(DNGN_EXIT_SLIME, "staircase back to the Dungeon", "exit_slime_pits"),
 
 {
-    DNGN_ENTER_ORC, "staircase to the Orcish Mines", "enter_orcish_mines",
+    DNGN_ENTER_ORC, "staircase to the Orcish Hells", "enter_orcish_hells",
     DCHAR_STAIRS_DOWN, NUM_DCHAR_TYPES,
     YELLOW, RED, YELLOW, YELLOW, YELLOW,
     (FFT_NOTABLE | FFT_EXAMINE_HINT), MF_STAIR_BRANCH,
 },
-BRANCH_EXIT(DNGN_EXIT_ORC, "staircase back to the Dungeon", "exit_orcish_mines"),
+BRANCH_EXIT(DNGN_EXIT_ORC, "staircase back to the Dungeon", "exit_orcish_hells"),
 
 BRANCH_ENTRANCE(DNGN_ENTER_DWARF, "staircase to the Dwarven Hall", "enter_dwarven_hall"),
 BRANCH_ENTRANCE(DNGN_ENTER_FOREST, "staircase to the Enchanted Forest", "enter_forest"),

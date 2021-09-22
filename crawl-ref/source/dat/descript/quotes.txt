@@ -229,9 +229,9 @@ A staircase to the Ecumenical Temple
 
 <Temple>
 %%%%
-A staircase to the Orcish Mines
+A staircase to the Orcish Hells
 
-<Orcish Mines>
+<Orcish Hells>
 %%%%
 A staircase to the Shoals
 
@@ -614,7 +614,7 @@ settle the battles of the near future.”
     -Nikola Tesla, “The Transmission of Electrical Energy Without Wires As a
 Means for Furthering Peace”, _Electrical World and Engineer_. January 7, 1905.
 %%%%
-Orcish Mines
+Orcish Hells
 
 “You load sixteen tons, what do you get
  Another day older and deeper in debt

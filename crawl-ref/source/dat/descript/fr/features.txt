@@ -364,7 +364,7 @@ A staircase to the Lair
 
 Cet escalier conduit à l'Antre des Bêtes.
 %%%%
-A staircase to the Orcish Mines
+A staircase to the Orcish Hells
 
 Cet escalier mène aux Mines Orcs.
 %%%%

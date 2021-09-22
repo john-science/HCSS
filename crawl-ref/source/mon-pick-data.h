@@ -147,7 +147,7 @@ static const pop_entry pop_temple[] =
 };
 
 static const pop_entry pop_orc[] =
-{ // Orcish Mines
+{ // Orcish Hells
   {  1,  4,  384, FLAT, MONS_NO_MONSTER },
   {  1,  4,  192, FLAT, MONS_ORC_WARRIOR },
   {  1,  4,   25, FLAT, MONS_ORC_PRIEST },
