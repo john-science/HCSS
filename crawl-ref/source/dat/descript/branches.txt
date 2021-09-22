@@ -33,8 +33,8 @@ Most adventurers find the Lair of Beasts to be an exciting change of climate.
 And indeed, there is something to be said about getting gored, mauled and eaten
 rather than sliced, burnt or stabbed.
 
-The Lair contains the entrances to one of the Swamp or the Shoals, one of the
-Snake Pit or the Spider Nest, and to the Pits of Slime.
+The Lair contains the entrances to one of the Dead Swamp or the Shoals of Reality,
+one of the Snake Pit or the Spider Nest, and to the Pits of Slime.
 %%%%
 Swamp
 
@@ -47,9 +47,9 @@ A dungeon features only one of the Swamp and Shoals branches.
 %%%%
 Shoals
 
-The exotic underground beaches of the Shoals make up a few small islands in a
-seemingly endless sea. The merfolk have made it their home, alongside many
-dreaded sea creatures.
+The Shoals of Reality are the dreamlike hells of the merfolk. Never quite awake
+or asleep, the souls of the merfolk here are driven to sorrows or violent rage
+with every tide.
 
 A dungeon features only one of the Shoals and Swamp branches.
 %%%%

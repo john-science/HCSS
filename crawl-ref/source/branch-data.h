@@ -71,8 +71,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_SHOALS, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_SHOALS, DNGN_EXIT_SHOALS, NUM_FEATURES,
-      "Shoals", "the Shoals", "Shoals",
-      nullptr,
+      "Shoals", "the Shoals of Reality", "Shoals",
+      "You enter the Hell of Merfolk!",
       BROWN, BROWN,
       'A', { RUNE_SHOALS }, 0 },
 
