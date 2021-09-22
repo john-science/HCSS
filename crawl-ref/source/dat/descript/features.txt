@@ -495,7 +495,7 @@ A staircase leading to the Snake Pit.
 %%%%
 A staircase to the Swamp
 
-A staircase leading to the Swamp.
+A staircase leading to the Dead Swamp.
 %%%%
 A staircase to the Tomb
 

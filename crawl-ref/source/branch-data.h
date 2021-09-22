@@ -62,8 +62,9 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_SWAMP, BRANCH_DUNGEON, 11, 13, 4, 15,
       BFLAG_DANGEROUS_END | BFLAG_SPOTTY,
       DNGN_ENTER_SWAMP, DNGN_EXIT_SWAMP, NUM_FEATURES,
-      "Swamp", "the Swamp", "Swamp",
-      nullptr,
+      "Swamp", "the Dead Swamp", "Swamp",
+      "A wave of rank air almost chokes you as you enter "
+      "the Hell specializing in drowning and bug bites.",
       BROWN, BROWN,
       'S', { RUNE_SWAMP }, 0 },
 

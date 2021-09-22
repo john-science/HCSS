@@ -446,10 +446,10 @@ BRANCH_EXIT(DNGN_EXIT_SNAKE, "staircase back to the Dungeon", "exit_snake_pit"),
 BRANCH_ENTRANCE(DNGN_ENTER_TOMB, "staircase to the Tomb", "enter_tomb"),
 BRANCH_EXIT(DNGN_EXIT_TOMB, "staircase back to the Crypt", "exit_tomb"),
 
-BRANCH_ENTRANCE(DNGN_ENTER_SWAMP, "staircase to the Swamp", "enter_swamp"),
+BRANCH_ENTRANCE(DNGN_ENTER_SWAMP, "staircase to the Dead Swamp", "enter_swamp"),
 BRANCH_EXIT(DNGN_EXIT_SWAMP, "staircase back to the Dungeon", "exit_swamp"),
 
-BRANCH_ENTRANCE(DNGN_ENTER_SHOALS, "staircase to the Shoals", "enter_shoals"),
+BRANCH_ENTRANCE(DNGN_ENTER_SHOALS, "staircase to the Shoals of Reality", "enter_shoals"),
 BRANCH_EXIT(DNGN_EXIT_SHOALS, "staircase back to the Dungeon", "exit_shoals"),
 
 BRANCH_ENTRANCE(DNGN_ENTER_SPIDER, "hole to the Spider Nest", "enter_spider_nest"),
