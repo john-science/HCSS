@@ -220,8 +220,8 @@ test its edge.
 %%%%
 Ilsuiw
 
-A deadly merfolk water-witch, who uses her dominion over the tides to draw
-unwitting adventurers to their deaths.
+In life, a deadly merfolk water-witch, who used her dominion over the tides to
+draw unwitting adventurers to their deaths.
 %%%%
 Jessica
 
@@ -1561,17 +1561,17 @@ dwelling both in water and on land, and fiercely defends its domain.
 %%%%
 merfolk aquamancer
 
-A slender merfolk mystic with unusually webby hands. Its form shifts and
+The ghost of a merfolk mystic with unusually webby hands. Its form shifts and
 glistens as if seen through ocean spray.
 %%%%
 merfolk impaler
 
-A powerfully muscled merfolk warrior, bearing a deadly weapon.
+The ghost of a powerful merfolk warrior, bearing a deadly weapon.
 %%%%
 merfolk javelineer
 
-A fearsome merfolk champion with a piercing gaze and a large bundle of
-javelins.
+The ghost of a fearsome merfolk champion with a piercing gaze and a large
+bundle of javelins.
 %%%%
 minotaur
 
@@ -2015,7 +2015,7 @@ An ice replica of a monster, animated by the powers of necromancy.
 %%%%
 siren
 
-A beguiling merfolk whose voice can mesmerize listeners.
+The ghost of a beguiling merfolk, whose voice can mesmerize listeners.
 %%%%
 sixfirhy
 
@@ -2825,8 +2825,8 @@ A bat that is well past its sell-by date.
 %%%%
 sickly siren
 
-A young merfolk that looks quite sick, but still has the power to mesmerize its
-victims.
+The ghost of a young merfolk that looks quite sick, but still has the power to
+mesmerize its victims.
 %%%%
 skeletal bat
 

@@ -7601,10 +7601,12 @@ static bool _should_siren_sing(monster* mons, bool avatar)
 
     // Won't sing if either of you silenced, or it's friendly,
     // confused, fleeing, or leaving the level.
+    // sirens won't mesmerize other merfolk
     if (mons->has_ench(ENCH_CONFUSION)
         || mons_is_fleeing(*mons)
         || mons->pacified()
         || mons->friendly()
+        || you.species == SP_MERFOLK
         || !player_can_hear(mons->pos()))
     {
         return false;
