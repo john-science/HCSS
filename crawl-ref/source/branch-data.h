@@ -55,7 +55,7 @@ const Branch branches[NUM_BRANCHES] =
       BFLAG_NONE,
       DNGN_ENTER_LAIR, DNGN_EXIT_LAIR, NUM_FEATURES,
       "Lair", "the Lair of Beasts", "Lair",
-      nullptr,
+      "You shouldn't be here. Run",
       GREEN, BROWN,
       'L', {}, 0 },
 
@@ -300,10 +300,10 @@ const Branch branches[NUM_BRANCHES] =
 
     { BRANCH_DESOLATION, NUM_BRANCHES, -1, -1, 1, 20,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
-      DNGN_ENTER_DESOLATION, DNGN_EXIT_DESOLATION, NUM_FEATURES, // TODO
+      DNGN_ENTER_DESOLATION, DNGN_EXIT_DESOLATION, NUM_FEATURES,
       "Desolation", "the Desolation of Salt", "Desolation",
       "You enter a great desolation of salt!",
-      LIGHTGREY, BROWN, // TODO
+      LIGHTGREY, BROWN,
       '9', {}, 0 },
 
 };
