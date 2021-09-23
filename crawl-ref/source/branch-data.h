@@ -111,8 +111,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_BLADE, BRANCH_VAULTS, 3, 4, 1, 21,
       BFLAG_NO_ITEMS,
       DNGN_ENTER_BLADE, DNGN_EXIT_BLADE, NUM_FEATURES,
-      "Hall of Blades", "the Hall of Blades", "Blade",
-      nullptr,
+      "Hell of Blades", "the Hell of Blades", "Blade",
+      "You enter the Hell of Blades! If you have blood, you will bleed.",
       LIGHTGREY, BROWN,
       'B', {}, 0 },
 

@@ -209,7 +209,7 @@ static const pop_entry pop_dwarf[] =
 };
 
 static const pop_entry pop_blade[] =
-{ // Hall of Blades
+{ // Hell of Blades
   {  1,  1, 1000, FLAT, MONS_DANCING_WEAPON },
   { 0,0,0,FLAT,MONS_0 }
 };

@@ -82,7 +82,7 @@ syn match desBranch contained /demon\|dis\|geh\|coc\|tar\|zot\|forest\|abyss\|pa
 syn match desBranch contained /bailey\|icecv\|volcano\|wizlab/
 
 syn match desBranchname contained /dungeon\|depths\|temple\|orcish_hells\|elven_hells\|lair\|swamp\|shoals/
-syn match desBranchname contained /snakes\|spiders\|slime_pits\|vaults\|hall_of_blades\|crypt\|tomb/
+syn match desBranchname contained /snakes\|spiders\|slime_pits\|vaults\|hell_of_blades\|crypt\|tomb/
 syn match desBranchname contained /demon\|dis\|gehenna\|cocytus\|tartarus\|zot\|forest\|abyss\|pandemonium/
 syn match desBranchname contained /ziggurat\|labyrinth\|bazaar\|trove\|sewer\|ossuary/
 syn match desBranchname contained /bailey\|ice_cave\|volcano\|wizlab/

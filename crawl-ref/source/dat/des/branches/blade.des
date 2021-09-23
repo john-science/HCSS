@@ -1,10 +1,10 @@
 ##############################################################################
-# The Hall of Blades
+# The Hell of Blades
 ##############################################################################
 : require('dlua/vault.lua')
 
 # Main layout
-NAME:    hall_of_blades
+NAME:    hell_of_blades
 TAGS:    no_dump no_monster_gen
 PLACE:   Blade
 ORIENT:  encompass

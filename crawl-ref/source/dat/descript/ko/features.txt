@@ -205,7 +205,7 @@ A staircase back to the Vaults
 
 보물창고로 돌아갈 수 있는 계단이다.
 %%%%
-A staircase to the Hall of Blades
+A staircase to the Hell of Blades
 
 칼날의 방으로 갈 수 있는 계단이다. 저 안에 있는 움직이는 무기들 때문에, 계단
 이곳저곳이 부서져 있다.

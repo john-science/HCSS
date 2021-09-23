@@ -111,7 +111,7 @@ argentée ainsi que les entrées de deux autres branches. Pour y pénétrer, il
 faut posséder au moins une rune de Zot. Son entrée peut être trouvée entre les
 niveaux 13 et 14 du donjon principal.
 %%%%
-Hall of Blades
+Hell of Blades
 
 Il y a fort longtemps, toutes les dagues, haches et armes d'hast se
 réunissaient la nuit pour danser la valse, rêvant de champs de bataille sans
