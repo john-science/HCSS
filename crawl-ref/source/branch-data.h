@@ -194,7 +194,7 @@ const Branch branches[NUM_BRANCHES] =
       "Abyss", "the Abyss", "Abyss",
       nullptr,
       BLACK, BLACK, // set specially
-      'J', {RUNE_ABYSSAL }, 0 },
+      'J', { RUNE_ABYSSAL }, 0 },
 
     { BRANCH_PANDEMONIUM, BRANCH_ZOT, 2, 4, 1, 24,
       BFLAG_NO_XLEV_TRAVEL | BFLAG_NO_ITEMS,
