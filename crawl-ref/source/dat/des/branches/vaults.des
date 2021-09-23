@@ -12,6 +12,15 @@
     e.subst("* = * |:2")
   end
 
+  -- Cover this place in bones!
+  function cover_in_bones(e)
+    e.subst(". = R......")
+    dgn.never_decay(e, 'R', "human skeleton / orc skeleton / elf skeleton"
+                             .. " / dwarf skeleton / ogre skeleton"
+                             .. " / naga skeleton / minotaur skeleton"
+                             .. " / merfolk skeleton")
+  end
+
   -- Vaults:$ cross-vault rune substitution
   -- Turn 'O' into a rune (if it doesn't exist yet) or a good item
   --
@@ -59,6 +68,7 @@ SHUFFLE: !-
 SUBST:   ! = x, - = +, c : cxv
 NSUBST:  1 = 1:1 / * = 1.., 2 = 1:2 / * = 2..
 KFEAT:   O = enter_vaults
+: cover_in_bones(_G)
 MAP
 xxxxx.@.ccccc
 x...+...c..2c
@@ -80,6 +90,7 @@ MONS: yaktaur captain, yaktaur, ogre mage, two-headed ogre
 MONS: glowing shapeshifter, shapeshifter
 SHUFFLE: 12 / 34 / 56
 KFEAT:   O = enter_vaults
+: cover_in_bones(_G)
 MAP
 vvvvv.@....
 v1.........
@@ -103,6 +114,7 @@ KMONS:   3 = centaur warrior w:20 / Nessos, centaur warrior
 KMONS:   4 = two-headed ogre / Rupert, two-headed ogre
 SHUFFLE: 2349
 KFEAT:   O = enter_vaults
+: cover_in_bones(_G)
 MAP
 @..........@
 ....1131....
@@ -131,6 +143,7 @@ NSUBST:  1 = 1:1 / 1:2 / 1:3. / 1 : 4 .:30 / 1:5 .:70
 SHUFFLE: 12345
 SUBST:   * = *.%, c : cvv, 6 = 6...
 KFEAT:   O = enter_vaults
+: cover_in_bones(_G)
 MAP
 @..........@
 .cccccccccc.
@@ -153,6 +166,7 @@ KMONS:  O = vault guard
 KFEAT:  O = enter_vaults
 SUBST:  ! : !., ? : ?.
 SUBST:  ?! = .:30 0:10 9:5 %:10 *:5
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxxxxx
 xOx!x!x?x!x?xx
@@ -174,6 +188,7 @@ TAGS:   vaults_entry
 MONS:   dancing weapon ; long sword good_item
 SUBST:  v : vcxxx
 KFEAT:  O = enter_vaults
+: cover_in_bones(_G)
 MAP
 .............
 .............
@@ -194,6 +209,7 @@ TAGS:    vaults_entry
 MONS:    vault guard
 SUBST:   v : vxx, b : bcc
 KFEAT:   O = enter_vaults
+: cover_in_bones(_G)
 MAP
 vvvvvv.vvvvvv
 vvvvvv.vvvvvv
@@ -227,6 +243,7 @@ KMASK:   @` = !no_item_gen
 KFEAT:   O = enter_vaults
 SHUFFLE: 12 / 34 / 56 / 78 / 90 / AB / CD, O%*|
 SUBST:   $ = $$., * = **%, | = **|., ` = .
+: cover_in_bones(_G)
 MAP
 vvvvvvv@@vvvvvvv
 vO2...v``v...4*v
@@ -257,6 +274,7 @@ MONS:   vault guard w:58 / deep elf knight w:1 / deep elf archer w:1
 SUBST:  x : xcv
 NSUBST: 2 = 1:2 / * = 12, 3 = 1:3 / * = 113
 KFEAT:  O = enter_vaults
+: cover_in_bones(_G)
 MAP
 ...............
 .xxxxxxxxxxxxx.
@@ -290,6 +308,7 @@ MONS: vault guard / orc knight w:2
 MONS: wizard / tengu conjurer / orc sorcerer / ogre mage
 NSUBST: T = 1:U / *:T
 KFEAT: O = enter_vaults
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxxxxxxxxxx
 xxxxxxxvvvvvxxxxxxx
@@ -318,6 +337,7 @@ NAME: lightli_vaults_fourway_checkpoint
 TAGS: vaults_entry transparent
 MONS: vault guard
 KFEAT: O = enter_vaults
+: cover_in_bones(_G)
 MAP
 .................
 ...vv.......vv...
@@ -383,6 +403,7 @@ MONS: vault guard
   set_feature_name("metal_wall", "heavily etched metal wall")
   set_feature_name("crystal_wall", "heavily etched crystal wall")
 }}
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -453,6 +474,7 @@ NAME:  vaults_end_rune
 TAGS:  vaults_end_rune
 KMONS: O = 8 / 9
 KITEM: O = silver rune of Zot
+: cover_in_bones(_G)
 MAP
 O
 ENDMAP
@@ -498,6 +520,7 @@ NSUBST:  V = 1:. / *:xxxx.
 SUBST:   - = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   ..xxxxxxxxxxxxxxxxxxx..
  ...xxxxxxxxxxxxxxxxxxx..
@@ -534,6 +557,7 @@ SUBST:   _ = 8 9 .:20
 SUBST:   a : x .
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   a.xxxxxxxxxxxxxxxxxxx.a
  a!x.x.x!x.x.x.x.x.x.x.x.
@@ -569,6 +593,7 @@ NSUBST:  Z = 5 = 8:30 9 / 7 = 8:30 9 .:40 / *:.
 SUBST:   a : x ., b : x ., c : x .
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   axaxxaaxaxxxxxxxxxxxxbx
   .......x................
@@ -604,6 +629,7 @@ NSUBST: ? = 1:O / *:*
 NSUBST: " = 1:. / *:x
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -637,6 +663,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 *:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..x9x.x.x.x.x.x.x.x.x.x.
@@ -683,6 +710,7 @@ NSUBST:  G = 1:O / *:9
 SUBST:   9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -719,6 +747,7 @@ SUBST:  $ = |**$
 SUBST:  a = x.
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   axxxxxxxxxxxxxxxxxxxxxa
  ........................
@@ -754,6 +783,7 @@ NSUBST: O = 1:O / *:*
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..9..9xxxx9...9xxxx9....
@@ -787,6 +817,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ....xx9...........9xx...
@@ -820,6 +851,7 @@ TAGS:  vaults_end_quadrant unrand
 SUBST: 9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .....x....*xxx*....x....
@@ -854,6 +886,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:*
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   ...xxxxxxxxxxxxxxxxxxxx
  xxxx.....9xxxx.....9xxxx
@@ -887,6 +920,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -920,6 +954,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .........................
@@ -954,6 +989,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / 1:* / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   .xxxxxxxxxxxxxxxxxxxxxx
  ..xx**xx**xx**xx**xx**xx.
@@ -988,6 +1024,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .....x......x......x....
@@ -1022,6 +1059,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: * = 1:O / 14:* / *:.
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..xx....9xx...xx9....xx..
@@ -1056,6 +1094,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:.
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  9.....x9.....9x9........
@@ -1089,6 +1128,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  9xxx9.......x9..........
@@ -1124,6 +1164,7 @@ SUBST:   a = +, e = ., bcdfgh = x
 SUBST:   9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..xxxxxx$$$$$$$$$xxxxx..
@@ -1163,6 +1204,7 @@ SUBST:   C = ., DAa = x
 SUBST:   9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..xxxxxxxxxx.....xxxx...
@@ -1197,6 +1239,7 @@ NSUBST: * = 1:O / *:*
 SUBST:  * = 9 8 *:20 .
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  xxx.x.*.x.xxx.x.*.x.xxx.
@@ -1231,6 +1274,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:*
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   x.x.xxxxxxxxxxxxxxxxxxx
  .................xxxxxx.
@@ -1264,6 +1308,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .9.x.x.x.x.x.x.x.9.x.x...
@@ -1299,6 +1344,7 @@ SUBST:   9 = 8 9 .:20
 SUBST:   A = ., B = x
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  9......................9
@@ -1332,6 +1378,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
   .......................
@@ -1366,6 +1413,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:*
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..x9xxx9xxx9xxx9xxx9xxx.
@@ -1399,6 +1447,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -1432,6 +1481,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -1466,6 +1516,7 @@ NSUBST: A = 1:+ / *:x, B = 1:+ / *:x
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -1500,6 +1551,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ............9...........
@@ -1534,6 +1586,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -1567,6 +1620,7 @@ NSUBST: O = 1:O / *:.
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........x...............
@@ -1606,6 +1660,7 @@ NSUBST:  6 = 1:O / *:*
 SUBST:   9 = 8 9 .:30
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  +xxxxxxxxxxxxxxxxxxxxxxx
@@ -1638,6 +1693,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ...+xxxxxxxxxxxxxxxxx+..
@@ -1670,6 +1726,7 @@ TAGS:   vaults_end_quadrant unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..xx........9........xx.
@@ -1703,6 +1760,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:*
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..9.........+.........9.
@@ -1736,6 +1794,7 @@ NSUBST: O = 1:O / *:*
 SUBST: 9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxx.
  ..xxx.9.................
@@ -1768,6 +1827,7 @@ TAGS:  vaults_end_quadrant unrand
 SUBST: 9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxx.
  ..9...9xxx9***9xxx....9..
@@ -1802,6 +1862,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:*
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -1840,6 +1901,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ......x|****...9xxx.....
@@ -1874,6 +1936,7 @@ SUBST:   9 = 8 9 .:20
 NSUBST:  * = 1:O / *:*
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  x.9.xxxxxx*9xxxxxxxxxxxx
@@ -1908,6 +1971,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -1941,6 +2005,7 @@ TAGS:   vaults_end_quadrant_prize unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .9......9xxxxxxx9.......
@@ -1975,6 +2040,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ...............9..**|xxxx
@@ -2010,6 +2076,7 @@ SUBST:   a : ., b : x .:1, c : x .:1, d : x .:1
 SUBST:   9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
   ................xxxxxx..
@@ -2046,6 +2113,7 @@ SUBST:  $ = | *:15 $:5
 SUBST:  a = x.
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ....x.......x99...x......
@@ -2086,6 +2154,7 @@ SUBST:  s = x:250 +:1
 SUBST:  a = x.
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -2127,6 +2196,7 @@ NSUBST: G = 1:+ / *:x
 SUBST:  a = xn..
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   axxxxxxxxxxxxxxxxxxxxxa
   .c.c.c..x$$$$$x..c.c.c..
@@ -2163,6 +2233,7 @@ SUBST:  " = +:1 x:99
 SUBST:  ! = x:20 .
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   x.xxxxxxxxxxxxxxxxxxxxx
  .........................
@@ -2197,6 +2268,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .....9............9.....
@@ -2231,6 +2303,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -2265,6 +2338,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: | = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  9...9...9...9...9...9...
@@ -2299,6 +2373,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: | = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -2333,6 +2408,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: | = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..xx.....8x8.......8x8..
@@ -2367,6 +2443,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .........................
@@ -2400,6 +2477,7 @@ TAGS:   vaults_end_quadrant_prize unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  .999x......xx......xx...
@@ -2434,6 +2512,7 @@ SUBST:  9 = 8 9 .:20
 NSUBST: O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ....x9***9x9....x9.......
@@ -2469,6 +2548,7 @@ NSUBST: O = 1:O / *:|
 SUBST:  X : x., Y : x.
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
  .xxxxxxxxxxxxxxxxxxxxxxx
 .....x.9.x.9.x.9.x.9.x.9.
@@ -2502,6 +2582,7 @@ TAGS:   vaults_end_quadrant_prize unrand
 SUBST:  9 = 8 9 .:20
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ....9x.................x
@@ -2537,6 +2618,7 @@ NSUBST:  O = 1:O / *:|
 SUBST:   * = * $:4
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........9...xx..xx.......
@@ -2570,6 +2652,7 @@ NSUBST:  9 = 10:8 / 10:9 / *:.
 NSUBST:  O = 1:O / *:|
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ..xxx|xxx|xxx|xxx|xxx|x.
@@ -2603,6 +2686,7 @@ TAGS:   vaults_end_quadrant_prize unrand
 SUBST:  9 = 8 9 *:10
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
   xxxxxxxxxxxxxxxxxxxxxxx
  ........................
@@ -2650,6 +2734,7 @@ SUBVAULT: X : vaults_end_room
 SUBVAULT: Y : vaults_end_room
 SUBVAULT: Z : vaults_end_room
 SUBST:    VXYZ = .
+: cover_in_bones(_G)
 MAP
   axxxxxxxxxxxxxxxxxxxxxa
  ............99...........
@@ -2683,6 +2768,7 @@ TAGS: vaults_end_room
 : default_subvault_glyphs()
 SUBST: . = ?
 : vaults_end_loot(_G)
+: cover_in_bones(_G)
 MAP
 ENDMAP
 
@@ -2706,6 +2792,7 @@ TAGS: vaults_end_room
     end
 }}
 : vaults_end_loot(_G)
+: cover_in_bones(_G)
 MAP
 ENDMAP
 
@@ -2727,6 +2814,7 @@ TAGS: vaults_end_room
     end
 }}
 : vaults_end_loot(_G)
+: cover_in_bones(_G)
 MAP
 ENDMAP
 
@@ -2736,6 +2824,7 @@ NAME: vaults_end_room_rune
 TAGS: vaults_end_room_rune
 : vaults_end_loot(_G)
 : vaults_end_rune(_G)
+: cover_in_bones(_G)
 MAP
 ......
 ......

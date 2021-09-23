@@ -22,11 +22,23 @@
 #
 ################################################################################
 
+{{
+  -- Cover this place in bones!
+  function cover_in_bones(e)
+    e.subst(". = R........")
+    dgn.never_decay(e, 'R', "human skeleton / orc skeleton / elf skeleton"
+                             .. " / dwarf skeleton / ogre skeleton"
+                             .. " / naga skeleton / minotaur skeleton"
+                             .. " / merfolk skeleton")
+  end
+}}
+
 NAME:     vaults_room_door_ring
 TAGS:     vaults_empty allow_dup
 SHUFFLE:  abcdefghijklm
 SUBST:    abcdefg = +
 SUBST:    hijklm = .
+: cover_in_bones(_G)
 MAP
 ..b..c..
 ..b..c..
@@ -41,6 +53,7 @@ ENDMAP
 NAME:     vaults_room_pool
 TAGS:     vaults_empty allow_dup no_pool_fixup
 SUBST:    w : xW
+: cover_in_bones(_G)
 MAP
 .......
 .......
@@ -54,6 +67,7 @@ ENDMAP
 NAME:     vaults_room_pools
 TAGS:     vaults_empty allow_dup no_pool_fixup
 SUBST:    w : xwW
+: cover_in_bones(_G)
 MAP
 ww...ww
 ww...ww
@@ -68,6 +82,7 @@ NAME:     vaults_room_stairs_pillars
 TAGS:     vaults_empty allow_dup
 SHUFFLE:  GI
 SUBST:    I = ., G = x
+: cover_in_bones(_G)
 MAP
 .......
 .G.I.G.
@@ -81,6 +96,7 @@ ENDMAP
 
 NAME:     vaults_room_semicircle
 TAGS:     allow_dup vaults_empty vaults_orient_e
+: cover_in_bones(_G)
 MAP
 .....xx
 ......x
@@ -93,6 +109,7 @@ ENDMAP
 
 NAME:     vaults_room_hallway
 TAGS:     vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
 x.x.x.x.x.x
 ...........
@@ -108,6 +125,7 @@ SUBST:    w = w:10 2:1, G : G.
 MONS:     plant
 KFEAT:    s = any shop
 FTILE:    _1s = floor_swamp
+: cover_in_bones(_G)
 MAP
 .........
 .G.www.G.
@@ -126,6 +144,7 @@ SHUFFLE:  xyz
 SUBST:    x : xxx...
 SUBST:    y : xx....
 SUBST:    z : x.....
+: cover_in_bones(_G)
 MAP
 ..........
 .xx.yy.xx.
@@ -144,6 +163,7 @@ TAGS:     allow_dup vaults_empty
 SHUFFLE:  SPQR / spqr
 SUBST:    S=+, P=+, Q=+, R=+, s=., p=., q=., r=.
 NSUBST:   . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ....x..x....
 ....x..x....
@@ -164,6 +184,7 @@ TAGS:     vaults_empty no_pool_fixup
 SHUFFLE:  xc
 SUBST:    c : x.
 NSUBST:   . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ..xxx..xxx..
 ............
@@ -186,6 +207,7 @@ SUBST:    q : xx.
 SUBST:    s : xx.
 SUBST:    r : xx.
 SUBST:    p : x
+: cover_in_bones(_G)
 MAP
 xxxx.......xxxx
 xxx...srs...xxx
@@ -207,6 +229,7 @@ ENDMAP
 NAME:     vaults_room_large_hall
 TAGS:     allow_dup vaults_empty
 SUBST:    a : x.
+: cover_in_bones(_G)
 MAP
 .x.x.x..x.x.x.
 .x.x.x..x.x.x.
@@ -225,6 +248,7 @@ ENDMAP
 NAME:    v_alt_pattern_1
 TAGS:    allow_dup vaults_empty
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ...........
 .x.x.x.x.x.
@@ -244,6 +268,7 @@ TAGS:    allow_dup vaults_empty
 SHUFFLE: +ab
 SUBST:   a=x, b=x
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ......x......
 ......+......
@@ -264,6 +289,7 @@ NAME:    v_alt_pattern_4
 TAGS:    allow_dup vaults_empty
 SUBST:   y : x.
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 .............
 .............
@@ -283,6 +309,7 @@ ENDMAP
 NAME:    v_misc_8
 TAGS:    vaults_empty allow_dup
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ...........
 .....x.....
@@ -303,6 +330,7 @@ NAME:    v_misc_13
 TAGS:    vaults_empty allow_dup
 SUBST:   b:x.....
 NSUBST:  ( = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 xxxx...xxxx
 xxx..(..xxx
@@ -321,6 +349,7 @@ NAME:    v_misc_14
 TAGS:    vaults_empty allow_dup
 NSUBST:  y = 1:+ / *:x
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 xxxx...xxxx
 xxx.....xxx
@@ -339,6 +368,7 @@ NAME:    v_misc_15
 TAGS:    vaults_empty allow_dup
 NSUBST:  y = 1:+ / *:x
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 xxxx...xxxx
 xxx.....xxx
@@ -358,6 +388,7 @@ TAGS:    vaults_empty allow_dup
 SHUFFLE: aby / aaa / bbb / bay / bya
 SUBST:   a:., b:x, y:x
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ...........
 ...........
@@ -375,6 +406,7 @@ ENDMAP
 NAME:    v_misc_17
 TAGS:    vaults_empty allow_dup
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ...........
 ...........
@@ -392,6 +424,7 @@ ENDMAP
 NAME:    v_misc_19
 TAGS:    vaults_empty allow_dup
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ...xx.xx...
 ...xx.xx...
@@ -409,6 +442,7 @@ ENDMAP
 NAME:    v_misc_22
 TAGS:    vaults_empty allow_dup
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 xx.......xx
 xx.......xx
@@ -427,6 +461,7 @@ NAME:    v_misc_23
 TAGS:    vaults_empty allow_dup
 SUBST:   y:+.
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 xx..y.y..xx
 xx..xxx..xx
@@ -445,6 +480,7 @@ NAME:    v_misc_24
 TAGS:    vaults_empty allow_dup
 SUBST:   a:x.
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 ...........
 .....x.....
@@ -463,6 +499,7 @@ NAME:    v_misc_25
 TAGS:    vaults_empty allow_dup
 SUBST:   u:x., y:x., Y:x.
 NSUBST:  . = 1:( / *:.
+: cover_in_bones(_G)
 MAP
 xxxu...uxxx
 xxxu...uxxx
@@ -479,6 +516,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_shuriken
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 .xxx.....
 ..xxxx..x
@@ -493,6 +531,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_twist
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 ......xx.xxxxxxxx
 ..xxx.....xxxxxx.
@@ -505,6 +544,7 @@ TAGS: vaults_room
 SHUFFLE: ab
 SUBST: a : x, b : .
 KMONS: 0 = 0 band
+: cover_in_bones(_G)
 MAP
 aa....x@...
 abbxx.xxxx.
@@ -523,6 +563,7 @@ NAME: ontoclasm_vaults_loading_screen
 TAGS: vaults_empty allow_dup
 SUBST: a : x... , b : x....., c : x.....
 SUBST: x : xxxxxm
+: cover_in_bones(_G)
 MAP
  .....
  .ccc.
@@ -544,6 +585,7 @@ SHUFFLE: abcdefghi / o'''''ooo / oo''''ooo / ooo'''ooo / \
          ''o''o'o' / oooooo'o'
 SUBST: abcdef' = .
 SUBST: ghio = x
+: cover_in_bones(_G)
 MAP
     cc....
   accc......
@@ -570,6 +612,7 @@ SHUFFLE: abcdefghi / o'''''ooo / oo''''ooo / ooo'''ooo / \
          ''o''o'o' / oooooo'o'
 SUBST: abcdef' = .
 SUBST: ghio = x
+: cover_in_bones(_G)
 MAP
       .
      ...
@@ -595,6 +638,7 @@ SHUFFLE: abcdefghi / o'''''ooo / oo''''ooo / ooo'''ooo / \
          ''o''o'o' / oooooo'o'
 SUBST: abcdef' = .
 SUBST: ghio = x
+: cover_in_bones(_G)
 MAP
    caab
  .ccaabb.
@@ -610,6 +654,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_misaligned
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
    ..
    ....
@@ -626,6 +671,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_pinch
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 ...
    .
@@ -642,6 +688,7 @@ ENDMAP
 NAME: ontoclasm_vaults_claustrophobia
 TAGS: vaults_empty
 SUBST: G : GGGT.
+: cover_in_bones(_G)
 MAP
 .x..x...x..x.
 x+xx+xxxxxx+x
@@ -661,6 +708,7 @@ ENDMAP
 NAME: grunt_vaults_hallway_short
 TAGS: vaults_empty allow_dup
 SHUFFLE: G = GT
+: cover_in_bones(_G)
 MAP
 .xx.xx.xx.
 ..........
@@ -672,6 +720,7 @@ ENDMAP
 NAME: grunt_vaults_hallway_long
 TAGS: vaults_empty allow_dup
 SHUFFLE: G = GT
+: cover_in_bones(_G)
 MAP
 .xx.xx.xx.xx.xx.xx.
 ...................
@@ -682,6 +731,7 @@ ENDMAP
 
 NAME: grunt_vaults_diagonal
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 xx........
 xxx.......
@@ -704,6 +754,7 @@ NSUBST: B = 1:+ / *:x
 NSUBST: C = 1:+ / *:x
 NSUBST: D = 1:+ / *:x
 SUBST: abcd = .
+: cover_in_bones(_G)
 MAP
 xx......xx
 xxx....xxx
@@ -730,6 +781,7 @@ NSUBST: F = 1:+ / *:x
 NSUBST: G = 1:+ / *:x
 NSUBST: H = 1:+ / *:x
 SUBST: abcdefgh = .
+: cover_in_bones(_G)
 MAP
 xx......xx
 xxx....xxx
@@ -758,6 +810,7 @@ TAGS:    vaults_empty allow_dup
 SHUFFLE: ABC, DEF
 SUBST:   A : x.., B : x.., D : x.., E : x.., CF = .
 SUBST:   G = Gx..., H : xxx., I : xx.
+: cover_in_bones(_G)
 MAP
 ABC.....FED
 B.........E
@@ -777,6 +830,7 @@ TAGS:    vaults_empty allow_dup
 SHUFFLE: GH, IJ
 SUBST:   A : xx., B : xx., C : xx., D : xx., E : x..
 SUBST:   F = x..., G : xx., H : x., I : xx., J : x., K : x...
+: cover_in_bones(_G)
 MAP
 xxxxxx.....x
 xxCBA.....Gx
@@ -794,6 +848,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_fault
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 ......
 ......xx....
@@ -807,6 +862,7 @@ ENDMAP
 NAME: ontoclasm_vaults_bender
 TAGS: vaults_empty
 SUBST: a : x..
+: cover_in_bones(_G)
 MAP
 a.............
 ..............
@@ -826,6 +882,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_hangar
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
 .....  .....
 ..x......x..
@@ -843,6 +900,7 @@ NAME: ontoclasm_vaults_gateway
 TAGS: vaults_empty
 SHUFFLE: a+
 SUBST: a = .
+: cover_in_bones(_G)
 MAP
 ...x...
 ..GxG..
@@ -858,6 +916,7 @@ ENDMAP
 NAME: ontoclasm_vaults_decontamination
 TAGS: vaults_empty
 KMASK: W = no_monster_gen
+: cover_in_bones(_G)
 MAP
 ...  ...
 ..xxxx..
@@ -869,6 +928,7 @@ ENDMAP
 
 NAME: ontoclasm_vaults_ligature
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 ....b.....
 .bbbb.....
@@ -884,6 +944,7 @@ ENDMAP
 NAME: ontoclasm_vaults_tryst
 TAGS: vaults_empty
 SUBST: T : TTG.
+: cover_in_bones(_G)
 MAP
 ....xxxxxxxxx..
 ....x......xx..
@@ -905,6 +966,7 @@ SUBST: n : nnn. , a : aaa. , o : ooo. , b : bbb.
 SHUFFLE: abcdefghijklmnopqrstuv
 SUBST: abcdefghijklm = w , nopqrstuv = W , T = TU
 KMASK: wW = no_monster_gen
+: cover_in_bones(_G)
 MAP
 .........
  .......
@@ -921,6 +983,7 @@ ENDMAP
 
 NAME:  vaults_dpeg_ring
 TAGS:  vaults_empty
+: cover_in_bones(_G)
 MAP
 .xx.
 x..x
@@ -931,6 +994,7 @@ ENDMAP
 NAME:  vaults_dpeg_hooks
 TAGS:  vaults_empty
 SUBST: _ : +..
+: cover_in_bones(_G)
 MAP
 .......
 .xxx_x.
@@ -943,6 +1007,7 @@ ENDMAP
 NAME:  vaults_dpeg_diagonal
 TAGS:  vaults_empty
 SUBST: _ : xxxx$ , $ : $SSS. , S = $$.
+: cover_in_bones(_G)
 MAP
 xxxx..x
 xxx..xx
@@ -956,6 +1021,7 @@ ENDMAP
 NAME:  vaults_dpeg_encased_lava
 TAGS:  vaults_empty
 KPROP: l = no_tele_into
+: cover_in_bones(_G)
 MAP
 .......
 .nnnnn.
@@ -968,6 +1034,7 @@ ENDMAP
 NAME:  vaults_dpeg_spiral
 TAGS:  vaults_empty
 SUBST: $ : $$$(()
+: cover_in_bones(_G)
 MAP
     xxxxxxxx
    xxxx...xxx
@@ -985,6 +1052,7 @@ ENDMAP
 NAME:  vaults_dpeg_cross
 TAGS:  vaults_empty
 SUBST: _ : xxxxx...TG, T : TUt, t = TU
+: cover_in_bones(_G)
 MAP
    x..x
   xx..xx
@@ -1002,6 +1070,7 @@ NAME:    vaults_dpeg_doors
 TAGS:    vaults_empty
 SHUFFLE: _+
 SUBST:   _ : ...+
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxx
 ..xxxxxxxxxxxxxxxxx..
@@ -1015,6 +1084,7 @@ ENDMAP
 
 NAME: nicolae_vaults_angled_halls
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
 xxx....xxx
 xx....xxxx
@@ -1030,6 +1100,7 @@ ENDMAP
 
 NAME: nicolae_vaults_asterisk
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
 xxx.xxx
 .xx.xx.
@@ -1044,6 +1115,7 @@ ENDMAP
 
 NAME: nicolae_vaults_big_angled_halls
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
 xxxx.......xxxx
 xxx.......xxxxx
@@ -1065,6 +1137,7 @@ ENDMAP
 NAME: nicolae_vaults_diagonal_hallway_6
 TAGS: vaults_empty allow_dup
 WEIGHT: 2
+: cover_in_bones(_G)
 MAP
 ...
 .(..
@@ -1079,6 +1152,7 @@ ENDMAP
 NAME: nicolae_vaults_diagonal_hallway_7
 TAGS: vaults_empty allow_dup
 WEIGHT: 3
+: cover_in_bones(_G)
 MAP
 ...
 .(..
@@ -1094,6 +1168,7 @@ ENDMAP
 NAME: nicolae_vaults_diagonal_hallway_8
 TAGS: vaults_empty allow_dup
 WEIGHT: 3
+: cover_in_bones(_G)
 MAP
 ...
 .(..
@@ -1110,6 +1185,7 @@ ENDMAP
 NAME: nicolae_vaults_diagonal_hallway_9
 TAGS: vaults_empty allow_dup
 WEIGHT: 2
+: cover_in_bones(_G)
 MAP
 ...
 .(..
@@ -1127,6 +1203,7 @@ ENDMAP
 NAME: nicolae_vaults_little_squares_1
 TAGS: vaults_empty allow_dup
 NSUBST: A = 1:+ / *:x
+: cover_in_bones(_G)
 MAP
 ..xxxx.(.
 (.+..+...
@@ -1146,6 +1223,7 @@ NSUBST: B = 1:+ / *:x
 NSUBST: C = 1:+ / *:x
 NSUBST: D = 1:+ / *:x
 SUBST: E = ...(TG
+: cover_in_bones(_G)
 MAP
 ...xxx...
 ...A.A...
@@ -1162,6 +1240,7 @@ NAME: nicolae_vaults_little_squares_3
 TAGS: vaults_empty allow_dup
 SHUFFLE: Aa, Bb, Cc, Dd
 SUBST: ABCD : x, abcd : +
+: cover_in_bones(_G)
 MAP
 ..xxx...
 ..A.x...
@@ -1181,6 +1260,7 @@ NSUBST: c = 1:+ / *:x
 NSUBST: b = 1:= / *:x
 NSUBST: d = 1:= / *:x
 SUBST: = = +xxx
+: cover_in_bones(_G)
 MAP
 xxxx....
 x..b.xx.
@@ -1195,6 +1275,7 @@ ENDMAP
 NAME: nicolae_vaults_rhombus_5
 TAGS: vaults_empty allow_dup
 WEIGHT: 3
+: cover_in_bones(_G)
 MAP
 .....
  ..(..
@@ -1206,6 +1287,7 @@ ENDMAP
 NAME: nicolae_vaults_rhombus_6
 TAGS: vaults_empty allow_dup
 WEIGHT: 4
+: cover_in_bones(_G)
 MAP
 ......
  ......
@@ -1219,6 +1301,7 @@ ENDMAP
 NAME: nicolae_vaults_rhombus_7
 TAGS: vaults_empty allow_dup
 WEIGHT: 3
+: cover_in_bones(_G)
 MAP
 .......
  ..(....
@@ -1233,6 +1316,7 @@ NAME: nicolae_vaults_ring_of_whatevers
 TAGS: vaults_empty allow_dup
 SHUFFLE: ab
 SUBST: a : ab, a : x:20 G:5 T:5, b : . x:20 G:5 T:5 W
+: cover_in_bones(_G)
 MAP
 .........
 ....a....
@@ -1248,6 +1332,7 @@ ENDMAP
 NAME: nicolae_vaults_shelves_hall
 TAGS: vaults_empty allow_dup vaults_orient_n vaults_orient_s
 SUBST: % = %%%$$$
+: cover_in_bones(_G)
 MAP
 .....
 ..(..
@@ -1266,6 +1351,7 @@ NAME: nicolae_vaults_theta
 TAGS: vaults_empty allow_dup
 SHUFFLE: AB
 SUBST: A : ., B : x
+: cover_in_bones(_G)
 MAP
 xxx.....xxx
 x..xxAxx..x
@@ -1280,6 +1366,7 @@ NAME:    hangedman_vaults_stretched_pinwheel
 TAGS:    vaults_empty allow_dup
 SHUFFLE: ABCD
 SUBST:   A : x., B : x., C: xxx., D : x....
+: cover_in_bones(_G)
 MAP
 ...xxxx.......x
 .D....x.BB.AA.x
@@ -1292,6 +1379,7 @@ ENDMAP
 
 NAME:     vaults_mumra_chevron
 TAGS:     vaults_empty
+: cover_in_bones(_G)
 MAP
 ...x...x...
 ...x...x...
@@ -1309,6 +1397,7 @@ ENDMAP
 
 NAME:     vaults_mumra_chevron_long
 TAGS:     vaults_empty
+: cover_in_bones(_G)
 MAP
    x...x
    x...x
@@ -1330,6 +1419,7 @@ ENDMAP
 
 NAME:     vaults_mumra_lcd
 TAGS:     vaults_empty
+: cover_in_bones(_G)
 MAP
   .....
  .......
@@ -1349,6 +1439,7 @@ ENDMAP
 NAME: nicolae_vaults_hallways_thing
 TAGS: vaults_empty
 SUBST: a : x.
+: cover_in_bones(_G)
 MAP
 aaxx..xxx..xxaa
 aaax..xxx..xaaa
@@ -1379,6 +1470,7 @@ NSUBST: f = 1:+ / *:x
 NSUBST: g = 1:+ / *:x
 NSUBST: h = 1:+ / *:x
 SUBST: x = x:80 n:10 +:5
+: cover_in_bones(_G)
 MAP
 x.a.b.c.x
 ..a.b.c..
@@ -1397,6 +1489,7 @@ NSUBST: a = 1:+ / *:xx+
 NSUBST: b = 1:+ / *:xx+
 SHUFFLE: cd
 SUBST: c : +, d = x+
+: cover_in_bones(_G)
 MAP
 xxxxx..xx
 xxxxx..xx
@@ -1417,6 +1510,7 @@ NSUBST: B = 1:+ / *:xx+
 NSUBST: D = 1:+ / *:xx+
 NSUBST: E = 1:+ / *:xx+
 NSUBST: F = 1:+ / *:xx+
+: cover_in_bones(_G)
 MAP
 ...xxx..
 .(.E.C..
@@ -1433,6 +1527,7 @@ NAME: nicolae_vaults_gold_heap
 TAGS: vaults_empty no_item_gen
 WEIGHT: 3
 ITEM: gold q:1, gold q:2, gold q:4, gold q:8, gold q:16
+: cover_in_bones(_G)
 MAP
 defed
 efgfe
@@ -1443,6 +1538,7 @@ ENDMAP
 
 NAME: nicolae_vaults_circle_grid_a
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
     xx.xx
    .x...x.
@@ -1461,6 +1557,7 @@ ENDMAP
 
 NAME: nicolae_vaults_circle_grid_b
 TAGS: vaults_empty allow_dup
+: cover_in_bones(_G)
 MAP
     .....
    ...x...
@@ -1486,6 +1583,7 @@ KMASK: S = no_item_gen
 # the W is because they're floating in solution in the jars, you see
 KFEAT: S = W
 KMONS: S = 0 / 9 / 8
+: cover_in_bones(_G)
 MAP
 .............
 .nnn.nnn.nnn.
@@ -1496,6 +1594,7 @@ ENDMAP
 
 NAME: nicolae_vaults_back_hallway
 TAGS: vaults_empty
+: cover_in_bones(_G)
 MAP
 .....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.....
 .....x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.....
@@ -1509,6 +1608,7 @@ TAGS: vaults_empty opaque no_tele_into
 WEIGHT: 2
 SHUFFLE: mx
 SUBST: x : mxx
+: cover_in_bones(_G)
 MAP
 .......mx
 ......mxm
@@ -1526,6 +1626,7 @@ TAGS: vaults_empty opaque no_tele_into
 WEIGHT: 2
 NSUBST: A = 2:m / *:+
 SUBST: B : xm, C : xm, D : xm, E : xm
+: cover_in_bones(_G)
 MAP
 ........D........
 .BB.....A.....CC.
@@ -1550,6 +1651,7 @@ NAME: nicolae_vaults_inception_statues
 TAGS: vaults_empty
 WEIGHT: 3
 SHUFFLE: GT
+: cover_in_bones(_G)
 MAP
 G.................G
 ...................
@@ -1577,6 +1679,7 @@ TAGS: vaults_empty
 WEIGHT: 3
 SHUFFLE: AB
 SUBST: A : GT..., B : GT...
+: cover_in_bones(_G)
 MAP
  ...xxx...xxx...
 .....x.....x.....

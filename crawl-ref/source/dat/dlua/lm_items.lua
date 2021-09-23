@@ -27,3 +27,9 @@ end
 function dgn.delayed_decay(e, key, itemdesc)
   dgn.delayed_decay_extra(e, key, itemdesc, nil)
 end
+
+function dgn.never_decay(e, key, itemdesc)
+  -- Add never_decay to each sub-part of the itemdef
+  local def = "never_decay " .. itemdesc:gsub("([,/])", "%1 never_decay ")
+  e.kitem(key .. " = " .. def)
+end

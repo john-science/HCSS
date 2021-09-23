@@ -30,6 +30,15 @@
 #  This is the header for st's "greater box" vaults.
 
 {{
+-- Cover this place in bones!
+function cover_in_bones(e)
+  e.subst(". = R.......")
+  dgn.never_decay(e, 'R', "human skeleton / orc skeleton / elf skeleton"
+                           .. " / dwarf skeleton / ogre skeleton"
+                           .. " / naga skeleton / minotaur skeleton"
+                           .. " / merfolk skeleton")
+end
+
 function st_box_setup(e)
   e.tags("no_item_gen")
   e.subst("% = %%%**|$")
@@ -47,6 +56,8 @@ function st_box_setup(e)
                glowing shapeshifter")
   e.subst("0 = 0:9 Z:1")
   e.subst("9 = 9:3 Z:1")
+
+  cover_in_bones(e)
 end
 }}
 
@@ -59,6 +70,7 @@ SUBST:    w : ....x, m : mmmx, * = *%
 KITEM:    8 = $
 NSUBST:   9 = 1:9 / *:000009
 NSUBST:   8 = 1:9 / *=09
+: cover_in_bones(_G)
 MAP
 ww......ww
 ww......ww
@@ -75,6 +87,7 @@ ENDMAP
 NAME:     vaults_room_hangedman_quadrants
 TAGS:     vaults_hard no_monster_gen
 SUBST:    $ = $%., * = *|, = : -., - : +:4 $:1
+: cover_in_bones(_G)
 MAP
 xx.x.xx
 x9$x$9x
@@ -89,6 +102,7 @@ NAME:     vaults_room_guarded_vault
 TAGS:     vaults_hard vaults_orient_e
 MONS:     vault guard
 SUBST:    0 = 00.
+: cover_in_bones(_G)
 MAP
 %....*x11
 ..00..x..
@@ -102,6 +116,7 @@ ENDMAP
 NAME:    st_diamondy
 TAGS:    vaults_hard
 SUBST:   1 = 0..
+: cover_in_bones(_G)
 MAP
 xxxxx..x..xxxxx
 xxxx..1x1..xxxx
@@ -122,6 +137,7 @@ ENDMAP
 
 NAME:    st_cells
 TAGS:    vaults_hard allow_dup
+: cover_in_bones(_G)
 MAP
 ...x....x...
 ...x....x...
@@ -135,6 +151,7 @@ ENDMAP
 
 NAME:    st_smaller_cells
 TAGS:    vaults_hard
+: cover_in_bones(_G)
 MAP
 ..x.0x..x0.x..
 ..x0.x..x.0x..
@@ -150,6 +167,7 @@ NAME:    st_lines
 TAGS:    vaults_hard
 SHUFFLE: 90
 SUBST:   1 = 00.
+: cover_in_bones(_G)
 MAP
 %............9
 0............*
@@ -163,6 +181,7 @@ ENDMAP
 
 NAME:    st_spiral_rooms
 TAGS:    vaults_hard
+: cover_in_bones(_G)
 MAP
 ....x.........
 .0..+.........
@@ -179,6 +198,7 @@ TAGS:    vaults_hard
 KMONS:   8 = 8
 KITEM:   8 = |, *
 SUBST:   8 = 98, 0 = 09
+: cover_in_bones(_G)
 MAP
 xxxxx.xxxxx
 xxxx.0.xxxx
@@ -200,6 +220,7 @@ KMONS:   8 = 8
 KITEM:   8 = |
 KMONS:   9 = 9
 KITEM:   9 = *
+: cover_in_bones(_G)
 MAP
 .................
 .xxxxxxxxxxxxxxx.
@@ -211,6 +232,7 @@ ENDMAP
 NAME:    st_octagons_1
 TAGS:    vaults_hard
 NSUBST:  ^ = 2:* / *:%
+: cover_in_bones(_G)
 MAP
 ......|x.....x^..^x..
 .9...9*x.....x.90.x..
@@ -232,6 +254,7 @@ ENDMAP
 NAME:    st_octagons_2
 TAGS:    vaults_hard
 NSUBST:  ^ = 3:* / *:%$
+: cover_in_bones(_G)
 MAP
 ....^x..x^......^x^..
 .9..^x..x...90...x.0.
@@ -252,6 +275,7 @@ ENDMAP
 
 NAME:    st_squares
 TAGS:    vaults_hard
+: cover_in_bones(_G)
 MAP
 ..............
 ....0....0....
@@ -271,6 +295,7 @@ ENDMAP
 
 NAME:    st_lattice
 TAGS:    vaults_hard
+: cover_in_bones(_G)
 MAP
 .x.x.x.x.
 .x0x.x0x.
@@ -284,6 +309,7 @@ ENDMAP
 
 NAME:    st_more_cells
 TAGS:    vaults_hard
+: cover_in_bones(_G)
 MAP
 ...x...x...
 .0.+.9.+.9.
@@ -297,6 +323,7 @@ ENDMAP
 NAME:    st_hourglassy
 TAGS:    vaults_hard
 TAGS:    vaults_orient_n vaults_orient_s
+: cover_in_bones(_G)
 MAP
 xxxxxxx...xxxxxxx
 xxxxxx.....xxxxxx
@@ -313,6 +340,7 @@ NAME:    st_eye
 TAGS:    vaults_hard
 TAGS:    vaults_orient_n vaults_orient_s
 NSUBST:  9 = 1:8 / *:9
+: cover_in_bones(_G)
 MAP
 xxxxxxxxx..xxxxxxxxx
 xx%**xxxx..xxxx%*%xx
@@ -334,6 +362,7 @@ NAME:    st_star
 TAGS:    vaults_hard
 TAGS:    vaults_orient_n vaults_orient_s
 NSUBST:  0 = 2=998 / 6:0 / *:.
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxxx..xxxxxxxxxxxx
 x%*xxxxxxx......xxxxxxx%*x
@@ -350,6 +379,7 @@ ENDMAP
 NAME:    st_quartered_hall
 TAGS:    vaults_hard
 NSUBST:  0 = 4=998 / 8:0 / *:.
+: cover_in_bones(_G)
 MAP
 xxxxxxx..xxxxxxx
 x*00*x....x*00*x
@@ -374,6 +404,7 @@ SHUFFLE: abc, de, d*, AB
 SUBST:   a : x., b : x.., c = ., e = %%$, * = %:3 *:7
 SUBST:   A : x.., B : xx., C : xGT
 SUBST:   1 = 9:3 0:7, 2 = 9:7 0:3
+: cover_in_bones(_G)
 MAP
 xxxxxx...xxxxxx
 xe.2xx.C.xx1.ex
@@ -398,6 +429,7 @@ NSUBST: 9 = 1:8 / *:9
 SUBST: 0 = 90000000
 KMONS: 0 = 0 band
 SUBST: $ = |***$$$$
+: cover_in_bones(_G)
 MAP
   x.....xxxxx...xxxxx.....x
  xx......xxxxx.xxxxx......xx
@@ -600,6 +632,7 @@ KMASK: wW = no_monster_gen
 NSUBST: 0 = 1:9 / *:0
 KMONS: 0 = 0 band
 SUBST: G : GU, % = %%%%*.
+: cover_in_bones(_G)
 MAP
      ........
      ........
@@ -624,6 +657,7 @@ KMASK: l = no_monster_gen
 NSUBST: 0 = 1:9 / *:0
 KMONS: 0 = 0 band
 SUBST: G : GY, % = %%%%*.
+: cover_in_bones(_G)
 MAP
      ........
      ........
@@ -644,6 +678,7 @@ ENDMAP
 NAME: ontoclasm_vaults_shout
 TAGS: vaults_hard
 KMONS: 0 = 0 band
+: cover_in_bones(_G)
 MAP
 ..xxxxxxx
 ..x.9...xx
@@ -660,6 +695,7 @@ ENDMAP
 NAME: ontoclasm_vaults_gallery
 TAGS: vaults_hard
 NSUBST: 9 = 1:0 / 1=8 / *:9
+: cover_in_bones(_G)
 MAP
 G...........G
 ..x.......x..
@@ -675,6 +711,7 @@ WEIGHT: 3
 TAGS: vaults_hard no_rotate vaults_orient_s
 NSUBST: % = 2=% / 1=* / *=.
 SUBST: G : GGGTUY
+: cover_in_bones(_G)
 MAP
 x%..x.x..%x
 ..8..|..8..
@@ -694,6 +731,7 @@ TAGS:   vaults_hard
 WEIGHT: 1
 SUBST:  0 : 0000000z, z : z., 0 = 0009..
 KMONS:  z = human skeleton
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxx
 xx00xx00xx00xx00xx00xx00xx
@@ -713,6 +751,7 @@ SUBST:  0 = 00009, 8 = 889
 SUBST:  _ : x. , + : +==
 NSUBST: = = 1:+ / *=+x
 KPROP:  1 = no_tele_into
+: cover_in_bones(_G)
 MAP
     @@@
 xxxx+++xxxx
@@ -729,6 +768,7 @@ ENDMAP
 NAME:   dpeg_vaults_pockets_of_resistance
 TAGS:   vaults_hard
 NSUBST: 0 = 3 = 899 / 12 = 099 / * = 0
+: cover_in_bones(_G)
 MAP
   xxx......
  xxxxx....xxx
@@ -751,6 +791,7 @@ SUBST:  = = +x
 SUBST:  ^ : .x , - : .xx
 SUBST:  * = **% , | = ||*
 SUBST:  8 = 89
+: cover_in_bones(_G)
 MAP
 xxxxxx
 x8..|x
@@ -765,6 +806,7 @@ ENDMAP
 
 NAME: nicolae_vaults_display_case
 TAGS: vaults_hard vaults_orient_w no_monster_gen
+: cover_in_bones(_G)
 MAP
 .........
 .........
@@ -784,6 +826,7 @@ SHUFFLE: abc, def, ghi, jkl
 KITEM: P = superb_item
 SUBST: adgj : x
 SUBST: bcefhikl : .
+: cover_in_bones(_G)
 MAP
 ................
 .xxxxxx..xxxxxx.
@@ -806,6 +849,7 @@ ENDMAP
 NAME: nicolae_vaults_murderbox
 TAGS: vaults_hard
 SUBST: m : mx
+: cover_in_bones(_G)
 MAP
 xx.....xx
 xmm.0.mmx
@@ -821,6 +865,7 @@ ENDMAP
 NAME: nicolae_vaults_quadrants
 TAGS: vaults_hard
 SUBST: m : +++xxm, n : +x, % = %%%%%$$$$**|, 8 = 89
+: cover_in_bones(_G)
 MAP
      .......
    ...xm+mx...
@@ -846,6 +891,7 @@ TAGS: vaults_hard vaults_orient_e
 MONS: obsidian statue
 KPROP: % = no_tele_into
 SUBST: % = %%%*
+: cover_in_bones(_G)
 MAP
 xxxx......xx
 x%%x....x..x
@@ -858,6 +904,7 @@ NAME:     vaults_mumra_bighexcomb
 TAGS:     vaults_hard
 SUBST:    0 = 0.
 NSUBST:   0 = 1:9 / *:0
+: cover_in_bones(_G)
 MAP
       ...
      .000.
@@ -877,6 +924,7 @@ TAGS: vaults_hard vaults_orient_s no_monster_gen no_item_gen
 SUBST: + : +.
 KMONS: m = 0 band w:12 / 9 w:3 / 8 w:1 / nothing w:6
 KITEM: m = nothing / % / $ / * w:5 / | w:1
+: cover_in_bones(_G)
 MAP
 xmxxxmxxxmxxxmx
 x+xxx+xxx+xxx+x
@@ -899,6 +947,7 @@ TAGS: vaults_hard vaults_orient_e no_monster_gen no_item_gen
 NSUBST: A = 1:+ / *:x
 SUBST: $ = $$%, B = 0., 0 = 900
 KMONS: 0 = 0 band
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxx
 xB.B...B..x
@@ -925,6 +974,7 @@ KMONS: W = vault warden
 KMONS: P = ironheart preserver
 KMONS: C = ironbrand convoker
 SUBST: | = ||*
+: cover_in_bones(_G)
 MAP
    xxxxxxx
  xxx%*|*%xxx
@@ -945,6 +995,7 @@ NSUBST: 0 = 1:9 / *:0
 KFEAT: % = known alarm trap / . w:30
 KITEM: % = any
 KMONS: 0 = 0 band
+: cover_in_bones(_G)
 MAP
 xxxxx.xxxxx
 x...+0+...x
@@ -967,6 +1018,7 @@ KMONS: 0 = 0 band
 KMONS: 9 = 9 band
 KMONS: 8 = 8 band
 KITEM: 8 = star_item / superb_item w:3
+: cover_in_bones(_G)
 MAP
 ...........................
 .xx......0...x...0......xx.
@@ -1005,6 +1057,7 @@ SUBST: ) = )0, 0 = 0009%$
 SUBST: ABCDEFGHIJKLMNOP = x
 KMONS: 9 = 9 band
 KITEM: 9 = star_item
+: cover_in_bones(_G)
 MAP
             ...
         ...x.).
@@ -1034,6 +1087,7 @@ KMONS: 0 = 0 band
 KMONS: 9 = 9 band
 KITEM: % = any / gold
 KMONS: % = nothing w:11 / 0 w:1
+: cover_in_bones(_G)
 MAP
       .
     ..9..
@@ -1052,6 +1106,7 @@ ENDMAP
 NAME: nicolae_vaults_halls_meeting
 TAGS: vaults_hard
 SUBST: 9 = 9998, 0 = 00.
+: cover_in_bones(_G)
 MAP
 xxxx..xxxx..xxxx
 x9.xx...0..xx.9x
@@ -1077,6 +1132,7 @@ SHUFFLE: abcdefgh, ijklmnop
 SUBST: abcdefgijklmno = x, hp = ., 0 = 009.
 KMONS: 0 = 0 band
 KMONS: 9 = 9 band
+: cover_in_bones(_G)
 MAP
       .....
      ...0...
@@ -1105,6 +1161,7 @@ NSUBST: 0 = 1:9 / * = 0009., ABCDEFGH = x / +, abcdefgh = + / x, \
         ij = + / x, kl = + / x, mn = + / x, op = + / x
 SUBST: ! = .
 KMONS: 9 = 9 band
+: cover_in_bones(_G)
 MAP
 xxxxxx..xxxxxx
 x!...x..x...!x
@@ -1126,6 +1183,7 @@ NAME: nicolae_vaults_an_arrangement
 TAGS: vaults_hard
 SUBST: 0 = 00.
 KMONS: 9 = 9 band
+: cover_in_bones(_G)
 MAP
 x.x.x.x.x.x.x
 .............
@@ -1151,6 +1209,7 @@ KMONS: 2 = vault guard
 KMONS: 3 = vault warden
 KITEM: 23 = $
 KFEAT: ^ = known alarm trap
+: cover_in_bones(_G)
 MAP
 xxxxxxxxxxx
 x$$$$$$$$$x
@@ -1181,6 +1240,7 @@ NSUBST: A = . / x, B = . / x, C = . / x, D = . / x, E = . / x,  F = . / x, \
   U = . / x, V = . / x, W = . / x, X = . / x, Y = . / x, Z = . / x, 1 = . / x, \
   2 = . / x, 3 = . / x, 4 = . / x, 5 = . / x, 6 = . / x
 NSUBST: % = 2:9 / 6:0 / 4 = 0% / * = ......%
+: cover_in_bones(_G)
 MAP
 .........................
 .x6xpxAxBxCxDxExFxGxqxHx.
@@ -1225,6 +1285,7 @@ KPROP: P = no_tele_into
 KMASK: P = opaque
 KMASK: P = no_trap_gen
 KMASK: P = no_item_gen
+: cover_in_bones(_G)
 MAP
 xxxxxxxxx
 xPg..1xxx
@@ -1247,6 +1308,7 @@ ITEM:    glaive_of_the_guard no_pickup
 : end
 SUBST:   b : bxcmG.T
 NSUBST:  3:9 / 4=9. / ., 8 = 2:8 / 6=8.. / .
+: cover_in_bones(_G)
 MAP
 vvvvvvv@vvvvvvv
 v...v*v.v*v...v
@@ -1278,6 +1340,7 @@ ITEM:    sniper no_pickup
 ITEM:    piercer no_pickup / sniper no_pickup
 : end
 NSUBST:  3:9 / 6=9. / ., 8 = 2:8 / 6=8.. / .
+: cover_in_bones(_G)
 MAP
      vvvvv
    vvv999vvv
