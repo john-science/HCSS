@@ -445,9 +445,9 @@ A staircase back to the Orcish Hells
 
 A staircase leading back to the Orcish Hells.
 %%%%
-A staircase back to the Vaults
+A staircase back to the Vaults of Bones.
 
-A staircase leading back to the Vaults.
+A staircase leading back to the Vaults of Bones.
 %%%%
 A staircase leading out of the dungeon
 

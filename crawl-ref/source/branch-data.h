@@ -103,8 +103,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_VAULTS, BRANCH_DUNGEON, 12, 14, 5, 19,
       BFLAG_DANGEROUS_END,
       DNGN_ENTER_VAULTS, DNGN_EXIT_VAULTS, NUM_FEATURES,
-      "Vaults", "the Vaults", "Vaults",
-      nullptr,
+      "Vaults", "the Vaults of Bones", "Vaults",
+      "You enter the Vaults of bones!",
       LIGHTGREY, BROWN,
       'V', { RUNE_VAULTS }, 0 },
 
