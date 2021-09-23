@@ -46,8 +46,8 @@ const Branch branches[NUM_BRANCHES] =
     { BRANCH_DWARF, BRANCH_VAULTS, -1, -1, 0, 17,
       BFLAG_NONE,
       DNGN_ENTER_DWARF, DNGN_EXIT_DWARF, NUM_FEATURES,
-      "Dwarven Hall", "the Dwarven Hall", "Dwarf",
-      "You enter the hells of Dwarves! You will find no beer here.",
+      "Dwarven Hell", "the Dwarven Hell", "Dwarf",
+      "You enter the hell of Dwarves! You will find no beer here.",
       BROWN, BROWN,
       'K', {}, 0 },
 
