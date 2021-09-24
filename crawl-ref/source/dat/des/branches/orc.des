@@ -837,7 +837,7 @@ KMONS:   4 = orc priest / orc / nothing
 KMONS:   5 = orc wizard / nothing
 KMONS:   6 = ogre / two-headed ogre / troll / deep troll / ogre mage / nothing
 KMONS:   7 = warg
-KFEAT:   S = abandoned_shop
+KFEAT:   S = any shop
 SUBST:   ? = 3467
 SUBST:   - = S34.
 SHUFFLE: 352?
@@ -1651,8 +1651,7 @@ KMONS:  D = orc high priest
 KMONS:  E = Saint Roka band w:1 / orc warlord band, orc warlord band
 KMONS:  P = plant / nothing
 NSUBST: u = 2:s / I
-KFEAT:   s = stone_arch
-KITEM:   s = $
+KITEM:   s = any shop
 NSUBST:  s = 1:O / *:s
 : if you.where() == dgn.level_name(dgn.br_entrance("Elf")) then
 KFEAT:  p = enter_elven_hells
