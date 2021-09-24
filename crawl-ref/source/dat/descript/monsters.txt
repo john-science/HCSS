@@ -56,8 +56,8 @@ her husband dead. Adventurers may wish they were so lucky!
 %%%%
 Blork the orc
 
-A particularly fat and ugly orc. He's scavenged a pair of rainbow-coloured
-suspenders from somewhere. They're not helping.
+The ghost of a particularly fat and ugly orc. He's scavenged a pair of
+rainbow-coloured suspenders from somewhere. They're not helping.
 %%%%
 Boris
 
@@ -306,9 +306,9 @@ Mennas
 
 There was once a human priest named Mennas. He travelled far and wide preaching
 of Zin to any who would listen, going even so far as to travel into Orcish
-lands, preaching to orcs about laws and mercy. By all accounts the orcs were
-not happy with Mennas. They demanded he swear Beogh was the one true god, and
-when Mennas remained silent they cut out his tongue.
+hells, preaching to orc ghostss about laws and mercy. By all accounts the orcs
+were not happy with Mennas. They demanded he swear Beogh was the one true god,
+and when Mennas remained silent they cut out his tongue.
 
 Whether or not this angel is that same Mennas is something of a mystery, as he
 seems to have difficulty speaking.
@@ -350,8 +350,8 @@ be seen again.
 %%%%
 Nergalle
 
-A withered sorceress, exceptionally cruel even by orc standards. The living
-fear her; the dead obey her every command. She has a soft spot for the latter.
+The ghost of a withered sorceress, exceptionally cruel even by orc standards. The living
+living fear her; the dead obey her every command. She has a soft spot for the latter.
 %%%%
 Nessos
 
@@ -408,7 +408,7 @@ A human whose savage roars bring terror to all those who hear them.
 %%%%
 Saint Roka
 
-A mighty warlord. Some orcs even say he is the Chosen One of Beogh.
+The ghost of a mighty warlord. Some orcs even say he is the Chosen One of Beogh.
 %%%%
 Sigmund
 
@@ -441,8 +441,8 @@ can't afford to leave anyone who sees him alive!
 %%%%
 Urug
 
-A coarse and lanky orc. Urug lost her eye in a fight with a harpy, and has
-sworn to slay every last one of them. Unfortunately, the vision in her
+The ghost of a coarse and lanky orc. Urug lost her eye in a fight with a harpy,
+and has sworn to slay every last one of them. Unfortunately, the vision in her
 remaining eye is not very good, and she has mistaken you for one.
 {{
     if you.can_smell() then
@@ -1718,43 +1718,43 @@ spinnerets. It can rapidly weave undodgeable orbs of electrical energy.
 %%%%
 orc
 
-An ugly subterranean creature combining the worst features of humans, pigs and
-several other unpleasant creatures. It tends to run in packs or mobs, and
+The ghost of an ugly subterranean creature combining the worst features of humans,
+pigs and several other unpleasant creatures. It tends to run in packs or mobs, and
 delights in outbursts of insane violence.
 %%%%
 orc high priest
 
-An exalted servant of the orc god Beogh and a master of many black rites, to
-whose aid Beogh will even send beings from the netherworld.
+The ghost of an exalted servant of the orc god Beogh and a master of many black rites,
+to whose aid Beogh will even send beings from the netherworld.
 %%%%
 orc knight
 
-A heavily armoured orc, covered in scars from many past battles. It commands
+The ghost of a heavily armoured orc, covered in scars from many past battles. It commands
 its brethren in battle, rousing them to greater, more violent efforts with
 bloodcurdling shouts.
 %%%%
 orc priest
 
-A servant of Beogh, the ancient and cruel god of the orcs. Beogh rewards its
+Even in death, a servant of Beogh, the ancient and cruel god of the orcs. Beogh rewards its
 devoted prayers by striking down its enemies.
 %%%%
 orc sorcerer
 
-An exceptionally competent orcish wizard, in league with hellish and chthonic
+The ghost of an exceptionally competent orcish wizard, in league with hellish and chthonic
 forces and motivated by the purest imaginable strain of malevolence.
 %%%%
 orc warlord
 
-A supreme commander of an orc host, skilled at both melee and ranged combat.
+The ghost of a supreme commander of an orc host, skilled at both melee and ranged combat.
 %%%%
 orc warrior
 
-An experienced, armoured and well-armed orc soldier, able to command a small
+The ghost of an experienced, armoured and well-armed orc soldier, able to command a small
 mob of its fellows.
 %%%%
 orc wizard
 
-An orc who has gained proficiency in the occult arts, using them for martial
+The ghost of an orc who has gained proficiency in the occult arts, using them for martial
 purposes.
 %%%%
 pandemonium lord
@@ -2415,7 +2415,7 @@ when out of sight. Noxious spores drift around its cap.
 %%%%
 warg
 
-A particularly evil-looking wolf, usually found in the company of orcs.
+The ghost of a particularly evil-looking wolf; in life raised in battle by orcs.
 %%%%
 war gargoyle
 
