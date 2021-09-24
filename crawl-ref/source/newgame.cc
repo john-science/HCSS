@@ -189,7 +189,7 @@ static const species_type species_order[] =
     // large species
     SP_OGRE, SP_TROLL,
     // significantly different body type from human ("monstrous")
-    SP_NAGA,
+    SP_NAGA,           SP_CENTAUR,
     SP_MERFOLK,        SP_MINOTAUR,
     SP_TENGU,          SP_BASE_DRACONIAN,
     SP_GARGOYLE,       SP_FORMICID,
@@ -961,13 +961,13 @@ static species_group species_groups[] =
         coord_def(0, 0),
         20,
         {
-            SP_MOUNTAIN_DWARF,
             SP_MINOTAUR,
-            SP_MERFOLK,
             SP_GARGOYLE,
-            SP_BASE_DRACONIAN,
+            SP_CENTAUR,
             SP_TROLL,
-            SP_SPRIGGAN,
+            SP_MOUNTAIN_DWARF,
+            SP_MERFOLK,
+            SP_BASE_DRACONIAN,
         }
     },
     {
@@ -975,13 +975,13 @@ static species_group species_groups[] =
         coord_def(25, 0),
         20,
         {
-            SP_GNOME,
             SP_HUMAN,
-            SP_KOBOLD,
             SP_OGRE,
-            SP_VINE_STALKER,
             SP_FORMICID,
+            SP_KOBOLD,
             SP_GNOLL,
+            SP_SPRIGGAN,
+            SP_GNOME,
         }
     },
     {
@@ -990,9 +990,10 @@ static species_group species_groups[] =
         20,
         {
             SP_NAGA,
-            SP_TENGU,
-            SP_OCTOPODE,
             SP_DEEP_ELF,
+            SP_OCTOPODE,
+            SP_TENGU,
+            SP_VINE_STALKER,
         }
     },
 };

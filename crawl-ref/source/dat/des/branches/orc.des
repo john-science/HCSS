@@ -1651,8 +1651,7 @@ KMONS:  D = orc high priest
 KMONS:  E = Saint Roka band w:1 / orc warlord band, orc warlord band
 KMONS:  P = plant / nothing
 NSUBST: u = 2:s / I
-KITEM:   s = any shop
-NSUBST:  s = 1:O / *:s
+KFEAT:  s = any shop
 : if you.where() == dgn.level_name(dgn.br_entrance("Elf")) then
 KFEAT:  p = enter_elven_hells
 : else

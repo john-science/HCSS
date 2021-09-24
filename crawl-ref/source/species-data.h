@@ -597,7 +597,7 @@ static const map<species_type, species_def> species_data =
       { MUT_HOOVES, 3, 1 }, },
     {},
     {},
-    { JOB_FIGHTER, JOB_GLADIATOR, JOB_ARCANE_MARKSMAN, JOB_WARPER },
+    { JOB_FIGHTER, JOB_GLADIATOR, JOB_HUNTER, JOB_ARCANE_MARKSMAN, JOB_WARPER },
     { SK_MACES_FLAILS, SK_AXES, SK_POLEARMS,
       SK_BOWS },
 } },

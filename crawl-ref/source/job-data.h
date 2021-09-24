@@ -88,7 +88,7 @@ static const map<job_type, job_def> job_data =
 { JOB_FIGHTER, {
     "Fi", "Fighter",
     8, 0, 4,
-    { SP_MOUNTAIN_DWARF, SP_TROLL, SP_MINOTAUR, SP_GARGOYLE, SP_GNOLL },
+    { SP_MOUNTAIN_DWARF, SP_CENTAUR, SP_TROLL, SP_MINOTAUR, SP_GARGOYLE, SP_GNOLL },
     { "scale mail", "shield", "potion of augmentation" },
     WCHOICE_GOOD,
     { { SK_FIGHTING, 3 }, { SK_SHIELDS, 3 }, { SK_ARMOUR, 3 },
@@ -108,7 +108,7 @@ static const map<job_type, job_def> job_data =
 { JOB_GLADIATOR, {
     "Gl", "Gladiator",
     7, 0, 5,
-    { SP_MOUNTAIN_DWARF, SP_MERFOLK, SP_MINOTAUR, SP_GARGOYLE, SP_GNOLL},
+    { SP_MOUNTAIN_DWARF, SP_CENTAUR, SP_MERFOLK, SP_MINOTAUR, SP_GARGOYLE, SP_GNOLL},
     { "leather armour", "helmet", "poisoned dart q:12", "curare dart q:3"},
     WCHOICE_GOOD,
     { { SK_FIGHTING, 2 }, { SK_THROWING, 2 }, { SK_DODGING, 3 },
@@ -118,7 +118,7 @@ static const map<job_type, job_def> job_data =
 { JOB_HUNTER, {
     "Hu", "Hunter",
     4, 3, 5,
-    { SP_MOUNTAIN_DWARF, SP_GNOME, SP_KOBOLD, SP_OGRE, SP_TROLL, SP_GNOLL},
+    { SP_MOUNTAIN_DWARF, SP_CENTAUR, SP_GNOME, SP_KOBOLD, SP_OGRE, SP_TROLL, SP_GNOLL},
     { "dagger", "leather armour" },
     WCHOICE_RANGED,
     { { SK_FIGHTING, 2 }, { SK_DODGING, 2 }, { SK_STEALTH, 1 },
@@ -189,7 +189,7 @@ static const map<job_type, job_def> job_data =
 { JOB_WARPER, {
     "Wr", "Warper",
     3, 5, 4,
-    { SP_SPRIGGAN, SP_BASE_DRACONIAN, },
+    { SP_SPRIGGAN, SP_CENTAUR, SP_BASE_DRACONIAN, },
     { "leather armour", "book of Spatial Translocations", "scroll of blinking",
       "tomahawk ego:dispersal q:5" },
     WCHOICE_PLAIN,
