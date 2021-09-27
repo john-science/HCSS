@@ -2275,7 +2275,7 @@ LROCKTILE:  wall_zot_lightmagenta
 TILE:   v = wall_church
 COLOUR: vG'" = yellow
 TILE:   G = dngn_golden_statue
-FTILE:  G'"Z! = floor_limestone
+FTILE:  G'Z"! = floor_limestone
 KMONS:  " = orb guardian
 KMONS:  Z = Zot
 KITEM:  Z = Heart of Zot
@@ -2286,6 +2286,13 @@ KPROP:  '"! = no_tele_into
 
 validate {{ return has_exit_from_glyph('Z') }}
 
+{{
+local function drop_the_heart(monster, killer_type, killer_index, silent, wizard)
+  crawl.mpr("You hear a wet thud as the Heart of Zot hits the floor.")
+end
+}}
+
+MARKER: Z = lua:MonPropsMarker:new {monster_dies_lua_key = drop_the_heart}
 MAP
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
