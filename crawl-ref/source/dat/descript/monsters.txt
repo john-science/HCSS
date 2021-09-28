@@ -388,7 +388,7 @@ A fair-haired mage, wandering and seemingly half-mad with grief and guilt.
 %%%%
 Purgy
 
-An unusually thin troll.
+The ghost of an unusually thin troll.
 %%%%
 Samantha
 
@@ -420,7 +420,7 @@ admiration of many denizens of the dungeon.
 %%%%
 Snorg
 
-A particularly corpulent troll with a short temper and a sizable gut.
+The ghost of a particularly corpulent troll with a short temper and a sizable gut.
 Uninterested in the Orb, Snorg delights in the endless parade of adventurers –
 that is, easy meals — it attracts.
 %%%%
@@ -886,16 +886,16 @@ arcane abilities.
 %%%%
 deep troll
 
-A stooped troll with dark skin. It often travels in packs.
+The ghost of a stooped troll with dark skin. It often travels in packs.
 %%%%
 deep troll earth mage
 
-A particularly intelligent deep troll. It uses its magic to tunnel through the
-earth and ambush foes.
+The ghost of a particularly intelligent deep troll. It uses its magic to tunnel
+through the earth and ambush foes.
 %%%%
 deep troll shaman
 
-A deep troll blessed with divine power to strengthen and hasten its kin.
+The ghost of a deep troll blessed with divine power to strengthen and hasten its kin.
 %%%%
 demigod
 
@@ -1414,8 +1414,8 @@ An ugly, twisted little minor demon with metal skin.
 %%%%
 iron troll
 
-A great troll, mighty of limb and plated with thick scales that resemble
-lightly rusted iron, especially in their hardness.
+The semi-solid ghost of a  great troll, mighty of limb and plated with thick
+scales that resemble lightly rusted iron, especially in their hardness.
 %%%%
 ironbrand convoker
 
@@ -2313,8 +2313,8 @@ A mannequin used for battle practice.
 %%%%
 troll
 
-A huge and physically powerful humanoid creature. Short on intelligence but
-long on brawn, its thick knobbly hide heals rapidly from most wounds.
+The ghost of a huge and physically powerful humanoid creature. Short on intelligence
+but long on brawn, its thick knobbly hide heals rapidly from most wounds.
 %%%%
 twister
 
@@ -2615,8 +2615,8 @@ powers of mental combat.
 %%%%
 moon troll
 
-A bizarre breed of intelligent troll, glowing with mysterious power from beyond
-this world.
+The ghost of a bizarre breed of intelligent troll, glowing with mysterious
+power from beyond this world.
 %%%%
 lunar statue
 
