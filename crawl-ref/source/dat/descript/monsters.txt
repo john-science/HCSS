@@ -230,8 +230,8 @@ secluded place where she could study the darker arts without being disturbed.
 %%%%
 Jorgrun
 
-A dwarven magician, particularly well-attuned to the dungeon around him. He
-wields powerful earth magic in combat.
+The ghost of a dwarven magician, particularly well-attuned to the dungeon around him.
+He wields powerful earth magic in combat.
 %%%%
 Jory
 
@@ -961,7 +961,7 @@ calling upon the trees to defend against incursions.
 %%%%
 dwarf
 
-A member of a short, sturdy mountain-dwelling folk.
+The ghost of a member of a short, sturdy creature fond of drink and industry.
 %%%%
 earth elemental
 
@@ -2679,8 +2679,8 @@ supernaturally compelling.
 %%%%
 drunken dwarf
 
-A dwarf who seems to be working as an ale quality tester, and is enjoying the
-job a little too much.
+The ghost of a dwarf who seems to be working as an ale quality tester, and is
+enjoying the job a little too much.
 %%%%
 earth elementalist statue
 
