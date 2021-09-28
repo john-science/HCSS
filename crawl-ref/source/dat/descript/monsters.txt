@@ -355,8 +355,8 @@ living fear her; the dead obey her every command. She has a soft spot for the la
 %%%%
 Nessos
 
-A centaur warrior, skilled at warfare and deceit. He slew a mighty hydra, and
-now its deadly blood drips, still-fuming, from his arrows.
+The ghost of a centaur warrior, skilled at warfare and deceit. He slew a mighty hydra,
+and now its deadly blood drips, still-fuming, from his ghostlyarrows.
 %%%%
 Nikola
 
@@ -717,13 +717,13 @@ corrosive acid.
 %%%%
 centaur
 
-A hybrid with the torso of a human atop the body of a horse. It is highly
-skilled in archery.
+The ghost of a hybrid with the torso of a human atop the body of a horse. It is
+highly skilled in archery.
 %%%%
 centaur warrior
 
-A muscular centaur, veteran of numerous battles, armed with well-made weapons
-and able to use them skillfully.
+The ghost of a muscular centaur, veteran of numerous battles, armed with well-made
+weapons and able to use them skillfully.
 %%%%
 chaos champion
 
