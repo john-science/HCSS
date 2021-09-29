@@ -2278,7 +2278,6 @@ TILE:   G = dngn_golden_statue
 FTILE:  G'Z"! = floor_limestone
 KMONS:  " = orb guardian
 KMONS:  Z = Zot
-KITEM:  Z = Heart of Zot
 KPROP:  '"! = no_tele_into
 : set_feature_name("granite_statue", "golden statue")
 : set_feature_name("metal_wall", "marble wall")
@@ -2288,11 +2287,14 @@ validate {{ return has_exit_from_glyph('Z') }}
 
 {{
 local function drop_the_heart(monster, killer_type, killer_index, silent, wizard)
+  local p = dgn.find_marker_positions_by_prop("zot_throne", 1)[1]
+  dgn.create_item(p.x, p.y, "heart of zot")
   crawl.mpr("You hear a wet thud as the Heart of Zot hits the floor.")
 end
 }}
 
 MARKER: Z = lua:MonPropsMarker:new {monster_dies_lua_key = drop_the_heart}
+MARKER: Z = lua:props_marker {zot_throne=1}
 MAP
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
