@@ -28,5 +28,8 @@ test_item_places(niters,
                    { "Tar:$", "bone rune" },
                    { "Dis:$", "iron rune" },
                    { "Geh:$", "obsidian rune" },
-                   { "Tomb:$", "golden rune" },
-                   { "Zot:$", "Heart of Zot" } })
+                   { "Tomb:$", "golden rune" } })
+
+-- Zot:$ Now contains the monster Zot, not the Heart of Zot directly.
+-- TODO: Test the Zot NPC is always present though.
+--                   { "Zot:$", "Heart of Zot" } })
