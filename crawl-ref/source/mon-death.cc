@@ -1285,6 +1285,18 @@ static bool _explode_monster(monster* mons, killer_type killer,
     {
         // when Zot dies, she explodes in lightning
         _setup_lightning_explosion(beam, *mons);
+
+        // for a brief time, there is a lightning storm left behind
+        cloud_type ctype = CLOUD_STORM;
+        for (adjacent_iterator ai(mons->pos(), false); ai; ++ai)
+        {
+            if (!cell_is_solid(*ai) && (!cloud_at(*ai)
+                || cloud_at(*ai)->type == ctype))
+            {
+                place_cloud(ctype, *ai, 4 + random2(4), agent);
+            }
+        }
+
     }
     else
     {
