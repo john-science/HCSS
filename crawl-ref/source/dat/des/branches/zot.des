@@ -2275,10 +2275,11 @@ LROCKTILE:  wall_zot_lightmagenta
 TILE:   v = wall_church
 COLOUR: vG'" = yellow
 TILE:   G = dngn_golden_statue
-FTILE:  G'Z"! = floor_limestone
+FTILE:  G'Z"Y! = floor_limestone
 KMONS:  " = orb guardian
+KMONS:  Y = eldritch tentacle
 KMONS:  Z = Zot
-KPROP:  '"! = no_tele_into
+KPROP:  '"!YZ = no_tele_into
 : set_feature_name("granite_statue", "golden statue")
 : set_feature_name("metal_wall", "marble wall")
 : set_feature_name("floor", "marble floor")
@@ -2310,7 +2311,7 @@ XXXXXXXXXX..~.....................vvvvvvvvvvvvv.....................~..XXXXXXXXX
 XXXXXXXXXX.......?..?.....~.~.....vvG'''"'''Gvv.....~.~.....?..?.......XXXXXXXXX
 XXXXXXXXXXX.~...........?.........vG''"'''"''Gv.........?...........~.XXXXXXXXXX
 XXXXXXXXXXXX......................v"'''!!!'''"v......................XXXXXXXXXXX
-XXXXXXXXXXXXX.....4....2....~.~...'''"'!Z!'"'''...~.~....2....4.....XXXXXXXXXXXX
+XXXXXXXXXXXXX.....4....2....~.~...'''"'YZY'"'''...~.~....2....4.....XXXXXXXXXXXX
 XXXXXXXXXXXX....?...?.....?...?...v"'''!!!'''"v...?...?.....?....?...XXXXXXXXXXX
 XXXXXXXXXXX.......?....?..........vG''"'''"''Gv..........?....2.......XXXXXXXXXX
 XXXXXXXXXX.....~..........~.~.....vvG'''"'''Gvv.....~.~..........~.....XXXXXXXXX
