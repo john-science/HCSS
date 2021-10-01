@@ -2505,13 +2505,13 @@ yak horns.
 %%%%
 yaktaur
 
-A hybrid with the torso of a robust human atop the body of a yak. It excels in
-ranged combat, and is also a formidable foe in close quarters.
+The ghost of a hybrid with the torso of a robust human atop the body of a yak.
+It excels in ranged combat, and is also a formidable foe in close quarters.
 %%%%
 yaktaur captain
 
-An exceptionally strong and brutish yaktaur, able to order its weaker brethren
-around to do its bidding.
+The ghost of an exceptionally strong and brutish yaktaur, able to order its
+weaker brethren around to do its bidding.
 %%%%
 wasp
 
