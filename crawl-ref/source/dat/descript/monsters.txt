@@ -1107,7 +1107,7 @@ its impressive frill at its victims while hissing angrily.
 %%%%
 formicid
 
-A sentient ant that walks upright and is competent at digging.
+The ghost of a sentient ant that walks upright and is competent at digging.
 %%%%
 freezing wraith
 
@@ -1655,9 +1655,9 @@ Its eyes glow with an otherworldly, malignant radiance.
 %%%%
 octopode
 
-A more intelligent cousin of the mighty kraken, capable of using tools and
-spells. It is fully amphibious, but most of its species choose to stay beneath
-the waves and serve their King.
+The ghost of a more intelligent cousin of the mighty kraken, capable of using
+tools and spells. It is fully amphibious, but most of its species choose to
+stay beneath the waves and serve their King.
 %%%%
 ogre
 
@@ -2404,8 +2404,8 @@ wizard's breeding experiment. Double yuck!
 %%%%
 vine stalker
 
-A bizarre symbiotic creature, made up of a carnivorous vine magically combined
-with a humanoid.
+The ghost of a bizarre symbiotic creature, made up of a carnivorous vine
+magically combined with a humanoid.
 %%%%
 wandering mushroom
 
