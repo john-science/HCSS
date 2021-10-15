@@ -18,9 +18,9 @@ static void _give_wanderer_weapon(skill_type wpn_skill, int plus)
         // get curare here.
         if (plus)
             newgame_make_item(OBJ_MISSILES, MI_DART_CURARE, 8 + random2(32));
-        // Otherwise, we just get some poisoned needles.
+        // Otherwise, we just get some tomahawks.
         else
-            newgame_make_item(OBJ_MISSILES, MI_DART_POISONED,
+            newgame_make_item(OBJ_MISSILES, MI_TOMAHAWK,
                     40 + roll_dice(2, 40));
     }
 

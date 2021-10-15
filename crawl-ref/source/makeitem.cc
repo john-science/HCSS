@@ -527,9 +527,9 @@ static special_missile_type _determine_missile_brand(const item_def& item,
                                     nw, SPMSL_NORMAL);
         break;
     case MI_TOMAHAWK:
-        rc = random_choose_weighted(15, SPMSL_POISONED,
-                                    12, SPMSL_DISPERSAL,
-                                    15, SPMSL_EXPLODING,
+        rc = random_choose_weighted(20, SPMSL_EXPLODING,
+                                    15, SPMSL_DISPERSAL,
+                                    10, SPMSL_POISONED,
                                     nw, SPMSL_NORMAL);
         break;
     }
@@ -633,12 +633,12 @@ static void _generate_missile_item(item_def& item, int force_type,
     else
     {
         item.sub_type =
-            random_choose_weighted(4,  MI_DART_POISONED,
-                                   3,  MI_TOMAHAWK,
-                                   2,  MI_JAVELIN,
+            random_choose_weighted(4,  MI_TOMAHAWK,
+                                   3,  MI_JAVELIN,
+                                   2,  MI_LARGE_ROCK,
                                    1,  MI_DART_CURARE,
-                                   2,  MI_DART_FRENZY,
-                                   1,  MI_LARGE_ROCK);
+                                   1,  MI_DART_FRENZY,
+                                   1,  MI_DART_POISONED);
     }
 
     // No fancy rocks -- break out before we get to special stuff.
