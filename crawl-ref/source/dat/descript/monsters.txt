@@ -101,7 +101,7 @@ intelligence. He is filled with hatred for anything that can hold a form.
 Donald
 
 {{
-    local descript = "An adventurer just like you, trying to find the Orb."
+    local descript = "The ghost of an adventurer just like you, trying to find the Orb."
 
     if you.race() ~= "Merfolk" and you.race() ~= "Octopode" then
         descript = descript .. " Unlike you, and d"
@@ -130,7 +130,7 @@ its greatest champions.
 %%%%
 Edmund
 
-A jealous sibling of Sigmund (indeed, the youngest of nine brothers). He has
+The ghost of a jealous sibling of Sigmund (indeed, the youngest of nine brothers). He has
 none of Sigmund's skills in magic, but makes up for it with his skills in
 fighting and a canny head for money. He is eager to prove his superiority by
 killing hapless adventurers with his expensive flail and quick wit.
@@ -147,7 +147,7 @@ A fearsome arch-fiend who rules the deathly netherworld of Tartarus.
 %%%%
 Erica
 
-A wild-tempered adventuress.
+The ghost of a wild-tempered adventuress.
 %%%%
 Erolcha
 
@@ -155,7 +155,7 @@ An especially cunning ogre-mage.
 %%%%
 Eustachio
 
-An apprentice summoner with a flowing moustache. He has funny ideas about
+The ghost of an apprentice summoner with a flowing moustache. He has funny ideas about
 honour.
 %%%%
 Fannar
@@ -204,7 +204,7 @@ A tough-looking gnoll, wearing the pelt of one of his former war dogs.
 %%%%
 Harold
 
-A middle-aged bounty hunter, anxious to retire after one final job. He hopes to
+The ghost of a middle-aged bounty hunter, anxious to retire after one final job. He hopes to
 settle down somewhere and live a quiet life with his family, using the money
 from his final bounty: you.
 %%%%
@@ -225,7 +225,7 @@ draw unwitting adventurers to their deaths.
 %%%%
 Jessica
 
-An evil apprentice sorceress. She entered the dungeon hoping to find a quiet,
+The ghost of an evil apprentice sorceress. She entered the dungeon hoping to find a quiet,
 secluded place where she could study the darker arts without being disturbed.
 %%%%
 Jorgrun
@@ -242,7 +242,7 @@ possessions.
 %%%%
 Joseph
 
-Looks like a mercenary in a stupid-looking hat.
+Looks like the ghost of a mercenary in a stupid-looking hat.
 %%%%
 Josephine
 
@@ -256,8 +256,8 @@ ago, but he sees no reason why that should stop him.
 %%%%
 Kirke
 
-A master of transformation and treachery. Beware, or you may be the next swine
-to join her herd!
+The ghost of a master of transformation and treachery. Beware, or you may be the
+next swine to join her herd!
 %%%%
 the Lernaean hydra
 
@@ -291,8 +291,8 @@ almost as deadly as the creatures they impersonate.
 %%%%
 Margery
 
-A lithe spellcaster in service to the powers of Hell; it is her duty to ensure
-that the inhabitants of the Dungeon never forget their place. She personally
+The ghost of a lithe spellcaster in service to the powers of Hell; it is her duty
+to ensure that the inhabitants of the Dungeon never forget their place. She personally
 slew the ancient dragon from whose hide her strange armour is crafted.
 %%%%
 Menkaure
@@ -360,7 +360,7 @@ and now its deadly blood drips, still-fuming, from his ghostlyarrows.
 %%%%
 Nikola
 
-A brilliant scientist obsessed with electricity. In his attempts to perfect his
+The ghost of a brilliant scientist obsessed with electricity. In his attempts to perfect his
 electric golem, he was involved in a terrible accident, and now phases in and
 out of reality.
 %%%%
@@ -384,7 +384,7 @@ A frog of unusual size, with a tiny crown perched incongruously atop his head.
 %%%%
 Psyche
 
-A fair-haired mage, wandering and seemingly half-mad with grief and guilt.
+The ghost of a fair-haired mage, wandering and seemingly half-mad with grief and guilt.
 %%%%
 Purgy
 
@@ -404,7 +404,7 @@ after a catastrophic spell failure. She is clutching a book.
 %%%%
 Rupert
 
-A human whose savage roars bring terror to all those who hear them.
+The ghost of a human whose savage roars bring terror to all those who hear them.
 %%%%
 Saint Roka
 
@@ -412,7 +412,7 @@ The ghost of a mighty warlord. Some orcs even say he is the Chosen One of Beogh.
 %%%%
 Sigmund
 
-The elder of a pair of brothers who came for the Orb. No one knows what Sigmund
+The ghost of the elder of a pair of brothers who came for the Orb. No one knows what Sigmund
 saw in the dungeon to drive him mad, but his shrewd magical tactics and wicked
 scythe now leave little time for his victims to wonder. Despite his reputation
 as a vicious murderer, his grandiose and dramatic ways have earned him the
@@ -435,7 +435,7 @@ daring leaps! But watch out for her knives!
 %%%%
 Terence
 
-A violent murderer who kills for both pleasure and profit, Terence has been
+The ghost of a violent murderer who kills for both pleasure and profit, Terence has been
 forced into hiding after a botched job. There's a price on his head, and he
 can't afford to leave anyone who sees him alive!
 %%%%
@@ -1337,8 +1337,9 @@ volume of noise it can produce.
 # Stolen from http://rustyandco.com/frequently-asked-questions/monster-guide/
 human
 
-An uppity sort of surface-dwelling, hairless ape. Dwarves think of them as
-fragile, elves think of them as clumsy, and monsters think of them as tasty.
+The ghost of an uppity sort of surface-dwelling, hairless ape. Dwarves think
+of them as fragile, elves think of them as clumsy, and monsters think of them
+as tasty.
 %%%%
 angry ghost
 
@@ -1384,7 +1385,7 @@ A green lizard with strong jaws and sharp teeth, prized for its flesh.
 %%%%
 imperial myrmidon
 
-A warrior initiated in the mysteries of a dying cult, dedicated to serve
+The ghost of a warrior initiated in the mysteries of a dying cult, dedicated to serve
 thrones long-fallen. Its blows strip away magical defenses, leaving its foes
 vulnerable to even the simplest hexes.
 %%%%
@@ -1419,13 +1420,13 @@ scales that resemble lightly rusted iron, especially in their hardness.
 %%%%
 ironbrand convoker
 
-A guardian mage clad in pattern-etched armour. It can recite words of power
-to summon distant allies and imbue them with unnatural might.
+The ghost of a guardian mage clad in pattern-etched armour. It can recite words
+of power to summon distant allies and imbue them with unnatural might.
 %%%%
 ironheart preserver
 
-A towering, muscular figure, capable of safeguarding its allies by selflessly
-accepting a portion of the injuries inflicted upon them.
+The ghost of a towering, muscular figure, capable of safeguarding its allies by
+selflessly accepting a portion of the injuries inflicted upon them.
 %%%%
 jackal
 
@@ -1858,8 +1859,8 @@ A pesky little marsupial that is a bit like a rat, but not quite.
 %%%%
 ragged hierophant
 
-A bedraggled priest, once-fine robes now lined with salt and dust. Forsaken by
-the gods, it now relies on constructs to protect itself.
+The ghost of a bedraggled priest, once-fine robes now lined with salt and dust.
+Forsaken by the gods, it now relies on constructs to protect itself.
 %%%%
 rakshasa
 
@@ -1947,9 +1948,9 @@ hosts. Its eyes burn with divine fire.
 %%%%
 servant of whispers
 
-A member of an order of monks who abandoned their former faith. It now serves
-a minor god of wind and whispers, who allows it to calm the air and, when
-in great need, to break the stillness with divine thunder.
+The ghost of a member of an order of monks who abandoned their former faith. It
+now serves a minor god of wind and whispers, who allows it to calm the air and,
+when in great need, to break the stillness with divine thunder.
 %%%%
 shadow
 
@@ -2032,9 +2033,9 @@ A skeleton compelled to unlife by the exercise of necromancy.
 %%%%
 slave
 
-A once-proud human who has been magically enslaved, forcing it to perform any
-deed its master commands. However, its magical enslavement lasts only as long
-as its master does, and it would surely appreciate being freed.
+The ghost of a once-proud human who has been magically enslaved, forcing it to
+perform any deed its master commands. However, its magical enslavement lasts
+only as long as its master does, and it would surely appreciate being freed.
 %%%%
 slime creature
 
@@ -2593,7 +2594,7 @@ A friendly monster whose presence has been {{
 ##############################################################################
 Cloud Mage
 
-A strange wizard who has attained mastery over clouds, making deft and
+The ghost of a strange wizard who has attained mastery over clouds, making deft and
 foreboding mystic gestures.
 %%%%
 Hellbinder
