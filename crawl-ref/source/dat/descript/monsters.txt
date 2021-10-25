@@ -367,9 +367,9 @@ out of reality.
 Pikel
 
 While kobolds are normally slaves, Pikel's rough life, selfish ambition and
-large stature have caused him to rise up and become a slaver himself. He is on
-his way to the Orcish Hells to sell his wares, a selection of timid humans who
-cower with every crack of his whip.
+large stature have caused him to rise up and become a slaver himself. Now in death,
+He is on his way to the Orcish Hells to sell his wares, a selection of timid human
+ghosts who cower with every crack of his whip.
 %%%%
 Polyphemus
 
@@ -430,7 +430,7 @@ Queen of the tengu, with legendary skill in swordsmanship, tactics, and magic.
 %%%%
 Sonja
 
-A graceful kobold assassin. Admire her graceful pirouettes, thrill at her
+The ghost of a graceful kobold assassin. Admire her graceful pirouettes, thrill at her
 daring leaps! But watch out for her knives!
 %%%%
 Terence
@@ -617,7 +617,7 @@ from death in a burst of unholy flame.
 %%%%
 big kobold
 
-A kobold that is bigger and tougher than the ordinary kobold, and often armed.
+The ghost of a kobold that is bigger and tougher than the ordinary kobold, and often armed.
 %%%%
 black bear
 
@@ -1473,14 +1473,14 @@ well equipped with arms and armour both.
 %%%%
 kobold
 
-A small, greyish creature with the look and temperament of a feral dog. No one
-knows for sure where kobolds come from, but ancient demon-gods, evil spirits,
+The ghost of a small, greyish creature with the look and temperament of a feral dog.
+No one knows for sure where kobolds come from, but ancient demon-gods, evil spirits,
 and meddling wizards have all been suggested as culprits.
 %%%%
 kobold demonologist
 
-A kobold in league with demonic powers, able to call forth beings from the
-depths of Hell.
+The ghost of a kobold in league with demonic powers, able to call forth beings from
+the depths of Hell.
 %%%%
 komodo dragon
 
