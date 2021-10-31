@@ -426,7 +426,7 @@ that is, easy meals — it attracts.
 %%%%
 Sojobo
 
-Queen of the tengu, with legendary skill in swordsmanship, tactics, and magic.
+Ghost of the Queen of the tengu, with legendary skill in swordsmanship, tactics, and magic.
 %%%%
 Sonja
 
@@ -2221,20 +2221,20 @@ frenzied dance.
 %%%%
 tengu
 
-A humanoid figure with the head and talons of a bird. Its ferociously combative
+Ghost of a humanoid figure with the head and talons of a bird. Its ferociously combative
 nature belies its fragile appearance.
 %%%%
 tengu conjurer
 
-A tengu with a talent for the destructive magical arts.
+Ghost of a tengu with a talent for the destructive magical arts.
 %%%%
 tengu reaver
 
-An elite, ferocious tengu highly skilled with both steel and spells.
+Ghost of an elite, ferocious tengu highly skilled with both steel and spells.
 %%%%
 tengu warrior
 
-A particularly bloodthirsty tengu who has opted to hone its skill in fighting
+Ghost of a particularly bloodthirsty tengu who has opted to hone its skill in fighting
 and weaponry instead of spellcasting.
 %%%%
 elevengu
