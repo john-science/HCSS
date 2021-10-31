@@ -6,9 +6,9 @@ It has been enchanted to dance through the air and attack under its own power.
 # Uniques
 Agnes
 
-This spriggan is aged and weathered from years of travel in distant lands. Her
-exotic weapon and astonishing speed both speak to the training she received
-there. Underestimate her at your peril!
+This is the ghost of a spriggan that was aged and weathered from years of travel
+in distant lands. Her exotic weapon and astonishing speed both speak to the
+training she received there. Underestimate her at your peril!
 %%%%
 Aizul
 
@@ -137,8 +137,8 @@ killing hapless adventurers with his expensive flail and quick wit.
 %%%%
 the Enchantress
 
-First and most fearful of her kind, the Enchantress rules over the spriggans of
-the dungeon. She wears an opalescent outfit made of dragon skin that shimmers
+First and most fearful of her kind, the Enchantress ruled over the spriggans of
+the dungeon. Her ghost wears an opalescent outfit made of dragon skin that shimmers
 with many colours.
 %%%%
 Ereshkigal
@@ -2125,31 +2125,31 @@ A frog the size of a wolf, covered in small spines and spurs which drip venom.
 %%%%
 spriggan
 
-A small humanoid, resembling a human or elf except for the size. It moves at a
+The ghost of a small humanoid, resembling a human or elf except for the size. It moves at a
 great speed, and loves playing dirty tricks on people.
 %%%%
 spriggan air mage
 
-A magically adept spriggan blessed with the secrets of the winds.
+The ghost of a magically adept spriggan blessed with the secrets of the winds.
 %%%%
 spriggan berserker
 
-A relatively mighty spriggan that plunges recklessly into combat.
+The ghost of a relatively mighty spriggan that plunges recklessly into combat.
 %%%%
 spriggan defender
 
-An elite, well-equipped spriggan warrior, renowned for its unbelievable agility
+The ghost of an elite, well-equipped spriggan warrior, renowned for its unbelievable agility
 and its prowess with advanced weaponry.
 %%%%
 spriggan druid
 
-A spriggan whose connection with the birds and the beasts is exceptionally
+The ghost of a spriggan whose connection with the birds and the beasts is exceptionally
 strong. It will call forth nature's wrath against anyone who so much as snaps a
 twig.
 %%%%
 spriggan rider
 
-A spriggan that has tamed a wasp as its mount, and is tasked with protecting
+The ghost of a spriggan that has tamed a wasp as its mount, and is tasked with protecting
 the spriggan fens and cairns from intruders.
 %%%%
 starcursed mass
