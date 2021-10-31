@@ -1112,10 +1112,7 @@ static bool _leave_level(dungeon_feature_type stair_taken,
         }
         else
         {
-            die("Attempt to enter a portal (%s) twice; stack: %s",
-                level_id::current().describe().c_str(),
-                comma_separated_line(stack.begin(), stack.end(),
-                                     ", ", ", ").c_str());
+            you.level_stack.clear();
         }
     }
 
