@@ -452,7 +452,7 @@ remaining eye is not very good, and she has mistaken you for one.
 %%%%
 Vashnia
 
-An elite marksnaga who leads a skilled team of sharpshooters. She is
+The ghost of an elite marksnaga who leads a skilled team of sharpshooters. She is
 particularly skilled in translocation magic.
 %%%%
 Xtahua
@@ -1221,7 +1221,7 @@ terrifying feats of magic.
 %%%%
 greater naga
 
-A formidable naga that is skilled in both martial and magical arts.
+The ghost of a formidable naga that is skilled in both martial and magical arts.
 %%%%
 green death
 
@@ -1616,28 +1616,28 @@ around it.
 %%%%
 naga
 
-A hybrid that is human from the waist up; below is a scaly, muscular snakelike
+The ghost of a hybrid that is human from the waist up; below is a scaly, muscular snakelike
 tail. Its mouth drips with venomous saliva.
 %%%%
 naga mage
 
-A naga that has trained in the use of magic, trailed by an eldritch nimbus. It
+The ghost of a naga that has trained in the use of magic, trailed by an eldritch nimbus. It
 is especially skilled in spells dealing with poison and venom.
 %%%%
 naga ritualist
 
-An esoteric mystic draped in talismans. It venerates poison as a sacred gift
+The ghost of an esoteric mystic draped in talismans. It venerates poison as a sacred gift
 and means of spiritual purification.
 %%%%
 naga sharpshooter
 
-A naga with exceptionally keen eyesight, adept in the use of ranged weaponry
+The ghost of a naga with exceptionally keen eyesight, adept in the use of ranged weaponry
 and simple magics which allows it to snipe at targets across nearly any
 obstruction.
 %%%%
 naga warrior
 
-A fearsome naga warrior clad in sturdy armour and wielding a mighty weapon.
+The ghost of a fearsome naga warrior clad in sturdy armour and wielding a mighty weapon.
 %%%%
 necromancer
 
