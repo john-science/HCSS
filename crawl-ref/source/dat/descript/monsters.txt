@@ -117,13 +117,13 @@ Donald
 %%%%
 Dowan
 
-A beautiful but vain deep elf with an aptitude for magic and little else. His
+The ghost of a beautiful but vain deep elf with an aptitude for magic and little else. His
 skills are the perfect complement of his twin sister Duvessa's fighting prowess.
 In search of more powerful spells, he journeys to the surface with his sister.
 %%%%
 Duvessa
 
-A plain-looking deep elven fighter who is technically brilliant in many forms of
+The ghost of a plain-looking deep elven fighter who is technically brilliant in many forms of
 combat, but over-confident because of it. She is complemented by the magical
 skills of her twin brother, Dowan. She journeys to the surface to challenge
 its greatest champions.
@@ -160,7 +160,7 @@ honour.
 %%%%
 Fannar
 
-A cold-hearted elven sorcerer, draped in robes of high office. He whispers
+The ghost of a cold-hearted elven sorcerer, draped in robes of high office. He whispers
 grimly to himself as he stalks the dungeon, trailing ice crystals through the
 air behind him.
 %%%%
