@@ -833,12 +833,12 @@ gleam with hunger for living flesh.
 %%%%
 deep elf annihilator
 
-A deep elf who exults in conjured mayhem and destruction. It is widely hated
+The ghost of a deep elf who exults in conjured mayhem and destruction. It is widely hated
 and feared, both for the power and for the precision of its destructive magics.
 %%%%
 deep elf archer
 
-An experienced deep elf fighter with a penchant for ranged combat.
+The thost of an experienced deep elf fighter with a penchant for ranged combat.
 %%%%
 deep elf blademaster
 
@@ -847,41 +847,41 @@ the sword. It wields two weapons with astonishing dexterity and speed.
 %%%%
 deep elf death mage
 
-A deep elf surrounded by a shimmering aura of negative energy, as a result of
+The ghost of a deep elf surrounded by a shimmering aura of negative energy, as a result of
 its practice of necromancy and life-sapping magic.
 %%%%
 deep elf demonologist
 
-A deep elf who is marked heavily by long years of contact with unnatural
+The ghost of a deep elf who is marked heavily by long years of contact with unnatural
 demonic forces and the creatures of the Abyss.
 %%%%
 deep elf elementalist
 
-A deep elf commanding the primal forces of the universe. It is renowned for its
+The ghost of a deep elf commanding the primal forces of the universe. It is renowned for its
 ability to pin down even the most elusive foes with powerful, unavoidable magic.
 %%%%
 deep elf high priest
 
-An exalted servant of the ancient dark god of the deep elves, basking in
+The ghost of an exalted servant of the ancient dark god of the deep elves, basking in
 hellish death magic.
 %%%%
 deep elf knight
 
-A battle-hardened deep elf fighter.
+The ghost of a battle-hardened deep elf fighter.
 %%%%
 deep elf mage
 
-A deep elf learned in the ways of murderous magic. It is capable of casting a
+The ghost of a deep elf learned in the ways of murderous magic. It is capable of casting a
 wide array of harmful spells.
 %%%%
 deep elf master archer
 
-A deep elf archer who has devoted a lifetime to the mastery of archery,
+The ghost of a deep elf archer who has devoted a lifetime to the mastery of archery,
 dismissing magic as a frivolous distraction.
 %%%%
 deep elf sorcerer
 
-A mighty spellcaster who draws power from the very Hells, and possesses lethal
+The ghost of a mighty spellcaster who draws power from the very Hells, and possesses lethal
 arcane abilities.
 %%%%
 deep troll
