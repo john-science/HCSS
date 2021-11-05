@@ -680,19 +680,6 @@ static like_map divine_likes[] =
         { DID_KILL_UNDEAD, _on_kill("you kill the undead", MH_UNDEAD, true) },
         { DID_KILL_DEMON, _on_kill("you kill demons", MH_DEMONIC, true) },
         { DID_KILL_NATURAL_EVIL, _on_kill("you kill evil beings", MH_DEMONIC, true) },
-        { DID_SEE_MONSTER, {
-            "you encounter other hostile creatures", false,
-            0, 0, 0, nullptr, [] (int &piety, int &denom, const monster* victim)
-            {
-                // don't give piety for seeing things we get piety for killing.
-                if (victim && victim->evil())
-                    return;
-
-                const int level = denom; // also = piety
-                denom = level / 2 + 6 - you.experience_level / 4;
-                piety = denom - 4;
-            }
-        } },
     },
     // GOD_KIKUBAAQUDGHA,
     {
