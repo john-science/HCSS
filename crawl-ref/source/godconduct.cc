@@ -570,9 +570,9 @@ static int _piety_bonus_for_holiness(mon_holy_type holiness)
     if (holiness & (MH_NATURAL | MH_PLANT | MH_NONLIVING))
         return -6;
     else if (holiness & MH_UNDEAD)
-        return -5;
+        return -6;
     else if (holiness & MH_DEMONIC)
-        return -4;
+        return -6;
     else if (holiness & MH_HOLY)
         return -3;
     else
@@ -589,7 +589,8 @@ static int _piety_bonus_for_holiness(mon_holy_type holiness)
  * @param special       A special-case function.
  * @return              An appropropriate like_response.
  */
-static like_response _on_kill(const char* desc, mon_holy_type holiness,
+static like_response _on_kill(const char* desc,
+                              mon_holy_type holiness,
                               bool god_is_good = false,
                               special_piety_t special = nullptr,
                               bool really_like = false)
