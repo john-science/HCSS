@@ -2602,46 +2602,6 @@ MAP
   xxx  @  xxx
 ENDMAP
 
-# This doesn't place multiple gods, but it can place one of two distinct
-# gods.
-NAME:  lightli_temple_of_fire
-TAGS:  temple_overflow_1 temple_overflow_trog temple_overflow_makhleb
-DEPTH: D:2-9
-KPROP: Y = no_tele_into
-KMASK: Y = no_monster_gen
-{{
-  local params = dgn.map_parameters()
-  if params ~= nil then
-    local tag = unpack(params)
-    if tag ~= nil then
-      if string.find(tag, "trog") ~= nil then
-        kfeat('_ = altar_trog')
-      elseif string.find(tag, "makhleb") ~= nil then
-        kfeat('_ = altar_makhleb')
-      else
-        kfeat('_ = altar_trog / altar_makhleb')
-      end
-    else
-      kfeat('_ = altar_trog / altar_makhleb')
-    end
-  else
-    kfeat('_ = altar_trog / altar_makhleb')
-  end
-}}
-MAP
-llcccccc
-lccYcYccc
-lclllllcc
-lcl...lcc
-lcl...lYc
-@+.._.lcc
-lcl...lYc
-lcl...lcc
-lclllllcc
-lccYcYccc
-llcccccc
-ENDMAP
-
 NAME:    grunt_temple_overflow_opulence
 DEPTH:   D:2-9
 TAGS:    temple_overflow_2 temple_overflow_gozag temple_overflow_nemelex_xobeh
