@@ -1520,7 +1520,7 @@ static void _give_armour(monster* mon, int level, bool spectral_orcs)
     case MONS_ERICA:
     case MONS_JOSEPHINE:
     case MONS_PSYCHE:
-        if (one_chance_in(5))
+        if (one_chance_in(3))
             level = ISPEC_GOOD_ITEM;
         item.base_type = OBJ_ARMOUR;
         item.sub_type  = ARM_ROBE;
@@ -1679,6 +1679,7 @@ static void _give_armour(monster* mon, int level, bool spectral_orcs)
     case MONS_CRAZY_YIUF:
         item.base_type = OBJ_ARMOUR;
         item.sub_type  = ARM_CLOAK;
+        item.plus = coinflip();
         break;
 
     case MONS_FANNAR:
