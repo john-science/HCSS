@@ -5104,15 +5104,15 @@ w:5
 %%%%
 _Zot_common_
 
-VISUAL:@The_monster@ pulsates.
+VISUAL:@The_monster@ spews slime.
 
-VISUAL:@The_monster@ pulsates like its about to explode.
+VISUAL:@The_monster@ fades in and out of this universe.
 
-VISUAL:@The_monster@ pulses like a supernova.
+VISUAL:@The_monster@ pulls itself more into this universe.
 
-VISUAL:@The_monster@ burns.
+VISUAL:@The_monster@ slips back slightly into the nether realm.
 
-VISUAL:@The_monster@ glows.
+VISUAL:@The_monster@ growls.
 
 @The_monster@ laughs at you.
 
@@ -5124,7 +5124,7 @@ VISUAL:@The_monster@ glows.
 
 @The_monster@ says @to_foe@, "I am a celestial being, and you are nothing."
 
-@The_monster@ yells @at_foe@, "I am the mother of all Orbs of Fire!"
+@The_monster@ yells @at_foe@, "I am the mother of all Eldritch Horrors!"
 
 @The_monster@ yells @at_foe@, "I am the mother of all Wretched Stars!"
 
@@ -5137,15 +5137,7 @@ VISUAL:@The_monster@ glows.
 %%%%
 _Zot_rare_
 
-VISUAL:@The_monster@ suddenly burns blue.
-
-VISUAL:@The_monster@ suddenly burns white.
-
-VISUAL:@The_monster@ suddenly burns purple.
-
-VISUAL:@The_monster@ spins like a tornado.
-
-VISUAL:@The_monster@ pulsates menacingly.
+VISUAL:@The_monster@ flickers between realms.
 
 @The_monster@ asks @to_foe@, "I am the mother of all evil in the universe, what chance do you have?"
 
