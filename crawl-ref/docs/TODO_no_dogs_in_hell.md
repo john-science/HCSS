@@ -65,9 +65,7 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 
 ## Other
 
-1. MONS_BENNU
 1. MONS_GOBLIN
 1. MONS_HOBGOBLIN
 1. MONS_SALAMANDER_MYSTIC
-1. MONS_WYVERN
 
