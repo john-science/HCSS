@@ -5,12 +5,23 @@
 This is the big TODO list, where we are (temporarily) keeping all the DCSS monsters that just don't make sense for the idiom of HCSS. There shouldn't be too many living things in Hell, and having a
 bunch of harmless animals running around also doesn't seem on brand. We can make some of these demons, or undead, but some will have to be replaced by ghosts or something.
 
+
+## Early Enemies
+
+1. MONS_BALL_PYTHON
+1. MONS_BAT
+1. MONS_FRILLED_LIZARD
+1. MONS_GIANT_COCKROACH
+1. MONS_GOBLIN
+1. MONS_HOBGOBLIN
+1. MONS_RAT
+
+
 ## Animals
 
 1. MONS_ALLIGATOR
 1. MONS_ALLIGATOR_SNAPPING_TURTLE
 1. MONS_BASILISK
-1. MONS_BAT
 1. MONS_BLACK_BEAR
 1. MONS_BLINK_FROG
 1. MONS_BULLFROG
@@ -18,8 +29,6 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 1. MONS_DART_SLUG
 1. MONS_DIRE_ELEPHANT
 1. MONS_ELEPHANT
-1. MONS_FRILLED_LIZARD
-1. MONS_GIANT_COCKROACH
 1. MONS_HORNET
 1. MONS_HOUND
 1. MONS_HOWLER_MONKEY
@@ -32,7 +41,6 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 1. MONS_POLAR_BEAR
 1. MONS_PORCUPINE
 1. MONS_QUOKKA
-1. MONS_RAT
 1. MONS_SHAMBLING_MANGROVE
 1. MONS_SNAPPING_TURTLE
 1. MONS_SPINY_FROG
@@ -48,7 +56,6 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 
 1. MONS_ADDER
 1. MONS_ANACONDA
-1. MONS_BALL_PYTHON
 1. MONS_BLACK_MAMBA
 1. MONS_ELECTRIC_EEL
 1. MONS_MANA_VIPER
@@ -66,10 +73,4 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 1. MONS_SCORPION
 1. MONS_TARANTELLA
 1. MONS_WOLF_SPIDER
-
-
-## Other
-
-1. MONS_GOBLIN
-1. MONS_HOBGOBLIN
 
