@@ -5106,11 +5106,11 @@ _Zot_common_
 
 VISUAL:@The_monster@ spews slime.
 
-VISUAL:@The_monster@ fades in and out of this universe.
+VISUAL:@The_monster@ sits in a portal between this realm and another.
 
-VISUAL:@The_monster@ pulls itself more into this universe.
+VISUAL:@The_monster@ pulls more of her giant, formless body into into this universe.
 
-VISUAL:@The_monster@ slips back slightly into the nether realm.
+VISUAL:@The_monster@ pulls more of herself through the portal into this world.
 
 VISUAL:@The_monster@ growls.
 
@@ -5123,6 +5123,8 @@ VISUAL:@The_monster@ growls.
 @The_monster@ says @to_foe@, "You are nothing."
 
 @The_monster@ says @to_foe@, "I am a celestial being, and you are nothing."
+
+@The_monster@ screams @at_foe@, "You will lose!"
 
 @The_monster@ yells @at_foe@, "I am the mother of all Eldritch Horrors!"
 
@@ -5144,8 +5146,6 @@ VISUAL:@The_monster@ flickers between realms.
 @The_monster@ says @to_foe@, "After your death, a 3-headed hydra will chew on you for all eternity."
 
 @The_monster@ says @to_foe@, "When you die, your soul will be mine."
-
-@The_monster@ screams @at_foe@, "You will lose!"
 
 @The_monster@ yells @at_foe@, "I am the destroyer of worlds!"
 ## END Zot ##
