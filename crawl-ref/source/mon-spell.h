@@ -87,7 +87,7 @@ static const mon_spellbook mspell_list[] =
       }
     },
 
-    // ('b') Bats, birds, and butterflies.
+    // ('b') Beholders, birds, and butterflies.
     {  MST_SHARD_SHRIKE,
       {
         { SPELL_THROW_ICICLE, 24, MON_SPELL_NATURAL | MON_SPELL_BREATH },

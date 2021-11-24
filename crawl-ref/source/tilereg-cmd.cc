@@ -198,7 +198,7 @@ static bool _command_not_applicable(const command_type cmd, bool safe)
         return true;
     case CMD_CAST_SPELL:
         return // shamefully copied from _can_cast in spl-cast.cc
-            (you.form == TRAN_BAT || you.form == TRAN_PIG) ||
+            (you.form == TRAN_BEHOLDER || you.form == TRAN_PIG) ||
             (you.duration[DUR_BRAINLESS]) ||
             (you.no_cast()) ||
             (!you.spell_no) ||

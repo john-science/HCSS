@@ -44,7 +44,7 @@ Breathe Noxious Fumes ability
 
 Atme eine Welle gesundheitsschädlicher Gase auf ein Monster aus.
 %%%%
-Bat Form ability
+Beholder Form ability
 
 Verwandle dich in eine schnelle Vampirfledermaus. In diesem Zustand kannst du
 weder mit Gegenständen aller Art umgehen (du kannst sie allerdings aufheben

@@ -641,7 +641,7 @@ DEPTH:  D:2-, Crypt
 TAGS:   no_pool_fixup uniq_zombie_altar no_monster_gen temple_overflow_1
 TAGS:   temple_overflow_kikubaaqudgha
 KFEAT:  _ = altar_kikubaaqudgha
-MONS:   rat zombie / bat zombie / nothing w:90
+MONS:   rat zombie / beholder zombie / nothing w:90
 : interest_check(_G)
 MAP
 xxxxxxxxxxxxxxxx
@@ -733,7 +733,7 @@ ENDMAP
 NAME:   kennysheep_vampire_church
 TAGS:   no_monster_gen temple_overflow_1 temple_overflow_kikubaaqudgha
 DEPTH:  D:2-9
-MONS:   vampire bat / nothing w:7, bat skeleton / bat zombie
+MONS:   vampire beholder / nothing w:7, beholder skeleton / beholder zombie
 KFEAT:  A = altar_kikubaaqudgha
 NSUBST: . = 4:2 / 3 = 2. / *:.
 {{
@@ -1342,12 +1342,12 @@ KMONS: P = ball python perm_ench:paralysis / rat perm_ench:paralysis / \
   frilled lizard perm_ench:paralysis / giant cockroach perm_ench:paralysis / \
   quokka perm_ench:paralysis / kobold w:5 perm_ench:paralysis / \
   goblin w:5 perm_ench:paralysis / hobgoblin w:5 perm_ench:paralysis
-KMONS: C = bat perm_ench:corona / adder perm_ench:corona / \
+KMONS: C = beholder perm_ench:corona / adder perm_ench:corona / \
   kobold perm_ench:corona / goblin perm_ench:corona / hobgoblin perm_ench:corona
-KMONS: S = jackal perm_ench:slow / bat perm_ench:slow / adder perm_ench:slow / \
+KMONS: S = jackal perm_ench:slow / beholder perm_ench:slow / adder perm_ench:slow / \
   kobold perm_ench:slow / goblin perm_ench:slow / hobgoblin perm_ench:slow
 KMONS: B = ball python perm_ench:blind / frilled lizard perm_ench:blind / \
-  giant cockroach perm_ench:blind / bat perm_ench:blind
+  giant cockroach perm_ench:blind / beholder perm_ench:blind
 KMONS: M = orc wizard perm_ench:mute
 MAP
 @...   ...@

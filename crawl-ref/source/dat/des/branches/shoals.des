@@ -323,7 +323,7 @@ KMONS:   3 = siren ; trident ego:flaming | spear ego:flaming . \
              robe ego:fire_resistance | robe w:5 . \
              buckler ego:fire_resistance w:20 | buckler | nothing w:70
 KMONS:   4 = merfolk aquamancer
-KMONS:   67 = fire bat
+KMONS:   67 = fire beholder
 KMONS:   8 = fire crab
 KITEM:   67 = % w:15 / *
 KITEM:   8 = * w:15 / |
@@ -479,7 +479,7 @@ NAME: nicolae_shoals_undead_eyrie
 DEPTH: Shoals
 SUBST: y = ..xx1
 NSUBST: . = 4:1 / *:.
-MONS: harpy zombie w:30 / bat zombie w:5
+MONS: harpy zombie w:30 / beholder zombie w:5
 MAP
  .....
 ...y...
@@ -656,7 +656,7 @@ NAME: nicolae_shoals_siren_and_animal_friends
 DEPTH: Shoals
 TAGS: patrolling no_monster_gen
 SUBST: w = f:4 w W
-KMONS: f = bat w:5 / harpy / \
+KMONS: f = beholder w:5 / harpy / \
        sea snake / \
        snapping turtle / steam dragon w:1 / alligator w:5 / \
        alligator snapping turtle / anaconda w:1 / \

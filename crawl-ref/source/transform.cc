@@ -727,13 +727,13 @@ public:
     }
 };
 
-class FormBat : public Form
+class FormBeholder : public Form
 {
 private:
-    FormBat() : Form(TRAN_BAT) { }
-    DISALLOW_COPY_AND_ASSIGN(FormBat);
+    FormBeholder() : Form(TRAN_BEHOLDER) { }
+    DISALLOW_COPY_AND_ASSIGN(FormBeholder);
 public:
-    static const FormBat &instance() { static FormBat inst; return inst; }
+    static const FormBeholder &instance() { static FormBeholder inst; return inst; }
 
     /**
      * Get an monster type corresponding to the transformation.
@@ -744,7 +744,7 @@ public:
      */
     monster_type get_equivalent_mons() const override
     {
-        return MONS_BAT;
+        return MONS_BEHOLDER;
     }
 
     /**
@@ -757,7 +757,7 @@ public:
 
     string get_description(bool past_tense) const override
     {
-        return make_stringf("You %s in bat-form.",
+        return make_stringf("You %s in beholder-form.",
                             past_tense ? "were" : "are");
     }
 
@@ -767,7 +767,7 @@ public:
      */
     string get_transform_description() const override
     {
-        return make_stringf("a bat.");
+        return make_stringf("a beholder.");
     }
 };
 
@@ -984,7 +984,7 @@ static const Form* forms[] =
     &FormIce::instance(),
     &FormDragon::instance(),
     &FormLich::instance(),
-    &FormBat::instance(),
+    &FormBeholder::instance(),
     &FormPig::instance(),
     &FormAppendage::instance(),
     &FormTree::instance(),
@@ -1520,7 +1520,7 @@ void print_head_change_message(int old_heads, int new_heads)
 /**
  * Is the player alive enough to become the given form?
  *
- * All undead can enter shadow form; vampires also can enter batform, and, when
+ * All undead can enter shadow form; vampires also can enter beholder form, and, when
  * full, other forms (excepting lichform).
  *
  * @param which_trans   The tranformation which the player is undergoing

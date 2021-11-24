@@ -110,15 +110,15 @@ silver star
 
 Una sfera di energia pulsante di luce accecante.
 %%%%
-giga bat
+giga beholder
 
 Un enorme, gonfio pipistrello.
 %%%%
-ice bat
+ice beholder
 
 Una creatura non morta, dalla forma di un pipistrello di ghiaccio.
 %%%%
-megabat
+megabeholder
 
 Un enorme pipistrello nero.
 %%%%

@@ -410,7 +410,7 @@ zombie
 
 死霊術によって甦った死体だ。
 %%%%
-megabat
+megabeholder
 
 巨大な黒いコウモリだ。
 %%%%

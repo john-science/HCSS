@@ -857,17 +857,17 @@ llllx..xllll
 ENDMAP
 
 ##################################################
-# The orcs dug into a natural cave and used the bats as a shooting gallery.
-NAME:   mines_bat_river
+# The orcs dug into a natural cave and used the beholders as a shooting gallery.
+NAME:   mines_beholder_river
 TAGS:   no_item_gen no_monster_gen no_pool_fixup
 DEPTH:  Orc
-MONS:   bat
+MONS:   beholder
 MONS:   generate_awake orc ; shortbow ego:flaming | shortbow ego:freezing
 NSUBST: . = 2:2 / 2:c
 NSUBST: c = *: 2 .
 KITEM:  d = gold q:1
 NSUBST: b = 3:1 / 10:d / 4:e / *: .:20 1:1 d:2 e:2
-: dgn.delayed_decay(_G, 'e', 'bat corpse')
+: dgn.delayed_decay(_G, 'e', 'beholder corpse')
 SHUFFLE: ABC
 SUBST:  A = @
 SUBST:  B = x

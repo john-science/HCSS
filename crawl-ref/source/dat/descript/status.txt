@@ -589,9 +589,9 @@ Your necromancy spells are increased in power, and you gain a draining melee
 attack. However, you are also vulnerable to holy damage and Dispel Undead,
 and are unable to consume potions.
 %%%%
-Bat status
+Beholder status
 
-You have been transformed into a swift-moving bat, increasing your evasion but
+You have been transformed into a swift-moving beholder, increasing your evasion but
 substantially weakening your melee attacks.
 
 Any equipped weapons, armour and rings are melded, and you are unable to evoke

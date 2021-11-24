@@ -5948,7 +5948,7 @@ void mons_cast(monster* mons, bolt pbolt, spell_type spell_cast,
         {
             monster_type rats[] = { MONS_QUOKKA, MONS_RAT };
 
-            const monster_type mon = (one_chance_in(3) ? MONS_BAT
+            const monster_type mon = (one_chance_in(3) ? MONS_BEHOLDER
                                                        : RANDOM_ELEMENT(rats));
             create_monster(
                 mgen_data(mon, SAME_ATTITUDE(mons), mons->pos(), mons->foe)

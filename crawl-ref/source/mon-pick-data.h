@@ -5,7 +5,7 @@ static const pop_entry pop_d[] =
   { -1,  5,  640, SEMI, MONS_FRILLED_LIZARD},
   { -1,  7,  136, SEMI, MONS_OOZE },
   {  1,  3, 1000, FLAT, MONS_GOBLIN },
-  {  1,  3, 1000, FLAT, MONS_BAT },
+  {  1,  3, 1000, FLAT, MONS_BEHOLDER },
   {  1,  3, 1000, FLAT, MONS_KOBOLD },
   {  1,  3, 1000, FLAT, MONS_RAT },
   {  1,  3, 1000, FLAT, MONS_HOBGOBLIN },
@@ -797,7 +797,7 @@ static const pop_entry pop_abyss[] =
   {  1,  5,    6, FLAT, MONS_FIRE_ELEMENTAL },
   {  1,  5,    6, FLAT, MONS_AIR_ELEMENTAL },
   {  1,  5,    6, FLAT, MONS_WATER_ELEMENTAL },
-  {  1,  5,   46, FALL, MONS_FIRE_BAT },
+  {  1,  5,   46, FALL, MONS_FIRE_BEHOLDER },
   {  1,  4,   21, FALL, MONS_ICE_BEAST },
   {  1,  5,   14, FALL, MONS_KOBOLD_DEMONOLOGIST },
   {  1,  5,    8, FLAT, MONS_DEATH_KNIGHT },
@@ -895,7 +895,7 @@ static const pop_entry pop_sewer[] =
 { // Sewer
   {  1,  1, 1000, FLAT, MONS_FRILLED_LIZARD },
   {  1,  1,  515, FLAT, MONS_NO_MONSTER }, //formerly leopard gecko
-  {  1,  1, 1000, FLAT, MONS_BAT },
+  {  1,  1, 1000, FLAT, MONS_BEHOLDER },
   {  1,  1,  515, FLAT, MONS_BALL_PYTHON },
   {  1,  1,  515, FLAT, MONS_ADDER },
   {  1,  1,  515, FLAT, MONS_DART_SLUG },
@@ -1241,7 +1241,7 @@ static const struct { const pop_entry *pop; int count; } population_water[] =
 
 static const pop_entry pop_lava_generic[] =
 { // Generic lava monsters
-  {  1,  27,  100, FLAT, MONS_FIRE_BAT },
+  {  1,  27,  100, FLAT, MONS_FIRE_BEHOLDER },
   {  1,  27,  100, FLAT, MONS_FIRE_ELEMENTAL },
   {  1,  27,   50, FLAT, MONS_MOLTEN_GARGOYLE },
   {  1,  27,   50, FLAT, MONS_FIRE_VORTEX },
@@ -1272,7 +1272,7 @@ static const pop_entry pop_lava_snake[] =
 static const pop_entry pop_lava_depths[] =
 { // Depths lava monsters
   {  1,  6,   22, FALL, MONS_FIRE_ELEMENTAL },
-  {  1,  6,   22, FALL, MONS_FIRE_BAT },
+  {  1,  6,   22, FALL, MONS_FIRE_BEHOLDER },
   {  1,  6,   11, FALL, MONS_FIRE_VORTEX },
   {  1,  6,   11, FALL, MONS_MOLTEN_GARGOYLE },
   {  1,  6,  100, FLAT, MONS_SALAMANDER },

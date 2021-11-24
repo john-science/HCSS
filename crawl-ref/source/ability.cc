@@ -272,7 +272,7 @@ static const ability_def Ability_List[] =
       0, 0, 125, 0, {FAIL_XL, 30, 1}, abflag::BREATH },
     { ABIL_BREATHE_STEAM, "Breathe Steam",
       0, 0, 75, 0, {FAIL_XL, 20, 1}, abflag::BREATH },
-    { ABIL_TRAN_BAT, "Bat Form", 2, 0, 0, 0, {FAIL_XL, 45, 2}, abflag::NONE },
+    { ABIL_TRAN_BEHOLDER, "Beholder Form", 2, 0, 0, 0, {FAIL_XL, 45, 2}, abflag::NONE },
 
     { ABIL_BREATHE_ACID, "Breathe Acid",
       0, 0, 125, 0, {FAIL_XL, 30, 1}, abflag::BREATH },
@@ -1555,9 +1555,9 @@ bool activate_talent(const talent& tal)
     // Doing these would outright kill the player.
     // (or, in the case of the stat-zeros, they'd at least be extremely
     // dangerous.)
-    if (tal.which == ABIL_TRAN_BAT)
+    if (tal.which == ABIL_TRAN_BEHOLDER)
     {
-        if (!check_form_stat_safety(TRAN_BAT))
+        if (!check_form_stat_safety(TRAN_BEHOLDER))
         {
             crawl_state.zero_turns_taken();
             return false;
@@ -1588,7 +1588,7 @@ bool activate_talent(const talent& tal)
         return false;
     }
 
-    if ((tal.which == ABIL_EVOKE_FLIGHT || tal.which == ABIL_TRAN_BAT || tal.which == ABIL_FLY)
+    if ((tal.which == ABIL_EVOKE_FLIGHT || tal.which == ABIL_TRAN_BEHOLDER || tal.which == ABIL_FLY)
         && !flight_allowed())
     {
         crawl_state.zero_turns_taken();
@@ -2751,9 +2751,9 @@ static spret_type _do_ability(const ability_def& abil, bool fail)
     case ABIL_FEDHAS_EVOLUTION:
         return fedhas_evolve_flora(fail);
 
-    case ABIL_TRAN_BAT:
+    case ABIL_TRAN_BEHOLDER:
         fail_check();
-        if (!transform(100, TRAN_BAT))
+        if (!transform(100, TRAN_BEHOLDER))
         {
             crawl_state.zero_turns_taken();
             return SPRET_ABORT;

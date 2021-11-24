@@ -4432,7 +4432,7 @@ mons_spec mons_list::soh_monspec(string name) const
 /**
  * What mutant beast facet corresponds to the given name?
  *
- * @param name      The name in question (e.g. 'bat')
+ * @param name      The name in question (e.g. 'beholder')
  * @return          The corresponding facet (e.g. BF_BAT), or BF_NONE.
  */
 static int _beast_facet_by_name(const string &name)

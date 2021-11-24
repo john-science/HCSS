@@ -306,7 +306,7 @@ ENDMAP
 # Inspired by a bug which turned Lemuel's castle moat into draconians...
 NAME:   hangedman_abyss_monster_moat
 TAGS:   no_monster_gen patrolling
-MONS:   fire bat w:12 / bat simulacrum / spectral bat / bat
+MONS:   fire beholder w:12 / beholder simulacrum / spectral beholder / beholder
 MONS:   vampire, vampire knight / vampire mage w:7
 MONS:   crimson imp w:12 / white imp / shadow imp / iron imp
 MONS:   kobold demonologist, deep elf demonologist
@@ -527,7 +527,7 @@ MAP
 ENDMAP
 
 NAME:    hangedman_abyss_batty_box
-MONS:    bat / fire bat / vampire bat, butterfly, wyvern
+MONS:    beholder / fire beholder / vampire beholder, butterfly, wyvern
 MONS:    spatial vortex, wind drake, harpy, unseen horror
 KMONS:   8 = wind drake w:9 / harpy w:1
 KITEM:   8 = acquire any / any good_item / stone q:1 w:5
@@ -1309,7 +1309,7 @@ ENDMAP
 
 NAME:   due_evilmike_abyss_rune_seething_liches
 TAGS:   abyss_rune unrand no_monster_gen
-MONS:   fire bat, chaos spawn, fire dragon / ice dragon, ogre mage
+MONS:   fire beholder, chaos spawn, fire dragon / ice dragon, ogre mage
 KMONS:  OL = lich / ancient lich w:1
 KITEM:  O = abyssal rune of Zot
 KFEAT:  A = stone_arch

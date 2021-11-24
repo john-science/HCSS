@@ -57,7 +57,7 @@ Breathe Noxious Fumes ability
 
 Udspyer en bølge af særdeles skadelige dunste mod målet.
 %%%%
-Bat Form ability
+Beholder Form ability
 
 Forvandler dig til en hurtig vampyrflagermus. I flagermuseform ka du hverken
 håndtere genstande på nogen måde (bortset fra at samle dem eller lægge dem fra

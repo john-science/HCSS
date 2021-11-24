@@ -401,7 +401,7 @@ ENDMAP
 NAME:   due_lair_maze_entry_diamond
 TAGS:   lair_entry
 MONS:   plant / fungus
-MONS:   w:100 bat / w:100 rat / w:30 iguana / crocodile /\
+MONS:   w:100 beholder / w:100 rat / w:30 iguana / crocodile /\
         yak / nothing
 ORIENT: float
 SUBST:  . = G:20 B:15 .
@@ -441,7 +441,7 @@ NAME:   grunt_lair_entry_orc_guard_hut
 ORIENT: float
 TAGS:   lair_entry transparent
 MONS:   plant / fungus / nothing
-MONS:   w:100 bat / w:100 rat / w:30 iguana / crocodile / yak / w:20 nothing
+MONS:   w:100 beholder / w:100 rat / w:30 iguana / crocodile / yak / w:20 nothing
 MONS:   patrolling orc warrior
 KFEAT:  O = enter_lair
 SUBST:  D = 1:5 2:2 .

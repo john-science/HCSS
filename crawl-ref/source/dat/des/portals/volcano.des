@@ -255,7 +255,7 @@ function fiery_guardians (e, intelligent, village)
                   .. " / two-headed ogre ; " .. ogrestuff .. " . " .. ogrestuff
                   .. " / " .. centaur
                   .. " / deep elf mage ; " .. elfstuff)
-            e.mons("fire bat / hog / hell hound w:3")
+            e.mons("fire beholder / hog / hell hound w:3")
             return
         end
         local set_weight = crawl.random2(12)
@@ -306,7 +306,7 @@ function fiery_guardians (e, intelligent, village)
         local set_weight = crawl.random2(8)
         if set_weight < 3 then
             -- "Lair"-esque monster pack.
-            e.mons("komodo dragon w:3 / fire bat band / acid dragon"
+            e.mons("komodo dragon w:3 / fire beholder band / acid dragon"
                    .. " / hell hound w:3")
             e.mons("manticore w:4 / lindwurm w:4 / fire dragon w:1"
                    .. " / fire crab w:1")
@@ -491,7 +491,7 @@ ENDMAP
 
 NAME: nicolae_volcano_entry_batcave
 SUBST: s = Xs, Z = Xx, Y = x.
-MONS: patrolling fire bat
+MONS: patrolling fire beholder
 : volcano_portal(_G)
 MAP
       xxxx
@@ -634,7 +634,7 @@ WEIGHT:     50
 ORIENT:     encompass
 TAGS:       no_item_gen no_monster_gen
 SUBVAULT:   B : volcano_grotto_subvault
-KMONS:      l = lava snake w:2 / fire bat w:1 / nothing w:117
+KMONS:      l = lava snake w:2 / fire beholder w:1 / nothing w:117
 KFEAT:      l = l
 :           volcano_setup(_G)
 :           place_tiny_volcano(_G)
@@ -788,7 +788,7 @@ WEIGHT:     50
 ORIENT:     encompass
 TAGS:       no_item_gen no_monster_gen no_rotate
 KFEAT:      _ = altar_makhleb / altar_trog / altar_vehumet
-KMONS:      l = lava snake w:2 / fire bat w:1 / nothing w:897
+KMONS:      l = lava snake w:2 / fire beholder w:1 / nothing w:897
 KFEAT:      l = l
 #           Let's choose a path from m, u, z, i, r, n
 SHUFFLE:    muzirn
@@ -1398,8 +1398,8 @@ NSUBST:  G = 1:2 / *:3, H = 1:2 / *:3, I = 1:2 / *:3
 MONS: patrolling fire dragon
 MONS: salamander
 MONS: ogre w:5 / two-headed ogre w:5 / steam dragon w:5 / wyvern / crocodile /\
-      fire bat
-MONS: patrolling fire bat band
+      fire beholder
+MONS: patrolling fire beholder band
 : dgn.delayed_decay(_G, 'C', 'human skeleton')
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

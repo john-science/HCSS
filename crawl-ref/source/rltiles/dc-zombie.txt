@@ -6,7 +6,7 @@ zombie_quadruped_small MONS_ZOMBIE_QUADRUPED_SMALL
 zombie_quadruped_large MONS_ZOMBIE_QUADRUPED_LARGE
 zombie_ogre MONS_ZOMBIE_OGRE
 zombie_frog MONS_ZOMBIE_FROG
-zombie_bat MONS_ZOMBIE_BAT
+zombie_beholder MONS_ZOMBIE_BEHOLDER
 zombie_bee MONS_ZOMBIE_BEE
 zombie_beetle MONS_ZOMBIE_BEETLE
 zombie_bug MONS_ZOMBIE_BUG
@@ -90,7 +90,7 @@ skeleton_troll MONS_SKELETON_TROLL
 skeleton_frog MONS_SKELETON_FROG
 skeleton_lizard MONS_SKELETON_LIZARD
 skeleton_turtle MONS_SKELETON_TURTLE
-skeleton_bat MONS_SKELETON_BAT
+skeleton_beholder MONS_SKELETON_BEHOLDER
 skeleton_bird MONS_SKELETON_BIRD
 skeleton_fish MONS_SKELETON_FISH
 skeleton_centaur MONS_SKELETON_CENTAUR
@@ -112,7 +112,7 @@ simulacrum_small MONS_SIMULACRUM_SMALL
 simulacrum_large MONS_SIMULACRUM_LARGE
 simulacrum_quadruped_small MONS_SIMULACRUM_QUADRUPED_SMALL
 simulacrum_quadruped_large MONS_SIMULACRUM_QUADRUPED_LARGE
-simulacrum_bat MONS_SIMULACRUM_BAT
+simulacrum_beholder MONS_SIMULACRUM_BEHOLDER
 simulacrum_bee MONS_SIMULACRUM_BEE
 simulacrum_ant MONS_SIMULACRUM_BUG
 simulacrum_fish MONS_SIMULACRUM_FISH
@@ -137,7 +137,7 @@ spectral_large MONS_SPECTRAL_LARGE
 spectral_quadruped_small MONS_SPECTRAL_QUADRUPED_SMALL
 spectral_quadruped_large MONS_SPECTRAL_QUADRUPED_LARGE
 spectral_frog MONS_SPECTRAL_FROG
-spectral_bat MONS_SPECTRAL_BAT
+spectral_beholder MONS_SPECTRAL_BEHOLDER
 spectral_bee MONS_SPECTRAL_BEE
 spectral_ant MONS_SPECTRAL_BUG
 spectral_fish MONS_SPECTRAL_FISH

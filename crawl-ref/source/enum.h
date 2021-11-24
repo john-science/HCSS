@@ -256,7 +256,7 @@ enum ability_type
     ABIL_STOP_FLYING,
     ABIL_MUMMY_RESTORATION,
     // Vampires
-    ABIL_TRAN_BAT,
+    ABIL_TRAN_BEHOLDER,
     ABIL_BOTTLE_BLOOD,
     // Deep Dwarves
     ABIL_RECHARGING,
@@ -609,7 +609,7 @@ enum transformation_type
     TRAN_ICE_BEAST,
     TRAN_DRAGON,
     TRAN_LICH,
-    TRAN_BAT,
+    TRAN_BEHOLDER,
     TRAN_PIG,
     TRAN_APPENDAGE,
     TRAN_TREE,
@@ -2385,8 +2385,8 @@ enum monster_type                      // menv[].type
     MONS_IGUANA,
     MONS_KOMODO_DRAGON,
     MONS_BASILISK,
-    MONS_BAT,
-    MONS_FIRE_BAT,
+    MONS_BEHOLDER,
+    MONS_FIRE_BEHOLDER,
     MONS_BALL_PYTHON,
     MONS_ADDER,
     MONS_WATER_MOCCASIN,
@@ -2512,7 +2512,7 @@ enum monster_type                      // menv[].type
     MONS_ALLIGATOR_SNAPPING_TURTLE,
     MONS_GNOME,
     MONS_FELID,                 // recolouring + single vault. Miaow!
-    MONS_VAMPIRE_BAT,           // recolouring + vaults
+    MONS_VAMPIRE_BEHOLDER,      // recolouring + vaults
     MONS_DEMIGOD,               // recolouring + single vault
     MONS_DEMONSPAWN,
     MONS_GARGOYLE,
@@ -3632,7 +3632,7 @@ enum shop_type
 // These are often addressed relative to each other (esp. delta SIZE_MEDIUM).
 enum size_type
 {
-    SIZE_TINY,              // rats/bats
+    SIZE_TINY,              // rats/beholders
     SIZE_LITTLE,            // spriggans
     SIZE_SMALL,             // gnomes/kobolds
     SIZE_MEDIUM,            // humans/elves/dwarves

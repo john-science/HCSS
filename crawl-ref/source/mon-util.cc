@@ -4628,7 +4628,7 @@ string get_mon_shape_str(const mon_body_shape shape)
         "bug", "humanoid", "winged humanoid", "tailed humanoid",
         "winged tailed humanoid", "centaur", "naga",
         "quadruped", "tailless quadruped", "winged quadruped",
-        "bat", "bird", "snake", "fish",  "insect", "winged insect",
+        "beholder", "bird", "snake", "fish",  "insect", "winged insect",
         "arachnid", "centipede", "snail", "plant", "fungus", "orb",
         "blob", "misc"
     };
@@ -5348,7 +5348,7 @@ bool god_hates_beast_facet(god_type god, beast_facet facet)
  *
  * @param mons          The beast to be initialized.
  * @param HD            The beast's HD. If 0, default to mon-data's version.
- * @param beast_facets  The beast's facets (e.g. fire, bat).
+ * @param beast_facets  The beast's facets (e.g. fire, beholder).
  *                      If empty, chooses two distinct facets at random.
  * @param avoid_facets  A set of facets to avoid when randomly generating
  *                      beasts. Irrelevant if beast_facets is non-empty.

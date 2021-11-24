@@ -58,7 +58,7 @@ Breathe Noxious Fumes ability
 
 Crache un souffle de vapeurs novices sur le monstre ciblé.
 %%%%
-Bat Form ability
+Beholder Form ability
 
 Se transformer en une rapide chauve-souris vampire. Sous forme de
 chauve-souris, vous ne pouvez ni inter-agir avec les objets (excepté les

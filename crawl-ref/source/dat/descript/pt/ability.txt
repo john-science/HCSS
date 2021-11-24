@@ -31,7 +31,7 @@ Breathe Noxious Fumes ability
 
 Esbafora um rajada de fumaça nociva em um monstro alvo.
 %%%%
-Bat Form ability
+Beholder Form ability
 
 Transforma em um morcego vampiro rápido. Na forma de morcego, você não pode
 interagir com itens de qualquer forma (exceto pegá-los ou descartá-los), nem

@@ -9,13 +9,13 @@
 #  actually contain a variety of biomes depending on depth and
 #  branch.  The contents are as follows:
 #   -> D:1-3   grass, bushes, butterfly
-#   -> D:4-6   some shallow water, fungus, bat
+#   -> D:4-6   some shallow water, fungus, beholder
 #   -> D:7-12  deep water, electric eel,
 #   -> D:13-15 deep water, electric eel, sea snake, snapping turtle
 #   -> ??????? ice, polar bear, yak, wolf
 #   -> ??????? ice, ice beast, simulacrum, freezing clouds
 #   -> ??????? lava, fire vortex, lava snake, salamander
-#   -> ??????? lava, fire vortex, fire bat, fire elemental
+#   -> ??????? lava, fire vortex, fire beholder, fire elemental
 #   -> Elf     deep water, water elemental, air elemental, diamond obelisk
 #
 # Most of these vaults come in three sizes/shapes depending on
@@ -107,11 +107,11 @@ function init_aquarium(e)
     e.subst('w = W_')
     e.kfeat('W = W')
     e.kmons('W = w:' .. nothing_weight .. [[ nothing /
-                 w:10 generate_awake bat /
+                 w:10 generate_awake beholder /
                  w:5  generate_awake frilled lizard ]] )
     e.kmons('_ = w:' .. nothing_weight .. [[ nothing /
                  w:50 fungus /
-                 w:10 generate_awake bat /
+                 w:10 generate_awake beholder /
                  w:5  generate_awake frilled lizard ]] )
   elseif you.absdepth() <= 9 then
     e.kfeat('w = w')
@@ -141,7 +141,7 @@ function init_aquarium(e)
     e.ftile('_ = floor_frozen')
     e.kmons('_ = w:' .. nothing_weight .. [[ nothing /
                  w:4  generate_awake ice beast /
-                 w:1  generate_awake bat simulacrum /
+                 w:1  generate_awake beholder simulacrum /
                  w:1  generate_awake hornet simulacrum /
                  w:1  generate_awake orc simulacrum /
                  w:1  generate_awake yaktaur simulacrum /
@@ -165,7 +165,7 @@ function init_aquarium(e)
     e.kprop('l = no_cloud_gen')
     e.kmons('l = w:' .. nothing_weight .. [[ nothing /
                  w:20 generate_awake fire vortex /
-                 w:8  generate_awake fire bat /
+                 w:8  generate_awake fire beholder /
                  w:5  generate_awake lava snake]] )
   else
     e.subst('w = l:25 !:1')

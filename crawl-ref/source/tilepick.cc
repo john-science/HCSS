@@ -941,8 +941,8 @@ static tileidx_t _zombie_tile_to_spectral(const tileidx_t z_tile)
         return TILEP_MONS_SPECTRAL_QUADRUPED_LARGE;
     case TILEP_MONS_ZOMBIE_FROG:
         return TILEP_MONS_SPECTRAL_FROG;
-    case TILEP_MONS_ZOMBIE_BAT:
-        return TILEP_MONS_SPECTRAL_BAT;
+    case TILEP_MONS_ZOMBIE_BEHOLDER:
+        return TILEP_MONS_SPECTRAL_BEHOLDER;
     case TILEP_MONS_ZOMBIE_BEE:
         return TILEP_MONS_SPECTRAL_BEE;
     case TILEP_MONS_ZOMBIE_BEETLE:
@@ -1025,8 +1025,8 @@ static tileidx_t _zombie_tile_to_simulacrum(const tileidx_t z_tile)
     case TILEP_MONS_ZOMBIE_FROG:
     case TILEP_MONS_ZOMBIE_ELEPHANT:
         return TILEP_MONS_SIMULACRUM_QUADRUPED_LARGE;
-    case TILEP_MONS_ZOMBIE_BAT:
-        return TILEP_MONS_SIMULACRUM_BAT;
+    case TILEP_MONS_ZOMBIE_BEHOLDER:
+        return TILEP_MONS_SIMULACRUM_BEHOLDER;
     case TILEP_MONS_ZOMBIE_BEE:
         return TILEP_MONS_SIMULACRUM_BEE;
     case TILEP_MONS_ZOMBIE_BEETLE:
@@ -1119,8 +1119,8 @@ static tileidx_t _zombie_tile_to_skeleton(const tileidx_t z_tile)
         return TILEP_MONS_SKELETON_FROG;
     case TILEP_MONS_ZOMBIE_QUADRUPED_WINGED:
         return TILEP_MONS_SKELETON_QUADRUPED_WINGED;
-    case TILEP_MONS_ZOMBIE_BAT:
-        return TILEP_MONS_SKELETON_BAT;
+    case TILEP_MONS_ZOMBIE_BEHOLDER:
+        return TILEP_MONS_SKELETON_BEHOLDER;
     case TILEP_MONS_ZOMBIE_HARPY:
     case TILEP_MONS_ZOMBIE_BIRD:
         return TILEP_MONS_SKELETON_BIRD;
@@ -1259,7 +1259,7 @@ static tileidx_t _mon_to_zombie_tile(const monster_info &mon)
         { MON_SHAPE_CENTAUR,            {TILEP_MONS_ZOMBIE_CENTAUR} },
         { MON_SHAPE_NAGA,               {TILEP_MONS_ZOMBIE_NAGA} },
         { MON_SHAPE_QUADRUPED_WINGED,   {TILEP_MONS_ZOMBIE_QUADRUPED_WINGED} },
-        { MON_SHAPE_BAT,                {TILEP_MONS_ZOMBIE_BAT} },
+        { MON_SHAPE_BEHOLDER,           {TILEP_MONS_ZOMBIE_BEHOLDER} },
         { MON_SHAPE_BIRD,               {TILEP_MONS_ZOMBIE_BIRD} },
         { MON_SHAPE_SNAKE,              {TILEP_MONS_ZOMBIE_SNAKE} },
         { MON_SHAPE_SNAIL,              {TILEP_MONS_ZOMBIE_SNAKE} },
@@ -3198,8 +3198,8 @@ tileidx_t tileidx_ability(const ability_type ability)
     case ABIL_STOP_FLYING:
         return TILEG_ABILITY_FLIGHT_END;
     // Vampires
-    case ABIL_TRAN_BAT:
-        return TILEG_ABILITY_BAT_FORM;
+    case ABIL_TRAN_BEHOLDER:
+        return TILEG_ABILITY_BEHOLDER_FORM;
     // Deep Dwarves
     case ABIL_RECHARGING:
         return TILEG_ABILITY_RECHARGE;

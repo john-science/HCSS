@@ -1087,7 +1087,7 @@ KITEM:   & = damaged mace / nothing
 MONS:    fungus, plant
 MONS:    adder, scorpion
 MONS:    rat / porcupine, iguana / hell rat
-MONS:    bat
+MONS:    beholder
 KFEAT:   w = web
 SHUFFLE: ?!+
 SUBST:   c:cccvvb , b=cc.
@@ -1251,7 +1251,7 @@ NAME:    lemuel_vampire_tower
 TAGS:    no_monster_gen no_pool_fixup
 DEPTH:   D:12-, Depths, !Depths:$, Crypt
 ORIENT:  float
-MONS:    rat / porcupine / w:3 hell rat / w:20 bat
+MONS:    rat / porcupine / w:3 hell rat / w:20 beholder
 MONS:    wolf / spectral wolf w:2 / hell hound w:12 / raiju w:2
 MONS:    flying skull, phantasmal warrior / jiangshi
 MONS:    human zombie, frost giant zombie / fire giant zombie, vampire
@@ -2093,7 +2093,7 @@ ENDMAP
 
 ##############################################################################
 
-NAME:   wad_bat_island
+NAME:   wad_beholder_island
 DEPTH:  D:12-, !D:$
 ORIENT: float
 WEIGHT: 4
@@ -2101,7 +2101,7 @@ FTILE: >.12t = floor_grass
 COLOUR: .12 = green
 FTILE: ; = floor_grass_dirt_mix
 COLOUR: ; = brown
-MONS:   plant, bat, snapping turtle
+MONS:   plant, beholder, snapping turtle
 MAP
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxx>xxxxxwwwwwwxxxwxwxxxxxxxwxxwxxxwwwxxxxxx
@@ -3093,7 +3093,7 @@ ENDMAP
 NAME:   minmay_firetagon
 DEPTH:  D:10-, Elf, Geh, !Geh:$
 ORIENT: float
-MONS:   fire bat
+MONS:   fire beholder
 KMONS:  23 = fire giant / fire dragon
 KMONS:  4 = brimstone fiend
 ITEM:   book of flames / book of fire / manual of fire magic / \

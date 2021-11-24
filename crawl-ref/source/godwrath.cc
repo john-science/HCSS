@@ -1296,7 +1296,7 @@ static void _jiyva_transform()
     const god_type god = GOD_JIYVA;
     god_speaks(god, "Mutagenic energy floods into your body!");
 
-    const transformation_type form = random_choose(TRAN_BAT,
+    const transformation_type form = random_choose(TRAN_BEHOLDER,
                                                    TRAN_FUNGUS,
                                                    TRAN_PIG,
                                                    TRAN_TREE,

@@ -183,7 +183,7 @@ NAME:    elethiomel_arrival_diamonds
 TAGS:    arrival no_monster_gen no_rotate
 ORIENT:  west
 WEIGHT:  2
-MONS:    rat, goblin, bat, kobold
+MONS:    rat, goblin, beholder, kobold
 SHUFFLE: {[(, 234
 SUBST:   [( = .
 MAP
@@ -684,7 +684,7 @@ TAGS:    arrival no_monster_gen no_pool_fixup no_rotate
 ORIENT:  southeast
 WEIGHT:  3
 SUBST:   z = W., I = IG, r : cccvt., E = wW, ' : @x', ' = @x
-MONS:    rat w:20 / ball python / frilled lizard / bat / nothing w:25
+MONS:    rat w:20 / ball python / frilled lizard / beholder / nothing w:25
 SHUFFLE: {[(
 SUBST:   ([ = G
 MAP

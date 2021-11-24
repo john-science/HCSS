@@ -434,7 +434,7 @@ tileidx_t tileidx_player()
     case TRAN_TREE:
         break;
     // animals
-    case TRAN_BAT:       ch = TILEP_TRAN_BAT;       break;
+    case TRAN_BEHOLDER:  ch = TILEP_TRAN_BEHOLDER;  break;
     case TRAN_SPIDER:    ch = TILEP_TRAN_SPIDER;    break;
     case TRAN_PIG:       ch = TILEP_TRAN_PIG;       break;
     case TRAN_PORCUPINE: ch = TILEP_MONS_PORCUPINE; break;

@@ -832,7 +832,7 @@ Une créature féline qui a reçu la sentience par des moyens magiques. Elle
 utilise le don de la parole pour demander du lait, des caresses et de la
 cataire.
 %%%%
-fire bat
+fire beholder
 
 Une chauve-souris dont son corps brûle d'une flamme ardente.
 %%%%
@@ -1898,7 +1898,7 @@ unseen horror
 Une créature rarement vue par quiconque, et le peu qui l'ont vue auraient
 préféré ne jamais la voir.
 %%%%
-vampire bat
+vampire beholder
 
 Une grosse chauve-souris noire avec des crocs vicieux qui se nourrit du sang.
 C'est la forme favorite des vampires pour se déguiser.
@@ -2124,16 +2124,16 @@ frost-covered statue
 Une statue maladroitement faite d'un mage. Sa magie continue de fuir, vous
 laissant savoir de quel genre de sorts s'attendre : ceux qui sont froids.
 %%%%
-ghost-faced bat
+ghost-faced beholder
 
 Est-ce que cette chauve-souris possède le visage d'un fantôme, ou bien C'EST un
 fantôme ?
 %%%%
-giga bat
+giga beholder
 
 Une énorme chauve-souris gonflée.
 %%%%
-ice bat
+ice beholder
 
 Un mort vivant à l'aspect d'une chauve souris, composé de glace.
 %%%%
@@ -2152,11 +2152,11 @@ master elementalist
 
 Les forces primaires de l'univers dansent sur les doigts de ce magicien dément.
 %%%%
-megabat
+megabeholder
 
 Une énorme chauve-souris noire.
 %%%%
-microbat
+microbeholder
 
 Une chauve-souris qui, en dépit de son nom, n'est pas plus petite qu'une
 méga-chauve-souris.
@@ -2182,7 +2182,7 @@ Une monstrueusement grosse limace qui apparemment mangé un puissant conjureur,
 ou peut-être une orbe araignée. Ou peut-être est-ce un produit d'expériences
 divines, auquel cas cela ressemble à l'œuvre de Xom ...
 %%%%
-phase bat
+phase beholder
 
 Une étrange chauve-souris qui semble voleter entre bien plus de dimensions
 qu'une chauve-souris ordinaire.
@@ -2205,7 +2205,7 @@ sickly siren
 Une jeune femme avec une queue de poisson en guise de jambes. Elle à l'air
 malade mais est toujours capable de charmer son public.
 %%%%
-skeletal bat
+skeletal beholder
 
 Une chauve-souris squelette sans la décence de rester immobile comme les
 chauve-souris mortes sont supposées l'être.

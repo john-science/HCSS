@@ -51,8 +51,8 @@ formicid MONS_FORMICID
 %rim 1
 
 ## Batty monsters ('b')
-bat MONS_BAT
-vampire_bat MONS_VAMPIRE_BAT
+beholder MONS_BEHOLDER
+vampire_beholder MONS_VAMPIRE_BEHOLDER
 butterfly MONS_BUTTERFLY
 butterfly1
 butterfly2
@@ -65,7 +65,7 @@ butterfly8
 butterfly9
 butterfly10
 %rim 0
-fire_bat MONS_FIRE_BAT
+fire_beholder MONS_FIRE_BEHOLDER
 bennu MONS_BENNU
 caustic_shrike MONS_CAUSTIC_SHRIKE
 shard_shrike MONS_SHARD_SHRIKE
@@ -74,11 +74,11 @@ diesel_robin MONS_DIESEL_ROBIN
 %sdir mon/unique
 combo_robin MONS_COMBO_ROBIN
 %sdir mon/vault
-microbat MONS_MICROBAT
+microbeholder MONS_MICROBEHOLDER
 %rim 1
-megabat MONS_MEGABAT
-gigabat MONS_GIGABAT
-phase_bat MONS_PHASE_BAT
+megabeholder MONS_MEGABEHOLDER
+gigabeholder MONS_GIGABEHOLDER
+phase_beholder MONS_PHASE_BEHOLDER
 %sdir mon/animals
 
 ## Hounds and hogs ('h')
@@ -1138,7 +1138,7 @@ misc/unseen PLAYER
 
 ## Transformations
 %sdir player/transform
-bat_form TRAN_BAT
+beholder_form TRAN_BEHOLDER
 spider_form TRAN_SPIDER
 pig_form TRAN_PIG
 ice_form TRAN_ICE_BEAST

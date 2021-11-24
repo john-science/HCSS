@@ -44,7 +44,7 @@ COMPILE_CHECK(ARRAYSZ(beast_tiers) == NUM_BEAST_TIERS);
 
 /// names of beast facets
 const string mutant_beast_facet_names[] = {
-    "buggy", "sting", "bat", "fire", "weird", "shock", "ox",
+    "buggy", "sting", "beholder", "fire", "weird", "shock", "ox",
 };
 COMPILE_CHECK(ARRAYSZ(mutant_beast_facet_names) == NUM_BEAST_FACETS);
 

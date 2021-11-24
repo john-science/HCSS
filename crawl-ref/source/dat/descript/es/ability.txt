@@ -43,7 +43,7 @@ Breathe Noxious Fumes ability
 
 Exhalas humos nocivos al monstruo que apuntes.
 %%%%
-Bat Form ability
+Beholder Form ability
 
 Te conviertes en un veloz murciélago vampiro. En esta forma ni puedes
 interactuar con los objetos (salvo recogiéndolos o dejándolos caer) ni

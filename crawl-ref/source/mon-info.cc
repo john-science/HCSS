@@ -784,7 +784,7 @@ static string _mutant_beast_tier_name(short xl_tier)
  * Name the given mutant beast facet.
  *
  * @param xl_tier   The beast_facet in question.
- * @return          The name of the facet; e.g. "bat".
+ * @return          The name of the facet; e.g. "beholder".
  */
 static string _mutant_beast_facet(int facet)
 {

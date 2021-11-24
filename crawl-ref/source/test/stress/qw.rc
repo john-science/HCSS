@@ -1528,7 +1528,7 @@ function can_read()
 end
 
 function can_drink()
-  if you.berserk() or you.race() == "Mummy" or you.transform() == "bat"
+  if you.berserk() or you.race() == "Mummy" or you.transform() == "beholder"
      or you.transform() == "lich" then
     return false
   end

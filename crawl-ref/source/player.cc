@@ -1884,7 +1884,7 @@ int player_movement_speed()
     int mv = 10;
 
     // transformations
-    if (you.form == TRAN_BAT)
+    if (you.form == TRAN_BEHOLDER)
         mv = 5; // but allowed minimum is six
     else if (you.form == TRAN_PIG)
         mv = 7;
@@ -7032,7 +7032,7 @@ bool player::polymorph(int pow)
     {
         // Whole-body transformations only; mere appendage doesn't seem fitting.
         f = random_choose_weighted(
-            120, TRAN_BAT,
+            120, TRAN_BEHOLDER,
             120, TRAN_FUNGUS,
             120, TRAN_PIG,
             120, TRAN_TREE,

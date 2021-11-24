@@ -358,7 +358,7 @@ Banishment spell
 “An immense river of oblivion is sweeping us away into a nameless abyss.”
     -Ernest Renan, Souvenirs
 %%%%
-Bat Form ability
+Beholder Form ability
 
 “The bats have left the bell tower
  The victims have been bled”
@@ -847,7 +847,7 @@ bardiche, which they say is a very good weapon.”
      Voyages and Travels in all parts of the World, many of which are now first
      translated into English. Digested on a New Plan_. 1808.
 %%%%
-bat
+beholder
 
 “The sun was set; the night came on apace,
  And falling dews bewet around the place;
@@ -1246,9 +1246,9 @@ ghost moth
  You don't know I'm there.”
     -Judas Priest, “Electric Eye”. 1982.
 %%%%
-ghost-faced bat
+ghost-faced beholder
 
-<bat>
+<beholder>
 %%%%
 ghoul
 
@@ -1304,9 +1304,9 @@ giant spiked club
  “oni with a spiked iron club”
     -Japanese proverb indicating overwhelming power
 %%%%
-giga bat
+giga beholder
 
-<bat>
+<beholder>
 %%%%
 glaive
 
@@ -1523,9 +1523,9 @@ human
  I only know his price.”
     -Bertolt Brecht, “The Measures Taken”. 1930.
 %%%%
-ice bat
+ice beholder
 
-<bat>
+<beholder>
 %%%%
 ice dragon scales
 
@@ -1736,9 +1736,9 @@ merfolk javelineer
 
 <merfolk>
 %%%%
-microbat
+microbeholder
 
-<bat>
+<beholder>
 %%%%
 molten gargoyle
 
@@ -1929,9 +1929,9 @@ phantom
 us ofte foresee.”
     -Spenser, _The Faerie Queene_ II. xii. 47
 %%%%
-phase bat
+phase beholder
 
-<bat>
+<beholder>
 %%%%
 pillar of salt
 
@@ -2177,9 +2177,9 @@ robe
  Immortal longings in me”
     -William Shakespeare, _Anthony & Cleopatra_, V, ii. ca. 1605.
 %%%%
-rotten bat
+rotten beholder
 
-<bat>
+<beholder>
 %%%%
 salamander
 
@@ -2440,9 +2440,9 @@ iron, and laughed its laughter of nails rattling.
 pounding and pounding, and the mouth answering.”
     -Carl Sandburg, “Gargoyle”, _Cornhusker_. 1918.
 %%%%
-skeletal bat
+skeletal beholder
 
-<bat>
+<beholder>
 %%%%
 skeletal warrior
 
@@ -2919,7 +2919,7 @@ are?
 vampires!
     -Rich Morris, Yet Another Fantasy Gamer Comic
 %%%%
-vampire bat
+vampire beholder
 
 “For something is amiss and out of place
  When mice with wings can wear a human face.”

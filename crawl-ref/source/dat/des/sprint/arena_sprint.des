@@ -260,7 +260,7 @@ function arena_sprint_get_monster_set(round, boss)
                     sixfirhy w:2 / hellwing",
                 "w:20 mummy / w:5 guardian mummy / w:5 menkaure",
                 -- Fire, Air, Earth, Water, Death
-                "w:20 fire bat / fire elemental / w:5 acid dragon",
+                "w:20 fire beholder / fire elemental / w:5 acid dragon",
                 "steam dragon / w:5 air elemental / w:1 wind drake / w:5 lightning spire /\
                     w:30 wyvern / blink frog",
                 "w:15 earth elemental / w:5 gargoyle /\
@@ -274,7 +274,7 @@ function arena_sprint_get_monster_set(round, boss)
                 "bullfrog w:20 / blink frog w:6 / spiny frog w:6 / prince ribbit w:2",
                 "gnoll / gnoll shaman / gnoll sergeant / hound / wolf",
                 -- Gimmicks
-                "neqoxec", "orc priest", "vampire bat",
+                "neqoxec", "orc priest", "vampire beholder",
                 "kobold name:kamikaze_kobold n_rpl n_noc n_des perm_ench:inner_flame"
              }
         elseif round <= 10 then
@@ -301,7 +301,7 @@ function arena_sprint_get_monster_set(round, boss)
                 "common demon",
                 "mummy / w:5 guardian mummy / w:1 mummy priest",
                 -- Fire, Air, Earth, Water, Death
-                "fire bat / fire elemental / acid dragon /\
+                "fire beholder / fire elemental / acid dragon /\
                     w:5 sun demon / w:2 efreet / hell hound",
                 "steam dragon / air elemental / w:3 wind drake / lightning spire /\
                     w:20 wyvern / blink frog",
@@ -345,7 +345,7 @@ function arena_sprint_get_monster_set(round, boss)
                 "common demon w:30 / kobold demonologist w:5 / frances w:3",
                 "mummy / w:5 guardian mummy / w:2 mummy priest / w:1 sphinx",
                 -- Fire, Air, Earth, Water, Death
-                "w:5 fire bat / fire elemental / acid dragon /\
+                "w:5 fire beholder / fire elemental / acid dragon /\
                     sun demon / efreet / hell hound /\
                     hell hog / w:5 fire crab",
                 "w:1 storm dragon / air elemental / w:5 wind drake /\

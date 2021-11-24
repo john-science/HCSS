@@ -4747,7 +4747,7 @@ monster* dgn_place_monster(mons_spec &mspec, coord_def where,
         && (mg.cls < NUM_MONSTERS || needs_resolution(mg.cls)))
     {
         const monster_type habitat_target =
-            mg.cls == RANDOM_MONSTER ? MONS_BAT : mg.cls;
+            mg.cls == RANDOM_MONSTER ? MONS_BEHOLDER : mg.cls;
         where = find_newmons_square_contiguous(habitat_target, where, 0);
     }
 

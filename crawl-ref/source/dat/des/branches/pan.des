@@ -2584,7 +2584,7 @@ ENDMAP
 NAME:    lemuel_hellion_island
 TAGS:    pan_fixed_rune_hellions pan_fixed_lure_hellions
 ORIENT:  float
-MONS:    fire bat, hellion, hellephant
+MONS:    fire beholder, hellion, hellephant
 KMONS:   O = pandemonium lord
 : if demonic_rune_vault_is_decoy() then
 KITEM:   O = acquire any / demonic rune of zot mimic

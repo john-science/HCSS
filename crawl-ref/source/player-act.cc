@@ -272,8 +272,8 @@ random_var player::attack_delay(const item_def *projectile, bool rescale) const
                                   skill(SK_UNARMED_COMBAT, 10);
         attk_delay = random_var(10) - div_rand_round(random_var(sk), 27*2);
 
-        // Bats are faster (for whatever good it does them).
-        if (you.form == TRAN_BAT && !projectile)
+        // Beholders are faster (for whatever good it does them).
+        if (you.form == TRAN_BEHOLDER && !projectile)
             attk_delay = div_rand_round(attk_delay * 3, 5);
     }
     else if (weap &&

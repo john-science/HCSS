@@ -55,7 +55,7 @@ Breathe Noxious Fumes ability
 
 向目标怪物喷吐出有害的毒烟。
 %%%%
-Bat Form ability
+Beholder Form ability
 
 你变形成一只行动迅捷的吸血蝙蝠。在蝙蝠形态中，
 你无法与任何物品进行任何形式的互动（除了拾起或丢下它们），也无法施放任何法术。

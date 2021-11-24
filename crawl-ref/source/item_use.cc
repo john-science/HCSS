@@ -1478,7 +1478,7 @@ static bool _swap_rings(int ring_slot)
     // We can't put a ring on, because we're wearing all cursed ones.
     if (melded == num_rings)
     {
-        // Shouldn't happen, because hogs and bats can't put on jewellery at
+        // Shouldn't happen, because hogs and beholders can't put on jewellery at
         // all and thus won't get this far.
         mpr("You can't wear that in your present form.");
         return false;

@@ -127,7 +127,7 @@ static const form_entry formdata[] =
 },
 
 {
-    TRAN_BAT, MONS_PROGRAM_BUG, "Bat", "bat-form", "bat",
+    TRAN_BEHOLDER, MONS_PROGRAM_BUG, "Beholder", "beholder-form", "beholder",
     "",
     EQF_PHYSICAL | EQF_RINGS, MR_NO_FLAGS,
     DEFAULT_DURATION, 0, 5, SIZE_TINY, 10,

@@ -56,7 +56,7 @@ Breathe Noxious Fumes ability
 
 指定したモンスターに有毒ガスの突風を吹きかける。
 %%%%
-Bat Form ability
+Beholder Form ability
 
 素早い蝙蝠に変身する。この姿では呪文を唱えたり、(アイテムを拾ったり、
 落としたりすることを除いて)アイテムを使用することができない。

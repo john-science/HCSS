@@ -591,10 +591,12 @@ basilisk
 
 A crested lizard of middling size with a terrible petrifying gaze.
 %%%%
-bat
+beholder
 
-A large grey bat that, despite being herbivorous, is quite aggressive. It is
-myopic and uses echolocation to navigate.
+A flying head with a huge single eye in the center of where a human's forehead
+would be. It is a tool of the higher powers to key an eye on Hell. Like
+everything else in Hell, it is hateful and agressive. And while it has huge
+teeth and is covered in spikes, it is a spy, no a warrior.
 %%%%
 battlemage
 
@@ -1049,9 +1051,9 @@ felid
 A feline creature that has been granted sentience by magical means. It uses the
 gift of speech to demand milk, treats and catnip.
 %%%%
-fire bat
+fire beholder
 
-A bat whose leathery body burns with a hot flame.
+A beholder whose leathery body burns with a hot flame.
 %%%%
 fire crab
 
@@ -2362,9 +2364,9 @@ vampire
 A human cursed with vampirism, drifting in a state between life and undeath,
 perpetually hungry for the blood of the living.
 %%%%
-vampire bat
+vampire beholder
 
-A large black bat with vicious fangs that feeds on blood. It is the preferred
+A large black beholder with vicious fangs that feeds on blood. It is the preferred
 form for vampires in disguise.
 %%%%
 vampire knight
@@ -2706,21 +2708,21 @@ frost-covered statue
 
 A statue of a mage, with frost constantly forming across its surface.
 %%%%
-ghost-faced bat
+ghost-faced beholder
 
-A bat with a spectral visage.
+A beholder with a spectral visage.
 %%%%
-giga bat
+giga beholder
 
-An enormous, bloated bat.
+An enormous, bloated beholder.
 %%%%
 greater air elemental
 
 <air elemental>
 %%%%
-ice bat
+ice beholder
 
-An undead creature in the shape of a bat, made of ice.
+An undead creature in the shape of a beholder, made of ice.
 %%%%
 kamikaze kobold
 
@@ -2738,13 +2740,13 @@ master elementalist
 
 A demented wizard commanding the primal forces of the universe.
 %%%%
-megabat
+megabeholder
 
-A huge black bat.
+A huge black beholder.
 %%%%
-microbat
+microbeholder
 
-A bat that, despite its name, is not any smaller than a megabat.
+A beholder that, despite its name, is not any smaller than a megabeholder.
 %%%%
 # Sprint only, too unhinged for regular games...
 oklob plant annihilator
@@ -2805,9 +2807,9 @@ petrified plant
 
 An ordinary plant that has been turned to stone.
 %%%%
-phase bat
+phase beholder
 
-A strange, glowing bat that flutters through more dimensions than the average
+A strange, glowing beholder that flutters through more dimensions than the average
 bat.
 %%%%
 phase spider
@@ -2820,19 +2822,19 @@ pristine statue
 An immaculately sculpted porphyry statue of an archer poised to release a bolt,
 with a full quiver at the hip.
 %%%%
-rotten bat
+rotten beholder
 
-A bat that is well past its sell-by date.
+A beholder that is well past its sell-by date.
 %%%%
 sickly siren
 
 The ghost of a young merfolk that looks quite sick, but still has the power to
 mesmerize its victims.
 %%%%
-skeletal bat
+skeletal beholder
 
-A bat skeleton without the decency to lie unmoving like dead bats are supposed
-to.
+A beholder skull without the decency to lie unmoving like dead beholders are
+supposed to.
 %%%%
 spriggan baker
 

@@ -63,9 +63,9 @@ Breathe Noxious Fumes ability
 
 Breathes a blast of noxious fumes at a targeted creature.
 %%%%
-Bat Form ability
+Beholder Form ability
 
-Transforms you into a swift-moving vampire bat. The user becomes unable to
+Transforms you into a swift-moving vampire beholder. The user becomes unable to
 evoke wands or to cast spells.
 %%%%
 Spit Acid ability

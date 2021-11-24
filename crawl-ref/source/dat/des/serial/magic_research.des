@@ -156,7 +156,7 @@ dcbadabcd
 ENDMAP
 
 NAME:    hangedman_research_metamorphosis
-MONS:    wolf spider, ice beast, vampire bat, hog
+MONS:    wolf spider, ice beast, vampire beholder, hog
 MONS:    porcupine
 KMONS:   D = fire dragon
 COLOUR:  .0123456D = lightmagenta

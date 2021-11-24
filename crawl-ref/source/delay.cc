@@ -623,13 +623,13 @@ bool FeedVampireDelay::invalidated()
 {
     // Vampires stop feeding if ...
     // * engorged ("alive")
-    // * bat form runs out due to becoming full
+    // * beholder form runs out due to becoming full
     // * corpse disappears for some reason (e.g. animated by a monster)
     if (!corpse.defined()                                     // missing
         || corpse.base_type != OBJ_CORPSES                    // noncorpse
         || corpse.pos != you.pos()                            // elsewhere
         || you.hunger_state == HS_ENGORGED
-        || you.hunger_state > HS_SATIATED && you.form == TRAN_BAT)
+        || you.hunger_state > HS_SATIATED && you.form == TRAN_BEHOLDER)
     {
         // Messages handled in _food_change() in food.cc.
         _interrupt_vampire_feeding(corpse, duration);
@@ -871,7 +871,7 @@ void ArmourOnDelay::finish()
         mpr("Something interferes with your magic!");
         dispel_permanent_buffs();
         if (you.form && !you.transform_uncancellable
-        && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
+        && you.form != TRAN_SHADOW && you.form != TRAN_BEHOLDER)
             untransform();
         unfreeze_mp();
     }

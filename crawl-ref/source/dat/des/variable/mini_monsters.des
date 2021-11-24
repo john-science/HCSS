@@ -394,28 +394,28 @@ xxxx+xxxxx...xxxxx+xxxx
    xxxxxxx.@.xxxxxxx
 ENDMAP
 
-NAME:   goddamned_bats
+NAME:   goddamned_beholderss
 DEPTH:  D:3-5
 # Sadly, for size-based ones, only mega, micro and giga exist.  Lack of kilo
 # and tera is understandable, but come on, even mili is lacking.
-KMONS:  1 = bat name:megabat n_rpl n_des n_spe n_noc hd:2 tile:mons_megabat
-KMONS:  2 = bat name:microbat n_rpl n_des n_spe n_noc col:magenta tile:mons_microbat
-KMONS:  4 = bat name:giga n_adj n_des n_spe n_noc hd:4 col:brown tile:mons_gigabat
+KMONS:  1 = beholder name:megabeholder n_rpl n_des n_spe n_noc hd:2 tile:mons_megabeholder
+KMONS:  2 = beholder name:microbeholder n_rpl n_des n_spe n_noc col:magenta tile:mons_microbeholder
+KMONS:  4 = beholder name:giga n_adj n_des n_spe n_noc hd:4 col:brown tile:mons_gigabeholder
 # Way harder than the rest here.
-KMONS:  5 = vampire bat
+KMONS:  5 = vampire beholder
 # In RL, they sit put, not moving a finger.  Lazy bastards.
-KMONS:  6 = bat skeleton name:skeletal_bat n_rpl n_des n_spe n_zom
+KMONS:  6 = beholder skeleton name:skeletal_beholder n_rpl n_des n_spe n_zom
 # The only here without a basis in reality.
-KMONS:  7 = bat simulacrum name:ice_bat n_rpl n_des n_spe n_zom
-# There are actual "ghost bats" too, but near-extinct, while ghost-faceds
+KMONS:  7 = beholder simulacrum name:ice_beholder n_rpl n_des n_spe n_zom
+# There are actual "ghost beholders" too, but near-extinct, while ghost-faceds
 # have a number of species and are widespread.
-KMONS:  8 = spectral bat name:ghost-faced_bat n_rpl n_des n_spe n_zom
+KMONS:  8 = spectral beholder name:ghost-faced_beholder n_rpl n_des n_spe n_zom
 # Just an US WW2 military project, but that's good enough.
-KMONS:  9 = fire bat hd:1
-KMONS:  0 = bat zombie name:rotten_bat n_rpl n_des n_spe n_zom
+KMONS:  9 = fire beholder hd:1
+KMONS:  0 = beholder zombie name:rotten_beholder n_rpl n_des n_spe n_zom
 # Correction, this one, added because of a tile, is not real as well.
-KMONS:  3 = bat name:phase n_adj n_des n_spe col:lightgreen \
-            spells:blink.29.natural tile:mons_phase_bat
+KMONS:  3 = beholder name:phase n_adj n_des n_spe col:lightgreen \
+            spells:blink.29.natural tile:mons_phase_beholder
 MAP
        xxxxx
       xxxxxxx
@@ -655,12 +655,12 @@ MAP
 ...............................
 ENDMAP
 
-NAME:  roderic_batcave
+NAME:  roderic_beholdercave
 TAGS:  no_monster_gen extra
 DEPTH: D:3-, Lair, Orc
 : local d = you.absdepth()
 : if d < 7 then d = 0 end
-: mons("bat w:60 / vampire bat w:" .. d .. " / nothing w:10")
+: mons("beholder w:60 / vampire beholder w:" .. d .. " / nothing w:10")
 SUBST: ? : x@
 SUBST: 1 = 1:10 .:1
 MAP
@@ -848,11 +848,11 @@ NAME:    hangedman_parallel_progression
 TAGS:    patrolling no_monster_gen transparent
 TAGS:    layout_rooms layout_corridors
 DEPTH:   D:11-
-MONS:    rat, bat, frilled lizard / frilled lizard, dart slug, ooze
+MONS:    rat, beholder, frilled lizard / frilled lizard, dart slug, ooze
 MONS:    giant cockroach, jackal
 KMONS:   8 = ball python / adder w:8
 KMONS:   A = iguana
-KMONS:   B = vampire bat / fire bat w:8
+KMONS:   B = vampire beholder / fire beholder w:8
 KMONS:   C = iguana / basilisk w:8
 KMONS:   D = dart slug / tyrant leech
 KMONS:   E = jelly
@@ -2284,7 +2284,7 @@ NAME:    hangedman_batty
 TAGS:    patrolling no_monster_gen no_item_gen
 DEPTH:   D:11-, Crypt, !Crypt:$
 WEIGHT:  5
-MONS:    bat, phantom, vampire, unseen horror
+MONS:    beholder, phantom, vampire, unseen horror
 MONS:    phantasmal warrior, vampire knight, jiangshi
 # Notably, sometimes fill in parts of the grid.
 SHUFFLE: ABC, DE, FGH, 34 / 34 / 34 / 43
@@ -2752,7 +2752,7 @@ ENDMAP
 NAME:   hangedman_incinerator
 TAGS:   no_item_gen no_monster_gen
 DEPTH:  D:8-14
-MONS:   fire bat, lava snake, fire vortex, hell hound
+MONS:   fire beholder, lava snake, fire vortex, hell hound
 NSUBST: ' = 4:' / *:.
 MARKER: ' = lua:fog_machine { cloud_type = "flame", pow_min = 25, \
             pow_max = 75, delay = 50, size = 1, walk_dist = 0, excl_rad = 0 }

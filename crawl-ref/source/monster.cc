@@ -2366,7 +2366,7 @@ string monster::hand_name(bool plural, bool *can_plural) const
     case MON_SHAPE_FISH:
         return foot_name(plural, can_plural);
 
-    case MON_SHAPE_BAT:
+    case MON_SHAPE_BEHOLDER:
     case MON_SHAPE_BIRD:
         str = "wing";
         break;
@@ -2515,7 +2515,7 @@ string monster::foot_name(bool plural, bool *can_plural) const
         str = "talon";
         break;
 
-    case MON_SHAPE_BAT:
+    case MON_SHAPE_BEHOLDER:
         str = "claw";
         break;
 

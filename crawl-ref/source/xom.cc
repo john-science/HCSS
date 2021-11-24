@@ -1344,7 +1344,7 @@ static void _get_hand_type(string &hand, bool &can_plural)
         plural_vec.push_back(false);
     }
 
-    if (you.form == TRAN_BAT || you.species != SP_OCTOPODE
+    if (you.form == TRAN_BEHOLDER || you.species != SP_OCTOPODE
            && !form_changed_physiology())
     {
         hand_vec.emplace_back("ear");

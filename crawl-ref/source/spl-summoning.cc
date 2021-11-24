@@ -119,7 +119,7 @@ spret_type cast_summon_small_mammal(int pow, god_type god, bool fail)
     monster_type mon = MONS_PROGRAM_BUG;
 
     if (x_chance_in_y(10, pow + 1))
-        mon = coinflip() ? MONS_BAT : MONS_RAT;
+        mon = coinflip() ? MONS_BEHOLDER : MONS_RAT;
     else
         mon = MONS_QUOKKA;
 

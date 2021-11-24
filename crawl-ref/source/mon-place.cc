@@ -513,7 +513,7 @@ static bool _find_mon_place_near_stairs(coord_def& pos,
             break;
         }
     }
-    const monster_type habitat_target = MONS_BAT;
+    const monster_type habitat_target = MONS_BEHOLDER;
     int distance = 3;
     pos = find_newmons_square_contiguous(habitat_target, pos, distance);
     return in_bounds(pos);
@@ -2070,7 +2070,7 @@ static const map<monster_type, band_set> bands_by_leader = {
     { MONS_KIRKE,           { {}, {{ BAND_HOGS, {3, 8}, true }}}},
     { MONS_HOG,             { {}, {{ BAND_HOGS, {1, 4} }}}},
     { MONS_VAMPIRE_MOSQUITO, { {}, {{ BAND_VAMPIRE_MOSQUITOES, {1, 4} }}}},
-    { MONS_FIRE_BAT,        { {}, {{ BAND_FIRE_BATS, {1, 4} }}}},
+    { MONS_FIRE_BEHOLDER,   { {}, {{ BAND_FIRE_BEHOLDERS, {1, 4} }}}},
     { MONS_DEEP_TROLL_EARTH_MAGE, { {}, {{ BAND_DEEP_TROLLS, {3, 6} }}}},
     { MONS_DEEP_TROLL_SHAMAN, { {}, {{ BAND_DEEP_TROLL_SHAMAN, {3, 6} }}}},
     { MONS_HELL_HOG,        { {}, {{ BAND_HELL_HOGS, {2, 4} }}}},
@@ -2315,7 +2315,7 @@ static const map<band_type, vector<member_possibilites>> band_membership = {
     { BAND_MERFOLK_IMPALER,     {{{MONS_MERFOLK, 1}}}},
     { BAND_MERFOLK_JAVELINEER,  {{{MONS_MERFOLK, 1}}}},
     { BAND_ELEPHANT,            {{{MONS_ELEPHANT, 1}}}},
-    { BAND_FIRE_BATS,           {{{MONS_FIRE_BAT, 1}}}},
+    { BAND_FIRE_BEHOLDERS,      {{{MONS_FIRE_BEHOLDER, 1}}}},
     { BAND_HELL_HOGS,           {{{MONS_HELL_HOG, 1}}}},
     { BAND_HELL_RATS,           {{{MONS_HELL_RAT, 1}}}},
     { BAND_JIANGSHI,            {{{MONS_JIANGSHI, 1}}}},

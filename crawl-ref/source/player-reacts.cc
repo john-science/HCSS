@@ -229,7 +229,7 @@ static void _decrement_petrification(int delay)
             // If we'd kill the player when active flight stops, this will
             // need to pass the killer. Unlike monsters, almost all flight is
             // magical, inluding tengu, as there's no flapping of wings. Should
-            // we be nasty to dragon and bat forms?  For now, let's not instakill
+            // we be nasty to dragon and beholder forms?  For now, let's not instakill
             // them even if it's inconsistent.
             you.fully_petrify(nullptr);
         }
@@ -681,7 +681,7 @@ static void _decrement_durations()
         you.duration[DUR_TRANSFORMATION] = 1;
     }
 
-    // Vampire bat transformations are permanent (until ended).
+    // Vampire beholder transformations are permanent (until ended).
     if (form_can_fly()
         || form_likes_water() && feat_is_water(grd(you.pos())))
     {
@@ -1160,7 +1160,7 @@ void player_reacts()
         mpr("Something interferes with your magic!");
         dispel_permanent_buffs();
         if (you.form && !you.transform_uncancellable
-        && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
+        && you.form != TRAN_SHADOW && you.form != TRAN_BEHOLDER)
             untransform();
         unfreeze_mp();
     }
@@ -1171,7 +1171,7 @@ void player_reacts()
         mpr("Your magical reserves are completely exhausted.");
         dispel_permanent_buffs();
         if (you.form && !you.transform_uncancellable
-        && you.form != TRAN_SHADOW && you.form != TRAN_BAT)
+        && you.form != TRAN_SHADOW && you.form != TRAN_BEHOLDER)
             untransform();
         unfreeze_mp();
     }
