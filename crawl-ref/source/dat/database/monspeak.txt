@@ -36,6 +36,8 @@ howls
 # for ghosts
 _wails_
 
+moans
+
 wails
 
 shouts

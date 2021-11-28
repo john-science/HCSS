@@ -758,6 +758,9 @@ maybe_bool you_can_wear(equipment_type eq, bool temp)
         return you.species == SP_OCTOPODE ? MB_TRUE : MB_FALSE;
 
     case EQ_WEAPON:
+    case EQ_STAFF:
+        return you.body_size(PSIZE_TORSO, !temp) < SIZE_MEDIUM ? MB_MAYBE :
+                                         MB_TRUE;
 
     // You can always wear at least one ring (forms were already handled).
     case EQ_RINGS:
@@ -802,7 +805,6 @@ maybe_bool you_can_wear(equipment_type eq, bool temp)
         break;
 
     case EQ_SHIELD:
-    case EQ_STAFF:
         // No races right now that can wear ARM_LARGE_SHIELD but not ARM_SHIELD
         dummy.sub_type = ARM_LARGE_SHIELD;
         if (you.body_size(PSIZE_TORSO, !temp) < SIZE_MEDIUM)
@@ -1319,7 +1321,7 @@ int player_res_fire(bool calc_unid, bool temp, bool items)
         rf += you.wearing(EQ_RINGS, RING_FIRE, calc_unid);
 
         // Staves
-        rf += you.wearing(EQ_SHIELD, STAFF_FIRE, calc_unid);
+        rf += you.wearing(EQ_STAFF, STAFF_FIRE, calc_unid);
 
         // body armour:
         const item_def *body_armour = you.slot_item(EQ_BODY_ARMOUR);
@@ -1435,7 +1437,7 @@ int player_res_cold(bool calc_unid, bool temp, bool items)
         rc += you.wearing(EQ_RINGS, RING_ICE, calc_unid);
 
         // Staves
-        rc += you.wearing(EQ_SHIELD, STAFF_COLD, calc_unid);
+        rc += you.wearing(EQ_STAFF, STAFF_COLD, calc_unid);
 
         // body armour:
         const item_def *body_armour = you.slot_item(EQ_BODY_ARMOUR);
@@ -1507,7 +1509,7 @@ int player_res_electricity(bool calc_unid, bool temp, bool items)
     if (items)
     {
         // staff
-        re += you.wearing(EQ_SHIELD, STAFF_AIR, calc_unid);
+        re += you.wearing(EQ_STAFF, STAFF_AIR, calc_unid);
 
         // body armour:
         const item_def *body_armour = you.slot_item(EQ_BODY_ARMOUR);
@@ -1674,7 +1676,7 @@ int player_spec_death()
     int sd = 0;
 
     // Staves
-    sd += you.wearing(EQ_SHIELD, STAFF_DEATH);
+    sd += you.wearing(EQ_STAFF, STAFF_DEATH);
 
     // species:
     sd += you.get_mutation_level(MUT_NECRO_ENHANCER);
@@ -1691,7 +1693,7 @@ int player_spec_fire()
     int sf = 0;
 
     // staves:
-    sf += you.wearing(EQ_SHIELD, STAFF_FIRE);
+    sf += you.wearing(EQ_STAFF, STAFF_FIRE);
 
     // rings of fire:
     sf += you.wearing(EQ_RINGS, RING_FIRE);
@@ -1713,7 +1715,7 @@ int player_spec_cold()
     int sc = 0;
 
     // staves:
-    sc += you.wearing(EQ_SHIELD, STAFF_COLD);
+    sc += you.wearing(EQ_STAFF, STAFF_COLD);
 
     // demonspawn ice enhancer
     sc += you.get_mutation_level(MUT_ICE_ENHANCER);
@@ -1736,7 +1738,7 @@ int player_spec_earth()
     int se = 0;
 
     // Staves
-    se += you.wearing(EQ_SHIELD, STAFF_EARTH);
+    se += you.wearing(EQ_STAFF, STAFF_EARTH);
 
     // Earth enhancer goodmut
     se += you.get_mutation_level(MUT_EARTH_ENHANCER);
@@ -1749,7 +1751,7 @@ int player_spec_air()
     int sa = 0;
 
     // Staves
-    sa += you.wearing(EQ_SHIELD, STAFF_AIR);
+    sa += you.wearing(EQ_STAFF, STAFF_AIR);
 
     // Air enhancer goodmut
     sa += you.get_mutation_level(MUT_AIR_ENHANCER);
@@ -1786,7 +1788,7 @@ int player_spec_summ()
     int ss = 0;
 
     // Staves
-    ss += you.wearing(EQ_SHIELD, STAFF_SUMMONING);
+    ss += you.wearing(EQ_STAFF, STAFF_SUMMONING);
 
     // Summon enhancer goodmut
     ss += you.get_mutation_level(MUT_SUMMON_ENHANCER);
@@ -1861,7 +1863,7 @@ int player_prot_life(bool calc_unid, bool temp, bool items)
         if (calc_unid && player_equip_unrand(UNRAND_DRAGONSKIN) && coinflip())
             pl++;
 
-        pl += you.wearing(EQ_SHIELD, STAFF_DEATH, calc_unid);
+        pl += you.wearing(EQ_STAFF, STAFF_DEATH, calc_unid);
     }
 
     // undead/demonic power
@@ -2225,7 +2227,7 @@ int player_armour_shield_spell_penalty()
 int player_wizardry(spell_type spell)
 {
     return you.wearing(EQ_RINGS, RING_WIZARDRY)
-           + you.wearing(EQ_SHIELD, STAFF_WIZARDRY);
+           + you.wearing(EQ_STAFF, STAFF_WIZARDRY);
 }
 
 /**

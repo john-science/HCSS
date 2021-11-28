@@ -913,11 +913,11 @@ void monster::equip(item_def &item, bool msg)
     switch (item.base_type)
     {
     case OBJ_WEAPONS:
+    case OBJ_STAVES:
         equip_weapon(item, msg);
         break;
 
     case OBJ_ARMOUR:
-    case OBJ_STAVES:
         equip_armour(item, msg);
         break;
 
@@ -1652,12 +1652,9 @@ static int _get_monster_armour_value(const monster *mon,
  */
 bool monster::pickup_armour(item_def &item, bool msg, bool force)
 {
-    ASSERT(item.base_type == OBJ_ARMOUR || item.base_type == OBJ_STAVES);
+    ASSERT(item.base_type == OBJ_ARMOUR);
 
     if (!force && !wants_armour(item))
-        return false;
-
-    if (item.base_type == OBJ_STAVES)
         return false;
 
     const monster_type genus = mons_genus(mons_species(true));
@@ -2062,7 +2059,6 @@ bool monster::pickup_item(item_def &item, bool msg, bool force)
     {
     // Pickup some stuff only if WANDERING.
     case OBJ_ARMOUR:
-    case OBJ_STAVES:
         return pickup_armour(item, msg, force);
     case OBJ_GOLD:
         return pickup_gold(item, msg);
@@ -2071,6 +2067,7 @@ bool monster::pickup_item(item_def &item, bool msg, bool force)
     // Fleeing monsters won't pick up these.
     // Hostiles won't pick them up if they were ever dropped/thrown by you.
     case OBJ_WEAPONS:
+    case OBJ_STAVES:
         return pickup_weapon(item, msg, force);
     case OBJ_MISSILES:
         return pickup_missile(item, msg, force);

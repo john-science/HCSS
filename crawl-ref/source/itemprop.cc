@@ -1407,10 +1407,7 @@ int armour_acq_weight(const armour_type armour)
 
 equipment_type get_armour_slot(const item_def &item)
 {
-    ASSERT(item.base_type == OBJ_ARMOUR || item.base_type == OBJ_STAVES);
-
-    if (item.base_type == OBJ_STAVES)
-        return EQ_SHIELD;
+    ASSERT(item.base_type == OBJ_ARMOUR);
 
     return Armour_prop[ Armour_index[item.sub_type] ].slot;
 }
@@ -1471,8 +1468,6 @@ static int _fit_armour_size(armour_type sub_type, size_type size)
  */
 int fit_armour_size(const item_def &item, size_type size)
 {
-    if (item.base_type == OBJ_STAVES)
-        return 0;
     ASSERT(item.base_type == OBJ_ARMOUR);
     return _fit_armour_size(static_cast<armour_type>(item.sub_type), size);
 }
@@ -1500,9 +1495,6 @@ bool check_armour_size(armour_type sub_type, size_type size)
  */
 bool check_armour_size(const item_def &item, size_type size)
 {
-    if (item.base_type == OBJ_STAVES)
-        return true;
-
     ASSERT(item.base_type == OBJ_ARMOUR);
 
     return check_armour_size(static_cast<armour_type>(item.sub_type), size);
@@ -1992,7 +1984,8 @@ bool is_weapon_wieldable(const item_def &item, size_type size)
 {
     ASSERT(is_weapon(item));
 
-    const int subtype = item.sub_type;
+    const int subtype = OBJ_STAVES == item.base_type ? WPN_STAFF
+                                                     : item.sub_type;
     return Weapon_prop[Weapon_index[subtype]].min_2h_size <= size;
 }
 
@@ -2769,15 +2762,13 @@ equipment_type get_item_slot(object_class_type type, int sub_type)
     switch (type)
     {
     case OBJ_WEAPONS:
+    case OBJ_STAVES:
     case OBJ_RODS:
     case OBJ_MISCELLANY:
         return EQ_WEAPON;
 
     case OBJ_ARMOUR:
         return get_armour_slot(static_cast<armour_type>(sub_type));
-
-    case OBJ_STAVES:
-        return EQ_SHIELD;
 
     case OBJ_JEWELLERY:
         return jewellery_is_amulet(sub_type) ? EQ_AMULET : EQ_RINGS;
@@ -2809,11 +2800,7 @@ bool is_shield_incompatible(const item_def &weapon, const item_def *shield)
 
 bool shield_reflects(const item_def &shield)
 {
-    if (shield.base_type == OBJ_STAVES)
-        return false;
-
     ASSERT(is_shield(shield));
-
     return get_armour_ego_type(shield) == SPARM_REFLECTION;
 }
 

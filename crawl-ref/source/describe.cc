@@ -862,7 +862,7 @@ static int _item_training_target(const item_def &item)
 {
     const int throw_dam = property(item, PWPN_DAMAGE);
     if (item.base_type == OBJ_WEAPONS || item.base_type == OBJ_STAVES)
-        return min(weapon_min_delay_skill(item) * 10,270);
+        return min(weapon_min_delay_skill(item) * 10, 270);
     else if (is_shield(item))
         return round(you.get_shield_skill_to_offset_penalty(item) * 10);
     else if (item.base_type == OBJ_MISSILES && throw_dam)
@@ -2067,8 +2067,13 @@ string get_item_description(const item_def &item, bool verbose,
         break;
 
     case OBJ_STAVES:
+        {
+            string stats = "\n";
+            _append_weapon_stats(stats, item);
+            description << stats;
+        }
         description << "\n\nIt falls into the 'Staves' category. ";
-        description << "\nIt is designed to be worn in place of a shield.";
+        description << _handedness_string(item);
         break;
 
     case OBJ_MISCELLANY:
@@ -2258,6 +2263,9 @@ static vector<command_type> _allowed_actions(const item_def& item)
     switch (item.base_type)
     {
     case OBJ_WEAPONS:
+    case OBJ_STAVES:
+        if (_could_set_training_target(item, false))
+            actions.push_back(CMD_SET_SKILL_TARGET);
         // intentional fallthrough
     case OBJ_MISCELLANY:
         if (!item_is_equipped(item))
@@ -2274,7 +2282,6 @@ static vector<command_type> _allowed_actions(const item_def& item)
         actions.push_back(CMD_QUIVER_ITEM);
         break;
     case OBJ_ARMOUR:
-    case OBJ_STAVES:
         if (_could_set_training_target(item, false))
             actions.push_back(CMD_SET_SKILL_TARGET);
         if (item_is_equipped(item))
