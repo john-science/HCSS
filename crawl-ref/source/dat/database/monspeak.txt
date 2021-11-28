@@ -6590,6 +6590,9 @@ w:1
 _generic_orc_speech_
 
 w:50
+@The_monster@ @_wails_@
+
+w:50
 @The_monster@ @_orc_shouts_@ @_loudly_or_repeatedly_@@_orc_modifier_@
 
 w:20

@@ -355,7 +355,7 @@ void maybe_mons_speaks(monster* mons)
     if (mons_is_hepliaklqana_ancestor(mons->type) || mons_enslaved_soul(*mons))
         return;
 
-    int chance = 21; // this is a very old number; no idea why it was chosen
+    int chance = 10;  // trying to make NPCs talk more
 
     // allies stick around longer, so should probably have longer to say
     // their piece; no need for them to chatter as much.
@@ -364,9 +364,9 @@ void maybe_mons_speaks(monster* mons)
     else if (!mons_is_unique(mons->type)
              && testbits(mons->flags, MF_BAND_MEMBER))
     {
-        // Band members are a lot less likely to speak, since there's
-        // a lot of them. Except for uniques.
-        chance *= 10;
+        // Band members are less likely to speak, since there's more of them.
+        // Except for uniques.
+        chance *= 5;
     }
 
     // Confused and fleeing monsters are more interesting.
