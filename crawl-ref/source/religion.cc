@@ -1987,7 +1987,7 @@ string god_name(god_type which_god, bool long_name)
     case GOD_LUGONU:        return "Lugonu";
     case GOD_BEOGH:         return "Beogh";
     case GOD_FEDHAS:        return "Ei'lor";
-    case GOD_XOM:           return "Loki";
+    case GOD_XOM:           return "Xom";
     case GOD_ASHENZARI:     return "Farfarello";
     case GOD_DITHMENOS:     return "Dithmenos";
     case GOD_GOZAG:         return "Mara";
