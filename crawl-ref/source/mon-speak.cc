@@ -361,13 +361,6 @@ void maybe_mons_speaks(monster* mons)
     // their piece; no need for them to chatter as much.
     if (mons->wont_attack())
         chance *= 15;
-    else if (!mons_is_unique(mons->type)
-             && testbits(mons->flags, MF_BAND_MEMBER))
-    {
-        // Band members are less likely to speak, since there's more of them.
-        // Except for uniques.
-        chance *= 5;
-    }
 
     // Confused and fleeing monsters are more interesting.
     if (mons_is_fleeing(*mons))
@@ -393,7 +386,7 @@ void maybe_mons_speaks(monster* mons)
         // Non-humanoid-ish monsters have a low chance of speaking
         // without the M_SPEAKS flag, to give the dungeon some
         // atmosphere/flavour.
-        if (one_chance_in(chance * 4))
+        if (one_chance_in(chance * 8))
             mons_speaks(mons);
     }
     // Okay then, don't speak.

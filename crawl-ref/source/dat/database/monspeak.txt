@@ -6551,6 +6551,25 @@ w:1
 @The_monster@ screams @at_foe@, "@Foe_god@ will weep as I flay your corpse!"
 %%%%
 ##############################################
+# Wails of the Undead
+#
+# TODO: JOHN! FILL THIS OUT!
+##############################################
+_undead_wails_
+
+w:20
+moans
+
+w:20
+wails
+
+w:1
+cries quietly
+
+w:1
+shrieks
+%%%%
+##############################################
 # Special orc speech
 ##############################################
 _orc_shouts_
@@ -6590,7 +6609,7 @@ w:1
 _generic_orc_speech_
 
 w:50
-@The_monster@ @_wails_@
+@The_monster@ @_undead_wails_@
 
 w:50
 @The_monster@ @_orc_shouts_@ @_loudly_or_repeatedly_@@_orc_modifier_@
@@ -6620,15 +6639,147 @@ heretic
 apostate
 %%%%
 ######################################################
+# General, non-descript gargoyles
+######################################################
+gargoyle
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript Sprigganss
+######################################################
+spriggan
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript humans
+######################################################
+human
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript dwarf
+######################################################
+dwarf
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript merfolk
+######################################################
+merfolk
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript ogre
+######################################################
+ogre
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript gnoll
+######################################################
+gnoll
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript kobold
+######################################################
+kobold
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript naga
+######################################################
+naga
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript centaur
+######################################################
+centaur
+
+# stay silent some of the time
+w:5
+__NONE
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript Goblins
+######################################################
+goblin
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
+# General, non-descript Hobgoblins
+######################################################
+hobgoblin
+
+w:15
+@The_monster@ @_undead_wails_@
+%%%%
+######################################################
 # General, non-descript orcs
 ######################################################
 orc
 
-# stay silent most of the time
-w:19
+# stay silent some of the time
+w:5
 __NONE
 
-w:1
+w:15
 @_generic_orc_speech_@
 %%%%
 # charmed orcs
