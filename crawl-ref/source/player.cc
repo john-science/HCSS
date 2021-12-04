@@ -2813,6 +2813,17 @@ void level_change(bool skip_attribute_increase)
             you.experience_level = new_exp;
             you.max_level = you.experience_level;
 
+            // Clear most status ailments.
+            you.disease = 0;
+            you.duration[DUR_CONF]      = 0;
+            you.duration[DUR_POISONING] = 0;
+            you.duration[DUR_EXHAUSTED] = 0;
+            set_hp(you.hp_max);
+            set_mp(you.max_magic_points);
+            you.redraw_hit_points = true;
+            you.redraw_armour_class = true;
+            you.redraw_evasion = true;
+
 #ifdef USE_TILE_LOCAL
             // In case of intrinsic ability changes.
             tiles.layout_statcol();
