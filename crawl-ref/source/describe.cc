@@ -2332,14 +2332,14 @@ static string _actions_desc(const vector<command_type>& actions, const item_def&
     {
         { CMD_WIELD_WEAPON, "(w)ield" },
         { CMD_UNWIELD_WEAPON, "(u)nwield" },
-        { CMD_QUIVER_ITEM, "(q)uiver" },
+        { CMD_QUIVER_ITEM, "(w)ield" },
         { CMD_WEAR_ARMOUR, "(w)ear" },
-        { CMD_REMOVE_ARMOUR, "(t)ake off" },
+        { CMD_REMOVE_ARMOUR, "(u)nwear" },
         { CMD_EVOKE, "e(v)oke" },
         { CMD_EAT, "(e)at" },
         { CMD_READ, "(r)ead" },
-        { CMD_WEAR_JEWELLERY, "(p)ut on" },
-        { CMD_REMOVE_JEWELLERY, "(r)emove" },
+        { CMD_WEAR_JEWELLERY, "(w)ear" },
+        { CMD_REMOVE_JEWELLERY, "(u)nwear" },
         { CMD_QUAFF, "(q)uaff" },
         { CMD_DROP, "(d)rop" },
         { CMD_INSCRIBE_ITEM, "(i)nscribe" },
@@ -2364,14 +2364,36 @@ static command_type _get_action(int key, vector<command_type> actions)
     {
         { CMD_WIELD_WEAPON,     'w' },
         { CMD_UNWIELD_WEAPON,   'u' },
-        { CMD_QUIVER_ITEM,      'q' },
+        { CMD_QUIVER_ITEM,      'w' },
         { CMD_WEAR_ARMOUR,      'w' },
-        { CMD_REMOVE_ARMOUR,    't' },
+        { CMD_REMOVE_ARMOUR,    'u' },
         { CMD_EVOKE,            'v' },
         { CMD_EAT,              'e' },
         { CMD_READ,             'r' },
-        { CMD_WEAR_JEWELLERY,   'p' },
-        { CMD_REMOVE_JEWELLERY, 'r' },
+        { CMD_WEAR_JEWELLERY,   'w' },
+        { CMD_REMOVE_JEWELLERY, 'u' },
+        { CMD_QUAFF,            'q' },
+        { CMD_DROP,             'd' },
+        { CMD_INSCRIBE_ITEM,    'i' },
+        { CMD_ADJUST_INVENTORY, '=' },
+        { CMD_SET_SKILL_TARGET, 's' },
+    };
+
+    // NOTE: These are purely for backwards compatibility.
+    // These are old player commands. As time passes, these might be phased
+    // out. But doing so too soon would annoy long-time players
+    static const map<command_type, int> old_act_key =
+    {
+        { CMD_WIELD_WEAPON,     'w' },
+        { CMD_UNWIELD_WEAPON,   'u' },
+        { CMD_QUIVER_ITEM,      'q' },  // old command
+        { CMD_WEAR_ARMOUR,      'w' },
+        { CMD_REMOVE_ARMOUR,    't' },  // old command
+        { CMD_EVOKE,            'v' },
+        { CMD_EAT,              'e' },
+        { CMD_READ,             'r' },
+        { CMD_WEAR_JEWELLERY,   'p' },  // old command
+        { CMD_REMOVE_JEWELLERY, 'r' },  // old command
         { CMD_QUAFF,            'q' },
         { CMD_DROP,             'd' },
         { CMD_INSCRIBE_ITEM,    'i' },
@@ -2382,7 +2404,7 @@ static command_type _get_action(int key, vector<command_type> actions)
     key = tolower(key);
 
     for (auto cmd : actions)
-        if (key == act_key.at(cmd))
+        if (key == act_key.at(cmd) || key == old_act_key.at(cmd))
             return cmd;
 
     return CMD_NO_CMD;
