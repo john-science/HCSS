@@ -1192,19 +1192,10 @@ static void _give_ammo(monster* mon, int level, bool mons_summoned)
         switch (mon->type)
         {
         case MONS_KOBOLD:
-            // A few of the smarter kobolds have darts.
-            if (one_chance_in(10) && level > 1)
-            {
-                weap_type  = got_curare_roll(level) ? MI_DART_CURARE :
-                                                  MI_DART_POISONED;
-                qty        = weap_type == MI_DART_CURARE ? random_range(2, 8) :
-                                                       random_range(4, 16);
-            }
-            break;
         case MONS_BIG_KOBOLD:
             if (x_chance_in_y(2, 5))
             {
-                weap_type  = MI_TOMAHAWK;
+                weap_type = MI_TOMAHAWK;
                 qty = 1 + random2(5);
             }
             break;
@@ -1237,13 +1228,13 @@ static void _give_ammo(monster* mon, int level, bool mons_summoned)
             break;
 
         case MONS_POLYPHEMUS:
-            weap_type  = MI_LARGE_ROCK;
-            qty        = random_range(8, 12);
+            weap_type = MI_LARGE_ROCK;
+            qty       = random_range(8, 12);
             break;
 
         case MONS_MERFOLK_JAVELINEER:
-            weap_type  = MI_JAVELIN;
-            qty        = random_range(9, 23, 2);
+            weap_type = MI_JAVELIN;
+            qty       = random_range(9, 23, 2);
             if (one_chance_in(3))
                 level = ISPEC_GOOD_ITEM;
             break;
@@ -1252,21 +1243,21 @@ static void _give_ammo(monster* mon, int level, bool mons_summoned)
             if (one_chance_in(3)
                 || active_monster_band == BAND_MERFOLK_JAVELINEER)
             {
-                weap_type  = MI_TOMAHAWK;
-                qty        = random_range(4, 8);
+                weap_type = MI_TOMAHAWK;
+                qty       = random_range(4, 8);
                 if (active_monster_band == BAND_MERFOLK_JAVELINEER)
                     break;
             }
             break;
 
          case MONS_SONJA:
-            weap_type  = MI_DART_CURARE;
-            qty        = random_range(4, 10);
+            weap_type = MI_TOMAHAWK;
+            qty       = random_range(4, 10);
             break;
 
         case MONS_SPRIGGAN_RIDER:
-            weap_type  = MI_DART_CURARE;
-            qty        = random_range(2, 4);
+            weap_type = MI_TOMAHAWK;
+            qty       = random_range(2, 4);
             break;
 
         default:

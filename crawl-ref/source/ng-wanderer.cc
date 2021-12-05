@@ -15,13 +15,13 @@ static void _give_wanderer_weapon(skill_type wpn_skill, int plus)
     if (wpn_skill == SK_THROWING)
     {
         // Plus is set if we are getting a good item. In that case, we
-        // get curare here.
+        // get javelins.
         if (plus)
-            newgame_make_item(OBJ_MISSILES, MI_DART_CURARE, 8 + random2(32));
+            newgame_make_item(OBJ_MISSILES, MI_JAVELIN, 8 + random2(32));
         // Otherwise, we just get some tomahawks.
         else
             newgame_make_item(OBJ_MISSILES, MI_TOMAHAWK,
-                    40 + roll_dice(2, 40));
+                              40 + roll_dice(2, 40));
     }
 
     weapon_type sub_type;

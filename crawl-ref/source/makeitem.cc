@@ -498,7 +498,6 @@ static special_missile_type _determine_missile_brand(const item_def& item,
 
     switch (item.sub_type)
     {
-    case MI_DART:
     case MI_THROWING_NET:
     case MI_STONE:
     case MI_LARGE_ROCK:
@@ -635,10 +634,7 @@ static void _generate_missile_item(item_def& item, int force_type,
         item.sub_type =
             random_choose_weighted(4,  MI_TOMAHAWK,
                                    3,  MI_JAVELIN,
-                                   2,  MI_LARGE_ROCK,
-                                   1,  MI_DART_CURARE,
-                                   1,  MI_DART_FRENZY,
-                                   1,  MI_DART_POISONED);
+                                   2,  MI_LARGE_ROCK);
     }
 
     // No fancy rocks -- break out before we get to special stuff.
@@ -660,13 +656,10 @@ static void _generate_missile_item(item_def& item, int force_type,
     }
 
     // Reduced quantity if special.
-    if (item.sub_type == MI_JAVELIN || item.sub_type == MI_TOMAHAWK
-        || item.sub_type == MI_DART_CURARE || item.sub_type == MI_DART_FRENZY)
+    if (item.sub_type == MI_JAVELIN || item.sub_type == MI_TOMAHAWK)
     {
         if (get_ammo_brand(item) == SPMSL_DISPERSAL)
             item.quantity = random_range(4, 12);
-        else if (item.sub_type == MI_DART_CURARE || item.sub_type == MI_DART_FRENZY)
-            item.quantity = random_range(6, 18);
         else
             item.quantity = random_range(40, 120);
     }

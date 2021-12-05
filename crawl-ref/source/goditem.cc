@@ -303,7 +303,7 @@ bool is_hasty_item(const item_def& item)
         retval = _is_book_type(item, is_hasty_spell);
         break;
     case OBJ_MISSILES:
-        retval = item.sub_type == MI_DART_FRENZY;
+        retval = item.sub_type == MI_TOMAHAWK;
         break;
     default:
         break;
