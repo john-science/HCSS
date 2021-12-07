@@ -48,13 +48,6 @@ int create_item_named(string name, coord_def p, string *error)
     return item;
 }
 
-bool got_curare_roll(const int item_level)
-{
-    return one_chance_in(item_level > 27 ? 6   :
-                         item_level < 2  ? 15  :
-                         (364 - 7 * item_level) / 25);
-}
-
 /// A mapping from randomly-described object types to their per-game descript
 static map<object_class_type, item_description_type> _type_to_idesc = {
     {OBJ_WANDS, IDESC_WANDS},
@@ -507,13 +500,6 @@ static special_missile_type _determine_missile_brand(const item_def& item,
         rc = SPMSL_NORMAL;
         break;
     case MI_NEEDLE:
-        // Curare is special cased, all the others aren't.
-        if (got_curare_roll(item_level))
-        {
-            rc = SPMSL_CURARE;
-            break;
-        }
-
         rc = random_choose_weighted(30, SPMSL_SLEEP,
                                     30, SPMSL_CONFUSION,
                                     10, SPMSL_PARALYSIS,
@@ -565,7 +551,6 @@ bool is_missile_brand_ok(int type, int brand, bool strict)
             return true;
         break;
 
-    case SPMSL_CURARE:
     case SPMSL_PARALYSIS:
     case SPMSL_SLOW:
     case SPMSL_SLEEP:

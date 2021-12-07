@@ -203,7 +203,6 @@ i-reaping BRAND_REAPING BRAND_WEP_LAST
 i-dispersal BRAND_DISPERSAL
 i-explosion BRAND_EXPLOSION
 i-venom BRAND_POISONED
-i-curare BRAND_CURARE
 i-electrocution BRAND_ELECTRIC
 i-sickness BRAND_SICKNESS
 i-slowing BRAND_SLOWING
@@ -283,7 +282,6 @@ effect/tomahawk7 MI_TOMAHAWK7
 needle1 MI_NEEDLE
 needle2
 needle-p MI_NEEDLE_P
-needle-c MI_NEEDLE_CURARE
 # flying needles
 effect/needle0 MI_NEEDLE0
 effect/needle1 MI_NEEDLE1

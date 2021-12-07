@@ -249,7 +249,6 @@ enum missile_type
     MI_THROWING_NET,
     MI_TOMAHAWK,
     MI_DART_POISONED,
-    MI_DART_CURARE,
 
     NUM_MISSILES,
     MI_NONE             // was MI_EGGPLANT... used for launch type detection
@@ -354,7 +353,6 @@ enum special_missile_type // to separate from weapons in general {dlb}
     SPMSL_FLAME,
     SPMSL_FROST,
     SPMSL_POISONED,
-    SPMSL_CURARE,                      // Needle-only brand
     SPMSL_RETURNING,
     SPMSL_CHAOS,
     SPMSL_PENETRATION,

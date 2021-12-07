@@ -1936,52 +1936,6 @@ void bolt::apply_bolt_petrify(monster* mons)
     }
 }
 
-static bool _curare_hits_monster(actor *agent, monster* mons, int levels)
-{
-    if (!mons->alive())
-        return false;
-
-    if (mons->res_poison() > 0)
-        return false;
-
-    poison_monster(mons, agent, levels, false);
-
-    int hurted = 0;
-
-    if (!mons->is_unbreathing())
-    {
-        hurted = roll_dice(levels, 6);
-
-        if (hurted)
-        {
-            simple_monster_message(*mons, " convulses.");
-            mons->hurt(agent, hurted, BEAM_POISON);
-        }
-    }
-
-    if (mons->alive())
-    {
-        if (!mons->cannot_move())
-        {
-            simple_monster_message(*mons, mons->has_ench(ENCH_SLOW)
-                                         ? " seems to be slow for longer."
-                                         : " seems to slow down.");
-        }
-        // FIXME: calculate the slow duration more cleanly
-        mon_enchant me(ENCH_SLOW, 0, agent);
-        levels -= 2;
-        while (levels > 0)
-        {
-            mon_enchant me2(ENCH_SLOW, 0, agent);
-            me.set_duration(mons, &me2);
-            levels -= 2;
-        }
-        mons->add_ench(me);
-    }
-
-    return hurted > 0;
-}
-
 // Actually poisons a monster (with message).
 bool poison_monster(monster* mons, const actor *who, int levels,
                     bool force, bool verbose)
@@ -2079,50 +2033,7 @@ bool napalm_monster(monster* mons, const actor *who, int levels, bool verbose)
     return new_flame.degree > old_flame.degree;
 }
 
-static bool _curare_hits_player(actor* agent, int levels, string name,
-                                string source_name)
-{
-    ASSERT(!crawl_state.game_is_arena());
-
-    if (player_res_poison() >= 3
-        || player_res_poison() > 0 && !one_chance_in(3))
-    {
-        return false;
-    }
-
-    poison_player(roll_dice(levels, 12) + 1, source_name, name);
-
-    int hurted = 0;
-
-    if (!you.is_unbreathing())
-    {
-        hurted = roll_dice(levels, 6);
-
-        if (hurted)
-        {
-            mpr("You have difficulty breathing.");
-            ouch(hurted, KILLED_BY_CURARE, agent->mid,
-                 "curare-induced apnoea");
-        }
-    }
-
-    slow_player(10 + random2(levels + random2(3 * levels)));
-
-    return hurted > 0;
-}
-
-
-bool curare_actor(actor* source, actor* target, int levels, string name,
-                  string source_name)
-{
-    if (target->is_player())
-        return _curare_hits_player(source, levels, name, source_name);
-    else
-        return _curare_hits_monster(source, target->as_monster(), levels);
-}
-
-// XXX: This is a terrible place for this, but it at least does go with
-// curare_actor().
+// XXX: This is a terrible place for this.
 int silver_damages_victim(actor* victim, int damage, string &dmg_msg)
 {
     int ret = 0;
@@ -3868,15 +3779,6 @@ void bolt::affect_player()
     // handling of missiles
     if (item && item->base_type == OBJ_MISSILES)
     {
-        if (item->sub_type == MI_DART_CURARE)
-        {
-            if (x_chance_in_y(90 - 3 * you.armour_class(), 100))
-            {
-                curare_actor(agent(), (actor*) &you, 2, name, source_name);
-                was_affected = true;
-            }
-        }
-
         if (you.has_mutation(MUT_JELLY_MISSILE)
             && you.hp < you.hp_max
             && !you.duration[DUR_DEATHS_DOOR]
@@ -4414,13 +4316,6 @@ void bolt::monster_post_hit(monster* mon, int dmg)
                 victim->splash_with_acid(agent(), 3);
             }
         }
-    }
-
-    // Handle missile effects.
-    if (item && item->base_type == OBJ_MISSILES
-        && item->sub_type == MI_DART_CURARE && ench_power == AUTOMATIC_HIT)
-    {
-        curare_actor(agent(), mon, 2, name, source_name);
     }
 
     // purple draconian breath

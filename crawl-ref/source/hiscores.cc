@@ -615,7 +615,7 @@ static const char *kill_method_names[] =
     "quitting", "wizmode", "draining", "starvation", "freezing", "burning",
     "wild_magic", "xom", "rotting", "targeting", "spore",
     "tso_smiting", "petrification", "something",
-    "falling_down_stairs", "acid", "curare",
+    "falling_down_stairs", "acid",
     "beogh_smiting", "divine_wrath", "bounce", "reflect", "self_aimed",
     "falling_through_gate", "disintegration", "headbutt", "rolling",
     "mirror_damage", "spines", "frailty", "barbs", "being_thrown",
@@ -2427,10 +2427,6 @@ string scorefile_entry::death_description(death_desc_verbosity verbosity) const
         else
             desc += "Splashed with acid";
         needs_damage = true;
-        break;
-
-    case KILLED_BY_CURARE:
-        desc += terse? "asphyx" : "Asphyxiated";
         break;
 
     case KILLED_BY_DIVINE_WRATH:

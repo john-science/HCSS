@@ -4839,7 +4839,6 @@ static int _str_to_ego(item_spec &spec, string ego_str)
         "flame",
         "frost",
         "poisoned",
-        "curare",
         "returning",
         "chaos",
         "penetration",

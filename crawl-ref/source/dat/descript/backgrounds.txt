@@ -16,7 +16,7 @@ tools.
 %%%%
 Assassin
 
-Assassins carry poisoned darts, as well as a small number of nasty curare darts.
+Assassins carry throwing weapons.
 %%%%
 Berserker
 

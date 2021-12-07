@@ -6001,7 +6001,7 @@ int player::how_chaotic(bool /*check_spells_god*/) const
 /**
  * Does the player need to breathe?
  *
- * Pretty much only matters for mephitic clouds, & confusing spores, & curare.
+ * Pretty much only matters for mephitic clouds & confusing spores
  *
  * @return  Whether the player has no need to breathe.
  */

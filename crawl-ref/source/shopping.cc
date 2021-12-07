@@ -296,7 +296,6 @@ unsigned int item_value(item_def item, bool ident)
                 valued *= 40;
                 break;
 
-            case SPMSL_CURARE:
             case SPMSL_PARALYSIS:
             case SPMSL_PENETRATION:
             case SPMSL_SILVER:

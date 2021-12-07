@@ -3713,19 +3713,6 @@ bool mons_has_ranged_attack(const monster& mon)
 
 bool mons_has_incapacitating_ranged_attack(const monster& mon, const actor& foe)
 {
-    if (!_mons_has_usable_ranged_weapon(&mon))
-        return false;
-
-    const item_def *missile = mon.missiles();
-
-    if (missile && missile->sub_type == MI_DART_CURARE)
-    {
-        // Not actually incapacitating, but marked as such so that
-        // assassins will prefer using it while ammo remains
-        if (foe.res_poison() <= 0)
-            return true;
-    }
-
     return false;
 }
 

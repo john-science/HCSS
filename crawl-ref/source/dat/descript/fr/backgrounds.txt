@@ -17,8 +17,7 @@ les connaissances nécessaires pour les utiliser.
 Assassin
 
 Les assassins misent tout sur la furtivité, prêt à poignarder leurs inattentifs
-adversaires. En plus d'une cape et d'une épée, ils possèdent aussi de méchantes
-aiguilles de curare pour armer leur sarbacane.
+adversaires.
 %%%%
 Berserker
 

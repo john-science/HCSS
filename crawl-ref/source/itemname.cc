@@ -330,7 +330,6 @@ static bool _missile_brand_is_prefix(special_missile_type brand)
     switch (brand)
     {
     case SPMSL_POISONED:
-    case SPMSL_CURARE:
     case SPMSL_EXPLODING:
     case SPMSL_STEEL:
     case SPMSL_SILVER:
@@ -357,8 +356,6 @@ const char* missile_brand_name(const item_def &item, mbn_type t)
         return "frost";
     case SPMSL_POISONED:
         return t == MBN_NAME ? "poisoned" : "poison";
-    case SPMSL_CURARE:
-        return t == MBN_NAME ? "curare-tipped" : "curare";
     case SPMSL_EXPLODING:
         return t == MBN_TERSE ? "explode" : "exploding";
     case SPMSL_STEEL:

@@ -2078,7 +2078,6 @@ static tileidx_t _tileidx_missile_base(const item_def &item)
         case SPMSL_SILVER:   return TILE_MI_JAVELIN_SILVER;
         }
     case MI_DART_POISONED: return TILE_MI_NEEDLE_P;
-    case MI_DART_CURARE:   return TILE_MI_NEEDLE_CURARE;
     }
 
     return TILE_ERROR;
@@ -3521,8 +3520,6 @@ tileidx_t tileidx_known_brand(const item_def &item)
             return TILE_BRAND_FROST;
         case SPMSL_POISONED:
             return TILE_BRAND_POISONED;
-        case SPMSL_CURARE:
-            return TILE_BRAND_CURARE;
         case SPMSL_RETURNING:
             return TILE_BRAND_RETURNING;
         case SPMSL_CHAOS:

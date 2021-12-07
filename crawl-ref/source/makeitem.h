@@ -25,7 +25,6 @@ bool is_weapon_brand_ok(int type, int brand, bool strict);
 bool is_armour_brand_ok(int type, int brand, bool strict);
 bool is_missile_brand_ok(int type, int brand, bool strict);
 
-bool got_curare_roll(const int item_level);
 void reroll_brand(item_def &item, int item_level);
 
 bool is_high_tier_wand(int type);

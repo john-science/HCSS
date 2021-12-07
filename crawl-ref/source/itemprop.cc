@@ -607,7 +607,6 @@ static const missile_def Missile_prop[] =
     { MI_THROWING_NET,  "throwing net",  0, 30, 30, true },
     { MI_TOMAHAWK,      "tomahawk",      6, 5, 5, true  },
     { MI_DART_POISONED, "poisoned dart", 0, 3, 3, true  },
-    { MI_DART_CURARE,   "curare dart",   0, 10, 10, true  },
 };
 
 struct food_def

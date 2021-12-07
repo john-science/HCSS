@@ -828,18 +828,6 @@ static void _PLUTONIUM_SWORD_melee_effects(item_def* weapon, actor* attacker,
 
 ///////////////////////////////////////////////////
 
-static void _SNAKEBITE_melee_effects(item_def* weapon, actor* attacker,
-                                     actor* defender, bool mondied, int dam)
-{
-    if (!mondied && x_chance_in_y(2, 5))
-    {
-        curare_actor(attacker, defender, 2, "curare",
-                     attacker->name(DESC_PLAIN));
-    }
-}
-
-///////////////////////////////////////////////////
-
 static void _WOE_melee_effects(item_def* weapon, actor* attacker,
                                actor* defender, bool mondied, int dam)
 {

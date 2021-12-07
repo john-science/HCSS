@@ -594,16 +594,6 @@ TILE:     urand_undeadhunter
 TILE_EQ:  undeadhunter
 LIFE:     1
 
-NAME:    whip "Snakebite"
-OBJ:     OBJ_WEAPONS/WPN_WHIP
-INSCRIP: curare,
-PLUS:    +8
-COLOUR:  DARKGREY
-TILE:    urand_snakebite
-TILE_EQ: snakebite
-BRAND:   SPWPN_VENOM
-BOOL:    poison, skip_ego
-
 NAME:     knife of Accuracy
 OBJ:      OBJ_WEAPONS/WPN_DAGGER
 TYPE:     knife

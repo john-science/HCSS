@@ -240,11 +240,6 @@ creatures together. Legends say that, long ago, a lich lord created many
 such weapons to ensure the loyalty of his undead servants. Sadly, this mace
 might be the last one left.
 %%%%
-whip "Snakebite"
-
-A double-ended whip made from the cured hides of black mambas, and enchanted
-with toxins ranging from ordinary venoms to asphyxiating curare.
-%%%%
 knife of Accuracy
 
 It is almost unerringly accurate.

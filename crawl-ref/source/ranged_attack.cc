@@ -272,8 +272,7 @@ bool ranged_attack::handle_phase_hit()
     if (!is_penetrating_attack(*attacker, weapon, *projectile))
         range_used = BEAM_STOP;
 
-    if (projectile->is_type(OBJ_MISSILES, MI_DART_POISONED)
-        || projectile->is_type(OBJ_MISSILES, MI_DART_CURARE))
+    if (projectile->is_type(OBJ_MISSILES, MI_DART_POISONED))
     {
         //hack to fix dart damage messaging
         damage_done = 0;
@@ -442,8 +441,6 @@ special_missile_type ranged_attack::random_chaos_missile_brand()
                     10, SPMSL_CHAOS,
                      5, SPMSL_PARALYSIS,
                      5, SPMSL_SLEEP,
-                     5, SPMSL_FRENZY,
-                     2, SPMSL_CURARE,
                      2, SPMSL_CONFUSION,
                      2, SPMSL_DISPERSAL));
 
@@ -506,7 +503,6 @@ special_missile_type ranged_attack::random_chaos_missile_brand()
     case SPMSL_FLAME:           brand_name += "flame"; break;
     case SPMSL_FROST:           brand_name += "frost"; break;
     case SPMSL_POISONED:        brand_name += "poisoned"; break;
-    case SPMSL_CURARE:          brand_name += "curare"; break;
     case SPMSL_CHAOS:           brand_name += "chaos"; break;
     case SPMSL_DISPERSAL:       brand_name += "dispersal"; break;
     case SPMSL_SLEEP:           brand_name += "sleep"; break;
@@ -580,9 +576,6 @@ int ranged_attack::dart_duration_roll(uint8_t sub_type)
     // Leaving monster poison the same by separating it from player poison
     if (sub_type == MI_DART_POISONED && attacker->is_monster())
         return 6 + random2(8);
-
-    if (sub_type == MI_DART_CURARE)
-        return 2;
 
     const int base_power = (attacker->is_monster())
                            ? attacker->get_hit_dice()
@@ -661,12 +654,6 @@ bool ranged_attack::apply_missile_brand()
             }
 
         }
-        break;
-    case SPMSL_CURARE:
-        obvious_effect = curare_actor(attacker, defender,
-                                      damage_done,
-                                      projectile->name(DESC_PLAIN),
-                                      atk_name(DESC_PLAIN));
         break;
     case SPMSL_CHAOS:
         chaos_affects_defender();
@@ -785,12 +772,6 @@ bool ranged_attack::apply_dart_type()
         {
             obvious_effect = true;
         }
-        break;
-    case MI_DART_CURARE:
-        obvious_effect = curare_actor(attacker, defender,
-                                      damage_done,
-                                      projectile->name(DESC_PLAIN),
-                                      atk_name(DESC_PLAIN));
         break;
     }
 

@@ -329,12 +329,6 @@ crystal plate armour
 
 An incredibly heavy but extremely effective suit of crystalline armour.
 %%%%
-curare dart
-
-A small projectile coated in asphyxiating poison. When thrown with precision it
-can deliver its toxins into the bloodstream of a living being, dealing heavy
-damage and slowing it.
-%%%%
 cutlass
 
 A broad curved short sword.
