@@ -273,8 +273,7 @@ bool ranged_attack::handle_phase_hit()
         range_used = BEAM_STOP;
 
     if (projectile->is_type(OBJ_MISSILES, MI_DART_POISONED)
-        || projectile->is_type(OBJ_MISSILES, MI_DART_CURARE)
-        || projectile->is_type(OBJ_MISSILES, MI_DART_FRENZY))
+        || projectile->is_type(OBJ_MISSILES, MI_DART_CURARE))
     {
         //hack to fix dart damage messaging
         damage_done = 0;
@@ -547,9 +546,6 @@ bool ranged_attack::dart_check(uint8_t sub_type)
                             - attacker->get_hit_dice()) * 5 / 2);
         chance = min(95, chance);
 
-        if (sub_type == MI_DART_FRENZY)
-            chance = chance / 2;
-
         return x_chance_in_y(chance, 100);
     }
 
@@ -795,20 +791,6 @@ bool ranged_attack::apply_dart_type()
                                       damage_done,
                                       projectile->name(DESC_PLAIN),
                                       atk_name(DESC_PLAIN));
-        break;
-    case MI_DART_FRENZY:
-        if (!dart_check(projectile->sub_type))
-            break;
-        if (defender->is_monster())
-        {
-            monster* mon = defender->as_monster();
-            // Wake up the monster so that it can frenzy.
-            if (mon->behaviour == BEH_SLEEP)
-                mon->behaviour = BEH_WANDER;
-            mon->go_frenzy(attacker);
-        }
-        else
-            defender->go_berserk(false);
         break;
     }
 

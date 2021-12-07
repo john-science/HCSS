@@ -537,11 +537,6 @@ void fire_thing(int item)
     else
         ammo = &you.inv[item];
 
-    if (item && item != -1 && you.inv[item].sub_type == MI_DART_FRENZY && you_worship(GOD_CHEIBRIADOS))
-        if (!yesno("Really throw a frenzy dart? This would place you under penance!",
-            false, 'n'))
-            return;
-
     if (check_warning_inscriptions(*ammo, OPER_FIRE)
         && (!you.weapon()
             || is_launched(&you, you.weapon(), *ammo) != LRET_LAUNCHED
@@ -990,9 +985,6 @@ bool throw_it(bolt &pbolt, item_def& thrown, dist *target, bool created)
 
     if (bow_brand == SPWPN_SPEED)
         did_god_conduct(DID_HASTY, 1, true);
-
-    if (item.base_type == OBJ_MISSILES && item.sub_type == MI_DART_FRENZY)
-        did_god_conduct(DID_HASTY, 6 + random2(3), true);
 
     bool shadow_allowed = thrown.base_type == OBJ_MISSILES && thrown.sub_type != MI_NEEDLE;
 

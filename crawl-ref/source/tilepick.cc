@@ -2079,7 +2079,6 @@ static tileidx_t _tileidx_missile_base(const item_def &item)
         }
     case MI_DART_POISONED: return TILE_MI_NEEDLE_P;
     case MI_DART_CURARE:   return TILE_MI_NEEDLE_CURARE;
-    case MI_DART_FRENZY:   return TILE_MI_NEEDLE + 1;
     }
 
     return TILE_ERROR;

@@ -608,7 +608,6 @@ static const missile_def Missile_prop[] =
     { MI_TOMAHAWK,      "tomahawk",      6, 5, 5, true  },
     { MI_DART_POISONED, "poisoned dart", 0, 3, 3, true  },
     { MI_DART_CURARE,   "curare dart",   0, 10, 10, true  },
-    { MI_DART_FRENZY,   "frenzy dart",   0, 8, 8, true  },
 };
 
 struct food_def

@@ -250,7 +250,6 @@ enum missile_type
     MI_TOMAHAWK,
     MI_DART_POISONED,
     MI_DART_CURARE,
-    MI_DART_FRENZY,
 
     NUM_MISSILES,
     MI_NONE             // was MI_EGGPLANT... used for launch type detection

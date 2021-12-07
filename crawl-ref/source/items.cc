@@ -3551,7 +3551,6 @@ colour_t item_def::missile_colour() const
             return GREEN;
         case MI_DART_POISONED:
         case MI_DART_CURARE:
-        case MI_DART_FRENZY:
             return WHITE;
         case NUM_SPECIAL_MISSILES:
         case NUM_REAL_SPECIAL_MISSILES:

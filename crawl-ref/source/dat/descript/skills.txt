@@ -63,7 +63,6 @@ appropriate launcher and ammunition.
 Throwing
 
 Training Throwing will make thrown weapons (such as javelins) more effective.
-It also makes frenzy darts more likely to affect their target.
 
 Being skilled in Throwing increases your effectiveness with Slings, and vice
 versa.

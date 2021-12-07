@@ -503,8 +503,7 @@ KMONS: g = tyrant leech
 KMONS: A = lindwurm
 KMONS: h = redback
 KMONS: i = hydra
-KMONS: j = patrolling spriggan ; q:5 curare dart | \
- q:5 poisoned dart | q:5 frenzy dart
+KMONS: j = patrolling spriggan
 KMONS: k = patrolling spriggan druid
 KMONS: q = electric eel
 KFEAT: q = deep_water
