@@ -220,11 +220,6 @@ Bien que la liche fut exterminée il y a longtemps, ses armes, qui répandirent
 la destruction au sein des morts-vivants, ont été très populaires. Toutefois,
 cette masse pourrait bien en être la dernière.
 %%%%
-whip "Snakebite"
-
-Un fouet amphidromique confectionné à partir de la peau durcie des mortels
-mambas noirs séjournant dans le Repaire des Bêtes.
-%%%%
 knife of Accuracy
 
 Il est presque infailliblement précis.

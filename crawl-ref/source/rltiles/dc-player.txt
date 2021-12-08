@@ -506,7 +506,6 @@ mace_of_variability MACE_OF_VARIABILITY
 mace_of_brilliance MACE_OF_BRILLIANCE
 undeadhunter UNDEADHUNTER
 eos EOS
-snakebite SNAKEBITE
 shillelagh SHILLELAGH
 dark_maul DARK_MAUL
 spellbinder SPELLBINDER
