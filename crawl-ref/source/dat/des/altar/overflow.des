@@ -249,11 +249,11 @@ DEPTH:  D:3-9
 WEIGHT: 5
 KFEAT:  _ = altar_cheibriados
 MONS:   goblin; potion of ambrosia ident:type / \
-        hobgoblin; potion of ambrosia ident:type / \
+        restless flesh; potion of ambrosia ident:type / \
         gnoll; potion of ambrosia ident:type / \
         orc; potion of ambrosia ident:type / \
         kobold; potion of ambrosia ident:type
-MONS:   goblin / hobgoblin / gnoll / orc / kobold
+MONS:   goblin / restless flesh / gnoll / orc / kobold
 NSUBST: 2 = 1:1 / *:2
 MAP
 ccccccc
@@ -1341,11 +1341,11 @@ KFEAT: _ = altar_ru
 KMONS: P = ball python perm_ench:paralysis / rat perm_ench:paralysis / \
   frilled lizard perm_ench:paralysis / giant cockroach perm_ench:paralysis / \
   quokka perm_ench:paralysis / kobold w:5 perm_ench:paralysis / \
-  goblin w:5 perm_ench:paralysis / hobgoblin w:5 perm_ench:paralysis
+  goblin w:5 perm_ench:paralysis / restless flesh w:5 perm_ench:paralysis
 KMONS: C = beholder perm_ench:corona / adder perm_ench:corona / \
-  kobold perm_ench:corona / goblin perm_ench:corona / hobgoblin perm_ench:corona
+  kobold perm_ench:corona / goblin perm_ench:corona / restless flesh perm_ench:corona
 KMONS: S = jackal perm_ench:slow / beholder perm_ench:slow / adder perm_ench:slow / \
-  kobold perm_ench:slow / goblin perm_ench:slow / hobgoblin perm_ench:slow
+  kobold perm_ench:slow / goblin perm_ench:slow / restless flesh perm_ench:slow
 KMONS: B = ball python perm_ench:blind / frilled lizard perm_ench:blind / \
   giant cockroach perm_ench:blind / beholder perm_ench:blind
 KMONS: M = orc wizard perm_ench:mute
@@ -1704,7 +1704,7 @@ NAME:   trog_hazing_becter
 TAGS:   overflow_altar_trog no_monster_gen no_item_gen no_pool_fixup
 DEPTH:  D:2-9, Orc, !Orc:$
 MONS:   goblin ; trident . animal skin / \
-        hobgoblin ; trident . animal skin / \
+        restless flesh ; trident . animal skin / \
         kobold ; trident | animal skin
 ITEM:   gold q:1
 NSUBST: T = 6:1 / *:.
@@ -1813,7 +1813,7 @@ TAGS:  transparent patrolling
 DEPTH: D:4-9
 KFEAT: _ = altar_vehumet
 MONS:  goblin; wand of flame /\
-       hobgoblin; wand of flame /\
+       restless flesh; wand of flame /\
        kobold; wand of flame
 MAP
 .......

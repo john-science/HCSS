@@ -2369,7 +2369,7 @@ KMONS: T = mummy priest w:5 / guardian mummy / sphinx / mummy / reaper
 KMONS: H = balrug w:5 / blizzard demon w:5 / shadow demon w:5 / \
            hell beast w:5 / sun demon / ice devil / rust devil / soul eater / \
            hell knight w:5
-KMONS: D = frilled lizard / kobold / hobgoblin w:5 / goblin / adder
+KMONS: D = frilled lizard / kobold / restless flesh w:5 / goblin / adder
 MAP
 xxvvvvvvvvvvvvvxx
 xvv..vvvvvvv..vvx
@@ -3432,7 +3432,7 @@ NAME: cheibrodos_greedy_goblins
 DEPTH: D:2-4
 TAGS: no_item_gen no_monster_gen
 ORIENT: float
-MONS: goblin, hobgoblin
+MONS: goblin, restless flesh
 SUBST: - = 112..., " = 12., ' = 12.
 MAP
     .....
@@ -3455,7 +3455,7 @@ DEPTH: D:3-6
 TAGS: no_item_gen no_monster_gen
 ORIENT: float
 KPROP: w;W = no_tele_into
-MONS: kobold ; whip / kobold ; dagger, hobgoblin ; whip
+MONS: kobold ; whip / kobold ; dagger, restless flesh ; whip
 MONS: big kobold ; whip | w:3 dagger ego:flaming | w:3 dagger ego: draining \
                    | w:3 dagger ego:freezing
 NSUBST: - = 2:1 / 2=12., " = 3:1 / 3=12., ' = 1:3 / 1=3. / 1=1., ` = 1=*% / *:%
@@ -3706,7 +3706,7 @@ NSUBST: U = 1:+ / *:x, V = 1:+ / *:x
 SUBST:  - = 2:20 d .:50
 ITEM:   any food / any weapon / any missile / w:5 any armour / \
         w:5 any potion / w:5 any scroll, w:1 any misc
-MONS:   plant / w:40 nothing, goblin / hobgoblin / kobold / orc / w:5 gnoll
+MONS:   plant / w:40 nothing, goblin / restless flesh / kobold / orc / w:5 gnoll
 MAP
 .......................
 ..1..x++x..1..x+++++x..
@@ -3745,7 +3745,7 @@ NSUBST: E = 1:+ / *:x, F = 1:+ / *:x, G = 1:+ / *:x, H = 1:+ / *:x
 SUBST:  - = 2:20 d .:50
 SUBST:  T = T:50 V G 1 .:20
 ITEM:   any food / any weapon / any missile / w:5 any armour / w:5 any potion
-MONS:   plant / w:40 nothing, goblin / hobgoblin / kobold / orc
+MONS:   plant / w:40 nothing, goblin / restless flesh / zombie kobold / orc
 MAP
 ....................
 .1xAAx1.xxxxx111111.
@@ -6017,7 +6017,7 @@ NAME:   cheibrodos_orc_bank
 TAGS:   no_item_gen no_monster_gen
 DEPTH:  Orc, !Orc:$, D:10-14
 ORIENT: float
-MONS:   orc, orc warrior, orc knight, hobgoblin
+MONS:   orc, orc warrior, orc knight, zombie flesh
 KITEM:  $ = $ no_pickup
 SUBST:  ? = $., " = .14
 MAP
@@ -6192,7 +6192,7 @@ NAME:   kennysheep_the_goblin_king
 ORIENT: float
 TAGS:   no_monster_gen no_trap_gen
 DEPTH:  D:2-4
-KMONS:  1 = hobgoblin, hobgoblin
+KMONS:  1 = restless flesh, restless flesh
 KMONS:  2 = goblin
 MAP
 xxxxxxxxx

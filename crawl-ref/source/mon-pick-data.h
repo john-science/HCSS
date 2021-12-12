@@ -8,7 +8,7 @@ static const pop_entry pop_d[] =
   {  1,  3, 1000, FLAT, MONS_BEHOLDER },
   {  1,  3, 1000, FLAT, MONS_KOBOLD },
   {  1,  3, 1000, FLAT, MONS_RAT },
-  {  1,  3, 1000, FLAT, MONS_HOBGOBLIN },
+  {  1,  3, 1000, FLAT, MONS_RESTLESS_FLESH },
   {  1,  5,  335, FALL, MONS_DART_SLUG },
   {  1,  7,  515, FALL, MONS_QUOKKA },
   {  1,  7,  335, SEMI, MONS_JACKAL },

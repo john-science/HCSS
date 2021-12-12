@@ -218,7 +218,7 @@ ENDMAP
 #
 NAME:   erik_orc_3
 TAGS:   orc_entry no_item_gen
-MONS:   orc / w:2 goblin / w:2 hobgoblin / nothing
+MONS:   orc / w:2 goblin / w:2 restless flesh / nothing
 MONS:   orc warrior / orc priest / orc wizard / nothing
 MONS:   warg / ogre / nothing
 ORIENT: float
@@ -251,7 +251,7 @@ ENDMAP
 #
 NAME: erik_orc_4
 TAGS: orc_entry no_rotate
-MONS: human / goblin / hobgoblin / w:2 orc
+MONS: human / goblin / restless flesh / w:2 orc
 MONS: orc priest
 MONS: orc
 MONS: orc priest / orc wizard / w:2 goblin / nothing

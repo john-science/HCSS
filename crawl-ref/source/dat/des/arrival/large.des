@@ -254,7 +254,7 @@ NAME:    dpeg_arrival_morbid_curiosity
 TAGS:    arrival no_rotate no_monster_gen
 ORIENT:  float
 MONS:    goblin
-MONS:    hobgoblin
+MONS:    restless flesh
 MONS:    kobold ; mace
 SHUFFLE: ABCD
 NSUBST:  X = 1:+ / *:x

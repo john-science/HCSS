@@ -1,6 +1,7 @@
 ## Zombies
 %sdir mon/undead/zombies
 zombie_small MONS_ZOMBIE_SMALL
+zombie_small MONS_RESTLESS_FLESH
 zombie_large MONS_ZOMBIE_LARGE
 zombie_quadruped_small MONS_ZOMBIE_QUADRUPED_SMALL
 zombie_quadruped_large MONS_ZOMBIE_QUADRUPED_LARGE

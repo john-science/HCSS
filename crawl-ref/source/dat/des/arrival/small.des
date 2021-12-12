@@ -740,7 +740,7 @@ ENDMAP
 ##############################################################################
 NAME:   dpeg_arrival_chase
 TAGS:   arrival no_monster_gen no_pool_fixup no_rotate
-MONS:   kobold, hobgoblin / goblin / beholder
+MONS:   kobold, restless flesh / goblin / beholder
 ITEM:   gold q:1
 ORIENT: float
 SUBST:  w : w l:1
