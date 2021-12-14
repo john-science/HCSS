@@ -44,15 +44,15 @@ NAME:    minmay_goblin_kobold_castle
 TAGS:    no_rotate
 ORIENT:  north
 DEPTH:   D:3-6
-MONS:    goblin / hobgoblin w:2
-MONS:    goblin; whip / hobgoblin; whip / gnoll w:3; whip | spear / nothing
+MONS:    restless bones / restless flesh w:2
+MONS:    restless bones; whip / restless flesh; whip / gnoll w:3; whip | spear / nothing
 MONS:    kobold / nothing
 MONS:    kobold; whip / big kobold w:1; whip | rapier w:2 / nothing
 SUBST:   y : y:48 w:1 W:1, Y : Y:48 W:1 .:1, y = wWW, Y = WW.
 SUBST:   5 = 2 1:2 .:24
 SHUFFLE: ABCD
 KITEM:   D = gold
-KMONS:   D = hobgoblin / kobold / gnoll / big kobold
+KMONS:   D = restless flesh / kobold / gnoll / big kobold
 SUBST:   ABC = 2
 SHUFFLE: 12 / 34
 MAP
@@ -1633,7 +1633,7 @@ DEPTH:  D:2-4
   end
   kmons("O = " .. boss)
 }}
-MONS:   goblin, goblin, jackal
+MONS:   restless bones, restless bones, jackal
 NSUBST: . = 1:0 / 3:3 / *:.
 MAP
 xxxxxxxxxxxxxxxxxxx
@@ -1660,7 +1660,7 @@ NAME:   kennysheep_housing_project
 ORIENT: north
 TAGS:   no_monster_gen
 DEPTH:  D:6-9
-MONS:   kobold / hound w:5 / gnoll / hobgoblin, \
+MONS:   kobold / hound w:5 / gnoll / restless flesh, \
         big kobold / orc warrior w:5 / ogre / gnoll sergeant, \
         orc priest / orc wizard / gnoll shaman / centaur
 NSUBST: . = 4:2 / 20:1 / 5:3

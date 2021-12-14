@@ -740,7 +740,7 @@ ENDMAP
 ##############################################################################
 NAME:   dpeg_arrival_chase
 TAGS:   arrival no_monster_gen no_pool_fixup no_rotate
-MONS:   kobold, restless flesh / goblin / beholder
+MONS:   kobold, restless flesh / restless bones / beholder
 ITEM:   gold q:1
 ORIENT: float
 SUBST:  w : w l:1
@@ -1259,7 +1259,7 @@ ENDMAP
 ##############################################################################
 NAME:    dpeg_arrival_ratfight
 TAGS:    arrival
-MONS:    rat, goblin, beholder
+MONS:    rat, restless bones, beholder
 ORIENT:  float
 SUBST:   X = x+
 MAP
@@ -1656,7 +1656,7 @@ ENDMAP
 NAME:    dpeg_arrival_subterranean_lakeside_camping
 TAGS:    arrival no_monster_gen
 ORIENT:  float
-MONS:    goblin, rat, beholder
+MONS:    restless bones, rat, beholder
 SUBST:   ? : . w ?:40, ' : . x ':40
 SUBST:   ? = .w, ' = .x
 MAP
@@ -2339,7 +2339,7 @@ NAME:    lordsloth_arrival_two_stooges
 ORIENT:  float
 TAGS:    arrival no_rotate no_monster_gen
 SUBST:   ':l...' , '=l. , l:lllWw , n:nv , v:vvvc
-KMONS:   1 = orc / goblin / kobold
+KMONS:   1 = orc / restless bones / kobold
 KFEAT:   1 = .
 KPROP:   1 = no_tele_into
 KMASK:   1 = no_item_gen

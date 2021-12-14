@@ -2569,6 +2569,7 @@ enum monster_type                      // menv[].type
 
     MONS_GOBLIN,
     MONS_HOBGOBLIN,
+    MONS_RESTLESS_BONES,
     MONS_RESTLESS_FLESH,
     MONS_GNOLL,
     MONS_GNOLL_SHAMAN,

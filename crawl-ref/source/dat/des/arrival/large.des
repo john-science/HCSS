@@ -183,7 +183,7 @@ NAME:    elethiomel_arrival_diamonds
 TAGS:    arrival no_monster_gen no_rotate
 ORIENT:  west
 WEIGHT:  2
-MONS:    rat, goblin, beholder, kobold
+MONS:    rat, restless bones, beholder, kobold
 SHUFFLE: {[(, 234
 SUBST:   [( = .
 MAP
@@ -220,7 +220,7 @@ NAME:   erik_arrival_gehennom
 TAGS:   arrival no_monster_gen no_rotate
 ORIENT: float
 ITEM:   gold q:1
-MONS:   rat, goblin, kobold, ooze
+MONS:   rat, restless bones, kobold, ooze
 MAP
 xxxxxxxxxxx@xxxxxxxxxxxxxxxxxx
 x.........l.l................x
@@ -253,7 +253,7 @@ ENDMAP
 NAME:    dpeg_arrival_morbid_curiosity
 TAGS:    arrival no_rotate no_monster_gen
 ORIENT:  float
-MONS:    goblin
+MONS:    restless bones
 MONS:    restless flesh
 MONS:    kobold ; mace
 SHUFFLE: ABCD

@@ -4,7 +4,7 @@ static const pop_entry pop_d[] =
   {  1,  5,  192, FALL, MONS_BALL_PYTHON },
   { -1,  5,  640, SEMI, MONS_FRILLED_LIZARD},
   { -1,  7,  136, SEMI, MONS_OOZE },
-  {  1,  3, 1000, FLAT, MONS_GOBLIN },
+  {  1,  3, 1000, FLAT, MONS_RESTLESS_BONES },
   {  1,  3, 1000, FLAT, MONS_BEHOLDER },
   {  1,  3, 1000, FLAT, MONS_KOBOLD },
   {  1,  3, 1000, FLAT, MONS_RAT },
