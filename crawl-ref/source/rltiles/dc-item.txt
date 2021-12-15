@@ -217,20 +217,6 @@ stone MI_STONE
 # flying stone
 effect/stone0 MI_STONE0
 
-sling_bullet1 MI_SLING_BULLET
-sling_bullet2
-steel_sling_bullet1 MI_SLING_BULLET_STEEL
-steel_sling_bullet2
-silver_sling_bullet1 MI_SLING_BULLET_SILVER
-silver_sling_bullet2
-# flying bullets
-effect/sling_bullet0 MI_SLING_BULLET0
-effect/sling_bullet_runed0
-effect/steel_sling_bullet0 MI_SLING_BULLET_STEEL0
-effect/steel_sling_bullet_runed0
-effect/silver_sling_bullet0 MI_SLING_BULLET_SILVER0
-effect/silver_sling_bullet_runed0
-
 arrow1 MI_ARROW
 arrow2
 steel_arrow1 MI_ARROW_STEEL

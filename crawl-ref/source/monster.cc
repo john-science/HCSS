@@ -1916,7 +1916,6 @@ bool monster::pickup_missile(item_def &item, bool msg, bool force)
                 // Don't drop huge stacks for tiny stacks.
                 if (item.launched_by(*launch)
                     && (!miss->launched_by(*launch)
-                        || item.sub_type == MI_SLING_BULLET
                            && miss->sub_type == MI_STONE
                         || get_ammo_brand(*miss) == SPMSL_NORMAL
                            && item_brand != SPMSL_NORMAL)

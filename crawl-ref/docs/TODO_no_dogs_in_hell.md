@@ -11,8 +11,6 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 1. MONS_BALL_PYTHON
 1. MONS_FRILLED_LIZARD
 1. MONS_GIANT_COCKROACH
-1. MONS_GOBLIN
-1. MONS_HOBGOBLIN
 1. MONS_RAT
 
 

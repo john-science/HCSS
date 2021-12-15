@@ -245,7 +245,6 @@ enum missile_type
     MI_JAVELIN,
     MI_STONE,
     MI_LARGE_ROCK,
-    MI_SLING_BULLET,
     MI_THROWING_NET,
     MI_TOMAHAWK,
     MI_DART_POISONED,

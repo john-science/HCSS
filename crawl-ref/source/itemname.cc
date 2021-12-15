@@ -2437,7 +2437,7 @@ void check_item_knowledge(bool unknown_items)
         // Missiles
         for (int i = 0; i < NUM_MISSILES; i++)
         {
-            if (i == MI_DART || i == MI_NEEDLE || i == MI_SLING_BULLET
+            if (i == MI_DART || i == MI_NEEDLE
                 || i == MI_ARROW || i == MI_STONE || i == MI_BOLT
                 || i == MI_THROWING_NET)
                 continue;
