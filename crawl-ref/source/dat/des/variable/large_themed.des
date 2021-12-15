@@ -1608,7 +1608,7 @@ DEPTH:  D:2-4
 {{
   -- Default for when we're only map validating.
   if not crawl.game_started() then
-    kmons("O = Samantha / hobgoblin w:1")
+    kmons("O = Samantha / restless flesh w:1")
     subst("B = 1")
     return
   end
