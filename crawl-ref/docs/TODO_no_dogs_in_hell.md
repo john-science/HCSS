@@ -2,8 +2,7 @@
 
 > And no quokka either, for that matter.
 
-This is the big TODO list, where we are (temporarily) keeping all the DCSS monsters that just don't make sense for the idiom of HCSS. There shouldn't be too many living things in Hell, and having a
-bunch of harmless animals running around also doesn't seem on brand. We can make some of these demons, or undead, but some will have to be replaced by ghosts or something.
+This is the big TODO list, where we are (temporarily) keeping all the DCSS monsters that just don't make sense for the idiom of HCSS. There shouldn't be too many living things in Hell, and having a bunch of harmless animals running around also doesn't seem on brand. We can make some of these demons, or undead, but some will have to be replaced by ghosts or something.
 
 
 ## Early Enemies
