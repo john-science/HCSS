@@ -2,7 +2,8 @@
 
 > And no quokka either, for that matter.
 
-This is the big TODO list, where we are (temporarily) keeping all the DCSS monsters that just don't make sense for the idiom of HCSS. There shouldn't be too many living things in Hell, and having a bunch of harmless animals running around also doesn't seem on brand. We can make some of these demons, or undead, but some will have to be replaced by ghosts or something.
+This is the big TODO list, where we are (temporarily) keeping all the DCSS monsters that just don't make sense for the idiom of HCSS. There shouldn't be too many living things in Hell, and having a
+bunch of harmless animals running around also doesn't seem on brand. We can make some of these demons, or undead, but some will have to be replaced entirely.
 
 
 ## Early Enemies
@@ -17,7 +18,6 @@ This is the big TODO list, where we are (temporarily) keeping all the DCSS monst
 
 1. MONS_ALLIGATOR
 1. MONS_ALLIGATOR_SNAPPING_TURTLE
-1. MONS_BASILISK
 1. MONS_BLACK_BEAR
 1. MONS_BLINK_FROG
 1. MONS_BULLFROG
@@ -31,9 +31,7 @@ This is the big TODO list, where we are (temporarily) keeping all the DCSS monst
 1. MONS_IGUANA
 1. MONS_JACKAL
 1. MONS_KILLER_BEE
-1. MONS_MANTICORE
 1. MONS_MOTH_OF_WRATH
-1. MONS_OKLOB_PLANT
 1. MONS_POLAR_BEAR
 1. MONS_PORCUPINE
 1. MONS_QUOKKA
