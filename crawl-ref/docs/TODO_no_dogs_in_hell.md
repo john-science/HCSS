@@ -35,7 +35,6 @@ bunch of harmless animals running around also doesn't seem on brand. We can make
 1. MONS_POLAR_BEAR
 1. MONS_PORCUPINE
 1. MONS_QUOKKA
-1. MONS_SHAMBLING_MANGROVE
 1. MONS_SNAPPING_TURTLE
 1. MONS_SPINY_FROG
 1. MONS_SWAMP_WORM
