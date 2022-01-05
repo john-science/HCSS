@@ -234,7 +234,7 @@ VALUE:   1000
 NAME:    Vampire's Tooth
 OBJ:     OBJ_WEAPONS/WPN_DAGGER
 # it's a dagger made from a tooth -> no TYPE
-PLUS:    +4
+PLUS:    +6
 COLOUR:  ETC_BONE
 TILE:    spwpn_vampires_tooth
 TILE_EQ: vampires_tooth
@@ -309,7 +309,7 @@ BOOL:    evil, nogen
 ENUM:    FAERIE
 NAME:    faerie dragon scales
 OBJ:     OBJ_ARMOUR/ARM_ACID_DRAGON_ARMOUR
-PLUS:    +3
+PLUS:    +4
 COLOUR:  ETC_JEWEL
 TILE:    urand_faerie
 TILE_EQ: faerie_dragon_armour
@@ -372,15 +372,15 @@ COLD:    2
 MAGIC:   1
 BOOL:    poison, skip_ego, nogen
 
-NAME:     dagger "Morg"
-OBJ:      OBJ_WEAPONS/WPN_DAGGER
-PLUS:     +4
-COLOUR:   LIGHTRED
-TILE:     urand_morg
-TILE_EQ:  morg
-BRAND:    SPWPN_PAIN
-INT:      5
-MAGIC:    1
+NAME:    dagger "Morg"
+OBJ:     OBJ_WEAPONS/WPN_DAGGER
+PLUS:    +4
+COLOUR:  LIGHTRED
+TILE:    urand_morg
+TILE_EQ: morg
+BRAND:   SPWPN_PAIN
+INT:     5
+MAGIC:   1
 
 NAME:    scythe "Finisher"
 OBJ:     OBJ_WEAPONS/WPN_SCYTHE
@@ -401,15 +401,15 @@ TILE_EQ: punk
 BRAND:   SPWPN_ACID
 BOOL:    rCorr
 
-ENUM:     ZEPHYR
-NAME:     longbow "Zephyr"
-OBJ:      OBJ_WEAPONS/WPN_LONGBOW
-PLUS:     +8
-COLOUR:   ETC_GOLD
-TILE:     urand_zephyr
-TILE_EQ:  zephyr
-BRAND:    SPWPN_SPEED
-DEX:      3
+ENUM:    ZEPHYR
+NAME:    longbow "Zephyr"
+OBJ:     OBJ_WEAPONS/WPN_LONGBOW
+PLUS:    +8
+COLOUR:  ETC_GOLD
+TILE:    urand_zephyr
+TILE_EQ: zephyr
+BRAND:   SPWPN_SPEED
+DEX:     3
 
 NAME:    giant club "Skullcrusher"
 OBJ:     OBJ_WEAPONS/WPN_GIANT_CLUB
@@ -420,27 +420,27 @@ TILE_EQ: giant_club_slant
 BRAND:   SPWPN_SPEED
 STR:     7
 
-NAME:     glaive of the Guard
-OBJ:      OBJ_WEAPONS/WPN_GLAIVE
-PLUS:     +8
-COLOUR:   ETC_ELECTRICITY
-TILE:     urand_guard
-TILE_EQ:  glaive_of_the_guard
-BRAND:    SPWPN_ELECTROCUTION
-AC:       5
-BOOL:     berserk
+NAME:    glaive of the Guard
+OBJ:     OBJ_WEAPONS/WPN_GLAIVE
+PLUS:    +8
+COLOUR:  ETC_ELECTRICITY
+TILE:    urand_guard
+TILE_EQ: glaive_of_the_guard
+BRAND:   SPWPN_ELECTROCUTION
+AC:      5
+BOOL:    berserk
 
-ENUM:     SWORD_OF_RIGHTEOUSNESS
-NAME:     Righteous Blade
-OBJ:      OBJ_WEAPONS/WPN_EUDEMON_BLADE
-PLUS:     +10
-COLOUR:   ETC_HOLY
-TILE:     urand_righteousness
-TILE_EQ:  righteousness
-BRAND:    SPWPN_HOLY_WRATH
-EV:       3
-ANGRY:    5
-LIFE:     1
+ENUM:    SWORD_OF_RIGHTEOUSNESS
+NAME:    Righteous Blade
+OBJ:     OBJ_WEAPONS/WPN_EUDEMON_BLADE
+PLUS:    +10
+COLOUR:  ETC_HOLY
+TILE:    urand_righteousness
+TILE_EQ: righteousness
+BRAND:   SPWPN_HOLY_WRATH
+EV:      3
+ANGRY:   5
+LIFE:    1
 
 NAME:    arbalest "Damnation"
 INSCRIP: damnation,
@@ -475,27 +475,27 @@ BOOL:    elec
 # between voodoo and bo, the latter dealing with curses, witchcraft and
 # spells designed to do harm. Priests (or rather sorcerers) of bo are
 # called botono.
-NAME:     spear of the Botono
-OBJ:      OBJ_WEAPONS/WPN_SPEAR
-INSCRIP:  Hex
-PLUS:     +6
-COLOUR:   ETC_UNHOLY
-TILE:     urand_botono
-TILE_EQ:  botono
-BRAND:    SPWPN_REAPING
-HP:       -6
-LIFE:     1
-BOOL:     poison, nogen
+NAME:    spear of the Botono
+OBJ:     OBJ_WEAPONS/WPN_SPEAR
+INSCRIP: Hex
+PLUS:    +6
+COLOUR:  ETC_UNHOLY
+TILE:    urand_botono
+TILE_EQ: botono
+BRAND:   SPWPN_REAPING
+HP:      -6
+LIFE:    1
+BOOL:    poison, nogen
 
-NAME:     trident of the Octopus King
-OBJ:      OBJ_WEAPONS/WPN_TRIDENT
-PLUS:     +8 # Messed with sometimes
-COLOUR:   ETC_WATER
-TILE:     urand_octopus_king
-TILE_EQ:  trident_octopus_king
-BRAND:    SPWPN_VENOM
-BOOL:     elec, poison, no_upgrade
-MAGIC:    1
+NAME:    trident of the Octopus King
+OBJ:     OBJ_WEAPONS/WPN_TRIDENT
+PLUS:    +8 # Messed with sometimes
+COLOUR:  ETC_WATER
+TILE:    urand_octopus_king
+TILE_EQ: trident_octopus_king
+BRAND:   SPWPN_VENOM
+BOOL:    elec, poison, no_upgrade
+MAGIC:   1
 
 NAME:    mithril axe "Arga"
 OBJ:     OBJ_WEAPONS/WPN_BROAD_AXE
